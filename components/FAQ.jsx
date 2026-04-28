@@ -101,7 +101,7 @@ function FAQ() {
         </div>
 
         <div style={{ marginTop: 56, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-          <Button variant="primary" size="lg">Book a Discovery Call</Button>
+          <Button variant="primary" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>
           <CTAMicrocopy />
         </div>
       </Container>

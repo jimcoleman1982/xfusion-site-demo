@@ -32,7 +32,7 @@ function Team() {
               margin: '0 0 20px',
               textWrap: 'pretty',
             }}>
-              About 80 people make xFusion run, with offices in the Philippines and Kenya and a smaller team in the United States. We invest in culture the way other companies invest in software: living-wage compensation, structured holiday gifting, branded swag, regular team-building events, birthday and anniversary recognition, and account managers who know every team member by name.
+              About 70 people make xFusion run, with offices in the Philippines and Kenya and a smaller team in the United States. We invest in culture the way other companies invest in software: living-wage compensation, structured holiday gifting, branded swag, regular team-building events, birthday and anniversary recognition, and account managers who know every team member by name.
             </p>
             <p style={{
               fontFamily: "'IBM Plex Sans', sans-serif",
@@ -55,14 +55,14 @@ function Team() {
         }} className="team-photos">
           <TeamPhoto
             location="Philippines"
-            count="~50 team members"
+            count="35 team members"
             label="Photo: Philippines team-building"
             imageSrc="../images/xfusion-philippines-team.jpeg"
             tone="clay"
           />
           <TeamPhoto
             location="Kenya"
-            count="~25 team members"
+            count="35 team members"
             label="Photo: Kenya team-building"
             imageSrc="../images/xfusion-kenya-team.jpeg"
             tone="forest"
@@ -78,7 +78,7 @@ function Team() {
           gap: 32,
         }} className="team-stats">
           {[
-            { stat: '~80', label: 'Team members' },
+            { stat: '70', label: 'Team members' },
             { stat: '3', label: 'Continents' },
             { stat: '6 yrs', label: 'In business since 2020' },
             { stat: '<1%', label: 'Of applicants placed' },

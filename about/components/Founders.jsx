@@ -7,7 +7,7 @@ function Founders() {
             index={3}
             name="Jim Coleman"
             role="Co-founder"
-            imageSrc="../images/jim-coleman.png"
+            imageSrc="../images/jim-coleman-hero.png"
             imageLabel="Co-founder portrait"
             imageSide="right"
             tone="clay"
@@ -21,7 +21,7 @@ function Founders() {
             index={4}
             name="David Tran"
             role="Co-founder"
-            imageSrc="../images/david-tran.png"
+            imageSrc="../images/david-tran-profile.jpeg"
             imageLabel="Co-founder portrait"
             imageSide="left"
             tone="forest"

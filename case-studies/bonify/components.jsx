@@ -227,7 +227,7 @@ function Nav({ active = 'case-studies', prefix = '../../' }) {
           </div>
 
           <div className="nav-cta" style={{ marginLeft: 'auto', display: 'flex', gap: 12, alignItems: 'center' }}>
-            <a href="#book" style={ctaStyle}>Book a Discovery Call</a>
+            <a href="https://savvycal.com/xfusion/lets-chat" style={ctaStyle}>Book a Discovery Call</a>
           </div>
 
           <button
@@ -280,7 +280,7 @@ function Nav({ active = 'case-studies', prefix = '../../' }) {
               );
             })}
             <div style={{ marginTop: 16 }}>
-              <a href="#book" style={{ ...ctaStyle, fontSize: 15, padding: '12px 20px', display: 'block', textAlign: 'center' }}>
+              <a href="https://savvycal.com/xfusion/lets-chat" style={{ ...ctaStyle, fontSize: 15, padding: '12px 20px', display: 'block', textAlign: 'center' }}>
                 Book a Discovery Call
               </a>
             </div>
@@ -770,7 +770,7 @@ function Footer() {
       { label: 'About', href: '../../about/' },
       { label: 'Careers', href: '../../careers/' },
       { label: 'Press', href: '../../press/' },
-      { label: 'Contact', href: '#book' },
+      { label: 'Contact', href: "https://savvycal.com/xfusion/lets-chat" },
     ]},
     { title: 'Resources', links: [
       { label: 'Blog', href: '../../blog/' },

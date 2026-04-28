@@ -110,7 +110,7 @@ function HowItWorks() {
         </ol>
 
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-          <Button variant="primary" size="lg">Start With a Discovery Call</Button>
+          <Button variant="primary" size="lg" href="https://savvycal.com/xfusion/lets-chat">Start With a Discovery Call</Button>
           <CTAMicrocopy />
         </div>
       </Container>

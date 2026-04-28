@@ -60,7 +60,7 @@ function Guarantee() {
               </p>
             </div>
             <div style={{ marginTop: 36, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-              <Button variant="primary" size="lg">Book My Free Discovery Call</Button>
+              <Button variant="primary" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book My Free Discovery Call</Button>
               <CTAMicrocopy color="#3A322D" />
             </div>
           </div>

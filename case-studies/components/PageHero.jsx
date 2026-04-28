@@ -28,7 +28,7 @@ function PageHero() {
             Seven founders, seven different businesses, one common thread: they stopped drowning in customer support and got their time back. The numbers (and the words from the people who lived it) are below.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'flex-start' }}>
-            <Button variant="primary" size="lg" href="#book">Book a Discovery Call</Button>
+            <Button variant="primary" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>
             <div style={{
               fontFamily: "'IBM Plex Sans', sans-serif",
               fontSize: 13,

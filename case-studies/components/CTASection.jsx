@@ -39,7 +39,7 @@ function CTASection() {
             alignItems: 'flex-end',
             gap: 14,
           }}>
-            <Button variant="primary" size="lg" href="#book">Book a Discovery Call</Button>
+            <Button variant="primary" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>
             <div style={{
               fontFamily: "'IBM Plex Sans', sans-serif",
               fontSize: 13,

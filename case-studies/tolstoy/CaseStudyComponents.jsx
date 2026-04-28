@@ -706,7 +706,7 @@ function CTASection() {
             textWrap: 'pretty',
           }}>If your customer support is starting to slip, or you are about to lose the one person holding it together, we can help. We will recruit, vet, place, train, and manage a senior, AI-augmented CS agent for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free.</p>
 
-          <Button variant="on-dark" size="lg">Book a Discovery Call</Button>
+          <Button variant="on-dark" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>
 
           <p style={{
             fontFamily: "'JetBrains Mono', monospace",

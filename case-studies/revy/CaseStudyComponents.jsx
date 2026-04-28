@@ -85,7 +85,7 @@ function CaseStudyNav({ active = 'case-studies', prefix = '../../' }) {
           </div>
 
           <div className="nav-cta" style={{ marginLeft: 'auto', display: 'flex', gap: 12, alignItems: 'center' }}>
-            <a href="#book" style={ctaStyle}>Book a Discovery Call</a>
+            <a href="https://savvycal.com/xfusion/lets-chat" style={ctaStyle}>Book a Discovery Call</a>
           </div>
 
           <button
@@ -130,7 +130,7 @@ function CaseStudyNav({ active = 'case-studies', prefix = '../../' }) {
               );
             })}
             <div style={{ marginTop: 16 }}>
-              <a href="#book" style={{ ...ctaStyle, fontSize: 15, padding: '12px 20px', display: 'block', textAlign: 'center' }}>
+              <a href="https://savvycal.com/xfusion/lets-chat" style={{ ...ctaStyle, fontSize: 15, padding: '12px 20px', display: 'block', textAlign: 'center' }}>
                 Book a Discovery Call
               </a>
             </div>
@@ -764,8 +764,7 @@ function CTABand() {
             <Button variant="primary" size="lg" style={{
               padding: '18px 28px',
               fontSize: 17,
-            }}>
-              Book a Discovery Call
+            }} href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call
             </Button>
             <div style={{
               fontFamily: "'IBM Plex Sans', sans-serif",
@@ -796,7 +795,7 @@ function CaseStudyFooter() {
       { label: 'About', href: '../../about/' },
       { label: 'Careers', href: '../../careers/' },
       { label: 'Press', href: '../../press/' },
-      { label: 'Contact', href: '#book' },
+      { label: 'Contact', href: "https://savvycal.com/xfusion/lets-chat" },
     ]},
     { title: 'Resources', links: [
       { label: 'Blog', href: '../../blog/' },

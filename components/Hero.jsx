@@ -35,7 +35,7 @@ function Hero() {
               We recruit, vet, train, place, and manage a senior customer support agent inside your business. They use AI to handle the volume of two junior reps, and we handle everything else (recruiting, payroll, culture, performance) so you don't have to.
             </p>
             <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-              <Button variant="primary" size="lg">Book a Discovery Call</Button>
+              <Button variant="primary" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>
             </div>
             <CTAMicrocopy>
               30 minutes. No pitch deck. We just figure out if your CS situation is a fit.
@@ -43,8 +43,8 @@ function Hero() {
           </div>
           <div style={{ position: 'relative' }}>
             <img
-              src="images/xfusion-philippines-team.jpeg"
-              alt="xFusion team building, Philippines office"
+              src="images/xfusion-team-montage.png"
+              alt="xFusion team across the Philippines and Kenya"
               style={{
                 width: '100%',
                 aspectRatio: '4/5',

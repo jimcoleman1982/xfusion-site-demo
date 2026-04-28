@@ -37,7 +37,7 @@ function FinalCTA() {
             </p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <Button variant="on-dark" size="lg">Book a Discovery Call</Button>
+            <Button variant="on-dark" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>
             <div style={{
               fontFamily: "'IBM Plex Sans', sans-serif",
               fontSize: 13,

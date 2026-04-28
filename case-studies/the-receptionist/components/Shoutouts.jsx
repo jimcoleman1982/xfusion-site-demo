@@ -158,8 +158,7 @@ function FinalCTA() {
               color: '#F7F2EB',
               padding: '18px 32px',
               fontSize: 17,
-            }}>
-              Book a Discovery Call
+            }} href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call
             </Button>
             <p style={{
               fontFamily: "'IBM Plex Sans', sans-serif",

@@ -597,8 +597,7 @@ function CTASection() {
             <Button variant="primary" size="lg" style={{
               fontSize: 17,
               padding: '18px 28px',
-            }}>
-              Book a Discovery Call
+            }} href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call
             </Button>
             <p style={{
               fontFamily: "'IBM Plex Sans', sans-serif",

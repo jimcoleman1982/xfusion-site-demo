@@ -19,7 +19,7 @@ function Footer() {
         ['About',    'about/'],
         ['Careers',  'careers/'],
         ['Press',    'press/'],
-        ['Contact',  '#book'],
+        ['Contact',  "https://savvycal.com/xfusion/lets-chat"],
       ],
     },
     {
@@ -92,7 +92,7 @@ function Footer() {
           <div className="footer-cta" style={{
             display: 'flex', justifyContent: 'flex-end', alignItems: 'center',
           }}>
-            <a href="#book" style={{
+            <a href="https://savvycal.com/xfusion/lets-chat" style={{
               display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
               padding: '14px 22px', borderRadius: 999,
               background: '#B8512C', color: PAPER, textDecoration: 'none',

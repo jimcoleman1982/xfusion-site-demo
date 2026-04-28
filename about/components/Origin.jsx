@@ -66,7 +66,7 @@ function Origin() {
               We started with a handful of clients, paid our team members a meaningful living wage, invested in culture and team-building, and built a vetting framework (we call it <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 16, background: '#F8EBC9', padding: '1px 6px', borderRadius: 4 }}>TraitX</span>) that moves thousands of monthly applicants down to fewer than 100 interviews and the top under 1 percent into placement.
             </p>
             <p style={paraStyle}>
-              Six years later, we have about 80 team members across the Philippines, Kenya, and the United States. Our clients keep their xFusion team members for years. Our team members build careers, buy homes, and send kids to school. The retention numbers tell the story we set out to write.
+              Six years later, we have about 70 team members across the Philippines, Kenya, and the United States. Our clients keep their xFusion team members for years. Our team members build careers, buy homes, and send kids to school. The retention numbers tell the story we set out to write.
             </p>
             <div style={{
               marginTop: 48,
