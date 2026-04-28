@@ -35,34 +35,22 @@
 
   <script type="text/babel" data-presets="react">
     function App() {
-      const leaderQuotes = [
-        {
-          quote: "This is not your stereotypical outsourced support agency. Their expertise has freed me up to focus on running the business while keeping my customers well-supported.",
-          attribution: "Derrick Reimer, Founder, SavvyCal",
-        },
-        {
-          quote: "I was admittedly skeptical of the xFusion model at first, but they have proven that skepticism unwarranted.",
-          attribution: "Derrick Reimer, Founder, SavvyCal",
-        },
-        {
-          quote: "Outsourcing is a dirty word for a reason. xFusion is the reason I stopped saying that.",
-          attribution: "Derrick Reimer, Founder, SavvyCal",
-        },
+      const leaderImages = [
+        '../../images/shoutouts/savvycal/leadership/image13-1.png',
+        '../../images/shoutouts/savvycal/leadership/image3-667x184.png',
+        '../../images/shoutouts/savvycal/leadership/image5-775x79.png',
       ];
 
-      const customerQuotes = [
-        {
-          quote: "Fastest support I have ever gotten from a SaaS tool. Thank you.",
-          attribution: "SavvyCal customer",
-        },
-        {
-          quote: "I was expecting a canned reply. I got an actual answer that solved my problem.",
-          attribution: "SavvyCal customer",
-        },
-        {
-          quote: "Whoever runs your support is the reason I am sticking with this tool.",
-          attribution: "SavvyCal customer",
-        },
+      const customerImages = [
+        '../../images/shoutouts/savvycal/customers/savvycal-xfusion-1.png',
+        '../../images/shoutouts/savvycal/customers/savvycal-xfusion-2.png',
+        '../../images/shoutouts/savvycal/customers/savvycal-xfusion-3.png',
+        '../../images/shoutouts/savvycal/customers/savvycal-xfusion-4.png',
+        '../../images/shoutouts/savvycal/customers/savvycal-xfusion-5.png',
+        '../../images/shoutouts/savvycal/customers/savvycal-xfusion-6.png',
+        '../../images/shoutouts/savvycal/customers/savvycal-xfusion-7.png',
+        '../../images/shoutouts/savvycal/customers/savvycal-xfusion-8.png',
+        '../../images/shoutouts/savvycal/customers/savvycal-xfusion-9.png',
       ];
 
       return (
@@ -122,23 +110,21 @@
           </LongForm>
 
           {/* 8. Leader shoutouts */}
-          <ShoutoutGrid
+          <ShoutoutImageGrid
             eyebrow="In their own words"
-            heading="Shoutouts from SavvyCal leadership"
+            heading="Shoutouts to xFusion's team members from SavvyCal leadership"
             intro="Derrick has gone out of his way, more than once, to call out the xFusion team in public. He has shouted them out on The Art of Product podcast, in conversations with other founders, and in his own writing about how SavvyCal stays a small team that does big things."
-            quotes={leaderQuotes}
+            images={leaderImages}
             bg="butter"
-            cardStyle="paper"
           />
 
           {/* 9. Customer shoutouts */}
-          <ShoutoutGrid
+          <ShoutoutImageGrid
             eyebrow="From the inbox"
-            heading="Shoutouts from SavvyCal customers"
+            heading="Shoutouts from SavvyCal customers about xFusion's team members"
             intro="SavvyCal customers do not know they are writing to xFusion. They think they are writing to SavvyCal. That is the point. The reactions came back the way they come back when support is genuinely good."
-            quotes={customerQuotes}
+            images={customerImages}
             bg="paper"
-            cardStyle="butter"
           />
 
           {/* 10. Results */}

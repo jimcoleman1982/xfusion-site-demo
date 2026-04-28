@@ -30,7 +30,14 @@ function AboutHero() {
           </p>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
             <Button variant="primary" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a discovery call</Button>
-            <a href="#story" style={{
+            <a href="#story" onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById('story');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.replaceState(null, '', '#story');
+              }
+            }} style={{
               fontFamily: "'IBM Plex Sans', sans-serif",
               fontSize: 15,
               color: '#3A322D',
@@ -39,6 +46,7 @@ function AboutHero() {
               alignItems: 'center',
               gap: 6,
               padding: '14px 12px',
+              cursor: 'pointer',
             }}>
               Read the story <Icon name="arrow" size={14} />
             </a>

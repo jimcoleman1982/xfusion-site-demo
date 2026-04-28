@@ -757,8 +757,75 @@ function SectionDivider({ label, bg = 'paper' }) {
   );
 }
 
+// Image-based shoutout grid (sourced from xfusion.io originals)
+function ShoutoutImageGrid({ eyebrow, heading, intro, images, bg = 'paper' }) {
+  return (
+    <Section bg={bg} padding="lg" style={{ paddingTop: 96, paddingBottom: 96 }}>
+      <Container>
+        <div style={{ maxWidth: 720, marginBottom: 48 }}>
+          {eyebrow && (
+            <div style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: 11,
+              fontWeight: 500,
+              textTransform: 'uppercase',
+              letterSpacing: '0.18em',
+              color: '#B8512C',
+              marginBottom: 20,
+            }}>{eyebrow}</div>
+          )}
+          <h2 style={{
+            fontFamily: "'Source Serif 4', serif",
+            fontSize: 'clamp(30px, 3.4vw, 44px)',
+            fontWeight: 400,
+            lineHeight: 1.1,
+            letterSpacing: '-0.02em',
+            margin: '0 0 16px',
+            color: '#1F1A17',
+            textWrap: 'balance',
+          }}>{heading}</h2>
+          {intro && (
+            <p style={{
+              fontFamily: "'IBM Plex Sans', sans-serif",
+              fontSize: 16, lineHeight: 1.6,
+              color: '#3A322D', margin: 0, textWrap: 'pretty',
+            }}>{intro}</p>
+          )}
+        </div>
+        <div className="sig-grid" style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: 20,
+        }}>
+          {images.map((src, i) => (
+            <figure key={i} style={{
+              margin: 0, padding: 16,
+              background: '#F7F2EB',
+              border: '1px solid #D9CFBF',
+              borderRadius: 12,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <img
+                src={src}
+                alt={`Shoutout ${i + 1}`}
+                loading="lazy"
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 8 }}
+              />
+            </figure>
+          ))}
+        </div>
+      </Container>
+      <style>{`
+        @media (max-width: 720px) { .sig-grid { grid-template-columns: 1fr !important; } }
+      `}</style>
+    </Section>
+  );
+}
+
 Object.assign(window, {
   PageHeader, OverviewBox, LongForm, TestimonialFeature,
-  MetricCallout, ShoutoutGrid, CTASection, SectionDivider,
+  MetricCallout, ShoutoutGrid, ShoutoutImageGrid, CTASection, SectionDivider,
   PhotoFrame, DropCap, PlaceholderCard,
 });

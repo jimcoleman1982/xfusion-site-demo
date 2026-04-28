@@ -24,7 +24,7 @@ function Chatbot() {
           fontFamily: "'IBM Plex Sans', sans-serif",
           fontSize: 19,
           lineHeight: 1.65,
-          color: '#F0D9A8',
+          color: '#F7F2EB',
           maxWidth: 720,
         }}>
           <p style={{ margin: 0 }}>
@@ -32,7 +32,7 @@ function Chatbot() {
               fontFamily: "'Source Serif 4', serif",
               fontSize: 64,
               fontWeight: 600,
-              color: '#F7F2EB',
+              color: '#B8512C',
               float: 'left',
               lineHeight: 0.9,
               marginRight: 16,

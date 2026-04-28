@@ -8,7 +8,7 @@ function HowItWorks() {
     },
     {
       icon: 'filter',
-      title: 'Candidate Panel in ~14 Days',
+      title: 'Candidate Panel in ~14 Days or Less',
       body: 'We run our TraitX Framework against your specific role. About two weeks later, you get a short panel of senior, AI-trained candidates with redacted resumes and Zoom interview recordings. You watch the videos and pick who you want to meet.',
     },
     {
@@ -38,7 +38,7 @@ function HowItWorks() {
             color: '#1F1A17',
             textWrap: 'balance',
           }}>
-            From "I need help" to "they just started" in about two weeks.
+            From "I need help" to "they just started" in about two weeks or less.
           </h2>
           <p style={{
             fontFamily: "'IBM Plex Sans', sans-serif",

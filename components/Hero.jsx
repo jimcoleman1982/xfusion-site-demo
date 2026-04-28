@@ -10,7 +10,7 @@ function Hero() {
           alignItems: 'center',
         }} className="hero-grid">
           <div>
-            <Eyebrow>Fully managed customer support staffing. Senior agents, AI-augmented.</Eyebrow>
+            <Eyebrow>Fully managed customer support solution. Senior agents, AI-augmented.</Eyebrow>
             <h1 style={{
               fontFamily: "'Source Serif 4', serif",
               fontSize: 'clamp(40px, 5.4vw, 72px)',
@@ -32,7 +32,7 @@ function Hero() {
               maxWidth: 580,
               textWrap: 'pretty',
             }}>
-              We recruit, vet, train, place, and manage a senior customer support agent inside your business. They use AI to handle the volume of two junior reps, and we handle everything else (recruiting, payroll, culture, performance) so you don't have to.
+              We recruit, vet, train, place, and manage senior customer support agents inside your business. They use AI to handle the volume of multiple junior reps, and we handle everything else (recruiting, payroll, culture, performance) so you don't have to.
             </p>
             <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
               <Button variant="primary" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>

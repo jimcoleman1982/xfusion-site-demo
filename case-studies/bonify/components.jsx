@@ -851,8 +851,64 @@ function Footer() {
   );
 }
 
+/* ---------- Image-based shoutout grid (sourced from xfusion.io originals) ---------- */
+function ShoutoutImageGrid({ heading, eyebrow, intro, images, bg = 'paper' }) {
+  return (
+    <Section bg={bg} padding="lg">
+      <Container>
+        <div style={{ maxWidth: 720, marginBottom: 48 }}>
+          {eyebrow && <Eyebrow color="#6B5F56" style={{ marginBottom: 16 }}>{eyebrow}</Eyebrow>}
+          <h2 style={{
+            fontFamily: "'Source Serif 4', serif",
+            fontSize: 'clamp(32px, 4vw, 48px)',
+            fontWeight: 400, lineHeight: 1.1,
+            letterSpacing: '-0.02em',
+            margin: '0 0 16px', color: '#1F1A17',
+            textWrap: 'balance',
+          }}>{heading}</h2>
+          {intro && (
+            <p style={{
+              fontFamily: "'IBM Plex Sans', sans-serif",
+              fontSize: 16, lineHeight: 1.6,
+              color: '#3A322D', margin: 0, textWrap: 'pretty',
+            }}>{intro}</p>
+          )}
+        </div>
+        <div className="sig-grid" style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: 20,
+        }}>
+          {images.map((src, i) => (
+            <figure key={i} style={{
+              margin: 0,
+              padding: 16,
+              background: '#F7F2EB',
+              border: '1px solid #D9CFBF',
+              borderRadius: 12,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <img
+                src={src}
+                alt={`Shoutout ${i + 1}`}
+                loading="lazy"
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 8 }}
+              />
+            </figure>
+          ))}
+        </div>
+      </Container>
+      <style>{`
+        @media (max-width: 720px) { .sig-grid { grid-template-columns: 1fr !important; } }
+      `}</style>
+    </Section>
+  );
+}
+
 Object.assign(window, {
   Container, Section, Eyebrow, Button, PortraitPlaceholder,
   Nav, PageHeader, OverviewBox, LongForm, InlinePullquote,
-  TestimonialFeature, MetricCallout, ShoutoutGrid, CTASection, Footer,
+  TestimonialFeature, MetricCallout, ShoutoutGrid, ShoutoutImageGrid, CTASection, Footer,
 });

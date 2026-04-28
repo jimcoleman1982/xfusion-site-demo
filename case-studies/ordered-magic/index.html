@@ -61,6 +61,24 @@
       "The biggest result, in Toby's own framing, was not a number. It was that the way he thought about the future of the business changed. He went into the partnership expecting outsourcing to compromise the brand and the customer experience. He came out of it with a multi-person support team that protected both, ran the function without him, and freed him to spend his hours on the part of the business only he could move forward.",
     ];
 
+    const leaderImages = [
+      '../../images/shoutouts/ordered-magic/leadership/xfusion-4.jpg',
+      '../../images/shoutouts/ordered-magic/leadership/xfusion-1.jpg',
+      '../../images/shoutouts/ordered-magic/leadership/xfusion-2.jpg',
+      '../../images/shoutouts/ordered-magic/leadership/xfusion-3.jpg',
+      '../../images/shoutouts/ordered-magic/leadership/xfusion-1.png',
+    ];
+
+    const customerImages = [
+      '../../images/shoutouts/ordered-magic/customers/xfusion-2.png',
+      '../../images/shoutouts/ordered-magic/customers/xfusion-10.png',
+      '../../images/shoutouts/ordered-magic/customers/xfusion-5.png',
+      '../../images/shoutouts/ordered-magic/customers/xfusion-9.png',
+      '../../images/shoutouts/ordered-magic/customers/xfusion-11.png',
+      '../../images/shoutouts/ordered-magic/customers/xfusion-7.png',
+      '../../images/shoutouts/ordered-magic/customers/xfusion-8.png',
+    ];
+
     function App() {
       return (
         <div data-screen-label="Ordered Magic case study">
@@ -98,19 +116,17 @@
             id="solution"
           />
 
-          <ShoutoutGrid
+          <ShoutoutImageGrid
             eyebrow="In their words"
-            heading="Shoutouts from Ordered Magic leaders"
-            kind="leader"
-            columns={3}
+            heading="Shoutouts to xFusion's team members from Ordered Magic leadership"
+            images={leaderImages}
             bg="paper-2"
           />
 
-          <ShoutoutGrid
+          <ShoutoutImageGrid
             eyebrow="From the merchants"
-            heading="Shoutouts from Ordered Magic customers"
-            kind="customer"
-            columns={3}
+            heading="Shoutouts from Ordered Magic customers about xFusion's team members"
+            images={customerImages}
             bg="paper"
           />
 

@@ -54,71 +54,24 @@
       "Beyond the metrics, the partnership did what John originally hoped. It gave him and Dan back the ability to disconnect. After years of being on call for their own product, both founders could take real breaks and trust that the support side of the business was in good hands. The reviews kept coming in praising Kenny and Patrick by name. The product roadmap that had been blocked by support overhead started moving again. The relationship is still going.",
     ];
 
-    const leaderShoutouts = [
-      {
-        quote: "Just want to say how appreciative @john and I are of the job that @Patrick and @Kenny are doing on the app support. Absolutely fantastic job guys. Many of the positive reviews the apps receive mention the great support the customer gets. Great job!",
-        name: "Dan Pepin",
-        role: "Cofounder, Bonify",
-      },
-      {
-        quote: "Great job as always @Kenny and @Patrick.",
-        name: "Daniel",
-        role: "Bonify",
-      },
-      {
-        quote: "Awesome! Great job handling things over Christmas @Patrick and @Kenny. Dan and I haven't been able to actually disconnect from work and take a real break in years. I can't thank you guys enough.",
-        name: "John Carbone",
-        role: "Founder, Bonify",
-      },
-      {
-        quote: "Yes, we very much appreciate the great support! It has literally been years since we've been able to disconnect for more than a few hours lol.",
-        name: "Dan Pepin",
-        role: "Cofounder, Bonify",
-      },
-      {
-        quote: "Just want to give props for the latest great reviews in Arigato Automation. Many people point out the \"amazing support\". Great job!",
-        name: "Dan Pepin",
-        role: "Cofounder, Bonify",
-      },
+    const leaderImages = [
+      '../../images/shoutouts/bonify/leadership/image18.png',
+      '../../images/shoutouts/bonify/leadership/xfusion-bonify.png',
+      '../../images/shoutouts/bonify/leadership/image13-2.png',
     ];
 
-    const customerShoutouts = [
-      {
-        quote: "Thanks to Kenny and Patrick, they are the most dedicated guys I have ever met. Just tell them and they will make it happen!",
-        store: "JEANS4YOU.LT",
-        country: "Lithuania",
-        date: "Oct 12, 2021",
-      },
-      {
-        quote: "Great app that I was able to use instead of building a custom Shopify app. Patrick M. provided outstanding customer support, as well.",
-        store: "vitalyuk",
-        country: "Canada",
-        date: "Apr 30, 2021",
-      },
-      {
-        quote: "Awesome customer service. Kenny.M was able to help me solve my problem in no time and exactly understood what the issue was.",
-        store: "PET CANVA",
-        country: "Japan",
-        date: "Aug 20, 2022",
-      },
-      {
-        quote: "This app is incredible in terms of possibilities for a store. There was a particularly unique automation I was trying to figure out, and Patrick on their team helped get it done.",
-        store: "Trendstack",
-        country: "United States",
-        date: "Oct 10, 2022",
-      },
-      {
-        quote: "Best App you could find on Shopify. Support team, Kenny is the guy to go. Can literally solve anything. If you're hoping to automate any tasks or any API/HTTP requests this is the app.",
-        store: "Pivo-eu",
-        country: "Netherlands",
-        date: "Jan 5, 2022",
-      },
-      {
-        quote: "This app has been a GAME CHANGER for me and my business. We've saved tons of time automating some of our workflows (not to mention money) and everything has been running super smoothly. The support team are incredible. Nothing was too hard or unachievable. Special shout out to Kenny for working his magic and making everything work!",
-        store: "The Coco Studio",
-        country: "Australia",
-        date: "Aug 31, 2022",
-      },
+    const customerImages = [
+      '../../images/shoutouts/bonify/customers/image14.png',
+      '../../images/shoutouts/bonify/customers/image7-1.png',
+      '../../images/shoutouts/bonify/customers/image3-2.png',
+      '../../images/shoutouts/bonify/customers/image16.png',
+      '../../images/shoutouts/bonify/customers/image17.png',
+      '../../images/shoutouts/bonify/customers/image5-1.png',
+      '../../images/shoutouts/bonify/customers/image6-2.png',
+      '../../images/shoutouts/bonify/customers/image8-2.png',
+      '../../images/shoutouts/bonify/customers/image10-1.png',
+      '../../images/shoutouts/bonify/customers/image2-2.png',
+      '../../images/shoutouts/bonify/customers/image9-1.png',
     ];
 
     function App() {
@@ -134,19 +87,17 @@
           <LongForm heading="The challenge" paragraphs={challengeParagraphs} bg="paper" />
           <div style={{ borderTop: '1px solid #D9CFBF' }} />
           <LongForm heading="The solution" paragraphs={solutionParagraphs} bg="paper" />
-          <ShoutoutGrid
-            heading="Shoutouts from Bonify leaders"
+          <ShoutoutImageGrid
+            heading="Shoutouts to xFusion's team members from Bonify leadership"
             eyebrow="From the Slack channel"
-            cards={leaderShoutouts}
+            images={leaderImages}
             bg="paper-2"
-            kind="leader"
           />
-          <ShoutoutGrid
-            heading="Shoutouts from Bonify customers"
+          <ShoutoutImageGrid
+            heading="Shoutouts from Bonify customers about xFusion's team members"
             eyebrow="From the Shopify App Store"
-            cards={customerShoutouts}
+            images={customerImages}
             bg="paper"
-            kind="customer"
           />
           <LongForm heading="The results" paragraphs={resultsParagraphs} bg="paper-2" />
           <CTASection />

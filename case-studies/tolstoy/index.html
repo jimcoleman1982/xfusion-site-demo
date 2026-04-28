@@ -59,6 +59,41 @@ const resultsParagraphs = [
   "The business impact compounded. Tolstoy's leadership stopped thinking about customer support as a problem to solve. The development team got back the time they had been spending on customer-facing fires. The leadership team got room to focus on the next phase of growth. The customer experience kept getting stronger as the xFusion team added better documentation, faster routing, and tighter alignment with Tolstoy's brand voice.",
 ];
 
+const leaderImages = [
+  '../../images/shoutouts/tolstoy/leadership/image1-1.png',
+  '../../images/shoutouts/tolstoy/leadership/image22-1.png',
+  '../../images/shoutouts/tolstoy/leadership/image30-1.png',
+  '../../images/shoutouts/tolstoy/leadership/image11-1.png',
+  '../../images/shoutouts/tolstoy/leadership/image27-1.png',
+  '../../images/shoutouts/tolstoy/leadership/image3-1.png',
+  '../../images/shoutouts/tolstoy/leadership/image12-1.png',
+  '../../images/shoutouts/tolstoy/leadership/image45.png',
+  '../../images/shoutouts/tolstoy/leadership/image31-1.png',
+  '../../images/shoutouts/tolstoy/leadership/image36-1.png',
+];
+
+const customerImages = [
+  '../../images/shoutouts/tolstoy/customers/image2-1.png',
+  '../../images/shoutouts/tolstoy/customers/image4-1.png',
+  '../../images/shoutouts/tolstoy/customers/image5-1.png',
+  '../../images/shoutouts/tolstoy/customers/image6-1.png',
+  '../../images/shoutouts/tolstoy/customers/image8-1.png',
+  '../../images/shoutouts/tolstoy/customers/image10-1.png',
+  '../../images/shoutouts/tolstoy/customers/image16-1.png',
+  '../../images/shoutouts/tolstoy/customers/image17-1.png',
+  '../../images/shoutouts/tolstoy/customers/image18-1.png',
+  '../../images/shoutouts/tolstoy/customers/image19-1.png',
+  '../../images/shoutouts/tolstoy/customers/image21-1.png',
+  '../../images/shoutouts/tolstoy/customers/image26-1.png',
+  '../../images/shoutouts/tolstoy/customers/image28-1.png',
+  '../../images/shoutouts/tolstoy/customers/image29-1.png',
+  '../../images/shoutouts/tolstoy/customers/image35-1.png',
+  '../../images/shoutouts/tolstoy/customers/image37-1.png',
+  '../../images/shoutouts/tolstoy/customers/image39.png',
+  '../../images/shoutouts/tolstoy/customers/image44.png',
+  '../../images/shoutouts/tolstoy/customers/image46.png',
+];
+
 function Page() {
   return (
     <>
@@ -113,21 +148,19 @@ function Page() {
         bg="paper-2"
       />
 
-      <ShoutoutGrid
+      <ShoutoutImageGrid
         eyebrow="04 · From the inside"
-        heading="Shoutouts from Tolstoy leaders"
+        heading="Shoutouts to xFusion's team members from Tolstoy leadership"
         intro="What Tolstoy's leadership team has to say about working with the xFusion team day-to-day."
-        type="leader"
-        count={3}
+        images={leaderImages}
         bg="paper"
       />
 
-      <ShoutoutGrid
+      <ShoutoutImageGrid
         eyebrow="05 · From the outside"
-        heading="Shoutouts from Tolstoy customers"
+        heading="Shoutouts from Tolstoy customers about xFusion's team members"
         intro="5-star Shopify app reviews where customers called out xFusion team members by name."
-        type="customer"
-        count={3}
+        images={customerImages}
         bg="paper-2"
       />
 

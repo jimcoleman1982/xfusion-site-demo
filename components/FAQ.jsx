@@ -22,7 +22,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What roles can you fill?',
-    a: "Customer support, specifically. Every placement is a senior, AI-augmented CS agent who can handle Tier 1, Tier 2, and a chunk of what used to require CS-engineering escalation (because they're trained to oversee AI workflows). If you need a different kind of role, ask on the discovery call. We'll be honest about whether we can help.",
+    a: "Customer support, primarily. Every CS placement is a senior, AI-augmented agent who can handle Tier 1, Tier 2, and a chunk of what used to require CS-engineering escalation (because they're trained to oversee AI workflows). We also place inside sales team members who work inbound leads (not cold calling) and AI operators who run AI workflows alongside your team. If you need a different kind of role, ask on the discovery call. We'll be honest about whether we can help.",
   },
   {
     q: 'Where does your talent come from?',

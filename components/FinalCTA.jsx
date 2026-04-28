@@ -21,7 +21,7 @@ function FinalCTA() {
             fontFamily: "'IBM Plex Sans', sans-serif",
             fontSize: 19,
             lineHeight: 1.65,
-            color: '#F0D9A8',
+            color: '#F7F2EB',
             margin: '0 auto 40px',
             textWrap: 'pretty',
             textAlign: 'left',
@@ -42,7 +42,7 @@ function FinalCTA() {
               fontFamily: "'IBM Plex Sans', sans-serif",
               fontSize: 13,
               lineHeight: 1.5,
-              color: '#F0D9A8',
+              color: '#F7F2EB',
               opacity: 0.85,
               marginTop: 14,
             }}>

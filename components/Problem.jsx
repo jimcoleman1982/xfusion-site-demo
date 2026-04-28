@@ -69,7 +69,7 @@ function Problem() {
             letterSpacing: '0.12em',
             color: '#6B5F56',
           }}>
-            John Carbone, Bonify
+            John Carbone, Bonify. A current xFusion client.
           </figcaption>
         </figure>
       </Container>

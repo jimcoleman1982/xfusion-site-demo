@@ -50,10 +50,6 @@ function Footer() {
     <footer style={{ background: FOREST, color: PAPER }}>
       <Container>
         <div className="footer-top" style={{
-          display: 'grid',
-          gridTemplateColumns: '1.4fr 1fr',
-          gap: 32,
-          alignItems: 'center',
           paddingTop: 64,
           paddingBottom: 40,
           borderBottom: `1px solid ${DIVIDER}`,
@@ -85,18 +81,6 @@ function Footer() {
             }}>
               Senior, AI-augmented customer support agents for small businesses. Since 2020.
             </p>
-          </div>
-          <div className="footer-cta" style={{
-            display: 'flex', justifyContent: 'flex-end', alignItems: 'center',
-          }}>
-            <a href="https://savvycal.com/xfusion/lets-chat" style={{
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-              padding: '14px 22px', borderRadius: 999,
-              background: '#B8512C', color: PAPER, textDecoration: 'none',
-              fontFamily: "'IBM Plex Sans', sans-serif",
-              fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em',
-              border: '1px solid transparent',
-            }}>Book a Discovery Call</a>
           </div>
         </div>
 
@@ -150,8 +134,6 @@ function Footer() {
       <style>{`
         .footer-link:hover { color: ${BUTTER}; }
         @media (max-width: 900px) {
-          .footer-top { grid-template-columns: 1fr !important; gap: 20px !important; }
-          .footer-cta { justify-content: flex-start !important; }
           .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
           .footer-legal { flex-direction: column; align-items: flex-start !important; }
         }

@@ -155,7 +155,7 @@ function Testimonials() {
             alignItems: 'center',
             justifyContent: 'center',
           }}>
-            {['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy', 'Convesio', 'Freak Athlete'].map(name => (
+            {['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy'].map(name => (
               <span key={name} style={{
                 fontFamily: "'Source Serif 4', serif",
                 fontSize: 20,

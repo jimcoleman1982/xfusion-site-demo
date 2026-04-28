@@ -39,7 +39,7 @@ function Solution() {
             color: '#1F1A17',
             textWrap: 'balance',
           }}>
-            A senior CS agent who runs on AI leverage. Fully managed by us.
+            Senior CS agents who run on AI leverage. Fully managed by us.
           </h2>
           <p style={{
             fontFamily: "'IBM Plex Sans', sans-serif",

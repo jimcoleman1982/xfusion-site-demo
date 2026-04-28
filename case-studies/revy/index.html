@@ -74,6 +74,21 @@
         "The biggest result is the role shift. Marcelo went from being the support rep, the engineer, and the product manager to just being the engineer and the product manager. That is the role he is good at and the role Revy needs him in. The apps have kept improving, the merchant base has kept growing, and the partnership with xFusion has kept running, year after year, since May 2020.",
       ];
 
+      const leaderImages = [
+        '../../images/shoutouts/revy/leadership/image13.png',
+        '../../images/shoutouts/revy/leadership/image1.png',
+        '../../images/shoutouts/revy/leadership/image6.png',
+      ];
+
+      const customerImages = [
+        '../../images/shoutouts/revy/customers/image11.png',
+        '../../images/shoutouts/revy/customers/image12.png',
+        '../../images/shoutouts/revy/customers/image2.png',
+        '../../images/shoutouts/revy/customers/image3.png',
+        '../../images/shoutouts/revy/customers/image8.png',
+        '../../images/shoutouts/revy/customers/image10.png',
+      ];
+
       return (
         <React.Fragment>
           <CaseStudyNav />
@@ -129,21 +144,17 @@
             bg="paper"
           />
 
-          <ShoutoutGrid
+          <ShoutoutImageGrid
             eyebrow="Section 03"
-            heading="Shoutouts from Revy leaders"
-            caption="Quotes coming soon. Sourced from Revy team Slack and email during the final build pass."
-            count={3}
-            kind="leader"
+            heading="Shoutouts to xFusion's team members from Revy's founder"
+            images={leaderImages}
             bg="paper-2"
           />
 
-          <ShoutoutGrid
+          <ShoutoutImageGrid
             eyebrow="Section 04"
-            heading="Shoutouts from Revy customers"
-            caption="Quotes coming soon. 5-star Shopify App Store reviews on Unlimited Bundles & Discounts and Unlimited Smart UpSell Offers that mention xFusion's agent by name."
-            count={3}
-            kind="customer"
+            heading="Shoutouts from Revy customers about xFusion's team members"
+            images={customerImages}
             bg="paper"
           />
 

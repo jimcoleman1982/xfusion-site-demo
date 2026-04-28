@@ -135,4 +135,95 @@ function ShoutoutCard({ quote, attribution, index, cardStyle }) {
   );
 }
 
+// Image-based shoutout grid. Used for screenshot-style shoutouts (tweets, Slack
+// messages, support replies, app store reviews) sourced from the original case
+// studies on xfusion.io.
+function ShoutoutImageGrid({ eyebrow, heading, intro, images, bg = 'butter' }) {
+  return (
+    <Section bg={bg} padding="lg" style={{ paddingTop: 96, paddingBottom: 96 }}>
+      <Container>
+        <div style={{ maxWidth: 1040, margin: '0 auto 56px' }}>
+          {eyebrow && (
+            <div style={{
+              fontFamily: "'JetBrains Mono', ui-monospace, monospace",
+              fontSize: 11,
+              fontWeight: 600,
+              textTransform: 'uppercase',
+              letterSpacing: '0.18em',
+              color: '#B8512C',
+              marginBottom: 20,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+            }}>
+              <span style={{ display: 'inline-block', width: 24, height: 1, background: '#B8512C' }}/>
+              {eyebrow}
+            </div>
+          )}
+          <h2 style={{
+            fontFamily: "'Source Serif 4', serif",
+            fontSize: 'clamp(32px, 4vw, 48px)',
+            fontWeight: 400,
+            lineHeight: 1.1,
+            letterSpacing: '-0.02em',
+            margin: '0 0 24px',
+            color: '#1F1A17',
+            textWrap: 'balance',
+            maxWidth: 760,
+          }}>{heading}</h2>
+          {intro && (
+            <p style={{
+              fontFamily: "'IBM Plex Sans', sans-serif",
+              fontSize: 17,
+              lineHeight: 1.6,
+              color: '#3A322D',
+              margin: 0,
+              maxWidth: 760,
+              textWrap: 'pretty',
+            }}>{intro}</p>
+          )}
+        </div>
+        <div className="sig-grid" style={{
+          maxWidth: 1100,
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: 20,
+        }}>
+          {images.map((src, i) => (
+            <figure key={i} style={{
+              margin: 0,
+              padding: 16,
+              background: '#F7F2EB',
+              border: '1px solid #D9CFBF',
+              borderRadius: 12,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <img
+                src={src}
+                alt={`Shoutout ${i + 1}`}
+                loading="lazy"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  borderRadius: 8,
+                }}
+              />
+            </figure>
+          ))}
+        </div>
+      </Container>
+      <style>{`
+        @media (max-width: 720px) {
+          .sig-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </Section>
+  );
+}
+
 window.ShoutoutGrid = ShoutoutGrid;
+window.ShoutoutImageGrid = ShoutoutImageGrid;

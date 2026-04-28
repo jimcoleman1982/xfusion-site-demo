@@ -57,16 +57,32 @@
         "The partnership has run for years and continues today. TheReceptionist has expanded the relationship several times, bringing on additional contract positions across support and sales as the work has grown. With the front line in trusted hands, TheReceptionist\u2019s internal team has been able to shift attention back to the product work and internal projects that needed it.",
       ];
 
-      const leaderShoutouts = [
-        { quote: "[Leader shoutout coming soon]", attribution: "TheReceptionist leadership" },
-        { quote: "[Leader shoutout coming soon]", attribution: "TheReceptionist leadership" },
-        { quote: "[Leader shoutout coming soon]", attribution: "TheReceptionist leadership" },
+      const leaderImages = [
+        '../../images/shoutouts/the-receptionist/leadership/image27.png',
+        '../../images/shoutouts/the-receptionist/leadership/image7.png',
+        '../../images/shoutouts/the-receptionist/leadership/image10.png',
+        '../../images/shoutouts/the-receptionist/leadership/image18.png',
+        '../../images/shoutouts/the-receptionist/leadership/image21.png',
+        '../../images/shoutouts/the-receptionist/leadership/image4.png',
+        '../../images/shoutouts/the-receptionist/leadership/image32.png',
+        '../../images/shoutouts/the-receptionist/leadership/image8.png',
       ];
 
-      const customerShoutouts = [
-        { quote: "Barbara was AMAZING!",   attribution: "TheReceptionist customer" },
-        { quote: "Linda rocks!",           attribution: "TheReceptionist customer" },
-        { quote: "Francis was so polite.", attribution: "TheReceptionist customer" },
+      const customerImages = [
+        '../../images/shoutouts/the-receptionist/customers/image5.png',
+        '../../images/shoutouts/the-receptionist/customers/image35.png',
+        '../../images/shoutouts/the-receptionist/customers/image17.png',
+        '../../images/shoutouts/the-receptionist/customers/image37.png',
+        '../../images/shoutouts/the-receptionist/customers/image30.png',
+        '../../images/shoutouts/the-receptionist/customers/image1.png',
+        '../../images/shoutouts/the-receptionist/customers/image29.png',
+        '../../images/shoutouts/the-receptionist/customers/image16.png',
+        '../../images/shoutouts/the-receptionist/customers/image20.png',
+        '../../images/shoutouts/the-receptionist/customers/image36.png',
+        '../../images/shoutouts/the-receptionist/customers/image23.png',
+        '../../images/shoutouts/the-receptionist/customers/image31.png',
+        '../../images/shoutouts/the-receptionist/customers/image33.png',
+        '../../images/shoutouts/the-receptionist/customers/image34.png',
       ];
 
       return (
@@ -104,19 +120,16 @@
             bg="paper-2"
           />
 
-          <ShoutoutGrid
-            heading="Shoutouts from TheReceptionist leaders"
-            intro="Quotes coming soon. The live case study surfaces these as embedded screenshots, so the verbatim text will be pulled in before publication."
-            cards={leaderShoutouts}
+          <ShoutoutImageGrid
+            heading="Shoutouts to xFusion's team members from TheReceptionist leadership"
+            images={leaderImages}
             bg="paper"
-            placeholder
           />
 
-          <ShoutoutGrid
-            heading="Shoutouts from TheReceptionist customers"
+          <ShoutoutImageGrid
+            heading="Shoutouts from TheReceptionist customers about xFusion's team members"
             intro={"TheReceptionist\u2019s customers do not know they are writing to xFusion. They think they are writing to TheReceptionist. That is the point. And the names of xFusion team members keep showing up in customer feedback by name."}
-            cards={customerShoutouts}
-            footnote="Additional customer shoutouts surface on the live case study page as embedded screenshots. The verbatim text for those will be pulled in before publication."
+            images={customerImages}
             bg="butter"
           />
 
