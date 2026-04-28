@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TheReceptionist case study | xFusion</title>
+  <meta name="description" content="How TheReceptionist held a 98.9% CSAT score, kept its Radical Support reputation intact, and expanded its partnership several times by outsourcing support and sales to xFusion.">
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #F7F2EB; color: #1F1A17; }
+    *:focus-visible { outline: 2px solid #B8512C; outline-offset: 3px; border-radius: 4px; }
+    button:focus-visible, a:focus-visible { outline-offset: 4px; }
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="components/Primitives.jsx"></script>
+  <script type="text/babel" src="components/Nav.jsx"></script>
+  <script type="text/babel" src="components/Footer.jsx"></script>
+  <script type="text/babel" src="components/CaseStudySections.jsx"></script>
+  <script type="text/babel" src="components/Shoutouts.jsx"></script>
+
+  <script type="text/babel" data-presets="react">
+    function App() {
+      const aboutCopy = [
+        "TheReceptionist for iPad has been one of the most widely used visitor management systems in the world since 2013. The product runs in over 5,500 offices across more than 35 countries. It handles visitor logging, two-way communication over SMS and email, badge printing, and custom check-in workflows for everyone from a single-location office to a multinational with thousands of employees.",
+        "In 2020 and 2021, TheReceptionist shipped contactless check-in so its customers could keep welcoming guests without putting anyone at risk. That instinct, ship the thing the customer needs the moment they need it, is the same instinct that built the rest of the company.",
+        "Two ideas hold the place together. The first is Radical Support, the company\u2019s name for the kind of customer service that goes a step further than anyone expects. The second is Employee Supremacy, an internal operating model built on the belief that taking great care of employees is what produces great care for customers. Those are not slogans. They are how the company hires, how it trains, and how it talks about itself.",
+      ];
+
+      const challengeCopy = [
+        "TheReceptionist had built a reputation that most software companies envy. Customers loved the product, but they loved the support even more. Radical Support was not a marketing line. It was the lived experience customers got when they reached out, and it was a real piece of why the company kept growing.",
+        "That reputation also meant the company had something to lose.",
+        "When TheReceptionist decided to outsource part of its customer support and sales work, the leadership team was clear-eyed about the risk. Outsourcing carries baggage. It carries stories about scripted replies, about reps who do not understand the product, about agents treating customers like tickets to close instead of people to help. The wrong partner would not just miss the bar. The wrong partner would erode something the company had spent years building.",
+        "There was a second piece, harder to write into a contract. TheReceptionist runs on Employee Supremacy. The premise is that you cannot fake great customer care. It comes out of how the company treats the people doing the work. Most outsourced shops run the opposite model. They treat their agents as interchangeable, pay them poorly, churn through them, and pass the consequences back to the client.",
+        "So the search was not really for a vendor. It was for a partner whose internal operating model resembled TheReceptionist\u2019s own. A partner that took care of its people the way TheReceptionist takes care of its people, because the math only works if both sides do. If that partner did not exist, the company was prepared to keep the work in-house indefinitely.",
+      ];
+
+      const solutionCopy = [
+        "The first conversation was the test, and Tom remembers it. Jim and David showed up talking about how they treat their team and why. The values matched on the first call.",
+        "From there xFusion did the work that earned the partnership.",
+        "The team studied TheReceptionist before placing anyone. xFusion went deep on the company\u2019s culture, on how Radical Support actually showed up in real customer conversations, on what Employee Supremacy looked like from the inside, and on what TheReceptionist\u2019s customers had come to expect. The training was not generic onboarding. It was built around teaching xFusion\u2019s team members how to be part of TheReceptionist.",
+        "To keep the partnership tight day to day, xFusion opened a two-way Slack channel. That channel was not a status board. It was a working space, where TheReceptionist could give feedback in the moment and xFusion could surface what it was seeing in the queue. Adjustments happened in hours, not weeks.",
+        "The rollout itself was phased. TheReceptionist was not asked to hand over the keys on day one. The integration moved a step at a time so the team could watch the quality of every customer interaction and confirm the standard was being held before scope expanded.",
+        "The KPIs reflected the same thinking. Customer satisfaction and response time were tracked. So were employee satisfaction and cultural fit on the xFusion side, because both companies believed the second set of numbers was upstream of the first. The whole approach was built to disprove a stigma. Outsourced did not have to mean diluted. With the right partner, it could mean better.",
+      ];
+
+      const resultsCopy = [
+        "The numbers landed where the values pointed.",
+        "xFusion cleared TheReceptionist\u2019s stated 85% CSAT bar by nearly 14 points, holding at 98.9% CSAT, and posted a perfect 100% CSAT in the majority of months since the partnership began. Average first response time settled at 1 minute and 22 seconds, consistent with the benchmark TheReceptionist had set internally before xFusion came in, and held across higher volume. Initial ticket volume sat around 63 conversations. By March and April of 2023 the team was handling a peak of 375 tickets a month without the quality numbers moving. Reopened tickets stayed minimal, because customers got a clear answer the first time, with relevant articles attached and the right context, so the queue did not double back on itself.",
+        "The clearest qualitative signal was that customers kept thanking individual xFusion team members by name. When a customer writes in to compliment a specific person, they are not thinking about an outsourced vendor. They are thinking about the company they trust. That was the bar TheReceptionist had set for itself, and the xFusion team kept clearing it.",
+        "The partnership has run for years and continues today. TheReceptionist has expanded the relationship several times, bringing on additional contract positions across support and sales as the work has grown. With the front line in trusted hands, TheReceptionist\u2019s internal team has been able to shift attention back to the product work and internal projects that needed it.",
+      ];
+
+      const leaderShoutouts = [
+        { quote: "[Leader shoutout coming soon]", attribution: "TheReceptionist leadership" },
+        { quote: "[Leader shoutout coming soon]", attribution: "TheReceptionist leadership" },
+        { quote: "[Leader shoutout coming soon]", attribution: "TheReceptionist leadership" },
+      ];
+
+      const customerShoutouts = [
+        { quote: "Barbara was AMAZING!",   attribution: "TheReceptionist customer" },
+        { quote: "Linda rocks!",           attribution: "TheReceptionist customer" },
+        { quote: "Francis was so polite.", attribution: "TheReceptionist customer" },
+      ];
+
+      return (
+        <div>
+          <Nav current="Case studies" />
+
+          <PageHeader />
+          <OverviewBox />
+
+          <SectionRule />
+          <LongForm
+            eyebrow="The company"
+            heading="About TheReceptionist"
+            paragraphs={aboutCopy}
+            bg="paper"
+          />
+
+          <TestimonialFeature />
+
+          <MetricCallout />
+
+          <SectionRule />
+          <LongForm
+            eyebrow="Section 06"
+            heading="The challenge"
+            paragraphs={challengeCopy}
+            bg="paper"
+          />
+
+          <SectionRule />
+          <LongForm
+            eyebrow="Section 07"
+            heading="The solution"
+            paragraphs={solutionCopy}
+            bg="paper-2"
+          />
+
+          <ShoutoutGrid
+            heading="Shoutouts from TheReceptionist leaders"
+            intro="Quotes coming soon. The live case study surfaces these as embedded screenshots, so the verbatim text will be pulled in before publication."
+            cards={leaderShoutouts}
+            bg="paper"
+            placeholder
+          />
+
+          <ShoutoutGrid
+            heading="Shoutouts from TheReceptionist customers"
+            intro={"TheReceptionist\u2019s customers do not know they are writing to xFusion. They think they are writing to TheReceptionist. That is the point. And the names of xFusion team members keep showing up in customer feedback by name."}
+            cards={customerShoutouts}
+            footnote="Additional customer shoutouts surface on the live case study page as embedded screenshots. The verbatim text for those will be pulled in before publication."
+            bg="butter"
+          />
+
+          <SectionRule />
+          <LongForm
+            eyebrow="Section 10"
+            heading="The results"
+            paragraphs={resultsCopy}
+            bg="paper"
+          />
+
+          <FinalCTA />
+
+          <Footer />
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

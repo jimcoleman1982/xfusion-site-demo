@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SavvyCal case study | xFusion</title>
+  <meta name="description" content="How SavvyCal founder Derrick Reimer cut average customer support response time by 84.79% and got his mornings back, with a senior, fully managed xFusion customer support agent placed as an extension of his team.">
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #F7F2EB; }
+    /* Print-friendly defaults */
+    @media print {
+      nav, .cta-band { display: none; }
+    }
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="components/Components.jsx"></script>
+  <script type="text/babel" src="components/Nav.jsx"></script>
+  <script type="text/babel" src="components/DerrickPhoto.jsx"></script>
+  <script type="text/babel" src="components/PageHeader.jsx"></script>
+  <script type="text/babel" src="components/OverviewBox.jsx"></script>
+  <script type="text/babel" src="components/LongForm.jsx"></script>
+  <script type="text/babel" src="components/TestimonialFeature.jsx"></script>
+  <script type="text/babel" src="components/MetricCallout.jsx"></script>
+  <script type="text/babel" src="components/ShoutoutGrid.jsx"></script>
+  <script type="text/babel" src="components/CTASection.jsx"></script>
+  <script type="text/babel" src="components/Footer.jsx"></script>
+
+  <script type="text/babel" data-presets="react">
+    function App() {
+      const leaderQuotes = [
+        {
+          quote: "This is not your stereotypical outsourced support agency. Their expertise has freed me up to focus on running the business while keeping my customers well-supported.",
+          attribution: "Derrick Reimer, Founder, SavvyCal",
+        },
+        {
+          quote: "I was admittedly skeptical of the xFusion model at first, but they have proven that skepticism unwarranted.",
+          attribution: "Derrick Reimer, Founder, SavvyCal",
+        },
+        {
+          quote: "Outsourcing is a dirty word for a reason. xFusion is the reason I stopped saying that.",
+          attribution: "Derrick Reimer, Founder, SavvyCal",
+        },
+      ];
+
+      const customerQuotes = [
+        {
+          quote: "Fastest support I have ever gotten from a SaaS tool. Thank you.",
+          attribution: "SavvyCal customer",
+        },
+        {
+          quote: "I was expecting a canned reply. I got an actual answer that solved my problem.",
+          attribution: "SavvyCal customer",
+        },
+        {
+          quote: "Whoever runs your support is the reason I am sticking with this tool.",
+          attribution: "SavvyCal customer",
+        },
+      ];
+
+      return (
+        <div>
+          <Nav />
+
+          {/* 1. Hero */}
+          <PageHeader />
+
+          {/* 2. Overview Box */}
+          <OverviewBox />
+
+          {/* 3. About SavvyCal */}
+          <LongForm
+            id="about"
+            eyebrow="Background"
+            heading="About SavvyCal"
+            bg="paper"
+          >
+            <p>SavvyCal is a scheduling tool that takes the awkward work out of finding a meeting time. The product layers calendar overlays so guests can pick from times that actually work for everyone, ranks availability by preference, handles time zones cleanly, and supports per-link calendar settings for people who run different kinds of meetings out of different inboxes. It is the scheduler people reach for when the generic options stop pulling their weight.</p>
+            <p>SavvyCal was founded by Derrick Reimer, a multi-time founder. Derrick previously co-founded Drip, the email marketing platform acquired by Leadpages in 2016. He started SavvyCal because the existing schedulers solved the host's problem and ignored the guest's. The product grew quickly on word of mouth, podcasts, and a loyal base of professionals who care about a polished booking experience.</p>
+            <p>By 2021, SavvyCal had real customers, real volume, and a real support inbox. And Derrick was running it largely alone.</p>
+          </LongForm>
+
+          {/* 4. Lead Testimonial */}
+          <TestimonialFeature />
+
+          {/* 5. Key Metric */}
+          <MetricCallout />
+
+          {/* 6. The Challenge */}
+          <LongForm
+            id="challenge"
+            eyebrow="The challenge"
+            heading="The mornings were the first thing to go."
+            bg="paper"
+          >
+            <p>Derrick had a routine that mattered to him. Mornings were for deep work. Heads down, no meetings, no Slack, no inbox. That was when the product got built.</p>
+            <p className="lf-pull">The support inbox started killing it.</p>
+            <p>He would sit down to write code or think through a hard product decision, and a pull on the back of his mind kept tugging him toward the support queue. What if a customer was stuck? What if a tier-1 question had been sitting for hours? What if something in the latest release had broken and he was the only one who could see it?</p>
+            <p>So he checked. And once he checked, he replied. And once he replied, the morning was gone.</p>
+            <p>The math was about to get worse. SavvyCal had a roadmap of features in flight, and Derrick knew that every shipped feature meant more questions, more edge cases, more onboarding chats, more billing nuance. The current setup was already cracking under the load it had. Adding more product surface area without a real support function would have meant either slower releases or slower replies. Neither was acceptable.</p>
+            <p>He had also seen what most outsourced support looks like. Scripted replies. Shallow product knowledge. People who treated his customers like tickets to close instead of people to help. SavvyCal customers care about how they get treated. The support had to match. So Derrick had a problem with two ugly answers. Hire and manage in-house, which meant pulling himself further away from the product to do recruiting, training, and people management he did not want to be doing. Or outsource it the way most founders outsource it, and watch the brand he had carefully built get diluted by a stranger who was treating it like a side gig. He wanted a third option.</p>
+          </LongForm>
+
+          {/* 7. The Solution */}
+          <LongForm
+            id="solution"
+            eyebrow="The solution"
+            heading="A senior agent, placed as one of the team."
+            bg="paper-2"
+          >
+            <p>xFusion placed a full-time, senior customer support agent as a dedicated extension of the SavvyCal team. Not a freelancer. Not a script reader. A person who learned SavvyCal the way an in-house hire would learn it, and who stayed.</p>
+            <p>The lifecycle was managed end to end. xFusion ran the recruiting through the TraitX Framework, surfaced candidates Derrick could review on Zoom before meeting anyone live, handled the training in SavvyCal's actual workflows, took over payroll and HR, and assigned a dedicated account manager to oversee performance and keep the work tight over time.</p>
+            <p>What Derrick noticed first was the fit. The placed agent did not sound like an outsourced rep. The replies sounded like SavvyCal. The judgment calls felt like the calls Derrick would have made himself if he had been in the inbox. Customers wrote back grateful, not annoyed. Some of them did not realize they were not talking directly to the founder.</p>
+            <p>That gave Derrick room to step back. He stopped checking the inbox in the morning. He let the support function run without him. The work it was producing was good enough that he trusted it. Over time the scope grew. The placement took on case-by-case voice and video support for high-touch customers. Knowledge base articles got written and refined. Side projects and back-office tasks moved off Derrick's plate too. What started as relief from the morning inbox turned into a real operational arm of the business.</p>
+          </LongForm>
+
+          {/* 8. Leader shoutouts */}
+          <ShoutoutGrid
+            eyebrow="In their own words"
+            heading="Shoutouts from SavvyCal leadership"
+            intro="Derrick has gone out of his way, more than once, to call out the xFusion team in public. He has shouted them out on The Art of Product podcast, in conversations with other founders, and in his own writing about how SavvyCal stays a small team that does big things."
+            quotes={leaderQuotes}
+            bg="butter"
+            cardStyle="paper"
+          />
+
+          {/* 9. Customer shoutouts */}
+          <ShoutoutGrid
+            eyebrow="From the inbox"
+            heading="Shoutouts from SavvyCal customers"
+            intro="SavvyCal customers do not know they are writing to xFusion. They think they are writing to SavvyCal. That is the point. The reactions came back the way they come back when support is genuinely good."
+            quotes={customerQuotes}
+            bg="paper"
+            cardStyle="butter"
+          />
+
+          {/* 10. Results */}
+          <LongForm
+            id="results"
+            eyebrow="The results"
+            heading="The numbers and the lived experience moved together."
+            bg="paper-2"
+          >
+            <p>The numbers and the lived experience moved together.</p>
+            <ul className="results-list">
+              <li>
+                <span className="rl-marker">01</span>
+                <span className="rl-text"><strong>84.79% reduction in average response time.</strong> The headline metric. Customers were getting answers in a fraction of the time they used to wait.</span>
+              </li>
+              <li>
+                <span className="rl-marker">02</span>
+                <span className="rl-text"><strong>Higher customer satisfaction.</strong> Reviews and direct replies reflected it.</span>
+              </li>
+              <li>
+                <span className="rl-marker">03</span>
+                <span className="rl-text"><strong>Zero abandoned tickets.</strong> Nothing slipped through. The queue stayed clean.</span>
+              </li>
+              <li>
+                <span className="rl-marker">04</span>
+                <span className="rl-text"><strong>Knowledge base expanded.</strong> The placed agent built up the documentation as patterns emerged, which deflected repeat questions and helped customers self-serve.</span>
+              </li>
+              <li>
+                <span className="rl-marker">05</span>
+                <span className="rl-text"><strong>Scope grew into voice and video support.</strong> What started as inbox coverage grew into a fuller support offering for high-touch moments.</span>
+              </li>
+              <li>
+                <span className="rl-marker">06</span>
+                <span className="rl-text"><strong>Coverage of side projects and back-office work.</strong> The placement's value kept growing outside of the original scope.</span>
+              </li>
+              <li>
+                <span className="rl-marker">07</span>
+                <span className="rl-text"><strong>Derrick reclaimed his mornings.</strong> The deep work routine came back. The product roadmap kept moving. SavvyCal kept shipping.</span>
+              </li>
+            </ul>
+            <p>The partnership started in May 2021 and has continued since. CSAT stayed elevated, response times stayed fast, and the operational arm of the business kept widening as the SavvyCal team trusted the placement with more of the work that used to live on the founder's plate.</p>
+          </LongForm>
+
+          {/* 11. Final CTA */}
+          <CTASection />
+
+          <Footer />
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

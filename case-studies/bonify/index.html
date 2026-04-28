@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bonify case study | xFusion</title>
+  <meta name="description" content="How Bonify, a Shopify app company, used xFusion's senior support agents to take 95% of tickets off the founders, hold a 4.9 CSAT score on Shopify, and cut response times in half.">
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    html, body { background: #F7F2EB; }
+    body { color: #1F1A17; }
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="components.jsx"></script>
+
+  <script type="text/babel">
+    const aboutParagraphs = [
+      "Bonify is a Shopify app development company based in the United States, founded and led by John Carbone. The team builds and maintains a suite of widely used Shopify apps including Custom Fields, Arigato Automation, Customer Account Fields, and Instasheets. The apps are known for their flexibility, automation depth, and the kind of intricate functionality that lets merchants run real business logic on top of their Shopify stores.",
+      "Bonify started as a web development firm. Under John's leadership, the company shifted focus to apps, betting that the real opportunity was in giving online retailers the tools to automate complex e-commerce operations themselves. That bet paid off. The apps built a loyal merchant base across the United Kingdom, Europe, North America, Asia Pacific, and beyond, with customers ranging from independent founders to multi-store operators.",
+      "Two things define Bonify culturally: a focus on building what customers actually need, and a willingness to keep solving the harder, weirder e-commerce problems other apps avoid. That shows up in the support inbox. A typical Bonify ticket involves API logic, Shopify quirks, custom workflows, and merchants who need someone to actually understand their setup before answering. It is not a place where scripted support survives long.",
+      "By 2020, Bonify's product range and customer base had outgrown what John and his cofounder Dan Pepin could handle alongside building and shipping software. That is when John and xFusion started working together.",
+    ];
+
+    const challengeParagraphs = [
+      "Bonify's shift from web development to Shopify apps put the company on a different growth curve. New apps brought new merchants. New merchants brought tickets. And because Bonify's apps do real, technical work inside merchants' stores, the tickets were not the easy kind. They required someone who actually understood Shopify, automation logic, custom field structures, and the way real merchants try to bend an app to fit their workflow.",
+      "For a while, John and Dan handled it themselves. That was the only option. The work demanded technical depth, and they were the ones with the depth. But every hour they spent answering a ticket was an hour they were not shipping product, planning the next app, or thinking about where Bonify was headed.",
+      "The volume kept climbing. Live chat added another layer, with merchants expecting fast responses in real time. The founders were getting pulled out of strategic work, mid-thought, to handle support that had nothing to do with the next chapter of the company. Burnout was on the horizon, and the cost was visible in slipped product timelines.",
+      "Bonify had tried other support solutions before. None had worked. The agents could not get fluent in the technical layer, language barriers introduced friction merchants noticed, and the \"set it and forget it\" promise from outside vendors never matched reality. By 2020, John was looking for something different. Not a placement and a handoff. A real partner.",
+    ];
+
+    const solutionParagraphs = [
+      "John brought xFusion in during the early summer of 2020. From the start, the engagement was structured around two assumptions: the support agents needed real technical depth in Bonify's product line, and the relationship needed to be managed end-to-end so the founders never had to babysit it.",
+      "xFusion recruited and placed two dedicated agents, Kenny and Patrick, both vetted through the TraitX Framework and supported by a dedicated account manager. The first weeks were spent on the product. Not generic onboarding. Specific, hands-on training in Custom Fields, Arigato Automation, and the rest of the Bonify catalog, plus the Shopify environment they sit inside. The goal was for Kenny and Patrick to know the apps the way John and Dan knew them.",
+      "xFusion also took over the operating layer that surrounds the agents. Recruiting, training, payroll, culture and engagement, performance management, and ongoing oversight all sat on the xFusion side. The Bonify team got the output: agents who showed up every day, knew the product, and responded to merchants with technical accuracy. They did not get a second set of management problems to solve.",
+      <InlinePullquote
+        key="pq"
+        quote="The most important thing is that if we do have an issue, if something comes up, I know that I can go to you guys and you're gonna make it right, and you're gonna make it right fast. I'm happy to be a referral for you."
+        attribution="John Carbone, Founder, Bonify"
+      />,
+      "What made the partnership work was not just the talent. It was the willingness to keep adjusting. As Bonify shipped new app updates, the support team trained on them. As live chat volume grew, xFusion staffed and managed it. As John found new things he wanted to delegate, the relationship absorbed them.",
+    ];
+
+    const resultsParagraphs = [
+      "Three years into the partnership, the numbers told a clear story. From May 2020 to May 2023, Kenny and Patrick handled 26,436 ticket replies. John and Dan handled 1,474 across the same window. That works out to roughly 4% of replies from John, 1.27% from Dan, and the remaining 95% from the xFusion team. The founders had reclaimed their inbox.",
+      "Customer satisfaction held at 4.9 on Shopify across the entire stretch. That score is the merchant-facing signal Bonify cares about most. It was sustained while ticket volume grew, while new apps shipped, and while live chat scaled. Quality did not drop as the workload moved off the founders. It improved.",
+      "Response times dropped to roughly half of what John and Dan had been able to achieve. That was not from cutting corners. Kenny and Patrick handled tickets with a \"replies to resolve\" ratio in line with the founders, while moving faster on first response and overall response time. The handle time data showed agents who were thorough and fast at the same time, which is the rare combination the support inbox actually rewards.",
+      "Live chat became a reliable channel rather than a fire drill. Average wait time settled at one minute and fifteen seconds. Average chat duration ran 45 minutes, with merchants getting actual problem-solving rather than canned answers. Across the chat history, the team handled 3,778 conversations and completed 3,262 of them, with each agent averaging 3.45 chats per day.",
+      "Beyond the metrics, the partnership did what John originally hoped. It gave him and Dan back the ability to disconnect. After years of being on call for their own product, both founders could take real breaks and trust that the support side of the business was in good hands. The reviews kept coming in praising Kenny and Patrick by name. The product roadmap that had been blocked by support overhead started moving again. The relationship is still going.",
+    ];
+
+    const leaderShoutouts = [
+      {
+        quote: "Just want to say how appreciative @john and I are of the job that @Patrick and @Kenny are doing on the app support. Absolutely fantastic job guys. Many of the positive reviews the apps receive mention the great support the customer gets. Great job!",
+        name: "Dan Pepin",
+        role: "Cofounder, Bonify",
+      },
+      {
+        quote: "Great job as always @Kenny and @Patrick.",
+        name: "Daniel",
+        role: "Bonify",
+      },
+      {
+        quote: "Awesome! Great job handling things over Christmas @Patrick and @Kenny. Dan and I haven't been able to actually disconnect from work and take a real break in years. I can't thank you guys enough.",
+        name: "John Carbone",
+        role: "Founder, Bonify",
+      },
+      {
+        quote: "Yes, we very much appreciate the great support! It has literally been years since we've been able to disconnect for more than a few hours lol.",
+        name: "Dan Pepin",
+        role: "Cofounder, Bonify",
+      },
+      {
+        quote: "Just want to give props for the latest great reviews in Arigato Automation. Many people point out the \"amazing support\". Great job!",
+        name: "Dan Pepin",
+        role: "Cofounder, Bonify",
+      },
+    ];
+
+    const customerShoutouts = [
+      {
+        quote: "Thanks to Kenny and Patrick, they are the most dedicated guys I have ever met. Just tell them and they will make it happen!",
+        store: "JEANS4YOU.LT",
+        country: "Lithuania",
+        date: "Oct 12, 2021",
+      },
+      {
+        quote: "Great app that I was able to use instead of building a custom Shopify app. Patrick M. provided outstanding customer support, as well.",
+        store: "vitalyuk",
+        country: "Canada",
+        date: "Apr 30, 2021",
+      },
+      {
+        quote: "Awesome customer service. Kenny.M was able to help me solve my problem in no time and exactly understood what the issue was.",
+        store: "PET CANVA",
+        country: "Japan",
+        date: "Aug 20, 2022",
+      },
+      {
+        quote: "This app is incredible in terms of possibilities for a store. There was a particularly unique automation I was trying to figure out, and Patrick on their team helped get it done.",
+        store: "Trendstack",
+        country: "United States",
+        date: "Oct 10, 2022",
+      },
+      {
+        quote: "Best App you could find on Shopify. Support team, Kenny is the guy to go. Can literally solve anything. If you're hoping to automate any tasks or any API/HTTP requests this is the app.",
+        store: "Pivo-eu",
+        country: "Netherlands",
+        date: "Jan 5, 2022",
+      },
+      {
+        quote: "This app has been a GAME CHANGER for me and my business. We've saved tons of time automating some of our workflows (not to mention money) and everything has been running super smoothly. The support team are incredible. Nothing was too hard or unachievable. Special shout out to Kenny for working his magic and making everything work!",
+        store: "The Coco Studio",
+        country: "Australia",
+        date: "Aug 31, 2022",
+      },
+    ];
+
+    function App() {
+      return (
+        <div data-screen-label="Bonify case study">
+          <Nav />
+          <PageHeader />
+          <OverviewBox />
+          <div style={{ borderTop: '1px solid #D9CFBF' }} />
+          <LongForm heading="About Bonify" paragraphs={aboutParagraphs} bg="paper" />
+          <TestimonialFeature />
+          <MetricCallout />
+          <LongForm heading="The challenge" paragraphs={challengeParagraphs} bg="paper" />
+          <div style={{ borderTop: '1px solid #D9CFBF' }} />
+          <LongForm heading="The solution" paragraphs={solutionParagraphs} bg="paper" />
+          <ShoutoutGrid
+            heading="Shoutouts from Bonify leaders"
+            eyebrow="From the Slack channel"
+            cards={leaderShoutouts}
+            bg="paper-2"
+            kind="leader"
+          />
+          <ShoutoutGrid
+            heading="Shoutouts from Bonify customers"
+            eyebrow="From the Shopify App Store"
+            cards={customerShoutouts}
+            bg="paper"
+            kind="customer"
+          />
+          <LongForm heading="The results" paragraphs={resultsParagraphs} bg="paper-2" />
+          <CTASection />
+          <Footer />
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

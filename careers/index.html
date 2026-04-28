@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Careers | xFusion</title>
+  <meta name="description" content="xFusion is hiring senior CS agents, account managers, and operations folks across the Philippines, Kenya, and the United States. Living wages, real culture, careers worth keeping.">
+  <link rel="stylesheet" href="../colors_and_type.css">
+  <style>
+    body { background: #F7F2EB; }
+    a { transition: color 160ms cubic-bezier(0.4,0,0.6,1); }
+    a:hover { color: #A0451F; }
+    button:focus-visible, a:focus-visible {
+      outline: 2px solid #B8512C;
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    // --- Primitives ---
+    function Container({ children, narrow = false, style = {} }) {
+      return (
+        <div style={{
+          maxWidth: narrow ? 760 : 1200,
+          margin: '0 auto',
+          padding: '0 24px',
+          ...style,
+        }}>{children}</div>
+      );
+    }
+
+    function Section({ children, bg = 'paper', padding = 'lg', id, style = {} }) {
+      const bgs = {
+        paper: '#F7F2EB',
+        'paper-2': '#EFE8DD',
+        butter: '#F8EBC9',
+        'butter-strong': '#F0D9A8',
+        forest: '#2C4A3E',
+      };
+      const pads = { sm: '56px 0', md: '80px 0', lg: '112px 0' };
+      return (
+        <section id={id} style={{ background: bgs[bg], padding: pads[padding], ...style }}>
+          {children}
+        </section>
+      );
+    }
+
+    function Eyebrow({ children, color = '#6B5F56' }) {
+      return (
+        <div style={{
+          fontFamily: "'IBM Plex Sans', sans-serif",
+          fontSize: 12,
+          fontWeight: 600,
+          textTransform: 'uppercase',
+          letterSpacing: '0.14em',
+          color,
+          marginBottom: 18,
+        }}>{children}</div>
+      );
+    }
+
+    function Button({ children, variant = 'primary', size = 'md', onClick, style = {}, href }) {
+      const [hover, setHover] = useState(false);
+      const [pressed, setPressed] = useState(false);
+      const sizes = {
+        sm: { padding: '8px 14px', fontSize: 13 },
+        md: { padding: '12px 22px', fontSize: 15 },
+        lg: { padding: '16px 28px', fontSize: 16 },
+      };
+      let bg, color, border;
+      if (variant === 'primary') {
+        bg = pressed ? '#863818' : hover ? '#A0451F' : '#B8512C';
+        color = '#F7F2EB';
+        border = '1px solid transparent';
+      } else if (variant === 'secondary') {
+        bg = hover ? '#EFE8DD' : 'transparent';
+        color = '#1F1A17';
+        border = '1px solid #B7A993';
+      } else {
+        bg = hover ? 'rgba(31,26,23,0.04)' : 'transparent';
+        color = '#1F1A17';
+        border = '1px solid transparent';
+      }
+      const Tag = href ? 'a' : 'button';
+      return (
+        <Tag
+          href={href}
+          onClick={onClick}
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => { setHover(false); setPressed(false); }}
+          onMouseDown={() => setPressed(true)}
+          onMouseUp={() => setPressed(false)}
+          style={{
+            background: bg, color, border,
+            borderRadius: 8,
+            fontFamily: "'IBM Plex Sans', sans-serif",
+            fontWeight: 500,
+            cursor: 'pointer',
+            lineHeight: 1.1,
+            textDecoration: 'none',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 8,
+            transition: 'all 160ms cubic-bezier(0.4,0,0.6,1)',
+            whiteSpace: 'nowrap',
+            ...sizes[size],
+            ...style,
+          }}
+        >{children}</Tag>
+      );
+    }
+
+    const Icons = {
+      menu: <g><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></g>,
+      x: <g><path d="M18 6L6 18"/><path d="M6 6l12 12"/></g>,
+      arrow: <g><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></g>,
+      linkedin: <g><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></g>,
+      twitter: <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2-3 0-6-2.5-6-5.5 1 .5 2 .5 3 0-3-1-5-4-5-7 1 .5 2 1 3 1-3-2-3-7 0-9 4 5 10 7.5 16 7-.7-3 1.2-6 4-6 1.5 0 3 .8 4 2 1-.2 2-.5 3-1z"/>,
+      instagram: <g><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></g>,
+      facebook: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>,
+      youtube: <g><path d="M22.5 6.5a2.8 2.8 0 0 0-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.5a2.8 2.8 0 0 0-2 2C1 8.3 1 12 1 12s0 3.7.5 5.5a2.8 2.8 0 0 0 2 2C5.3 20 12 20 12 20s6.7 0 8.5-.5a2.8 2.8 0 0 0 2-2c.5-1.8.5-5.5.5-5.5s0-3.7-.5-5.5z"/><path d="M10 15l5-3-5-3z" fill="currentColor"/></g>,
+    };
+
+    function Icon({ name, size = 20, color = 'currentColor', stroke = 1.6 }) {
+      return (
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
+             stroke={color} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round"
+             style={{ flexShrink: 0, display: 'inline-block' }}>
+          {Icons[name] || null}
+        </svg>
+      );
+    }
+
+    // --- Nav ---
+    function Nav({ current }) {
+      const [scrolled, setScrolled] = useState(false);
+      const [open, setOpen] = useState(false);
+      useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 8);
+        window.addEventListener('scroll', onScroll);
+        return () => window.removeEventListener('scroll', onScroll);
+      }, []);
+
+      const linkStyle = (active) => ({
+        color: active ? '#B8512C' : '#1F1A17',
+        textDecoration: 'none',
+        fontFamily: "'IBM Plex Sans', sans-serif",
+        fontWeight: active ? 500 : 400,
+        fontSize: 14,
+        whiteSpace: 'nowrap',
+      });
+
+      const links = [
+        { label: 'Home', href: '../', key: 'home' },
+        { label: 'About', href: '../about/', key: 'about' },
+        { label: 'Case studies', href: '../case-studies/', key: 'case-studies' },
+        { label: 'Careers', href: '../careers/', key: 'careers' },
+        { label: 'Blog', href: 'https://blog.xfusion.io', key: 'blog' },
+      ];
+
+      return (
+        <nav style={{
+          position: 'sticky', top: 0, zIndex: 50,
+          background: scrolled ? 'rgba(247, 242, 235, 0.88)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(12px)' : 'none',
+          WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
+          borderBottom: scrolled ? '1px solid #D9CFBF' : '1px solid transparent',
+          transition: 'all 240ms cubic-bezier(0.4,0,0.6,1)',
+        }}>
+          <Container>
+            <div style={{ height: 72, display: 'flex', alignItems: 'center', gap: 32 }}>
+              <a href="../" style={{ display: 'flex', alignItems: 'baseline', textDecoration: 'none' }} aria-label="xFusion home">
+                <span style={{
+                  fontFamily: "'Source Serif 4', serif",
+                  fontSize: 28, fontWeight: 600,
+                  letterSpacing: '-0.025em',
+                  color: '#1F1A17', lineHeight: 1,
+                }}>
+                  <span style={{ color: '#B8512C' }}>x</span>Fusion
+                  <span style={{ color: '#B8512C' }}>.</span>
+                </span>
+              </a>
+              <div className="nav-links" style={{ display: 'flex', gap: 28, marginLeft: 24 }}>
+                {links.map(l => (
+                  <a key={l.key} href={l.href} style={linkStyle(current === l.key)} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a>
+                ))}
+              </div>
+              <div style={{ marginLeft: 'auto', display: 'flex', gap: 12, alignItems: 'center' }}>
+                <Button variant="primary" size="sm">Book a Discovery Call</Button>
+                <button
+                  className="nav-mobile-toggle"
+                  onClick={() => setOpen(!open)}
+                  style={{ display: 'none', background: 'transparent', border: '1px solid #B7A993', borderRadius: 8, padding: 8, cursor: 'pointer', color: '#1F1A17' }}
+                  aria-label="Toggle menu"
+                >
+                  <Icon name={open ? 'x' : 'menu'} size={20} />
+                </button>
+              </div>
+            </div>
+            {open && (
+              <div className="nav-mobile-menu" style={{ display: 'none', flexDirection: 'column', gap: 16, padding: '8px 0 24px', borderTop: '1px solid #D9CFBF' }}>
+                {links.map(l => (
+                  <a key={l.key} href={l.href} style={linkStyle(current === l.key)} onClick={() => setOpen(false)}>{l.label}</a>
+                ))}
+              </div>
+            )}
+          </Container>
+          <style>{`
+            @media (max-width: 800px) {
+              .nav-links { display: none !important; }
+              .nav-mobile-toggle { display: inline-flex !important; }
+              .nav-mobile-menu { display: flex !important; }
+            }
+          `}</style>
+        </nav>
+      );
+    }
+
+    // --- Footer ---
+    function Footer() {
+      const social = [
+        { name: 'linkedin', label: 'LinkedIn' },
+        { name: 'twitter', label: 'Twitter' },
+        { name: 'instagram', label: 'Instagram' },
+        { name: 'facebook', label: 'Facebook' },
+        { name: 'youtube', label: 'YouTube' },
+      ];
+      return (
+        <footer style={{ background: '#1F1A17', color: '#F7F2EB', padding: '72px 0 32px' }}>
+          <Container>
+            <div className="footer-grid" style={{
+              display: 'grid', gridTemplateColumns: '1.3fr 1fr 1fr',
+              gap: 56, marginBottom: 56, paddingBottom: 48,
+              borderBottom: '1px solid #3A322D', alignItems: 'flex-start',
+            }}>
+              <div>
+                <a href="../" style={{ display: 'inline-flex', alignItems: 'baseline', textDecoration: 'none', marginBottom: 20 }}>
+                  <span style={{ fontFamily: "'Source Serif 4', serif", fontSize: 30, fontWeight: 600, letterSpacing: '-0.025em', color: '#F7F2EB', lineHeight: 1 }}>
+                    <span style={{ color: '#B8512C' }}>x</span>Fusion<span style={{ color: '#B8512C' }}>.</span>
+                  </span>
+                </a>
+                <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 20, lineHeight: 1.4, color: '#F0D9A8', maxWidth: 360, margin: '0 0 28px', fontStyle: 'italic', fontWeight: 400 }}>
+                  Senior, AI-augmented customer support, fully managed.
+                </p>
+                <Button variant="primary" size="md">Book a Discovery Call</Button>
+              </div>
+              <div>
+                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9E9388', marginBottom: 18 }}>Quick links</div>
+                <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  {[
+                    { label: 'Home', href: '../' },
+                    { label: 'About', href: '../about/' },
+                    { label: 'Case studies', href: '../case-studies/' },
+                    { label: 'Careers', href: '../careers/' },
+                    { label: 'Press', href: '../press/' },
+                    { label: 'Blog', href: 'https://blog.xfusion.io' },
+                  ].map(l => (
+                    <li key={l.label}>
+                      <a href={l.href} style={{ color: '#F7F2EB', textDecoration: 'none', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 15 }}>{l.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9E9388', marginBottom: 18 }}>Follow along</div>
+                <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                  {social.map(s => (
+                    <a key={s.name} href="#" aria-label={s.label} style={{ width: 40, height: 40, borderRadius: 8, background: '#3A322D', border: '1px solid #6B5F56', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#F0D9A8', textDecoration: 'none' }}>
+                      <Icon name={s.name} size={18} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13, color: '#9E9388', flexWrap: 'wrap', gap: 16 }}>
+              <div>© 2026 xFusion</div>
+              <div style={{ display: 'flex', gap: 24 }}>
+                <a href="../privacy/" style={{ color: '#9E9388', textDecoration: 'none' }}>Privacy</a>
+                <a href="../terms/" style={{ color: '#9E9388', textDecoration: 'none' }}>Terms</a>
+                <a href="../security/" style={{ color: '#9E9388', textDecoration: 'none' }}>Security</a>
+              </div>
+            </div>
+          </Container>
+          <style>{`
+            @media (max-width: 800px) {
+              .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+            }
+          `}</style>
+        </footer>
+      );
+    }
+
+    // --- Page-specific ---
+    function CareersHero() {
+      return (
+        <Section bg="paper" padding="lg" style={{ paddingTop: 96, paddingBottom: 64 }}>
+          <Container narrow>
+            <div style={{ maxWidth: 880, margin: '0 auto' }}>
+              <Eyebrow>Careers at xFusion</Eyebrow>
+              <h1 style={{
+                fontFamily: "'Source Serif 4', serif",
+                fontSize: 'clamp(40px, 5.6vw, 76px)',
+                fontWeight: 400, lineHeight: 1.05, letterSpacing: '-0.025em',
+                margin: '0 0 28px', color: '#1F1A17', textWrap: 'balance',
+              }}>
+                Build careers, not jobs.
+              </h1>
+              <p style={{
+                fontFamily: "'Source Serif 4', serif",
+                fontSize: 'clamp(20px, 2.1vw, 26px)',
+                lineHeight: 1.45, color: '#3A322D', fontWeight: 400,
+                margin: '0 0 36px', maxWidth: 760, textWrap: 'pretty',
+              }}>
+                xFusion is hiring senior CS agents, account managers, and operations folks across the Philippines, Kenya, and the United States. We pay a living wage, invest in culture, and place people with clients who actually invest in them.
+              </p>
+              <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+                <Button variant="primary" size="lg" href="mailto:careers@xfusion.io">Send us a note</Button>
+                <a href="#roles" style={{
+                  fontFamily: "'IBM Plex Sans', sans-serif",
+                  fontSize: 15, color: '#3A322D', textDecoration: 'none',
+                  display: 'inline-flex', alignItems: 'center', gap: 6, padding: '14px 12px',
+                }}>
+                  See what we hire for <Icon name="arrow" size={14} />
+                </a>
+              </div>
+            </div>
+          </Container>
+        </Section>
+      );
+    }
+
+    function Roles() {
+      const roles = [
+        {
+          title: 'Senior CS agent',
+          body: 'You have run a support inbox before, ideally for a software or service business. You write clean replies, you can hold a Zoom call without freezing, and you actually like solving customer problems. We place you with one client and give you a real seat on their team.',
+        },
+        {
+          title: 'Account manager',
+          body: 'You run point on a portfolio of client accounts, sit in on QBRs, coach agents, and keep our placements sticky. Strong people skills, calm under pressure, and a real interest in the operations of the businesses we serve. This role is the heart of our managed model.',
+        },
+        {
+          title: 'AI workflows specialist',
+          body: 'You build and tune the AI workflows that sit alongside our agents. Prompt design, light scripting, tooling integrations, and the ability to translate a messy human process into something repeatable. Comfortable with tools like Zapier, OpenAI APIs, and a CRM you have not seen before.',
+        },
+        {
+          title: 'Operations and team lead',
+          body: 'You help us run the back of the house. Recruiting pipelines, onboarding, payroll workflows, internal tooling, and the ladder our agents climb over time. The right person here treats operations as a craft, not a chore.',
+        },
+      ];
+
+      return (
+        <Section id="roles" bg="paper-2" padding="lg">
+          <Container>
+            <div style={{ maxWidth: 720, marginBottom: 56 }}>
+              <Eyebrow>What we hire for</Eyebrow>
+              <h2 style={{
+                fontFamily: "'Source Serif 4', serif",
+                fontSize: 'clamp(32px, 3.6vw, 48px)',
+                fontWeight: 400, lineHeight: 1.1, letterSpacing: '-0.02em',
+                margin: '0 0 16px', color: '#1F1A17',
+              }}>
+                Four kinds of people we are looking for.
+              </h2>
+              <p style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 17, lineHeight: 1.6, color: '#3A322D', margin: 0 }}>
+                These are the roles we hire for most often. If you do not see a fit but think you belong here, send a note anyway.
+              </p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
+              {roles.map(r => (
+                <div key={r.title} style={{
+                  background: '#F7F2EB',
+                  border: '1px solid #D9CFBF',
+                  borderRadius: 12,
+                  padding: 28,
+                }}>
+                  <h3 style={{
+                    fontFamily: "'Source Serif 4', serif",
+                    fontSize: 24, fontWeight: 500, lineHeight: 1.2,
+                    margin: '0 0 14px', color: '#1F1A17',
+                  }}>{r.title}</h3>
+                  <p style={{
+                    fontFamily: "'IBM Plex Sans', sans-serif",
+                    fontSize: 15.5, lineHeight: 1.6, color: '#3A322D', margin: 0,
+                  }}>{r.body}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </Section>
+      );
+    }
+
+    function Culture() {
+      const paragraphs = [
+        {
+          h: 'We pay a living wage, on purpose.',
+          p: 'Our agents are paid well above the local market rate for support work. That sounds simple, but in this industry it is rare. It is the single biggest reason our retention numbers do not look like a typical staffing firm.',
+        },
+        {
+          h: 'Culture is a line item, not an afterthought.',
+          p: 'We invest in team-building, swag, anniversaries, structured holiday gifting, birthday recognition, and the kind of small things that make a remote job feel like it actually counts. Our account managers spend real time on this.',
+        },
+        {
+          h: 'Most people stay for years, not months.',
+          p: 'Our average tenure is years long, not months. That is the bar we hire to. We are not building a churn-and-burn pipeline. We are building careers worth keeping, for people who want to grow into senior CS, ops, and leadership roles.',
+        },
+        {
+          h: 'We are not a typical BPO.',
+          p: 'Our agents work with one client at a time. They show up to that client\'s standups, learn the product, and act like part of the team. A typical BPO rotates agents across queues and treats them as interchangeable. We do the opposite.',
+        },
+      ];
+      return (
+        <Section bg="paper" padding="lg">
+          <Container>
+            <div style={{ maxWidth: 720, marginBottom: 48 }}>
+              <Eyebrow>What it is like to work here</Eyebrow>
+              <h2 style={{
+                fontFamily: "'Source Serif 4', serif",
+                fontSize: 'clamp(32px, 3.6vw, 48px)',
+                fontWeight: 400, lineHeight: 1.1, letterSpacing: '-0.02em',
+                margin: 0, color: '#1F1A17',
+              }}>
+                The short version: we run xFusion like the place we always wanted to work.
+              </h2>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32 }}>
+              {paragraphs.map((item, i) => (
+                <div key={i}>
+                  <h3 style={{
+                    fontFamily: "'Source Serif 4', serif",
+                    fontSize: 22, fontWeight: 500, lineHeight: 1.25,
+                    margin: '0 0 12px', color: '#1F1A17',
+                  }}>{item.h}</h3>
+                  <p style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 16, lineHeight: 1.65, color: '#3A322D', margin: 0 }}>
+                    {item.p}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </Section>
+      );
+    }
+
+    function WhereWeWork() {
+      return (
+        <Section bg="butter-strong" padding="lg">
+          <Container>
+            <div className="where-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
+              <div>
+                <Eyebrow>Where we work</Eyebrow>
+                <h2 style={{
+                  fontFamily: "'Source Serif 4', serif",
+                  fontSize: 'clamp(28px, 3.2vw, 42px)',
+                  fontWeight: 400, lineHeight: 1.15, letterSpacing: '-0.02em',
+                  margin: '0 0 20px', color: '#1F1A17',
+                }}>
+                  Three regions, one team.
+                </h2>
+                <p style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 17, lineHeight: 1.65, color: '#3A322D', margin: '0 0 16px' }}>
+                  Most of our team is in the Philippines, with a growing group in Kenya and a small operations crew in the United States. We hire remote-first, and we ship physical swag to every region a few times a year.
+                </p>
+                <p style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 17, lineHeight: 1.65, color: '#3A322D', margin: 0 }}>
+                  Annual in-person team-building happens regionally. Last year, that meant a beach retreat outside Manila and a weekend in Nairobi. The kind of thing people actually post about.
+                </p>
+              </div>
+              <div style={{
+                aspectRatio: '4/3', borderRadius: 12, background: '#B8512C',
+                display: 'flex', alignItems: 'flex-end', padding: 28, position: 'relative', overflow: 'hidden',
+              }}>
+                <div style={{
+                  position: 'absolute', top: 28, left: 28,
+                  fontFamily: "'JetBrains Mono', monospace", fontSize: 11,
+                  textTransform: 'uppercase', letterSpacing: '0.12em',
+                  color: '#F2D9CB', opacity: 0.85,
+                }}>Photo placeholder</div>
+                <div style={{
+                  position: 'absolute', right: -10, top: '15%',
+                  fontFamily: "'Source Serif 4', serif", fontSize: 'clamp(120px, 18vw, 200px)',
+                  color: '#F0D9A8', opacity: 0.18, fontWeight: 600, lineHeight: 0.85,
+                }}>xF</div>
+                <div style={{
+                  position: 'relative',
+                  fontFamily: "'Source Serif 4', serif", fontSize: 22,
+                  color: '#F0D9A8', fontWeight: 500, lineHeight: 1.3,
+                }}>
+                  Manila team-building, 2025
+                </div>
+              </div>
+            </div>
+            <style>{`
+              @media (max-width: 800px) {
+                .where-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+              }
+            `}</style>
+          </Container>
+        </Section>
+      );
+    }
+
+    function CareersCTA() {
+      return (
+        <Section bg="forest" padding="lg">
+          <Container>
+            <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
+              <Eyebrow color="#F0D9A8">Get in touch</Eyebrow>
+              <h2 style={{
+                fontFamily: "'Source Serif 4', serif",
+                fontSize: 'clamp(32px, 3.8vw, 52px)',
+                fontWeight: 400, lineHeight: 1.1, letterSpacing: '-0.02em',
+                margin: '0 0 20px', color: '#F7F2EB',
+              }}>
+                We are always interested in talking to people who care about doing real CS work.
+              </h2>
+              <p style={{
+                fontFamily: "'IBM Plex Sans', sans-serif",
+                fontSize: 18, lineHeight: 1.6,
+                color: '#F0D9A8', margin: '0 0 32px',
+              }}>
+                Send us a note, even if we are not advertising your role. We read every email.
+              </p>
+              <a href="mailto:careers@xfusion.io" style={{
+                background: '#F7F2EB', color: '#1F1A17',
+                padding: '16px 28px', borderRadius: 8,
+                fontFamily: "'IBM Plex Sans', sans-serif",
+                fontSize: 16, fontWeight: 500, textDecoration: 'none',
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+              }}>
+                careers@xfusion.io <Icon name="arrow" size={16} />
+              </a>
+            </div>
+          </Container>
+        </Section>
+      );
+    }
+
+    function App() {
+      return (
+        <div data-screen-label="Careers">
+          <Nav current="careers" />
+          <main>
+            <CareersHero />
+            <Roles />
+            <Culture />
+            <WhereWeWork />
+            <CareersCTA />
+          </main>
+          <Footer />
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

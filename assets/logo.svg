@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" role="img" aria-label="xFusion">
+  <defs>
+    
+  </defs>
+  
+  <text x="14" y="58" class="word">
+    <tspan fill="#B8512C">x</tspan><tspan fill="#1F1A17">Fusi</tspan><tspan fill="#1F1A17">o</tspan><tspan fill="#1F1A17">n</tspan>
+  </text>
+  
+  <circle cx="206" cy="41" r="3.4" fill="#B8512C"></circle>
+</svg>
