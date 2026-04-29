@@ -93,45 +93,83 @@
     }
 
     function Footer() {
-      const social = [{ name: 'linkedin', label: 'LinkedIn' }, { name: 'twitter', label: 'Twitter' }, { name: 'instagram', label: 'Instagram' }, { name: 'facebook', label: 'Facebook' }, { name: 'youtube', label: 'YouTube' }];
+      const cols = [
+        { title: 'Product',  links: [
+          ['How it works',  '../#how-it-works'],
+          ['Who we serve',  '../#who-we-serve'],
+          ['Pricing',       '../#pricing'],
+          ['Case studies',  '../case-studies/'],
+        ]},
+        { title: 'Company',  links: [
+          ['About',    '../about/'],
+          ['Careers',  '../careers/'],
+          ['Contact',  'https://savvycal.com/xfusion/lets-chat'],
+        ]},
+        { title: 'Resources', links: [
+          ['FAQ',           '../#faq'],
+          ['Blog',          '../blog/'],
+          ['Hiring guide',  '../hiring-guide/'],
+          ['CS handbook',   '../cs-handbook/'],
+          ['Status',        '#status'],
+        ]},
+        { title: 'Legal',    links: [
+          ['Privacy',   '../privacy/'],
+          ['Terms',     '../terms/'],
+          ['DPA',       '../dpa/'],
+          ['Security',  '../security/'],
+        ]},
+      ];
+      const FOREST  = '#2C4A3E';
+      const PAPER   = '#F7F2EB';
+      const BUTTER  = '#F0D9A8';
+      const DIVIDER = 'rgba(247, 242, 235, 0.14)';
+      const MUTED   = 'rgba(247, 242, 235, 0.65)';
       return (
-        <footer style={{ background: '#1F1A17', color: '#F7F2EB', padding: '72px 0 32px' }}>
+        <footer style={{ background: FOREST, color: PAPER }}>
           <Container>
-            <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr 1fr', gap: 56, marginBottom: 56, paddingBottom: 48, borderBottom: '1px solid #3A322D', alignItems: 'flex-start' }}>
+            <div className="footer-top" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 32, alignItems: 'center', paddingTop: 64, paddingBottom: 40, borderBottom: `1px solid ${DIVIDER}` }}>
               <div>
-                <a href="../" style={{ display: 'inline-flex', alignItems: 'baseline', textDecoration: 'none', marginBottom: 20 }}>
-                  <span style={{ fontFamily: "'Source Serif 4', serif", fontSize: 30, fontWeight: 600, letterSpacing: '-0.025em', color: '#F7F2EB', lineHeight: 1 }}>
-                    <span style={{ color: '#B8512C' }}>x</span>Fusion<span style={{ color: '#B8512C' }}>.</span>
-                  </span>
+                <a href="../" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 14, textDecoration: 'none' }}>
+                  <span style={{ width: 36, height: 36, borderRadius: 9, background: '#B8512C', color: PAPER, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Source Serif 4', serif", fontWeight: 500, fontSize: 22, letterSpacing: '-0.02em', lineHeight: 1 }}>xF</span>
+                  <span style={{ fontFamily: "'Source Serif 4', serif", fontSize: 28, fontWeight: 500, letterSpacing: '-0.025em', color: PAPER }}>xFusion</span>
                 </a>
-                <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 20, lineHeight: 1.4, color: '#F0D9A8', maxWidth: 360, margin: '0 0 28px', fontStyle: 'italic', fontWeight: 400 }}>Senior, AI-augmented customer support, fully managed.</p>
-                <Button variant="primary" size="md" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>
+                <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 18, lineHeight: 1.5, color: BUTTER, margin: 0, maxWidth: 480, fontStyle: 'italic', fontWeight: 400 }}>
+                  Senior, AI-augmented customer support agents for small businesses. Since 2020.
+                </p>
               </div>
-              <div>
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9E9388', marginBottom: 18 }}>Quick links</div>
-                <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                  {[{ label: 'Home', href: '../' }, { label: 'About', href: '../about/' }, { label: 'Case studies', href: '../case-studies/' }, { label: 'Careers', href: '../careers/' }, { label: 'Press', href: '../press/' }, { label: 'Blog', href: 'https://blog.xfusion.io' }].map(l => (
-                    <li key={l.label}><a href={l.href} style={{ color: '#F7F2EB', textDecoration: 'none', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 15 }}>{l.label}</a></li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9E9388', marginBottom: 18 }}>Follow along</div>
-                <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                  {social.map(s => <a key={s.name} href="#" aria-label={s.label} style={{ width: 40, height: 40, borderRadius: 8, background: '#3A322D', border: '1px solid #6B5F56', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#F0D9A8', textDecoration: 'none' }}><Icon name={s.name} size={18} /></a>)}
-                </div>
+              <div className="footer-cta" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+                <a href="https://savvycal.com/xfusion/lets-chat" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '14px 22px', borderRadius: 999, background: '#B8512C', color: PAPER, textDecoration: 'none', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em', border: '1px solid transparent' }}>Book a Discovery Call</a>
               </div>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13, color: '#9E9388', flexWrap: 'wrap', gap: 16 }}>
-              <div>© 2026 xFusion</div>
-              <div style={{ display: 'flex', gap: 24 }}>
-                <a href="../privacy/" style={{ color: '#9E9388', textDecoration: 'none' }}>Privacy</a>
-                <a href="../terms/" style={{ color: '#9E9388', textDecoration: 'none' }}>Terms</a>
-                <a href="../security/" style={{ color: '#9E9388', textDecoration: 'none' }}>Security</a>
-              </div>
+            <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 40, paddingTop: 48, paddingBottom: 40 }}>
+              {cols.map(col => (
+                <div key={col.title}>
+                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.14em', color: MUTED, marginBottom: 18 }}>{col.title}</div>
+                  <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    {col.links.map(([label, href]) => (
+                      <li key={label}>
+                        <a href={href} className="footer-link" style={{ color: PAPER, textDecoration: 'none', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 15, lineHeight: 1.4 }}>{label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <div className="footer-legal" style={{ paddingTop: 24, paddingBottom: 32, borderTop: `1px solid ${DIVIDER}`, display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13, color: MUTED, flexWrap: 'wrap', gap: 12 }}>
+              <div>© 2026 xFusion. All rights reserved.</div>
+              <div>Made with care across the Philippines, Kenya, and the United States.</div>
             </div>
           </Container>
-          <style>{`@media (max-width: 800px) { .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; } }`}</style>
+          <style>{`
+            .footer-link:hover { color: ${BUTTER}; }
+            @media (max-width: 900px) {
+              .footer-top { grid-template-columns: 1fr !important; gap: 20px !important; }
+              .footer-cta { justify-content: flex-start !important; }
+              .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+              .footer-legal { flex-direction: column; align-items: flex-start !important; }
+            }
+            @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr !important; gap: 28px !important; } }
+          `}</style>
         </footer>
       );
     }

@@ -27,7 +27,7 @@ function Chatbot() {
           color: '#F7F2EB',
           maxWidth: 720,
         }}>
-          <p style={{ margin: 0 }}>
+          <p style={{ margin: 0, color: '#F7F2EB' }}>
             <span style={{
               fontFamily: "'Source Serif 4', serif",
               fontSize: 64,
@@ -41,7 +41,7 @@ function Chatbot() {
             }}>60%</span>
             Pure AI handles the easy 60% of customer support reasonably well. Password resets, status checks, simple how-tos. That's real value, and we use AI tools too.
           </p>
-          <p style={{ margin: 0, paddingTop: 16, borderTop: '1px solid rgba(247,242,235,0.18)' }}>
+          <p style={{ margin: 0, paddingTop: 16, borderTop: '1px solid rgba(247,242,235,0.18)', color: '#F7F2EB' }}>
             <span style={{
               fontFamily: "'Source Serif 4', serif",
               fontSize: 64,

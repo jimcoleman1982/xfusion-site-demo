@@ -18,13 +18,13 @@ function Footer() {
       links: [
         ['About',    'about/'],
         ['Careers',  'careers/'],
-        ['Press',    'press/'],
         ['Contact',  "https://savvycal.com/xfusion/lets-chat"],
       ],
     },
     {
       title: 'Resources',
       links: [
+        ['FAQ',           '#faq'],
         ['Blog',          'blog/'],
         ['Hiring guide',  'hiring-guide/'],
         ['CS handbook',   'cs-handbook/'],

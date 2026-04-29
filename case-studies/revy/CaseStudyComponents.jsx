@@ -785,104 +785,81 @@ function CTABand() {
 // ---------------- Footer ----------------
 function CaseStudyFooter() {
   const cols = [
-    { title: 'Product', links: [
-      { label: 'How it works', href: '../../#how-it-works' },
-      { label: 'Who we serve', href: '../../#who-we-serve' },
-      { label: 'Pricing', href: '../../#pricing' },
-      { label: 'Case studies', href: '../' },
+    { title: 'Product',  links: [
+      ['How it works',  '../../#how-it-works'],
+      ['Who we serve',  '../../#who-we-serve'],
+      ['Pricing',       '../../#pricing'],
+      ['Case studies',  '../../case-studies/'],
     ]},
-    { title: 'Company', links: [
-      { label: 'About', href: '../../about/' },
-      { label: 'Careers', href: '../../careers/' },
-      { label: 'Press', href: '../../press/' },
-      { label: 'Contact', href: "https://savvycal.com/xfusion/lets-chat" },
+    { title: 'Company',  links: [
+      ['About',    '../../about/'],
+      ['Careers',  '../../careers/'],
+      ['Contact',  'https://savvycal.com/xfusion/lets-chat'],
     ]},
     { title: 'Resources', links: [
-      { label: 'Blog', href: '../../blog/' },
-      { label: 'Hiring guide', href: '../../hiring-guide/' },
-      { label: 'CS handbook', href: '../../cs-handbook/' },
-      { label: 'Status', href: '#status' },
+      ['FAQ',           '../../#faq'],
+      ['Blog',          '../../blog/'],
+      ['Hiring guide',  '../../hiring-guide/'],
+      ['CS handbook',   '../../cs-handbook/'],
+      ['Status',        '#status'],
     ]},
-    { title: 'Legal', links: [
-      { label: 'Privacy', href: '../../privacy/' },
-      { label: 'Terms', href: '../../terms/' },
-      { label: 'DPA', href: '../../dpa/' },
-      { label: 'Security', href: '../../security/' },
+    { title: 'Legal',    links: [
+      ['Privacy',   '../../privacy/'],
+      ['Terms',     '../../terms/'],
+      ['DPA',       '../../dpa/'],
+      ['Security',  '../../security/'],
     ]},
   ];
+  const FOREST  = '#2C4A3E';
+  const PAPER   = '#F7F2EB';
+  const BUTTER  = '#F0D9A8';
+  const DIVIDER = 'rgba(247, 242, 235, 0.14)';
+  const MUTED   = 'rgba(247, 242, 235, 0.65)';
   return (
-    <footer style={{ background: '#1F1A17', color: '#F7F2EB', padding: '64px 0 32px' }}>
+    <footer style={{ background: FOREST, color: PAPER }}>
       <Container>
-        <div className="footer-grid" style={{
-          display: 'grid',
-          gridTemplateColumns: '1.4fr 1fr 1fr 1fr 1fr',
-          gap: 48,
-          marginBottom: 48,
-        }}>
+        <div className="footer-top" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 32, alignItems: 'center', paddingTop: 64, paddingBottom: 40, borderBottom: `1px solid ${DIVIDER}` }}>
           <div>
-            <div style={{
-              display: 'flex', alignItems: 'center', gap: 10,
-              marginBottom: 16,
-            }}>
-              <span style={{
-                width: 36, height: 36, borderRadius: 9,
-                background: '#B8512C', color: '#F7F2EB',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontFamily: "'Source Serif 4', serif",
-                fontWeight: 500, fontSize: 22, letterSpacing: '-0.02em',
-                lineHeight: 1,
-              }}>xF</span>
-              <span style={{
-                fontFamily: "'Source Serif 4', serif",
-                fontSize: 26, fontWeight: 500,
-                letterSpacing: '-0.025em',
-                color: '#F7F2EB',
-              }}>xFusion</span>
-            </div>
-            <p style={{
-              fontSize: 14,
-              lineHeight: 1.6,
-              color: '#9E9388',
-              maxWidth: 280,
-              margin: 0,
-            }}>
+            <a href="../../" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 14, textDecoration: 'none' }}>
+              <span style={{ width: 36, height: 36, borderRadius: 9, background: '#B8512C', color: PAPER, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Source Serif 4', serif", fontWeight: 500, fontSize: 22, letterSpacing: '-0.02em', lineHeight: 1 }}>xF</span>
+              <span style={{ fontFamily: "'Source Serif 4', serif", fontSize: 28, fontWeight: 500, letterSpacing: '-0.025em', color: PAPER }}>xFusion</span>
+            </a>
+            <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 18, lineHeight: 1.5, color: BUTTER, margin: 0, maxWidth: 480, fontStyle: 'italic', fontWeight: 400 }}>
               Senior, AI-augmented customer support agents for small businesses. Since 2020.
             </p>
           </div>
+          <div className="footer-cta" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+            <a href="https://savvycal.com/xfusion/lets-chat" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '14px 22px', borderRadius: 999, background: '#B8512C', color: PAPER, textDecoration: 'none', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em', border: '1px solid transparent' }}>Book a Discovery Call</a>
+          </div>
+        </div>
+        <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 40, paddingTop: 48, paddingBottom: 40 }}>
           {cols.map(col => (
             <div key={col.title}>
-              <div style={{
-                fontSize: 12, fontWeight: 600,
-                textTransform: 'uppercase', letterSpacing: '0.12em',
-                color: '#9E9388', marginBottom: 16,
-              }}>{col.title}</div>
-              <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-                {col.links.map(l => (
-                  <li key={l.label} style={{ marginBottom: 10 }}>
-                    <a href={l.href} style={{
-                      color: '#F7F2EB', textDecoration: 'none', fontSize: 14,
-                    }}>{l.label}</a>
+              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.14em', color: MUTED, marginBottom: 18 }}>{col.title}</div>
+              <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {col.links.map(([label, href]) => (
+                  <li key={label}>
+                    <a href={href} className="footer-link" style={{ color: PAPER, textDecoration: 'none', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 15, lineHeight: 1.4 }}>{label}</a>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
-        <div style={{
-          paddingTop: 24,
-          borderTop: '1px solid #3A322D',
-          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-          fontSize: 13, color: '#9E9388',
-          flexWrap: 'wrap', gap: 12,
-        }}>
-          <div>© 2026 xFusion, Inc.</div>
-          <div>Made by humans. Used with care.</div>
+        <div className="footer-legal" style={{ paddingTop: 24, paddingBottom: 32, borderTop: `1px solid ${DIVIDER}`, display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13, color: MUTED, flexWrap: 'wrap', gap: 12 }}>
+          <div>© 2026 xFusion. All rights reserved.</div>
+          <div>Made with care across the Philippines, Kenya, and the United States.</div>
         </div>
       </Container>
       <style>{`
+        .footer-link:hover { color: ${BUTTER}; }
         @media (max-width: 900px) {
+          .footer-top { grid-template-columns: 1fr !important; gap: 20px !important; }
+          .footer-cta { justify-content: flex-start !important; }
           .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+          .footer-legal { flex-direction: column; align-items: flex-start !important; }
         }
+        @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr !important; gap: 28px !important; } }
       `}</style>
     </footer>
   );
