@@ -3,6 +3,7 @@ function CaseStudies() {
   const cards = [
     {
       client: 'Tolstoy',
+      slug: 'case-studies/tolstoy/',
       person: 'Dov Kaufmann',
       tone: 'clay',
       file: 'images/dov-kaufmann-tolstoy.png',
@@ -12,6 +13,7 @@ function CaseStudies() {
     },
     {
       client: 'SavvyCal',
+      slug: 'case-studies/savvycal/',
       person: 'Derrick Reimer',
       tone: 'forest',
       file: 'images/derrick-reimer-savvycal.png',
@@ -21,6 +23,7 @@ function CaseStudies() {
     },
     {
       client: 'Bonify',
+      slug: 'case-studies/bonify/',
       person: 'John Carbone',
       tone: 'butter',
       file: 'images/john-carbone-bonify.png',
@@ -90,7 +93,7 @@ function CaseStudies() {
   );
 }
 
-function CaseCard({ client, person, tone, file, role, headline, body }) {
+function CaseCard({ client, slug, person, tone, file, role, headline, body }) {
   const [hover, setHover] = React.useState(false);
   return (
     <article
@@ -135,7 +138,7 @@ function CaseCard({ client, person, tone, file, role, headline, body }) {
           margin: 0,
           color: '#3A322D',
         }}>{body}</p>
-        <a href="#" style={{
+        <a href={slug} style={{
           marginTop: 'auto',
           fontFamily: "'IBM Plex Sans', sans-serif",
           fontSize: 14,

@@ -101,23 +101,26 @@ function Hero() {
             letterSpacing: '0.14em',
             color: '#6B5F56',
             marginBottom: 18,
+            textAlign: 'center',
           }}>
             Trusted by support-driven teams at
           </div>
-          <div style={{
+          <div className="logo-bar" style={{
             display: 'flex',
-            flexWrap: 'wrap',
-            gap: '16px 40px',
+            flexWrap: 'nowrap',
+            gap: '16px 22px',
             alignItems: 'center',
+            justifyContent: 'center',
           }}>
-            {['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy'].map((name, i) => (
+            {['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy', 'CrowdCow', 'Arbio', 'NextMune'].map((name) => (
               <span key={name} style={{
                 fontFamily: "'Source Serif 4', serif",
-                fontSize: 22,
+                fontSize: 18,
                 fontWeight: 500,
                 letterSpacing: '-0.01em',
                 color: '#3A322D',
                 opacity: 0.7,
+                whiteSpace: 'nowrap',
               }}>{name}</span>
             ))}
           </div>
@@ -128,6 +131,7 @@ function Hero() {
         @media (max-width: 900px) {
           .hero-grid { grid-template-columns: 1fr !important; gap: 56px !important; }
           .hero-stat { left: 0 !important; bottom: -20px !important; }
+          .logo-bar { flex-wrap: wrap !important; gap: 14px 24px !important; }
         }
       `}</style>
     </section>
