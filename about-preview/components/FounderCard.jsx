@@ -1,7 +1,6 @@
 // Founder card: photo + role + multi-paragraph bio.
 // `imageSide` controls left/right alternation.
 function FounderCard({
-  index,
   name,
   role,
   paragraphs,
@@ -34,8 +33,7 @@ function FounderCard({
         />
       </div>
       <div className="founder-body" style={{ order: isLeft ? 1 : 0 }}>
-        <Eyebrow>0{index} / Co-founder</Eyebrow>
-        <h2 style={{
+        <h3 style={{
           fontFamily: "'Source Serif 4', serif",
           fontSize: 'clamp(30px, 3.2vw, 42px)',
           fontWeight: 400,
@@ -45,7 +43,7 @@ function FounderCard({
           color: '#1F1A17',
         }}>
           {name}
-        </h2>
+        </h3>
         <div style={{
           fontFamily: "'IBM Plex Sans', sans-serif",
           fontSize: 14,

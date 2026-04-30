@@ -1,11 +1,10 @@
 // Section 04: Leadership team
-// Tiered grid — "Heads of" row (Daniel, Velvie) at slightly larger size,
-// then a row of account managers + ops engineer below.
+// Single uniform grid — all cards same size, ordered by seniority.
 // Each card is clickable to the team member's LinkedIn.
 
 function Leadership() {
   // LinkedIn URLs are placeholders. Replace with real URLs as you have them.
-  const headsOf = [
+  const team = [
     {
       name: 'Daniel Juma',
       role: 'Head of Operations',
@@ -18,9 +17,6 @@ function Leadership() {
       imageSrc: '../images/velvie-coleman.png',
       linkedIn: '#',
     },
-  ];
-
-  const operations = [
     {
       name: 'Martin Onami',
       role: 'Account Manager',
@@ -91,52 +87,35 @@ function Leadership() {
           </div>
         </div>
 
-        {/* Heads of: 2-up larger cards */}
-        <div className="lead-heads-grid" style={{
+        <div className="lead-grid" style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
-          gap: 32,
-          marginBottom: 32,
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: 28,
         }}>
-          {headsOf.map(person => (
-            <LeaderCard key={person.name} {...person} size="md" />
-          ))}
-        </div>
-
-        {/* Operations: smaller card grid */}
-        <div className="lead-ops-grid" style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(5, 1fr)',
-          gap: 24,
-        }}>
-          {operations.map(person => (
-            <LeaderCard key={person.name} {...person} size="sm" />
+          {team.map(person => (
+            <LeaderCard key={person.name} {...person} />
           ))}
         </div>
       </Container>
       <style>{`
         @media (max-width: 1024px) {
-          .lead-ops-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 24px !important; }
+          .lead-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 24px !important; }
         }
         @media (max-width: 760px) {
           .lead-head { grid-template-columns: 1fr !important; gap: 24px !important; }
-          .lead-heads-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
-          .lead-ops-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
+          .lead-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
         }
         @media (max-width: 460px) {
-          .lead-ops-grid { grid-template-columns: 1fr !important; }
+          .lead-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </Section>
   );
 }
 
-function LeaderCard({ name, role, imageSrc, linkedIn, size = 'sm' }) {
+function LeaderCard({ name, role, imageSrc, linkedIn }) {
   const [errored, setErrored] = React.useState(false);
   const [hover, setHover] = React.useState(false);
-
-  // 'md' for Heads of (slightly larger photos), 'sm' for ops team
-  const photoSize = size === 'md' ? '4 / 5' : '4 / 5';
 
   return (
     <a
@@ -164,7 +143,7 @@ function LeaderCard({ name, role, imageSrc, linkedIn, size = 'sm' }) {
           onError={() => setErrored(true)}
           style={{
             width: '100%',
-            aspectRatio: photoSize,
+            aspectRatio: '4 / 5',
             objectFit: 'cover',
             borderRadius: 12,
             border: '1px solid #D9CFBF',
@@ -177,7 +156,7 @@ function LeaderCard({ name, role, imageSrc, linkedIn, size = 'sm' }) {
       <div style={{
         marginTop: 14,
         fontFamily: "'Source Serif 4', serif",
-        fontSize: size === 'md' ? 22 : 18,
+        fontSize: 19,
         fontWeight: 500,
         color: '#1F1A17',
         letterSpacing: '-0.01em',
