@@ -7,8 +7,6 @@ function Footer() {
     {
       title: 'Product',
       links: [
-        ['How it works',  '#how-it-works'],
-        ['Who we serve',  '#who-we-serve'],
         ['Pricing',       '#pricing'],
         ['Case studies',  'case-studies/'],
       ],
@@ -62,7 +60,7 @@ function Footer() {
               display: 'inline-flex', alignItems: 'center', gap: 10,
               marginBottom: 14, textDecoration: 'none',
             }}>
-              <img src="assets/xfusion-logo.png" alt="xFusion" style={{ height: 36, width: "auto", display: "block", filter: 'brightness(0) invert(1)' }} />
+              <img src="assets/xfusion-logo-on-dark.png" alt="xFusion" style={{ height: 36, width: "auto", display: "block" }} />
               
             </a>
             <p style={{
@@ -74,18 +72,7 @@ function Footer() {
               Senior, AI-augmented customer support agents for small businesses. Since 2020.
             </p>
           </div>
-          <div className="footer-cta" style={{
-            display: 'flex', justifyContent: 'flex-end', alignItems: 'center',
-          }}>
-            <a href="https://savvycal.com/xfusion/lets-chat" style={{
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-              padding: '14px 22px', borderRadius: 999,
-              background: '#B8512C', color: PAPER, textDecoration: 'none',
-              fontFamily: "'IBM Plex Sans', sans-serif",
-              fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em',
-              border: '1px solid transparent',
-            }}>Book a Discovery Call</a>
-          </div>
+          
         </div>
 
         {/* 4 columns */}

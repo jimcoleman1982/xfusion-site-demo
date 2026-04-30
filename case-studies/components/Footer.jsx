@@ -5,8 +5,6 @@ function Footer() {
     {
       title: 'Product',
       links: [
-        ['How it works',  '../#how-it-works'],
-        ['Who we serve',  '../#who-we-serve'],
         ['Pricing',       '../#pricing'],
         ['Case studies',  './'],
       ],
@@ -55,7 +53,7 @@ function Footer() {
               display: 'inline-flex', alignItems: 'center', gap: 10,
               marginBottom: 14, textDecoration: 'none',
             }}>
-              <img src="../assets/xfusion-logo.png" alt="xFusion" style={{ height: 36, width: "auto", display: "block", filter: 'brightness(0) invert(1)' }} />
+              <img src="../assets/xfusion-logo-on-dark.png" alt="xFusion" style={{ height: 36, width: "auto", display: "block" }} />
               
             </a>
             <p style={{
