@@ -58,6 +58,7 @@ function Team() {
             count="35 team members"
             label="Photo: Philippines team-building"
             imageSrc="../images/xfusion-philippines-team.jpeg"
+            sillySrc="../images/silly/philippines-team-silly.png"
             tone="clay"
           />
           <TeamPhoto
@@ -65,6 +66,7 @@ function Team() {
             count="35 team members"
             label="Photo: Kenya team-building"
             imageSrc="../images/xfusion-kenya-team.jpeg"
+            sillySrc="../images/silly/kenya-team-silly.png"
             tone="forest"
           />
         </div>
@@ -113,32 +115,82 @@ function Team() {
           .team-photos { grid-template-columns: 1fr !important; }
           .team-stats { grid-template-columns: repeat(2, 1fr) !important; gap: 24px !important; }
         }
+
+        /* Hover flip: stack two images, fade between them on hover (desktop)
+           or on tap toggle (mobile, via the .flipped class). */
+        .team-photo-stack {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 4 / 3;
+          border-radius: 12px;
+          overflow: hidden;
+          border: 1px solid #D9CFBF;
+          cursor: pointer;
+        }
+        .team-photo-stack img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: opacity 220ms cubic-bezier(0.4,0,0.6,1);
+        }
+        .team-photo-default { opacity: 1; }
+        .team-photo-silly   { opacity: 0; }
+        @media (hover: hover) {
+          .team-photo-stack:hover .team-photo-default { opacity: 0; }
+          .team-photo-stack:hover .team-photo-silly   { opacity: 1; }
+        }
+        .team-photo-stack.flipped .team-photo-default { opacity: 0; }
+        .team-photo-stack.flipped .team-photo-silly   { opacity: 1; }
       `}</style>
     </Section>
   );
 }
 
-function TeamPhoto({ location, count, label, imageSrc, tone }) {
+function TeamPhoto({ location, count, label, imageSrc, sillySrc, tone }) {
   const [errored, setErrored] = React.useState(false);
+  const [flipped, setFlipped] = React.useState(false);
   const showImage = imageSrc && !errored;
+
+  const handleToggle = () => setFlipped(f => !f);
+  const handleKey = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleToggle();
+    }
+  };
 
   return (
     <figure style={{ margin: 0 }}>
       {showImage ? (
-        <img
-          src={imageSrc}
-          alt={`xFusion ${location} team building, ${count}`}
-          loading="lazy"
-          onError={() => setErrored(true)}
-          style={{
-            width: '100%',
-            aspectRatio: '4 / 3',
-            objectFit: 'cover',
-            borderRadius: 12,
-            border: '1px solid #D9CFBF',
-            display: 'block',
-          }}
-        />
+        <div
+          className={`team-photo-stack${flipped ? ' flipped' : ''}`}
+          role="button"
+          tabIndex={0}
+          aria-pressed={flipped}
+          aria-label={`xFusion ${location} team photo, tap to toggle silly portrait`}
+          onClick={handleToggle}
+          onKeyDown={handleKey}
+        >
+          <img
+            src={imageSrc}
+            alt={`xFusion ${location} team building, ${count}`}
+            loading="lazy"
+            onError={() => setErrored(true)}
+            className="team-photo-default"
+          />
+          {sillySrc && (
+            <img
+              src={sillySrc}
+              alt=""
+              loading="lazy"
+              className="team-photo-silly"
+              aria-hidden="true"
+            />
+          )}
+        </div>
       ) : (
         <div style={{ aspectRatio: '4 / 3', position: 'relative' }}>
           <PhotoPlaceholder

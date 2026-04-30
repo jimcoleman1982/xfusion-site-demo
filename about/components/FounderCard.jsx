@@ -79,7 +79,8 @@ function FounderCard({
           .founder-card .founder-body  { order: 1 !important; }
         }
 
-        /* Hover flip on founder photos: same pattern as the leadership grid. */
+        /* Hover flip on founder photos: same pattern as the leadership grid.
+           Hover toggles on desktop; tap toggles on mobile via .flipped. */
         .founder-photo-stack {
           position: relative;
           width: 100%;
@@ -87,6 +88,7 @@ function FounderCard({
           border-radius: 12px;
           overflow: hidden;
           border: 1px solid #D9CFBF;
+          cursor: pointer;
         }
         .founder-photo-stack img {
           position: absolute;
@@ -99,8 +101,12 @@ function FounderCard({
         }
         .founder-photo-default { opacity: 1; }
         .founder-photo-silly   { opacity: 0; }
-        .founder-photo-stack:hover .founder-photo-default { opacity: 0; }
-        .founder-photo-stack:hover .founder-photo-silly   { opacity: 1; }
+        @media (hover: hover) {
+          .founder-photo-stack:hover .founder-photo-default { opacity: 0; }
+          .founder-photo-stack:hover .founder-photo-silly   { opacity: 1; }
+        }
+        .founder-photo-stack.flipped .founder-photo-default { opacity: 0; }
+        .founder-photo-stack.flipped .founder-photo-silly   { opacity: 1; }
       `}</style>
     </div>
   );
@@ -111,6 +117,15 @@ function FounderCard({
 // When sillySrc is provided, hover swaps to the silly portrait.
 function FounderPhoto({ name, imageSrc, sillySrc, imageLabel, tone }) {
   const [errored, setErrored] = React.useState(false);
+  const [flipped, setFlipped] = React.useState(false);
+
+  const handleToggle = () => setFlipped(f => !f);
+  const handleKey = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleToggle();
+    }
+  };
 
   if (!imageSrc || errored) {
     const tones = {
@@ -157,7 +172,15 @@ function FounderPhoto({ name, imageSrc, sillySrc, imageLabel, tone }) {
   }
 
   return (
-    <div className="founder-photo-stack" aria-label={`Photo of ${name}`}>
+    <div
+      className={`founder-photo-stack${flipped ? ' flipped' : ''}`}
+      role="button"
+      tabIndex={0}
+      aria-pressed={flipped}
+      aria-label={`Photo of ${name}, tap to toggle silly portrait`}
+      onClick={handleToggle}
+      onKeyDown={handleKey}
+    >
       <img
         src={imageSrc}
         alt={`${name}, co-founder of xFusion`}

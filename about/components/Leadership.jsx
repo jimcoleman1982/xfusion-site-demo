@@ -127,7 +127,8 @@ function Leadership() {
           .lead-grid { grid-template-columns: 1fr !important; }
         }
 
-        /* Hover flip: stack two images, fade between them on hover. */
+        /* Hover flip: stack two images, fade between them on hover (desktop)
+           or on tap toggle (mobile, via the .flipped class). */
         .leader-photo-stack {
           position: relative;
           width: 100%;
@@ -138,8 +139,10 @@ function Leadership() {
           cursor: pointer;
           transition: transform 240ms cubic-bezier(0.4,0,0.6,1);
         }
-        .leader-photo-stack:hover {
-          transform: translateY(-2px);
+        @media (hover: hover) {
+          .leader-photo-stack:hover {
+            transform: translateY(-2px);
+          }
         }
         .leader-photo-stack img {
           position: absolute;
@@ -152,8 +155,12 @@ function Leadership() {
         }
         .leader-photo-default { opacity: 1; }
         .leader-photo-silly   { opacity: 0; }
-        .leader-photo-stack:hover .leader-photo-default { opacity: 0; }
-        .leader-photo-stack:hover .leader-photo-silly   { opacity: 1; }
+        @media (hover: hover) {
+          .leader-photo-stack:hover .leader-photo-default { opacity: 0; }
+          .leader-photo-stack:hover .leader-photo-silly   { opacity: 1; }
+        }
+        .leader-photo-stack.flipped .leader-photo-default { opacity: 0; }
+        .leader-photo-stack.flipped .leader-photo-silly   { opacity: 1; }
 
         .leader-name-link {
           color: #1F1A17;
@@ -168,10 +175,27 @@ function Leadership() {
 
 function LeaderCard({ name, role, imageSrc, sillySrc, linkedIn }) {
   const [errored, setErrored] = React.useState(false);
+  const [flipped, setFlipped] = React.useState(false);
+
+  const handleToggle = () => setFlipped(f => !f);
+  const handleKey = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleToggle();
+    }
+  };
 
   return (
     <div>
-      <div className="leader-photo-stack" aria-label={`Photo of ${name}`}>
+      <div
+        className={`leader-photo-stack${flipped ? ' flipped' : ''}`}
+        role="button"
+        tabIndex={0}
+        aria-pressed={flipped}
+        aria-label={`Photo of ${name}, tap to toggle silly portrait`}
+        onClick={handleToggle}
+        onKeyDown={handleKey}
+      >
         {(!imageSrc || errored) ? (
           <LeaderPlaceholder name={name} />
         ) : (
