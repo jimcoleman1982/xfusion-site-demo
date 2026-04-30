@@ -1,11 +1,12 @@
 // Founder card: photo + role + multi-paragraph bio.
 // `imageSide` controls left/right alternation.
+// Hover the photo to flip to the founder's silly portrait.
 function FounderCard({
-  index,
   name,
   role,
   paragraphs,
   imageSrc,
+  sillySrc,
   imageLabel,
   imageSide = 'right',
   tone = 'clay',
@@ -29,13 +30,13 @@ function FounderCard({
         <FounderPhoto
           name={name}
           imageSrc={imageSrc}
+          sillySrc={sillySrc}
           imageLabel={imageLabel}
           tone={tone}
         />
       </div>
       <div className="founder-body" style={{ order: isLeft ? 1 : 0 }}>
-        <Eyebrow>0{index} / Co-founder</Eyebrow>
-        <h2 style={{
+        <h3 style={{
           fontFamily: "'Source Serif 4', serif",
           fontSize: 'clamp(30px, 3.2vw, 42px)',
           fontWeight: 400,
@@ -45,7 +46,7 @@ function FounderCard({
           color: '#1F1A17',
         }}>
           {name}
-        </h2>
+        </h3>
         <div style={{
           fontFamily: "'IBM Plex Sans', sans-serif",
           fontSize: 14,
@@ -77,14 +78,38 @@ function FounderCard({
           .founder-card .founder-photo { order: 0 !important; }
           .founder-card .founder-body  { order: 1 !important; }
         }
+
+        /* Hover flip on founder photos: same pattern as the leadership grid. */
+        .founder-photo-stack {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 4 / 5;
+          border-radius: 12px;
+          overflow: hidden;
+          border: 1px solid #D9CFBF;
+        }
+        .founder-photo-stack img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: opacity 220ms cubic-bezier(0.4,0,0.6,1);
+        }
+        .founder-photo-default { opacity: 1; }
+        .founder-photo-silly   { opacity: 0; }
+        .founder-photo-stack:hover .founder-photo-default { opacity: 0; }
+        .founder-photo-stack:hover .founder-photo-silly   { opacity: 1; }
       `}</style>
     </div>
   );
 }
 
 // Photo block: real <img> if a real file resolves, otherwise a labeled
-// PhotoPlaceholder showing the expected file path so the dev knows what's missing.
-function FounderPhoto({ name, imageSrc, imageLabel, tone }) {
+// placeholder showing the expected file path so the dev knows what's missing.
+// When sillySrc is provided, hover swaps to the silly portrait.
+function FounderPhoto({ name, imageSrc, sillySrc, imageLabel, tone }) {
   const [errored, setErrored] = React.useState(false);
 
   if (!imageSrc || errored) {
@@ -127,34 +152,29 @@ function FounderPhoto({ name, imageSrc, imageLabel, tone }) {
             {imageLabel}
           </div>
         </div>
-        <div style={{
-          marginTop: 12,
-          fontFamily: "'JetBrains Mono', monospace",
-          fontSize: 11,
-          color: '#6B5F56',
-          letterSpacing: '0.02em',
-        }}>
-          {imageSrc /* shown as the expected file path */}
-        </div>
       </div>
     );
   }
 
   return (
-    <img
-      src={imageSrc}
-      alt={`${name}, co-founder of xFusion`}
-      loading="lazy"
-      onError={() => setErrored(true)}
-      style={{
-        width: '100%',
-        aspectRatio: '4 / 5',
-        objectFit: 'cover',
-        borderRadius: 12,
-        border: '1px solid #D9CFBF',
-        display: 'block',
-      }}
-    />
+    <div className="founder-photo-stack" aria-label={`Photo of ${name}`}>
+      <img
+        src={imageSrc}
+        alt={`${name}, co-founder of xFusion`}
+        loading="lazy"
+        className="founder-photo-default"
+        onError={() => setErrored(true)}
+      />
+      {sillySrc && (
+        <img
+          src={sillySrc}
+          alt=""
+          loading="lazy"
+          className="founder-photo-silly"
+          aria-hidden="true"
+        />
+      )}
+    </div>
   );
 }
 

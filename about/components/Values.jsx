@@ -21,7 +21,7 @@ function Values() {
           marginBottom: 56,
         }} className="values-head">
           <div>
-            <Eyebrow>05 / Values</Eyebrow>
+            <Eyebrow>06 / Values</Eyebrow>
             <h2 style={{
               fontFamily: "'Source Serif 4', serif",
               fontSize: 'clamp(30px, 3.2vw, 42px)',

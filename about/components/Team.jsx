@@ -10,7 +10,7 @@ function Team() {
           marginBottom: 56,
         }} className="team-head">
           <div>
-            <Eyebrow>06 / Team</Eyebrow>
+            <Eyebrow>03 / Team</Eyebrow>
             <h2 style={{
               fontFamily: "'Source Serif 4', serif",
               fontSize: 'clamp(30px, 3.2vw, 42px)',

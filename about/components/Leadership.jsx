@@ -1,6 +1,7 @@
 // Section 04: Leadership team
 // Single uniform grid — all cards same size, ordered by seniority.
-// Each card is clickable to the team member's LinkedIn.
+// Hover the image to flip to the team member's silly portrait.
+// Click the name to open their LinkedIn profile.
 
 function Leadership() {
   // LinkedIn URLs are placeholders. Replace with real URLs as you have them.
@@ -9,42 +10,49 @@ function Leadership() {
       name: 'Daniel Juma',
       role: 'Head of Operations',
       imageSrc: '../images/daniel-juma.png',
+      sillySrc: '../images/silly/daniel-juma-silly.png',
       linkedIn: '#',
     },
     {
       name: 'Velvie Coleman',
       role: 'Head of Culture',
       imageSrc: '../images/velvie-coleman.png',
+      sillySrc: '../images/silly/velvie-coleman-silly.png',
       linkedIn: '#',
     },
     {
       name: 'Martin Onami',
       role: 'Account Manager',
       imageSrc: '../images/martin-onami.png',
+      sillySrc: '../images/silly/martin-onami-silly.png',
       linkedIn: '#',
     },
     {
       name: 'Reggie Rendal',
       role: 'Account Manager',
       imageSrc: '../images/reggie-rendal.png',
+      sillySrc: '../images/silly/reggie-rendal-silly.png',
       linkedIn: '#',
     },
     {
       name: 'Marie Medina',
       role: 'Account Manager',
       imageSrc: '../images/marie-medina.png',
+      sillySrc: '../images/silly/marie-medina-silly.png',
       linkedIn: '#',
     },
     {
       name: 'Bianca Dadulla',
       role: 'Lead Recruiter',
       imageSrc: '../images/bianca-dadulla.png',
+      sillySrc: '../images/silly/bianca-dadulla-silly.png',
       linkedIn: '#',
     },
     {
       name: 'Felix Maru',
       role: 'Operations Engineer',
       imageSrc: '../images/felix-maru.png',
+      sillySrc: '../images/silly/felix-maru-silly.png',
       linkedIn: '#',
     },
   ];
@@ -79,10 +87,20 @@ function Leadership() {
               fontSize: 18,
               lineHeight: 1.65,
               color: '#1F1A17',
-              margin: 0,
+              margin: '0 0 12px',
               textWrap: 'pretty',
             }}>
               The people clients work with day-to-day. Operations, account management, and recruiting. Every account manager knows their team members by name, and every team member knows their account manager has their back.
+            </p>
+            <p style={{
+              fontFamily: "'IBM Plex Sans', sans-serif",
+              fontSize: 14,
+              lineHeight: 1.5,
+              color: '#6B5F56',
+              margin: 0,
+              fontStyle: 'italic',
+            }}>
+              Hover any photo to meet the person behind the title.
             </p>
           </div>
         </div>
@@ -108,61 +126,92 @@ function Leadership() {
         @media (max-width: 460px) {
           .lead-grid { grid-template-columns: 1fr !important; }
         }
+
+        /* Hover flip: stack two images, fade between them on hover. */
+        .leader-photo-stack {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 4 / 5;
+          border-radius: 12px;
+          overflow: hidden;
+          border: 1px solid #D9CFBF;
+          cursor: pointer;
+          transition: transform 240ms cubic-bezier(0.4,0,0.6,1);
+        }
+        .leader-photo-stack:hover {
+          transform: translateY(-2px);
+        }
+        .leader-photo-stack img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: opacity 220ms cubic-bezier(0.4,0,0.6,1);
+        }
+        .leader-photo-default { opacity: 1; }
+        .leader-photo-silly   { opacity: 0; }
+        .leader-photo-stack:hover .leader-photo-default { opacity: 0; }
+        .leader-photo-stack:hover .leader-photo-silly   { opacity: 1; }
+
+        .leader-name-link {
+          color: #1F1A17;
+          text-decoration: none;
+          transition: color 160ms ease;
+        }
+        .leader-name-link:hover { color: #B8512C; }
       `}</style>
     </Section>
   );
 }
 
-function LeaderCard({ name, role, imageSrc, linkedIn }) {
+function LeaderCard({ name, role, imageSrc, sillySrc, linkedIn }) {
   const [errored, setErrored] = React.useState(false);
-  const [hover, setHover] = React.useState(false);
 
   return (
-    <a
-      href={linkedIn}
-      target={linkedIn === '#' ? undefined : '_blank'}
-      rel={linkedIn === '#' ? undefined : 'noopener noreferrer'}
-      aria-label={`${name}, ${role} — open LinkedIn profile`}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      style={{
-        textDecoration: 'none',
-        color: 'inherit',
-        display: 'block',
-        transition: 'transform 240ms cubic-bezier(0.4,0,0.6,1)',
-        transform: hover ? 'translateY(-2px)' : 'translateY(0)',
-      }}
-    >
-      {(!imageSrc || errored) ? (
-        <LeaderPlaceholder name={name} />
-      ) : (
-        <img
-          src={imageSrc}
-          alt={`${name}, ${role}`}
-          loading="lazy"
-          onError={() => setErrored(true)}
-          style={{
-            width: '100%',
-            aspectRatio: '4 / 5',
-            objectFit: 'cover',
-            borderRadius: 12,
-            border: '1px solid #D9CFBF',
-            display: 'block',
-            filter: hover ? 'brightness(1.04)' : 'none',
-            transition: 'filter 200ms ease',
-          }}
-        />
-      )}
+    <div>
+      <div className="leader-photo-stack" aria-label={`Photo of ${name}`}>
+        {(!imageSrc || errored) ? (
+          <LeaderPlaceholder name={name} />
+        ) : (
+          <>
+            <img
+              src={imageSrc}
+              alt={`${name}, ${role}`}
+              loading="lazy"
+              className="leader-photo-default"
+              onError={() => setErrored(true)}
+            />
+            {sillySrc && (
+              <img
+                src={sillySrc}
+                alt=""
+                loading="lazy"
+                className="leader-photo-silly"
+                aria-hidden="true"
+              />
+            )}
+          </>
+        )}
+      </div>
       <div style={{
         marginTop: 14,
         fontFamily: "'Source Serif 4', serif",
         fontSize: 19,
         fontWeight: 500,
-        color: '#1F1A17',
         letterSpacing: '-0.01em',
         lineHeight: 1.2,
       }}>
-        {name}
+        <a
+          href={linkedIn}
+          className="leader-name-link"
+          target={linkedIn === '#' ? undefined : '_blank'}
+          rel={linkedIn === '#' ? undefined : 'noopener noreferrer'}
+          aria-label={`${name}, ${role} — open LinkedIn profile`}
+        >
+          {name}
+        </a>
       </div>
       <div style={{
         marginTop: 4,
@@ -174,7 +223,7 @@ function LeaderCard({ name, role, imageSrc, linkedIn }) {
       }}>
         {role}
       </div>
-    </a>
+    </div>
   );
 }
 
@@ -182,14 +231,13 @@ function LeaderPlaceholder({ name }) {
   const initials = name.split(' ').map(s => s[0]).slice(0, 2).join('');
   return (
     <div style={{
-      aspectRatio: '4 / 5',
-      borderRadius: 12,
+      width: '100%',
+      height: '100%',
       background: 'linear-gradient(135deg, #F0D9A8 0%, #D9B97A 100%)',
       color: '#3A322D',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      border: '1px solid #D9CFBF',
     }}>
       <div style={{
         fontFamily: "'Source Serif 4', serif",

@@ -36,7 +36,7 @@ function AboutCTA() {
             </p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20, alignItems: 'flex-start' }} className="about-cta-actions">
-            <Button variant="on-dark" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a discovery call</Button>
+            <Button variant="primary" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>
             <p style={{
               fontFamily: "'IBM Plex Sans', sans-serif",
               fontSize: 14,
