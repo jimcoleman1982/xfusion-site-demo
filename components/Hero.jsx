@@ -1,5 +1,13 @@
 // Section 1: Hero
 function Hero() {
+  const [flipped, setFlipped] = React.useState(false);
+  const handleToggle = () => setFlipped(f => !f);
+  const handleKey = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleToggle();
+    }
+  };
   return (
     <section style={{ background: '#F7F2EB', padding: '64px 0 80px' }}>
       <Container>
@@ -42,18 +50,27 @@ function Hero() {
             </CTAMicrocopy>
           </div>
           <div style={{ position: 'relative' }}>
-            <img
-              src="images/xfusion-team-montage.png"
-              alt="xFusion team across the Philippines and Kenya"
-              style={{
-                width: '100%',
-                aspectRatio: '4/5',
-                objectFit: 'cover',
-                borderRadius: 12,
-                border: '1px solid #D9CFBF',
-                display: 'block',
-              }}
-            />
+            <div
+              className={`hero-photo-stack${flipped ? ' flipped' : ''}`}
+              role="button"
+              tabIndex={0}
+              aria-pressed={flipped}
+              aria-label="xFusion team across the Philippines and Kenya, tap to toggle silly portrait"
+              onClick={handleToggle}
+              onKeyDown={handleKey}
+            >
+              <img
+                src="images/xfusion-team-montage.png"
+                alt="xFusion team across the Philippines and Kenya"
+                className="hero-photo-default"
+              />
+              <img
+                src="images/silly/xfusion-team-montage-silly.png"
+                alt=""
+                className="hero-photo-silly"
+                aria-hidden="true"
+              />
+            </div>
             <div style={{
               position: 'absolute',
               bottom: -28,
@@ -133,6 +150,36 @@ function Hero() {
           .hero-stat { left: 0 !important; bottom: -20px !important; }
           .logo-bar { flex-wrap: wrap !important; gap: 14px 24px !important; }
         }
+
+        /* Hero hover flip: stack two images, fade between them on hover (desktop)
+           or on tap toggle (mobile, via the .flipped class). */
+        .hero-photo-stack {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 4 / 5;
+          border-radius: 12px;
+          overflow: hidden;
+          border: 1px solid #D9CFBF;
+          cursor: pointer;
+          display: block;
+        }
+        .hero-photo-stack img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: opacity 220ms cubic-bezier(0.4,0,0.6,1);
+        }
+        .hero-photo-default { opacity: 1; }
+        .hero-photo-silly   { opacity: 0; }
+        @media (hover: hover) {
+          .hero-photo-stack:hover .hero-photo-default { opacity: 0; }
+          .hero-photo-stack:hover .hero-photo-silly   { opacity: 1; }
+        }
+        .hero-photo-stack.flipped .hero-photo-default { opacity: 0; }
+        .hero-photo-stack.flipped .hero-photo-silly   { opacity: 1; }
       `}</style>
     </section>
   );
