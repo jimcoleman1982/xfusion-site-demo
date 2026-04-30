@@ -774,13 +774,9 @@ function Footer() {
     { title: 'Resources', links: [
       ['FAQ',           '../../#faq'],
       ['Blog',          '../../blog/'],
-      ['Hiring guide',  '../../hiring-guide/'],
-      ['CS handbook',   '../../cs-handbook/'],
-      ['Status',        '#status'],
     ]},
     { title: 'Legal',    links: [
       ['Privacy',   '../../privacy/'],
-      ['Terms',     '../../terms/'],
       ['DPA',       '../../dpa/'],
       ['Security',  '../../security/'],
     ]},
