@@ -69,9 +69,7 @@
           <Container>
             <div style={{ height: 72, display: 'flex', alignItems: 'center', gap: 32 }}>
               <a href="../" style={{ display: 'flex', alignItems: 'baseline', textDecoration: 'none' }} aria-label="xFusion home">
-                <span style={{ fontFamily: "'Source Serif 4', serif", fontSize: 28, fontWeight: 600, letterSpacing: '-0.025em', color: '#1F1A17', lineHeight: 1 }}>
-                  <span style={{ color: '#B8512C' }}>x</span>Fusion<span style={{ color: '#B8512C' }}>.</span>
-                </span>
+                <img src="../assets/xfusion-logo.png" alt="xFusion" style={{ height: 36, width: "auto", display: "block" }} />
               </a>
               <div className="nav-links" style={{ display: 'flex', gap: 28, marginLeft: 24 }}>
                 {links.map(l => <a key={l.key} href={l.href} style={linkStyle(current === l.key)}>{l.label}</a>)}
@@ -126,8 +124,8 @@
             <div className="footer-top" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 32, alignItems: 'center', paddingTop: 64, paddingBottom: 40, borderBottom: `1px solid ${DIVIDER}` }}>
               <div>
                 <a href="../" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 14, textDecoration: 'none' }}>
-                  <span style={{ width: 36, height: 36, borderRadius: 9, background: '#B8512C', color: PAPER, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Source Serif 4', serif", fontWeight: 500, fontSize: 22, letterSpacing: '-0.02em', lineHeight: 1 }}>xF</span>
-                  <span style={{ fontFamily: "'Source Serif 4', serif", fontSize: 28, fontWeight: 500, letterSpacing: '-0.025em', color: PAPER }}>xFusion</span>
+                  <img src="../assets/xfusion-logo.png" alt="xFusion" style={{ height: 36, width: "auto", display: "block", filter: 'brightness(0) invert(1)' }} />
+                  
                 </a>
                 <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 18, lineHeight: 1.5, color: BUTTER, margin: 0, maxWidth: 480, fontStyle: 'italic', fontWeight: 400 }}>
                   Senior, AI-augmented customer support agents for small businesses. Since 2020.

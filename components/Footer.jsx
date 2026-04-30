@@ -62,19 +62,8 @@ function Footer() {
               display: 'inline-flex', alignItems: 'center', gap: 10,
               marginBottom: 14, textDecoration: 'none',
             }}>
-              <span style={{
-                width: 36, height: 36, borderRadius: 9,
-                background: '#B8512C', color: PAPER,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontFamily: "'Source Serif 4', serif",
-                fontWeight: 500, fontSize: 22, letterSpacing: '-0.02em',
-                lineHeight: 1,
-              }}>xF</span>
-              <span style={{
-                fontFamily: "'Source Serif 4', serif",
-                fontSize: 28, fontWeight: 500, letterSpacing: '-0.025em',
-                color: PAPER,
-              }}>xFusion</span>
+              <img src="assets/xfusion-logo.png" alt="xFusion" style={{ height: 36, width: "auto", display: "block", filter: 'brightness(0) invert(1)' }} />
+              
             </a>
             <p style={{
               fontFamily: "'Source Serif 4', serif",

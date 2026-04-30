@@ -68,15 +68,7 @@ function Nav({ active = 'about', prefix = '../' }) {
             textDecoration: 'none',
             flexShrink: 0,
           }}>
-            <span style={{
-              fontFamily: "'Source Serif 4', serif",
-              fontSize: 28, fontWeight: 600,
-              letterSpacing: '-0.025em',
-              color: '#1F1A17',
-              lineHeight: 1,
-            }}>
-              <span style={{ color: '#B8512C' }}>x</span>Fusion<span style={{ color: '#B8512C' }}>.</span>
-            </span>
+            <img src="../assets/xfusion-logo.png" alt="xFusion" style={{ height: 36, width: "auto", display: "block" }} />
           </a>
 
           <div className="nav-links" style={{ display: 'flex', gap: 28, marginLeft: 16 }}>
