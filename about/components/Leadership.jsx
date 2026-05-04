@@ -16,7 +16,7 @@ function Leadership() {
     {
       name: 'Velvie Coleman',
       role: 'Head of Culture',
-      imageSrc: '../images/velvie-coleman.png',
+      imageSrc: '../images/velvie-coleman.jpg',
       sillySrc: '../images/silly/velvie-coleman-silly.png',
       linkedIn: '#',
     },
