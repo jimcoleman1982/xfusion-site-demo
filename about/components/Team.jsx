@@ -80,7 +80,7 @@ function Team() {
           gap: 32,
         }} className="team-stats">
           {[
-            { stat: '70', label: 'Team members' },
+            { stat: '70+', label: 'Team members' },
             { stat: '3', label: 'Continents' },
             { stat: '6 yrs', label: 'In business since 2020' },
             { stat: '<1%', label: 'Of applicants placed' },

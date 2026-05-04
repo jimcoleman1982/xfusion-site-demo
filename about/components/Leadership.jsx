@@ -25,6 +25,7 @@ function Leadership() {
       role: 'Account Manager',
       imageSrc: '../images/martin-onami.png',
       sillySrc: '../images/silly/martin-onami-silly.png',
+      sillyFit: 'contain',
       linkedIn: '#',
     },
     {
@@ -155,6 +156,13 @@ function Leadership() {
         }
         .leader-photo-default { opacity: 1; }
         .leader-photo-silly   { opacity: 0; }
+        /* Per-leader silly image fit override: 'contain' lets the full
+           portrait show inside the 4:5 frame (used when the silly image
+           is much taller than the frame, e.g. full-body shots). */
+        .leader-photo-silly.fit-contain {
+          object-fit: contain;
+          background: #EFE8DD;
+        }
         @media (hover: hover) {
           .leader-photo-stack:hover .leader-photo-default { opacity: 0; }
           .leader-photo-stack:hover .leader-photo-silly   { opacity: 1; }
@@ -173,7 +181,7 @@ function Leadership() {
   );
 }
 
-function LeaderCard({ name, role, imageSrc, sillySrc, linkedIn }) {
+function LeaderCard({ name, role, imageSrc, sillySrc, sillyFit, linkedIn }) {
   const [errored, setErrored] = React.useState(false);
   const [flipped, setFlipped] = React.useState(false);
 
@@ -212,7 +220,7 @@ function LeaderCard({ name, role, imageSrc, sillySrc, linkedIn }) {
                 src={sillySrc}
                 alt=""
                 loading="lazy"
-                className="leader-photo-silly"
+                className={`leader-photo-silly${sillyFit === 'contain' ? ' fit-contain' : ''}`}
                 aria-hidden="true"
               />
             )}
