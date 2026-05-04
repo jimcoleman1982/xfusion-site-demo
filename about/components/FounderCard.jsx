@@ -10,6 +10,7 @@ function FounderCard({
   imageLabel,
   imageSide = 'right',
   tone = 'clay',
+  linkedIn,
 }) {
   const isLeft = imageSide === 'left';
 
@@ -45,7 +46,19 @@ function FounderCard({
           margin: '0 0 8px',
           color: '#1F1A17',
         }}>
-          {name}
+          {linkedIn ? (
+            <a
+              href={linkedIn}
+              className="founder-name-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${name}, ${role} — open LinkedIn profile`}
+            >
+              {name}
+            </a>
+          ) : (
+            name
+          )}
         </h3>
         <div style={{
           fontFamily: "'IBM Plex Sans', sans-serif",
@@ -107,6 +120,13 @@ function FounderCard({
         }
         .founder-photo-stack.flipped .founder-photo-default { opacity: 0; }
         .founder-photo-stack.flipped .founder-photo-silly   { opacity: 1; }
+
+        .founder-name-link {
+          color: inherit;
+          text-decoration: none;
+          transition: color 160ms ease;
+        }
+        .founder-name-link:hover { color: #B8512C; }
       `}</style>
     </div>
   );

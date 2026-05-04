@@ -1,24 +1,16 @@
 // Section 04: Leadership team
-// Single uniform grid — all cards same size, ordered by seniority.
-// Hover the image to flip to the team member's silly portrait.
-// Click the name to open their LinkedIn profile.
+// Single uniform grid — all cards same size.
+// Hover (or tap on mobile) the image to flip to the team member's silly portrait.
 
 function Leadership() {
-  // LinkedIn URLs are placeholders. Replace with real URLs as you have them.
+  // Display order: row 1 = Daniel, Martin, Reggie, Rie (Marie).
+  //                row 2 = Felix, Bianca, Velvie.
   const team = [
     {
       name: 'Daniel Juma',
       role: 'Head of Operations',
       imageSrc: '../images/daniel-juma.png',
       sillySrc: '../images/silly/daniel-juma-silly.png',
-      linkedIn: '#',
-    },
-    {
-      name: 'Velvie Coleman',
-      role: 'Head of Culture',
-      imageSrc: '../images/velvie-coleman.jpg',
-      sillySrc: '../images/silly/velvie-coleman-silly.png',
-      linkedIn: '#',
     },
     {
       name: 'Martin Onami',
@@ -26,35 +18,36 @@ function Leadership() {
       imageSrc: '../images/martin-onami.png',
       sillySrc: '../images/silly/martin-onami-silly.png',
       sillyFit: 'contain',
-      linkedIn: '#',
     },
     {
       name: 'Reggie Rendal',
       role: 'Account Manager',
       imageSrc: '../images/reggie-rendal.png',
       sillySrc: '../images/silly/reggie-rendal-silly.png',
-      linkedIn: '#',
     },
     {
       name: 'Marie Medina',
       role: 'Account Manager',
       imageSrc: '../images/marie-medina.png',
       sillySrc: '../images/silly/marie-medina-silly.png',
-      linkedIn: '#',
-    },
-    {
-      name: 'Bianca Dadulla',
-      role: 'Lead Recruiter',
-      imageSrc: '../images/bianca-dadulla.png',
-      sillySrc: '../images/silly/bianca-dadulla-silly.png',
-      linkedIn: '#',
     },
     {
       name: 'Felix Maru',
       role: 'Operations Engineer',
       imageSrc: '../images/felix-maru.png',
       sillySrc: '../images/silly/felix-maru-silly.png',
-      linkedIn: '#',
+    },
+    {
+      name: 'Bianca Dadulla',
+      role: 'Lead Recruiter',
+      imageSrc: '../images/bianca-dadulla.png',
+      sillySrc: '../images/silly/bianca-dadulla-silly.png',
+    },
+    {
+      name: 'Velvie Coleman',
+      role: 'Head of Culture',
+      imageSrc: '../images/velvie-coleman.jpg',
+      sillySrc: '../images/silly/velvie-coleman-silly.png',
     },
   ];
 
@@ -169,19 +162,12 @@ function Leadership() {
         }
         .leader-photo-stack.flipped .leader-photo-default { opacity: 0; }
         .leader-photo-stack.flipped .leader-photo-silly   { opacity: 1; }
-
-        .leader-name-link {
-          color: #1F1A17;
-          text-decoration: none;
-          transition: color 160ms ease;
-        }
-        .leader-name-link:hover { color: #B8512C; }
       `}</style>
     </Section>
   );
 }
 
-function LeaderCard({ name, role, imageSrc, sillySrc, sillyFit, linkedIn }) {
+function LeaderCard({ name, role, imageSrc, sillySrc, sillyFit }) {
   const [errored, setErrored] = React.useState(false);
   const [flipped, setFlipped] = React.useState(false);
 
@@ -234,16 +220,9 @@ function LeaderCard({ name, role, imageSrc, sillySrc, sillyFit, linkedIn }) {
         fontWeight: 500,
         letterSpacing: '-0.01em',
         lineHeight: 1.2,
+        color: '#1F1A17',
       }}>
-        <a
-          href={linkedIn}
-          className="leader-name-link"
-          target={linkedIn === '#' ? undefined : '_blank'}
-          rel={linkedIn === '#' ? undefined : 'noopener noreferrer'}
-          aria-label={`${name}, ${role} — open LinkedIn profile`}
-        >
-          {name}
-        </a>
+        {name}
       </div>
       <div style={{
         marginTop: 4,
