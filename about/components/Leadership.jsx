@@ -45,7 +45,7 @@ function Leadership() {
     },
     {
       name: 'Velvie Coleman',
-      role: 'Head of Culture',
+      role: 'Advisor',
       imageSrc: '../images/velvie-coleman.jpg',
       sillySrc: '../images/silly/velvie-coleman-silly.png',
     },
