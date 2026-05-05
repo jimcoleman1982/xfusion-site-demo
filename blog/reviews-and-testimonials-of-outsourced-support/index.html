@@ -20,23 +20,74 @@
     .nav .links { display: flex; gap: 8px; align-items: center; }
     .logo { display: flex; align-items: center; gap: 12px; font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; color: #1F1A17; text-decoration: none; }
 
-    .post-hero { padding-top: 48px; }
-    .post-hero .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em; color: #B8512C; margin-bottom: 18px; }
-    .post-hero h1 { font-family: 'Source Serif 4', serif; font-size: clamp(34px, 4.5vw, 54px); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 24px; max-width: 880px; color: #1F1A17; }
-    .post-hero .meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; color: #6B5F56; }
-    .post-hero-image { margin: 32px 0 48px; aspect-ratio: 16 / 5; border-radius: 16px; overflow: hidden; }
-    .post-hero-image svg { width: 100%; height: 100%; display: block; }
+    .post-hero { margin: 32px 0 56px; }
+    .post-hero-band {
+      position: relative;
+      border-radius: 20px;
+      padding: 88px 56px 72px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #F0D9A8 0%, #E6C68A 100%);
+      color: #1F1A17;
+    }
+    .post-hero-band::before {
+      content: "";
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background: #1F1A17;
+      opacity: 0.04;
+    }
+    .post-hero-band::after {
+      content: "";
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: #1F1A17;
+      opacity: 0.03;
+    }
+    .post-hero-inner { position: relative; max-width: 880px; }
+    .post-hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      opacity: 0.78;
+      margin-bottom: 32px;
+    }
+    .post-hero-title {
+      font-family: 'Source Serif 4', serif;
+      font-size: clamp(34px, 5vw, 60px);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      margin: 0 0 36px;
+      color: inherit;
+    }
+    .post-hero-meta {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px;
+      opacity: 0.75;
+      letter-spacing: 0.02em;
+    }
+    .post-hero-rule {
+      width: 48px; height: 2px;
+      background: currentColor;
+      opacity: 0.4;
+      margin-top: 28px;
+    }
 
-    .post-body { max-width: 720px; margin: 0 auto; padding-bottom: 64px; font-family: 'IBM Plex Sans', sans-serif; font-size: 18px; line-height: 1.7; color: #1F1A17; }
-    .post-body h2 { font-family: 'Source Serif 4', serif; font-size: 30px; font-weight: 600; line-height: 1.2; margin: 56px 0 18px; color: #1F1A17; letter-spacing: -0.01em; }
-    .post-body h3 { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; line-height: 1.25; margin: 36px 0 12px; color: #1F1A17; }
-    .post-body p { margin: 0 0 18px; color: #2A2520; }
-    .post-body strong { color: #1F1A17; }
+    .post-body { max-width: 720px; margin: 0 auto; padding-bottom: 64px; font-family: 'IBM Plex Sans', sans-serif; font-size: 20px; line-height: 1.65; color: #1F1A17; }
+    .post-body h2 { font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; line-height: 1.2; margin: 60px 0 20px; color: #1F1A17; letter-spacing: -0.01em; }
+    .post-body h3 { font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 600; line-height: 1.25; margin: 40px 0 14px; color: #1F1A17; }
+    .post-body p { margin: 0 0 22px; font-size: 20px; line-height: 1.65; color: #2A2520; }
+    .post-body strong { color: #1F1A17; font-weight: 600; }
     .post-body a { color: #B8512C; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
     .post-body a:hover { color: #A0451F; }
-    .post-body ul, .post-body ol { margin: 0 0 22px 1.2em; padding: 0; }
-    .post-body li { margin: 0 0 10px; line-height: 1.6; }
-    .post-body blockquote { border-left: 3px solid #B8512C; padding: 4px 0 4px 24px; margin: 32px 0; font-family: 'Source Serif 4', serif; font-size: 22px; font-style: italic; color: #3A322D; line-height: 1.4; }
+    .post-body ul, .post-body ol { margin: 0 0 24px 1.2em; padding: 0; font-size: 20px; }
+    .post-body li { margin: 0 0 12px; font-size: 20px; line-height: 1.6; }
+    .post-body blockquote { border-left: 3px solid #B8512C; padding: 6px 0 6px 24px; margin: 36px 0; font-family: 'Source Serif 4', serif; font-size: 24px; font-style: italic; color: #3A322D; line-height: 1.4; }
     .post-body code { font-family: 'JetBrains Mono', monospace; font-size: 0.92em; background: #EDE8E0; padding: 2px 6px; border-radius: 4px; }
     .post-body hr { border: 0; border-top: 1px solid #D9CFBF; margin: 48px 0; }
 
@@ -57,9 +108,12 @@
 
     @media (max-width: 900px) {
       .related-grid { grid-template-columns: 1fr; }
-      .post-hero-image { aspect-ratio: 16 / 8; }
+      .post-hero-band { padding: 56px 32px 48px; }
     }
-    @media (max-width: 700px) { .nav .links a:not(.cta) { display: none; } }
+    @media (max-width: 700px) {
+      .nav .links a:not(.cta) { display: none; }
+      .post-hero-band { padding: 48px 24px 40px; border-radius: 16px; }
+    }
   </style>
 </head>
 <body>
@@ -79,10 +133,14 @@
   <main class="page-wrap">
     <article>
       <header class="post-hero">
-        <div class="eyebrow">CUSTOMER EXPERIENCE</div>
-        <h1>Reviews and testimonials: the user perspective on outsourced support</h1>
-        <div class="meta">2026-05-05 · 7 min read</div>
-        <div class="post-hero-image"><svg viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="hg_reviews-and-testimonials-of-outsourced-support" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0D9A8"/><stop offset="100%" stop-color="#E6C68A"/></linearGradient></defs><rect width="1200" height="360" fill="url(#hg_reviews-and-testimonials-of-outsourced-support)"/><text x="48" y="68" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="13" font-weight="500" letter-spacing="2.4" opacity="0.7">CUSTOMER EXPERIENCE</text><rect x="48" y="304" width="56" height="3" fill="#1F1A17" opacity="0.5"/></svg></div>
+        <div class="post-hero-band">
+          <div class="post-hero-inner">
+            <div class="post-hero-eyebrow">CUSTOMER EXPERIENCE</div>
+            <h1 class="post-hero-title">Reviews and testimonials: the user perspective on outsourced support</h1>
+            <div class="post-hero-meta">2026-05-05 · 7 min read</div>
+            <div class="post-hero-rule"></div>
+          </div>
+        </div>
       </header>
 
       <div class="post-body">
