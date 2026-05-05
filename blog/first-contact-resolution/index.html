@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>First-contact resolution | xFusion</title>
+  <meta name="description" content="Why first-contact resolution matters more than almost any other support metric, and how to actually move the number.">
+  <link rel="stylesheet" href="../../colors_and_type.css">
+  <style>
+    body { background: var(--color-bg, #F7F2EB); color: var(--color-ink, #1F1A17); margin: 0; }
+    a { transition: color 160ms ease; }
+    *:focus-visible { outline: 2px solid var(--color-primary, #B8512C); outline-offset: 3px; border-radius: 4px; }
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #D9CFBF; }
+    .nav a { color: #1F1A17; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 500; padding: 8px 12px; }
+    .nav a:hover { color: #B8512C; }
+    .nav a.active { color: #B8512C; }
+    .nav .cta { background: #B8512C; color: #F7F2EB; padding: 10px 18px; border-radius: 8px; font-weight: 600; }
+    .nav .cta:hover { background: #A0451F; color: #F7F2EB; }
+    .nav .links { display: flex; gap: 8px; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 12px; font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; color: #1F1A17; text-decoration: none; }
+
+    .post-hero { padding-top: 48px; }
+    .post-hero .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em; color: #B8512C; margin-bottom: 18px; }
+    .post-hero h1 { font-family: 'Source Serif 4', serif; font-size: clamp(34px, 4.5vw, 54px); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 24px; max-width: 880px; color: #1F1A17; }
+    .post-hero .meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; color: #6B5F56; }
+    .post-hero-image { margin: 32px 0 48px; aspect-ratio: 16 / 5; border-radius: 16px; overflow: hidden; }
+    .post-hero-image svg { width: 100%; height: 100%; display: block; }
+
+    .post-body { max-width: 720px; margin: 0 auto; padding-bottom: 64px; font-family: 'IBM Plex Sans', sans-serif; font-size: 18px; line-height: 1.7; color: #1F1A17; }
+    .post-body h2 { font-family: 'Source Serif 4', serif; font-size: 30px; font-weight: 600; line-height: 1.2; margin: 56px 0 18px; color: #1F1A17; letter-spacing: -0.01em; }
+    .post-body h3 { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; line-height: 1.25; margin: 36px 0 12px; color: #1F1A17; }
+    .post-body p { margin: 0 0 18px; color: #2A2520; }
+    .post-body strong { color: #1F1A17; }
+    .post-body a { color: #B8512C; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .post-body a:hover { color: #A0451F; }
+    .post-body ul, .post-body ol { margin: 0 0 22px 1.2em; padding: 0; }
+    .post-body li { margin: 0 0 10px; line-height: 1.6; }
+    .post-body blockquote { border-left: 3px solid #B8512C; padding: 4px 0 4px 24px; margin: 32px 0; font-family: 'Source Serif 4', serif; font-size: 22px; font-style: italic; color: #3A322D; line-height: 1.4; }
+    .post-body code { font-family: 'JetBrains Mono', monospace; font-size: 0.92em; background: #EDE8E0; padding: 2px 6px; border-radius: 4px; }
+    .post-body hr { border: 0; border-top: 1px solid #D9CFBF; margin: 48px 0; }
+
+    .related { border-top: 1px solid #D9CFBF; padding: 64px 0; }
+    .related h3 { font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 600; margin: 0 0 28px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-card { display: block; text-decoration: none; color: inherit; padding: 24px; background: #FBF7F1; border-radius: 12px; transition: transform 180ms ease; border: 1px solid #EAE2D2; }
+    .related-card:hover { transform: translateY(-2px); border-color: #B8512C; }
+    .related-cat { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #B8512C; margin-bottom: 12px; }
+    .related-card h4 { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; line-height: 1.25; margin: 0; color: #1F1A17; }
+
+    .cta-band { background: #2C4A3E; color: #F7F2EB; padding: 80px 24px; margin-top: 32px; }
+    .cta-band-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .cta-band h2 { font-family: 'Source Serif 4', serif; font-size: clamp(28px, 3.5vw, 40px); font-weight: 600; margin: 0 0 14px; }
+    .cta-band p { font-family: 'IBM Plex Sans', sans-serif; font-size: 17px; line-height: 1.55; opacity: 0.92; margin: 0 auto 28px; max-width: 540px; }
+    .cta-band a.button { display: inline-block; background: #B8512C; color: #F7F2EB; padding: 16px 28px; border-radius: 999px; font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; font-weight: 600; text-decoration: none; }
+    .cta-band a.button:hover { background: #A0451F; }
+
+    @media (max-width: 900px) {
+      .related-grid { grid-template-columns: 1fr; }
+      .post-hero-image { aspect-ratio: 16 / 8; }
+    }
+    @media (max-width: 700px) { .nav .links a:not(.cta) { display: none; } }
+  </style>
+</head>
+<body>
+  <nav class="nav page-wrap">
+    <a href="../../" class="logo" aria-label="xFusion home">
+      <img src="../../assets/xfusion-logo.png" alt="xFusion" style="height: 36px; width: auto; display: block;">
+    </a>
+    <div class="links">
+      <a href="../../">Home</a>
+      <a href="../../about/">About</a>
+      <a href="../../case-studies/">Case studies</a>
+      <a href="../" class="active">Blog</a>
+      <a href="https://savvycal.com/xfusion/lets-chat" class="cta">Book a Discovery Call</a>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <article>
+      <header class="post-hero">
+        <div class="eyebrow">CUSTOMER SUPPORT</div>
+        <h1>First-contact resolution</h1>
+        <div class="meta">2026-05-05 · 6 min read</div>
+        <div class="post-hero-image"><svg viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="hg_first-contact-resolution" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2C4A3E"/><stop offset="100%" stop-color="#1F3A30"/></linearGradient></defs><rect width="1200" height="360" fill="url(#hg_first-contact-resolution)"/><text x="48" y="68" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="13" font-weight="500" letter-spacing="2.4" opacity="0.7">CUSTOMER SUPPORT</text><rect x="48" y="304" width="56" height="3" fill="#F7F2EB" opacity="0.5"/></svg></div>
+      </header>
+
+      <div class="post-body">
+<p>When a customer reaches out, they want one thing: the problem solved. Not acknowledged, not escalated, not "we'll get back to you." Solved.</p>
+<p>First-contact resolution (FCR) measures how often that actually happens. It's one of the few support metrics that correlates directly with retention, CSAT, and cost per ticket all at once. And it's one of the most under-managed numbers in most operations.</p>
+<p>This post covers what FCR is, what it costs you when it's low, and what actually moves the number.</p>
+<h2>What FCR really measures</h2>
+<p>FCR is the percentage of tickets resolved in the first interaction, with no follow-up needed and no escalation. On the surface it's a simple operational metric. Underneath, it's measuring something deeper: whether your team has the knowledge, authority, and system access to actually solve problems on the spot.</p>
+<p>When FCR is high, customers feel taken care of. They got a real answer the first time. They didn't have to repeat themselves to a second agent. They didn't sit through a multi-day email chain.</p>
+<p>When FCR is low, every other metric in your support operation suffers. CSAT drops because the customer has to work harder. Cost per ticket climbs because the same issue gets touched multiple times. Agent satisfaction tanks because no one likes inheriting half-resolved tickets.</p>
+<h2>The hidden cost of low FCR</h2>
+<p>A 60% FCR sounds fine until you do the math.</p>
+<p>Forty percent of your tickets need a second touch. That's another agent, another context-load, another customer interaction, another QA review. Every "second touch" ticket costs roughly 1.5 to 2x what a first-touch resolution costs. And the customer experience on a multi-touch ticket is meaningfully worse, regardless of how good the eventual answer is.</p>
+<p>Multiply that across a year and the cost is real. Studies consistently show that companies prioritizing FCR see roughly a 10% improvement in retention and a 20% reduction in support costs. Those aren't marginal numbers.</p>
+<h2>What actually moves the metric</h2>
+<h3>1. Real expertise on the front line</h3>
+<p>The biggest predictor of FCR is whether the agent answering the ticket actually knows the product. Junior agents reading from a script can handle the easy questions, but the moment a customer asks something off-script, they're stuck in a loop of "let me check on that and get back to you."</p>
+<p>Senior agents with deep product knowledge close tickets in one interaction. The math is simple: pay for experience up front and your overall cost per resolution drops.</p>
+<h3>2. The right authority</h3>
+<p>A common FCR killer: agents who know the answer but don't have the permission to act on it. They have to escalate the refund, escalate the credit, escalate the policy exception. By the time the second agent picks it up, the customer is frustrated and the ticket has multiplied in cost.</p>
+<p>Push decision-making authority down to the people closest to the customer. Give your senior agents real ranges they can operate inside without escalation. The investment pays back fast.</p>
+<h3>3. Tools that don't get in the way</h3>
+<p>Even a senior agent gets slowed down by a help desk that hides the customer's history, an order system that takes six clicks to find a record, and a knowledge base nobody updates. Tooling either supports FCR or actively blocks it.</p>
+<p>A few small fixes that consistently move the number:</p>
+<ul>
+<li>A unified customer view that loads instantly when a ticket opens</li>
+<li>A knowledge base that's actually maintained, indexed, and useful</li>
+<li>AI-assisted draft responses that surface the right macro at the right moment</li>
+<li>Quick keyboard shortcuts and saved replies for the truly routine stuff</li>
+</ul>
+<p>Tooling won't fix a knowledge problem, but bad tooling can absolutely undo a strong team.</p>
+<h2>What this looks like in practice</h2>
+<p>We worked with Bonify on exactly this kind of operational shift. Their support team had been struggling with high response times and inconsistent resolution quality. After deploying senior CS agents trained on their product and integrated into their workflow, the experience shifted noticeably:</p>
+<blockquote>
+<p>"Working with xFusion has led to a monumental improvement in Bonify's customer experience. They found us the perfect reps with complete alignment to our mission. I forget that they're technically not in-house employees, they truly are part of the Bonify team."
+John Carbone, Founder at Bonify</p>
+</blockquote>
+<p>The mechanism wasn't anything exotic. Senior agents, real product knowledge, the right authority, and clear ownership of the conversation. FCR climbed and CSAT followed.</p>
+<h2>What good FCR looks like</h2>
+<p>A reasonable benchmark depends on your industry and product complexity, but a few rough guideposts:</p>
+<ul>
+<li>Below 50%: something is structurally broken. Either staffing, tooling, or process.</li>
+<li>50% to 70%: average. Most teams live here.</li>
+<li>70% to 85%: strong. The team has real expertise and the right authority.</li>
+<li>Above 85%: rare and excellent. Usually requires both senior agents and tight feedback loops between support and product.</li>
+</ul>
+<p>The exact target matters less than the trend. Watch the number monthly. Watch what changes when you adjust staffing, tooling, or training. The signal is in the movement.</p>
+<h2>Ready to talk?</h2>
+<p>If FCR is the metric you want to move, senior CS agents are usually the highest-leverage place to start. Let's talk.</p>
+<p><a href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</a></p>
+<p>30 minutes. No commitment. No credit card. You'll talk directly with our founding team.</p>
+      </div>
+    </article>
+
+    <section class="related">
+      <h3>Related reading</h3>
+      <div class="related-grid">
+        <a class="related-card" href="../24-7-customer-support/">
+          <div class="related-cat">CUSTOMER SUPPORT</div>
+          <h4>24/7 customer support: taking the pressure off you and your team</h4>
+        </a>
+        <a class="related-card" href="../ai-augmented-human-support/">
+          <div class="related-cat">CUSTOMER SUPPORT</div>
+          <h4>AI-augmented human support</h4>
+        </a>
+        <a class="related-card" href="../ai-myths-busted/">
+          <div class="related-cat">CUSTOMER SUPPORT</div>
+          <h4>AI myths, busted</h4>
+        </a>
+      </div>
+    </section>
+  </main>
+
+    <style>
+    .site-footer { background: #2C4A3E; color: #F7F2EB; }
+    .site-footer .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .site-footer .footer-top { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; padding-top: 64px; padding-bottom: 40px; border-bottom: 1px solid rgba(247, 242, 235, 0.14); }
+    .site-footer .brand-link { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; text-decoration: none; }
+    .site-footer .brand-tag { font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.5; color: #F0D9A8; margin: 0; max-width: 480px; font-style: italic; }
+    .site-footer .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding-top: 48px; padding-bottom: 40px; }
+    .site-footer .footer-col-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(247, 242, 235, 0.65); margin-bottom: 18px; }
+    .site-footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .site-footer .footer-link { color: #F7F2EB; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; line-height: 1.4; }
+    .site-footer .footer-link:hover { color: #F0D9A8; }
+    .site-footer .footer-legal { padding-top: 24px; padding-bottom: 32px; border-top: 1px solid rgba(247, 242, 235, 0.14); display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: rgba(247, 242, 235, 0.65); flex-wrap: wrap; gap: 12px; }
+    @media (max-width: 900px) { .site-footer .footer-top { grid-template-columns: 1fr; gap: 20px; } .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .site-footer .footer-legal { flex-direction: column; align-items: flex-start; } }
+    @media (max-width: 520px) { .site-footer .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+  </style>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <a class="brand-link" href="../../" aria-label="xFusion home">
+            <img src="../../assets/xfusion-logo-on-dark.png" alt="xFusion" style="height: 36px; width: auto; display: block;">
+          </a>
+          <p class="brand-tag">Senior, AI-trained customer support agents for small businesses. Since 2020.</p>
+        </div>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-col-title">Product</div>
+          <ul>
+            <li><a class="footer-link" href="../../#pricing">Pricing</a></li>
+            <li><a class="footer-link" href="../../case-studies/">Case studies</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul>
+            <li><a class="footer-link" href="../../about/">About</a></li>
+            <li><a class="footer-link" href="../../careers/">Careers</a></li>
+            <li><a class="footer-link" href="https://savvycal.com/xfusion/lets-chat">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Resources</div>
+          <ul>
+            <li><a class="footer-link" href="../../#faq">FAQ</a></li>
+            <li><a class="footer-link" href="../">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Legal</div>
+          <ul>
+            <li><a class="footer-link" href="../../privacy/">Privacy</a></li>
+            <li><a class="footer-link" href="../../dpa/">DPA</a></li>
+            <li><a class="footer-link" href="../../security/">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <div>&copy; 2026 xFusion. All rights reserved.</div>
+        <div>Made with care across the Philippines, Kenya, and the United States.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

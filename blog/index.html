@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog | xFusion</title>
-  <meta name="description" content="Notes on customer support, AI, and building remote teams from the xFusion team. Six years of placement experience, written for founders and operators who want their support team to stop being a problem.">
+  <meta name="description" content="Notes on customer support, AI, and building remote teams from the xFusion team. Practical writing for founders and operators who want their support team to stop being a problem.">
   <link rel="stylesheet" href="../colors_and_type.css">
   <style>
     body { background: var(--color-bg, #F7F2EB); color: var(--color-ink, #1F1A17); margin: 0; }
@@ -19,7 +19,6 @@
     .nav .cta:hover { background: #A0451F; color: #F7F2EB; }
     .nav .links { display: flex; gap: 8px; align-items: center; }
     .logo { display: flex; align-items: center; gap: 12px; font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; color: #1F1A17; text-decoration: none; }
-    .logo-mark { width: 36px; height: 36px; background: #B8512C; color: #F7F2EB; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; }
 
     .hero { padding: 96px 0 48px; }
     .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em; color: #6B5F56; margin-bottom: 18px; }
@@ -29,17 +28,22 @@
 
     .featured { padding: 48px 0; border-top: 1px solid #D9CFBF; border-bottom: 1px solid #D9CFBF; margin-top: 32px; }
     .featured-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
-    .featured-thumb { aspect-ratio: 16 / 10; background: linear-gradient(135deg, #F0D9A8 0%, #E6C68A 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; color: #6B5F56; }
+    .featured-thumb { aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; }
+    .featured-thumb svg { width: 100%; height: 100%; display: block; }
     .featured h2 { font-family: 'Source Serif 4', serif; font-size: clamp(28px, 3vw, 38px); font-weight: 600; line-height: 1.15; margin: 12px 0 16px; }
+    .featured h2 a { color: inherit; text-decoration: none; }
+    .featured h2 a:hover { color: #B8512C; }
     .featured p { font-family: 'IBM Plex Sans', sans-serif; font-size: 17px; line-height: 1.55; color: #3A322D; margin: 0 0 20px; }
     .featured .footer-line { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; color: #6B5F56; }
 
-    .grid { padding: 64px 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    .post { display: flex; flex-direction: column; gap: 14px; cursor: pointer; transition: transform 200ms ease, box-shadow 200ms ease; padding: 4px; }
+    .grid { padding: 64px 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 32px; }
+    .post { display: flex; flex-direction: column; gap: 14px; cursor: pointer; transition: transform 200ms ease; padding: 4px; text-decoration: none; color: inherit; }
     .post:hover { transform: translateY(-2px); }
-    .post-thumb { aspect-ratio: 16 / 9; background: linear-gradient(135deg, #EDE8E0 0%, #D9CFBF 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: #6B5F56; }
+    .post-thumb { aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; }
+    .post-thumb svg { width: 100%; height: 100%; display: block; }
     .post .cat { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #B8512C; }
     .post h3 { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; line-height: 1.2; margin: 0; color: #1F1A17; }
+    .post:hover h3 { color: #B8512C; }
     .post p { font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; line-height: 1.5; color: #3A322D; margin: 0; }
     .post .meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: #6B5F56; }
 
@@ -55,9 +59,7 @@
     .subscribe .secondary { margin-top: 24px; font-size: 14px; opacity: 0.85; }
     .subscribe .secondary a { color: #F0D9A8; text-decoration: underline; }
 
-    @media (max-width: 1099px) {
-      .grid { grid-template-columns: repeat(2, 1fr); }
-    }
+    @media (max-width: 1099px) { .grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 700px) {
       .grid { grid-template-columns: 1fr; gap: 40px; padding: 48px 0; }
       .featured-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -84,86 +86,289 @@
     <section class="hero">
       <div class="eyebrow">Blog</div>
       <h1>Notes on customer support, AI, and building teams that stay.</h1>
-      <p>Practical writing from the xFusion team on what actually works in customer support, how AI changes the role of a senior agent, and what we have learned from six years of placing remote talent that stays.</p>
-      <p class="meta">Updated regularly. Subscribe at the bottom.</p>
+      <p>Practical writing from the xFusion team on what works in customer support, how AI changes the role of a senior agent, and what we have learned from years of placing remote talent that stays.</p>
+      <p class="meta">Updated regularly.</p>
     </section>
 
     <section class="featured">
       <div class="featured-grid">
-        <div class="featured-thumb">Featured post thumbnail (16:10)</div>
+        <div class="featured-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="How to build support that actually retains customers"><defs><linearGradient id="g_support-that-retains-customers" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1F1A17"/><stop offset="100%" stop-color="#3A322D"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_support-that-retains-customers)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">OPERATIONS</text><text x="32" y="62.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">How to build support</text><text x="32" y="100.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">that actually retains</text><text x="32" y="138.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">customers</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
         <div>
-          <div class="cat" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #B8512C; margin-bottom: 8px;">PLAYBOOK</div>
-          <h2>How a single AI-trained agent handles the support volume of three people without dropping the brand voice</h2>
-          <p>A walk-through of the AI workflows our senior agents oversee, what the AI handles cleanly, and the moments where a human still has to step in to keep the customer relationship intact.</p>
-          <p class="footer-line">Jim Coleman · April 2026 · 8 min read</p>
+          <div class="cat" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #B8512C; margin-bottom: 8px;">OPERATIONS</div>
+          <h2><a href="./support-that-retains-customers/">How to build support that actually retains customers</a></h2>
+          <p>Personalized support is built by people, not software. Here is what that actually looks like, why most teams cannot pull it off, and how to fix it.</p>
+          <p class="footer-line">2026-03 · 6 min read</p>
         </div>
       </div>
     </section>
 
     <section class="grid">
-      <article class="post">
-        <div class="post-thumb">Post 01 thumbnail (16:9)</div>
+      <a class="post" href="./building-a-remote-support-team/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="How to build a remote support team that actually works"><defs><linearGradient id="g_building-a-remote-support-team" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1F1A17"/><stop offset="100%" stop-color="#3A322D"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_building-a-remote-support-team)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">OPERATIONS</text><text x="32" y="62.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">How to build a remote</text><text x="32" y="100.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">support team that</text><text x="32" y="138.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">actually works</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
         <div class="cat">OPERATIONS</div>
-        <h3>What we look for when hiring a senior support agent in 2026</h3>
-        <p>Six years of TraitX vetting boiled down to the screening signals that actually predict whether someone stays for years.</p>
-        <div class="meta">Jim Coleman · April 2026 · 6 min read</div>
-      </article>
-      <article class="post">
-        <div class="post-thumb">Post 02 thumbnail (16:9)</div>
-        <div class="cat">AI</div>
-        <h3>The 60 / 40 rule: where AI is a gift and where it breaks customer support</h3>
-        <p>Pure AI handles the easy 60% of tickets reasonably well. The hard 40% is where every chatbot-only deployment we have seen falls apart.</p>
-        <div class="meta">Jim Coleman · April 2026 · 7 min read</div>
-      </article>
-      <article class="post">
-        <div class="post-thumb">Post 03 thumbnail (16:9)</div>
-        <div class="cat">PLAYBOOK</div>
-        <h3>A repeatable onboarding for a new support agent that actually sticks</h3>
-        <p>The two-week playbook our account managers run with every placement. What works, what we cut, and the small rituals that protect retention.</p>
-        <div class="meta">xFusion team · March 2026 · 9 min read</div>
-      </article>
-      <article class="post">
-        <div class="post-thumb">Post 04 thumbnail (16:9)</div>
-        <div class="cat">RETENTION</div>
-        <h3>Why our agents stay for years, not months</h3>
-        <p>Living-wage compensation is the foundation. Culture, account managers, and structured holiday gifting are the layers that compound on top of it.</p>
-        <div class="meta">xFusion team · March 2026 · 5 min read</div>
-      </article>
-      <article class="post">
-        <div class="post-thumb">Post 05 thumbnail (16:9)</div>
-        <div class="cat">AI</div>
-        <h3>The AI tools our agents actually use every day</h3>
-        <p>A short, honest list of the AI products that earn their seat in a real support workflow, and the ones we have stopped recommending.</p>
-        <div class="meta">xFusion team · March 2026 · 6 min read</div>
-      </article>
-      <article class="post">
-        <div class="post-thumb">Post 06 thumbnail (16:9)</div>
-        <div class="cat">FOUNDER NOTES</div>
-        <h3>What I would do differently if I were starting xFusion in 2026</h3>
-        <p>Jim on the offer, the ICP, the price point, and the one early hire he would make sooner this time around.</p>
-        <div class="meta">Jim Coleman · February 2026 · 8 min read</div>
-      </article>
-      <article class="post">
-        <div class="post-thumb">Post 07 thumbnail (16:9)</div>
-        <div class="cat">CASE NOTES</div>
-        <h3>How we cut average response time by 84.79% for a scheduling SaaS</h3>
-        <p>A behind-the-scenes look at the SavvyCal placement, the workflow changes that drove the numbers, and what Derrick Reimer pushed back on along the way.</p>
-        <div class="meta">xFusion team · February 2026 · 10 min read</div>
-      </article>
-      <article class="post">
-        <div class="post-thumb">Post 08 thumbnail (16:9)</div>
+        <h3>How to build a remote support team that actually works</h3>
+        <p>A remote support team is not just remote workers. Here is what makes the difference between a team that holds together and one that quietly falls apart.</p>
+        <div class="meta">2026-03 · 7 min read</div>
+      </a>
+      <a class="post" href="./true-cost-of-a-bad-hire/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="The true cost of a bad hire (and how to avoid it)"><defs><linearGradient id="g_true-cost-of-a-bad-hire" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1F1A17"/><stop offset="100%" stop-color="#3A322D"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_true-cost-of-a-bad-hire)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">OPERATIONS</text><text x="32" y="62.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">The true cost of a bad</text><text x="32" y="100.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">hire (and how to avoid</text><text x="32" y="138.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">it)</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
         <div class="cat">OPERATIONS</div>
-        <h3>Tier 1 vs Tier 2: when to specialize the team and when to leave it alone</h3>
-        <p>A practical rubric for deciding whether your support team should split into tiers, drawn from six years of working with SaaS and e-commerce teams.</p>
-        <div class="meta">xFusion team · February 2026 · 7 min read</div>
-      </article>
-      <article class="post">
-        <div class="post-thumb">Post 09 thumbnail (16:9)</div>
-        <div class="cat">RETENTION</div>
-        <h3>The small rituals that turn a remote agent into a real teammate</h3>
-        <p>Birthday gifts, anniversary recognition, structured holiday gifting, and the unsexy practices that make people feel seen across continents.</p>
-        <div class="meta">xFusion team · January 2026 · 5 min read</div>
-      </article>
+        <h3>The true cost of a bad hire (and how to avoid it)</h3>
+        <p>A bad hire can cost up to 2x annual salary once you count team time, customer impact, and lost momentum. Here is how to spot it early and avoid it next time.</p>
+        <div class="meta">2026-03 · 7 min read</div>
+      </a>
+      <a class="post" href="./best-employees-doing-wrong-work/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Why your best employees are doing the wrong work"><defs><linearGradient id="g_best-employees-doing-wrong-work" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1F1A17"/><stop offset="100%" stop-color="#3A322D"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_best-employees-doing-wrong-work)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">OPERATIONS</text><text x="32" y="62.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Why your best</text><text x="32" y="100.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">employees are doing</text><text x="32" y="138.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">the wrong work</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">OPERATIONS</div>
+        <h3>Why your best employees are doing the wrong work</h3>
+        <p>Your best people are buried in low-value work. Here is how to spot it, what it costs, and how to free them up to do the work you actually hired them for.</p>
+        <div class="meta">2026-03 · 7 min read</div>
+      </a>
+      <a class="post" href="./how-to-hire-international-talent/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="How to hire international talent the right way"><defs><linearGradient id="g_how-to-hire-international-talent" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1F1A17"/><stop offset="100%" stop-color="#3A322D"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_how-to-hire-international-talent)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">OPERATIONS</text><text x="32" y="62.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">How to hire</text><text x="32" y="100.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">international talent</text><text x="32" y="138.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">the right way</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">OPERATIONS</div>
+        <h3>How to hire international talent the right way</h3>
+        <p>International hiring works when you do it right. Here are the mistakes most owners make, what to look for, and the seven steps that actually produce long-term hires.</p>
+        <div class="meta">2026-03 · 7 min read</div>
+      </a>
+      <a class="post" href="./outsourced-support-frees-you-to-focus/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="How outsourced customer support frees you to focus on what matters most"><defs><linearGradient id="g_outsourced-support-frees-you-to-focus" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2C4A3E"/><stop offset="100%" stop-color="#1F3A30"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_outsourced-support-frees-you-to-focus)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER SUPPORT</text><text x="32" y="43.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">How outsourced</text><text x="32" y="81.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">customer support frees</text><text x="32" y="119.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">you to focus on what</text><text x="32" y="157.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">matters most</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER SUPPORT</div>
+        <h3>How outsourced customer support frees you to focus on what matters most</h3>
+        <p>When customer support eats the time you should be spending on growth, the right outsourcing partner gives you that time back.</p>
+        <div class="meta">2026-03 · 5 min read</div>
+      </a>
+      <a class="post" href="./24-7-customer-support/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="24/7 customer support: taking the pressure off you and your team"><defs><linearGradient id="g_24-7-customer-support" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2C4A3E"/><stop offset="100%" stop-color="#1F3A30"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_24-7-customer-support)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER SUPPORT</text><text x="32" y="62.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">24/7 customer support:</text><text x="32" y="100.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">taking the pressure</text><text x="32" y="138.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">off you and your team</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER SUPPORT</div>
+        <h3>24/7 customer support: taking the pressure off you and your team</h3>
+        <p>What real 24/7 support actually requires, and how to build it without burning out your team or yourself.</p>
+        <div class="meta">2026-05 · 5 min read</div>
+      </a>
+      <a class="post" href="./ai-myths-busted/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="AI myths, busted"><defs><linearGradient id="g_ai-myths-busted" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2C4A3E"/><stop offset="100%" stop-color="#1F3A30"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_ai-myths-busted)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER SUPPORT</text><text x="32" y="100.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">AI myths, busted</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER SUPPORT</div>
+        <h3>AI myths, busted</h3>
+        <p>A clear-eyed look at the most common myths about AI, what&#x27;s actually true, and how to apply AI in customer support without falling for the hype.</p>
+        <div class="meta">2026-05 · 7 min read</div>
+      </a>
+      <a class="post" href="./ai-training-essentials-for-support-teams/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="AI training essentials for support teams"><defs><linearGradient id="g_ai-training-essentials-for-support-teams" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2C4A3E"/><stop offset="100%" stop-color="#1F3A30"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_ai-training-essentials-for-support-teams)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER SUPPORT</text><text x="32" y="81.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">AI training essentials</text><text x="32" y="119.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">for support teams</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER SUPPORT</div>
+        <h3>AI training essentials for support teams</h3>
+        <p>What AI training actually needs to cover for a customer support team, plus the patterns we&#x27;ve seen work for teams of every size.</p>
+        <div class="meta">2026-05 · 6 min read</div>
+      </a>
+      <a class="post" href="./ai-vs-human-support/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="AI vs. human support: a cost-benefit analysis"><defs><linearGradient id="g_ai-vs-human-support" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2C4A3E"/><stop offset="100%" stop-color="#1F3A30"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_ai-vs-human-support)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER SUPPORT</text><text x="32" y="62.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">AI vs. human support:</text><text x="32" y="100.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">a cost-benefit</text><text x="32" y="138.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">analysis</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER SUPPORT</div>
+        <h3>AI vs. human support: a cost-benefit analysis</h3>
+        <p>An honest comparison of AI and human support on cost, speed, and quality, with a practical framework for combining the two.</p>
+        <div class="meta">2026-05 · 6 min read</div>
+      </a>
+      <a class="post" href="./ai-augmented-human-support/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="AI-augmented human support"><defs><linearGradient id="g_ai-augmented-human-support" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2C4A3E"/><stop offset="100%" stop-color="#1F3A30"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_ai-augmented-human-support)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER SUPPORT</text><text x="32" y="81.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">AI-augmented human</text><text x="32" y="119.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">support</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER SUPPORT</div>
+        <h3>AI-augmented human support</h3>
+        <p>How AI changes what a senior support agent can do, where it earns its keep, and where it gets in the way.</p>
+        <div class="meta">2026-05 · 6 min read</div>
+      </a>
+      <a class="post" href="./clearing-the-support-backlog/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Clearing the support backlog"><defs><linearGradient id="g_clearing-the-support-backlog" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2C4A3E"/><stop offset="100%" stop-color="#1F3A30"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_clearing-the-support-backlog)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER SUPPORT</text><text x="32" y="81.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Clearing the support</text><text x="32" y="119.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">backlog</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER SUPPORT</div>
+        <h3>Clearing the support backlog</h3>
+        <p>How to clear a support backlog quickly and build a system that keeps it from piling up again.</p>
+        <div class="meta">2026-05 · 6 min read</div>
+      </a>
+      <a class="post" href="./consistent-support-team-training/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Consistent support team training"><defs><linearGradient id="g_consistent-support-team-training" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2C4A3E"/><stop offset="100%" stop-color="#1F3A30"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_consistent-support-team-training)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER SUPPORT</text><text x="32" y="81.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Consistent support</text><text x="32" y="119.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">team training</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER SUPPORT</div>
+        <h3>Consistent support team training</h3>
+        <p>How to train a customer support team to deliver consistent quality across every interaction, channel, and agent.</p>
+        <div class="meta">2026-05 · 6 min read</div>
+      </a>
+      <a class="post" href="./customer-retention-fundamentals/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Customer retention fundamentals"><defs><linearGradient id="g_customer-retention-fundamentals" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2C4A3E"/><stop offset="100%" stop-color="#1F3A30"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_customer-retention-fundamentals)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER SUPPORT</text><text x="32" y="81.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Customer retention</text><text x="32" y="119.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">fundamentals</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER SUPPORT</div>
+        <h3>Customer retention fundamentals</h3>
+        <p>Why customers leave, what it actually costs you, and the few things that move retention more than any tactic.</p>
+        <div class="meta">2026-05 · 6 min read</div>
+      </a>
+      <a class="post" href="./first-contact-resolution/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="First-contact resolution"><defs><linearGradient id="g_first-contact-resolution" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2C4A3E"/><stop offset="100%" stop-color="#1F3A30"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_first-contact-resolution)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER SUPPORT</text><text x="32" y="81.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">First-contact</text><text x="32" y="119.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">resolution</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER SUPPORT</div>
+        <h3>First-contact resolution</h3>
+        <p>Why first-contact resolution matters more than almost any other support metric, and how to actually move the number.</p>
+        <div class="meta">2026-05 · 6 min read</div>
+      </a>
+      <a class="post" href="./multichannel-support-strategy/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Multichannel support strategy"><defs><linearGradient id="g_multichannel-support-strategy" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2C4A3E"/><stop offset="100%" stop-color="#1F3A30"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_multichannel-support-strategy)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER SUPPORT</text><text x="32" y="81.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Multichannel support</text><text x="32" y="119.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">strategy</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER SUPPORT</div>
+        <h3>Multichannel support strategy</h3>
+        <p>How to handle customer support across email, chat, social, phone, and SMS without burning out your team or losing message threads.</p>
+        <div class="meta">2026-05 · 6 min read</div>
+      </a>
+      <a class="post" href="./scaling-customer-support/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scaling customer support"><defs><linearGradient id="g_scaling-customer-support" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2C4A3E"/><stop offset="100%" stop-color="#1F3A30"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_scaling-customer-support)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER SUPPORT</text><text x="32" y="81.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Scaling customer</text><text x="32" y="119.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">support</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER SUPPORT</div>
+        <h3>Scaling customer support</h3>
+        <p>How to scale customer support without losing the quality that built the business in the first place.</p>
+        <div class="meta">2026-05 · 6 min read</div>
+      </a>
+      <a class="post" href="./boost-your-business-by-delegating-customer-support/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Boost your business by delegating customer support"><defs><linearGradient id="g_boost-your-business-by-delegating-customer-support" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0D9A8"/><stop offset="100%" stop-color="#E6C68A"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_boost-your-business-by-delegating-customer-support)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER EXPERIENCE</text><text x="32" y="62.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Boost your business by</text><text x="32" y="100.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">delegating customer</text><text x="32" y="138.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">support</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER EXPERIENCE</div>
+        <h3>Boost your business by delegating customer support</h3>
+        <p>How delegating customer support to a senior outsourced team frees your in-house people to focus on what only they can do.</p>
+        <div class="meta">2026-05 · 5 min read</div>
+      </a>
+      <a class="post" href="./empowering-proactive-customer-support/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Building proactive customer support in your company"><defs><linearGradient id="g_empowering-proactive-customer-support" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0D9A8"/><stop offset="100%" stop-color="#E6C68A"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_empowering-proactive-customer-support)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER EXPERIENCE</text><text x="32" y="62.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Building proactive</text><text x="32" y="100.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">customer support in</text><text x="32" y="138.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">your company</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER EXPERIENCE</div>
+        <h3>Building proactive customer support in your company</h3>
+        <p>How to shift your support team from reactive ticket clearing to proactive, anticipatory service that prevents issues before they happen.</p>
+        <div class="meta">2026-05 · 6 min read</div>
+      </a>
+      <a class="post" href="./customer-support-as-competitive-advantage/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Customer support as competitive advantage"><defs><linearGradient id="g_customer-support-as-competitive-advantage" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0D9A8"/><stop offset="100%" stop-color="#E6C68A"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_customer-support-as-competitive-advantage)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER EXPERIENCE</text><text x="32" y="81.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Customer support as</text><text x="32" y="119.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">competitive advantage</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER EXPERIENCE</div>
+        <h3>Customer support as competitive advantage</h3>
+        <p>How to treat customer support as a strategic asset that drives loyalty, generates insights, and creates competitive differentiation.</p>
+        <div class="meta">2026-05 · 6 min read</div>
+      </a>
+      <a class="post" href="./customer-support-software-and-tools/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Customer support software and tools: a current guide"><defs><linearGradient id="g_customer-support-software-and-tools" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0D9A8"/><stop offset="100%" stop-color="#E6C68A"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_customer-support-software-and-tools)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER EXPERIENCE</text><text x="32" y="62.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Customer support</text><text x="32" y="100.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">software and tools: a</text><text x="32" y="138.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">current guide</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER EXPERIENCE</div>
+        <h3>Customer support software and tools: a current guide</h3>
+        <p>A practical guide to picking customer support software in 2026, with honest takes on Zendesk, Freshdesk, Intercom, Help Scout, and Salesforce Service Cloud.</p>
+        <div class="meta">2026-05 · 7 min read</div>
+      </a>
+      <a class="post" href="./data-driven-customer-support/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Data-driven customer support: turning insights into continuous improvement"><defs><linearGradient id="g_data-driven-customer-support" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0D9A8"/><stop offset="100%" stop-color="#E6C68A"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_data-driven-customer-support)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER EXPERIENCE</text><text x="32" y="43.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Data-driven customer</text><text x="32" y="81.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">support: turning</text><text x="32" y="119.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">insights into</text><text x="32" y="157.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">continuous improvement</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER EXPERIENCE</div>
+        <h3>Data-driven customer support: turning insights into continuous improvement</h3>
+        <p>How to turn customer support data into a real engine for retention, satisfaction, and product improvement, with two short case studies.</p>
+        <div class="meta">2026-05 · 5 min read</div>
+      </a>
+      <a class="post" href="./flexibility-and-agility-with-outsourcing/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Flexibility and agility with outsourcing"><defs><linearGradient id="g_flexibility-and-agility-with-outsourcing" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0D9A8"/><stop offset="100%" stop-color="#E6C68A"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_flexibility-and-agility-with-outsourcing)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER EXPERIENCE</text><text x="32" y="62.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Flexibility and</text><text x="32" y="100.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">agility with</text><text x="32" y="138.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">outsourcing</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER EXPERIENCE</div>
+        <h3>Flexibility and agility with outsourcing</h3>
+        <p>Outsourcing customer support gives growing businesses the flexibility to scale up, down, or sideways without locking in fixed cost.</p>
+        <div class="meta">2026-05 · 5 min read</div>
+      </a>
+      <a class="post" href="./how-customer-success-drives-retention/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="How customer success drives retention: six real drivers"><defs><linearGradient id="g_how-customer-success-drives-retention" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0D9A8"/><stop offset="100%" stop-color="#E6C68A"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_how-customer-success-drives-retention)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER EXPERIENCE</text><text x="32" y="62.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">How customer success</text><text x="32" y="100.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">drives retention: six</text><text x="32" y="138.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">real drivers</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER EXPERIENCE</div>
+        <h3>How customer success drives retention: six real drivers</h3>
+        <p>The six drivers that separate companies with strong customer retention from ones that quietly lose customers every month.</p>
+        <div class="meta">2026-05 · 7 min read</div>
+      </a>
+      <a class="post" href="./how-to-get-started-with-outsourced-customer-support/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="How to get started with outsourced customer support"><defs><linearGradient id="g_how-to-get-started-with-outsourced-customer-support" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0D9A8"/><stop offset="100%" stop-color="#E6C68A"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_how-to-get-started-with-outsourced-customer-support)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER EXPERIENCE</text><text x="32" y="62.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">How to get started</text><text x="32" y="100.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">with outsourced</text><text x="32" y="138.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">customer support</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER EXPERIENCE</div>
+        <h3>How to get started with outsourced customer support</h3>
+        <p>A practical five-step framework for getting started with outsourced customer support, covering team needs, brand guidelines, training, tools, and contracts.</p>
+        <div class="meta">2026-05 · 5 min read</div>
+      </a>
+      <a class="post" href="./in-house-vs-outsourced-customer-support/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="In-house vs outsourced customer support"><defs><linearGradient id="g_in-house-vs-outsourced-customer-support" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0D9A8"/><stop offset="100%" stop-color="#E6C68A"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_in-house-vs-outsourced-customer-support)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER EXPERIENCE</text><text x="32" y="81.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">In-house vs outsourced</text><text x="32" y="119.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">customer support</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER EXPERIENCE</div>
+        <h3>In-house vs outsourced customer support</h3>
+        <p>A practical, honest comparison of in-house vs outsourced customer support across cost, expertise, scalability, control, and culture.</p>
+        <div class="meta">2026-05 · 6 min read</div>
+      </a>
+      <a class="post" href="./reviews-and-testimonials-of-outsourced-support/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Reviews and testimonials: the user perspective on outsourced support"><defs><linearGradient id="g_reviews-and-testimonials-of-outsourced-support" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0D9A8"/><stop offset="100%" stop-color="#E6C68A"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_reviews-and-testimonials-of-outsourced-support)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER EXPERIENCE</text><text x="32" y="43.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Reviews and</text><text x="32" y="81.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">testimonials: the user</text><text x="32" y="119.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">perspective on</text><text x="32" y="157.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">outsourced support</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER EXPERIENCE</div>
+        <h3>Reviews and testimonials: the user perspective on outsourced support</h3>
+        <p>How to read reviews and testimonials when picking an outsourced customer support partner, and what the patterns actually tell you.</p>
+        <div class="meta">2026-05 · 7 min read</div>
+      </a>
+      <a class="post" href="./seamless-omnichannel-support/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Seamless support: integrating customer service across every channel"><defs><linearGradient id="g_seamless-omnichannel-support" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0D9A8"/><stop offset="100%" stop-color="#E6C68A"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_seamless-omnichannel-support)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">CUSTOMER EXPERIENCE</text><text x="32" y="43.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Seamless support:</text><text x="32" y="81.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">integrating customer</text><text x="32" y="119.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">service across every</text><text x="32" y="157.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">channel</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">CUSTOMER EXPERIENCE</div>
+        <h3>Seamless support: integrating customer service across every channel</h3>
+        <p>A practical guide to running consistent customer support across email, chat, social, and phone without forcing customers to repeat themselves.</p>
+        <div class="meta">2026-05 · 6 min read</div>
+      </a>
+      <a class="post" href="./multichannel-communication-strategy/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Building a multichannel customer communication strategy that doesn&#x27;t fall apart"><defs><linearGradient id="g_multichannel-communication-strategy" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B8512C"/><stop offset="100%" stop-color="#9F4520"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_multichannel-communication-strategy)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">METRICS</text><text x="32" y="43.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Building a</text><text x="32" y="81.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">multichannel customer</text><text x="32" y="119.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">communication strategy</text><text x="32" y="157.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">that doesn&#x27;t fall</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">METRICS</div>
+        <h3>Building a multichannel customer communication strategy that doesn&#x27;t fall apart</h3>
+        <p>A working guide to running customer communication across email, chat, SMS, social, and phone without creating chaos for your team or your customers.</p>
+        <div class="meta">2024-08 · 7 min read</div>
+      </a>
+      <a class="post" href="./improving-your-net-promoter-score/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="How to actually move your Net Promoter Score"><defs><linearGradient id="g_improving-your-net-promoter-score" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B8512C"/><stop offset="100%" stop-color="#9F4520"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_improving-your-net-promoter-score)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">METRICS</text><text x="32" y="62.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">How to actually move</text><text x="32" y="100.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">your Net Promoter</text><text x="32" y="138.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Score</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">METRICS</div>
+        <h3>How to actually move your Net Promoter Score</h3>
+        <p>NPS is easy to measure and hard to move. Here&#x27;s what actually shifts the score, drawn from running customer support for hundreds of businesses.</p>
+        <div class="meta">2024-08 · 6 min read</div>
+      </a>
+      <a class="post" href="./how-to-calculate-nps/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="How to calculate NPS without overcomplicating it"><defs><linearGradient id="g_how-to-calculate-nps" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B8512C"/><stop offset="100%" stop-color="#9F4520"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_how-to-calculate-nps)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">METRICS</text><text x="32" y="62.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">How to calculate NPS</text><text x="32" y="100.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">without</text><text x="32" y="138.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">overcomplicating it</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">METRICS</div>
+        <h3>How to calculate NPS without overcomplicating it</h3>
+        <p>A plain walkthrough of how Net Promoter Score is calculated, what the score actually means, and how to do it in a spreadsheet in five minutes.</p>
+        <div class="meta">2024-08 · 5 min read</div>
+      </a>
+      <a class="post" href="./measuring-customer-satisfaction/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="How to measure customer satisfaction without drowning in surveys"><defs><linearGradient id="g_measuring-customer-satisfaction" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B8512C"/><stop offset="100%" stop-color="#9F4520"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_measuring-customer-satisfaction)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">METRICS</text><text x="32" y="43.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">How to measure</text><text x="32" y="81.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">customer satisfaction</text><text x="32" y="119.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">without drowning in</text><text x="32" y="157.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">surveys</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">METRICS</div>
+        <h3>How to measure customer satisfaction without drowning in surveys</h3>
+        <p>A practical look at the methods that actually capture how your customers feel, when to use each, and how to build a feedback program you&#x27;ll actually run.</p>
+        <div class="meta">2024-08 · 7 min read</div>
+      </a>
+      <a class="post" href="./nps-vs-other-csat-metrics/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="NPS vs other customer satisfaction metrics: which one to use when"><defs><linearGradient id="g_nps-vs-other-csat-metrics" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B8512C"/><stop offset="100%" stop-color="#9F4520"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_nps-vs-other-csat-metrics)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">METRICS</text><text x="32" y="62.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">NPS vs other customer</text><text x="32" y="100.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">satisfaction metrics:</text><text x="32" y="138.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">which one to use when</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">METRICS</div>
+        <h3>NPS vs other customer satisfaction metrics: which one to use when</h3>
+        <p>NPS, CSAT, and CES measure different things. A practical guide to which metric to use for which decision, with examples from real businesses.</p>
+        <div class="meta">2024-08 · 6 min read</div>
+      </a>
+      <a class="post" href="./five-pillars-of-customer-success/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="The five pillars of customer success, and what each one actually requires"><defs><linearGradient id="g_five-pillars-of-customer-success" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B8512C"/><stop offset="100%" stop-color="#9F4520"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_five-pillars-of-customer-success)"/><text x="32" y="42" fill="#F7F2EB" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">METRICS</text><text x="32" y="43.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">The five pillars of</text><text x="32" y="81.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">customer success, and</text><text x="32" y="119.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">what each one actually</text><text x="32" y="157.0" fill="#F7F2EB" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">requires</text><rect x="32" y="232" width="40" height="3" fill="#F7F2EB" opacity="0.55"/></svg></div>
+        <div class="cat">METRICS</div>
+        <h3>The five pillars of customer success, and what each one actually requires</h3>
+        <p>Onboarding, adoption, retention, expansion, advocacy. A working guide to the five pillars of customer success and the work that each one actually requires.</p>
+        <div class="meta">2024-08 · 7 min read</div>
+      </a>
+      <a class="post" href="./glossary-automated-customer-service/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Automated customer service"><defs><linearGradient id="g_glossary-automated-customer-service" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EDE8E0"/><stop offset="100%" stop-color="#D9CFBF"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_glossary-automated-customer-service)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">GLOSSARY</text><text x="32" y="81.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Automated customer</text><text x="32" y="119.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">service</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">GLOSSARY</div>
+        <h3>Automated customer service</h3>
+        <p>Automated customer service uses chatbots, IVR, self-service portals, and AI agents to handle routine inquiries without direct human involvement.</p>
+        <div class="meta"> · 5 min read</div>
+      </a>
+      <a class="post" href="./glossary-cloud-based-customer-support/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Cloud-based customer support"><defs><linearGradient id="g_glossary-cloud-based-customer-support" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EDE8E0"/><stop offset="100%" stop-color="#D9CFBF"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_glossary-cloud-based-customer-support)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">GLOSSARY</text><text x="32" y="81.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Cloud-based customer</text><text x="32" y="119.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">support</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">GLOSSARY</div>
+        <h3>Cloud-based customer support</h3>
+        <p>Cloud-based customer support uses cloud infrastructure to deliver scalable, flexible support that&#x27;s accessible from anywhere with internet.</p>
+        <div class="meta"> · 5 min read</div>
+      </a>
+      <a class="post" href="./glossary-customer-experience-management/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Customer experience management (CXM)"><defs><linearGradient id="g_glossary-customer-experience-management" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EDE8E0"/><stop offset="100%" stop-color="#D9CFBF"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_glossary-customer-experience-management)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">GLOSSARY</text><text x="32" y="81.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Customer experience</text><text x="32" y="119.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">management (CXM)</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">GLOSSARY</div>
+        <h3>Customer experience management (CXM)</h3>
+        <p>Customer experience management (CXM) is the practice of designing and improving every customer interaction to build satisfaction, loyalty, and advocacy.</p>
+        <div class="meta"> · 5 min read</div>
+      </a>
+      <a class="post" href="./glossary-customer-relationship-management/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Customer relationship management (CRM)"><defs><linearGradient id="g_glossary-customer-relationship-management" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EDE8E0"/><stop offset="100%" stop-color="#D9CFBF"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_glossary-customer-relationship-management)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">GLOSSARY</text><text x="32" y="81.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Customer relationship</text><text x="32" y="119.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">management (CRM)</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">GLOSSARY</div>
+        <h3>Customer relationship management (CRM)</h3>
+        <p>Customer relationship management (CRM) is a strategy and toolset for managing every interaction with current and potential customers across the lifecycle.</p>
+        <div class="meta"> · 5 min read</div>
+      </a>
+      <a class="post" href="./glossary-help-desk-software/">
+        <div class="post-thumb"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Help desk software"><defs><linearGradient id="g_glossary-help-desk-software" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EDE8E0"/><stop offset="100%" stop-color="#D9CFBF"/></linearGradient></defs><rect width="480" height="270" fill="url(#g_glossary-help-desk-software)"/><text x="32" y="42" fill="#1F1A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing="2" opacity="0.78">GLOSSARY</text><text x="32" y="100.0" fill="#1F1A17" font-family="Source Serif 4, serif" font-size="32" font-weight="600" letter-spacing="-0.5">Help desk software</text><rect x="32" y="232" width="40" height="3" fill="#1F1A17" opacity="0.55"/></svg></div>
+        <div class="cat">GLOSSARY</div>
+        <h3>Help desk software</h3>
+        <p>Help desk software is a centralized platform that manages, tracks, and resolves customer inquiries across channels.</p>
+        <div class="meta"> · 5 min read</div>
+      </a>
     </section>
   </main>
 
@@ -179,28 +384,19 @@
     </div>
   </section>
 
-  <style>
+    <style>
     .site-footer { background: #2C4A3E; color: #F7F2EB; }
     .site-footer .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
     .site-footer .footer-top { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; padding-top: 64px; padding-bottom: 40px; border-bottom: 1px solid rgba(247, 242, 235, 0.14); }
-    .site-footer .brand-mark { width: 36px; height: 36px; border-radius: 9px; background: #B8512C; color: #F7F2EB; display: inline-flex; align-items: center; justify-content: center; font-family: 'Source Serif 4', serif; font-weight: 500; font-size: 22px; letter-spacing: -0.02em; line-height: 1; }
     .site-footer .brand-link { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; text-decoration: none; }
-    .site-footer .brand-name { font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 500; letter-spacing: -0.025em; color: #F7F2EB; }
     .site-footer .brand-tag { font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.5; color: #F0D9A8; margin: 0; max-width: 480px; font-style: italic; }
-    .site-footer .footer-cta { display: flex; justify-content: flex-end; align-items: center; }
-    .site-footer .footer-cta a { display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 999px; background: #B8512C; color: #F7F2EB; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 500; }
     .site-footer .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding-top: 48px; padding-bottom: 40px; }
     .site-footer .footer-col-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(247, 242, 235, 0.65); margin-bottom: 18px; }
     .site-footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
     .site-footer .footer-link { color: #F7F2EB; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; line-height: 1.4; }
     .site-footer .footer-link:hover { color: #F0D9A8; }
     .site-footer .footer-legal { padding-top: 24px; padding-bottom: 32px; border-top: 1px solid rgba(247, 242, 235, 0.14); display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: rgba(247, 242, 235, 0.65); flex-wrap: wrap; gap: 12px; }
-    @media (max-width: 900px) {
-      .site-footer .footer-top { grid-template-columns: 1fr; gap: 20px; }
-      .site-footer .footer-cta { justify-content: flex-start; }
-      .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .site-footer .footer-legal { flex-direction: column; align-items: flex-start; }
-    }
+    @media (max-width: 900px) { .site-footer .footer-top { grid-template-columns: 1fr; gap: 20px; } .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .site-footer .footer-legal { flex-direction: column; align-items: flex-start; } }
     @media (max-width: 520px) { .site-footer .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
   </style>
   <footer class="site-footer">
@@ -233,7 +429,7 @@
           <div class="footer-col-title">Resources</div>
           <ul>
             <li><a class="footer-link" href="../#faq">FAQ</a></li>
-            <li><a class="footer-link" href="../blog/">Blog</a></li>
+            <li><a class="footer-link" href="./">Blog</a></li>
           </ul>
         </div>
         <div>
@@ -251,5 +447,6 @@
       </div>
     </div>
   </footer>
+
 </body>
 </html>
