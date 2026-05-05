@@ -44,7 +44,7 @@ function Guarantee() {
               maxWidth: 680,
             }}>
               <p style={{ margin: '0 0 20px' }}>
-                We recruit, vet, and place a senior, AI-trained customer support agent in your business. You work with them for 30 full days. If you're not satisfied for any reason, you walk away without paying anything. Not a deposit. Not a setup fee. Nothing. We absorb every dollar of recruiting, vetting, training, and placement we invested. That's how confident we are.
+                We find, screen, and place a senior support agent in your business. You work with them for 30 full days. If you're not happy for any reason, you walk away and pay nothing. No deposit. No setup fee. Nothing. We eat every dollar we spent on hiring, screening, and training. That's how sure we are.
               </p>
               <p style={{
                 margin: 0,
@@ -56,7 +56,7 @@ function Guarantee() {
                 paddingLeft: 20,
                 borderLeft: '2px solid #B8512C',
               }}>
-                You are the sole judge of satisfaction. There are no conditions and no fine print.
+                You decide if you're happy. No rules, no fine print.
               </p>
             </div>
             <div style={{ marginTop: 36, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>

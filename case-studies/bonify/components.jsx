@@ -335,7 +335,7 @@ function PageHeader() {
               margin: 0, textWrap: 'balance',
               fontStyle: 'normal',
             }}>
-              How Bonify took 95% of support tickets off the founders while holding a 4.9 CSAT on Shopify.
+              How Bonify took 95% of support tickets off the founders while holding a 4.9 customer rating on Shopify.
             </p>
           </div>
           <div className="hero-photo" style={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -372,7 +372,7 @@ function OverviewBox() {
     ['Country', 'United States'],
     ['Challenge', "Founders pulled into day-to-day support tickets and live chat as Bonify's app catalog and customer base grew, blocking strategic work and product development."],
     ['Solution', 'xFusion placed and managed senior, dedicated support agents (Kenny and Patrick) trained deeply in Bonify\u2019s apps, taking over ticket handling and live chat.'],
-    ['Results', "4.9 customer satisfaction score on Shopify since May 2020, response times cut to roughly half what the founders were achieving, and John\u2019s share of ticket replies dropped to under 5%."],
+    ['Results', "4.9 customer satisfaction score on Shopify since May 2020, reply times cut to roughly half what the founders were achieving, and John\u2019s share of ticket replies dropped to under 5%."],
   ];
   return (
     <Section bg="paper" padding="md" style={{ paddingTop: 0, paddingBottom: 88 }}>
@@ -577,7 +577,7 @@ function MetricCallout() {
               verticalAlign: 'baseline',
               marginLeft: '0.3em',
               color: '#F7F2EB',
-            }}>CSAT</span>
+            }}>rating</span>
           </div>
           <p style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
@@ -736,7 +736,7 @@ function CTASection() {
             margin: '0 auto 36px', maxWidth: 640,
             textWrap: 'pretty',
           }}>
-            If your customer support is starting to slip, or you are about to lose the one person holding it together, we can help. We will recruit, vet, place, train, and manage a senior, AI-augmented CS agent for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free.
+            If your customer support is starting to slip, or you are about to lose the one person holding it together, we can help. We will recruit, vet, place, train, and manage a senior, AI-trained support agent for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free.
           </p>
           <Button variant="on-dark" size="lg" href="#">Book a Discovery Call</Button>
           <p style={{
@@ -762,7 +762,7 @@ function Footer() {
     { title: 'Company',  links: [
       ['About',    '../../about/'],
       ['Careers',  '../../careers/'],
-      ['Contact',  'https://savvycal.com/xfusion/lets-chat'],
+      ['Contact', '../../contact/'],
     ]},
     { title: 'Resources', links: [
       ['FAQ',           '../../#faq'],
@@ -789,7 +789,7 @@ function Footer() {
               
             </a>
             <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 18, lineHeight: 1.5, color: BUTTER, margin: 0, maxWidth: 480, fontStyle: 'italic', fontWeight: 400 }}>
-              Senior, AI-augmented customer support agents for small businesses. Since 2020.
+              Senior, AI-trained customer support agents for small businesses. Since 2020.
             </p>
           </div>
           

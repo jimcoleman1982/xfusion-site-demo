@@ -1,14 +1,14 @@
 // Section 5: Pricing & Offer Stack — the conversion centerpiece
 function Pricing() {
   const stack = [
-    { label: 'Senior CS agent salary (full-time, dedicated to you)', value: '$3,500/mo' },
-    { label: 'Recruiting and vetting through the TraitX Framework', value: '$4,500 one-time, equivalent monthly value $375/mo' },
+    { label: 'Senior support agent salary (full-time, dedicated to you)', value: '$3,500/mo' },
+    { label: 'Hiring and screening through the TraitX Framework', value: '$4,500 one-time, monthly value $375/mo' },
     { label: 'Placement and onboarding into your business', value: '$1,500 one-time' },
-    { label: 'Training in your CS workflows', value: '$750 one-time' },
-    { label: 'Training and certification in AI-augmented CS workflows', value: '$1,500 one-time' },
-    { label: 'Payroll services (salary disbursement, light HR, PTO)', value: '$300/mo' },
-    { label: 'Culture and engagement (team-building, swag, gifting, anniversaries)', value: '$200/mo' },
-    { label: 'Dedicated account manager (oversight and leadership)', value: '$1,200/mo' },
+    { label: 'Training in your support process', value: '$750 one-time' },
+    { label: 'Training and certification in AI-powered support tools', value: '$1,500 one-time' },
+    { label: 'Payroll services (paying salaries, light HR, time off)', value: '$300/mo' },
+    { label: 'Culture and engagement (team-building, swag, gifts, anniversaries)', value: '$200/mo' },
+    { label: 'Dedicated account manager (leads and supports your agent)', value: '$1,200/mo' },
     { label: 'Ongoing performance management and coaching', value: '$500/mo' },
   ];
 
@@ -37,10 +37,10 @@ function Pricing() {
             maxWidth: 760,
           }}>
             <p style={{ margin: '0 0 20px' }}>
-              A senior, AI-trained CS hire in the US runs $80,000 to $100,000+ per year fully loaded once you add benefits, taxes, payroll, equipment, recruiting fees, and management overhead. That's $6,600 to $8,300+ per month before you've trained them or built any culture around them.
+              A senior support hire in the US costs $80,000 to $100,000+ per year once you add benefits, taxes, payroll, equipment, hiring fees, and management costs. That's $6,600 to $8,300+ per month, before you've trained them or built any team culture around them.
             </p>
             <p style={{ margin: 0 }}>
-              We deliver the equivalent talent (senior, AI-fluent, dedicated to your business) for $3,900/mo, with everything below included. Roughly half the cost of a comparable local hire, and we carry the management burden.
+              We give you the same level of talent (senior, AI-trained, dedicated to your business) for $3,900/mo, with everything below included. About half the cost of a local hire. And we handle managing them.
             </p>
           </div>
         </div>
@@ -136,7 +136,7 @@ function Pricing() {
               fontSize: 17,
               fontWeight: 600,
               color: '#1F1A17',
-            }}>Comparable in-house cost (fully loaded)</div>
+            }}>What a similar in-house hire would cost (all in)</div>
             <div style={{
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: 15,
@@ -208,7 +208,7 @@ function Pricing() {
             borderRadius: 12,
             padding: 20,
           }}>
-            <div style={{ fontSize: 15, fontWeight: 600, color: '#1F1A17', marginBottom: 6 }}>Comparable in-house cost (fully loaded)</div>
+            <div style={{ fontSize: 15, fontWeight: 600, color: '#1F1A17', marginBottom: 6 }}>What a similar in-house hire would cost (all in)</div>
             <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 13, color: '#3A322D' }}>$6,600 to $8,300+/mo</div>
           </div>
           <div style={{
@@ -257,7 +257,7 @@ function Pricing() {
                 'No deposit',
                 'No setup fee',
                 'No long-term contract, month-to-month',
-                'Roughly half the cost of a senior, AI-trained CS agent hired locally',
+                'About half the cost of a senior, AI-trained support agent hired locally',
                 'Pay nothing for the first 30 days (see guarantee)',
               ].map((b, i) => (
                 <li key={i} style={{

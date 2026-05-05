@@ -32,7 +32,7 @@ function Team() {
               margin: '0 0 20px',
               textWrap: 'pretty',
             }}>
-              About 70 people make xFusion run, with offices in the Philippines and Kenya and a smaller team in the United States. We invest in culture the way other companies invest in software: living-wage compensation, structured holiday gifting, branded swag, regular team-building events, birthday and anniversary recognition, and account managers who know every team member by name.
+              About 70 people make xFusion run, with offices in the Philippines and Kenya and a smaller team in the United States. We invest in culture the way other companies invest in software: living-wage pay, holiday gifts, branded swag, regular team-building events, birthday and work anniversary celebrations, and account managers who know every team member by name.
             </p>
             <p style={{
               fontFamily: "'IBM Plex Sans', sans-serif",

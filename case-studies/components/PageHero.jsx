@@ -25,7 +25,7 @@ function PageHero() {
             maxWidth: 660,
             textWrap: 'pretty',
           }}>
-            Below is a small selection of clients from over 100 placements since 2020. Different founders, different businesses, one common thread: they stopped drowning in customer support and got their time back. The numbers (and the words from the people who lived it) are below.
+            Below are a few clients from over 100 placements since 2020. Different founders, different businesses, one common thread: they stopped drowning in customer support and got their time back. The numbers (and the words from the people who lived it) are below.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'flex-start' }}>
             <Button variant="primary" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>

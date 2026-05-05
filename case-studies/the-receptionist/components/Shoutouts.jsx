@@ -143,7 +143,7 @@ function FinalCTA() {
               margin: 0,
               textWrap: 'pretty',
             }}>
-              If you have built a customer experience that customers actually talk about, and you are nervous about handing any of it to an outside team, that is the exact problem we solve. We will recruit, vet, place, train, and manage a senior, AI-augmented CS agent for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free.
+              If you have built a customer experience that customers actually talk about, and you are nervous about handing any of it to an outside team, that is the exact problem we solve. We will recruit, vet, place, train, and manage a senior, AI-trained support agent for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free.
             </p>
           </div>
 

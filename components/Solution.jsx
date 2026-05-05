@@ -6,21 +6,21 @@ function Solution() {
       tint: '#F2D9CB',
       iconColor: '#B8512C',
       title: 'Senior, AI-Augmented Agents',
-      body: "Every placement is a senior CS agent, not an entry-level hire. They're trained to oversee AI agents on the front line, which means they handle volume a junior rep simply can't. The math at $3,900/mo only works because the talent we place is operating at this level.",
+      body: "Every agent we place is senior, not entry-level. They use AI tools to handle the easy stuff, which means they can do the work of several junior reps. That's the only reason $3,900/mo works. The people we place are that good.",
     },
     {
       icon: 'filter',
       tint: '#D7E0DC',
       iconColor: '#2C4A3E',
       title: 'The TraitX Framework',
-      body: 'Thousands of monthly applications. Fewer than 100 interviews. Top less than 1% placed. Every candidate is vetted with human-led interviews and Zoom recordings you watch before you ever meet them. No ghost candidates. No mystery resumes.',
+      body: 'Thousands of people apply each month. Fewer than 100 get an interview. Less than 1% get placed. Every finalist is screened by a real person, with a Zoom recording you watch before you ever meet them. No ghost candidates. No mystery resumes.',
     },
     {
       icon: 'handshake',
       tint: '#F8EBC9',
       iconColor: '#7a5a10',
       title: 'Fully Managed, Not Just Placed',
-      body: "Most agencies recruit and disappear. We stay. A dedicated account manager runs performance management, training, payroll, culture, and engagement on your behalf. You're not adding a remote hire to manage. You're adding output.",
+      body: "Most agencies hire and disappear. We stay. Your account manager handles performance, training, payroll, and culture for you. You're not adding a remote worker to manage. You're adding work that gets done.",
     },
   ];
 
@@ -39,7 +39,7 @@ function Solution() {
             color: '#1F1A17',
             textWrap: 'balance',
           }}>
-            Senior CS agents who run on AI leverage. Fully managed by us.
+            Senior support agents who use AI to do more. Fully managed by us.
           </h2>
           <p style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
@@ -49,7 +49,7 @@ function Solution() {
             margin: 0,
             maxWidth: 720,
           }}>
-            xFusion places senior customer support agents inside your business and manages them on your behalf. Every agent has real CS experience and is trained in AI-augmented support workflows, so one xFusion seat handles meaningfully more volume than a junior rep elsewhere. You get the output. We carry the management.
+            xFusion places senior support agents inside your business and manages them for you. Every agent has real support experience and is trained to use AI tools. So one xFusion agent can handle a lot more work than a junior rep at another agency. You get the work done. We handle the people side.
           </p>
         </div>
 

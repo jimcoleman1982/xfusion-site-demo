@@ -34,7 +34,7 @@ function Mission() {
               margin: 0,
               textWrap: 'pretty',
             }}>
-              xFusion exists to find exceptional customer support talent, place them with businesses that will treat them like real team members, and help those relationships last for years instead of months. We pay a living wage, invest in culture, and manage the relationship on both sides so the work feels like a career, not a gig. <span style={{
+              xFusion exists to find great customer support people, place them with businesses that will treat them like real team members, and help those relationships last for years instead of months. We pay a living wage, invest in culture, and manage both sides of the relationship so the work feels like a career, not a gig. <span style={{
                 background: 'linear-gradient(180deg, transparent 60%, #F0D9A8 60%)',
                 padding: '0 2px',
               }}>That's the whole game.</span>

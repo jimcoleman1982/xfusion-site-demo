@@ -14,7 +14,7 @@ function Footer() {
       links: [
         ['About',    '../../about/'],
         ['Careers',  '../../careers/'],
-        ['Contact',  "https://savvycal.com/xfusion/lets-chat"],
+        ['Contact', "../../contact/"],
       ],
     },
     {
@@ -66,7 +66,7 @@ function Footer() {
               color: BUTTER, margin: 0, maxWidth: 480,
               fontStyle: 'italic', fontWeight: 400,
             }}>
-              Senior, AI-augmented customer support agents for small businesses. Since 2020.
+              Senior, AI-trained customer support agents for small businesses. Since 2020.
             </p>
           </div>
           

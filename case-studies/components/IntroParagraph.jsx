@@ -15,7 +15,7 @@ function IntroParagraph() {
             fontWeight: 400,
             textWrap: 'pretty',
           }}>
-            These are stories from founders we work with. Different products, different customers, same outcome: a senior support team member becomes part of the team, response times drop, CSAT climbs, and the founder stops being the back-up CS rep.
+            These are stories from founders we work with. Different products, different customers, same result: a senior support team member becomes part of the team, reply times drop, customer satisfaction goes up, and the founder stops being the back-up support rep.
           </p>
         </div>
       </Container>

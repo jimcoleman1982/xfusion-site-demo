@@ -9,7 +9,7 @@ function CaseStudies() {
       file: 'images/dov-kaufmann-tolstoy.png',
       role: 'COO of Tolstoy',
       headline: 'Rose 90 spots in Shopify rankings. Grew faster and more professionally than they could have alone.',
-      body: 'Tolstoy needed CS that could keep pace with rapid product growth without becoming a bottleneck. Our team plugged into their stack, owned tickets and reviews, and freed leadership to focus on building.',
+      body: 'Tolstoy was growing fast and needed support that could keep up. Our team learned their tools, took over tickets and reviews, and freed up their leaders to focus on building the product.',
     },
     {
       client: 'SavvyCal',
@@ -18,8 +18,8 @@ function CaseStudies() {
       tone: 'forest',
       file: 'images/derrick-reimer-savvycal.png',
       role: 'Founder of SavvyCal',
-      headline: 'A skeptic\'s outsourcing turnaround. "This is not your stereotypical outsourced support agency."',
-      body: "Derrick Reimer came in skeptical of outsourcing on principle. Our senior agents earned the trust by handling SavvyCal's nuanced product support with the brand voice and judgment of an in-house team.",
+      headline: 'A doubter changes his mind. "This is not your stereotypical outsourced support agency."',
+      body: "Derrick Reimer didn't believe in outsourcing. Our senior agents earned his trust by handling SavvyCal's tricky product support with the same brand voice and judgment as an in-house team.",
     },
     {
       client: 'Bonify',

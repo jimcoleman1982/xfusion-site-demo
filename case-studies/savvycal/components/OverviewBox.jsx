@@ -19,7 +19,7 @@ function OverviewBox() {
     },
     {
       label: 'Results',
-      detail: '84.79% reduction in average response time, higher customer satisfaction, no abandoned tickets, and the founder back to building the product.',
+      detail: '84.79% reduction in average reply time, higher customer satisfaction, no abandoned tickets, and the founder back to building the product.',
     },
   ];
 

@@ -52,7 +52,7 @@ function FounderCard({
               className="founder-name-link"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${name}, ${role} — open LinkedIn profile`}
+              aria-label={`${name}, ${role}, open LinkedIn profile`}
             >
               {name}
             </a>

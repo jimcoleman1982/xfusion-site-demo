@@ -32,7 +32,7 @@ function AboutCTA() {
               maxWidth: 560,
               textWrap: 'pretty',
             }}>
-              If any of this resonates, get on a call with our founding team. We'll listen to where customer support is breaking in your business, tell you honestly whether we can help, and walk you through what working together would actually look like.
+              If any of this sounds like you, get on a call with our founding team. We'll listen to where support is breaking in your business, tell you honestly whether we can help, and walk you through what working together would actually look like.
             </p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20, alignItems: 'flex-start' }} className="about-cta-actions">

@@ -2,7 +2,7 @@
 const FAQ_ITEMS = [
   {
     q: 'Will they speak good English?',
-    a: "Every candidate goes through human-led interviews where we evaluate English fluency, communication style, and professional presence. Before you ever schedule a meeting, you'll see and hear the candidate on a recorded Zoom video, so you can judge for yourself rather than take our word for it.",
+    a: "Every candidate sits through interviews with a real person where we check English skills, how they talk, and how they come across. Before you meet with anyone, you'll watch a Zoom recording of them, so you can judge for yourself instead of taking our word for it.",
   },
   {
     q: "What if the placement doesn't work out?",
@@ -10,23 +10,23 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Why is $3,900/mo the right price?',
-    a: "Two reasons. First, every agent we place is senior-level, with deeper experience than a typical CS hire and trained to use AI tools to oversee AI agents on the front line. That means one xFusion agent handles a lot more volume than a junior rep at a cheaper agency, so the cost per ticket is actually lower. Second, $3,900 is roughly half what you'd pay for a senior, AI-trained CS agent in the U.S., and it includes recruiting, training, payroll, culture, and a dedicated account manager. No add-ons. No setup fees. No deposits.",
+    a: "Two reasons. First, every agent we place is senior, with more experience than a typical support hire, and trained to use AI tools to handle the easy stuff. So one xFusion agent does a lot more work than a junior rep at a cheaper agency. The cost per ticket is actually lower. Second, $3,900 is about half what you'd pay for the same kind of person in the U.S., and it includes hiring, training, payroll, culture, and an account manager. No add-ons. No setup fees. No deposits.",
   },
   {
     q: 'How long does the process take?',
-    a: 'About 14 days from your discovery call to a candidate panel in your inbox. We maintain a pre-vetted pipeline of senior, AI-trained CS candidates, which is why we can move that fast without cutting corners.',
+    a: 'About 14 days from your discovery call to a candidate list in your inbox. We keep a pool of senior, AI-trained support candidates ready to go, which is why we can move that fast without cutting corners.',
   },
   {
     q: 'Do you handle payroll and HR?',
-    a: "Yes, and it's included in the $3,900/mo. Salary disbursement, light HR, and PTO management are all handled by xFusion. Your placed agent is engaged as an independent contractor and managed by us, so you don't have to figure out international payroll on your own. xFusion is not an Employer of Record, and the agent isn't your employee; we handle the logistics so the relationship stays clean.",
+    a: "Yes, and it's part of the $3,900/mo. xFusion handles paying salaries, light HR, and time off. Your agent is hired as an independent contractor and managed by us, so you don't have to deal with international payroll. xFusion is not an Employer of Record, and the agent isn't your employee. We handle the paperwork so the setup stays simple.",
   },
   {
     q: 'What roles can you fill?',
-    a: "Customer support, primarily. Every CS placement is a senior, AI-augmented agent who can handle Tier 1, Tier 2, and a chunk of what used to require CS-engineering escalation (because they're trained to oversee AI workflows). We also place inside sales team members who work inbound leads (not cold calling) and AI operators who run AI workflows alongside your team. If you need a different kind of role, ask on the discovery call. We'll be honest about whether we can help.",
+    a: "Customer support, mostly. Every support agent we place is senior, trained to use AI, and able to handle Tier 1, Tier 2, and some cases that used to need an engineer's help. We also place inside sales people who work inbound leads (not cold calling) and AI operators who run AI tools alongside your team. If you need a different kind of role, ask on the discovery call. We'll be honest about whether we can help.",
   },
   {
     q: 'Where does your talent come from?',
-    a: "Primarily the Philippines, with strong representation from Kenya. Since 2020 we've built deep networks in both countries and learned which candidates actually thrive in long-term CS roles. Both markets have strong English-speaking professionals who treat CS as a real career, not a stepping-stone.",
+    a: "Mostly the Philippines, with a strong group from Kenya. Since 2020 we've built deep networks in both countries and learned which candidates actually thrive in long-term support roles. Both markets have strong English-speaking professionals who treat support as a real career, not a stepping-stone.",
   },
   {
     q: 'Is there a long-term contract?',
@@ -34,11 +34,11 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Do you replace American jobs?',
-    a: 'No. Our work helps American small businesses keep growing and keep hiring locally where it matters most. Most of our clients use us for support roles that are hard to staff economically with U.S.-based teams. Filling those roles internationally lets owners invest more in core, on-site work where U.S. hiring makes sense.',
+    a: 'No. Our work helps American small businesses keep growing and keep hiring at home where it matters most. Most of our clients use us for support jobs that are hard to fill at U.S. wages. Filling those jobs overseas lets owners spend more on the core jobs where U.S. hiring makes sense.',
   },
   {
     q: 'Why not just hire locally for support work?',
-    a: 'Senior CS reps in the U.S. with AI fluency cost $80,000 to $100,000+/year fully loaded, take months to find, and frequently leave within 18 months. Through xFusion, you get a senior, AI-trained agent for roughly half that cost, with culture and engagement built in to keep them long-term. You also skip the search, the training, the payroll setup, and the cultural overhead. We handle all of it.',
+    a: 'Senior support reps in the U.S. who know AI cost $80,000 to $100,000+ per year, take months to find, and often quit within 18 months. With xFusion, you get a senior, AI-trained agent for about half that cost, with the culture work built in to keep them around long-term. You also skip the search, the training, the payroll setup, and the culture work. We handle all of it.',
   },
   {
     q: 'What about after-hours coverage?',
@@ -50,11 +50,11 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Why not just use a chatbot?',
-    a: "Pure AI handles the easy 60% of support volume well. The hard 40% (angry customers, edge cases, judgment calls, brand-sensitive escalations) is where chatbot-only solutions break, often visibly. xFusion's senior agents use AI as a tool rather than a replacement: they oversee AI on the front line and step in for the moments that matter. You get the throughput of AI plus the judgment and warmth of a human, instead of picking one and living with the limits.",
+    a: "AI on its own handles the easy 60% of support work well. The hard 40% (angry customers, weird cases, judgment calls, sensitive issues) is where chatbot-only setups break, often in public. xFusion's senior agents use AI as a tool, not a replacement. They let AI handle the easy stuff and step in for the moments that matter. You get the speed of AI plus the judgment and warmth of a person, instead of picking one and living with the limits.",
   },
   {
-    q: 'What does "AI-augmented" actually mean in practice?',
-    a: "It means your placed agent is trained to use AI tools (including Claude Code, Claude Cowork, and others) as part of their daily workflow. They draft replies with AI assistance, route and triage tickets with AI logic, and oversee AI agents that handle high-volume routine cases. Their experience tells them when to trust the AI's output and when to step in. The result is a single human handling far more volume than they could solo, without sacrificing the quality and warmth your customers expect.",
+    q: 'What does "AI-trained" actually mean in practice?',
+    a: "It means your agent is trained to use AI tools (like Claude Code, Claude Cowork, and others) every day. They write replies with AI's help, sort and route tickets with AI, and oversee AI tools that handle the routine, high-volume cases. Their experience tells them when to trust what AI gives them and when to step in. The result: one person handling far more work than they could alone, without giving up the quality and warmth your customers expect.",
   },
 ];
 

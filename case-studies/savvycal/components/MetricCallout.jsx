@@ -83,7 +83,7 @@ function MetricCallout() {
               margin: 0,
               textWrap: 'pretty',
             }}>
-              in average customer support response time after placing a senior xFusion agent as an extension of the SavvyCal team.
+              in average customer support reply time after placing a senior xFusion agent as an extension of the SavvyCal team.
             </p>
           </div>
         </div>

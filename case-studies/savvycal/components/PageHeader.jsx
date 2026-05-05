@@ -60,7 +60,7 @@ function PageHeader() {
             textWrap: 'balance',
             fontWeight: 400,
           }}>
-            How SavvyCal cut average customer support response time by 84.79% and gave its founder his mornings back.
+            How SavvyCal cut average customer support reply time by 84.79% and gave its founder his mornings back.
           </p>
 
           {/* Lead photo + tag line */}

@@ -4,22 +4,22 @@ function HowItWorks() {
     {
       icon: 'calendar',
       title: '30-Minute Discovery Call',
-      body: "We talk through what your CS function looks like today, where it's breaking, and what an ideal week looks like once it's not breaking anymore. If we're not a fit, we'll tell you. If we are, we get to work.",
+      body: "We talk about what your support team looks like today, where it's breaking down, and what a good week would look like once it's fixed. If we're not the right fit, we'll tell you. If we are, we get to work.",
     },
     {
       icon: 'filter',
-      title: 'Candidate Panel in ~14 Days or Less',
-      body: 'We run our TraitX Framework against your specific role. About two weeks later, you get a short panel of senior, AI-trained candidates with redacted resumes and Zoom interview recordings. You watch the videos and pick who you want to meet.',
+      title: 'Candidates in 14 days or less',
+      body: 'We use our TraitX Framework to find people for your specific role. About two weeks later, you get a short list of senior candidates with blind resumes and Zoom interview videos. You watch the videos and pick who you want to meet.',
     },
     {
       icon: 'spark',
       title: 'Placement and Training',
-      body: "Your chosen agent is trained on your CS workflows and your AI-augmented support stack. They're set up with your tools, briefed on your brand voice, and certified before they touch a customer ticket.",
+      body: "We train your new agent on your support process and your AI tools. They learn your tools, your brand voice, and pass our certification before they touch a single customer ticket.",
     },
     {
       icon: 'handshake',
       title: 'They Start. We Manage.',
-      body: "A dedicated account manager runs ongoing performance management, payroll, and culture for them. You work with the agent. We handle everything else. You get 30 days to decide if you love them. If you don't, you walk away owing nothing.",
+      body: "Your account manager handles their performance reviews, payroll, and culture. You work with the agent. We handle everything else. You get 30 days to decide if you love them. If you don't, you walk away owing nothing.",
     },
   ];
 

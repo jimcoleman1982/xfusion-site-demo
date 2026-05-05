@@ -72,7 +72,7 @@ function Testimonials() {
             color: '#1F1A17',
             textWrap: 'balance',
           }}>
-            Six years. 100+ CS placements. Clients who treat our agents like family.
+            Six years. 100+ support placements. Clients who treat our agents like family.
           </h2>
           <p style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
@@ -82,7 +82,7 @@ function Testimonials() {
             margin: 0,
             maxWidth: 720,
           }}>
-            We've been doing this since 2020 across SaaS, e-commerce, B2B, consumer brands, and local service businesses. The thread that runs through every relationship: clients tell us they forget our agents aren't in-house. That's the bar.
+            We've been doing this since 2020 for software companies, online stores, B2B brands, consumer brands, and local service businesses. The same thing comes up in every relationship: clients tell us they forget our agents aren't in-house. That's the bar.
           </p>
         </div>
 

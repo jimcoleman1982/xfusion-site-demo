@@ -46,7 +46,7 @@ function Origin() {
               In 2020, Jim and David started looking hard at the international staffing industry, and most of what they saw was broken.
             </p>
             <p style={paraStyle}>
-              Workers were getting paid so poorly they had no reason to stay. Three months in, six months in, they'd quit for another seat that paid a few dollars more. Clients would absorb the loss, hire again, retrain again, and watch the cycle repeat. The whole model was built on churn, with the agency taking its cut every time someone got replaced.
+              Workers got paid so badly they had no reason to stay. Three or six months in, they'd quit for another job that paid a few dollars more. Clients would lose them, hire again, retrain again, and watch the cycle repeat. The whole setup was built on turnover. The agency took a fee every time someone got replaced.
             </p>
             <p style={paraStyle}>
               The question Jim and David kept asking each other was simple. What if you actually treated overseas talent like the skilled professionals they are? Pay them well. Give them a real career path. Build a culture they want to stick around for. Manage the relationship the same way a great in-house manager would. Would the math still work for clients?
@@ -63,10 +63,10 @@ function Origin() {
               It did. <span style={{ color: '#B8512C' }}>It worked better.</span>
             </p>
             <p style={paraStyle}>
-              We started with a handful of clients, paid our team members a meaningful living wage, invested in culture and team-building, and built a vetting framework backed by custom software (we call it <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 16, background: '#F8EBC9', padding: '1px 6px', borderRadius: 4 }}>TraitX</span>) that moves thousands of monthly applicants down to fewer than 100 interviews and the top under 1 percent into placement.
+              We started with a few clients, paid our team a real living wage, invested in culture and team-building, and built a screening system backed by our own software (we call it <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 16, background: '#F8EBC9', padding: '1px 6px', borderRadius: 4 }}>TraitX</span>). It takes thousands of monthly applicants down to fewer than 100 interviews, and the top 1% into placements.
             </p>
             <p style={paraStyle}>
-              Six years later, we have about 70 team members across the Philippines, Kenya, and the United States. Our clients keep their xFusion team members for years. Our team members build careers, buy homes, and send kids to school. The retention numbers tell the story we set out to write.
+              Six years later, we have about 70 team members across the Philippines, Kenya, and the United States. Our clients keep their xFusion team members for years. Our team members build careers, buy homes, and send their kids to school. The numbers tell the story we set out to write.
             </p>
             <div style={{
               marginTop: 48,

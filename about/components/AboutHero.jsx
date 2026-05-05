@@ -26,7 +26,7 @@ function AboutHero() {
             maxWidth: 760,
             textWrap: 'pretty',
           }}>
-            Six years later, we're a team of about 70 people on three continents who've built customer support careers worth keeping, for clients who actually invest in them.
+            Six years later, we're about 70 people on three continents who've built real support careers, with clients who actually invest in them.
           </p>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
             <Button variant="primary" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a discovery call</Button>

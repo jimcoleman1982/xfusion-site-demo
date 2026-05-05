@@ -70,7 +70,7 @@ function PageHeader() {
             maxWidth: 780,
             textWrap: 'pretty',
           }}>
-            How TheReceptionist held a 98.9% CSAT score and protected its Radical Support reputation with a fully managed xFusion team.
+            How TheReceptionist held a 98.9% customer satisfaction score and protected its Radical Support reputation with a fully managed xFusion team.
           </p>
         </div>
 
@@ -122,7 +122,7 @@ function OverviewBox() {
     },
     {
       label: 'Results',
-      value: '98.9% CSAT against an 85% target, 100% CSAT in the majority of months since the partnership began, 1 minute and 22 second average first response time, and a partnership that has expanded several times.',
+      value: '98.9% customer satisfaction against an 85% target, 100% in most months since the partnership began, 1 minute and 22 second average first reply time, and a partnership that has grown several times.',
     },
   ];
 
@@ -350,7 +350,7 @@ function MetricCallout() {
             margin: '0 0 32px',
             textWrap: 'balance',
           }}>
-            98.9% <span style={{ color: '#F0D9A8' }}>CSAT</span>
+            98.9% <span style={{ color: '#F0D9A8' }}>satisfaction</span>
           </div>
 
           <div style={{
@@ -364,7 +364,7 @@ function MetricCallout() {
             textWrap: 'pretty',
             opacity: 0.95,
           }}>
-            against an 85% internal target, with 100% CSAT in the majority of months since the partnership began.
+            against an 85% internal target, with 100% satisfaction in most months since the partnership began.
           </div>
         </div>
       </Container>

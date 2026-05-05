@@ -27,10 +27,10 @@ function FinalCTA() {
             textAlign: 'left',
           }}>
             <p style={{ margin: '0 0 20px', color: '#F7F2EB' }}>
-              Something about your customer support situation is not okay right now. Maybe it's the late-night tickets, or the CSAT score you don't want to look at, or the team member you can feel slipping toward burnout. Or maybe it's just the quiet awareness that you're spending your best hours on the wrong work.
+              Something about your support setup isn't okay right now. Maybe it's the late-night tickets. Or the customer satisfaction score you don't want to look at. Or the team member you can tell is heading for burnout. Or maybe it's just the quiet feeling that you're spending your best hours on the wrong work.
             </p>
             <p style={{ margin: '0 0 20px', color: '#F7F2EB' }}>
-              A 30-minute Discovery Call is the lowest-stakes next step you can take. No pitch deck. No pressure. We talk about what's actually broken, whether we're a fit, and what a senior, AI-augmented agent could look like in your business. If we're not the right answer, we'll tell you and point you somewhere better.
+              A 30-minute Discovery Call is the easiest next step you can take. No pitch deck. No pressure. We talk about what's actually broken, whether we're a fit, and what a senior, AI-trained agent could look like on your team. If we're not the right answer, we'll tell you and point you somewhere better.
             </p>
             <p style={{ margin: 0, color: '#F7F2EB' }}>
               If we are the right answer, you've got a 30-Day Risk-Free Trial waiting on the other side of it. You don't pay until you're sure.

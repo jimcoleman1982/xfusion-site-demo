@@ -39,7 +39,7 @@ function Chatbot() {
               marginTop: 4,
               letterSpacing: '-0.025em',
             }}>60%</span>
-            Pure AI handles the easy 60% of customer support reasonably well. Password resets, status checks, simple how-tos. That's real value, and we use AI tools too.
+            AI on its own handles the easy 60% of support pretty well. Password resets, status checks, basic how-tos. That's real value, and we use AI tools too.
           </p>
           <p style={{ margin: 0, paddingTop: 16, borderTop: '1px solid rgba(247,242,235,0.18)', color: '#F7F2EB' }}>
             <span style={{
@@ -53,10 +53,10 @@ function Chatbot() {
               marginTop: 4,
               letterSpacing: '-0.025em',
             }}>40%</span>
-            The hard 40% is where chatbot-only solutions fall apart. The angry customer who needs to feel heard before they'll listen to a fix. The edge case the bot has never seen. The judgment call that requires reading between the lines of a long, frustrated email. The customer who would have churned but didn't because someone took the time to make it right.
+            The hard 40% is where chatbot-only setups fall apart. The angry customer who needs to feel heard before they'll listen. The weird case the bot has never seen. The judgment call that takes reading between the lines of a long, frustrated email. The customer who almost left, but didn't, because someone took the time to make it right.
           </p>
           <p style={{ margin: 0, paddingTop: 24, borderTop: '1px solid rgba(247,242,235,0.18)', color: '#F7F2EB', fontSize: 21 }}>
-            That's where humans matter. And that's where xFusion sits. Our senior agents use AI as leverage, not replacement. The AI handles repetitive volume. The human handles the moments that decide whether a customer becomes a fan or a refund.
+            That's where humans matter. And that's where xFusion fits. Our senior agents use AI as a tool, not a replacement. AI handles the repeat work. People handle the moments that decide if a customer becomes a fan or asks for a refund.
           </p>
         </div>
       </Container>

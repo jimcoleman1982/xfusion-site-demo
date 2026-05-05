@@ -212,7 +212,7 @@ function OverviewBox({ rows }) {
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: 11,
               color: '#6B5F56',
-            }}>Engagement since August 2022</div>
+            }}>Working together since August 2022</div>
           </div>
 
           {rows.map((r, i) => (
@@ -704,7 +704,7 @@ function CTASection() {
             margin: '0 auto 40px',
             maxWidth: 680,
             textWrap: 'pretty',
-          }}>If your customer support is starting to slip, or you are about to lose the one person holding it together, we can help. We will recruit, vet, place, train, and manage a senior, AI-augmented CS agent for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free.</p>
+          }}>If your customer support is starting to slip, or you are about to lose the one person holding it together, we can help. We will recruit, vet, place, train, and manage a senior, AI-trained support agent for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free.</p>
 
           <Button variant="on-dark" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>
 

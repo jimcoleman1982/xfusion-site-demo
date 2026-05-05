@@ -28,13 +28,13 @@ function Problem() {
             But here you are.
           </p>
           <p style={{ margin: '0 0 24px' }}>
-            Your CSAT is slipping. Response times are creeping past the point where customers stay quiet. Reviews mention "slow support" more than they used to. The one CS person you have is underwater and you can feel them about to break. So you keep stepping in. A ticket here, a refund request there, an angry email at midnight that could not wait.
+            Your customer satisfaction scores are slipping. Reply times are getting slow enough that customers are starting to complain. Reviews mention "slow support" more than they used to. The one support person you have is buried, and you can tell they're close to breaking. So you keep stepping in. A ticket here, a refund there, an angry email at midnight that could not wait.
           </p>
           <p style={{ margin: '0 0 24px' }}>
-            You know what's coming if nothing changes. More tickets. More late nights. A team member quits without notice. A customer churns and tells three other customers why. The thing that used to make your business great (the way you took care of people) becomes the thing that's quietly killing it.
+            You know what's coming if nothing changes. More tickets. More late nights. Someone quits without warning. A customer leaves and tells three other customers why. The thing that used to make your business great (how you took care of people) is now the thing slowly killing it.
           </p>
           <p style={{ margin: '0 0 24px' }}>
-            You've already tried the obvious fixes. Upwork was a parade of ghosts and scams. The last "agency" you used recruited someone, took their fee, and disappeared. The chatbot you piloted handled the easy stuff fine and then completely fell apart on the calls that actually mattered. Hiring a senior CS person in-house costs more than the role can justify, and you don't have time to manage one anyway.
+            You've already tried the obvious fixes. Upwork was full of ghosts and scams. The last "agency" you used hired someone, took their fee, and vanished. The chatbot you tried handled the easy stuff fine, then fell apart on the calls that really mattered. Hiring a senior support person in-house costs more than the job is worth. And you don't have time to manage one anyway.
           </p>
           <p style={{ margin: 0 }}>
             So the work keeps coming back to you. And you keep working in your business instead of on it.

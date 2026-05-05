@@ -30,7 +30,7 @@ function CTASection() {
               maxWidth: 580,
               textWrap: 'pretty',
             }}>
-              If any of these stories sound like the situation you're in right now (drowning in tickets, watching CSAT slip, tired of in-house hiring or freelancer roulette), there's a simple next step. Talk to our founding team for 30 minutes. We'll figure out what you actually need, tell you honestly whether we're the right fit, and walk you through what working with xFusion looks like.
+              If any of these stories sound like where you are right now (drowning in tickets, watching customer satisfaction slip, tired of hiring in-house or rolling the dice on freelancers), there's a simple next step. Talk to our founding team for 30 minutes. We'll figure out what you actually need, tell you honestly whether we're the right fit, and walk you through what working with xFusion looks like.
             </p>
           </div>
           <div className="cta-actions" style={{

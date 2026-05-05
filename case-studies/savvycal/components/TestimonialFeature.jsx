@@ -55,7 +55,7 @@ function TestimonialFeature() {
               margin: '0 0 32px',
               textWrap: 'pretty',
             }}>
-              As a founder busy building and marketing my product, I wanted a partner I could trust to train and manage dedicated reps as an extension of my team. This is not your stereotypical outsourced support agency. They've cut our average response time by 84.79% and freed me up to focus on running the business.
+              As a founder busy building and marketing my product, I wanted a partner I could trust to train and manage dedicated reps as an extension of my team. This is not your stereotypical outsourced support agency. They've cut our average reply time by 84.79% and freed me up to focus on running the business.
             </p>
             <div style={{
               fontFamily: "'JetBrains Mono', ui-monospace, monospace",
