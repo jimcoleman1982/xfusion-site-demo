@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Measure the Success of Outsourced Customer Support | xFusion</title>
+  <meta name="description" content="Learn how to measure outsourced customer support success through key metrics like FRT, CSAT, NPS, and resolution rates to evaluate provider performance.">
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <style>
+    body { background: var(--color-bg, #F7F2EB); color: var(--color-ink, #1F1A17); margin: 0; }
+    a { transition: color 160ms ease; }
+    *:focus-visible { outline: 2px solid var(--color-primary, #B8512C); outline-offset: 3px; border-radius: 4px; }
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #D9CFBF; }
+    .nav a { color: #1F1A17; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 500; padding: 8px 12px; }
+    .nav a:hover { color: #B8512C; }
+    .nav a.active { color: #B8512C; }
+    .nav .cta { background: #B8512C; color: #F7F2EB; padding: 10px 18px; border-radius: 8px; font-weight: 600; }
+    .nav .cta:hover { background: #A0451F; color: #F7F2EB; }
+    .nav .links { display: flex; gap: 8px; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 12px; font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; color: #1F1A17; text-decoration: none; }
+    @media (max-width: 700px) { .nav .links a:not(.cta) { display: none; } }
+  </style>
+  <style>
+    .post-hero { margin: 32px 0 56px; }
+    .post-hero-band {
+      position: relative;
+      border-radius: 20px;
+      padding: 88px 56px 72px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #F0D9A8 0%, #E6C68A 100%);
+      color: #1F1A17;
+    }
+    .post-hero-band::before {
+      content: ""; position: absolute; top: -120px; right: -120px;
+      width: 360px; height: 360px; border-radius: 50%;
+      background: #1F1A17; opacity: 0.04;
+    }
+    .post-hero-band::after {
+      content: ""; position: absolute; bottom: -80px; left: -80px;
+      width: 240px; height: 240px; border-radius: 50%;
+      background: #1F1A17; opacity: 0.03;
+    }
+    .post-hero-inner { position: relative; max-width: 880px; }
+    .post-hero-eyebrow-row {
+      display: flex; align-items: center; gap: 14px;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      opacity: 0.78; margin-bottom: 32px;
+    }
+    .post-hero-eyebrow-row a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .post-hero-title {
+      font-family: 'Source Serif 4', serif; font-size: clamp(34px, 5vw, 60px);
+      font-weight: 600; line-height: 1.05; letter-spacing: -0.025em;
+      margin: 0 0 36px; color: inherit;
+    }
+    .post-hero-meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; opacity: 0.75; letter-spacing: 0.02em; }
+    .post-hero-rule { width: 48px; height: 2px; background: currentColor; opacity: 0.4; margin-top: 28px; }
+
+    .post-body { max-width: 720px; margin: 0 auto; padding-bottom: 64px; font-family: 'IBM Plex Sans', sans-serif; font-size: 20px; line-height: 1.65; color: #1F1A17; }
+    .post-body h2 { font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; line-height: 1.2; margin: 60px 0 20px; color: #1F1A17; letter-spacing: -0.01em; }
+    .post-body h3 { font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 600; line-height: 1.25; margin: 40px 0 14px; color: #1F1A17; }
+    .post-body p { margin: 0 0 22px; font-size: 20px; line-height: 1.65; color: #2A2520; }
+    .post-body strong { color: #1F1A17; font-weight: 600; }
+    .post-body a { color: #B8512C; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .post-body a:hover { color: #A0451F; }
+    .post-body ul, .post-body ol { margin: 0 0 24px 1.2em; padding: 0; font-size: 20px; }
+    .post-body li { margin: 0 0 12px; font-size: 20px; line-height: 1.6; }
+    .post-body blockquote { border-left: 3px solid #B8512C; padding: 6px 0 6px 24px; margin: 36px 0; font-family: 'Source Serif 4', serif; font-size: 24px; font-style: italic; color: #3A322D; line-height: 1.4; }
+    .post-body code { font-family: 'JetBrains Mono', monospace; font-size: 0.92em; background: #EDE8E0; padding: 2px 6px; border-radius: 4px; }
+    .post-body hr { border: 0; border-top: 1px solid #D9CFBF; margin: 48px 0; }
+
+    .related { border-top: 1px solid #D9CFBF; padding: 64px 0; }
+    .related h3 { font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 600; margin: 0 0 28px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-card { display: block; text-decoration: none; color: inherit; padding: 24px; background: #FBF7F1; border-radius: 12px; transition: transform 180ms ease; border: 1px solid #EAE2D2; }
+    .related-card:hover { transform: translateY(-2px); border-color: #B8512C; }
+    .related-cat { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #B8512C; margin-bottom: 12px; }
+    .related-card h4 { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; line-height: 1.25; margin: 0; color: #1F1A17; }
+
+    @media (max-width: 900px) { .related-grid { grid-template-columns: 1fr; } .post-hero-band { padding: 56px 32px 48px; } }
+    @media (max-width: 700px) { .post-hero-band { padding: 48px 24px 40px; border-radius: 16px; } }
+  </style>
+</head>
+<body>
+  <nav class="nav page-wrap">
+    <a href="/" class="logo" aria-label="xFusion home">
+      <img src="/assets/xfusion-logo.png" alt="xFusion" style="height: 36px; width: auto; display: block;">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/case-studies/">Case studies</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="https://savvycal.com/xfusion/lets-chat" class="cta">Book a Discovery Call</a>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <article>
+      <header class="post-hero">
+        <div class="post-hero-band">
+          <div class="post-hero-inner">
+            <div class="post-hero-eyebrow-row">
+              <a href="/customer-experience/">Customer experience</a>
+              <span>·</span>
+              <span>CUSTOMER EXPERIENCE</span>
+            </div>
+            <h1 class="post-hero-title">How to Measure the Success of Outsourced Customer Support</h1>
+            <div class="post-hero-meta">2026-05-05 · 9 min read</div>
+            <div class="post-hero-rule"></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="post-body">
+<h2>How to measure the success of outsourced customer support</h2>
+<p>Ever wondered why businesses choose to outsource customer support and how they determine if it's actually working? This guide explores the strategic considerations and measurement approaches for outsourced customer support operations.</p>
+<h2>The great debate: in-house vs. outsourced</h2>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>In-house</th>
+<th>Outsourced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Control</td>
+<td>More direct control</td>
+<td>Less direct control</td>
+</tr>
+<tr>
+<td>Costs</td>
+<td>Higher (recruitment, training, benefits)</td>
+<td>Lower costs</td>
+</tr>
+<tr>
+<td>Hours</td>
+<td>Limited to business hours</td>
+<td>24/7 support available</td>
+</tr>
+<tr>
+<td>Scalability</td>
+<td>Limited growth potential</td>
+<td>Highly scalable</td>
+</tr>
+</tbody>
+</table>
+<h3>Why the surge in outsourcing?</h3>
+<p>Outsourcing customer support gained significant momentum in the late 1990s and continues growing due to several factors:</p>
+<ul>
+<li><strong>Globalization</strong>: Internet-based businesses serve customers across time zones, requiring round-the-clock support availability</li>
+<li><strong>Cost efficiency</strong>: Outsourcing reduces recruitment, training, benefits, and infrastructure expenses compared to in-house teams</li>
+<li><strong>Focus on core business</strong>: Companies can concentrate on primary operations while experts handle customer interactions</li>
+<li><strong>Access to expertise</strong>: Specialized providers bring advanced skills, knowledge, and technology infrastructure</li>
+</ul>
+<h2>Understanding outsourced customer support</h2>
+<h3>24/7 outsourced customer support providers</h3>
+<p>Round-the-clock support meets modern customer expectations. Research indicates that "51% of consumers say a business needs to be available 24/7," making these providers essential for global operations.</p>
+<h3>White-label outsourced customer support providers</h3>
+<p>These providers seamlessly integrate with your brand identity. Support teams operate under your business name, maintaining brand voice and consistency while customers perceive them as direct company employees.</p>
+<h3>Dedicated outsourced customer support providers</h3>
+<p>Exclusive team allocation ensures commitment and deep product knowledge. According to Microsoft's 2018 State of Global Customer Service report, "90% of consumers expect an organization to offer a self-service customer support portal," which dedicated teams help achieve.</p>
+<h2>The need for outsourcing customer support</h2>
+<h3>Benefits of outsourcing customer support</h3>
+<p><strong>More time</strong>: Outsourcing customer inquiries frees internal resources to focus on core business functions and strategic initiatives.</p>
+<p><strong>Reduced costs</strong>: Significant savings on recruitment, training, facilities, and employee benefits make outsourcing financially attractive for organizations of all sizes.</p>
+<p><strong>Round-the-clock service</strong>: Global support ensures customers receive assistance regardless of time zone or business hours, improving satisfaction and retention.</p>
+<h3>Challenges of outsourcing customer support</h3>
+<p><strong>Lost in translation</strong>: Outsourced teams may miss brand voice nuances, cultural references, and specific communication styles.</p>
+<p><strong>Fear of losing personal touch</strong>: Concerns exist that external teams might treat customers as ticket numbers rather than valued individuals.</p>
+<p><strong>Quality control</strong>: Maintaining consistent service standards across outsourced operations requires rigorous monitoring and management systems.</p>
+<h2>Outsourcing in different sectors</h2>
+<h3>SaaS customer support outsourcing</h3>
+<p>Software-as-a-Service companies benefit from outsourced support due to frequent updates and the need for real-time technical assistance without building in-house expertise.</p>
+<h3>Shopify Apps customer support outsourcing</h3>
+<p>Shopify app developers support other businesses rather than end consumers. Outsourced support allows them to offer expert assistance across diverse client needs.</p>
+<h3>eCommerce customer support outsourcing</h3>
+<p>E-commerce retailers with high customer volumes leverage outsourcing to manage query overflow while ensuring personalized service delivery.</p>
+<h2>Choosing the right outsourced customer support provider</h2>
+<h3>Choosing a provider: compatibility matters</h3>
+<p>Evaluate potential providers based on these factors:</p>
+<ol>
+<li><strong>Cultural fit</strong>: Alignment with company values ensures authentic brand representation</li>
+<li><strong>Industry experience</strong>: Prior experience in your sector indicates nuanced understanding</li>
+<li><strong>Language proficiency</strong>: Multilingual capabilities match customer communication needs</li>
+<li><strong>Technology stack</strong>: Current software tools and platform expertise determine operational efficiency</li>
+</ol>
+<h3>Comparing providers: the ultimate showdown</h3>
+<p>When evaluating multiple providers, consider:</p>
+<ol>
+<li><strong>Price</strong>: Balance affordability with quality expectations</li>
+<li><strong>Service quality</strong>: Assess interaction handling and customer satisfaction metrics</li>
+<li><strong>Reputation</strong>: Research market standing, awards, and recognitions</li>
+<li><strong>Response time</strong>: Speed of initial and resolution responses matters significantly</li>
+<li><strong>Scalability</strong>: Growth capacity aligns with business expansion plans</li>
+</ol>
+<h3>Reviews &amp; testimonials: listen to the whispers</h3>
+<h4>Online reviews</h4>
+<p>Check Google Reviews, Trustpilot, and G2 platforms for authentic customer feedback while maintaining balanced perspective.</p>
+<h4>Case studies</h4>
+<p>Detailed case studies provide comprehensive insights into provider capabilities and past performance outcomes.</p>
+<h4>Client testimonials</h4>
+<p>Video testimonials add authenticity and credibility to written endorsements.</p>
+<h2>Key components of outsourced customer support</h2>
+<h3>SLAs: the pinkie swears of business</h3>
+<p>Service Level Agreements establish expectations and define accountability. Include these elements:</p>
+<ul>
+<li><strong>Response and resolution times</strong>: Define acceptable timeframes for customer engagement</li>
+<li><strong>Availability</strong>: Specify operational hours and coverage zones</li>
+<li><strong>Quality standards</strong>: Establish performance benchmarks and service expectations</li>
+</ul>
+<h3>Onboarding process: the smoothest transitions</h3>
+<p>Successful transitions require attention to:</p>
+<ul>
+<li><strong>System integration</strong>: Ensure seamless compatibility with existing technology infrastructure</li>
+<li><strong>Data migration</strong>: Execute secure and efficient customer data transfers</li>
+</ul>
+<h3>Software &amp; tools: the avengers of support</h3>
+<p>Essential support tools include:</p>
+<ul>
+<li><strong>CRM software</strong>: Manages customer data, tracks interactions, and analyzes behavioral patterns</li>
+<li><strong>Ticketing systems</strong>: Organizes and prioritizes customer issues systematically</li>
+<li><strong>Live chat tools</strong>: Provides immediate assistance for time-sensitive customer needs</li>
+</ul>
+<h3>Training: the montage moment</h3>
+<p>Comprehensive training covers:</p>
+<ul>
+<li><strong>Product knowledge</strong>: Deep understanding of offerings and capabilities</li>
+<li><strong>Communication skills</strong>: Professional and empathetic customer interaction</li>
+<li><strong>Problem-solving skills</strong>: Effective resolution techniques and escalation procedures</li>
+</ul>
+<h2>Key metrics for measuring outsourced customer support success</h2>
+<h3>Defining metrics: the northern stars of outsourcing</h3>
+<p>Metrics provide quantifiable measurement of outsourcing success through these key indicators:</p>
+<h4>1. First Response Time (FRT)</h4>
+<p>Measures the duration between customer inquiry submission and agent response. Swift responses indicate operational efficiency and customer attentiveness.</p>
+<h4>2. Average Handle Time (AHT)</h4>
+<p>Calculates average time spent on each customer interaction from initiation to closure. Balance is essential, efficiency without compromising quality.</p>
+<h4>3. Customer Satisfaction Score (CSAT)</h4>
+<p>Directly measures customer contentment through surveys asking satisfaction ratings. Satisfied customers become repeat customers and brand advocates.</p>
+<h4>4. Net Promoter Score (NPS)</h4>
+<p>Measures customer loyalty by assessing likelihood of recommending your service to others. High NPS indicates strong customer relationships.</p>
+<h4>5. Resolution rate</h4>
+<p>Tracks the percentage of customer issues resolved successfully. Low resolution rates indicate underlying operational problems.</p>
+<h3>Importance: why metrics matter</h3>
+<h4>1. Performance evaluation</h4>
+<p>Metrics assess provider performance objectively, enabling data-driven management decisions.</p>
+<h4>2. Benchmarking</h4>
+<p>Metrics provide industry standards for comparison, revealing competitive positioning.</p>
+<h4>3. Decision-making</h4>
+<p>Quantitative data guides strategic choices regarding provider retention, expansion, or modification.</p>
+<h4>4. Transparency</h4>
+<p>Metrics create accountability through measurable commitments and deliverables.</p>
+<h4>5. Continuous improvement</h4>
+<p>Metrics identify gaps and improvement opportunities, supporting operational optimization.</p>
+<h2>Case studies and industry insights</h2>
+<h3>Case study #1: Amazon, turning sour lemons into sweet lemonade</h3>
+<h4>The challenge</h4>
+<p>Amazon faced overwhelming customer complaints requiring systematic resolution.</p>
+<h4>The solution</h4>
+<p>The company engaged a 24/7 outsourced customer support provider to handle global inquiries.</p>
+<h4>The result</h4>
+<p>Within six months, complaints decreased by 60% and customer satisfaction reached 92%, demonstrating outsourcing's transformative potential.</p>
+<h3>Industry insight #1: the rising tide of AI in outsourced customer support</h3>
+<h4>The AI wave</h4>
+<p>Artificial Intelligence has transitioned from concept to operational reality in customer support, enabling faster responses and automated problem-solving.</p>
+<h4>Benefits of AI in customer support</h4>
+<p>AI delivers 24/7 availability without human limitations, accelerated response times, and improved efficiency metrics.</p>
+<h4>Impact on outsourcing</h4>
+<p>AI works alongside human agents rather than replacing them. In 2022, businesses integrating AI into outsourced support saw "35% increase in efficiency" and substantial reductions in customer wait times.</p>
+<h3>Industry insight #2: remote work and outsourcing, a match made in heaven?</h3>
+<h4>The remote work revolution</h4>
+<p>COVID-19 normalized remote work arrangements, reducing traditional resistance to distributed teams.</p>
+<h4>Impact on outsourcing</h4>
+<p>Increased acceptance of remote work has legitimized outsourcing, reducing stigma and expanding service availability.</p>
+<h2>Back-office support and outsourcing</h2>
+<h3>Back-office, the hidden powerhouse</h3>
+<p>Back-office operations represent essential but non-customer-facing functions that enable organizational success.</p>
+<h3>The enigma: what is back-office support?</h3>
+<p>Back-office encompasses bookkeeping, HR, IT administration, and operational tasks that maintain business functionality without direct customer interaction.</p>
+<h3>Benefits of outsourcing back-office functions</h3>
+<h4>Increased efficiency</h4>
+<p>Specialized external teams complete tasks faster and more effectively than generalist internal staff.</p>
+<h4>Cost reduction</h4>
+<p>Outsourcing eliminates expenses for office space, equipment, and employee benefits.</p>
+<h4>24/7 operations</h4>
+<p>Globally distributed teams maintain continuous business operations across time zones.</p>
+<h4>Focus on core activities</h4>
+<p>Internal teams concentrate on primary business functions rather than administrative overhead.</p>
+<h3>How back-office outsourcing contributes to customer support</h3>
+<h4>Smooth operations</h4>
+<p>Efficient back-office functions eliminate administrative bottlenecks affecting customer service delivery.</p>
+<h4>Fast response time</h4>
+<p>Streamlined data retrieval and administrative processes accelerate customer issue resolution.</p>
+<h4>Better resource allocation</h4>
+<p>Reduced internal operational burden allows greater investment in customer-facing support improvements.</p>
+<h3>Back-office and customer support, the dream team</h3>
+<p>Back-office operations and customer support function as complementary systems, with each enhancing overall business performance.</p>
+<h2>Future trends and best practices</h2>
+<h3>Outsourcing in the new era</h3>
+<p>Modern outsourcing incorporates AI, automation, and machine learning technologies. Providers function as strategic collaborators helping businesses navigate technological complexity.</p>
+<h3>Keeping humanity at the core</h3>
+<p>Despite technological advancement, human connection and empathetic communication remain essential for customer satisfaction. Technology supports but does not replace human interaction.</p>
+<h3>Need a lifebuoy in the outsourcing ocean?</h3>
+<p>Organizations seeking guidance should engage with experienced providers who understand industry-specific requirements and best practices.</p>
+<h4>Let's discuss outsourced customer support</h4>
+<p>Open communication and collaborative partnerships drive successful outsourcing relationships.</p>
+<h4>Ready for the grand adventure?</h4>
+<p>Successful outsourcing requires careful provider selection, consistent performance monitoring, and maintained transparent communication. Choose strategically, measure continuously, and prioritize partner alignment with your organizational values.</p>
+      </div>
+    </article>
+
+    <section class="related">
+      <h3>Related reading</h3>
+      <div class="related-grid">
+        <a class="related-card" href="/customer-experience/boost-your-business-by-delegating-customer-support-2/">
+          <div class="related-cat">CUSTOMER EXPERIENCE</div>
+          <h4>Boost your business by delegating customer support</h4>
+        </a>
+        <a class="related-card" href="/customer-experience/empowering-proactive-customer-support-in-your-company/">
+          <div class="related-cat">CUSTOMER EXPERIENCE</div>
+          <h4>Building proactive customer support in your company</h4>
+        </a>
+        <a class="related-card" href="/customer-experience/from-service-to-success-turning-customer-support-into-a-competitive-advantage/">
+          <div class="related-cat">CUSTOMER EXPERIENCE</div>
+          <h4>Customer support as competitive advantage</h4>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .site-footer { background: #2C4A3E; color: #F7F2EB; }
+    .site-footer .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .site-footer .footer-top { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; padding-top: 64px; padding-bottom: 40px; border-bottom: 1px solid rgba(247, 242, 235, 0.14); }
+    .site-footer .brand-link { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; text-decoration: none; }
+    .site-footer .brand-tag { font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.5; color: #F0D9A8; margin: 0; max-width: 480px; font-style: italic; }
+    .site-footer .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding-top: 48px; padding-bottom: 40px; }
+    .site-footer .footer-col-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(247, 242, 235, 0.65); margin-bottom: 18px; }
+    .site-footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .site-footer .footer-link { color: #F7F2EB; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; line-height: 1.4; }
+    .site-footer .footer-link:hover { color: #F0D9A8; }
+    .site-footer .footer-legal { padding-top: 24px; padding-bottom: 32px; border-top: 1px solid rgba(247, 242, 235, 0.14); display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: rgba(247, 242, 235, 0.65); flex-wrap: wrap; gap: 12px; }
+    @media (max-width: 900px) { .site-footer .footer-top { grid-template-columns: 1fr; gap: 20px; } .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .site-footer .footer-legal { flex-direction: column; align-items: flex-start; } }
+    @media (max-width: 520px) { .site-footer .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+  </style>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <a class="brand-link" href="/" aria-label="xFusion home">
+            <img src="/assets/xfusion-logo-on-dark.png" alt="xFusion" style="height: 36px; width: auto; display: block;">
+          </a>
+          <p class="brand-tag">Senior, AI-trained customer support agents for small businesses. Since 2020.</p>
+        </div>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-col-title">Product</div>
+          <ul>
+            <li><a class="footer-link" href="/#pricing">Pricing</a></li>
+            <li><a class="footer-link" href="/case-studies/">Case studies</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul>
+            <li><a class="footer-link" href="/about/">About</a></li>
+            <li><a class="footer-link" href="/careers/">Careers</a></li>
+            <li><a class="footer-link" href="https://savvycal.com/xfusion/lets-chat">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Resources</div>
+          <ul>
+            <li><a class="footer-link" href="/#faq">FAQ</a></li>
+            <li><a class="footer-link" href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Legal</div>
+          <ul>
+            <li><a class="footer-link" href="/privacy/">Privacy</a></li>
+            <li><a class="footer-link" href="/dpa/">DPA</a></li>
+            <li><a class="footer-link" href="/security/">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <div>&copy; 2026 xFusion. All rights reserved.</div>
+        <div>Made with care across the Philippines, Kenya, and the United States.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

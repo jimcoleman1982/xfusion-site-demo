@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NPS vs other customer satisfaction metrics: which one to use when | xFusion</title>
+  <meta name="description" content="NPS, CSAT, and CES measure different things. A practical guide to which metric to use for which decision, with examples from real businesses.">
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <style>
+    body { background: var(--color-bg, #F7F2EB); color: var(--color-ink, #1F1A17); margin: 0; }
+    a { transition: color 160ms ease; }
+    *:focus-visible { outline: 2px solid var(--color-primary, #B8512C); outline-offset: 3px; border-radius: 4px; }
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #D9CFBF; }
+    .nav a { color: #1F1A17; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 500; padding: 8px 12px; }
+    .nav a:hover { color: #B8512C; }
+    .nav a.active { color: #B8512C; }
+    .nav .cta { background: #B8512C; color: #F7F2EB; padding: 10px 18px; border-radius: 8px; font-weight: 600; }
+    .nav .cta:hover { background: #A0451F; color: #F7F2EB; }
+    .nav .links { display: flex; gap: 8px; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 12px; font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; color: #1F1A17; text-decoration: none; }
+    @media (max-width: 700px) { .nav .links a:not(.cta) { display: none; } }
+  </style>
+  <style>
+    .post-hero { margin: 32px 0 56px; }
+    .post-hero-band {
+      position: relative;
+      border-radius: 20px;
+      padding: 88px 56px 72px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #B8512C 0%, #9F4520 100%);
+      color: #F7F2EB;
+    }
+    .post-hero-band::before {
+      content: ""; position: absolute; top: -120px; right: -120px;
+      width: 360px; height: 360px; border-radius: 50%;
+      background: #F7F2EB; opacity: 0.04;
+    }
+    .post-hero-band::after {
+      content: ""; position: absolute; bottom: -80px; left: -80px;
+      width: 240px; height: 240px; border-radius: 50%;
+      background: #F7F2EB; opacity: 0.03;
+    }
+    .post-hero-inner { position: relative; max-width: 880px; }
+    .post-hero-eyebrow-row {
+      display: flex; align-items: center; gap: 14px;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      opacity: 0.78; margin-bottom: 32px;
+    }
+    .post-hero-eyebrow-row a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .post-hero-title {
+      font-family: 'Source Serif 4', serif; font-size: clamp(34px, 5vw, 60px);
+      font-weight: 600; line-height: 1.05; letter-spacing: -0.025em;
+      margin: 0 0 36px; color: inherit;
+    }
+    .post-hero-meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; opacity: 0.75; letter-spacing: 0.02em; }
+    .post-hero-rule { width: 48px; height: 2px; background: currentColor; opacity: 0.4; margin-top: 28px; }
+
+    .post-body { max-width: 720px; margin: 0 auto; padding-bottom: 64px; font-family: 'IBM Plex Sans', sans-serif; font-size: 20px; line-height: 1.65; color: #1F1A17; }
+    .post-body h2 { font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; line-height: 1.2; margin: 60px 0 20px; color: #1F1A17; letter-spacing: -0.01em; }
+    .post-body h3 { font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 600; line-height: 1.25; margin: 40px 0 14px; color: #1F1A17; }
+    .post-body p { margin: 0 0 22px; font-size: 20px; line-height: 1.65; color: #2A2520; }
+    .post-body strong { color: #1F1A17; font-weight: 600; }
+    .post-body a { color: #B8512C; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .post-body a:hover { color: #A0451F; }
+    .post-body ul, .post-body ol { margin: 0 0 24px 1.2em; padding: 0; font-size: 20px; }
+    .post-body li { margin: 0 0 12px; font-size: 20px; line-height: 1.6; }
+    .post-body blockquote { border-left: 3px solid #B8512C; padding: 6px 0 6px 24px; margin: 36px 0; font-family: 'Source Serif 4', serif; font-size: 24px; font-style: italic; color: #3A322D; line-height: 1.4; }
+    .post-body code { font-family: 'JetBrains Mono', monospace; font-size: 0.92em; background: #EDE8E0; padding: 2px 6px; border-radius: 4px; }
+    .post-body hr { border: 0; border-top: 1px solid #D9CFBF; margin: 48px 0; }
+
+    .related { border-top: 1px solid #D9CFBF; padding: 64px 0; }
+    .related h3 { font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 600; margin: 0 0 28px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-card { display: block; text-decoration: none; color: inherit; padding: 24px; background: #FBF7F1; border-radius: 12px; transition: transform 180ms ease; border: 1px solid #EAE2D2; }
+    .related-card:hover { transform: translateY(-2px); border-color: #B8512C; }
+    .related-cat { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #B8512C; margin-bottom: 12px; }
+    .related-card h4 { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; line-height: 1.25; margin: 0; color: #1F1A17; }
+
+    @media (max-width: 900px) { .related-grid { grid-template-columns: 1fr; } .post-hero-band { padding: 56px 32px 48px; } }
+    @media (max-width: 700px) { .post-hero-band { padding: 48px 24px 40px; border-radius: 16px; } }
+  </style>
+</head>
+<body>
+  <nav class="nav page-wrap">
+    <a href="/" class="logo" aria-label="xFusion home">
+      <img src="/assets/xfusion-logo.png" alt="xFusion" style="height: 36px; width: auto; display: block;">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/case-studies/">Case studies</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="https://savvycal.com/xfusion/lets-chat" class="cta">Book a Discovery Call</a>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <article>
+      <header class="post-hero">
+        <div class="post-hero-band">
+          <div class="post-hero-inner">
+            <div class="post-hero-eyebrow-row">
+              <a href="/saas-metrics/">Metrics</a>
+              <span>·</span>
+              <span>METRICS</span>
+            </div>
+            <h1 class="post-hero-title">NPS vs other customer satisfaction metrics: which one to use when</h1>
+            <div class="post-hero-meta">2024-08-12 · 6 min read</div>
+            <div class="post-hero-rule"></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="post-body">
+<p>A founder asked us last month why his NPS was a 60 while his CSAT was an 89. He thought one of them was wrong. Neither was. They measure different things, and using them interchangeably is one of the most common mistakes in customer feedback.</p>
+<p>This is the short tour. Three popular metrics. What each one is good at. When to reach for which.</p>
+<h2>Net Promoter Score</h2>
+<p>NPS asks one question: "How likely are you to recommend us?" Scale of 0 to 10. You group the answers into promoters (9, 10), passives (7, 8), and detractors (0 through 6), then subtract the percentage of detractors from the percentage of promoters.</p>
+<p>NPS is a relationship metric. It captures how a customer feels about you in general, not how they felt about a specific interaction yesterday. The score moves slowly because the underlying feeling moves slowly. That is a feature, not a bug.</p>
+<p>NPS works best for tracking the trajectory of customer sentiment over time and for benchmarking against your peers. It is excellent for board reporting, segmentation analysis, and identifying which customers are likely to refer you.</p>
+<p>It is weaker as a diagnostic tool. A 6 tells you a customer is unhappy. It does not tell you why. You need the open-ended follow-up question, and you need someone to read the responses, before NPS becomes actionable.</p>
+<h2>Customer Satisfaction Score</h2>
+<p>CSAT asks how satisfied a customer was with a specific thing. A purchase. A support ticket. A delivery. A feature. The scale is usually 1 to 5, sometimes 1 to 7. The score is the percentage of respondents who answered with the top one or two options, depending on how strict you want to be.</p>
+<p>CSAT is a transactional metric. It tells you whether a particular interaction met expectations. The score moves quickly because each survey is anchored to one event.</p>
+<p>CSAT is the right metric when you want to know whether a specific touchpoint is working. After a support chat. After a return. After an onboarding session. Field it within minutes of the event, while the experience is fresh, and you get clean signal.</p>
+<p>It is weaker as a long-term loyalty indicator. A customer can have a great support experience and still cancel their subscription, because the issue was elsewhere. A high CSAT does not mean a healthy relationship.</p>
+<h2>Customer Effort Score</h2>
+<p>CES asks how easy it was for the customer to do something. "How easy was it to resolve your issue today?" or "How easy was it to find what you were looking for?" The scale varies, but a common version runs from "very difficult" to "very easy" on a 1 to 7 scale.</p>
+<p>CES is the most predictive of the three for repeat purchase and retention, especially in support contexts. The reasoning is simple. Customers do not remember most of the times you delighted them, but they remember every time you made them work. Friction is what gets people to leave.</p>
+<p>CES is the right metric when you are trying to identify points of friction in a customer journey. Returns, refunds, password resets, finding documentation, getting to a human. If those are hard, customers churn. CES will catch it before NPS or CSAT do.</p>
+<p>It is weaker for measuring overall happiness or advocacy. A frictionless experience is necessary but not sufficient.</p>
+<h2>When to use which</h2>
+<p>Here is a clean way to think about it.</p>
+<p>Use <strong>NPS</strong> for the quarterly relationship check-in, board reporting, segment analysis, and identifying advocates worth turning into a referral pipeline. Run it once a quarter or twice a year.</p>
+<p>Use <strong>CSAT</strong> after specific events you want to evaluate. Post-purchase, post-support, post-onboarding. Field it immediately, keep the survey to one or two questions, and use the data to find which events are dragging the experience down.</p>
+<p>Use <strong>CES</strong> when you are looking for friction. Particularly in support, returns, account management, and any other process where customers have to put in effort to get value. CES is your early warning system for churn.</p>
+<p>Most mature programs use all three. They are not redundant.</p>
+<h2>A worked example</h2>
+<p>A subscription box business we worked with had this profile.</p>
+<p>NPS was 38. Steady. Not great, not bad.</p>
+<p>CSAT after support tickets was 92. The team was excellent.</p>
+<p>CES after the cancellation flow was a 3 out of 7. Customers were saying it was hard to cancel.</p>
+<p>The interesting part is what that combination tells you. Support is great. Customers like the brand fine. But the cancellation flow is hostile, and that hostility was leaking into the NPS responses, which in turn was suppressing the relationship score even though no individual interaction looked broken.</p>
+<p>We rebuilt the cancellation flow to be one click. CES went to 6. NPS climbed 9 points over the next two quarters. CSAT did not move because it was already strong. Three metrics, three roles.</p>
+<h2>Don't average them. Don't pick one.</h2>
+<p>The most common bad practice is rolling NPS, CSAT, and CES into a single "customer health" composite. Do not do that. You lose the diagnostic power of each metric. They are designed to answer different questions. Keep them separate, look at all three, and make decisions about each.</p>
+<p>The second most common bad practice is picking only one. Some teams only run NPS. Others only run CSAT. They miss the things their chosen metric was not designed to catch.</p>
+<h2>Who actually runs the program</h2>
+<p>Running three customer feedback streams in parallel is not hard, but it is steady work. Sending the right survey at the right moment. Reading responses. Tagging themes. Closing the loop with anyone who left a low score. Reporting monthly to the people who can act on it.</p>
+<p>Most operators we talk to want this work happening. They do not want to do it themselves. A senior CS agent can run NPS, CSAT, and CES end to end, including the diagnostic write-ups that turn raw scores into a list of things to fix. That is the work our team handles for clients every day, across software, ecommerce, subscription, and service businesses.</p>
+<h2>Ready to talk?</h2>
+<p>If you are running, or trying to run, a customer feedback program and want a senior agent to take it from here, we should chat.</p>
+<p><a href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</a></p>
+<p>30 minutes. No commitment. No credit card. You'll talk directly with our founding team.</p>
+      </div>
+    </article>
+
+    <section class="related">
+      <h3>Related reading</h3>
+      <div class="related-grid">
+        <a class="related-card" href="/saas-metrics/multi-channel-communication-for-customer-success/">
+          <div class="related-cat">METRICS</div>
+          <h4>Building a multichannel customer communication strategy that doesn&#x27;t fall apart</h4>
+        </a>
+        <a class="related-card" href="/saas-metrics/guide-to-improving-your-net-promoter-score/">
+          <div class="related-cat">METRICS</div>
+          <h4>How to actually move your Net Promoter Score</h4>
+        </a>
+        <a class="related-card" href="/saas-metrics/how-to-calculate-nps-a-step-by-step-guide/">
+          <div class="related-cat">METRICS</div>
+          <h4>How to calculate NPS without overcomplicating it</h4>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .site-footer { background: #2C4A3E; color: #F7F2EB; }
+    .site-footer .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .site-footer .footer-top { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; padding-top: 64px; padding-bottom: 40px; border-bottom: 1px solid rgba(247, 242, 235, 0.14); }
+    .site-footer .brand-link { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; text-decoration: none; }
+    .site-footer .brand-tag { font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.5; color: #F0D9A8; margin: 0; max-width: 480px; font-style: italic; }
+    .site-footer .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding-top: 48px; padding-bottom: 40px; }
+    .site-footer .footer-col-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(247, 242, 235, 0.65); margin-bottom: 18px; }
+    .site-footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .site-footer .footer-link { color: #F7F2EB; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; line-height: 1.4; }
+    .site-footer .footer-link:hover { color: #F0D9A8; }
+    .site-footer .footer-legal { padding-top: 24px; padding-bottom: 32px; border-top: 1px solid rgba(247, 242, 235, 0.14); display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: rgba(247, 242, 235, 0.65); flex-wrap: wrap; gap: 12px; }
+    @media (max-width: 900px) { .site-footer .footer-top { grid-template-columns: 1fr; gap: 20px; } .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .site-footer .footer-legal { flex-direction: column; align-items: flex-start; } }
+    @media (max-width: 520px) { .site-footer .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+  </style>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <a class="brand-link" href="/" aria-label="xFusion home">
+            <img src="/assets/xfusion-logo-on-dark.png" alt="xFusion" style="height: 36px; width: auto; display: block;">
+          </a>
+          <p class="brand-tag">Senior, AI-trained customer support agents for small businesses. Since 2020.</p>
+        </div>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-col-title">Product</div>
+          <ul>
+            <li><a class="footer-link" href="/#pricing">Pricing</a></li>
+            <li><a class="footer-link" href="/case-studies/">Case studies</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul>
+            <li><a class="footer-link" href="/about/">About</a></li>
+            <li><a class="footer-link" href="/careers/">Careers</a></li>
+            <li><a class="footer-link" href="https://savvycal.com/xfusion/lets-chat">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Resources</div>
+          <ul>
+            <li><a class="footer-link" href="/#faq">FAQ</a></li>
+            <li><a class="footer-link" href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Legal</div>
+          <ul>
+            <li><a class="footer-link" href="/privacy/">Privacy</a></li>
+            <li><a class="footer-link" href="/dpa/">DPA</a></li>
+            <li><a class="footer-link" href="/security/">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <div>&copy; 2026 xFusion. All rights reserved.</div>
+        <div>Made with care across the Philippines, Kenya, and the United States.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boosting Sales on WooCommerce: The Gorgias Advantage | xFusion</title>
+  <meta name="description" content="Discover how Gorgias transforms WooCommerce stores through enhanced customer support, personalization, and data-driven strategies to boost sales.">
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <style>
+    body { background: var(--color-bg, #F7F2EB); color: var(--color-ink, #1F1A17); margin: 0; }
+    a { transition: color 160ms ease; }
+    *:focus-visible { outline: 2px solid var(--color-primary, #B8512C); outline-offset: 3px; border-radius: 4px; }
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #D9CFBF; }
+    .nav a { color: #1F1A17; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 500; padding: 8px 12px; }
+    .nav a:hover { color: #B8512C; }
+    .nav a.active { color: #B8512C; }
+    .nav .cta { background: #B8512C; color: #F7F2EB; padding: 10px 18px; border-radius: 8px; font-weight: 600; }
+    .nav .cta:hover { background: #A0451F; color: #F7F2EB; }
+    .nav .links { display: flex; gap: 8px; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 12px; font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; color: #1F1A17; text-decoration: none; }
+    @media (max-width: 700px) { .nav .links a:not(.cta) { display: none; } }
+  </style>
+  <style>
+    .post-hero { margin: 32px 0 56px; }
+    .post-hero-band {
+      position: relative;
+      border-radius: 20px;
+      padding: 88px 56px 72px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #F0D9A8 0%, #E6C68A 100%);
+      color: #1F1A17;
+    }
+    .post-hero-band::before {
+      content: ""; position: absolute; top: -120px; right: -120px;
+      width: 360px; height: 360px; border-radius: 50%;
+      background: #1F1A17; opacity: 0.04;
+    }
+    .post-hero-band::after {
+      content: ""; position: absolute; bottom: -80px; left: -80px;
+      width: 240px; height: 240px; border-radius: 50%;
+      background: #1F1A17; opacity: 0.03;
+    }
+    .post-hero-inner { position: relative; max-width: 880px; }
+    .post-hero-eyebrow-row {
+      display: flex; align-items: center; gap: 14px;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      opacity: 0.78; margin-bottom: 32px;
+    }
+    .post-hero-eyebrow-row a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .post-hero-title {
+      font-family: 'Source Serif 4', serif; font-size: clamp(34px, 5vw, 60px);
+      font-weight: 600; line-height: 1.05; letter-spacing: -0.025em;
+      margin: 0 0 36px; color: inherit;
+    }
+    .post-hero-meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; opacity: 0.75; letter-spacing: 0.02em; }
+    .post-hero-rule { width: 48px; height: 2px; background: currentColor; opacity: 0.4; margin-top: 28px; }
+
+    .post-body { max-width: 720px; margin: 0 auto; padding-bottom: 64px; font-family: 'IBM Plex Sans', sans-serif; font-size: 20px; line-height: 1.65; color: #1F1A17; }
+    .post-body h2 { font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; line-height: 1.2; margin: 60px 0 20px; color: #1F1A17; letter-spacing: -0.01em; }
+    .post-body h3 { font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 600; line-height: 1.25; margin: 40px 0 14px; color: #1F1A17; }
+    .post-body p { margin: 0 0 22px; font-size: 20px; line-height: 1.65; color: #2A2520; }
+    .post-body strong { color: #1F1A17; font-weight: 600; }
+    .post-body a { color: #B8512C; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .post-body a:hover { color: #A0451F; }
+    .post-body ul, .post-body ol { margin: 0 0 24px 1.2em; padding: 0; font-size: 20px; }
+    .post-body li { margin: 0 0 12px; font-size: 20px; line-height: 1.6; }
+    .post-body blockquote { border-left: 3px solid #B8512C; padding: 6px 0 6px 24px; margin: 36px 0; font-family: 'Source Serif 4', serif; font-size: 24px; font-style: italic; color: #3A322D; line-height: 1.4; }
+    .post-body code { font-family: 'JetBrains Mono', monospace; font-size: 0.92em; background: #EDE8E0; padding: 2px 6px; border-radius: 4px; }
+    .post-body hr { border: 0; border-top: 1px solid #D9CFBF; margin: 48px 0; }
+
+    .related { border-top: 1px solid #D9CFBF; padding: 64px 0; }
+    .related h3 { font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 600; margin: 0 0 28px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-card { display: block; text-decoration: none; color: inherit; padding: 24px; background: #FBF7F1; border-radius: 12px; transition: transform 180ms ease; border: 1px solid #EAE2D2; }
+    .related-card:hover { transform: translateY(-2px); border-color: #B8512C; }
+    .related-cat { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #B8512C; margin-bottom: 12px; }
+    .related-card h4 { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; line-height: 1.25; margin: 0; color: #1F1A17; }
+
+    @media (max-width: 900px) { .related-grid { grid-template-columns: 1fr; } .post-hero-band { padding: 56px 32px 48px; } }
+    @media (max-width: 700px) { .post-hero-band { padding: 48px 24px 40px; border-radius: 16px; } }
+  </style>
+</head>
+<body>
+  <nav class="nav page-wrap">
+    <a href="/" class="logo" aria-label="xFusion home">
+      <img src="/assets/xfusion-logo.png" alt="xFusion" style="height: 36px; width: auto; display: block;">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/case-studies/">Case studies</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="https://savvycal.com/xfusion/lets-chat" class="cta">Book a Discovery Call</a>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <article>
+      <header class="post-hero">
+        <div class="post-hero-band">
+          <div class="post-hero-inner">
+            <div class="post-hero-eyebrow-row">
+              <a href="/customer-experience/">Customer experience</a>
+              <span>·</span>
+              <span>CUSTOMER EXPERIENCE</span>
+            </div>
+            <h1 class="post-hero-title">Boosting Sales on WooCommerce: The Gorgias Advantage</h1>
+            <div class="post-hero-meta">2026-05-05 · 9 min read</div>
+            <div class="post-hero-rule"></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="post-body">
+<h2>Boosting sales on WooCommerce: the Gorgias advantage</h2>
+<p>Hey there! I recently stumbled upon this fascinating tool, and I've got to share it with you. You remember how we were discussing the hurdles in the eCommerce space? Enter Gorgias. It's rapidly positioning itself as an eCommerce game-changer, revolutionizing the way online ventures operate and grow.</p>
+<h2>The many facets of Gorgias for eCommerce platforms</h2>
+<p>In the bustling world of eCommerce, particularly within WooCommerce, Gorgias stands tall as a transformative tool. Let's understand why.</p>
+<h3>Streamlining processes</h3>
+<ol>
+<li>
+<p><strong>Swift customer support:</strong>
+Online shopping demands quick and efficient customer support. Gorgias seamlessly integrates into the WooCommerce framework, ensuring queries, from product information to checkout guidance, are addressed rapidly.</p>
+</li>
+<li>
+<p><strong>Revolutionizing returns and refunds:</strong>
+Returns and refunds can be complex. Gorgias offers a streamlined, systematic approach, enhancing customer trust and ensuring smooth transactions.</p>
+</li>
+</ol>
+<h3>Personalized shopping experience</h3>
+<ul>
+<li><strong>Tailored interactions:</strong>
+Gorgias takes personalization to the next level. From individualized product recommendations to targeted email campaigns, Gorgias creates a bespoke shopping journey for each user.</li>
+</ul>
+<h3>Nurturing customer relations</h3>
+<ul>
+<li><strong>Beyond queries:</strong>
+Gorgias isn't just a problem solver. It's a relationship builder. Through personalized follow-ups, exclusive deals, and regular feedback checks, Gorgias fosters brand loyalty.</li>
+</ul>
+<h3>Gorgias in action</h3>
+<ol>
+<li>
+<p><strong>A comprehensive tool suite:</strong>
+Beyond chatbots, Gorgias offers a holistic suite of tools, from sales analytics to inventory insights, geared to empower WooCommerce stores.</p>
+</li>
+<li>
+<p><strong>Omnipresence with multi-channel support:</strong>
+Modern consumers interact across various channels. Gorgias ensures consistent, seamless support, irrespective of the communication platform.</p>
+</li>
+</ol>
+<p>If there's a WooCommerce store looking to boost sales and enhance customer experience, Gorgias is not just an option; it's a necessity. It's the advantage that could very well be the difference between a casual browser and a loyal customer.</p>
+<h2>Building personal connections with customers</h2>
+<p>When it comes to boosting sales on WooCommerce, one can't overlook the incredible role played by Gorgias eCommerce chatbots. But these aren't your run-of-the-mill bots; they're the secret sauce for engagement and retention.</p>
+<ul>
+<li><strong>Engaging first-time visitors:</strong> Gorgias chatbots are designed to captivate the attention of first-time visitors. They provide a friendly and informative interface, guiding potential customers through the store and making them feel at ease.</li>
+<li><strong>Solving problems, enhancing loyalty:</strong> These chatbots do more than just chat. They offer solutions to customer queries, ensuring that users find what they're looking for quickly. Additionally, they play a crucial role in post-purchase experiences, addressing concerns and building trust.</li>
+<li><strong>Abandoned cart recovery:</strong> One of the biggest challenges in eCommerce is cart abandonment. Guess what? Gorgias has a solution for that too. It's equipped to re-engage users who have left their carts behind, nudging them towards completing the purchase.</li>
+</ul>
+<h2>Communication &amp; feedback: Gorgias CRM for streamlined interaction</h2>
+<p>In the world of eCommerce, effective communication and feedback are golden. Gorgias provides a streamlined platform for both, enhancing the customer experience and driving continual improvement.</p>
+<ul>
+<li><strong>Tailor-made templates:</strong> Gorgias CRM for eStores simplifies communication with tailor-made templates. This ensures that responses are not only quick but also consistent, maintaining brand identity and professionalism.</li>
+<li><strong>Eliciting customer feedback:</strong> Feedback is the lifeblood of progress. Gorgias makes it effortless to gather customer feedback. This valuable input is then used to fine-tune products, services, and the overall shopping experience.</li>
+</ul>
+<h2>Driving conversions: Gorgias' secret sauce</h2>
+<p>Now, here's the exciting part, Gorgias is a catalyst for driving conversions. It's not just about boosting sales; it's about understanding customers and guiding them towards a purchase.</p>
+<ul>
+<li><strong>Enhancing checkout processes:</strong> Gorgias optimizes the checkout journey. It ensures that the process is smooth, hassle-free, and as user-friendly as possible. This reduces cart abandonment rates and increases the likelihood of completed purchases.</li>
+<li><strong>Upselling and cross-selling:</strong> Knowing your customers' preferences is key to upselling and cross-selling. Gorgias leverages data to make informed suggestions, increasing the average transaction value and maximizing revenue.</li>
+</ul>
+<p>In a nutshell, Gorgias isn't just another tool in the eCommerce arsenal; it's the secret weapon for engagement, retention, and driving conversions on WooCommerce. It's the art of understanding and catering to the customer's needs, ultimately boosting sales and ensuring long-term success.</p>
+<h2>Innovation &amp; tools: the Gorgias edge</h2>
+<p>In the competitive realm of eCommerce, staying ahead of the curve is paramount. Enter Gorgias, the innovative force that empowers WooCommerce businesses with cutting-edge tools and insights.</p>
+<h3>Insights &amp; analytics: paving the path to proactivity</h3>
+<p>Gorgias doesn't just react to customer needs; it anticipates them. It's about harnessing data to understand customer behavior, identify patterns, and proactively cater to their requirements.</p>
+<ul>
+<li><strong>Data-driven strategies:</strong> Gorgias analytics for digital shops provide a treasure trove of data. Businesses can analyze customer preferences, shopping habits, and trends. This data-driven approach allows for the creation of targeted marketing campaigns and the optimization of product offerings, ultimately leading to increased sales.</li>
+</ul>
+<h3>Integration &amp; compatibility: the icing on the cake</h3>
+<p>One of Gorgias' standout features is its seamless integration with major eCommerce platforms. This compatibility offers a world of benefits for businesses of all sizes, from small eBusinesses to large eStores.</p>
+<ul>
+<li><strong>Smooth sailing for businesses:</strong> Gorgias makes life easier for WooCommerce store owners. Its integrations ensure that everything runs like a well-oiled machine. From order management to customer support, Gorgias streamlines operations, reducing manual effort and the risk of errors.</li>
+</ul>
+<h3>Compliance &amp; training: navigating the digital landscape</h3>
+<p>As the digital landscape evolves, compliance becomes a critical concern, especially with regulations like GDPR. Gorgias takes this responsibility seriously, ensuring GDPR compliance in eCommerce.</p>
+<ul>
+<li><strong>GDPR compliance made simple:</strong> With Gorgias, businesses can breathe easy. It provides tools and processes to handle customer data securely, keeping in line with the stringent GDPR regulations. This not only avoids legal complications but also builds trust with customers concerned about data privacy.</li>
+<li><strong>User-centric training:</strong> Training teams on Gorgias is a breeze, thanks to its user-centric approach. The platform is designed for simplicity and efficiency, making onboarding and optimization a smooth journey. This ensures that teams can harness Gorgias to its full potential without extensive training periods.</li>
+</ul>
+<p>The Gorgias advantage isn't just about offering tools; it's about empowering eCommerce businesses with proactive insights, seamless integrations, compliance assurance, and user-friendly training. It's the edge that sets businesses on a path to sustainable growth and success in the ever-evolving eCommerce landscape.</p>
+<h2>Maximizing potential: a data-driven approach</h2>
+<p>When it comes to boosting sales on WooCommerce, one can't overlook the power of data-driven strategies. And in this realm, Gorgias shines as a beacon of hope, offering a pathway to maximizing potential.</p>
+<h3>ROI &amp; reputation: turning dreams into reality</h3>
+<p>Every online venture dreams of one thing, Maximizing ROI. With Gorgias implementations, this dream is no longer elusive. Here's how Gorgias transforms dreams into tangible results.</p>
+<ul>
+<li><strong>Boosting ROI:</strong> Gorgias isn't just another tool; it's an investment. By leveraging its capabilities, businesses can optimize operations, reduce response times, and enhance the overall customer experience. The result? A substantial boost in ROI, often exceeding expectations.</li>
+<li><strong>Digital brand reputation management:</strong> Reputation is the currency of the digital age. Gorgias isn't just a customer support tool; it's a powerful instrument for digital brand reputation management. Swift and efficient customer service, proactive engagement, and personalized interactions all contribute to building a stellar brand reputation.</li>
+</ul>
+<h3>Case studies &amp; reviews: the proof of Gorgias' prowess</h3>
+<p>In the world of eCommerce, results speak louder than words. And Gorgias has a track record that's nothing short of impressive.</p>
+<ul>
+<li><strong>Numerous case studies:</strong> The success stories of Gorgias implementations in the realm of eRetail are abundant. Case studies highlight how businesses across various niches have harnessed the power of Gorgias to streamline their operations, boost sales, and create memorable customer experiences. These real-world examples serve as a testament to its efficiency.</li>
+<li><strong>Rave reviews in eRetail:</strong> It's not just businesses; customers themselves are singing Gorgias' praises. Rave Gorgias reviews in the eRetail space are a testament to its ability to delight both businesses and consumers alike. The platform has earned a reputation for its reliability, efficiency, and impact on sales growth.</li>
+</ul>
+<p>In summary, the Gorgias advantage in maximizing potential is rooted in data-driven strategies that elevate ROI and enhance digital brand reputation. The evidence is clear, Gorgias is not just a tool; it's a catalyst for success, backed by compelling case studies and rave reviews. It's the key to unlocking the full potential of WooCommerce stores and achieving unprecedented sales growth.</p>
+<h2>Look: check out a real world example</h2>
+<p>Allow us to introduce you to "The Trendy Boutique," a small online fashion store. They faced common eCommerce challenges: slow customer support, cart abandonment, and the need to boost sales. Here's how Gorgias came to their rescue:</p>
+<ol>
+<li>
+<p><strong>Swift customer support transformation</strong>
+Before Gorgias, "The Trendy Boutique" struggled with slow responses to customer inquiries. Gorgias chatbots changed that. They engaged visitors, answered questions, and reduced cart abandonment, leading to increased sales.</p>
+</li>
+<li>
+<p><strong>Personalized shopping experiences</strong>
+Gorgias enabled personalized shopping experiences. Customers received tailored product recommendations, boosting sales and enhancing loyalty.</p>
+</li>
+<li>
+<p><strong>Data-driven strategies</strong>
+With Gorgias analytics, "The Trendy Boutique" made data-driven decisions. They crafted targeted marketing strategies, resulting in higher conversion rates and increased sales.</p>
+</li>
+<li>
+<p><strong>Positive brand reputation</strong>
+Efficient customer support through Gorgias built a positive brand reputation. Satisfied customers left glowing reviews and recommendations, further boosting sales.</p>
+</li>
+</ol>
+<p>This real-world success story illustrates how Gorgias transforms eCommerce challenges into remarkable sales growth.</p>
+<h2>Embracing the future of eRetail with Gorgias</h2>
+<p>As we wrap up our coffee-infused chat about Boosting Sales on WooCommerce, I want to leave you with a thought, Gorgias is not just another tool; it's the future of eRetail. Here's why:</p>
+<h3>A partner in success</h3>
+<p>Gorgias isn't just a software solution; it's a strategic partner in your journey to eCommerce success. It offers a myriad of advantages that can significantly impact your WooCommerce store's sales and growth trajectory.</p>
+<ul>
+<li><strong>Mastery of mCommerce:</strong> The eCommerce landscape is rapidly evolving, and mobile commerce (mCommerce) is at the forefront. Gorgias is well-equipped to cater to this shift. It ensures seamless mobile user experiences, ensuring that you don't miss out on the vast market of mobile shoppers.</li>
+<li><strong>Personalization power:</strong> In the age of data-driven marketing, personalized campaigns are king. Gorgias empowers you to create and execute personalized marketing campaigns with ease. This capability is pivotal in capturing the attention of modern consumers and driving sales.</li>
+<li><strong>Building a digital brand empire:</strong> Branding in the digital age is about more than just a logo and a tagline. It's about crafting a compelling narrative, building trust, and delivering exceptional customer experiences. Gorgias plays a pivotal role in this by helping you establish and nurture a robust digital brand.</li>
+</ul>
+<h3>The future of digital shopping</h3>
+<p>The future of digital shopping has arrived, and it's embodied in the name G-O-R-G-I-A-S. It represents a future where businesses effortlessly adapt to evolving consumer preferences, effortlessly scale their operations, and consistently innovate.</p>
+<p>Gorgias maintains its leading position in the constantly evolving eCommerce landscape by consistently adapting to meet the needs of contemporary retailers. It transcends being just a tool; it's a forward-looking, adaptable platform poised to excel in the dynamic digital marketplace.</p>
+<p>So, as you contemplate your eCommerce strategy and seek ways to enhance sales on WooCommerce, bear in mind that Gorgias is more than just a tool, it's your steadfast companion in navigating the dynamic realm of eRetail. However, make sure to conduct your own due diligence, explore its features, and understand how it can best serve your unique business requirements. Cheers to embracing the future with Gorgias by your side, but always remember that informed decision-making is key in this ever-evolving digital landscape.</p>
+      </div>
+    </article>
+
+    <section class="related">
+      <h3>Related reading</h3>
+      <div class="related-grid">
+        <a class="related-card" href="/customer-experience/boost-your-business-by-delegating-customer-support-2/">
+          <div class="related-cat">CUSTOMER EXPERIENCE</div>
+          <h4>Boost your business by delegating customer support</h4>
+        </a>
+        <a class="related-card" href="/customer-experience/empowering-proactive-customer-support-in-your-company/">
+          <div class="related-cat">CUSTOMER EXPERIENCE</div>
+          <h4>Building proactive customer support in your company</h4>
+        </a>
+        <a class="related-card" href="/customer-experience/from-service-to-success-turning-customer-support-into-a-competitive-advantage/">
+          <div class="related-cat">CUSTOMER EXPERIENCE</div>
+          <h4>Customer support as competitive advantage</h4>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .site-footer { background: #2C4A3E; color: #F7F2EB; }
+    .site-footer .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .site-footer .footer-top { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; padding-top: 64px; padding-bottom: 40px; border-bottom: 1px solid rgba(247, 242, 235, 0.14); }
+    .site-footer .brand-link { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; text-decoration: none; }
+    .site-footer .brand-tag { font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.5; color: #F0D9A8; margin: 0; max-width: 480px; font-style: italic; }
+    .site-footer .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding-top: 48px; padding-bottom: 40px; }
+    .site-footer .footer-col-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(247, 242, 235, 0.65); margin-bottom: 18px; }
+    .site-footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .site-footer .footer-link { color: #F7F2EB; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; line-height: 1.4; }
+    .site-footer .footer-link:hover { color: #F0D9A8; }
+    .site-footer .footer-legal { padding-top: 24px; padding-bottom: 32px; border-top: 1px solid rgba(247, 242, 235, 0.14); display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: rgba(247, 242, 235, 0.65); flex-wrap: wrap; gap: 12px; }
+    @media (max-width: 900px) { .site-footer .footer-top { grid-template-columns: 1fr; gap: 20px; } .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .site-footer .footer-legal { flex-direction: column; align-items: flex-start; } }
+    @media (max-width: 520px) { .site-footer .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+  </style>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <a class="brand-link" href="/" aria-label="xFusion home">
+            <img src="/assets/xfusion-logo-on-dark.png" alt="xFusion" style="height: 36px; width: auto; display: block;">
+          </a>
+          <p class="brand-tag">Senior, AI-trained customer support agents for small businesses. Since 2020.</p>
+        </div>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-col-title">Product</div>
+          <ul>
+            <li><a class="footer-link" href="/#pricing">Pricing</a></li>
+            <li><a class="footer-link" href="/case-studies/">Case studies</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul>
+            <li><a class="footer-link" href="/about/">About</a></li>
+            <li><a class="footer-link" href="/careers/">Careers</a></li>
+            <li><a class="footer-link" href="https://savvycal.com/xfusion/lets-chat">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Resources</div>
+          <ul>
+            <li><a class="footer-link" href="/#faq">FAQ</a></li>
+            <li><a class="footer-link" href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Legal</div>
+          <ul>
+            <li><a class="footer-link" href="/privacy/">Privacy</a></li>
+            <li><a class="footer-link" href="/dpa/">DPA</a></li>
+            <li><a class="footer-link" href="/security/">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <div>&copy; 2026 xFusion. All rights reserved.</div>
+        <div>Made with care across the Philippines, Kenya, and the United States.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

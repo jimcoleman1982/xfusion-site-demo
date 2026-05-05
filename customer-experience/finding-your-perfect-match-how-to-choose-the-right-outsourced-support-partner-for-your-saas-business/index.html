@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finding Your Perfect Match: How to Choose the Right Outsourced Support Partner for Your SaaS Business | xFusion</title>
+  <meta name="description" content="A comprehensive guide to selecting the ideal outsourced support partner for your SaaS business, covering needs assessment, due diligence, SLAs, pricing, and par">
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <style>
+    body { background: var(--color-bg, #F7F2EB); color: var(--color-ink, #1F1A17); margin: 0; }
+    a { transition: color 160ms ease; }
+    *:focus-visible { outline: 2px solid var(--color-primary, #B8512C); outline-offset: 3px; border-radius: 4px; }
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #D9CFBF; }
+    .nav a { color: #1F1A17; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 500; padding: 8px 12px; }
+    .nav a:hover { color: #B8512C; }
+    .nav a.active { color: #B8512C; }
+    .nav .cta { background: #B8512C; color: #F7F2EB; padding: 10px 18px; border-radius: 8px; font-weight: 600; }
+    .nav .cta:hover { background: #A0451F; color: #F7F2EB; }
+    .nav .links { display: flex; gap: 8px; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 12px; font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; color: #1F1A17; text-decoration: none; }
+    @media (max-width: 700px) { .nav .links a:not(.cta) { display: none; } }
+  </style>
+  <style>
+    .post-hero { margin: 32px 0 56px; }
+    .post-hero-band {
+      position: relative;
+      border-radius: 20px;
+      padding: 88px 56px 72px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #F0D9A8 0%, #E6C68A 100%);
+      color: #1F1A17;
+    }
+    .post-hero-band::before {
+      content: ""; position: absolute; top: -120px; right: -120px;
+      width: 360px; height: 360px; border-radius: 50%;
+      background: #1F1A17; opacity: 0.04;
+    }
+    .post-hero-band::after {
+      content: ""; position: absolute; bottom: -80px; left: -80px;
+      width: 240px; height: 240px; border-radius: 50%;
+      background: #1F1A17; opacity: 0.03;
+    }
+    .post-hero-inner { position: relative; max-width: 880px; }
+    .post-hero-eyebrow-row {
+      display: flex; align-items: center; gap: 14px;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      opacity: 0.78; margin-bottom: 32px;
+    }
+    .post-hero-eyebrow-row a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .post-hero-title {
+      font-family: 'Source Serif 4', serif; font-size: clamp(34px, 5vw, 60px);
+      font-weight: 600; line-height: 1.05; letter-spacing: -0.025em;
+      margin: 0 0 36px; color: inherit;
+    }
+    .post-hero-meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; opacity: 0.75; letter-spacing: 0.02em; }
+    .post-hero-rule { width: 48px; height: 2px; background: currentColor; opacity: 0.4; margin-top: 28px; }
+
+    .post-body { max-width: 720px; margin: 0 auto; padding-bottom: 64px; font-family: 'IBM Plex Sans', sans-serif; font-size: 20px; line-height: 1.65; color: #1F1A17; }
+    .post-body h2 { font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; line-height: 1.2; margin: 60px 0 20px; color: #1F1A17; letter-spacing: -0.01em; }
+    .post-body h3 { font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 600; line-height: 1.25; margin: 40px 0 14px; color: #1F1A17; }
+    .post-body p { margin: 0 0 22px; font-size: 20px; line-height: 1.65; color: #2A2520; }
+    .post-body strong { color: #1F1A17; font-weight: 600; }
+    .post-body a { color: #B8512C; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .post-body a:hover { color: #A0451F; }
+    .post-body ul, .post-body ol { margin: 0 0 24px 1.2em; padding: 0; font-size: 20px; }
+    .post-body li { margin: 0 0 12px; font-size: 20px; line-height: 1.6; }
+    .post-body blockquote { border-left: 3px solid #B8512C; padding: 6px 0 6px 24px; margin: 36px 0; font-family: 'Source Serif 4', serif; font-size: 24px; font-style: italic; color: #3A322D; line-height: 1.4; }
+    .post-body code { font-family: 'JetBrains Mono', monospace; font-size: 0.92em; background: #EDE8E0; padding: 2px 6px; border-radius: 4px; }
+    .post-body hr { border: 0; border-top: 1px solid #D9CFBF; margin: 48px 0; }
+
+    .related { border-top: 1px solid #D9CFBF; padding: 64px 0; }
+    .related h3 { font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 600; margin: 0 0 28px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-card { display: block; text-decoration: none; color: inherit; padding: 24px; background: #FBF7F1; border-radius: 12px; transition: transform 180ms ease; border: 1px solid #EAE2D2; }
+    .related-card:hover { transform: translateY(-2px); border-color: #B8512C; }
+    .related-cat { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #B8512C; margin-bottom: 12px; }
+    .related-card h4 { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; line-height: 1.25; margin: 0; color: #1F1A17; }
+
+    @media (max-width: 900px) { .related-grid { grid-template-columns: 1fr; } .post-hero-band { padding: 56px 32px 48px; } }
+    @media (max-width: 700px) { .post-hero-band { padding: 48px 24px 40px; border-radius: 16px; } }
+  </style>
+</head>
+<body>
+  <nav class="nav page-wrap">
+    <a href="/" class="logo" aria-label="xFusion home">
+      <img src="/assets/xfusion-logo.png" alt="xFusion" style="height: 36px; width: auto; display: block;">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/case-studies/">Case studies</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="https://savvycal.com/xfusion/lets-chat" class="cta">Book a Discovery Call</a>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <article>
+      <header class="post-hero">
+        <div class="post-hero-band">
+          <div class="post-hero-inner">
+            <div class="post-hero-eyebrow-row">
+              <a href="/customer-experience/">Customer experience</a>
+              <span>·</span>
+              <span>CUSTOMER EXPERIENCE</span>
+            </div>
+            <h1 class="post-hero-title">Finding Your Perfect Match: How to Choose the Right Outsourced Support Partner for Your SaaS Business</h1>
+            <div class="post-hero-meta">2026-05-05 · 10 min read</div>
+            <div class="post-hero-rule"></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="post-body">
+<h2>Finding your perfect match: how to choose the right outsourced support partner for your SaaS business</h2>
+<p>Scaling a SaaS business while maintaining excellent customer support can feel overwhelming. The solution lies in strategically partnering with an outsourced support provider who aligns with your business values and customer service philosophy. When executed properly, outsourcing transforms a daunting challenge into a manageable growth opportunity.</p>
+<p>However, navigating the numerous available options requires careful consideration. Let's break down the key steps to finding your ideal match.</p>
+<h2>Step 1: Know thyself (and your support needs)</h2>
+<p>Before beginning your search, clearly define what you need. Do you require basic troubleshooting or deep technical expertise? Do you need round-the-clock coverage or assistance during peak hours? Defining your specific requirements and budget will guide your entire selection process.</p>
+<p>This foundational step requires honest self-assessment. Consider these critical questions:</p>
+<h3>1. What type of support do your customers typically need?</h3>
+<ul>
+<li>Is it primarily related to product usage, billing issues, or technical problems?</li>
+<li>Do you have a complex product requiring deep technical knowledge?</li>
+<li>Are there specific language requirements for your customer base?</li>
+</ul>
+<h3>2. What level of expertise do you require from your outsourced team?</h3>
+<ul>
+<li>Do you need agents with basic troubleshooting skills or highly trained specialists?</li>
+<li>Will they need to handle escalations or complex technical inquiries?</li>
+</ul>
+<h3>3. What are your preferred support channels?</h3>
+<ul>
+<li>Do you offer phone, email, live chat, or a combination of options?</li>
+<li>Do you require 24/7 support or just coverage during specific hours?</li>
+</ul>
+<h3>4. What is your budget for outsourced support?</h3>
+<ul>
+<li>Be realistic about your financial constraints and prioritize features that matter most.</li>
+<li>Quality often comes at a premium, but the long-term benefits can outweigh the initial cost.</li>
+</ul>
+<h3>5. What are your expectations for response times and resolution rates?</h3>
+<ul>
+<li>Define clear service level agreements (SLAs) that align with your customer expectations.</li>
+<li>Consider industry benchmarks and your current performance for informed goals.</li>
+</ul>
+<p><strong>Pro tip:</strong> Conduct a thorough internal audit of your existing support operations. Analyze support tickets, customer feedback, and agent performance data to identify pain points and areas for improvement. This will help you define your outsourced support needs more effectively.</p>
+<p>Clarity is essential. The more specific you are about your requirements, the better equipped you'll be to locate a partner who truly understands your business and can deliver exceptional customer service.</p>
+<h2>Step 2: Casting your net (but not too wide): finding the right fish in the SaaS sea</h2>
+<p>Now begins the exciting search for your ideal partner. However, before casting a wide net and becoming overwhelmed, remember that quality outweighs quantity.</p>
+<h3>Industry savvy is king (or queen):</h3>
+<ul>
+<li>Focus your search on providers with proven experience in your specific industry. They'll understand your unique challenges, customer needs, and industry-specific terminology.</li>
+<li>Look for case studies and testimonials from other SaaS companies in your niche. Success stories similar to yours provide valuable reassurance.</li>
+</ul>
+<h3>Beyond the surface: dive deep into capabilities:</h3>
+<ul>
+<li>Don't rely solely on flashy websites. Investigate the provider's actual capabilities, technology infrastructure, training programs, and security certifications.</li>
+<li>Verify they can handle your specific support channels and integrate seamlessly with your existing systems.</li>
+</ul>
+<h3>The power of reviews and recognition:</h3>
+<ul>
+<li>Leverage review platforms like <a href="https://www.g2.com/">G2 Crowd</a>, <a href="https://help.clutch.co/">Clutch</a>, and <a href="https://www.trustradius.com/">TrustRadius</a> to learn from other businesses' experiences. Search for positive mentions of customer service quality, communication, and overall satisfaction.</li>
+<li>Industry awards and recognitions indicate a provider's track record and expertise. Check for recognition from leading SaaS organizations or publications.</li>
+</ul>
+<p>Don't get lost searching endlessly. By focusing on industry-specific providers with strong capabilities and positive reviews, you'll increase your chances of finding an excellent match.</p>
+<p><strong>Bonus tip:</strong> Contact potential providers directly. Ask detailed questions, request demos, and assess their culture and communication approach. Personal connection helps inform better decisions.</p>
+<h2>Step 3: Don't be blinded by the shine, diving deep with due diligence</h2>
+<p>Selecting an outsourced support partner resembles finding the right pair of shoes, it must fit perfectly for long-term comfort and success. Unlike shoes, you can't try them on once and hope they work. Due diligence shines a flashlight on every aspect of the potential partnership.</p>
+<p>Avoid being swayed by initial charm. Flashy websites and polished sales pitches don't guarantee compatibility. Get beneath the surface and ask challenging questions:</p>
+<h3>1. Team expertise:</h3>
+<ul>
+<li><strong>Dive into their talent pool:</strong> Inquire about team experience, qualifications, and ongoing training. Do they have dedicated specialists for your industry or technical needs?</li>
+<li><strong>Assess their language skills:</strong> If you serve a multilingual customer base, ensure they provide support in your required languages.</li>
+</ul>
+<h3>2. Training methods:</h3>
+<ul>
+<li><strong>Uncover their training philosophy:</strong> Do they prioritize continuous learning and development? How do they keep their team current on your product and industry trends?</li>
+<li><strong>Evaluate their knowledge transfer process:</strong> How will they integrate your knowledge base and internal processes into their training?</li>
+</ul>
+<h3>3. Communication protocols:</h3>
+<ul>
+<li><strong>Define communication expectations:</strong> How will they update you on customer issues, performance metrics, and team changes?</li>
+<li><strong>Establish clear escalation procedures:</strong> What happens when complex issues arise? How will they communicate with your team and ensure smooth resolution?</li>
+</ul>
+<h3>4. Security measures:</h3>
+<ul>
+<li><strong>Prioritize data protection:</strong> Do they have robust security measures to protect customer data and comply with industry regulations?</li>
+<li><strong>Understand their disaster recovery plan:</strong> What happens during system outages or security breaches? How will they minimize business continuity impact?</li>
+</ul>
+<h3>5. Seamless integration:</h3>
+<ul>
+<li><strong>Assess their technology stack:</strong> Can their systems integrate smoothly with your existing tools and infrastructure?</li>
+<li><strong>Discuss data transfer protocols:</strong> How will they securely transfer customer data while maintaining integrity?</li>
+</ul>
+<p>Due diligence extends beyond checking boxes, it builds trust and confidence. Ask clarifying questions, request references, and schedule calls with their team to understand their culture and approach more deeply.</p>
+<p>By investigating thoroughly and moving beyond surface-level presentations, you'll confidently select a partner who delivers results benefiting your SaaS business and customers.</p>
+<h2>Step 4: Speaking the same language, understanding Service Level Agreements (SLAs)</h2>
+<p>Think of SLAs as the foundational agreement for your outsourced support partnership. They establish clear expectations and set the relationship's tone. However, understanding the details is critical.</p>
+<p>SLAs define key performance indicators (KPIs) including:</p>
+<ul>
+<li><strong>Response times:</strong> How quickly will your partner respond to customer inquiries across different channels (phone, email, chat)?</li>
+<li><strong>Resolution rates:</strong> How efficiently will they resolve customer issues?</li>
+<li><strong>First contact resolution (FCR):</strong> Can they solve most issues on the first interaction, minimizing customer frustration?</li>
+<li><strong>Availability:</strong> What are their operating hours and how closely do they align with your support needs?</li>
+</ul>
+<p>This partnership works both ways:</p>
+<ul>
+<li><strong>Clearly communicate your expectations:</strong> Define your desired response times, resolution rates, and other KPIs based on industry benchmarks and customer expectations.</li>
+<li><strong>Don't hesitate to negotiate:</strong> Discuss proposed SLAs with your potential partner and collaboratively find a mutually acceptable solution.</li>
+<li><strong>Hold them accountable:</strong> Regularly track performance against agreed-upon SLAs and promptly address any deviations.</li>
+</ul>
+<p>Look beyond basics:</p>
+<ul>
+<li><strong>Consider specific service level objectives (SLOs):</strong> These provide deeper insights into specific metrics like average handle time or escalation rates.</li>
+<li><strong>Incentivize success:</strong> Explore rewarding your partner for exceeding expectations and achieving high performance.</li>
+</ul>
+<p>By understanding and establishing clear SLAs, you'll ensure alignment with your goals and deliver the service level your customers deserve. Clear communication and collaboration strengthen partnerships.</p>
+<h2>Step 5: Striking the right balance, negotiating contracts and pricing models</h2>
+<p>Selecting the right pricing model is crucial for achieving cost-efficiency and value maximization. While cost matters, it shouldn't be your sole decision driver. Find a model aligning with your needs, growth plans, and overall business strategy.</p>
+<h3>1. Explore flexible pricing options:</h3>
+<p>Don't limit yourself to traditional per-ticket or per-agent models. Explore flexible options matching your requirements. Tier-based models might suit businesses with seasonal support demand fluctuations.</p>
+<h3>2. Consider performance-based pricing:</h3>
+<p>Reward your partner for delivering exceptional service and exceeding expectations. Performance-based pricing, where you pay premium rates for achieving specific KPIs, incentivizes exceptional effort.</p>
+<h3>3. Incorporate usage-based pricing:</h3>
+<p>If your support needs are unpredictable or scale dynamically, usage-based pricing charges you for actual consumption, ensuring you pay only for what you use.</p>
+<h3>4. Leverage data-driven insights:</h3>
+<p>Armed with data on your support volume, ticket types, and recurring issues, negotiate a model reflecting your actual needs. This avoids overpaying for unused services.</p>
+<h3>5. Seek transparency and predictability:</h3>
+<p>Ensure the pricing model is transparent, predictable, and easy to understand. Avoid hidden fees or complex calculations causing unexpected expenses.</p>
+<h3>6. Negotiate and be flexible:</h3>
+<p>Don't hesitate to negotiate with potential partners. They should willingly work with you to find a model aligning with your budget and expectations.</p>
+<h3>7. Consider additional value-added services:</h3>
+<p>Evaluate whether pricing includes additional <a href="https://xfusion.io/services/">value-added services</a> such as proactive monitoring, reporting, or knowledge base access. These enhance your support experience and ROI.</p>
+<h3>8. Revisit and optimize regularly:</h3>
+<p>As your business grows and support needs evolve, regularly review your pricing model and make adjustments. This ensures ongoing value for your investment.</p>
+<p>By carefully considering your options and negotiating a flexible, transparent pricing model, you'll balance cost efficiency with value maximization, ensuring a successful partnership.</p>
+<h2>Step 6: Beyond words, beyond processes, building a partnership on shared values</h2>
+<p>Imagine you and your outsourced support partner as two oars on a boat, rowing in unison toward a common goal. If one paddles forward while the other goes backward, the journey becomes frustrating and inefficient. Cultural compatibility is therefore crucial.</p>
+<p>Success depends on finding a partner sharing your core values, communication style, and commitment to customer service. This ensures smooth collaboration, positive experiences for both teams, and ultimately, satisfied customers.</p>
+<p>Navigate the cultural waters effectively:</p>
+<ul>
+<li><strong>Beyond buzzwords:</strong> Don't accept their "commitment to excellence" at face value. Ask specific questions about their values and daily actions. Do they prioritize empathy like you do? Are they as transparent and data-driven as your team?</li>
+<li><strong>Communication harmony:</strong> How do they prefer communicating? Are they open to asynchronous communication or do they thrive on real-time collaboration? Ensure your styles align to prevent misunderstandings and delays.</li>
+<li><strong>Customer-centric compass:</strong> What's their definition of "excellent customer service"? Do they pursue quick resolutions or build relationships? Finding a partner aligning with your service philosophy is essential.</li>
+</ul>
+<p>Remember, cultural fit flows both directions:</p>
+<ul>
+<li><strong>Share your values and expectations:</strong> Clearly communicate your company culture, communication norms, and customer service approach. Transparency fosters understanding and alignment.</li>
+<li><strong>Look for evidence, not just words:</strong> Request case studies or testimonials demonstrating their cultural values in action. Speak with current clients for firsthand insights.</li>
+<li><strong>Don't be afraid to walk away:</strong> If the cultural fit feels wrong, acknowledge it early. Misalignment only creates frustration and limits partnership potential.</li>
+</ul>
+<p>Building on shared values transcends contracts and processes, creating a foundation of trust, collaboration, and shared success vision. The right cultural fit makes your outsourced support journey efficient and enjoyable for everyone.</p>
+<p><strong>Bonus tip:</strong> Organize virtual team-building activities or social events to build personal connections and cultural understanding between your teams.</p>
+<h2>Step 7: From onboarding to launchpad, building a smooth transition for success</h2>
+<p>Even if your new outsourced support team is launch-ready, without proper training and guidance, the beginning could be turbulent. That's why onboarding and training are crucial for ensuring partnership success and customer transition smoothness.</p>
+<p>Look beyond the initial meeting. Onboarding involves immersing your provider in your company culture, product specifics, and support processes. Here's how to launch successfully:</p>
+<p><strong>1. Knowledge is power:</strong> Share comprehensive, current knowledge bases, product documentation, and internal resources with your partner. Equip them with information needed to understand your business and provide exceptional service.</p>
+<p><strong>2. Process powerhouse:</strong> Walk your partner through existing support workflows, ticket routing, and escalation protocols. Ensure seamless integration into your operations and consistency.</p>
+<p><strong>3. Tool time:</strong> Train your partner on all tools and technologies for communication, ticketing, and knowledge management. This prevents technical barriers and ensures efficient collaboration.</p>
+<p><strong>4. Customer centricity at the core:</strong> Immerse your partner in your customer persona, needs, and expectations. Share feedback, common pain points, and your relationship-building approach.</p>
+<p><strong>5. Test, refine, launch:</strong> Conduct simulated support scenarios and role-play common interactions. Test escalation procedures to identify improvement areas before going live.</p>
+<p>Remember, onboarding is collaborative:</p>
+<ul>
+<li><strong>Open communication is key:</strong> Maintain clear communication throughout, addressing questions and concerns promptly.</li>
+<li><strong>Feedback is your friend:</strong> Encourage feedback from both teams during and after onboarding to enable adjustments and continuous improvement.</li>
+<li><strong>Celebrate success:</strong> Acknowledge milestones achieved during onboarding, boosting morale and fostering positive partnership dynamics.</li>
+</ul>
+<p>By investing time in thorough onboarding and training, you'll equip your outsourced support team with the knowledge, skills, and confidence to hit the ground running. This ensures customer transition smoothness, minimizes disruptions, and sets your partnership toward long-term success.</p>
+<p><strong>Bonus tip:</strong> Offer ongoing training and development opportunities to your outsourced team, keeping them current on your product, industry trends, and customer service best practices.</p>
+<h2>The takeaway: a match made in SaaS heaven</h2>
+<p>Outsourcing customer support can transform your SaaS business, freeing resources to focus on growth. By following these steps and choosing the right partner, you create a win-win situation for your company, team, and customers. It's about finding your perfect match!</p>
+<p><strong>Bonus tip:</strong> Don't underestimate data's power. Leverage analytics to track support performance and identify improvement areas. This data-driven approach refines your strategy and ensures your partnership continues delivering value.</p>
+<hr />
+<p><strong>Author</strong></p>
+<p><strong>Jim Coleman</strong></p>
+<p>Jim is the Co-Founder of xFusion and a seasoned business operator with private equity fund leadership experience. A passionate multi-time business owner, he's eager to help others in the industry. Outside work, he devotes himself to adoption and raising foster children, aspiring to maximize impact on developing countries.</p>
+<p><a href="https://xfusion.io/author/jim/">View all posts</a></p>
+      </div>
+    </article>
+
+    <section class="related">
+      <h3>Related reading</h3>
+      <div class="related-grid">
+        <a class="related-card" href="/customer-experience/boost-your-business-by-delegating-customer-support-2/">
+          <div class="related-cat">CUSTOMER EXPERIENCE</div>
+          <h4>Boost your business by delegating customer support</h4>
+        </a>
+        <a class="related-card" href="/customer-experience/empowering-proactive-customer-support-in-your-company/">
+          <div class="related-cat">CUSTOMER EXPERIENCE</div>
+          <h4>Building proactive customer support in your company</h4>
+        </a>
+        <a class="related-card" href="/customer-experience/from-service-to-success-turning-customer-support-into-a-competitive-advantage/">
+          <div class="related-cat">CUSTOMER EXPERIENCE</div>
+          <h4>Customer support as competitive advantage</h4>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .site-footer { background: #2C4A3E; color: #F7F2EB; }
+    .site-footer .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .site-footer .footer-top { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; padding-top: 64px; padding-bottom: 40px; border-bottom: 1px solid rgba(247, 242, 235, 0.14); }
+    .site-footer .brand-link { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; text-decoration: none; }
+    .site-footer .brand-tag { font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.5; color: #F0D9A8; margin: 0; max-width: 480px; font-style: italic; }
+    .site-footer .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding-top: 48px; padding-bottom: 40px; }
+    .site-footer .footer-col-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(247, 242, 235, 0.65); margin-bottom: 18px; }
+    .site-footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .site-footer .footer-link { color: #F7F2EB; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; line-height: 1.4; }
+    .site-footer .footer-link:hover { color: #F0D9A8; }
+    .site-footer .footer-legal { padding-top: 24px; padding-bottom: 32px; border-top: 1px solid rgba(247, 242, 235, 0.14); display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: rgba(247, 242, 235, 0.65); flex-wrap: wrap; gap: 12px; }
+    @media (max-width: 900px) { .site-footer .footer-top { grid-template-columns: 1fr; gap: 20px; } .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .site-footer .footer-legal { flex-direction: column; align-items: flex-start; } }
+    @media (max-width: 520px) { .site-footer .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+  </style>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <a class="brand-link" href="/" aria-label="xFusion home">
+            <img src="/assets/xfusion-logo-on-dark.png" alt="xFusion" style="height: 36px; width: auto; display: block;">
+          </a>
+          <p class="brand-tag">Senior, AI-trained customer support agents for small businesses. Since 2020.</p>
+        </div>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-col-title">Product</div>
+          <ul>
+            <li><a class="footer-link" href="/#pricing">Pricing</a></li>
+            <li><a class="footer-link" href="/case-studies/">Case studies</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul>
+            <li><a class="footer-link" href="/about/">About</a></li>
+            <li><a class="footer-link" href="/careers/">Careers</a></li>
+            <li><a class="footer-link" href="https://savvycal.com/xfusion/lets-chat">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Resources</div>
+          <ul>
+            <li><a class="footer-link" href="/#faq">FAQ</a></li>
+            <li><a class="footer-link" href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Legal</div>
+          <ul>
+            <li><a class="footer-link" href="/privacy/">Privacy</a></li>
+            <li><a class="footer-link" href="/dpa/">DPA</a></li>
+            <li><a class="footer-link" href="/security/">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <div>&copy; 2026 xFusion. All rights reserved.</div>
+        <div>Made with care across the Philippines, Kenya, and the United States.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

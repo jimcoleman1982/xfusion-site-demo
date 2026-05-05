@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Outsourcing SaaS Support: A Guide to Building a Thriving Team | xFusion</title>
+  <meta name="description" content="A comprehensive guide to outsourcing customer support for SaaS companies, covering benefits, challenges, support models, vendor selection criteria, and success ">
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <style>
+    body { background: var(--color-bg, #F7F2EB); color: var(--color-ink, #1F1A17); margin: 0; }
+    a { transition: color 160ms ease; }
+    *:focus-visible { outline: 2px solid var(--color-primary, #B8512C); outline-offset: 3px; border-radius: 4px; }
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #D9CFBF; }
+    .nav a { color: #1F1A17; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 500; padding: 8px 12px; }
+    .nav a:hover { color: #B8512C; }
+    .nav a.active { color: #B8512C; }
+    .nav .cta { background: #B8512C; color: #F7F2EB; padding: 10px 18px; border-radius: 8px; font-weight: 600; }
+    .nav .cta:hover { background: #A0451F; color: #F7F2EB; }
+    .nav .links { display: flex; gap: 8px; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 12px; font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; color: #1F1A17; text-decoration: none; }
+    @media (max-width: 700px) { .nav .links a:not(.cta) { display: none; } }
+  </style>
+  <style>
+    .post-hero { margin: 32px 0 56px; }
+    .post-hero-band {
+      position: relative;
+      border-radius: 20px;
+      padding: 88px 56px 72px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #F0D9A8 0%, #E6C68A 100%);
+      color: #1F1A17;
+    }
+    .post-hero-band::before {
+      content: ""; position: absolute; top: -120px; right: -120px;
+      width: 360px; height: 360px; border-radius: 50%;
+      background: #1F1A17; opacity: 0.04;
+    }
+    .post-hero-band::after {
+      content: ""; position: absolute; bottom: -80px; left: -80px;
+      width: 240px; height: 240px; border-radius: 50%;
+      background: #1F1A17; opacity: 0.03;
+    }
+    .post-hero-inner { position: relative; max-width: 880px; }
+    .post-hero-eyebrow-row {
+      display: flex; align-items: center; gap: 14px;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      opacity: 0.78; margin-bottom: 32px;
+    }
+    .post-hero-eyebrow-row a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .post-hero-title {
+      font-family: 'Source Serif 4', serif; font-size: clamp(34px, 5vw, 60px);
+      font-weight: 600; line-height: 1.05; letter-spacing: -0.025em;
+      margin: 0 0 36px; color: inherit;
+    }
+    .post-hero-meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; opacity: 0.75; letter-spacing: 0.02em; }
+    .post-hero-rule { width: 48px; height: 2px; background: currentColor; opacity: 0.4; margin-top: 28px; }
+
+    .post-body { max-width: 720px; margin: 0 auto; padding-bottom: 64px; font-family: 'IBM Plex Sans', sans-serif; font-size: 20px; line-height: 1.65; color: #1F1A17; }
+    .post-body h2 { font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; line-height: 1.2; margin: 60px 0 20px; color: #1F1A17; letter-spacing: -0.01em; }
+    .post-body h3 { font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 600; line-height: 1.25; margin: 40px 0 14px; color: #1F1A17; }
+    .post-body p { margin: 0 0 22px; font-size: 20px; line-height: 1.65; color: #2A2520; }
+    .post-body strong { color: #1F1A17; font-weight: 600; }
+    .post-body a { color: #B8512C; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .post-body a:hover { color: #A0451F; }
+    .post-body ul, .post-body ol { margin: 0 0 24px 1.2em; padding: 0; font-size: 20px; }
+    .post-body li { margin: 0 0 12px; font-size: 20px; line-height: 1.6; }
+    .post-body blockquote { border-left: 3px solid #B8512C; padding: 6px 0 6px 24px; margin: 36px 0; font-family: 'Source Serif 4', serif; font-size: 24px; font-style: italic; color: #3A322D; line-height: 1.4; }
+    .post-body code { font-family: 'JetBrains Mono', monospace; font-size: 0.92em; background: #EDE8E0; padding: 2px 6px; border-radius: 4px; }
+    .post-body hr { border: 0; border-top: 1px solid #D9CFBF; margin: 48px 0; }
+
+    .related { border-top: 1px solid #D9CFBF; padding: 64px 0; }
+    .related h3 { font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 600; margin: 0 0 28px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-card { display: block; text-decoration: none; color: inherit; padding: 24px; background: #FBF7F1; border-radius: 12px; transition: transform 180ms ease; border: 1px solid #EAE2D2; }
+    .related-card:hover { transform: translateY(-2px); border-color: #B8512C; }
+    .related-cat { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #B8512C; margin-bottom: 12px; }
+    .related-card h4 { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; line-height: 1.25; margin: 0; color: #1F1A17; }
+
+    @media (max-width: 900px) { .related-grid { grid-template-columns: 1fr; } .post-hero-band { padding: 56px 32px 48px; } }
+    @media (max-width: 700px) { .post-hero-band { padding: 48px 24px 40px; border-radius: 16px; } }
+  </style>
+</head>
+<body>
+  <nav class="nav page-wrap">
+    <a href="/" class="logo" aria-label="xFusion home">
+      <img src="/assets/xfusion-logo.png" alt="xFusion" style="height: 36px; width: auto; display: block;">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/case-studies/">Case studies</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="https://savvycal.com/xfusion/lets-chat" class="cta">Book a Discovery Call</a>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <article>
+      <header class="post-hero">
+        <div class="post-hero-band">
+          <div class="post-hero-inner">
+            <div class="post-hero-eyebrow-row">
+              <a href="/customer-experience/">Customer experience</a>
+              <span>·</span>
+              <span>CUSTOMER EXPERIENCE</span>
+            </div>
+            <h1 class="post-hero-title">Outsourcing SaaS Support: A Guide to Building a Thriving Team</h1>
+            <div class="post-hero-meta">2026-05-05 · 8 min read</div>
+            <div class="post-hero-rule"></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="post-body">
+<h2>Outsourcing SaaS Support: A Guide to Building a Thriving Team</h2>
+<p>So, you've built this amazing SaaS product, and users are flocking in. But wait, your inbox? It's overflowing with questions, requests, and the occasional frustrated rant. Suddenly, your dream startup feels more like a customer service nightmare. Sound familiar? Relax, you're not alone. Scaling customer support for SaaS businesses can be tricky, but the solution might be staring you right in the face: outsourcing.</p>
+<p>Imagine expertise seamlessly available to handle all your support needs. That's the essence of outsourced support, your very own support team, ready to elevate your customer experience. But before you jump in headfirst, let's dive deeper into the what, why, and how of harnessing this support superpower for your SaaS success.</p>
+<h2>Why consider outsourcing? Building a case for your SaaS</h2>
+<p>Let's face it, running a SaaS company is a whirlwind. You juggle product development, marketing, sales, and a whole lot more. Adding in-house customer support to that mix can feel overwhelming. Outsourcing takes the pressure off, offering several key benefits:</p>
+<ul>
+<li>
+<p><strong>Cost-effectiveness:</strong> Outsourcing saves you on salaries, expensive infrastructure, and the constant training costs associated with an in-house team.</p>
+</li>
+<li>
+<p><strong>Scale up or down with ease:</strong> Your business is dynamic, so should your support. With outsourcing, you can easily adjust your team size to match your growth or shrink during slow periods, unlike a fixed in-house setup.</p>
+</li>
+<li>
+<p><strong>Expertise on demand:</strong> Access a global talent pool brimming with specialists in specific areas like technical support or customer experience. No more juggling multiple hats to cover expertise gaps.</p>
+</li>
+<li>
+<p><strong>24/7 global support:</strong> The sun never sets on your customers' needs. Outsourcing providers offer round-the-clock coverage, ensuring uninterrupted support regardless of time zones or holidays.</p>
+</li>
+<li>
+<p><strong>Free up your team for what matters:</strong> Stop juggling customer support with core business activities. Outsourcing lets your internal team focus on innovation, product development, and driving sales, while your external partner handles customer needs seamlessly.</p>
+</li>
+</ul>
+<p>Outsourcing isn't just about cost savings; it's about strategic efficiency and growth. It allows you to focus on what your business does best while ensuring your customers receive top-notch support around the clock. So, ditch the juggling act and consider outsourcing; it might just be the game-changer your SaaS needs.</p>
+<h2>Facing the giants: common challenges in in-house support</h2>
+<p>Sold on the idea? Hold on there! Let's first acknowledge the elephants in the room, the challenges businesses often face with in-house support:</p>
+<ul>
+<li>
+<p><strong>High recruitment and training costs:</strong> Finding and grooming top customer support talent is expensive and time-consuming. You might end up with a team that's good, but not great, leaving you yearning for more specialized expertise.</p>
+</li>
+<li>
+<p><strong>Limited expertise:</strong> Small in-house teams may lack the specialized knowledge needed to handle complex technical issues or diverse customer needs. This can lead to frustrated customers and longer resolution times.</p>
+</li>
+<li>
+<p><strong>Scaling challenges:</strong> When your business grows, scaling your in-house support team can be a logistical nightmare. Hiring, training, and managing a larger team adds to your workload and expenses.</p>
+</li>
+<li>
+<p><strong>Burnout and turnover:</strong> Dealing with demanding customers day in and day out can lead to burnout and high turnover in your support team. This creates a vicious cycle of training new recruits and struggling with staff retention.</p>
+</li>
+<li>
+<p><strong>24/7 coverage:</strong> Offering round-the-clock support with an in-house team means juggling time zones and demanding extra resources. This can be incredibly resource-intensive and put a strain on your budget and team morale.</p>
+</li>
+</ul>
+<p>While building an in-house support team has its rewards, navigating the challenges can feel daunting. At xfusion.io, we understand your struggles. We specialize in offering comprehensive outsourced customer support solutions tailored to your needs.</p>
+<p>With xfusion.io, you gain access to a global pool of experienced and passionate support professionals, ready to deliver exceptional service around the clock. We eliminate the recruitment and training burdens, provide unparalleled expertise, and ensure seamless scaling as your business thrives. Let us handle the support operations, while you focus on what you do best, building a stellar SaaS product.</p>
+<h2>Modeling your success: choosing the right support model</h2>
+<p>Now, let's talk models! Outsourcing isn't a one-size-fits-all solution, and choosing the right model is crucial for your success. Here's a breakdown of the main options:</p>
+<ol>
+<li>
+<p><strong>Full outsourcing:</strong> Hand over the reins completely to an external provider. This is ideal for larger companies with complex needs or those seeking rapid scaling.
+   * Pros: Maximum efficiency, access to diverse expertise, 24/7 coverage.
+   * Cons: Less control over operations, potential communication gaps, and higher costs.</p>
+</li>
+<li>
+<p><strong>Partial outsourcing:</strong> Outsource specific tasks or channels, like live chat or email support. This is a good fit for companies with smaller teams or those wanting to test the waters of outsourcing.
+   * Pros: Increased efficiency, targeted expertise, cost-effective.
+   * Cons: Potential integration challenges, managing multiple vendors, less control over specific areas.</p>
+</li>
+<li>
+<p><strong>Co-sourcing:</strong> Combine your in-house team with an outsourced partner for a collaborative approach. This is ideal for companies seeking to leverage internal expertise while gaining access to external resources.
+   * Pros: Blends best of both worlds, retains control over key areas, access to specialized skills.
+   * Cons: Requires strong communication and collaboration, managing two teams, and potential cultural differences.</p>
+</li>
+</ol>
+<p>Choosing the right model depends on your specific needs, budget, and desired level of control. Consider factors like your company size, customer base, technical complexity, and desired service level. Remember, there's no "best" model; the perfect fit is the one that aligns with your unique goals and empowers your team to deliver exceptional customer support.</p>
+<h2>Asking the right questions: selecting your dream team</h2>
+<p>Outsourcing isn't about picking the first provider with a good website. It's about finding a strategic partner who aligns with your vision and values. So, grab your detective hat and ask the tough questions:</p>
+<ol>
+<li>
+<p><strong>SaaS savvy:</strong> Do they have proven experience working with SaaS companies? Can they showcase success stories in your industry or with similar challenges?</p>
+</li>
+<li>
+<p><strong>Security shield:</strong> How do they protect your data and customer information? Are they certified with industry-standard security protocols?</p>
+</li>
+<li>
+<p><strong>Performance powerhouse:</strong> What metrics do they use to measure success? Do they have Service Level Agreements (SLAs) in place to ensure performance meets your expectations?</p>
+</li>
+<li>
+<p><strong>Communication captain:</strong> What communication style do they prefer? How often will they update you on progress and challenges? Is their communication transparent and proactive?</p>
+</li>
+<li>
+<p><strong>Cost clarity:</strong> How much will it cost? Be wary of hidden fees and ensure the pricing structure is transparent and aligns with your budget.</p>
+</li>
+</ol>
+<p>Remember, this is a partnership. Look for a provider who shares your values, vision, and commitment to customer happiness. Ask clarifying questions, get references, and trust your gut feeling. With the right questions, you'll find your support superhero and unlock the full potential of outsourced customer support for your SaaS business.</p>
+<h2>Integrating seamlessly: making outsourcing work for you</h2>
+<p>Outsourcing isn't just a quick fix; it's a new chapter in your customer support story. To ensure a smooth transition and harmonious collaboration, prioritize these key steps:</p>
+<ol>
+<li>
+<p><strong>Set the stage with clear communication:</strong> Before the curtain rises, everyone needs to know their role. Clearly define responsibilities, expectations, and communication protocols for both internal and outsourced teams. This sets the stage for a seamless collaboration.</p>
+</li>
+<li>
+<p><strong>Knowledge transfer: sharing the script:</strong> Don't leave your outsourced partner in the dark! Ensure they have access to all necessary information, processes, and documentation. Think knowledge base articles, training materials, and even customer personas to help them understand your audience better.</p>
+</li>
+<li>
+<p><strong>Train the cast: building teamwork:</strong> Invest in proper training for both your internal team and the outsourced partner. This can cover product knowledge, communication protocols, and even cultural sensitivity training to bridge any gaps. Remember, a well-trained team is a happy and effective team.</p>
+</li>
+<li>
+<p><strong>Open mic: ongoing communication and collaboration:</strong> Communication is the lifeblood of any successful partnership. Maintain open communication channels, schedule regular meetings, and address any challenges promptly. It's a continuous dialogue, not a one-time script reading.</p>
+</li>
+</ol>
+<p>By following these steps, you'll ensure a smooth integration and create a harmonious support environment where your internal and outsourced teams work together seamlessly to deliver exceptional customer experiences. Remember, outsourcing isn't just about finding the right partner; it's about building a strong, collaborative support structure that works in perfect sync.</p>
+<h2>Measuring success: beyond the spreadsheet symphony</h2>
+<p>Sure, cost savings are valuable, but the true mark of successful outsourced support goes beyond the financial sheet. To truly understand the impact, we need to analyze both quantitative and qualitative metrics:</p>
+<ol>
+<li>
+<p><strong>The customer satisfaction score:</strong> This is the lead singer, belting out the loudest tune. Track metrics like CSAT scores, NPS (Net Promoter Score), and customer reviews to see if your customers are genuinely happy with the support experience.</p>
+</li>
+<li>
+<p><strong>Resolution harmony:</strong> How quickly and effectively are issues resolved? Track metrics like first contact resolution rate (FCR) and average handling time (AHT) to see if your support team is playing in sync with customer needs.</p>
+</li>
+<li>
+<p><strong>The efficiency encore:</strong> Are you freeing up your internal team to focus on core business activities? Track metrics like employee engagement and productivity to see if outsourcing is truly playing its supporting role.</p>
+</li>
+<li>
+<p><strong>The brand reputation crescendo:</strong> Is your brand image getting a positive boost? Monitor social media sentiment and brand mentions to see if outsourced support is contributing to a harmonious brand experience.</p>
+</li>
+<li>
+<p><strong>The collaborative chorus:</strong> Is your internal and outsourced team singing from the same sheet music? Assess communication, collaboration, and knowledge sharing between teams to ensure a seamless performance.</p>
+</li>
+</ol>
+<p>Remember, numbers tell a story, but listening to the full customer journey provides a richer understanding. By combining data analysis with qualitative feedback, you'll gain a holistic understanding of your outsourced support's impact and ensure it's playing a truly constructive role in your customer experience.</p>
+<h2>Future-proofing your support: embracing the change</h2>
+<p>Outsourcing isn't just a passing trend, it's the conductor leading your customer support operations towards a future of growth and success. By embracing this strategic approach, you unlock powerful advantages:</p>
+<ol>
+<li>
+<p><strong>Stay ahead of the curve:</strong> Think of it as your secret weapon. Access emerging technologies and expertise that your in-house team might miss, keeping you ahead of the competition and adapting to ever-changing customer needs.</p>
+</li>
+<li>
+<p><strong>Focus on the innovation spotlight:</strong> Free up your internal team from the daily grind of support. Let them shine their light on core business activities like product development and marketing, while your outsourced partner handles the support responsibilities.</p>
+</li>
+<li>
+<p><strong>Scale with confidence, not anxiety:</strong> Say goodbye to the fear of rapid growth pains. With outsourcing, you can easily adapt your support team size to meet your needs, whether it's scaling up for a big launch or downsizing during slower periods. It's like having a flexible operation that adjusts effortlessly to any demand.</p>
+</li>
+</ol>
+<h3>Ready to take the leap?</h3>
+<p>Outsourcing SaaS customer support can be a game-changer, but remember, it's not just about grabbing any solution. Do your research, ask insightful questions, and choose a partner who aligns with your vision and values. This is an investment in your business's future, so make sure you choose the right provider for your customer experience strategy. Remember, the perfect support partner will help you deliver exceptional service that leaves your customers satisfied.</p>
+<p>So, are you ready to embrace the future of customer support? Start your exploration today and discover the exciting world of outsourced support!</p>
+      </div>
+    </article>
+
+    <section class="related">
+      <h3>Related reading</h3>
+      <div class="related-grid">
+        <a class="related-card" href="/customer-experience/boost-your-business-by-delegating-customer-support-2/">
+          <div class="related-cat">CUSTOMER EXPERIENCE</div>
+          <h4>Boost your business by delegating customer support</h4>
+        </a>
+        <a class="related-card" href="/customer-experience/empowering-proactive-customer-support-in-your-company/">
+          <div class="related-cat">CUSTOMER EXPERIENCE</div>
+          <h4>Building proactive customer support in your company</h4>
+        </a>
+        <a class="related-card" href="/customer-experience/from-service-to-success-turning-customer-support-into-a-competitive-advantage/">
+          <div class="related-cat">CUSTOMER EXPERIENCE</div>
+          <h4>Customer support as competitive advantage</h4>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .site-footer { background: #2C4A3E; color: #F7F2EB; }
+    .site-footer .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .site-footer .footer-top { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; padding-top: 64px; padding-bottom: 40px; border-bottom: 1px solid rgba(247, 242, 235, 0.14); }
+    .site-footer .brand-link { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; text-decoration: none; }
+    .site-footer .brand-tag { font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.5; color: #F0D9A8; margin: 0; max-width: 480px; font-style: italic; }
+    .site-footer .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding-top: 48px; padding-bottom: 40px; }
+    .site-footer .footer-col-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(247, 242, 235, 0.65); margin-bottom: 18px; }
+    .site-footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .site-footer .footer-link { color: #F7F2EB; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; line-height: 1.4; }
+    .site-footer .footer-link:hover { color: #F0D9A8; }
+    .site-footer .footer-legal { padding-top: 24px; padding-bottom: 32px; border-top: 1px solid rgba(247, 242, 235, 0.14); display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: rgba(247, 242, 235, 0.65); flex-wrap: wrap; gap: 12px; }
+    @media (max-width: 900px) { .site-footer .footer-top { grid-template-columns: 1fr; gap: 20px; } .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .site-footer .footer-legal { flex-direction: column; align-items: flex-start; } }
+    @media (max-width: 520px) { .site-footer .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+  </style>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <a class="brand-link" href="/" aria-label="xFusion home">
+            <img src="/assets/xfusion-logo-on-dark.png" alt="xFusion" style="height: 36px; width: auto; display: block;">
+          </a>
+          <p class="brand-tag">Senior, AI-trained customer support agents for small businesses. Since 2020.</p>
+        </div>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-col-title">Product</div>
+          <ul>
+            <li><a class="footer-link" href="/#pricing">Pricing</a></li>
+            <li><a class="footer-link" href="/case-studies/">Case studies</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul>
+            <li><a class="footer-link" href="/about/">About</a></li>
+            <li><a class="footer-link" href="/careers/">Careers</a></li>
+            <li><a class="footer-link" href="https://savvycal.com/xfusion/lets-chat">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Resources</div>
+          <ul>
+            <li><a class="footer-link" href="/#faq">FAQ</a></li>
+            <li><a class="footer-link" href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Legal</div>
+          <ul>
+            <li><a class="footer-link" href="/privacy/">Privacy</a></li>
+            <li><a class="footer-link" href="/dpa/">DPA</a></li>
+            <li><a class="footer-link" href="/security/">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <div>&copy; 2026 xFusion. All rights reserved.</div>
+        <div>Made with care across the Philippines, Kenya, and the United States.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
