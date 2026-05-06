@@ -23,6 +23,26 @@
   </style>
   <style>
     .post-hero { margin: 32px 0 56px; }
+    /* with-image variant: photo above, text below (editorial layout) */
+    .post-hero-with-image { margin: 24px 0 40px; }
+    .post-hero-photo { margin: 0 0 36px; border-radius: 16px; overflow: hidden; aspect-ratio: 3 / 2; max-height: 540px; }
+    .post-hero-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .post-hero-text { max-width: 880px; }
+    .post-hero-text .post-hero-eyebrow-row {
+      display: flex; align-items: center; gap: 14px;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      color: #6B5F56; margin-bottom: 20px;
+    }
+    .post-hero-text .post-hero-eyebrow-row a { color: #B8512C; text-decoration: underline; text-underline-offset: 3px; }
+    .post-hero-title-large {
+      font-family: 'Source Serif 4', serif;
+      font-size: clamp(36px, 5.5vw, 64px);
+      font-weight: 600; line-height: 1.05; letter-spacing: -0.025em;
+      margin: 0 0 24px; color: #1F1A17;
+    }
+    .post-hero-with-image .post-hero-meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; color: #6B5F56; }
+
     .post-hero-band {
       position: relative;
       border-radius: 20px;
@@ -69,6 +89,10 @@
     .post-body blockquote { border-left: 3px solid #B8512C; padding: 6px 0 6px 24px; margin: 36px 0; font-family: 'Source Serif 4', serif; font-size: 24px; font-style: italic; color: #3A322D; line-height: 1.4; }
     .post-body code { font-family: 'JetBrains Mono', monospace; font-size: 0.92em; background: #EDE8E0; padding: 2px 6px; border-radius: 4px; }
     .post-body hr { border: 0; border-top: 1px solid #D9CFBF; margin: 48px 0; }
+    .post-body img { display: block; width: 100%; height: auto; border-radius: 12px; margin: 40px 0; }
+    .post-body figure { margin: 40px 0; }
+    .post-body figure img { margin: 0; }
+    .post-body figcaption { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; color: #6B5F56; text-align: center; margin-top: 12px; font-style: italic; }
 
     .related { border-top: 1px solid #D9CFBF; padding: 64px 0; }
     .related h3 { font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 600; margin: 0 0 28px; }
@@ -98,18 +122,18 @@
 
   <main class="page-wrap">
     <article>
-      <header class="post-hero">
-        <div class="post-hero-band">
-          <div class="post-hero-inner">
-            <div class="post-hero-eyebrow-row">
-              <a href="../../customer-support/">Customer support</a>
-              <span>·</span>
-              <span>CUSTOMER SUPPORT</span>
-            </div>
-            <h1 class="post-hero-title">Clearing the support backlog</h1>
-            <div class="post-hero-meta">2026-05-05 · 6 min read</div>
-            <div class="post-hero-rule"></div>
+      <header class="post-hero post-hero-with-image">
+        <figure class="post-hero-photo">
+          <img src="../../images/blog/clearing-the-support-backlog.webp" alt="" loading="eager">
+        </figure>
+        <div class="post-hero-text">
+          <div class="post-hero-eyebrow-row">
+            <a href="../../customer-support/">Customer support</a>
+            <span>·</span>
+            <span>CUSTOMER SUPPORT</span>
           </div>
+          <h1 class="post-hero-title-large">Clearing the support backlog</h1>
+          <div class="post-hero-meta">2026-05-05 · 6 min read</div>
         </div>
       </header>
 
@@ -134,10 +158,12 @@
 <li>42% of consumers expect a response within 60 minutes</li>
 <li>Automating routine tasks can cut response times by up to 40%</li>
 </ul>
+<p><img alt="" src="/images/blog/clearing-the-support-backlog-1.webp" /></p>
 <h2>The hidden cost of a backlog</h2>
 <p>The visible cost is the queue itself. The hidden cost is everything downstream.</p>
 <p>Customers who feel ignored leave, and they tell people. Reviews drop. Word of mouth turns negative. Agents who work in a perpetual fire feel it. Morale slides, performance follows, attrition climbs. New hires inherit a mess and either burn out or leave.</p>
 <p>A persistent backlog isn't just an operational problem. It's a slow-motion compounding loss across customer experience, brand, and team health.</p>
+<p><img alt="" src="/images/blog/clearing-the-support-backlog-2.webp" /></p>
 <h2>Why backlogs happen</h2>
 <p>A few causes show up over and over:</p>
 <ul>
