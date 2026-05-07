@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Block legacy WordPress admin and auth surfaces from being indexed
+# (Netlify will 404 these anyway, but make it explicit for crawlers).
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+
+Sitemap: https://xfusion.io/sitemap.xml

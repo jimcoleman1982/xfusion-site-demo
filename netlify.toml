@@ -1,0 +1,180 @@
+# Netlify configuration for the xFusion static site.
+# This file lives at the root of the deployable site (site/netlify.toml).
+
+[build]
+  publish = "."
+  # No build command. The site is pre-rendered HTML.
+  command = ""
+
+[build.environment]
+  # Pin Node version in case Netlify auto-detects and tries to run anything.
+  NODE_VERSION = "20"
+
+# ---------------------------------------------------------------------------
+# Security headers applied to every response.
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # Allow inline styles and Google Fonts (used by every page); no scripts from
+    # external origins by default. Tighten if a CSP analyzer flags issues.
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'self'"
+
+# Cache images aggressively; they are hashless but stable in practice.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"   # 7 days
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"    # 1 day
+
+# HTML pages: short cache so updates ship quickly.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+# ---------------------------------------------------------------------------
+# Redirects. Order matters: more-specific patterns must come first.
+# ---------------------------------------------------------------------------
+
+# Force apex (xfusion.io) over www for canonical URLs. Also handles legacy
+# www links from emails / external sites without losing trailing path or query.
+[[redirects]]
+  from = "https://www.xfusion.io/*"
+  to = "https://xfusion.io/:splat"
+  status = 301
+  force = true
+
+# Block legacy WordPress admin/auth/RPC paths so attackers don't even get a 404.
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/404.html"
+  status = 404
+[[redirects]]
+  from = "/wp-login.php"
+  to = "/404.html"
+  status = 404
+[[redirects]]
+  from = "/xmlrpc.php"
+  to = "/404.html"
+  status = 404
+[[redirects]]
+  from = "/wp-json/*"
+  to = "/404.html"
+  status = 404
+[[redirects]]
+  from = "/wp-content/*"
+  to = "/404.html"
+  status = 404
+[[redirects]]
+  from = "/wp-includes/*"
+  to = "/404.html"
+  status = 404
+
+# Old WordPress feed URLs -> blog index.
+[[redirects]]
+  from = "/feed/*"
+  to = "/blog/"
+  status = 301
+[[redirects]]
+  from = "/comments/feed/*"
+  to = "/blog/"
+  status = 301
+
+# Old paginated WordPress category archives -> the category index page.
+[[redirects]]
+  from = "/category/customer-experience/page/:n"
+  to = "/customer-experience/"
+  status = 301
+[[redirects]]
+  from = "/category/customer-experience/*"
+  to = "/customer-experience/"
+  status = 301
+[[redirects]]
+  from = "/category/customer-support/page/:n"
+  to = "/customer-support/"
+  status = 301
+[[redirects]]
+  from = "/category/customer-support/*"
+  to = "/customer-support/"
+  status = 301
+[[redirects]]
+  from = "/category/saas-metrics/page/:n"
+  to = "/saas-metrics/"
+  status = 301
+[[redirects]]
+  from = "/category/saas-metrics/*"
+  to = "/saas-metrics/"
+  status = 301
+[[redirects]]
+  from = "/category/work-culture/*"
+  to = "/customer-experience/"
+  status = 301
+[[redirects]]
+  from = "/category/case-studies/*"
+  to = "/case-studies/"
+  status = 301
+[[redirects]]
+  from = "/category/*"
+  to = "/blog/"
+  status = 301
+
+# Old WordPress tag archives -> blog. We have no tag pages on the new site.
+[[redirects]]
+  from = "/tag/*"
+  to = "/blog/"
+  status = 301
+
+# Author archive pages (rare but possible) -> blog.
+[[redirects]]
+  from = "/author/*"
+  to = "/blog/"
+  status = 301
+
+# Old root-level pages that no longer exist.
+[[redirects]]
+  from = "/saas-playbook"
+  to = "/blog/"
+  status = 301
+[[redirects]]
+  from = "/customer-support-playbook"
+  to = "/blog/"
+  status = 301
+[[redirects]]
+  from = "/faqs"
+  to = "/#faq"
+  status = 301
+
+# Date-based archives (some WP themes expose /YYYY/MM/...).
+[[redirects]]
+  from = "/2023/*"
+  to = "/blog/"
+  status = 301
+[[redirects]]
+  from = "/2024/*"
+  to = "/blog/"
+  status = 301
+[[redirects]]
+  from = "/2025/*"
+  to = "/blog/"
+  status = 301
+
+# Catch-all 404 (Netlify uses 404.html automatically; this is explicit).
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
