@@ -14,7 +14,7 @@ function Problem() {
           color: '#1F1A17',
           textWrap: 'balance',
         }}>
-          You didn't start a business to answer tickets at 9pm.
+          You didn't start a business to answer tickets at 9pm
         </h2>
 
         <div style={{
