@@ -80,7 +80,7 @@ function CaseStudyNav({ active = 'case-studies', prefix = '../../' }) {
           </div>
 
           <div className="nav-cta" style={{ marginLeft: 'auto', display: 'flex', gap: 12, alignItems: 'center' }}>
-            <a href="https://savvycal.com/xfusion/lets-chat" style={ctaStyle}>Book a Discovery Call</a>
+            <a href="https://savvycal.com/xfusion/lets-chat" style={ctaStyle} target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
           </div>
 
           <button
@@ -125,7 +125,7 @@ function CaseStudyNav({ active = 'case-studies', prefix = '../../' }) {
               );
             })}
             <div style={{ marginTop: 16 }}>
-              <a href="https://savvycal.com/xfusion/lets-chat" style={{ ...ctaStyle, fontSize: 15, padding: '12px 20px', display: 'block', textAlign: 'center' }}>
+              <a href="https://savvycal.com/xfusion/lets-chat" style={{ ...ctaStyle, fontSize: 15, padding: '12px 20px', display: 'block', textAlign: 'center' }} target="_blank" rel="noopener noreferrer">
                 Book a Discovery Call
               </a>
             </div>

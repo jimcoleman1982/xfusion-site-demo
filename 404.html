@@ -42,7 +42,7 @@
     function Eyebrow({ children, color = '#6B5F56' }) {
       return <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.14em', color, marginBottom: 18 }}>{children}</div>;
     }
-    function Button({ children, variant = 'primary', size = 'md', href, style = {} }) {
+    function Button({ children, variant = 'primary', size = 'md', href, style = {}, target, rel }) {
       const [hover, setHover] = useState(false);
       const [pressed, setPressed] = useState(false);
       const sizes = { sm: { padding: '8px 14px', fontSize: 13 }, md: { padding: '12px 22px', fontSize: 15 }, lg: { padding: '16px 28px', fontSize: 16 } };
@@ -50,7 +50,11 @@
       if (variant === 'primary') { bg = pressed ? '#863818' : hover ? '#A0451F' : '#B8512C'; color = '#F7F2EB'; border = '1px solid transparent'; }
       else { bg = hover ? '#EFE8DD' : 'transparent'; color = '#1F1A17'; border = '1px solid #B7A993'; }
       const Tag = href ? 'a' : 'button';
-      return <Tag href={href} onMouseEnter={() => setHover(true)} onMouseLeave={() => { setHover(false); setPressed(false); }} onMouseDown={() => setPressed(true)} onMouseUp={() => setPressed(false)} style={{ background: bg, color, border, borderRadius: 8, fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 500, cursor: 'pointer', lineHeight: 1.1, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8, transition: 'all 160ms cubic-bezier(0.4,0,0.6,1)', whiteSpace: 'nowrap', ...sizes[size], ...style }}>{children}</Tag>;
+  const isExternal = href && /^https?:\/\//.test(href);
+  const computedTarget = target || (isExternal ? '_blank' : undefined);
+  const computedRel = rel || (isExternal ? 'noopener noreferrer' : undefined);
+  const linkAttrs = href ? { href, target: computedTarget, rel: computedRel } : {};
+      return <Tag {...linkAttrs} onMouseEnter={() => setHover(true)} onMouseLeave={() => { setHover(false); setPressed(false); }} onMouseDown={() => setPressed(true)} onMouseUp={() => setPressed(false)} style={{ background: bg, color, border, borderRadius: 8, fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 500, cursor: 'pointer', lineHeight: 1.1, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8, transition: 'all 160ms cubic-bezier(0.4,0,0.6,1)', whiteSpace: 'nowrap', ...sizes[size], ...style }}>{children}</Tag>;
     }
     const Icons = {
       menu: <g><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></g>,
@@ -152,7 +156,7 @@
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 14, maxWidth: 520 }}>
                   <a href="index.html" style={linkStyle}>Home <Icon name="arrow" size={18} /></a>
                   <a href="case-studies/" style={linkStyle}>Case studies <Icon name="arrow" size={18} /></a>
-                  <a href="https://savvycal.com/xfusion/lets-chat" style={linkStyle}>Book a Discovery Call <Icon name="arrow" size={18} /></a>
+                  <a href="https://savvycal.com/xfusion/lets-chat" style={linkStyle} target="_blank" rel="noopener noreferrer">Book a Discovery Call <Icon name="arrow" size={18} /></a>
                 </div>
               </Container>
             </Section>

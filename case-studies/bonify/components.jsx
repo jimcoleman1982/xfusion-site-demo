@@ -43,7 +43,7 @@ function Eyebrow({ children, color = '#6B5F56', style = {} }) {
   );
 }
 
-function Button({ children, variant = 'primary', size = 'md', href, style = {} }) {
+function Button({ children, variant = 'primary', size = 'md', href, style = {}, target, rel }) {
   const [hover, setHover] = useState(false);
   const [pressed, setPressed] = useState(false);
   const sizes = {
@@ -65,6 +65,11 @@ function Button({ children, variant = 'primary', size = 'md', href, style = {} }
     color = '#F7F2EB';
     border = '1px solid rgba(247,242,235,0.4)';
   }
+  const Tag = href ? 'a' : 'button';
+  const isExternal = href && /^https?:\/\//.test(href);
+  const computedTarget = target || (isExternal ? '_blank' : undefined);
+  const computedRel = rel || (isExternal ? 'noopener noreferrer' : undefined);
+  const linkAttrs = href ? { href, target: computedTarget, rel: computedRel } : {};
   return (
     <a href={href || '#'}
        onMouseEnter={() => setHover(true)}
@@ -222,7 +227,7 @@ function Nav({ active = 'case-studies', prefix = '../../' }) {
           </div>
 
           <div className="nav-cta" style={{ marginLeft: 'auto', display: 'flex', gap: 12, alignItems: 'center' }}>
-            <a href="https://savvycal.com/xfusion/lets-chat" style={ctaStyle}>Book a Discovery Call</a>
+            <a href="https://savvycal.com/xfusion/lets-chat" style={ctaStyle} target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
           </div>
 
           <button
@@ -275,7 +280,7 @@ function Nav({ active = 'case-studies', prefix = '../../' }) {
               );
             })}
             <div style={{ marginTop: 16 }}>
-              <a href="https://savvycal.com/xfusion/lets-chat" style={{ ...ctaStyle, fontSize: 15, padding: '12px 20px', display: 'block', textAlign: 'center' }}>
+              <a href="https://savvycal.com/xfusion/lets-chat" style={{ ...ctaStyle, fontSize: 15, padding: '12px 20px', display: 'block', textAlign: 'center' }} target="_blank" rel="noopener noreferrer">
                 Book a Discovery Call
               </a>
             </div>

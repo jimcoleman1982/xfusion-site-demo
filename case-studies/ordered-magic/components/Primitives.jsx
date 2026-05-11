@@ -41,7 +41,7 @@ function Eyebrow({ children, color = '#6B5F56' }) {
   );
 }
 
-function Button({ children, variant = 'primary', size = 'md', onClick, style = {}, as = 'button' }) {
+function Button({ children, variant = 'primary', size = 'md', onClick, style = {}, as = 'button', href, target, rel }) {
   const [hover, setHover] = useState(false);
   const [pressed, setPressed] = useState(false);
 
@@ -70,9 +70,13 @@ function Button({ children, variant = 'primary', size = 'md', onClick, style = {
     border = 'none';
   }
 
-  const Tag = as;
+  const Tag = href ? 'a' : (as || 'button');
+  const isExternal = href && /^https?:\/\//.test(href);
+  const computedTarget = target || (isExternal ? '_blank' : undefined);
+  const computedRel = rel || (isExternal ? 'noopener noreferrer' : undefined);
+  const linkAttrs = href ? { href, target: computedTarget, rel: computedRel } : {};
   return (
-    <Tag
+    <Tag {...linkAttrs}
       onClick={onClick}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => { setHover(false); setPressed(false); }}

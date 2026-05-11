@@ -80,7 +80,7 @@
       );
     }
 
-    function Button({ children, variant = 'primary', size = 'md', onClick, style = {}, href }) {
+    function Button({ children, variant = 'primary', size = 'md', onClick, style = {}, href, target, rel }) {
       const [hover, setHover] = useState(false);
       const [pressed, setPressed] = useState(false);
       const sizes = {
@@ -103,9 +103,13 @@
         border = '1px solid transparent';
       }
       const Tag = href ? 'a' : 'button';
+  const isExternal = href && /^https?:\/\//.test(href);
+  const computedTarget = target || (isExternal ? '_blank' : undefined);
+  const computedRel = rel || (isExternal ? 'noopener noreferrer' : undefined);
+  const linkAttrs = href ? { href, target: computedTarget, rel: computedRel } : {};
       return (
-        <Tag
-          href={href}
+        <Tag {...linkAttrs}
+         
           onClick={onClick}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => { setHover(false); setPressed(false); }}
