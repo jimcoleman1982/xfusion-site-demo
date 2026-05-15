@@ -59,6 +59,22 @@
   status = 301
   force = true
 
+# Consolidate WordPress slug-collision duplicates ("-2" variants) to their
+# canonical non-`-2` URLs. Google Search Console flagged these as
+# "Duplicate, Google chose different canonical than user" on 2026-05-12.
+# The non-`-2` versions are the longer, higher-quality content per the WP
+# migration audit; Jim approved permanent consolidation on 2026-05-14.
+[[redirects]]
+  from = "/customer-experience/seamless-support-how-to-integrate-customer-service-across-every-channel-2/"
+  to = "/customer-experience/seamless-support-how-to-integrate-customer-service-across-every-channel/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/customer-support/how-outsourced-customer-support-frees-you-to-focus-on-what-matters-most-2/"
+  to = "/customer-support/how-outsourced-customer-support-frees-you-to-focus-on-what-matters-most/"
+  status = 301
+  force = true
+
 # Block legacy WordPress admin/auth/RPC paths so attackers don't even get a 404.
 [[redirects]]
   from = "/wp-admin/*"
