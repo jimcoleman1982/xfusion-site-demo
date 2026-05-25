@@ -39,7 +39,7 @@ function Leadership() {
     },
     {
       name: 'Bianca Dadulla',
-      role: 'Lead Recruiter',
+      role: 'Recruitment Manager',
       imageSrc: '../images/bianca-dadulla.png',
       sillySrc: '../images/silly/bianca-dadulla-silly.png',
     },
