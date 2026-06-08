@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SavvyCal case study (embed) | xFusion</title>
+  <meta name="description" content="How SavvyCal founder Derrick Reimer cut average customer support reply time by 84.79% and got his mornings back, with a senior, fully managed xFusion customer support agent placed as an extension of his team.">
+  <link rel="canonical" href="https://xfusion.io/case-studies/savvycal/">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KX8T76BC');</script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body { background: #F7F2EB; color: #1F1A17; font-family: 'IBM Plex Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 40px 24px 56px; }
+    .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; color: #B8512C; margin-bottom: 14px; }
+    h1.title { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(36px, 5vw, 56px); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; color: #1F1A17; margin: 0 0 16px; text-wrap: balance; }
+    .subhead { font-size: 19px; line-height: 1.5; color: #3A322D; margin: 0 0 28px; max-width: 700px; text-wrap: pretty; }
+    .person { display: flex; align-items: center; gap: 14px; padding: 14px 18px 14px 14px; border: 1px solid #D9CFBF; border-radius: 12px; background: #FAF5ED; width: fit-content; }
+    .person img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; background: #EFE8DD; }
+    .person .name { font-family: 'Source Serif 4', serif; font-size: 17px; font-weight: 500; color: #1F1A17; line-height: 1.1; }
+    .person .role { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B5F56; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 4px; }
+    section { padding: 40px 0; border-top: 1px solid #D9CFBF; }
+    section:first-of-type { border-top: 0; padding-top: 12px; }
+    h2.section-title { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(28px, 3.4vw, 36px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; color: #1F1A17; margin: 0 0 18px; text-wrap: balance; }
+    p.body { font-size: 17px; line-height: 1.65; color: #1F1A17; margin: 0 0 18px; max-width: 720px; text-wrap: pretty; }
+    p.body:last-child { margin-bottom: 0; }
+    p.lf-pull { font-family: 'Source Serif 4', serif; font-size: 22px; font-style: italic; color: #B8512C; font-weight: 500; line-height: 1.3; max-width: 620px; }
+    .overview { border: 1px solid #D9CFBF; border-radius: 12px; background: #FAF5ED; overflow: hidden; margin-top: 8px; }
+    .overview-row { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 18px 22px; border-top: 1px solid #E8DFCE; }
+    .overview-row:first-child { border-top: 0; }
+    .overview-row .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #B8512C; padding-top: 3px; }
+    .overview-row .value { font-size: 15.5px; line-height: 1.55; color: #1F1A17; }
+    .quote-card { background: #1F1A17; color: #F7F2EB; border-radius: 16px; padding: 36px; }
+    .quote-card .pull { font-family: 'Source Serif 4', serif; font-size: clamp(22px, 2.6vw, 28px); font-weight: 400; line-height: 1.3; letter-spacing: -0.01em; margin: 0 0 22px; text-wrap: balance; color: #F0D9A8; }
+    .quote-card .full { font-size: 16px; line-height: 1.65; color: #E5DDD0; margin: 0 0 22px; max-width: 680px; }
+    .quote-card .attrib { display: flex; align-items: center; gap: 12px; border-top: 1px solid #3A322D; padding-top: 18px; }
+    .quote-card .attrib img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: #3A322D; }
+    .quote-card .attrib .who { font-family: 'Source Serif 4', serif; font-size: 16px; color: #F7F2EB; line-height: 1.2; }
+    .quote-card .attrib .what { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #B59E80; margin-top: 3px; }
+    .metric-hero { background: #2C4A3E; color: #F7F2EB; border-radius: 16px; padding: 36px; }
+    .metric-hero .stat { font-family: 'Source Serif 4', serif; font-size: clamp(64px, 10vw, 110px); font-weight: 600; line-height: 1; letter-spacing: -0.04em; margin-bottom: 4px; color: #F7F2EB; }
+    .metric-hero .stat .pct { color: #F0D9A8; font-size: 0.5em; vertical-align: super; }
+    .metric-hero .stat-label { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 24px; color: #F0D9A8; margin-bottom: 18px; }
+    .metric-hero .support { font-size: 16.5px; line-height: 1.55; color: #D9E6DD; max-width: 640px; }
+    .results-list { list-style: none; padding: 0; margin: 0 0 18px; max-width: 720px; }
+    .results-list li { display: grid; grid-template-columns: 32px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid #E8DFCE; font-size: 16.5px; line-height: 1.55; }
+    .results-list li:last-child { border-bottom: 0; }
+    .results-list .rl-marker { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #B8512C; letter-spacing: 0.06em; padding-top: 4px; }
+    @media (max-width: 700px) {
+      .wrap { padding: 28px 18px 40px; }
+      .overview-row { grid-template-columns: 1fr; gap: 6px; padding: 16px 18px; }
+      .overview-row .label { padding-top: 0; }
+      .quote-card { padding: 24px; }
+      .metric-hero { padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX8T76BC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <main class="wrap">
+    <section>
+      <div class="eyebrow">Case study</div>
+      <h1 class="title">SavvyCal</h1>
+      <p class="subhead">How SavvyCal cut average customer support reply time by 84.79% and gave its founder his mornings back.</p>
+      <div class="person">
+        <img src="../../images/derrick-reimer-savvycal.png" alt="Derrick Reimer, Founder of SavvyCal" loading="lazy">
+        <div>
+          <div class="name">Derrick Reimer</div>
+          <div class="role">Founder, SavvyCal</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="overview">
+        <div class="overview-row"><div class="label">Industry</div><div class="value">SaaS, Scheduling software</div></div>
+        <div class="overview-row"><div class="label">Country</div><div class="value">United States</div></div>
+        <div class="overview-row"><div class="label">Challenge</div><div class="value">Founder's deep work was being eaten by the support inbox, with volume set to climb as new features shipped.</div></div>
+        <div class="overview-row"><div class="label">Solution</div><div class="value">A senior xFusion customer support agent placed full-time as an extension of the SavvyCal team.</div></div>
+        <div class="overview-row"><div class="label">Results</div><div class="value">84.79% reduction in average reply time, higher customer satisfaction, no abandoned tickets, and the founder back to building the product.</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Background</div>
+      <h2 class="section-title">About SavvyCal</h2>
+      <p class="body">SavvyCal is a scheduling tool that takes the awkward work out of finding a meeting time. The product layers calendar overlays so guests can pick from times that actually work for everyone, ranks availability by preference, handles time zones cleanly, and supports per-link calendar settings for people who run different kinds of meetings out of different inboxes. It is the scheduler people reach for when the generic options stop pulling their weight.</p>
+      <p class="body">SavvyCal was founded by Derrick Reimer, a multi-time founder. Derrick previously co-founded Drip, the email marketing platform acquired by Leadpages in 2016. He started SavvyCal because the existing schedulers solved the host's problem and ignored the guest's. The product grew quickly on word of mouth, podcasts, and a loyal base of professionals who care about a polished booking experience.</p>
+      <p class="body">By 2021, SavvyCal had real customers, real volume, and a real support inbox. And Derrick was running it largely alone.</p>
+    </section>
+
+    <section>
+      <div class="quote-card">
+        <p class="pull">"I was admittedly skeptical at first. They proved my skepticism unwarranted."</p>
+        <p class="full">As a founder busy building and marketing my product, I wanted a partner I could trust to train and manage dedicated reps as an extension of my team. This is not your stereotypical outsourced support agency. They've cut our average reply time by 84.79% and freed me up to focus on running the business.</p>
+        <div class="attrib">
+          <img src="../../images/derrick-reimer-savvycal.png" alt="" aria-hidden="true" loading="lazy">
+          <div>
+            <div class="who">Derrick Reimer</div>
+            <div class="what">Founder, SavvyCal</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="metric-hero">
+        <div class="stat">84.79<span class="pct">%</span></div>
+        <div class="stat-label">reduction</div>
+        <div class="support">in average customer support reply time after placing a senior xFusion agent as an extension of the SavvyCal team.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">The mornings were the first thing to go.</h2>
+      <p class="body">Derrick had a routine that mattered to him. Mornings were for deep work. Heads down, no meetings, no Slack, no inbox. That was when the product got built.</p>
+      <p class="lf-pull">The support inbox started killing it.</p>
+      <p class="body">He would sit down to write code or think through a hard product decision, and a pull on the back of his mind kept tugging him toward the support queue. What if a customer was stuck? What if a tier-1 question had been sitting for hours? What if something in the latest release had broken and he was the only one who could see it?</p>
+      <p class="body">So he checked. And once he checked, he replied. And once he replied, the morning was gone.</p>
+      <p class="body">The math was about to get worse. SavvyCal had a roadmap of features in flight, and Derrick knew that every shipped feature meant more questions, more edge cases, more onboarding chats, more billing nuance. The current setup was already cracking under the load it had. Adding more product surface area without a real support function would have meant either slower releases or slower replies. Neither was acceptable.</p>
+      <p class="body">He had also seen what most outsourced support looks like. Scripted replies. Shallow product knowledge. People who treated his customers like tickets to close instead of people to help. SavvyCal customers care about how they get treated. The support had to match. So Derrick had a problem with two ugly answers. Hire and manage in-house, which meant pulling himself further away from the product to do recruiting, training, and people management he did not want to be doing. Or outsource it the way most founders outsource it, and watch the brand he had carefully built get diluted by a stranger who was treating it like a side gig. He wanted a third option.</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">A senior agent, placed as one of the team.</h2>
+      <p class="body">xFusion placed a full-time, senior customer support agent as a dedicated extension of the SavvyCal team. Not a freelancer. Not a script reader. A person who learned SavvyCal the way an in-house hire would learn it, and who stayed.</p>
+      <p class="body">The lifecycle was managed end to end. xFusion ran the recruiting through the TraitX Framework, surfaced candidates Derrick could review on Zoom before meeting anyone live, handled the training in SavvyCal's actual workflows, took over payroll and HR, and assigned a dedicated account manager to oversee performance and keep the work tight over time.</p>
+      <p class="body">What Derrick noticed first was the fit. The placed agent did not sound like an outsourced rep. The replies sounded like SavvyCal. The judgment calls felt like the calls Derrick would have made himself if he had been in the inbox. Customers wrote back grateful, not annoyed. Some of them did not realize they were not talking directly to the founder.</p>
+      <p class="body">That gave Derrick room to step back. He stopped checking the inbox in the morning. He let the support team run without him. The work was good enough that he trusted it. Over time, the scope grew. The placement took on voice and video support for high-touch customers, case by case. Knowledge base articles got written and improved. Side projects and back-office tasks moved off Derrick's plate too. What started as relief from the morning inbox turned into a real working part of the business.</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">The numbers and the lived experience moved together.</h2>
+      <p class="body">The numbers and the lived experience moved together.</p>
+      <ul class="results-list">
+        <li><span class="rl-marker">01</span><span><strong>84.79% reduction in average reply time.</strong> The headline metric. Customers were getting answers in a fraction of the time they used to wait.</span></li>
+        <li><span class="rl-marker">02</span><span><strong>Higher customer satisfaction.</strong> Reviews and direct replies reflected it.</span></li>
+        <li><span class="rl-marker">03</span><span><strong>Zero abandoned tickets.</strong> Nothing slipped through. The queue stayed clean.</span></li>
+        <li><span class="rl-marker">04</span><span><strong>Knowledge base expanded.</strong> The placed agent built up the documentation as patterns emerged, which deflected repeat questions and helped customers self-serve.</span></li>
+        <li><span class="rl-marker">05</span><span><strong>Scope grew into voice and video support.</strong> What started as inbox coverage grew into a fuller support offering for high-touch moments.</span></li>
+        <li><span class="rl-marker">06</span><span><strong>Coverage of side projects and back-office work.</strong> The placement's value kept growing outside of the original scope.</span></li>
+        <li><span class="rl-marker">07</span><span><strong>Derrick reclaimed his mornings.</strong> The deep work routine came back. The product roadmap kept moving. SavvyCal kept shipping.</span></li>
+      </ul>
+      <p class="body">The partnership started in May 2021 and has continued since. Customer satisfaction stayed high, reply times stayed fast, and the work the placement handled kept growing as the SavvyCal team trusted them with more of what used to be on the founder's plate.</p>
+    </section>
+  </main>
+</body>
+</html>

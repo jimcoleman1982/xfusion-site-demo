@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyFi case study (embed) | xFusion</title>
+  <meta name="description" content="How SkyFi partnered with xFusion to scale customer support across 185 countries, holding a 91.9% customer satisfaction score and a 36-minute average reply time around the clock.">
+  <link rel="canonical" href="https://xfusion.io/case-studies/skyfi/">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KX8T76BC');</script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body { background: #F7F2EB; color: #1F1A17; font-family: 'IBM Plex Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 40px 24px 56px; }
+    .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; color: #B8512C; margin-bottom: 14px; }
+    h1.title { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(36px, 5vw, 56px); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; color: #1F1A17; margin: 0 0 16px; text-wrap: balance; }
+    .subhead { font-size: 19px; line-height: 1.5; color: #3A322D; margin: 0 0 28px; max-width: 700px; text-wrap: pretty; }
+    .person { display: flex; align-items: center; gap: 14px; padding: 14px 18px 14px 14px; border: 1px solid #D9CFBF; border-radius: 12px; background: #FAF5ED; width: fit-content; }
+    .person img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; background: #EFE8DD; }
+    .person .name { font-family: 'Source Serif 4', serif; font-size: 17px; font-weight: 500; color: #1F1A17; line-height: 1.1; }
+    .person .role { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B5F56; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 4px; }
+    section { padding: 40px 0; border-top: 1px solid #D9CFBF; }
+    section:first-of-type { border-top: 0; padding-top: 12px; }
+    h2.section-title { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(28px, 3.4vw, 36px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; color: #1F1A17; margin: 0 0 18px; text-wrap: balance; }
+    p.body { font-size: 17px; line-height: 1.65; color: #1F1A17; margin: 0 0 18px; max-width: 720px; text-wrap: pretty; }
+    p.body:last-child { margin-bottom: 0; }
+    .overview { border: 1px solid #D9CFBF; border-radius: 12px; background: #FAF5ED; overflow: hidden; margin-top: 8px; }
+    .overview-row { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 18px 22px; border-top: 1px solid #E8DFCE; }
+    .overview-row:first-child { border-top: 0; }
+    .overview-row .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #B8512C; padding-top: 3px; }
+    .overview-row .value { font-size: 15.5px; line-height: 1.55; color: #1F1A17; }
+    .quote-card { background: #1F1A17; color: #F7F2EB; border-radius: 16px; padding: 36px; }
+    .quote-card .pull { font-family: 'Source Serif 4', serif; font-size: clamp(22px, 2.6vw, 28px); font-weight: 400; line-height: 1.3; letter-spacing: -0.01em; margin: 0 0 22px; text-wrap: balance; color: #F0D9A8; }
+    .quote-card .full { font-size: 16px; line-height: 1.65; color: #E5DDD0; margin: 0 0 22px; max-width: 680px; }
+    .quote-card .attrib { display: flex; align-items: center; gap: 12px; border-top: 1px solid #3A322D; padding-top: 18px; }
+    .quote-card .attrib img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: #3A322D; }
+    .quote-card .attrib .who { font-family: 'Source Serif 4', serif; font-size: 16px; color: #F7F2EB; line-height: 1.2; }
+    .quote-card .attrib .what { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #B59E80; margin-top: 3px; }
+    .metric-hero { background: #2C4A3E; color: #F7F2EB; border-radius: 16px; padding: 36px; }
+    .metric-hero .stat { font-family: 'Source Serif 4', serif; font-size: clamp(34px, 5vw, 52px); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; color: #F7F2EB; }
+    .metric-hero .stat strong { color: #F0D9A8; font-weight: 600; }
+    .metric-hero .support { font-size: 16.5px; line-height: 1.55; color: #D9E6DD; max-width: 640px; }
+    @media (max-width: 700px) {
+      .wrap { padding: 28px 18px 40px; }
+      .overview-row { grid-template-columns: 1fr; gap: 6px; padding: 16px 18px; }
+      .overview-row .label { padding-top: 0; }
+      .quote-card { padding: 24px; }
+      .metric-hero { padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX8T76BC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <main class="wrap">
+    <section>
+      <div class="eyebrow">Case study</div>
+      <h1 class="title">SkyFi</h1>
+      <p class="subhead">How SkyFi delivers technically deep, 24/7 customer support across 185 countries with xFusion.</p>
+      <div class="person">
+        <img src="../../images/claire-fundingsland-skyfi.png" alt="Claire Fundingsland, Head of Customer Experience at SkyFi" loading="lazy">
+        <div>
+          <div class="name">Claire Fundingsland</div>
+          <div class="role">Head of Customer Experience, SkyFi</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="overview">
+        <div class="overview-row"><div class="label">Industry</div><div class="value">Satellite imagery and geospatial intelligence (SaaS)</div></div>
+        <div class="overview-row"><div class="label">Country</div><div class="value">United States</div></div>
+        <div class="overview-row"><div class="label">Challenge</div><div class="value">Scale customer support across a global, 24/7 customer base spanning 185 countries while keeping customer satisfaction high and reply times fast on a technical product that spans optical, SAR, and multispectral imaging.</div></div>
+        <div class="overview-row"><div class="label">Solution</div><div class="value">A dedicated xFusion team trained in SkyFi's Earth observation product, integrated into SkyFi's internal systems, providing round-the-clock coverage and Tier 2 technical depth.</div></div>
+        <div class="overview-row"><div class="label">Results</div><div class="value">91.9% customer satisfaction score. 36-minute average reply time. Round-the-clock global coverage that freed SkyFi's leadership to focus on the core product.</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">About the company</div>
+      <h2 class="section-title">About SkyFi</h2>
+      <p class="body">SkyFi makes on-demand, high-resolution Earth observation data and analytics available to anyone with a smartphone, tablet, or computer. The company runs a network of more than 100 satellites and is on a mission, in their words, to "easify access to geospatial data so that businesses can solve their toughest problems and individuals can explore their boundless curiosity."</p>
+      <p class="body">The company started with a simple idea: open up access to Earth observation data. Satellite imagery had historically been locked behind enterprise contracts, complex tooling, and a steep technical learning curve. SkyFi built a platform that closes the gap between raw satellite data and the people who actually want to use it. Their apps and enterprise-grade API serve customers across agriculture, real estate, mining, urban development, environmental monitoring, and more.</p>
+      <p class="body">The numbers tell the rest of the story. Over 20,000 registered accounts. Customers in 185 countries. Data sensors including optical, SAR, and multispectral imaging. SkyFi has grown into a major player in the Earth observation industry, and they did it by simplifying something that used to be very hard.</p>
+      <p class="body">That growth created a customer support problem. A simple-to-use product attracts a wide audience. A wide audience asks a lot of questions. And those questions arrive at every hour of the day from every corner of the globe.</p>
+    </section>
+
+    <section>
+      <div class="quote-card">
+        <p class="pull">"They never leave a customer interaction unresolved."</p>
+        <p class="full">xFusion's emphasis on customer satisfaction has been such an asset to SkyFi. I am so impressed with our xFusion team's thoroughness and their ability to adapt and learn quickly. Their internal processes and collaboration foster alignment and ongoing training, and they're always eager to learn and do more. They never leave a customer interaction unresolved and are always quick to alert us for potential opportunities with customers, which has helped our team grow at scale and keep customers at the center of everything we do.</p>
+        <div class="attrib">
+          <img src="../../images/claire-fundingsland-skyfi.png" alt="" aria-hidden="true" loading="lazy">
+          <div>
+            <div class="who">Claire Fundingsland</div>
+            <div class="what">Head of Customer Experience, SkyFi</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="metric-hero">
+        <div class="stat"><strong>91.9%</strong> customer satisfaction.<br><strong>36-minute</strong> average reply time.</div>
+        <div class="support">Across a global, 24/7 customer base spanning 185 countries.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">The challenge</h2>
+      <p class="body">SkyFi's growth around the world created a tough problem: how do you grow customer support without losing the quality that made you grow in the first place?</p>
+      <p class="body">The customer base was international. The product was technical. The volume was rising. And every time SkyFi closed another funding round or shipped another expansion, the pressure to deliver excellent customer service grew with it.</p>
+      <p class="body">Three things made this harder than a typical support scaling problem.</p>
+      <p class="body">First, the time zones. Customers in 185 countries are awake at different hours, and they expect answers when they ask, not when an office in Texas opens up the next morning. Coverage had to be genuinely 24/7, not "we'll get to you Monday."</p>
+      <p class="body">Second, the technical depth. SkyFi's product spans optical imaging, SAR (synthetic aperture radar), and multispectral data sensors. A customer asking which dataset is right for monitoring crop health is not the same as a customer asking how to reset their password. The support team needed real product fluency to be useful.</p>
+      <p class="body">Third, the high stakes. As SkyFi's leaders, Claire and Mike, kept saying in their early talks with xFusion, customer support at SkyFi is not a cost to cut. It is part of how the company keeps customers at the center of everything they do. A weak support team would not just frustrate users. It would break the brand promise. The challenge was not just to handle the growing volume. It was to give support that was technical, available worldwide, and matched SkyFi's approach to the Earth observation industry.</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">The solution</h2>
+      <p class="body">xFusion built a dedicated team for SkyFi and trained them on SkyFi's product, processes, and tone.</p>
+      <p class="body">The team learned the technical layer first. Optical, SAR, multispectral. The differences between datasets. The use cases customers cared about across agriculture, real estate, and mining. xFusion's account managers worked alongside SkyFi to build out internal documentation and training materials so the team could handle complex queries instead of escalating every nuanced question back to the SkyFi staff.</p>
+      <p class="body">The team integrated into SkyFi's internal systems. That sounds small, but it matters. When a support agent has to ping someone on the SkyFi team for every account lookup, the response loop breaks. Direct system access meant real-time issue resolution, not handoffs.</p>
+      <p class="body">The team operated around the clock. Coverage extended across time zones to match the global customer base. Customers in Asia, Europe, the Americas, and beyond got fast responses regardless of when they reached out.</p>
+      <p class="body">The team did more than answer tickets. xFusion's agents were trained to spot opportunities, not just resolve issues. When a customer's question hinted at a deeper need, or signaled a potential expansion, the team flagged it back to SkyFi so the right person could follow up. Customer support became a quiet feeder to growth instead of a one-way ticket sink. xFusion's account managers stayed in the loop the entire time. Performance reviews, ongoing training, alignment on new product launches, escalation paths. SkyFi did not have to manage the team. xFusion did.</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">The results</h2>
+      <p class="body">The partnership delivered three measurable outcomes and one cultural one.</p>
+      <p class="body">91.9% customer satisfaction. Sustained across a global, technical customer base. Not a launch-week number. An ongoing average.</p>
+      <p class="body">36-minute average reply time. Across all time zones, in a 24/7 environment. Customers who reached out in the middle of the night got real answers in well under an hour.</p>
+      <p class="body">Round-the-clock global coverage. SkyFi's customers in 185 countries got the same support quality regardless of where the sun was. The coverage gap that constrains most growing SaaS support teams stopped constraining SkyFi.</p>
+      <p class="body">Time and focus returned to the core team. SkyFi's internal staff stopped being the back-up support team. Engineering and product leaders went back to building. Claire and Mike went back to leading. The cultural outcome was that SkyFi could keep customers at the center of everything they do without burning out the people running the company.</p>
+      <p class="body">In Claire's words, the xFusion team "never leave a customer interaction unresolved." For a product company moving fast in a competitive industry, that is the support function you want.</p>
+    </section>
+  </main>
+</body>
+</html>
