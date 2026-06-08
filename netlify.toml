@@ -26,18 +26,30 @@
     Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://bat.bing.com https://www.clarity.ms https://b2bjsstore.s3.us-west-2.amazonaws.com; connect-src 'self' https://*.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://bat.bing.com https://stats.g.doubleclick.net https://*.clarity.ms https://c.bing.com https://b2bjsstore.s3.us-west-2.amazonaws.com https://api.rb2b.com; frame-src 'self' https://www.googletagmanager.com https://td.doubleclick.net; frame-ancestors 'self'"
 
 # ---------------------------------------------------------------------------
-# /faq-embed/* — intentionally iframable from anywhere.
-# This path serves a standalone FAQ page that is embedded in third-party
-# deal-room tools (Aligned and similar) inside per-client templates. The
-# rest of the site keeps strict no-frame clickjacking protection above; this
-# block overrides X-Frame-Options and CSP frame-ancestors for this path only.
-# Later [[headers]] blocks win on conflicting keys per Netlify behavior.
+# /faq-embed/* and /case-studies/* — intentionally iframable from anywhere.
+# These paths are embedded inside third-party deal-room tools (Aligned and
+# similar) inside per-client templates. The rest of the site keeps strict
+# no-frame clickjacking protection above; these blocks override
+# X-Frame-Options and CSP frame-ancestors for these paths only. Later
+# [[headers]] blocks win on conflicting keys per Netlify behavior.
+#
+# Note: the /case-studies/* override uses the SAME CSP as the global "/*"
+# block (so all existing third-party scripts on the case study pages — GTM,
+# RB2B, Clarity, Google Ads, Bing — keep working), just with
+# frame-ancestors * instead of 'self'. The /faq-embed/* CSP is tighter
+# because that page is intentionally minimal.
 # ---------------------------------------------------------------------------
 [[headers]]
   for = "/faq-embed/*"
   [headers.values]
     X-Frame-Options = "ALLOWALL"
     Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com; frame-src 'self' https://www.googletagmanager.com; frame-ancestors *"
+
+[[headers]]
+  for = "/case-studies/*"
+  [headers.values]
+    X-Frame-Options = "ALLOWALL"
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://bat.bing.com https://www.clarity.ms https://b2bjsstore.s3.us-west-2.amazonaws.com; connect-src 'self' https://*.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://bat.bing.com https://stats.g.doubleclick.net https://*.clarity.ms https://c.bing.com https://b2bjsstore.s3.us-west-2.amazonaws.com https://api.rb2b.com; frame-src 'self' https://www.googletagmanager.com https://td.doubleclick.net; frame-ancestors *"
 
 # Cache images aggressively; they are hashless but stable in practice.
 [[headers]]
