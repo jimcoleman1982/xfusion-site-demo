@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tolstoy case study (embed) | xFusion</title>
+  <meta name="description" content="How Tolstoy grew customer support from one agent to a six-person team with xFusion, and saw their Shopify app ranking jump 90 points on the back of better support.">
+  <!-- Canonical points to the full marketing page so any SEO signal attributes there, not to this embed view. -->
+  <link rel="canonical" href="https://xfusion.io/case-studies/tolstoy/">
+  <!-- Don't index this embed page itself; it's a stripped utility view of the full case study. -->
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KX8T76BC');</script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #F7F2EB;
+      color: #1F1A17;
+      font-family: 'IBM Plex Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrap { max-width: 900px; margin: 0 auto; padding: 40px 24px 56px; }
+
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #B8512C;
+      margin-bottom: 14px;
+    }
+
+    h1.title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: #1F1A17;
+      margin: 0 0 16px;
+      text-wrap: balance;
+    }
+
+    .subhead {
+      font-size: 19px;
+      line-height: 1.5;
+      color: #3A322D;
+      margin: 0 0 28px;
+      max-width: 700px;
+      text-wrap: pretty;
+    }
+
+    /* Customer photo card under the hero. */
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px 14px 14px;
+      border: 1px solid #D9CFBF;
+      border-radius: 12px;
+      background: #FAF5ED;
+      width: fit-content;
+    }
+    .person img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #EFE8DD;
+    }
+    .person .name {
+      font-family: 'Source Serif 4', serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: #1F1A17;
+      line-height: 1.1;
+    }
+    .person .role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #6B5F56;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* Section spacing. */
+    section { padding: 40px 0; border-top: 1px solid #D9CFBF; }
+    section:first-of-type { border-top: 0; padding-top: 12px; }
+
+    h2.section-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: clamp(28px, 3.4vw, 36px);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      color: #1F1A17;
+      margin: 0 0 18px;
+      text-wrap: balance;
+    }
+
+    p.body {
+      font-size: 17px;
+      line-height: 1.65;
+      color: #1F1A17;
+      margin: 0 0 18px;
+      max-width: 720px;
+      text-wrap: pretty;
+    }
+    p.body:last-child { margin-bottom: 0; }
+
+    /* Overview box: 5 labeled rows. */
+    .overview {
+      border: 1px solid #D9CFBF;
+      border-radius: 12px;
+      background: #FAF5ED;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .overview-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 24px;
+      padding: 18px 22px;
+      border-top: 1px solid #E8DFCE;
+    }
+    .overview-row:first-child { border-top: 0; }
+    .overview-row .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #B8512C;
+      padding-top: 3px;
+    }
+    .overview-row .value {
+      font-size: 15.5px;
+      line-height: 1.55;
+      color: #1F1A17;
+    }
+
+    /* Quote feature. */
+    .quote-card {
+      background: #1F1A17;
+      color: #F7F2EB;
+      border-radius: 16px;
+      padding: 36px;
+    }
+    .quote-card .pull {
+      font-family: 'Source Serif 4', serif;
+      font-size: clamp(22px, 2.6vw, 28px);
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      margin: 0 0 22px;
+      text-wrap: balance;
+      color: #F0D9A8;
+    }
+    .quote-card .full {
+      font-size: 16px;
+      line-height: 1.65;
+      color: #E5DDD0;
+      margin: 0 0 22px;
+      max-width: 680px;
+    }
+    .quote-card .attrib {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid #3A322D;
+      padding-top: 18px;
+    }
+    .quote-card .attrib img {
+      width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: #3A322D;
+    }
+    .quote-card .attrib .who {
+      font-family: 'Source Serif 4', serif;
+      font-size: 16px;
+      color: #F7F2EB;
+      line-height: 1.2;
+    }
+    .quote-card .attrib .what {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #B59E80;
+      margin-top: 3px;
+    }
+
+    /* Metrics callout. */
+    .metrics {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 8px;
+    }
+    .metric-hero {
+      background: #B8512C;
+      color: #F7F2EB;
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .metric-hero .stat {
+      font-family: 'Source Serif 4', serif;
+      font-size: clamp(40px, 5.5vw, 60px);
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+    }
+    .metric-hero .support {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #FCEEDC;
+      max-width: 360px;
+    }
+    .metric-side {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .metric-card {
+      background: #FAF5ED;
+      border: 1px solid #D9CFBF;
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .metric-card .v {
+      font-family: 'Source Serif 4', serif;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.05;
+      color: #1F1A17;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .metric-card .l {
+      font-size: 13px;
+      line-height: 1.4;
+      color: #6B5F56;
+    }
+
+    /* CTA. */
+    .cta-wrap {
+      margin-top: 48px;
+      padding: 32px;
+      background: #2C4A3E;
+      color: #F7F2EB;
+      border-radius: 16px;
+      text-align: center;
+    }
+    .cta-wrap h3 {
+      font-family: 'Source Serif 4', serif;
+      font-size: clamp(22px, 2.6vw, 28px);
+      font-weight: 500;
+      line-height: 1.2;
+      margin: 0 0 8px;
+      letter-spacing: -0.01em;
+      color: #F7F2EB;
+    }
+    .cta-wrap p {
+      margin: 0 0 22px;
+      color: #D9E6DD;
+      font-size: 15.5px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: #F0D9A8;
+      color: #1F1A17;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.005em;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 999px;
+      transition: transform 120ms ease, background 120ms ease;
+    }
+    .cta-btn:hover { background: #F5E4BE; transform: translateY(-1px); }
+
+    /* Footer note: tiny line linking to the full case study (helpful inside an iframe). */
+    .embed-foot {
+      margin-top: 28px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      color: #6B5F56;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .embed-foot a { color: #B8512C; text-decoration: none; border-bottom: 1px solid currentColor; }
+    .embed-foot a:hover { color: #1F1A17; }
+
+    @media (max-width: 700px) {
+      .wrap { padding: 28px 18px 40px; }
+      .overview-row { grid-template-columns: 1fr; gap: 6px; padding: 16px 18px; }
+      .overview-row .label { padding-top: 0; }
+      .quote-card { padding: 24px; }
+      .metrics { grid-template-columns: 1fr; }
+      .metric-side { grid-template-rows: auto; grid-template-columns: 1fr; }
+      .cta-wrap { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX8T76BC"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <main class="wrap">
+
+    <!-- Hero -->
+    <section>
+      <div class="eyebrow">Case Study · 04 · Tolstoy</div>
+      <h1 class="title">Tolstoy</h1>
+      <p class="subhead">How Tolstoy grew customer support from one agent to a six-person team with xFusion.</p>
+      <div class="person">
+        <img src="../../images/dov-kaufmann-tolstoy.png" alt="Dov Kaufmann, COO of Tolstoy" loading="lazy">
+        <div>
+          <div class="name">Dov Kaufmann</div>
+          <div class="role">COO · Tolstoy</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section>
+      <div class="eyebrow">Overview</div>
+      <div class="overview">
+        <div class="overview-row"><div class="label">Industry</div><div class="value">Video commerce SaaS (Shopify and non-Shopify)</div></div>
+        <div class="overview-row"><div class="label">Country</div><div class="value">Israel</div></div>
+        <div class="overview-row"><div class="label">Challenge</div><div class="value">One internal support person was about to leave. Support volume was rising. The team needed help with email, live chat, onboarding, docs, helpdesk fixes, and client calls. They had no time to hire and train a team.</div></div>
+        <div class="overview-row"><div class="label">Solution</div><div class="value">A dedicated xFusion team grew from one front-line agent into a six-person team. They covered front-line support, onboarding, helpdesk fixes, and a "Solutions Engineer" group for big clients and custom-code work.</div></div>
+        <div class="overview-row"><div class="label">Results</div><div class="value">Tolstoy's Shopify app ranking jumped 90 points after a wave of 5-star reviews praising the support. Reopened tickets dropped from about one in three to a much smaller share. The team handled 584 tickets on their own in March 2023. The core Tolstoy team got time back to focus on the product.</div></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section>
+      <div class="eyebrow">01 · The company</div>
+      <h2 class="section-title">About Tolstoy</h2>
+      <p class="body">Tolstoy is a video commerce platform used by more than 5,000 brands, including Culture Kings and LSKD. The company is based in Israel. They built their name on shoppable video that drops into the customer journey without slowing the site down.</p>
+      <p class="body">The product is built around short-form video. Brands use Tolstoy to create shoppable video flows that connect shoppers to products. The numbers back it up. Tolstoy delivers four times more time spent on a site, and doubles the chance of repeat purchases. The platform also gives brands data on what shoppers do, which helps them target better and convert more buyers.</p>
+      <p class="body">By the summer of 2022, Tolstoy was growing fast. The leadership team needed a support partner who could keep up without becoming one more thing to manage.</p>
+    </section>
+
+    <!-- Testimonial -->
+    <section>
+      <div class="quote-card">
+        <p class="pull">"An absolute game-changer. We grow faster and more professionally than we ever could alone."</p>
+        <p class="full">Working with the xFusion team enabled us to scale customer support from a single agent to a six-person team handling Tier 1 and Tier 2 work. The partnership has been so valuable that our Shopify app ranking jumped 90 points after a wave of 5-star reviews tied to better support. I can't praise the team enough.</p>
+        <div class="attrib">
+          <img src="../../images/dov-kaufmann-tolstoy.png" alt="" aria-hidden="true" loading="lazy">
+          <div>
+            <div class="who">Dov Kaufmann</div>
+            <div class="what">COO · Tolstoy</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics -->
+    <section>
+      <div class="eyebrow">By the numbers</div>
+      <div class="metrics">
+        <div class="metric-hero">
+          <div class="stat">90-point jump</div>
+          <div class="support">in Tolstoy's Shopify app ranking after a wave of 5-star reviews tied to better customer support.</div>
+        </div>
+        <div class="metric-side">
+          <div class="metric-card"><div class="v">584</div><div class="l">Tickets handled on their own in March 2023</div></div>
+          <div class="metric-card"><div class="v">6</div><div class="l">Person team, up from one</div></div>
+          <div class="metric-card"><div class="v">⅓ &rarr; lower</div><div class="l">Reopened tickets dropped sharply</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Challenge -->
+    <section>
+      <div class="eyebrow">02 · The challenge</div>
+      <h2 class="section-title">The challenge</h2>
+      <p class="body">When Tolstoy's leadership team first sat down with xFusion co-founder Jim in the summer of 2022, the company was buried. Support volume was rising fast. The one person handling the inbox was leaving, and there was no plan B.</p>
+      <p class="body">The gap was bigger than one role. Tolstoy needed help with email, live chat, onboarding for new brands, customer-facing docs, helpdesk fixes, and client calls. Every piece of that work touched the customer experience. Every piece had been getting half the attention it needed while the team focused on shipping product.</p>
+      <p class="body">The leadership team did not want to start a hiring push, train a new team, and add more management work on top of everything else. They wanted a partner who could take over the whole support function. They wanted that partner to run it the way Tolstoy would run it, without making the founders the back-up reps.</p>
+      <p class="body">The bar was high. Tolstoy's brand is built on real, human connection between brands and shoppers. Whoever handled support had to carry that voice in every reply.</p>
+    </section>
+
+    <!-- Solution -->
+    <section>
+      <div class="eyebrow">03 · The solution</div>
+      <h2 class="section-title">The solution</h2>
+      <p class="body">xFusion started with the most urgent piece. We put a coverage plan in place before the internal team member's last day. From there, the partnership grew fast.</p>
+      <p class="body">The first xFusion agent learned onboarding by walking new brands through the product over video calls. Once the rhythm settled in, xFusion rebuilt the helpdesk under the day-to-day work. Saved replies. Cleaner workflows. Internal docs for the team. Help articles for customers. None of that was in place in any organized form before the partnership started.</p>
+      <p class="body">As Tolstoy landed bigger clients, xFusion built a second-level team called "Solutions Engineers." This group handled the harder tickets: escalations, bug triage, tough troubleshooting, and custom-code requests from larger clients. They also followed up on new client activations to make sure every tag, escalation, and request matched the client's setup. The xFusion Solutions Engineer lead worked directly with Tolstoy's Head of Growth to keep the activations process running smoothly.</p>
+      <p class="body">The setup Tolstoy and xFusion landed on was simple. One team. One group covering front-line support, harder tickets, onboarding, docs, and reports. All managed by xFusion through a dedicated account manager. All in Tolstoy's voice.</p>
+    </section>
+
+    <!-- Results -->
+    <section>
+      <div class="eyebrow">04 · The results</div>
+      <h2 class="section-title">The results</h2>
+      <p class="body">The partnership started on August 18, 2022. Within the first few months, the xFusion team and Dov had a working KPI plan in place. Weekly reports were running. The help article library was getting built from scratch. Customers noticed.</p>
+      <p class="body">The clearest signal came from the Shopify app store. As support got better, Tolstoy started getting 5-star reviews that praised the support, and the app's ranking jumped 90 points. For a video commerce platform fighting for visibility on Shopify, that kind of jump changes how many new brands find and trust the product.</p>
+      <p class="body">The numbers under the hood got better too. Before xFusion, about one in three tickets had to be reopened, the usual sign that the first reply did not solve the problem. After xFusion stabilized the workflow and the team got comfortable with the product, that reopen rate dropped sharply. In a single month, March 2023, the xFusion team handled 584 tickets on their own. No founder approvals. No escalations to internal Tolstoy staff. Just a trained team running the function.</p>
+      <p class="body">The business impact added up. Tolstoy's leadership stopped thinking about support as a problem to solve. The development team got back the time they had been spending on customer issues. The leadership team got room to focus on the next phase of growth. The customer experience kept getting stronger as the xFusion team added better docs, faster routing, and a tighter match with Tolstoy's voice.</p>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-wrap">
+      <h3>Curious what this looks like for your team?</h3>
+      <p>Tell us about your support setup. We'll show you the shape of the team we'd build.</p>
+      <a class="cta-btn" href="https://savvycal.com/xfusion/lets-chat" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+    </div>
+
+    <div class="embed-foot">
+      Read the full case study at <a href="https://xfusion.io/case-studies/tolstoy/" target="_blank" rel="noopener noreferrer">xfusion.io/case-studies/tolstoy</a>
+    </div>
+
+  </main>
+</body>
+</html>

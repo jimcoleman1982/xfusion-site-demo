@@ -45,6 +45,16 @@
     X-Frame-Options = "ALLOWALL"
     Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com; frame-src 'self' https://www.googletagmanager.com; frame-ancestors *"
 
+# Stripped-down case study embeds (no nav/footer/sticky-CTA chrome).
+# Same tight CSP as /faq-embed/* — these pages are minimal static HTML,
+# no React/Babel CDN, no trackers other than GTM. Designed specifically
+# for iframing inside deal-room templates (Aligned and similar).
+[[headers]]
+  for = "/case-studies-embed/*"
+  [headers.values]
+    X-Frame-Options = "ALLOWALL"
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com; frame-src 'self' https://www.googletagmanager.com; frame-ancestors *"
+
 [[headers]]
   for = "/case-studies/*"
   [headers.values]
