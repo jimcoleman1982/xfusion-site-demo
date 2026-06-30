@@ -45,7 +45,7 @@ function Leadership() {
     },
     {
       name: 'Velvie Coleman',
-      role: 'Advisor',
+      role: 'CEO',
       imageSrc: '../images/velvie-coleman.jpg',
       sillySrc: '../images/silly/velvie-coleman-silly.png',
     },
