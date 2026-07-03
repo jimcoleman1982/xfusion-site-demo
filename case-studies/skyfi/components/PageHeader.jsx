@@ -3,7 +3,7 @@ function PageHeader({
   title = 'SkyFi',
   subhead,
   portraitName = 'Claire Fundingsland',
-  portraitSrc = '../../images/claire-fundingsland-skyfi.png',
+  portraitSrc = '../../images/claire-fundingsland-skyfi.webp',
   portraitLabel = 'CLAIRE FUNDINGSLAND',
 }) {
   return (

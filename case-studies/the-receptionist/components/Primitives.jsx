@@ -107,7 +107,7 @@ function Button({ children, variant = 'primary', size = 'md', onClick, style = {
 }
 
 // PhotoFrame — renders real <img> when src is provided, otherwise placeholder
-function PhotoFrame({ name = 'Tom Foster', role, tone = 'forest', ratio = '4/5', label = 'Photo placeholder', src = '../../images/tom-foster-thereceptionist.png', alt }) {
+function PhotoFrame({ name = 'Tom Foster', role, tone = 'forest', ratio = '4/5', label = 'Photo placeholder', src = '../../images/tom-foster-thereceptionist.webp', alt }) {
   const [errored, setErrored] = useState(false);
 
   if (src && !errored) {

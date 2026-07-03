@@ -2,7 +2,7 @@
 // Photo placeholder for Toby Marsden — flat warm portrait swatch.
 // Used in hero (medium portrait) and lead testimonial (square/circle).
 // =====================================================================
-function TobyPortrait({ size = 'medium', shape = 'rect', src = '../../images/toby-marsden-ordered-magic.png' }) {
+function TobyPortrait({ size = 'medium', shape = 'rect', src = '../../images/toby-marsden-ordered-magic.webp' }) {
   const dims = {
     small:  { w: 96,  fontInitials: 36, fontName: 13 },
     medium: { w: 240, fontInitials: 88, fontName: 16 },
@@ -597,7 +597,7 @@ function CTASection() {
             <Button variant="primary" size="lg" style={{
               fontSize: 17,
               padding: '18px 28px',
-            }} href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call
+            }} href="/book/">Book a Discovery Call
             </Button>
             <p style={{
               fontFamily: "'IBM Plex Sans', sans-serif",

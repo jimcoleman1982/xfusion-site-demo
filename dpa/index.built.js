@@ -1,0 +1,865 @@
+(function () {
+  var orig = window.ReactDOM;
+  window.ReactDOM = Object.assign({}, orig, {
+    createRoot: function (container) {
+      return {
+        render: function (element) {
+          if (container && container.firstElementChild) {
+            orig.hydrateRoot(container, element);
+          } else {
+            orig.createRoot(container).render(element);
+          }
+        },
+        unmount: function () {},
+      };
+    },
+  });
+})();
+// --- (inline)
+const {
+  useState,
+  useEffect
+} = React;
+function Container({
+  children,
+  narrow = false,
+  style = {}
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: narrow ? 760 : 1200,
+      margin: '0 auto',
+      padding: '0 24px',
+      ...style
+    }
+  }, children);
+}
+function Section({
+  children,
+  bg = 'paper',
+  padding = 'lg',
+  id,
+  style = {}
+}) {
+  const bgs = {
+    paper: '#F7F2EB',
+    'paper-2': '#EFE8DD',
+    butter: '#F8EBC9',
+    'butter-strong': '#F0D9A8',
+    forest: '#2C4A3E'
+  };
+  const pads = {
+    sm: '56px 0',
+    md: '80px 0',
+    lg: '112px 0'
+  };
+  return /*#__PURE__*/React.createElement("section", {
+    id: id,
+    style: {
+      background: bgs[bg],
+      padding: pads[padding],
+      ...style
+    }
+  }, children);
+}
+function Eyebrow({
+  children,
+  color = '#6B5F56'
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 12,
+      fontWeight: 600,
+      textTransform: 'uppercase',
+      letterSpacing: '0.14em',
+      color,
+      marginBottom: 18
+    }
+  }, children);
+}
+function Button({
+  children,
+  variant = 'primary',
+  size = 'md',
+  href,
+  style = {},
+  target,
+  rel
+}) {
+  const [hover, setHover] = useState(false);
+  const [pressed, setPressed] = useState(false);
+  const sizes = {
+    sm: {
+      padding: '8px 14px',
+      fontSize: 13
+    },
+    md: {
+      padding: '12px 22px',
+      fontSize: 15
+    },
+    lg: {
+      padding: '16px 28px',
+      fontSize: 16
+    }
+  };
+  let bg, color, border;
+  if (variant === 'primary') {
+    bg = pressed ? '#863818' : hover ? '#A0451F' : '#B8512C';
+    color = '#F7F2EB';
+    border = '1px solid transparent';
+  } else {
+    bg = hover ? '#EFE8DD' : 'transparent';
+    color = '#1F1A17';
+    border = '1px solid #B7A993';
+  }
+  const Tag = href ? 'a' : 'button';
+  const isExternal = href && /^https?:\/\//.test(href);
+  const computedTarget = target || (isExternal ? '_blank' : undefined);
+  const computedRel = rel || (isExternal ? 'noopener noreferrer' : undefined);
+  const linkAttrs = href ? {
+    href,
+    target: computedTarget,
+    rel: computedRel
+  } : {};
+  return /*#__PURE__*/React.createElement(Tag, {
+    ...linkAttrs,
+    onMouseEnter: () => setHover(true),
+    onMouseLeave: () => {
+      setHover(false);
+      setPressed(false);
+    },
+    onMouseDown: () => setPressed(true),
+    onMouseUp: () => setPressed(false),
+    style: {
+      background: bg,
+      color,
+      border,
+      borderRadius: 8,
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontWeight: 500,
+      cursor: 'pointer',
+      lineHeight: 1.1,
+      textDecoration: 'none',
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 8,
+      transition: 'all 160ms cubic-bezier(0.4,0,0.6,1)',
+      whiteSpace: 'nowrap',
+      ...sizes[size],
+      ...style
+    }
+  }, children);
+}
+const Icons = {
+  menu: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M3 12h18"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3 6h18"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3 18h18"
+  })),
+  x: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M18 6L6 18"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M6 6l12 12"
+  })),
+  linkedin: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
+  }), /*#__PURE__*/React.createElement("rect", {
+    x: "2",
+    y: "9",
+    width: "4",
+    height: "12"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "4",
+    cy: "4",
+    r: "2"
+  })),
+  twitter: /*#__PURE__*/React.createElement("path", {
+    d: "M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2-3 0-6-2.5-6-5.5 1 .5 2 .5 3 0-3-1-5-4-5-7 1 .5 2 1 3 1-3-2-3-7 0-9 4 5 10 7.5 16 7-.7-3 1.2-6 4-6 1.5 0 3 .8 4 2 1-.2 2-.5 3-1z"
+  }),
+  instagram: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("rect", {
+    x: "2",
+    y: "2",
+    width: "20",
+    height: "20",
+    rx: "5"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "12",
+    r: "4"
+  })),
+  facebook: /*#__PURE__*/React.createElement("path", {
+    d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+  }),
+  youtube: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M22.5 6.5a2.8 2.8 0 0 0-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.5a2.8 2.8 0 0 0-2 2C1 8.3 1 12 1 12s0 3.7.5 5.5a2.8 2.8 0 0 0 2 2C5.3 20 12 20 12 20s6.7 0 8.5-.5a2.8 2.8 0 0 0 2-2c.5-1.8.5-5.5.5-5.5s0-3.7-.5-5.5z"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M10 15l5-3-5-3z",
+    fill: "currentColor"
+  }))
+};
+function Icon({
+  name,
+  size = 20
+}) {
+  return /*#__PURE__*/React.createElement("svg", {
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.6",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    style: {
+      flexShrink: 0,
+      display: 'inline-block'
+    }
+  }, Icons[name]);
+}
+function Nav({
+  current
+}) {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  const linkStyle = active => ({
+    color: active ? '#B8512C' : '#1F1A17',
+    textDecoration: 'none',
+    fontFamily: "'IBM Plex Sans', sans-serif",
+    fontWeight: active ? 500 : 400,
+    fontSize: 14,
+    whiteSpace: 'nowrap'
+  });
+  const links = [{
+    label: 'Home',
+    href: '../',
+    key: 'home'
+  }, {
+    label: 'About',
+    href: '../about/',
+    key: 'about'
+  }, {
+    label: 'Case studies',
+    href: '../case-studies/',
+    key: 'case-studies'
+  }, {
+    label: 'Careers',
+    href: '../careers/',
+    key: 'careers'
+  }, {
+    label: 'Blog',
+    href: 'https://blog.xfusion.io',
+    key: 'blog'
+  }];
+  return /*#__PURE__*/React.createElement("nav", {
+    style: {
+      position: 'sticky',
+      top: 0,
+      zIndex: 50,
+      background: scrolled ? 'rgba(247, 242, 235, 0.88)' : 'transparent',
+      backdropFilter: scrolled ? 'blur(12px)' : 'none',
+      WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
+      borderBottom: scrolled ? '1px solid #D9CFBF' : '1px solid transparent',
+      transition: 'all 240ms cubic-bezier(0.4,0,0.6,1)'
+    }
+  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 72,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 32
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "../",
+    style: {
+      display: 'flex',
+      alignItems: 'baseline',
+      textDecoration: 'none'
+    },
+    "aria-label": "xFusion home"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "../assets/xfusion-logo.png",
+    alt: "xFusion",
+    style: {
+      height: 36,
+      width: "auto",
+      display: "block"
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "nav-links",
+    style: {
+      display: 'flex',
+      gap: 28,
+      marginLeft: 24
+    }
+  }, links.map(l => /*#__PURE__*/React.createElement("a", {
+    key: l.key,
+    href: l.href,
+    style: linkStyle(current === l.key)
+  }, l.label))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginLeft: 'auto',
+      display: 'flex',
+      gap: 12,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    size: "sm",
+    href: "/book/"
+  }, "Book a Discovery Call"), /*#__PURE__*/React.createElement("button", {
+    className: "nav-mobile-toggle",
+    onClick: () => setOpen(!open),
+    style: {
+      display: 'none',
+      background: 'transparent',
+      border: '1px solid #B7A993',
+      borderRadius: 8,
+      padding: 8,
+      cursor: 'pointer',
+      color: '#1F1A17'
+    },
+    "aria-label": "Toggle menu"
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: open ? 'x' : 'menu',
+    size: 20
+  })))), open && /*#__PURE__*/React.createElement("div", {
+    className: "nav-mobile-menu",
+    style: {
+      display: 'none',
+      flexDirection: 'column',
+      gap: 16,
+      padding: '8px 0 24px',
+      borderTop: '1px solid #D9CFBF'
+    }
+  }, links.map(l => /*#__PURE__*/React.createElement("a", {
+    key: l.key,
+    href: l.href,
+    style: linkStyle(current === l.key),
+    onClick: () => setOpen(false)
+  }, l.label)))), /*#__PURE__*/React.createElement("style", null, `@media (max-width: 800px) { .nav-links { display: none !important; } .nav-mobile-toggle { display: inline-flex !important; } .nav-mobile-menu { display: flex !important; } }`));
+}
+function Footer() {
+  const cols = [{
+    title: 'Product',
+    links: [['Pricing', '../#pricing'], ['Case studies', '../case-studies/']]
+  }, {
+    title: 'Company',
+    links: [['About', '../about/'], ['Careers', '../careers/'], ['Contact', '../contact/']]
+  }, {
+    title: 'Resources',
+    links: [['FAQ', '../#faq'], ['Blog', '../blog/']]
+  }, {
+    title: 'Legal',
+    links: [['Privacy', '../privacy/'], ['DPA', '../dpa/'], ['Security', '../security/']]
+  }];
+  const FOREST = '#2C4A3E';
+  const PAPER = '#F7F2EB';
+  const BUTTER = '#F0D9A8';
+  const DIVIDER = 'rgba(247, 242, 235, 0.14)';
+  const MUTED = 'rgba(247, 242, 235, 0.65)';
+  return /*#__PURE__*/React.createElement("footer", {
+    style: {
+      background: FOREST,
+      color: PAPER
+    }
+  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+    className: "footer-top",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1.4fr 1fr',
+      gap: 32,
+      alignItems: 'center',
+      paddingTop: 64,
+      paddingBottom: 40,
+      borderBottom: `1px solid ${DIVIDER}`
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
+    href: "../",
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 10,
+      marginBottom: 14,
+      textDecoration: 'none'
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "../assets/xfusion-logo-on-dark.png",
+    alt: "xFusion",
+    style: {
+      height: 36,
+      width: "auto",
+      display: "block"
+    }
+  })), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 18,
+      lineHeight: 1.5,
+      color: BUTTER,
+      margin: 0,
+      maxWidth: 480,
+      fontStyle: 'italic',
+      fontWeight: 400
+    }
+  }, "Senior, AI-trained customer support agents for small businesses. Since 2020."))), /*#__PURE__*/React.createElement("div", {
+    className: "footer-grid",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4, 1fr)',
+      gap: 40,
+      paddingTop: 48,
+      paddingBottom: 40
+    }
+  }, cols.map(col => /*#__PURE__*/React.createElement("div", {
+    key: col.title
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 11,
+      fontWeight: 500,
+      textTransform: 'uppercase',
+      letterSpacing: '0.14em',
+      color: MUTED,
+      marginBottom: 18
+    }
+  }, col.title), /*#__PURE__*/React.createElement("ul", {
+    style: {
+      listStyle: 'none',
+      margin: 0,
+      padding: 0,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 10
+    }
+  }, col.links.map(([label, href]) => /*#__PURE__*/React.createElement("li", {
+    key: label
+  }, /*#__PURE__*/React.createElement("a", {
+    href: href,
+    className: "footer-link",
+    style: {
+      color: PAPER,
+      textDecoration: 'none',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 15,
+      lineHeight: 1.4
+    }
+  }, label))))))), /*#__PURE__*/React.createElement("div", {
+    className: "footer-legal",
+    style: {
+      paddingTop: 24,
+      paddingBottom: 32,
+      borderTop: `1px solid ${DIVIDER}`,
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13,
+      color: MUTED,
+      flexWrap: 'wrap',
+      gap: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", null, "© 2026 xFusion. All rights reserved."), /*#__PURE__*/React.createElement("div", null, "Made with care across the Philippines, Kenya, and the United States."))), /*#__PURE__*/React.createElement("style", null, `
+            .footer-link:hover { color: ${BUTTER}; }
+            @media (max-width: 900px) {
+              .footer-top { grid-template-columns: 1fr !important; gap: 20px !important; }
+              .footer-cta { justify-content: flex-start !important; }
+              .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+              .footer-legal { flex-direction: column; align-items: flex-start !important; }
+            }
+            @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr !important; gap: 28px !important; } }
+          `));
+}
+function App() {
+  return /*#__PURE__*/React.createElement("div", {
+    "data-screen-label": "DPA"
+  }, /*#__PURE__*/React.createElement(Nav, {
+    current: "dpa"
+  }), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(Section, {
+    bg: "paper",
+    padding: "lg",
+    style: {
+      paddingTop: 96,
+      paddingBottom: 96
+    }
+  }, /*#__PURE__*/React.createElement(Container, {
+    narrow: true
+  }, /*#__PURE__*/React.createElement(Eyebrow, null, "Legal"), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(40px, 5.6vw, 76px)',
+      fontWeight: 400,
+      lineHeight: 1.05,
+      letterSpacing: '-0.025em',
+      margin: '0 0 28px',
+      color: '#1F1A17',
+      textWrap: 'balance'
+    }
+  }, "Data processing addendum."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 12,
+      textTransform: 'uppercase',
+      letterSpacing: '0.14em',
+      color: '#6B5F56',
+      marginBottom: 40
+    }
+  }, "Last updated: April 29, 2026"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 17,
+      lineHeight: 1.7,
+      color: '#3A322D'
+    }
+  }, /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 24px'
+    }
+  }, "This Data Processing Addendum (\"DPA\") forms part of the agreement between xFusion, Inc. (\"xFusion,\" \"we,\" \"us\") and the client (\"Client,\" \"you\") for the customer support services described in the Master Services Agreement or applicable order form (together, the \"Agreement\"). It governs the processing of Personal Data by xFusion on behalf of Client. If there is a conflict between this DPA and the Agreement, this DPA controls for matters relating to data protection."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 24px'
+    }
+  }, "A countersigned copy is available on request. Email ", /*#__PURE__*/React.createElement("a", {
+    href: "mailto:security@xfusion.io",
+    style: {
+      color: '#B8512C'
+    }
+  }, "security@xfusion.io"), " to start that process."), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 28,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#1F1A17',
+      margin: '40px 0 16px'
+    }
+  }, "1. Definitions"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "\"Applicable Data Protection Laws\" means all laws and regulations applicable to the processing of Personal Data under the Agreement, including the EU General Data Protection Regulation (GDPR), the UK GDPR, the California Consumer Privacy Act / California Privacy Rights Act (CCPA / CPRA), and any other privacy or data protection laws that apply to the parties."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "\"Controller,\" \"Processor,\" \"Data Subject,\" \"Personal Data,\" \"Processing,\" and \"Sub-processor\" have the meanings given to them in Applicable Data Protection Laws."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "\"Client Personal Data\" means Personal Data that xFusion processes on behalf of Client under the Agreement. This typically includes information about Client's end customers (names, email addresses, account identifiers, conversation history) and Client's internal team members (where xFusion is given access to internal tools)."), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 28,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#1F1A17',
+      margin: '40px 0 16px'
+    }
+  }, "2. Roles of the parties"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "For Client Personal Data, Client is the Controller and xFusion is the Processor. xFusion processes Client Personal Data only on documented instructions from Client, including instructions given through Client's chosen tools and configurations (helpdesk, CRM, payment system, etc.) and through written communications with xFusion's account management team."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "For information that xFusion collects directly (e.g., billing contacts, candidate information in our recruiting funnel), xFusion acts as a Controller and the terms of our ", /*#__PURE__*/React.createElement("a", {
+    href: "../privacy/",
+    style: {
+      color: '#B8512C'
+    }
+  }, "Privacy Policy"), " apply."), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 28,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#1F1A17',
+      margin: '40px 0 16px'
+    }
+  }, "3. Subject matter, duration, and purpose"), /*#__PURE__*/React.createElement("ul", {
+    style: {
+      margin: '0 0 16px',
+      paddingLeft: 22
+    }
+  }, /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, /*#__PURE__*/React.createElement("strong", null, "Subject matter:"), " The provision of managed customer support services as described in the Agreement."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, /*#__PURE__*/React.createElement("strong", null, "Duration:"), " The term of the Agreement, plus a reasonable period for return or deletion of data thereafter."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, /*#__PURE__*/React.createElement("strong", null, "Purpose:"), " To respond to and resolve customer support inquiries on behalf of Client; to administer the placement, training, payroll, and management of placed team members; to report on KPIs and quality."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, /*#__PURE__*/React.createElement("strong", null, "Categories of Data Subjects:"), " Client's end customers, Client's prospective customers who reach out for support, Client's internal team members who interact with placed agents."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, /*#__PURE__*/React.createElement("strong", null, "Categories of Personal Data:"), " Contact details, account identifiers, support conversation content, transactional information necessary to resolve a ticket, and other data Client chooses to make available through its tools.")), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 28,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#1F1A17',
+      margin: '40px 0 16px'
+    }
+  }, "4. xFusion's obligations"), /*#__PURE__*/React.createElement("ul", {
+    style: {
+      margin: '0 0 16px',
+      paddingLeft: 22
+    }
+  }, /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Process Client Personal Data only on documented instructions from Client."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Ensure that personnel authorized to process Client Personal Data are bound by appropriate confidentiality obligations."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Implement and maintain appropriate technical and organizational measures to protect Client Personal Data, as described in Section 7."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Assist Client, taking into account the nature of processing, in responding to Data Subject requests and meeting Client's obligations under Applicable Data Protection Laws."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Notify Client without undue delay after becoming aware of a Personal Data Breach affecting Client Personal Data."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "At Client's choice, return or delete Client Personal Data at the end of the Agreement, except where retention is required by law."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Make available to Client information necessary to demonstrate compliance with this DPA and reasonably support audits as described in Section 9.")), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 28,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#1F1A17',
+      margin: '40px 0 16px'
+    }
+  }, "5. Client's obligations"), /*#__PURE__*/React.createElement("ul", {
+    style: {
+      margin: '0 0 16px',
+      paddingLeft: 22
+    }
+  }, /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Ensure that Client has all rights, consents, and lawful bases necessary for xFusion to process Client Personal Data as instructed."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Configure Client's tools and access controls to limit xFusion's access to what is needed to perform the services."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Provide instructions in writing or through configuration of Client's tools, and update them as needed.")), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 28,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#1F1A17',
+      margin: '40px 0 16px'
+    }
+  }, "6. Sub-processors"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "Client authorizes xFusion to engage Sub-processors to perform parts of the services. xFusion enters into written agreements with Sub-processors that impose data protection obligations no less protective than those in this DPA, and remains liable for the acts and omissions of its Sub-processors."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "Current categories of Sub-processors include: cloud hosting and infrastructure providers, communication and collaboration tools, payroll and contractor payment platforms, helpdesk and CRM platforms (where xFusion provides them rather than the Client), background check providers, and analytics and observability tools."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "A current list of named Sub-processors is available on request. xFusion will give Client reasonable advance notice of any addition or replacement of a Sub-processor and provide a mechanism to object on reasonable data protection grounds."), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 28,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#1F1A17',
+      margin: '40px 0 16px'
+    }
+  }, "7. Security measures"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "xFusion maintains a written information security program with administrative, technical, and physical safeguards designed to protect Client Personal Data, including:"), /*#__PURE__*/React.createElement("ul", {
+    style: {
+      margin: '0 0 16px',
+      paddingLeft: 22
+    }
+  }, /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Role-based access controls and the principle of least privilege."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Multi-factor authentication for systems that hold Client Personal Data."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Encryption in transit (TLS) and at rest where supported by the underlying systems."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Background checks, confidentiality agreements, and security training for personnel."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Endpoint security, vulnerability management, and patching for company-managed devices."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Incident response procedures, including breach notification and post-incident review."), /*#__PURE__*/React.createElement("li", {
+    style: {
+      marginBottom: 8
+    }
+  }, "Periodic review of access, vendor controls, and policy effectiveness.")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "Additional details are described on our ", /*#__PURE__*/React.createElement("a", {
+    href: "../security/",
+    style: {
+      color: '#B8512C'
+    }
+  }, "Security page"), "."), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 28,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#1F1A17',
+      margin: '40px 0 16px'
+    }
+  }, "8. International transfers"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "xFusion operates across the United States, the Philippines, and Kenya, and uses Sub-processors that may process Client Personal Data outside the country of origin. Where transfers are subject to GDPR or UK GDPR, xFusion relies on appropriate transfer mechanisms, including the European Commission's Standard Contractual Clauses (and the UK International Data Transfer Addendum where applicable), or other valid mechanisms recognized under Applicable Data Protection Laws."), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 28,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#1F1A17',
+      margin: '40px 0 16px'
+    }
+  }, "9. Audits"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "On reasonable written request and no more than once per twelve-month period (unless required by a regulator or following a Personal Data Breach), xFusion will provide Client with information reasonably necessary to demonstrate compliance with this DPA. Audits will be scheduled to minimize disruption, conducted under reasonable confidentiality obligations, and at Client's expense."), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 28,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#1F1A17',
+      margin: '40px 0 16px'
+    }
+  }, "10. Personal Data Breach notification"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "xFusion will notify Client without undue delay after becoming aware of a Personal Data Breach affecting Client Personal Data. The notification will describe, to the extent then known, the nature of the breach, the categories and approximate number of Data Subjects and records affected, the likely consequences, and the measures taken or proposed to address it."), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 28,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#1F1A17',
+      margin: '40px 0 16px'
+    }
+  }, "11. Return or deletion of Client Personal Data"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "On termination of the Agreement, at Client's choice, xFusion will return or delete all Client Personal Data in its possession or control, except to the extent that retention is required by law. Where Client Personal Data lives in Client-controlled tools, return is automatic since the data remains with Client."), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 28,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#1F1A17',
+      margin: '40px 0 16px'
+    }
+  }, "12. Liability"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "Each party's liability under this DPA is subject to the limitations of liability set out in the Agreement."), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 28,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#1F1A17',
+      margin: '40px 0 16px'
+    }
+  }, "13. Changes to this DPA"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 16px'
+    }
+  }, "xFusion may update this DPA from time to time to reflect changes in Applicable Data Protection Laws, our services, or our Sub-processor list. Material changes will be communicated to Client with reasonable advance notice."), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 28,
+      fontWeight: 600,
+      lineHeight: 1.2,
+      color: '#1F1A17',
+      margin: '40px 0 16px'
+    }
+  }, "14. Contact"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: '#EFE8DD',
+      border: '1px solid #D9CFBF',
+      borderRadius: 12,
+      padding: 24,
+      marginTop: 8
+    }
+  }, /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '0 0 8px'
+    }
+  }, /*#__PURE__*/React.createElement("strong", null, "xFusion, Inc.")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: 0
+    }
+  }, "Data protection contact: ", /*#__PURE__*/React.createElement("a", {
+    href: "mailto:security@xfusion.io",
+    style: {
+      color: '#B8512C'
+    }
+  }, "security@xfusion.io"))))))), /*#__PURE__*/React.createElement(Footer, null));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(App, null));

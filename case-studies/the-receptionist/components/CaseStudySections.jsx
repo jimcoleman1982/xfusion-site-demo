@@ -84,7 +84,7 @@ function PageHeader() {
             role="Director of Sales, TheReceptionist"
             tone="forest"
             ratio="4/5"
-            label="images/tom-foster-thereceptionist.png"
+            label="images/tom-foster-thereceptionist.webp"
           />
           <div style={{
             fontFamily: "'JetBrains Mono', monospace",
@@ -257,7 +257,7 @@ function TestimonialFeature() {
               role="Director of Sales, TheReceptionist"
               tone="forest"
               ratio="4/5"
-              label="images/tom-foster-thereceptionist.png"
+              label="images/tom-foster-thereceptionist.webp"
             />
           </div>
 

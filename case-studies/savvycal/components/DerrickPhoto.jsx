@@ -1,7 +1,7 @@
 // Derrick Reimer photo placeholder.
 // Treatment: warm-toned flat swatch with name + label, 12px radius, no shadow.
-// Ready to swap with /images/derrick-reimer-savvycal.png when photography ships.
-function DerrickPhoto({ size = 'medium', circle = false, style = {}, src = '../../images/derrick-reimer-savvycal.png' }) {
+// Ready to swap with /images/derrick-reimer-savvycal.webp when photography ships.
+function DerrickPhoto({ size = 'medium', circle = false, style = {}, src = '../../images/derrick-reimer-savvycal.webp' }) {
   const sizes = {
     small:  { width: 88,  height: 88,  ratio: '1/1',  initialsSize: 36, nameSize: 0,  showLabel: false },
     medium: { width: 280, height: 360, ratio: '4/5',  initialsSize: 140, nameSize: 18, showLabel: true },
@@ -87,7 +87,7 @@ function DerrickPhoto({ size = 'medium', circle = false, style = {}, src = '../.
             fontSize: 12, opacity: 0.75, marginTop: 2,
             fontFamily: "'IBM Plex Sans', sans-serif",
           }}>
-            images/derrick-reimer-savvycal.png
+            images/derrick-reimer-savvycal.webp
           </div>
         </div>
       )}

@@ -1,11 +1,53 @@
 // Section 1: Hero
+// Stage 1 of the booking funnel: email capture → qualification modal (LeadModal)
+// → /book. A "book a call directly" escape hatch skips straight to /book.
 function Hero() {
   const [flipped, setFlipped] = React.useState(false);
+  // The hover/tap "silly" variant is off the critical path: load it only
+  // after the page has finished loading so it never competes with the LCP.
+  const [sillySrc, setSillySrc] = React.useState(null);
+  React.useEffect(() => {
+    const load = () => setSillySrc('images/silly/xfusion-team-montage-silly.webp');
+    if (document.readyState === 'complete') { load(); return; }
+    window.addEventListener('load', load, { once: true });
+    return () => window.removeEventListener('load', load);
+  }, []);
+  const [email, setEmail] = React.useState('');
+  const [emailError, setEmailError] = React.useState('');
+  const [modalOpen, setModalOpen] = React.useState(false);
+  const capturedRef = React.useRef(false);
   const handleToggle = () => setFlipped(f => !f);
   const handleKey = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       handleToggle();
+    }
+  };
+
+  const handleEmailSubmit = (e) => {
+    e.preventDefault();
+    const value = email.trim();
+    // Strict enough to reject "xyz @ abc . com": no spaces anywhere,
+    // one @, and a dot-separated TLD of 2+ letters.
+    const valid = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(value);
+    if (!valid) {
+      setEmailError('Please enter a valid work email, like you@company.com.');
+      return;
+    }
+    setEmailError('');
+    const normalized = value.toLowerCase();
+    if (window.xfAttribution) {
+      window.xfAttribution.hashEmail(normalized).then((hash) => {
+        window.xfAttribution.saveLead({ email: normalized, email_hash: hash || '' });
+        if (!capturedRef.current) {
+          capturedRef.current = true;
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'email_capture', email_hash: hash || undefined });
+        }
+        setModalOpen(true);
+      });
+    } else {
+      setModalOpen(true);
     }
   };
   return (
@@ -42,12 +84,41 @@ function Hero() {
             }}>
               We find, train, and place senior support agents inside your business. They use AI to handle the work of several junior reps. We take care of the rest: recruiting, payroll, culture, and performance. So you don't have to.
             </p>
-            <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-              <Button variant="primary" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>
-            </div>
+            <form onSubmit={handleEmailSubmit} noValidate className="hero-capture"
+              style={{ display: 'flex', gap: 12, alignItems: 'stretch', flexWrap: 'wrap', maxWidth: 520 }}>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@company.com"
+                aria-label="Work email"
+                autoComplete="email"
+                style={{
+                  flex: '1 1 240px',
+                  boxSizing: 'border-box',
+                  padding: '14px 18px',
+                  fontFamily: "'IBM Plex Sans', sans-serif",
+                  fontSize: 16,
+                  color: '#1F1A17',
+                  background: '#FFFFFF',
+                  border: emailError ? '1px solid #A8341E' : '1px solid #B7A993',
+                  borderRadius: 8,
+                  outline: 'none',
+                }}
+              />
+              <Button variant="primary" size="lg" as="button">Get started</Button>
+            </form>
+            {emailError ? (
+              <div role="alert" style={{
+                fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13,
+                color: '#A8341E', marginTop: 10,
+              }}>{emailError}</div>
+            ) : null}
             <CTAMicrocopy>
-              30 minutes. No pitch deck. We just figure out if we're a good fit for your team.
+              30 minutes. No pitch deck. We just figure out if we're a good fit for your team.{' '}
+              <a href="/book/" style={{ color: '#B8512C', fontWeight: 500 }}>Or book a call directly →</a>
             </CTAMicrocopy>
+            <LeadModal open={modalOpen} email={(window.xfAttribution ? window.xfAttribution.getLead().email : '') || email.trim().toLowerCase()} onClose={() => setModalOpen(false)} />
           </div>
           <div style={{ position: 'relative' }}>
             <div
@@ -59,17 +130,26 @@ function Hero() {
               onClick={handleToggle}
               onKeyDown={handleKey}
             >
-              <img
-                src="images/xfusion-team-montage.png"
-                alt="xFusion team across the Philippines and Kenya"
-                className="hero-photo-default"
-              />
-              <img
-                src="images/silly/xfusion-team-montage-silly.png"
-                alt=""
-                className="hero-photo-silly"
-                aria-hidden="true"
-              />
+              <picture>
+                <source type="image/webp" srcSet="images/xfusion-team-montage.webp" />
+                <img
+                  src="images/xfusion-team-montage.jpg"
+                  alt="xFusion team across the Philippines and Kenya"
+                  width="1144"
+                  height="1144"
+                  className="hero-photo-default"
+                />
+              </picture>
+              {sillySrc ? (
+                <img
+                  src={sillySrc}
+                  alt=""
+                  width="1144"
+                  height="1144"
+                  className="hero-photo-silly"
+                  aria-hidden="true"
+                />
+              ) : null}
             </div>
             <div style={{
               position: 'absolute',
@@ -122,24 +202,27 @@ function Hero() {
           }}>
             Trusted by support-driven teams at
           </div>
-          <div className="logo-bar" style={{
-            display: 'flex',
-            flexWrap: 'nowrap',
-            gap: '16px 22px',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-            {['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy', 'CrowdCow', 'Arbio', 'NextMune'].map((name) => (
-              <span key={name} style={{
-                fontFamily: "'Source Serif 4', serif",
-                fontSize: 18,
-                fontWeight: 500,
-                letterSpacing: '-0.01em',
-                color: '#3A322D',
-                opacity: 0.7,
-                whiteSpace: 'nowrap',
-              }}>{name}</span>
-            ))}
+          <div className="logo-marquee" aria-label="Client names">
+            <div className="logo-marquee-track">
+              {[0, 1].map((copy) => (
+                <div className="logo-marquee-group" key={copy} aria-hidden={copy === 1}>
+                  {['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi',
+                    'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aheadworks', 'Joli Apps',
+                    'Sign In Solutions', 'Kioskbuddy', 'Common Services', 'Finger Ink',
+                    'Lovely Apps', 'Aligned', 'Autism Products'].map((name) => (
+                    <span key={name} style={{
+                      fontFamily: "'Source Serif 4', serif",
+                      fontSize: 26,
+                      fontWeight: 500,
+                      letterSpacing: '-0.01em',
+                      color: '#3A322D',
+                      opacity: 0.7,
+                      whiteSpace: 'nowrap',
+                    }}>{name}</span>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Container>
@@ -148,7 +231,36 @@ function Hero() {
         @media (max-width: 900px) {
           .hero-grid { grid-template-columns: 1fr !important; gap: 56px !important; }
           .hero-stat { left: 0 !important; bottom: -20px !important; }
-          .logo-bar { flex-wrap: wrap !important; gap: 14px 24px !important; }
+        }
+
+        /* Trust bar marquee: two identical groups slide left; when the first
+           has fully passed, the loop restarts invisibly. Edges fade out. */
+        .logo-marquee {
+          overflow: hidden;
+          -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+          mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+        }
+        .logo-marquee-track {
+          display: flex;
+          width: max-content;
+          animation: logo-marquee-scroll 64s linear infinite;
+        }
+        .logo-marquee:hover .logo-marquee-track { animation-play-state: paused; }
+        .logo-marquee-group {
+          display: flex;
+          align-items: center;
+          gap: 56px;
+          padding-right: 56px;
+        }
+        @keyframes logo-marquee-scroll {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-50%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .logo-marquee-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }
+          .logo-marquee-group { flex-wrap: wrap; justify-content: center; gap: 14px 24px; padding-right: 0; }
+          .logo-marquee-group[aria-hidden="true"] { display: none; }
+          .logo-marquee { -webkit-mask-image: none; mask-image: none; }
         }
 
         /* Hero hover flip: stack two images, fade between them on hover (desktop)

@@ -131,7 +131,7 @@ function Icon({ name, size = 20, color = 'currentColor', stroke = 1.75, fill = '
 }
 
 // Portrait — renders real <img> when src is provided, otherwise warm placeholder.
-function PortraitPlaceholder({ name = 'Claire Fundingsland', src = '../../images/claire-fundingsland-skyfi.png', label, ratio = '4/5', tone = 'butter', size = 'md', alt }) {
+function PortraitPlaceholder({ name = 'Claire Fundingsland', src = '../../images/claire-fundingsland-skyfi.webp', label, ratio = '4/5', tone = 'butter', size = 'md', alt }) {
   const [errored, setErrored] = useState(false);
 
   if (src && !errored) {

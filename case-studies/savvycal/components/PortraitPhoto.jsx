@@ -1,5 +1,5 @@
 // Photo placeholder for Derrick Reimer.
-// Real path: images/derrick-reimer-savvycal.png. Until provided, this renders
+// Real path: images/derrick-reimer-savvycal.webp. Until provided, this renders
 // a flat warm-toned swatch with subject name, per design system rules.
 function PortraitPhoto({
   name = 'Derrick Reimer',

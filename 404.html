@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page not found | xFusion</title>
   <meta name="description" content="The page you were looking for is not at this URL.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link rel="stylesheet" href="colors_and_type.css">
   <style>
     body { background: #F7F2EB; }
@@ -12,9 +15,9 @@
     a:hover { color: #A0451F; }
     button:focus-visible, a:focus-visible { outline: 2px solid #B8512C; outline-offset: 3px; border-radius: 6px; }
   </style>
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+  <script defer src="./assets/js/react.production.min.js"></script>
+  <script defer src="./assets/js/react-dom.production.min.js"></script>
+  <script src="/assets/consent.js"></script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -29,143 +32,7 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div id="root"></div>
-  <script type="text/babel">
-    const { useState, useEffect } = React;
-
-    function Container({ children, narrow = false, style = {} }) { return <div style={{ maxWidth: narrow ? 760 : 1200, margin: '0 auto', padding: '0 24px', ...style }}>{children}</div>; }
-    function Section({ children, bg = 'paper', padding = 'lg', id, style = {} }) {
-      const bgs = { paper: '#F7F2EB', 'paper-2': '#EFE8DD', butter: '#F8EBC9', 'butter-strong': '#F0D9A8', forest: '#2C4A3E' };
-      const pads = { sm: '56px 0', md: '80px 0', lg: '112px 0' };
-      return <section id={id} style={{ background: bgs[bg], padding: pads[padding], ...style }}>{children}</section>;
-    }
-    function Eyebrow({ children, color = '#6B5F56' }) {
-      return <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.14em', color, marginBottom: 18 }}>{children}</div>;
-    }
-    function Button({ children, variant = 'primary', size = 'md', href, style = {}, target, rel }) {
-      const [hover, setHover] = useState(false);
-      const [pressed, setPressed] = useState(false);
-      const sizes = { sm: { padding: '8px 14px', fontSize: 13 }, md: { padding: '12px 22px', fontSize: 15 }, lg: { padding: '16px 28px', fontSize: 16 } };
-      let bg, color, border;
-      if (variant === 'primary') { bg = pressed ? '#863818' : hover ? '#A0451F' : '#B8512C'; color = '#F7F2EB'; border = '1px solid transparent'; }
-      else { bg = hover ? '#EFE8DD' : 'transparent'; color = '#1F1A17'; border = '1px solid #B7A993'; }
-      const Tag = href ? 'a' : 'button';
-  const isExternal = href && /^https?:\/\//.test(href);
-  const computedTarget = target || (isExternal ? '_blank' : undefined);
-  const computedRel = rel || (isExternal ? 'noopener noreferrer' : undefined);
-  const linkAttrs = href ? { href, target: computedTarget, rel: computedRel } : {};
-      return <Tag {...linkAttrs} onMouseEnter={() => setHover(true)} onMouseLeave={() => { setHover(false); setPressed(false); }} onMouseDown={() => setPressed(true)} onMouseUp={() => setPressed(false)} style={{ background: bg, color, border, borderRadius: 8, fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 500, cursor: 'pointer', lineHeight: 1.1, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8, transition: 'all 160ms cubic-bezier(0.4,0,0.6,1)', whiteSpace: 'nowrap', ...sizes[size], ...style }}>{children}</Tag>;
-    }
-    const Icons = {
-      menu: <g><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></g>,
-      x: <g><path d="M18 6L6 18"/><path d="M6 6l12 12"/></g>,
-      arrow: <g><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></g>,
-      linkedin: <g><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></g>,
-      twitter: <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2-3 0-6-2.5-6-5.5 1 .5 2 .5 3 0-3-1-5-4-5-7 1 .5 2 1 3 1-3-2-3-7 0-9 4 5 10 7.5 16 7-.7-3 1.2-6 4-6 1.5 0 3 .8 4 2 1-.2 2-.5 3-1z"/>,
-      instagram: <g><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></g>,
-      facebook: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>,
-      youtube: <g><path d="M22.5 6.5a2.8 2.8 0 0 0-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.5a2.8 2.8 0 0 0-2 2C1 8.3 1 12 1 12s0 3.7.5 5.5a2.8 2.8 0 0 0 2 2C5.3 20 12 20 12 20s6.7 0 8.5-.5a2.8 2.8 0 0 0 2-2c.5-1.8.5-5.5.5-5.5s0-3.7-.5-5.5z"/><path d="M10 15l5-3-5-3z" fill="currentColor"/></g>,
-    };
-    function Icon({ name, size = 20 }) { return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, display: 'inline-block' }}>{Icons[name]}</svg>; }
-
-    function Nav() {
-      const [scrolled, setScrolled] = useState(false);
-      const [open, setOpen] = useState(false);
-      useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 8); window.addEventListener('scroll', onScroll); return () => window.removeEventListener('scroll', onScroll); }, []);
-      const linkStyle = { color: '#1F1A17', textDecoration: 'none', fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 400, fontSize: 14, whiteSpace: 'nowrap' };
-      const links = [{ label: 'Home', href: 'index.html' }, { label: 'About', href: 'about/' }, { label: 'Case studies', href: 'case-studies/' }, { label: 'Careers', href: 'careers/' }, { label: 'Blog', href: 'https://blog.xfusion.io' }];
-      return (
-        <nav style={{ position: 'sticky', top: 0, zIndex: 50, background: scrolled ? 'rgba(247, 242, 235, 0.88)' : 'transparent', backdropFilter: scrolled ? 'blur(12px)' : 'none', WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none', borderBottom: scrolled ? '1px solid #D9CFBF' : '1px solid transparent', transition: 'all 240ms cubic-bezier(0.4,0,0.6,1)' }}>
-          <Container>
-            <div style={{ height: 72, display: 'flex', alignItems: 'center', gap: 32 }}>
-              <a href="index.html" style={{ display: 'flex', alignItems: 'baseline', textDecoration: 'none' }} aria-label="xFusion home"><img src="assets/xfusion-logo.png" alt="xFusion" style={{ height: 36, width: "auto", display: "block" }} /></a>
-              <div className="nav-links" style={{ display: 'flex', gap: 28, marginLeft: 24 }}>{links.map(l => <a key={l.label} href={l.href} style={linkStyle}>{l.label}</a>)}</div>
-              <div style={{ marginLeft: 'auto', display: 'flex', gap: 12, alignItems: 'center' }}>
-                <Button variant="primary" size="sm" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>
-                <button className="nav-mobile-toggle" onClick={() => setOpen(!open)} style={{ display: 'none', background: 'transparent', border: '1px solid #B7A993', borderRadius: 8, padding: 8, cursor: 'pointer', color: '#1F1A17' }} aria-label="Toggle menu"><Icon name={open ? 'x' : 'menu'} size={20} /></button>
-              </div>
-            </div>
-            {open && (<div className="nav-mobile-menu" style={{ display: 'none', flexDirection: 'column', gap: 16, padding: '8px 0 24px', borderTop: '1px solid #D9CFBF' }}>{links.map(l => <a key={l.label} href={l.href} style={linkStyle} onClick={() => setOpen(false)}>{l.label}</a>)}</div>)}
-          </Container>
-          <style>{`@media (max-width: 800px) { .nav-links { display: none !important; } .nav-mobile-toggle { display: inline-flex !important; } .nav-mobile-menu { display: flex !important; } }`}</style>
-        </nav>
-      );
-    }
-
-    function Footer() {
-      const social = [{ name: 'linkedin', label: 'LinkedIn' }, { name: 'twitter', label: 'Twitter' }, { name: 'instagram', label: 'Instagram' }, { name: 'facebook', label: 'Facebook' }, { name: 'youtube', label: 'YouTube' }];
-      return (
-        <footer style={{ background: '#1F1A17', color: '#F7F2EB', padding: '72px 0 32px' }}>
-          <Container>
-            <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr 1fr', gap: 56, marginBottom: 56, paddingBottom: 48, borderBottom: '1px solid #3A322D', alignItems: 'flex-start' }}>
-              <div>
-                <a href="index.html" style={{ display: 'inline-flex', alignItems: 'baseline', textDecoration: 'none', marginBottom: 20 }}><img src="assets/xfusion-logo.png" alt="xFusion" style={{ height: 36, width: "auto", display: "block" }} /></a>
-                <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 20, lineHeight: 1.4, color: '#F0D9A8', maxWidth: 360, margin: '0 0 28px', fontStyle: 'italic', fontWeight: 400 }}>Senior, AI-trained customer support, fully managed.</p>
-                <Button variant="primary" size="md" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>
-              </div>
-              <div>
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9E9388', marginBottom: 18 }}>Quick links</div>
-                <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>{[{ label: 'Home', href: 'index.html' }, { label: 'About', href: 'about/' }, { label: 'Case studies', href: 'case-studies/' }, { label: 'Careers', href: 'careers/' }, { label: 'Blog', href: 'blog/' }, { label: 'FAQ', href: '#faq' }].map(l => <li key={l.label}><a href={l.href} style={{ color: '#F7F2EB', textDecoration: 'none', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 15 }}>{l.label}</a></li>)}</ul>
-              </div>
-              <div>
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9E9388', marginBottom: 18 }}>Follow along</div>
-                <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>{social.map(s => <a key={s.name} href="#" aria-label={s.label} style={{ width: 40, height: 40, borderRadius: 8, background: '#3A322D', border: '1px solid #6B5F56', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#F0D9A8', textDecoration: 'none' }}><Icon name={s.name} size={18} /></a>)}</div>
-              </div>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13, color: '#9E9388', flexWrap: 'wrap', gap: 16 }}>
-              <div>© 2026 xFusion</div>
-              <div style={{ display: 'flex', gap: 24 }}><a href="privacy/" style={{ color: '#9E9388', textDecoration: 'none' }}>Privacy</a><a href="dpa/" style={{ color: '#9E9388', textDecoration: 'none' }}>DPA</a><a href="security/" style={{ color: '#9E9388', textDecoration: 'none' }}>Security</a></div>
-            </div>
-          </Container>
-          <style>{`@media (max-width: 800px) { .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; } }`}</style>
-        </footer>
-      );
-    }
-
-    function App() {
-      const linkStyle = {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: '20px 24px',
-        background: '#F7F2EB',
-        border: '1px solid #D9CFBF',
-        borderRadius: 12,
-        textDecoration: 'none',
-        color: '#1F1A17',
-        fontFamily: "'IBM Plex Sans', sans-serif",
-        fontSize: 17,
-        fontWeight: 500,
-        transition: 'all 160ms cubic-bezier(0.4,0,0.6,1)',
-      };
-      return (
-        <div data-screen-label="404">
-          <Nav />
-          <main>
-            <Section bg="paper" padding="lg" style={{ paddingTop: 96, paddingBottom: 96 }}>
-              <Container narrow>
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 14, color: '#B8512C', letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 20 }}>
-                  Error 404
-                </div>
-                <h1 style={{ fontFamily: "'Source Serif 4', serif", fontSize: 'clamp(40px, 5.6vw, 76px)', fontWeight: 400, lineHeight: 1.05, letterSpacing: '-0.025em', margin: '0 0 28px', color: '#1F1A17', textWrap: 'balance' }}>
-                  Page not found.
-                </h1>
-                <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 'clamp(20px, 2.1vw, 24px)', lineHeight: 1.45, color: '#3A322D', fontWeight: 400, margin: '0 0 40px', maxWidth: 620 }}>
-                  Whatever you were looking for is not at this URL. Try one of these instead:
-                </p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 14, maxWidth: 520 }}>
-                  <a href="index.html" style={linkStyle}>Home <Icon name="arrow" size={18} /></a>
-                  <a href="case-studies/" style={linkStyle}>Case studies <Icon name="arrow" size={18} /></a>
-                  <a href="https://savvycal.com/xfusion/lets-chat" style={linkStyle} target="_blank" rel="noopener noreferrer">Book a Discovery Call <Icon name="arrow" size={18} /></a>
-                </div>
-              </Container>
-            </Section>
-          </main>
-          <Footer />
-        </div>
-      );
-    }
-    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-  </script>
+  <div id="root"><div data-screen-label="404"><nav style="position:sticky;top:0;z-index:50;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;border-bottom:1px solid transparent;transition:all 240ms cubic-bezier(0.4,0,0.6,1)"><div style="max-width:1200px;margin:0 auto;padding:0 24px"><div style="height:72px;display:flex;align-items:center;gap:32px"><a href="index.html" style="display:flex;align-items:baseline;text-decoration:none" aria-label="xFusion home"><img src="assets/xfusion-logo.png" alt="xFusion" style="height:36px;width:auto;display:block"/></a><div class="nav-links" style="display:flex;gap:28px;margin-left:24px"><a href="index.html" style="color:#1F1A17;text-decoration:none;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-weight:400;font-size:14px;white-space:nowrap">Home</a><a href="about/" style="color:#1F1A17;text-decoration:none;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-weight:400;font-size:14px;white-space:nowrap">About</a><a href="case-studies/" style="color:#1F1A17;text-decoration:none;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-weight:400;font-size:14px;white-space:nowrap">Case studies</a><a href="careers/" style="color:#1F1A17;text-decoration:none;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-weight:400;font-size:14px;white-space:nowrap">Careers</a><a href="https://blog.xfusion.io" style="color:#1F1A17;text-decoration:none;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-weight:400;font-size:14px;white-space:nowrap">Blog</a></div><div style="margin-left:auto;display:flex;gap:12px;align-items:center"><a href="/book/" style="background:#B8512C;color:#F7F2EB;border:1px solid transparent;border-radius:8px;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-weight:500;cursor:pointer;line-height:1.1;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 160ms cubic-bezier(0.4,0,0.6,1);white-space:nowrap;padding:8px 14px;font-size:13px">Book a Discovery Call</a><button class="nav-mobile-toggle" style="display:none;background:transparent;border:1px solid #B7A993;border-radius:8px;padding:8px;cursor:pointer;color:#1F1A17" aria-label="Toggle menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:inline-block"><g><path d="M3 12h18"></path><path d="M3 6h18"></path><path d="M3 18h18"></path></g></svg></button></div></div></div><style>@media (max-width: 800px) { .nav-links { display: none !important; } .nav-mobile-toggle { display: inline-flex !important; } .nav-mobile-menu { display: flex !important; } }</style></nav><main><section style="background:#F7F2EB;padding:112px 0;padding-top:96px;padding-bottom:96px"><div style="max-width:760px;margin:0 auto;padding:0 24px"><div style="font-family:&#x27;JetBrains Mono&#x27;, monospace;font-size:14px;color:#B8512C;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:20px">Error 404</div><h1 style="font-family:&#x27;Source Serif 4&#x27;, serif;font-size:clamp(40px, 5.6vw, 76px);font-weight:400;line-height:1.05;letter-spacing:-0.025em;margin:0 0 28px;color:#1F1A17;text-wrap:balance">Page not found.</h1><p style="font-family:&#x27;Source Serif 4&#x27;, serif;font-size:clamp(20px, 2.1vw, 24px);line-height:1.45;color:#3A322D;font-weight:400;margin:0 0 40px;max-width:620px">Whatever you were looking for is not at this URL. Try one of these instead:</p><div style="display:flex;flex-direction:column;gap:14px;max-width:520px"><a href="index.html" style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:#F7F2EB;border:1px solid #D9CFBF;border-radius:12px;text-decoration:none;color:#1F1A17;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-size:17px;font-weight:500;transition:all 160ms cubic-bezier(0.4,0,0.6,1)">Home <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:inline-block"><g><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></g></svg></a><a href="case-studies/" style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:#F7F2EB;border:1px solid #D9CFBF;border-radius:12px;text-decoration:none;color:#1F1A17;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-size:17px;font-weight:500;transition:all 160ms cubic-bezier(0.4,0,0.6,1)">Case studies <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:inline-block"><g><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></g></svg></a><a href="/book/" style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:#F7F2EB;border:1px solid #D9CFBF;border-radius:12px;text-decoration:none;color:#1F1A17;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-size:17px;font-weight:500;transition:all 160ms cubic-bezier(0.4,0,0.6,1)">Book a Discovery Call <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:inline-block"><g><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></g></svg></a></div></div></section></main><footer style="background:#1F1A17;color:#F7F2EB;padding:72px 0 32px"><div style="max-width:1200px;margin:0 auto;padding:0 24px"><div class="footer-grid" style="display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:56px;margin-bottom:56px;padding-bottom:48px;border-bottom:1px solid #3A322D;align-items:flex-start"><div><a href="index.html" style="display:inline-flex;align-items:baseline;text-decoration:none;margin-bottom:20px"><img src="assets/xfusion-logo.png" alt="xFusion" style="height:36px;width:auto;display:block"/></a><p style="font-family:&#x27;Source Serif 4&#x27;, serif;font-size:20px;line-height:1.4;color:#F0D9A8;max-width:360px;margin:0 0 28px;font-style:italic;font-weight:400">Senior, AI-trained customer support, fully managed.</p><a href="/book/" style="background:#B8512C;color:#F7F2EB;border:1px solid transparent;border-radius:8px;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-weight:500;cursor:pointer;line-height:1.1;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 160ms cubic-bezier(0.4,0,0.6,1);white-space:nowrap;padding:12px 22px;font-size:15px">Book a Discovery Call</a></div><div><div style="font-family:&#x27;JetBrains Mono&#x27;, monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:#9E9388;margin-bottom:18px">Quick links</div><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px"><li><a href="index.html" style="color:#F7F2EB;text-decoration:none;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-size:15px">Home</a></li><li><a href="about/" style="color:#F7F2EB;text-decoration:none;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-size:15px">About</a></li><li><a href="case-studies/" style="color:#F7F2EB;text-decoration:none;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-size:15px">Case studies</a></li><li><a href="careers/" style="color:#F7F2EB;text-decoration:none;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-size:15px">Careers</a></li><li><a href="blog/" style="color:#F7F2EB;text-decoration:none;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-size:15px">Blog</a></li><li><a href="#faq" style="color:#F7F2EB;text-decoration:none;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-size:15px">FAQ</a></li></ul></div><div><div style="font-family:&#x27;JetBrains Mono&#x27;, monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:#9E9388;margin-bottom:18px">Follow along</div><div style="display:flex;gap:12px;flex-wrap:wrap"><a href="#" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:8px;background:#3A322D;border:1px solid #6B5F56;display:flex;align-items:center;justify-content:center;color:#F0D9A8;text-decoration:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:inline-block"><g><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></g></svg></a><a href="#" aria-label="Twitter" style="width:40px;height:40px;border-radius:8px;background:#3A322D;border:1px solid #6B5F56;display:flex;align-items:center;justify-content:center;color:#F0D9A8;text-decoration:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:inline-block"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2-3 0-6-2.5-6-5.5 1 .5 2 .5 3 0-3-1-5-4-5-7 1 .5 2 1 3 1-3-2-3-7 0-9 4 5 10 7.5 16 7-.7-3 1.2-6 4-6 1.5 0 3 .8 4 2 1-.2 2-.5 3-1z"></path></svg></a><a href="#" aria-label="Instagram" style="width:40px;height:40px;border-radius:8px;background:#3A322D;border:1px solid #6B5F56;display:flex;align-items:center;justify-content:center;color:#F0D9A8;text-decoration:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:inline-block"><g><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle></g></svg></a><a href="#" aria-label="Facebook" style="width:40px;height:40px;border-radius:8px;background:#3A322D;border:1px solid #6B5F56;display:flex;align-items:center;justify-content:center;color:#F0D9A8;text-decoration:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:inline-block"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a><a href="#" aria-label="YouTube" style="width:40px;height:40px;border-radius:8px;background:#3A322D;border:1px solid #6B5F56;display:flex;align-items:center;justify-content:center;color:#F0D9A8;text-decoration:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:inline-block"><g><path d="M22.5 6.5a2.8 2.8 0 0 0-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.5a2.8 2.8 0 0 0-2 2C1 8.3 1 12 1 12s0 3.7.5 5.5a2.8 2.8 0 0 0 2 2C5.3 20 12 20 12 20s6.7 0 8.5-.5a2.8 2.8 0 0 0 2-2c.5-1.8.5-5.5.5-5.5s0-3.7-.5-5.5z"></path><path d="M10 15l5-3-5-3z" fill="currentColor"></path></g></svg></a></div></div></div><div style="display:flex;justify-content:space-between;align-items:center;font-family:&#x27;IBM Plex Sans&#x27;, sans-serif;font-size:13px;color:#9E9388;flex-wrap:wrap;gap:16px"><div>© 2026 xFusion</div><div style="display:flex;gap:24px"><a href="privacy/" style="color:#9E9388;text-decoration:none">Privacy</a><a href="dpa/" style="color:#9E9388;text-decoration:none">DPA</a><a href="security/" style="color:#9E9388;text-decoration:none">Security</a></div></div></div><style>@media (max-width: 800px) { .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; } }</style></footer></div></div>
+  <script defer src="404.built.js"></script>
 </body>
 </html>

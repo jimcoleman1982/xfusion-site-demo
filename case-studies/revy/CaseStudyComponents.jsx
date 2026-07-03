@@ -80,7 +80,7 @@ function CaseStudyNav({ active = 'case-studies', prefix = '../../' }) {
           </div>
 
           <div className="nav-cta" style={{ marginLeft: 'auto', display: 'flex', gap: 12, alignItems: 'center' }}>
-            <a href="https://savvycal.com/xfusion/lets-chat" style={ctaStyle} target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+            <a href="/book/" style={ctaStyle}>Book a Discovery Call</a>
           </div>
 
           <button
@@ -125,7 +125,7 @@ function CaseStudyNav({ active = 'case-studies', prefix = '../../' }) {
               );
             })}
             <div style={{ marginTop: 16 }}>
-              <a href="https://savvycal.com/xfusion/lets-chat" style={{ ...ctaStyle, fontSize: 15, padding: '12px 20px', display: 'block', textAlign: 'center' }} target="_blank" rel="noopener noreferrer">
+              <a href="/book/" style={{ ...ctaStyle, fontSize: 15, padding: '12px 20px', display: 'block', textAlign: 'center' }}>
                 Book a Discovery Call
               </a>
             </div>
@@ -759,7 +759,7 @@ function CTABand() {
             <Button variant="primary" size="lg" style={{
               padding: '18px 28px',
               fontSize: 17,
-            }} href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call
+            }} href="/book/">Book a Discovery Call
             </Button>
             <div style={{
               fontFamily: "'IBM Plex Sans', sans-serif",

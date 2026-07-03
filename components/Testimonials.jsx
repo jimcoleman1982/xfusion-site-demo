@@ -4,7 +4,7 @@ const TESTIMONIALS = [
     name: 'John Carbone',
     role: 'Founder',
     company: 'Bonify',
-    file: 'images/john-carbone-bonify.png',
+    file: 'images/john-carbone-bonify.webp',
     tone: 'clay',
     pull: "I forget they're technically not in-house. They truly are part of the Bonify team.",
     full: "Working with xFusion led to a monumental improvement in our customer experience. They found us the perfect reps with complete alignment to our mission, and they've handled the vast majority of our tickets while maintaining a 4.9 customer satisfaction score on Shopify since May 2020.",
@@ -13,7 +13,7 @@ const TESTIMONIALS = [
     name: 'Derrick Reimer',
     role: 'Founder',
     company: 'SavvyCal',
-    file: 'images/derrick-reimer-savvycal.png',
+    file: 'images/derrick-reimer-savvycal.webp',
     tone: 'forest',
     pull: 'I was admittedly skeptical at first. They proved my skepticism unwarranted.',
     full: "As a founder busy building and marketing my product, I wanted a partner I could trust to train and manage dedicated reps as an extension of my team. This is not your stereotypical outsourced support agency. They've cut our average response time by 84.79% and freed me up to focus on running the business.",
@@ -22,7 +22,7 @@ const TESTIMONIALS = [
     name: 'Toby Marsden',
     role: 'Founder',
     company: 'Ordered Magic',
-    file: 'images/toby-marsden-ordered-magic.png',
+    file: 'images/toby-marsden-ordered-magic.webp',
     tone: 'butter',
     pull: 'I thought my life was going to become a living hell. It was extraordinary instead.',
     full: 'I was sure outsourcing would mean dropped tickets, the wrong tone, and an exploding workload. None of that happened. The xFusion team grew from one dedicated agent to two full-time and a part-time weekend agent, and the entire way I think about the future of my business has changed.',
@@ -31,7 +31,7 @@ const TESTIMONIALS = [
     name: 'Dov Kaufmann',
     role: 'COO',
     company: 'Tolstoy',
-    file: 'images/dov-kaufmann-tolstoy.png',
+    file: 'images/dov-kaufmann-tolstoy.webp',
     tone: 'clay',
     pull: 'An absolute game-changer. We grow faster and more professionally than we ever could alone.',
     full: "Working with the xFusion team enabled us to scale customer support from a single agent to a six-person team handling Tier 1 and Tier 2 work. The partnership has been so valuable that our Shopify app ranking jumped 90 points after a wave of 5-star reviews tied to better support. I can't praise the team enough.",
@@ -40,7 +40,7 @@ const TESTIMONIALS = [
     name: 'Claire Fundingsland',
     role: 'Head of Customer Experience',
     company: 'SkyFi',
-    file: 'images/claire-fundingsland-skyfi.png',
+    file: 'images/claire-fundingsland-skyfi.webp',
     tone: 'forest',
     pull: 'They never leave a customer interaction unresolved.',
     full: "xFusion's emphasis on customer satisfaction has been such an asset. Their team is thorough and adapts and learns quickly, helping us maintain a 91.9% customer satisfaction score with an average response time of 36 minutes across a global, 24/7 customer base.",
@@ -49,7 +49,7 @@ const TESTIMONIALS = [
     name: 'Tom Foster',
     role: 'Director of Sales',
     company: 'TheReceptionist',
-    file: 'images/tom-foster-thereceptionist.png',
+    file: 'images/tom-foster-thereceptionist.webp',
     tone: 'paper',
     pull: 'Attentive. Hire the best people. We see no reason to stop.',
     full: "When we first met with Jim and David, we were immediately struck by their values and commitment to their employees, which meshed with ours completely. Over years of working together they've helped us hit a 98.9% CSAT rating, and we've expanded the partnership several times. If you're looking for an outsourced solution, I highly recommend the team at xFusion.",
@@ -169,7 +169,7 @@ function Testimonials() {
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <Button variant="primary" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a Discovery Call</Button>
+          <Button variant="primary" size="lg" href="/book/">Book a Discovery Call</Button>
           <CTAMicrocopy />
         </div>
       </Container>

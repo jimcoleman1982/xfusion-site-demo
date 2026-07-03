@@ -29,7 +29,7 @@ function AboutHero() {
             Six years later, we're about 70 people on three continents who've built real support careers, with clients who actually invest in them.
           </p>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-            <Button variant="primary" size="lg" href="https://savvycal.com/xfusion/lets-chat">Book a discovery call</Button>
+            <Button variant="primary" size="lg" href="/book/">Book a discovery call</Button>
             <a href="#story" onClick={(e) => {
               e.preventDefault();
               const el = document.getElementById('story');

@@ -89,8 +89,8 @@ function Button({ children, variant = 'primary', size = 'md', href, style = {}, 
 }
 
 /* ---------- Photo (renders real <img>, placeholder fallback) ---------- */
-function PortraitPlaceholder({ name = 'John Carbone', label = 'images/john-carbone-bonify.png',
-                                src = '../../images/john-carbone-bonify.png',
+function PortraitPlaceholder({ name = 'John Carbone', label = 'images/john-carbone-bonify.webp',
+                                src = '../../images/john-carbone-bonify.webp',
                                 alt,
                                 width = 220, ratio = '4/5', tone = 'butter' }) {
   const [errored, setErrored] = useState(false);
@@ -227,7 +227,7 @@ function Nav({ active = 'case-studies', prefix = '../../' }) {
           </div>
 
           <div className="nav-cta" style={{ marginLeft: 'auto', display: 'flex', gap: 12, alignItems: 'center' }}>
-            <a href="https://savvycal.com/xfusion/lets-chat" style={ctaStyle} target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+            <a href="/book/" style={ctaStyle}>Book a Discovery Call</a>
           </div>
 
           <button
@@ -280,7 +280,7 @@ function Nav({ active = 'case-studies', prefix = '../../' }) {
               );
             })}
             <div style={{ marginTop: 16 }}>
-              <a href="https://savvycal.com/xfusion/lets-chat" style={{ ...ctaStyle, fontSize: 15, padding: '12px 20px', display: 'block', textAlign: 'center' }} target="_blank" rel="noopener noreferrer">
+              <a href="/book/" style={{ ...ctaStyle, fontSize: 15, padding: '12px 20px', display: 'block', textAlign: 'center' }}>
                 Book a Discovery Call
               </a>
             </div>
@@ -346,7 +346,7 @@ function PageHeader() {
           <div className="hero-photo" style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <PortraitPlaceholder name="John Carbone" tone="butter"
                                  width={260} ratio="4/5"
-                                 label="images/john-carbone-bonify.png" />
+                                 label="images/john-carbone-bonify.webp" />
           </div>
         </div>
 
@@ -508,7 +508,7 @@ function TestimonialFeature() {
           <div>
             <PortraitPlaceholder name="John Carbone" tone="clay"
                                  width={300} ratio="4/5"
-                                 label="images/john-carbone-bonify.png" />
+                                 label="images/john-carbone-bonify.webp" />
           </div>
           <div>
             <svg width="44" height="36" viewBox="0 0 24 24" fill="#B8512C" stroke="none"

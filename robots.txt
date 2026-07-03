@@ -9,3 +9,6 @@ Disallow: /xmlrpc.php
 Disallow: /wp-json/
 
 Sitemap: https://xfusion.io/sitemap.xml
+
+# Page-shell sources used by the prerender build; not for indexing.
+Disallow: /*.src.html
