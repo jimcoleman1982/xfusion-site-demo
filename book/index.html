@@ -89,6 +89,14 @@
       };
       if (lead.email) options.email = lead.email;
       if (lead.name) options.displayName = lead.name;
+      // Prefill SavvyCal's custom questions from the qualification modal.
+      // Indexes follow the question ORDER configured in SavvyCal for the
+      // "lets-chat" link: 0 = company name, 3 = anything to help prepare.
+      // If Jim reorders questions in SavvyCal settings, update these indexes.
+      var questions = {};
+      if (lead.company) questions[0] = lead.company;
+      if (lead.need) questions[3] = lead.need;
+      if (Object.keys(questions).length) options.questions = questions;
       SavvyCal('inline', options);
 
       // If the embed script fails (blocked, offline), show the email fallback.
