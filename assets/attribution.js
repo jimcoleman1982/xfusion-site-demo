@@ -92,7 +92,11 @@
         plus stored attribution. Fire-and-forget; endpoints that are not
         configured are skipped. */
     sendLead: function (stage, data) {
-      var payload = Object.assign({ stage: stage }, data || {}, this.get());
+      var payload = Object.assign(
+        { stage: stage, page: window.location.pathname },
+        data || {},
+        this.get()
+      );
       var body = JSON.stringify(payload);
       var jobs = [];
       if (GHL_WEBHOOK_URL) {
