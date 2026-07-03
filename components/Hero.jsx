@@ -43,6 +43,9 @@ function Hero() {
           capturedRef.current = true;
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({ event: 'email_capture', email_hash: hash || undefined });
+          // Deliver the email immediately (GHL + Sheet) so a visitor who
+          // abandons at the modal is still a recoverable lead.
+          window.xfAttribution.sendLead('email_capture', { email: normalized });
         }
         setModalOpen(true);
       });
