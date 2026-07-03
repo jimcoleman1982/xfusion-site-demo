@@ -58,15 +58,30 @@
     if (v === 'denied') gtag('set', 'ads_data_redaction', true);
   }
 
+  function tzInScope() {
+    var tz = '';
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+    return /^Europe\//.test(tz) ||
+      ['Atlantic/Canary', 'Atlantic/Madeira', 'Atlantic/Azores', 'Atlantic/Reykjavik'].indexOf(tz) !== -1;
+  }
+
+  // Best-effort consent check for other scripts (e.g. attaching user-provided
+  // data to conversion events): explicit choice wins; otherwise EU-scope
+  // visitors default to denied, everyone else to granted.
+  window.xfConsent = {
+    adUserDataGranted: function () {
+      var choice = readChoice();
+      if (choice) return choice === 'accepted';
+      return !tzInScope();
+    },
+  };
+
   var stored = readChoice();
   if (stored) { applyChoice(stored); return; }
 
   // No stored choice. Only prompt visitors who look like they're in scope;
   // the region-scoped default already protects anyone this misses.
-  var tz = '';
-  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
-  var inScope = /^Europe\//.test(tz) ||
-    ['Atlantic/Canary', 'Atlantic/Madeira', 'Atlantic/Azores', 'Atlantic/Reykjavik'].indexOf(tz) !== -1;
+  var inScope = tzInScope();
   if (!inScope) return;
   if (window.self !== window.top) return; // never inside embeds/iframes
 

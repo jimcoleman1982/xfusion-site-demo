@@ -87,8 +87,13 @@ function LeadModal({ open, email, onClose }) {
 
     if (!firedRef.current) {
       firedRef.current = true;
+      const consentOk = !window.xfConsent || window.xfConsent.adUserDataGranted();
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'lead_form_submit', business_type: bizType || undefined });
+      window.dataLayer.push({
+        event: 'lead_form_submit',
+        business_type: bizType || undefined,
+        user_email: (consentOk && email) || undefined,
+      });
     }
 
     const fields = Object.assign({ 'form-name': 'lead', 'bot-field': '' }, lead, {

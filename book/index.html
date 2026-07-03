@@ -131,10 +131,15 @@
           });
         }
 
+        // user_email powers manual Enhanced Conversions in Google Ads
+        // (GTM's User-Provided Data variable reads it). Only attached when
+        // ad_user_data consent is granted.
+        var consentOk = !window.xfConsent || window.xfConsent.adUserDataGranted();
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'discovery_call_booked',
           email_hash: lead.email_hash || undefined,
+          user_email: (consentOk && lead.email) || undefined,
           gclid: attribution.gclid || undefined,
           business_type: lead.business_type || undefined,
           eventCallback: goToConfirmation,
