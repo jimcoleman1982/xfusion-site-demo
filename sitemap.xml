@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://xfusion.io/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://xfusion.io/about/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -17,57 +17,57 @@
   </url>
   <url>
     <loc>https://xfusion.io/book/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://xfusion.io/careers/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://xfusion.io/case-studies/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xfusion.io/case-studies/bonify/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xfusion.io/case-studies/ordered-magic/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xfusion.io/case-studies/revy/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xfusion.io/case-studies/savvycal/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xfusion.io/case-studies/skyfi/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xfusion.io/case-studies/the-receptionist/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xfusion.io/case-studies/tolstoy/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://xfusion.io/contact/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -742,7 +742,7 @@
   </url>
   <url>
     <loc>https://xfusion.io/dpa/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
@@ -777,7 +777,7 @@
   </url>
   <url>
     <loc>https://xfusion.io/privacy/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
@@ -1091,9 +1091,19 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://xfusion.io/saas-support/</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://xfusion.io/security/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://xfusion.io/shopify-app-support/</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://xfusion.io/the-ultimate-2023-guide-outsourcing-customer-service/</loc>
