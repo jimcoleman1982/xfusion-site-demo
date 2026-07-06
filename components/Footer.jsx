@@ -9,6 +9,8 @@ function Footer() {
       links: [
         ['Pricing',       '#pricing'],
         ['Case studies',  'case-studies/'],
+        ['Shopify app support', '/shopify-app-support/'],
+        ['SaaS support', '/saas-support/'],
       ],
     },
     {
