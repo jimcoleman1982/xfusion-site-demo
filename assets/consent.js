@@ -112,8 +112,9 @@
       '@media (max-width:520px){#xf-consent{left:12px;right:12px;bottom:12px;max-width:none}}' +
       '</style>' +
       '<h2>Cookies, briefly.</h2>' +
-      '<p>We use cookies to see what’s working and to measure our ads. Say no and the ' +
-        'site works just the same. Details in our <a href="/privacy/">privacy policy</a>.</p>' +
+      '<p>A few cookies help us understand what’s working, from site content to ' +
+        'marketing. Say no and the site works just the same. Details in our ' +
+        '<a href="/privacy/">privacy policy</a>.</p>' +
       '<div class="xf-consent-actions">' +
         '<button type="button" class="xf-accept">Accept</button>' +
         '<button type="button" class="xf-decline">Decline</button>' +
