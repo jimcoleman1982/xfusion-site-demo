@@ -225,11 +225,6 @@
   to = "/blog/"
   status = 301
 
-# Catch-all 404 (Netlify uses 404.html automatically; this is explicit).
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
 
 # Prerender source snapshots: served if requested directly, but never indexed.
 [[headers]]
@@ -422,3 +417,9 @@
   from = "/404-2"
   to = "/"
   status = 301
+
+# Catch-all 404 (Netlify uses 404.html automatically; this is explicit).
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
