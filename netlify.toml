@@ -259,7 +259,47 @@
   to = "/"
   status = 301
 [[redirects]]
-  from = "/hire-*"
+  from = "/hire-account-executive"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/hire-backend-software-developers"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/hire-data-analysts"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/hire-data-engineer"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/hire-data-scientist"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/hire-executive-assistants"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/hire-frontend-software-developers"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/hire-full-stack-developers"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/hire-marketing-specialist"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/hire-sales-development-representatives"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/hire-virtual-assistants"
   to = "/"
   status = 301
 [[redirects]]
@@ -355,7 +395,19 @@
   to = "/contact/"
   status = 301
 [[redirects]]
-  from = "/thank-you*"
+  from = "/thank-you"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/thank-you-for-submitting"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/thank-you-fully-managed-solution"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/thank-you-self-managed-solution"
   to = "/"
   status = 301
 [[redirects]]
