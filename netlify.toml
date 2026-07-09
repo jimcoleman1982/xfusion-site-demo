@@ -248,7 +248,7 @@
   status = 301
 [[redirects]]
   from = "/connect"
-  to = "/contact/"
+  to = "/book/"
   status = 301
 [[redirects]]
   from = "/privacy-policy"
