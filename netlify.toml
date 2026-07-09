@@ -276,7 +276,7 @@
   status = 301
 [[redirects]]
   from = "/start-staffing"
-  to = "/book/"
+  to = "/careers/"
   status = 301
 [[redirects]]
   from = "/jobstreet"
