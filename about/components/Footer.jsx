@@ -22,7 +22,7 @@ function Footer() {
     {
       title: 'Resources',
       links: [
-        ['FAQ',           '../#faq'],
+        ['FAQ',           '/faq/'],
         ['Blog',          '../blog/'],
       ],
     },

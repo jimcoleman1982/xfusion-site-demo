@@ -208,7 +208,7 @@
   status = 301
 [[redirects]]
   from = "/faqs"
-  to = "/#faq"
+  to = "/faq/"
   status = 301
 
 # Date-based archives (some WP themes expose /YYYY/MM/...).

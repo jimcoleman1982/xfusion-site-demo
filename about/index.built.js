@@ -1707,7 +1707,7 @@ function Footer() {
     links: [['About', '../about/'], ['Careers', '../careers/'], ['Contact', "../contact/"]]
   }, {
     title: 'Resources',
-    links: [['FAQ', '../#faq'], ['Blog', '../blog/']]
+    links: [['FAQ', '/faq/'], ['Blog', '../blog/']]
   }, {
     title: 'Legal',
     links: [['Privacy', '../privacy/'], ['DPA', '../dpa/'], ['Security', '../security/']]
