@@ -236,3 +236,137 @@
   for = "/*.src.html"
   [headers.values]
     X-Robots-Tag = "noindex"
+
+# ---------------------------------------------------------------------------
+# Legacy WordPress PAGE urls (from Wayback inventory, 2026-07-07). All were
+# 404ing; each 301s to the closest live equivalent. Blog POST urls were
+# already preserved at their original paths by the migration.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/about-us"
+  to = "/about/"
+  status = 301
+[[redirects]]
+  from = "/connect"
+  to = "/contact/"
+  status = 301
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy/"
+  status = 301
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/hire-*"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/technical-customer-support"
+  to = "/saas-support/"
+  status = 301
+[[redirects]]
+  from = "/mastering-ecommerce-the-comprehensive-guide-to-outsourced-customer-support-for-shopify-stores"
+  to = "/shopify-app-support/"
+  status = 301
+[[redirects]]
+  from = "/customer-support-playbook-by-xfusion"
+  to = "/customer-support-playbook/"
+  status = 301
+[[redirects]]
+  from = "/start-staffing"
+  to = "/book/"
+  status = 301
+[[redirects]]
+  from = "/jobstreet"
+  to = "/careers/"
+  status = 301
+[[redirects]]
+  from = "/kalibrr"
+  to = "/careers/"
+  status = 301
+[[redirects]]
+  from = "/bi-lingual-customer-support"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/fully-managed-solution"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/self-managed-solution"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/services"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/lost-in-translation-never-with-dedicated-outsourced-multilingual-support"
+  to = "/blog/"
+  status = 301
+[[redirects]]
+  from = "/revolutionizing-customer-support-unleashing-the-power-of-outsourcing-and-ai"
+  to = "/blog/"
+  status = 301
+[[redirects]]
+  from = "/the-art-of-exceptional-customer-support-unleashing-the-potential-of-outsourcing"
+  to = "/blog/"
+  status = 301
+[[redirects]]
+  from = "/unlock-the-power-of-data-with-our-comprehensive-customer-support-back-office-statistics"
+  to = "/blog/"
+  status = 301
+[[redirects]]
+  from = "/sitemap.rss"
+  to = "/sitemap.xml"
+  status = 301
+[[redirects]]
+  from = "/cart"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/checkout"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/my-account"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/shop"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/quiz"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/saas-growth-success-scorecard"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/we-are-working-on-your-saas-report"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/cspsubmission"
+  to = "/contact/"
+  status = 301
+[[redirects]]
+  from = "/thank-you*"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/video"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/page-not-found"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/404-2"
+  to = "/"
+  status = 301
