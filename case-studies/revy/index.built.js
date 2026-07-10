@@ -1298,7 +1298,7 @@ function CTABand() {
 function CaseStudyFooter() {
   const cols = [{
     title: 'Product',
-    links: [['Pricing', '../../#pricing'], ['Case studies', '../../case-studies/'], ['Shopify app support', '/shopify-app-support/'], ['SaaS support', '/saas-support/'], ['Hire support agents', '/hire-support-agents/'], ['Support outsourcing', '/customer-support-outsourcing/'], ['E-commerce support', '/ecommerce-support/']]
+    links: [['Pricing', '/pricing/'], ['Case studies', '../../case-studies/'], ['Shopify app support', '/shopify-app-support/'], ['SaaS support', '/saas-support/'], ['Hire support agents', '/hire-support-agents/'], ['Support outsourcing', '/customer-support-outsourcing/'], ['E-commerce support', '/ecommerce-support/']]
   }, {
     title: 'Company',
     links: [['About', '../../about/'], ['Careers', '../../careers/'], ['Contact', '../../contact/']]

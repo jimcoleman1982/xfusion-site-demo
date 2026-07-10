@@ -16,6 +16,7 @@ function Nav({ active = 'home', prefix = '' }) {
     { id: 'home',         label: 'Home',         href: homeHref },
     { id: 'about',        label: 'About',        href: prefix + 'about/' },
     { id: 'case-studies', label: 'Case studies', href: prefix + 'case-studies/' },
+    { id: 'pricing',      label: 'Pricing',      href: prefix + 'pricing/' },
     { id: 'blog',         label: 'Blog',         href: prefix + 'blog/' },
   ];
 

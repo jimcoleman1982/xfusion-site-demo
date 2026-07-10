@@ -1107,6 +1107,10 @@ function Nav({
     label: 'Case studies',
     href: prefix + 'case-studies/'
   }, {
+    id: 'pricing',
+    label: 'Pricing',
+    href: prefix + 'pricing/'
+  }, {
     id: 'blog',
     label: 'Blog',
     href: prefix + 'blog/'
@@ -3022,7 +3026,7 @@ window.FinalCTA = FinalCTA;
 function Footer() {
   const cols = [{
     title: 'Product',
-    links: [['Pricing', '/#pricing'], ['Case studies', '/case-studies/'], ['Shopify app support', '/shopify-app-support/'], ['SaaS support', '/saas-support/'], ['Hire support agents', '/hire-support-agents/'], ['Support outsourcing', '/customer-support-outsourcing/'], ['E-commerce support', '/ecommerce-support/']]
+    links: [['Pricing', '/pricing/'], ['Case studies', '/case-studies/'], ['Shopify app support', '/shopify-app-support/'], ['SaaS support', '/saas-support/'], ['Hire support agents', '/hire-support-agents/'], ['Support outsourcing', '/customer-support-outsourcing/'], ['E-commerce support', '/ecommerce-support/']]
   }, {
     title: 'Company',
     links: [['About', '/about/'], ['Careers', '/careers/'], ['Contact', '/contact/']]

@@ -7,7 +7,7 @@ function Footer() {
     {
       title: 'Product',
       links: [
-        ['Pricing',       '/#pricing'],
+        ['Pricing', '/pricing/'],
         ['Case studies',  '/case-studies/'],
         ['Shopify app support', '/shopify-app-support/'],
         ['SaaS support', '/saas-support/'],
