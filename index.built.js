@@ -982,12 +982,12 @@ window.LeadModal = LeadModal;
 //   microcopy  - optional node rendered under the form (defaults to the
 //                standard line + "book a call directly" escape hatch)
 function LeadCapture({
-  microcopy
+  microcopy,
+  compact
 }) {
   const [email, setEmail] = React.useState('');
   const [emailError, setEmailError] = React.useState('');
   const [modalOpen, setModalOpen] = React.useState(false);
-  const capturedRef = React.useRef(false);
   const handleEmailSubmit = e => {
     e.preventDefault();
     const value = email.trim();
@@ -1006,8 +1006,10 @@ function LeadCapture({
           email: normalized,
           email_hash: hash || ''
         });
-        if (!capturedRef.current) {
-          capturedRef.current = true;
+        // Page-global guard: the hero form and the sticky bar are two
+        // instances of this component; email_capture must fire once.
+        if (!window.__xfEmailCaptureFired) {
+          window.__xfEmailCaptureFired = true;
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
             event: 'email_capture',
@@ -1031,10 +1033,10 @@ function LeadCapture({
     className: "hero-capture",
     style: {
       display: 'flex',
-      gap: 12,
+      gap: compact ? 8 : 12,
       alignItems: 'stretch',
-      flexWrap: 'wrap',
-      maxWidth: 520
+      flexWrap: compact ? 'nowrap' : 'wrap',
+      maxWidth: compact ? 440 : 520
     }
   }, /*#__PURE__*/React.createElement("input", {
     type: "email",
@@ -1044,9 +1046,9 @@ function LeadCapture({
     "aria-label": "Work email",
     autoComplete: "email",
     style: {
-      flex: '1 1 240px',
+      flex: compact ? '1 1 180px' : '1 1 240px',
       boxSizing: 'border-box',
-      padding: '14px 18px',
+      padding: compact ? '11px 14px' : '14px 18px',
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 16,
       color: '#1F1A17',
@@ -1057,7 +1059,7 @@ function LeadCapture({
     }
   }), /*#__PURE__*/React.createElement(Button, {
     variant: "primary",
-    size: "lg",
+    size: compact ? "md" : "lg",
     as: "button"
   }, "Get started")), emailError ? /*#__PURE__*/React.createElement("div", {
     role: "alert",
@@ -1065,9 +1067,9 @@ function LeadCapture({
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 13,
       color: '#A8341E',
-      marginTop: 10
+      marginTop: compact ? 6 : 10
     }
-  }, emailError) : null, /*#__PURE__*/React.createElement(CTAMicrocopy, null, microcopy || /*#__PURE__*/React.createElement(React.Fragment, null, "30 minutes. No pitch deck. We just figure out if we're a good fit for your team.", ' ', /*#__PURE__*/React.createElement("a", {
+  }, emailError) : null, compact ? null : /*#__PURE__*/React.createElement(CTAMicrocopy, null, microcopy || /*#__PURE__*/React.createElement(React.Fragment, null, "30 minutes. No pitch deck. We just figure out if we're a good fit for your team.", ' ', /*#__PURE__*/React.createElement("a", {
     href: "/book/",
     style: {
       color: '#B8512C',
@@ -1080,6 +1082,75 @@ function LeadCapture({
   }));
 }
 window.LeadCapture = LeadCapture;
+
+// Sticky bottom capture bar (landing pages + pricing). Appears once the
+// hero capture (#lp-hero-capture) has scrolled out of view, so the form is
+// always reachable at the moment the page convinces someone.
+function StickyCapture() {
+  const [show, setShow] = React.useState(false);
+  React.useEffect(() => {
+    // Dev preview: /page/#sticky-preview forces the bar visible.
+    if (window.location.hash === '#sticky-preview') {
+      setShow(true);
+      return;
+    }
+    const hero = document.getElementById('lp-hero-capture');
+    if (!hero || !('IntersectionObserver' in window)) {
+      const onScroll = () => setShow(window.scrollY > 700);
+      window.addEventListener('scroll', onScroll);
+      return () => window.removeEventListener('scroll', onScroll);
+    }
+    const obs = new IntersectionObserver(entries => setShow(!entries[0].isIntersecting && entries[0].boundingClientRect.top < 0), {
+      threshold: 0
+    });
+    obs.observe(hero);
+    return () => obs.disconnect();
+  }, []);
+  if (!show) return null;
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'fixed',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      zIndex: 800,
+      background: 'rgba(247, 242, 235, 0.96)',
+      backdropFilter: 'blur(12px)',
+      WebkitBackdropFilter: 'blur(12px)',
+      borderTop: '1px solid #D9CFBF',
+      boxShadow: '0 -6px 24px rgba(31,26,23,0.06)',
+      padding: '10px 24px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1200,
+      margin: '0 auto',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 20
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sticky-note",
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
+      fontWeight: 500,
+      color: '#3A322D',
+      whiteSpace: 'nowrap'
+    }
+  }, "$3,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flexShrink: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement(LeadCapture, {
+    compact: true
+  }))), /*#__PURE__*/React.createElement("style", null, `
+        @media (max-width: 700px) { .sticky-note { display: none; } }
+      `));
+}
+window.StickyCapture = StickyCapture;
 // --- components/Nav.jsx
 // THE site navigation - single source of truth, loaded by every React page
 // as /components/Nav.jsx (root-absolute, resolved by build/prerender.js).

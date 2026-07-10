@@ -52,12 +52,14 @@ function VerticalLanding() {
               fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 18,
               lineHeight: 1.6, color: '#3A322D', margin: '0 0 30px', maxWidth: 620,
             }}>{cfg.sub}</p>
+            <div id="lp-hero-capture">
             <LeadCapture microcopy={cfg.microcopy ? (
               <>
                 {cfg.microcopy}{' '}
                 <a href="/book/" style={{ color: '#B8512C', fontWeight: 500 }}>Or book a call directly →</a>
               </>
             ) : undefined} />
+            </div>
           </Container>
         </section>
 
@@ -261,6 +263,7 @@ function VerticalLanding() {
           </Container>
         </section>
       </main>
+      <StickyCapture />
       <Footer />
 
       <style>{`
