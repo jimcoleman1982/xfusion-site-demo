@@ -418,6 +418,24 @@
   to = "/"
   status = 301
 
+# Task-10 spec paths (ads display-path style) -> real vertical LP urls.
+[[redirects]]
+  from = "/saas/support"
+  to = "/saas-support/"
+  status = 301
+[[redirects]]
+  from = "/senior-agents/hire"
+  to = "/hire-support-agents/"
+  status = 301
+[[redirects]]
+  from = "/support/outsourcing"
+  to = "/customer-support-outsourcing/"
+  status = 301
+[[redirects]]
+  from = "/ecommerce/support"
+  to = "/ecommerce-support/"
+  status = 301
+
 # Catch-all 404 (Netlify uses 404.html automatically; this is explicit).
 [[redirects]]
   from = "/*"

@@ -552,7 +552,7 @@ window.Nav = Nav;
 function Footer() {
   const cols = [{
     title: 'Product',
-    links: [['Pricing', '../../#pricing'], ['Case studies', '../'], ['Shopify app support', '/shopify-app-support/'], ['SaaS support', '/saas-support/']]
+    links: [['Pricing', '../../#pricing'], ['Case studies', '../'], ['Shopify app support', '/shopify-app-support/'], ['SaaS support', '/saas-support/'], ['Hire support agents', '/hire-support-agents/'], ['Support outsourcing', '/customer-support-outsourcing/'], ['E-commerce support', '/ecommerce-support/']]
   }, {
     title: 'Company',
     links: [['About', '../../about/'], ['Careers', '../../careers/'], ['Contact', "../../contact/"]]

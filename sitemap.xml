@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://xfusion.io/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://xfusion.io/about/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -516,6 +516,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://xfusion.io/customer-support-outsourcing/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://xfusion.io/customer-support/</loc>
     <lastmod>2026-05-06</lastmod>
     <priority>0.7</priority>
@@ -746,6 +751,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://xfusion.io/ecommerce-support/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://xfusion.io/faq/</loc>
     <lastmod>2026-07-10</lastmod>
     <priority>0.5</priority>
@@ -779,6 +789,11 @@
     <loc>https://xfusion.io/glossary/help-desk-software-streamlining-customer-support-for-enhanced-efficiency/</loc>
     <lastmod>2026-05-06</lastmod>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://xfusion.io/hire-support-agents/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://xfusion.io/privacy/</loc>
@@ -1097,7 +1112,7 @@
   </url>
   <url>
     <loc>https://xfusion.io/saas-support/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <priority>0.5</priority>
   </url>
   <url>

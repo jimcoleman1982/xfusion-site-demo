@@ -9,6 +9,9 @@ function Footer() {
         ['Case studies',  '../case-studies/'],
         ['Shopify app support', '/shopify-app-support/'],
         ['SaaS support', '/saas-support/'],
+        ['Hire support agents', '/hire-support-agents/'],
+        ['Support outsourcing', '/customer-support-outsourcing/'],
+        ['E-commerce support', '/ecommerce-support/'],
       ],
     },
     {
