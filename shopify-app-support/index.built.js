@@ -1707,6 +1707,8 @@ window.LeadCapture = LeadCapture;
 //   closingH2, closingText,
 // }
 
+// Client roster shown on every LP trust strip (source: homepage marquee in Hero.jsx).
+const CLIENT_NAMES = ['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aligned', 'Kioskbuddy'];
 function VerticalLanding() {
   const cfg = window.XF_LP;
   const faq = window.XF_LP_FAQ || [];
@@ -1758,7 +1760,13 @@ function VerticalLanding() {
       maxWidth: 620
     }
   }, cfg.sub), /*#__PURE__*/React.createElement(LeadCapture, {
-    microcopy: cfg.microcopy
+    microcopy: cfg.microcopy ? /*#__PURE__*/React.createElement(React.Fragment, null, cfg.microcopy, ' ', /*#__PURE__*/React.createElement("a", {
+      href: "/book/",
+      style: {
+        color: '#B8512C',
+        fontWeight: 500
+      }
+    }, "Or book a call directly →")) : undefined
   }))), /*#__PURE__*/React.createElement("section", {
     style: {
       borderTop: '1px solid #D9CFBF',
@@ -1783,7 +1791,39 @@ function VerticalLanding() {
       alignItems: 'center',
       gap: 9
     }
-  }, check, p))))), cfg.metrics && cfg.metrics.length > 0 ? /*#__PURE__*/React.createElement("section", {
+  }, check, p))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '40px 0 0'
+    }
+  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 11,
+      textTransform: 'uppercase',
+      letterSpacing: '0.14em',
+      color: '#6B5F56',
+      textAlign: 'center',
+      marginBottom: 16
+    }
+  }, "Trusted by support-driven teams at"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: '10px 26px',
+      justifyContent: 'center'
+    }
+  }, CLIENT_NAMES.map(name => /*#__PURE__*/React.createElement("span", {
+    key: name,
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 17,
+      fontWeight: 500,
+      letterSpacing: '-0.01em',
+      color: '#3A322D',
+      opacity: 0.7,
+      whiteSpace: 'nowrap'
+    }
+  }, name))))), cfg.metrics && cfg.metrics.length > 0 ? /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '64px 0 0'
     }
@@ -2082,7 +2122,8 @@ window.XF_LP_FAQ = XF_LP_FAQ;
 window.XF_LP = {
   "eyebrow": "For Shopify app developers",
   "h1": "Support for your Shopify app, off your plate.",
-  "sub": "You built an app merchants depend on. Now the tickets never stop, and every hour in the inbox is an hour not shipping. We place a senior, AI-trained support agent who learns your app, your APIs, and your merchants, then we manage them for you. 4 of our 7 public case studies are Shopify app companies. We know this world.",
+  "sub": "You built an app merchants depend on. Now the tickets never stop, every hour in the inbox is an hour not shipping, and every slow reply risks a one-star review that sticks. We place a senior, AI-trained agent who learns your app, your APIs, and your merchants. 4 of our 7 public case studies are Shopify app companies. We know this world.",
+  "microcopy": "Bring your messiest merchant tickets. 30 minutes, no pitch deck.",
   "metrics": [{
     "num": "+90",
     "text": "App Store ranking points gained by Tolstoy after a wave of 5-star reviews tied to better support.",

@@ -18,6 +18,9 @@
 //   closingH2, closingText,
 // }
 
+// Client roster shown on every LP trust strip (source: homepage marquee in Hero.jsx).
+const CLIENT_NAMES = ['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aligned', 'Kioskbuddy'];
+
 function VerticalLanding() {
   const cfg = window.XF_LP;
   const faq = window.XF_LP_FAQ || [];
@@ -49,7 +52,12 @@ function VerticalLanding() {
               fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 18,
               lineHeight: 1.6, color: '#3A322D', margin: '0 0 30px', maxWidth: 620,
             }}>{cfg.sub}</p>
-            <LeadCapture microcopy={cfg.microcopy} />
+            <LeadCapture microcopy={cfg.microcopy ? (
+              <>
+                {cfg.microcopy}{' '}
+                <a href="/book/" style={{ color: '#B8512C', fontWeight: 500 }}>Or book a call directly →</a>
+              </>
+            ) : undefined} />
           </Container>
         </section>
 
@@ -63,6 +71,26 @@ function VerticalLanding() {
                   fontWeight: 500, color: '#3A322D',
                   display: 'inline-flex', alignItems: 'center', gap: 9,
                 }}>{check}{p}</span>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        {/* Client names (same roster as the homepage marquee) */}
+        <section style={{ padding: '40px 0 0' }}>
+          <Container>
+            <div style={{
+              fontFamily: "'JetBrains Mono', monospace", fontSize: 11,
+              textTransform: 'uppercase', letterSpacing: '0.14em',
+              color: '#6B5F56', textAlign: 'center', marginBottom: 16,
+            }}>Trusted by support-driven teams at</div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 26px', justifyContent: 'center' }}>
+              {CLIENT_NAMES.map((name) => (
+                <span key={name} style={{
+                  fontFamily: "'Source Serif 4', serif", fontSize: 17,
+                  fontWeight: 500, letterSpacing: '-0.01em',
+                  color: '#3A322D', opacity: 0.7, whiteSpace: 'nowrap',
+                }}>{name}</span>
               ))}
             </div>
           </Container>
