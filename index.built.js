@@ -529,7 +529,8 @@ function Icon({
 // CTA microcopy line, used under almost every primary CTA
 function CTAMicrocopy({
   children,
-  color = '#6B5F56'
+  color = '#6B5F56',
+  style = {}
 }) {
   return /*#__PURE__*/React.createElement("div", {
     style: {
@@ -538,7 +539,8 @@ function CTAMicrocopy({
       lineHeight: 1.5,
       color,
       marginTop: 14,
-      maxWidth: 480
+      maxWidth: 480,
+      ...style
     }
   }, children || "30 minutes. No commitment. No credit card. You'll talk directly with our founding team.");
 }

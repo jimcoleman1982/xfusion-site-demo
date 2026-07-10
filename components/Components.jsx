@@ -278,7 +278,7 @@ function Icon({ name, size = 20, color = 'currentColor', stroke = 1.6, fill = 'n
 }
 
 // CTA microcopy line, used under almost every primary CTA
-function CTAMicrocopy({ children, color = '#6B5F56' }) {
+function CTAMicrocopy({ children, color = '#6B5F56', style = {} }) {
   return (
     <div style={{
       fontFamily: "'IBM Plex Sans', sans-serif",
@@ -287,6 +287,7 @@ function CTAMicrocopy({ children, color = '#6B5F56' }) {
       color,
       marginTop: 14,
       maxWidth: 480,
+      ...style,
     }}>{children || "30 minutes. No commitment. No credit card. You'll talk directly with our founding team."}</div>
   );
 }

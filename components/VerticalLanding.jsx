@@ -227,10 +227,8 @@ function VerticalLanding() {
               color: '#3A322D', margin: '0 auto 28px', maxWidth: 520, lineHeight: 1.6,
             }}>{cfg.closingText}</p>
             <Button variant="primary" size="lg" href="/book/">Book a Discovery Call</Button>
-            <CTAMicrocopy color="#6B5F56">
-              <span style={{ display: 'block', margin: '0 auto', maxWidth: 480 }}>
-                30 minutes. No commitment. No credit card. You'll talk directly with our founding team.
-              </span>
+            <CTAMicrocopy color="#6B5F56" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+              30 minutes. No commitment. No credit card. You'll talk directly with our founding team.
             </CTAMicrocopy>
           </Container>
         </section>

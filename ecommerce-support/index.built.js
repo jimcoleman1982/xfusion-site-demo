@@ -529,7 +529,8 @@ function Icon({
 // CTA microcopy line, used under almost every primary CTA
 function CTAMicrocopy({
   children,
-  color = '#6B5F56'
+  color = '#6B5F56',
+  style = {}
 }) {
   return /*#__PURE__*/React.createElement("div", {
     style: {
@@ -538,7 +539,8 @@ function CTAMicrocopy({
       lineHeight: 1.5,
       color,
       marginTop: 14,
-      maxWidth: 480
+      maxWidth: 480,
+      ...style
     }
   }, children || "30 minutes. No commitment. No credit card. You'll talk directly with our founding team.");
 }
@@ -1775,14 +1777,12 @@ function VerticalLanding() {
     size: "lg",
     href: "/book/"
   }, "Book a Discovery Call"), /*#__PURE__*/React.createElement(CTAMicrocopy, {
-    color: "#6B5F56"
-  }, /*#__PURE__*/React.createElement("span", {
+    color: "#6B5F56",
     style: {
-      display: 'block',
-      margin: '0 auto',
-      maxWidth: 480
+      marginLeft: 'auto',
+      marginRight: 'auto'
     }
-  }, "30 minutes. No commitment. No credit card. You'll talk directly with our founding team."))))), /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement("style", null, `
+  }, "30 minutes. No commitment. No credit card. You'll talk directly with our founding team.")))), /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement("style", null, `
         @media (max-width: 800px) {
           .lp-metrics { grid-template-columns: 1fr !important; }
         }
