@@ -30,15 +30,16 @@
     a { transition: color 160ms ease; }
     *:focus-visible { outline: 2px solid var(--color-primary, #B8512C); outline-offset: 3px; border-radius: 4px; }
     .page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #D9CFBF; }
-    .nav a { color: #1F1A17; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 500; padding: 8px 12px; }
+    .nav { height: 72px; display: flex; align-items: center; gap: 32px; border-bottom: 1px solid transparent; position: sticky; top: 0; z-index: 50; background: transparent; transition: all 240ms cubic-bezier(0.4,0,0.6,1); }
+    .nav.scrolled { background: rgba(247, 242, 235, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom-color: #D9CFBF; }
+    .nav a { color: #1F1A17; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; font-weight: 400; white-space: nowrap; padding-bottom: 4px; border-bottom: 1.5px solid transparent; }
     .nav a:hover { color: #B8512C; }
-    .nav a.active { color: #B8512C; }
-    .nav .cta { background: #B8512C; color: #F7F2EB; padding: 10px 18px; border-radius: 8px; font-weight: 600; }
+    .nav a.active { font-weight: 500; border-bottom-color: #B8512C; color: #1F1A17; }
+    .nav .cta { background: #B8512C; color: #F7F2EB; padding: 9px 16px; border-radius: 8px; font-weight: 500; font-size: 13px; line-height: 1; margin-left: auto; border-bottom: none; }
     .nav .cta:hover { background: #A0451F; color: #F7F2EB; }
-    .nav .links { display: flex; gap: 8px; align-items: center; }
+    .nav .links { display: flex; gap: 26px; align-items: center; margin-left: 16px; flex: 1; }
     .ndrop { position: relative; }
-    .ndrop-btn { color: #1F1A17; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 500; padding: 8px 12px; cursor: default; display: inline-flex; align-items: center; gap: 5px; }
+    .ndrop-btn { color: #1F1A17; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; font-weight: 400; padding-bottom: 4px; cursor: default; display: inline-flex; align-items: center; gap: 5px; }
     .ndrop:hover .ndrop-btn { color: #B8512C; }
     .ndrop-menu { display: none; position: absolute; top: 100%; left: 0; background: #F7F2EB; border: 1px solid #D9CFBF; border-radius: 12px; padding: 12px 8px 8px; min-width: 235px; box-shadow: 0 8px 24px rgba(31,26,23,0.08); z-index: 60; }
     .ndrop:hover .ndrop-menu { display: block; }
@@ -97,6 +98,7 @@
       <a href="../blog/" class="active">Blog</a>
       <a href="../book/" class="cta">Book a Discovery Call</a>
     </div>
+    <script>(function(){var n=document.currentScript.parentElement;var f=function(){n.classList.toggle('scrolled',window.scrollY>8);};window.addEventListener('scroll',f);f();})();</script>
   </nav>
 
   <main class="page-wrap">
