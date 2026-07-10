@@ -1090,6 +1090,67 @@ window.LeadCapture = LeadCapture;
 // ("Home" is the logo - top sites don't spend a nav slot on it.)
 // Props: active - one of 'solutions' | 'case-studies' | 'pricing' | 'about'
 //        | 'blog' | '' ; legacy `current` is accepted as an alias.
+const XF_SOLUTIONS = [{
+  label: 'Shopify app developers',
+  href: '/shopify-app-support/',
+  desc: 'Merchant tickets, reviews, APIs',
+  icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3 6h18"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M16 10a4 4 0 0 1-8 0"
+  }))
+}, {
+  label: 'SaaS founders',
+  href: '/saas-support/',
+  desc: 'Product-deep Tier 1 and 2',
+  icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M12 2l9 5-9 5-9-5 9-5z"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3 12l9 5 9-5"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3 17l9 5 9-5"
+  }))
+}, {
+  label: 'E-commerce & DTC brands',
+  href: '/ecommerce-support/',
+  desc: 'Returns, refunds, peak season',
+  icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M16.5 9.4l-9-5.19"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3.27 6.96L12 12.01l8.73-5.05"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M12 22.08V12"
+  }))
+}, {
+  label: 'Hire a support agent',
+  href: '/hire-support-agents/',
+  desc: 'Senior, dedicated, managed',
+  icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "8.5",
+    cy: "7",
+    r: "4"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M20 8v6"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M23 11h-6"
+  }))
+}, {
+  label: 'Support outsourcing',
+  href: '/customer-support-outsourcing/',
+  desc: 'The full queue, off your plate',
+  icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M3 18v-6a9 9 0 0 1 18 0v6"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+  }))
+}];
+window.XF_SOLUTIONS = XF_SOLUTIONS;
 function Nav(props) {
   const raw = (props.active || props.current || '').toLowerCase().replace(/\s+/g, '-');
   const active = raw === 'home' ? '' : raw;
@@ -1130,66 +1191,7 @@ function Nav(props) {
   const hoverClose = () => {
     closeTimer.current = setTimeout(() => setSolOpen(false), 180);
   };
-  const solutions = [{
-    label: 'Shopify app developers',
-    href: '/shopify-app-support/',
-    desc: 'Merchant tickets, reviews, APIs',
-    icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
-      d: "M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
-    }), /*#__PURE__*/React.createElement("path", {
-      d: "M3 6h18"
-    }), /*#__PURE__*/React.createElement("path", {
-      d: "M16 10a4 4 0 0 1-8 0"
-    }))
-  }, {
-    label: 'SaaS founders',
-    href: '/saas-support/',
-    desc: 'Product-deep Tier 1 and 2',
-    icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
-      d: "M12 2l9 5-9 5-9-5 9-5z"
-    }), /*#__PURE__*/React.createElement("path", {
-      d: "M3 12l9 5 9-5"
-    }), /*#__PURE__*/React.createElement("path", {
-      d: "M3 17l9 5 9-5"
-    }))
-  }, {
-    label: 'E-commerce & DTC brands',
-    href: '/ecommerce-support/',
-    desc: 'Returns, refunds, peak season',
-    icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
-      d: "M16.5 9.4l-9-5.19"
-    }), /*#__PURE__*/React.createElement("path", {
-      d: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
-    }), /*#__PURE__*/React.createElement("path", {
-      d: "M3.27 6.96L12 12.01l8.73-5.05"
-    }), /*#__PURE__*/React.createElement("path", {
-      d: "M12 22.08V12"
-    }))
-  }, {
-    label: 'Hire a support agent',
-    href: '/hire-support-agents/',
-    desc: 'Senior, dedicated, managed',
-    icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
-      d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-    }), /*#__PURE__*/React.createElement("circle", {
-      cx: "8.5",
-      cy: "7",
-      r: "4"
-    }), /*#__PURE__*/React.createElement("path", {
-      d: "M20 8v6"
-    }), /*#__PURE__*/React.createElement("path", {
-      d: "M23 11h-6"
-    }))
-  }, {
-    label: 'Support outsourcing',
-    href: '/customer-support-outsourcing/',
-    desc: 'The full queue, off your plate',
-    icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
-      d: "M3 18v-6a9 9 0 0 1 18 0v6"
-    }), /*#__PURE__*/React.createElement("path", {
-      d: "M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
-    }))
-  }];
+  const solutions = XF_SOLUTIONS;
   const links = [{
     id: 'case-studies',
     label: 'Case studies',
@@ -2002,6 +2004,186 @@ function PillarCard({
   }, body));
 }
 window.Solution = Solution;
+// --- components/WhoWeHelp.jsx
+// Homepage audience router: the same five ICP solutions from the nav
+// (window.XF_SOLUTIONS, defined once in Nav.jsx), full-size. Routes each
+// visitor type to its message-matched landing page.
+function WhoWeHelp() {
+  const solutions = window.XF_SOLUTIONS || [];
+  return /*#__PURE__*/React.createElement(Section, {
+    bg: "paper",
+    padding: "lg",
+    id: "who-we-help",
+    style: {
+      borderTop: '1px solid #D9CFBF'
+    }
+  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 640,
+      marginBottom: 44
+    }
+  }, /*#__PURE__*/React.createElement(Eyebrow, null, "Who we help"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(32px, 4.2vw, 52px)',
+      fontWeight: 600,
+      lineHeight: 1.06,
+      letterSpacing: '-0.02em',
+      margin: '0 0 16px',
+      color: '#1F1A17',
+      textWrap: 'balance'
+    }
+  }, "Support that speaks your customers' language."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 18,
+      lineHeight: 1.55,
+      color: '#3A322D',
+      margin: 0
+    }
+  }, "The problems differ by business. The fix is the same: a senior, AI-trained agent who learns yours. Pick your world.")), /*#__PURE__*/React.createElement("div", {
+    className: "wwh-grid",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gap: 20
+    }
+  }, solutions.map(s => /*#__PURE__*/React.createElement("a", {
+    key: s.href,
+    href: s.href,
+    className: "wwh-card",
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 14,
+      background: '#EFE8DD',
+      border: '1px solid #D9CFBF',
+      borderRadius: 12,
+      padding: '24px 22px',
+      textDecoration: 'none',
+      color: '#1F1A17',
+      transition: 'border-color 160ms cubic-bezier(0.4,0,0.6,1), box-shadow 160ms cubic-bezier(0.4,0,0.6,1)'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 40,
+      height: 40,
+      borderRadius: 8,
+      background: '#F7F2EB',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "20",
+    height: "20",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#B8512C",
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, s.icon)), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'block',
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 20,
+      fontWeight: 600,
+      lineHeight: 1.25,
+      marginBottom: 6
+    }
+  }, s.label), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'block',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
+      lineHeight: 1.5,
+      color: '#6B5F56'
+    }
+  }, s.desc)), /*#__PURE__*/React.createElement("span", {
+    style: {
+      marginTop: 'auto',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13,
+      fontWeight: 500,
+      color: '#B8512C',
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 6
+    }
+  }, "See how it works", /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M5 12h14"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M12 5l7 7-7 7"
+  }))))), /*#__PURE__*/React.createElement("a", {
+    href: "/book/",
+    className: "wwh-card",
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      gap: 8,
+      background: '#2C4A3E',
+      border: '1px solid #2C4A3E',
+      borderRadius: 12,
+      padding: '24px 22px',
+      textDecoration: 'none'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 20,
+      fontWeight: 600,
+      lineHeight: 1.25,
+      color: '#F7F2EB'
+    }
+  }, "Something else?"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
+      lineHeight: 1.5,
+      color: '#F0D9A8'
+    }
+  }, "Tell us what your queue looks like, and we'll be honest about whether we can help."), /*#__PURE__*/React.createElement("span", {
+    style: {
+      marginTop: 6,
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13,
+      fontWeight: 500,
+      color: '#F7F2EB',
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 6
+    }
+  }, "Book a Discovery Call", /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M5 12h14"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M12 5l7 7-7 7"
+  })))))), /*#__PURE__*/React.createElement("style", null, `
+        .wwh-card:hover { border-color: #B8512C !important; box-shadow: 0 4px 16px rgba(31,26,23,0.06); }
+        @media (max-width: 980px) { .wwh-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+        @media (max-width: 640px) { .wwh-grid { grid-template-columns: 1fr !important; } }
+      `));
+}
+window.WhoWeHelp = WhoWeHelp;
 // --- components/HowItWorks.jsx
 // Section 4: How It Works — four numbered steps
 function HowItWorks() {
@@ -3434,6 +3616,6 @@ function Footer() {
 window.Footer = Footer;
 // --- (inline)
 function App() {
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Nav, null), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Problem, null), /*#__PURE__*/React.createElement(Solution, null), /*#__PURE__*/React.createElement(HowItWorks, null), /*#__PURE__*/React.createElement(Pricing, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(CaseStudies, null), /*#__PURE__*/React.createElement(Chatbot, null), /*#__PURE__*/React.createElement(Guarantee, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(FinalCTA, null)), /*#__PURE__*/React.createElement(Footer, null));
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Nav, null), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Problem, null), /*#__PURE__*/React.createElement(Solution, null), /*#__PURE__*/React.createElement(WhoWeHelp, null), /*#__PURE__*/React.createElement(HowItWorks, null), /*#__PURE__*/React.createElement(Pricing, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(CaseStudies, null), /*#__PURE__*/React.createElement(Chatbot, null), /*#__PURE__*/React.createElement(Guarantee, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(FinalCTA, null)), /*#__PURE__*/React.createElement(Footer, null));
 }
 ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(App, null));

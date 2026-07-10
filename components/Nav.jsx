@@ -7,6 +7,25 @@
 // ("Home" is the logo - top sites don't spend a nav slot on it.)
 // Props: active - one of 'solutions' | 'case-studies' | 'pricing' | 'about'
 //        | 'blog' | '' ; legacy `current` is accepted as an alias.
+const XF_SOLUTIONS = [
+    { label: 'Shopify app developers',  href: '/shopify-app-support/',
+      desc: 'Merchant tickets, reviews, APIs',
+      icon: <g><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></g> },
+    { label: 'SaaS founders',           href: '/saas-support/',
+      desc: 'Product-deep Tier 1 and 2',
+      icon: <g><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></g> },
+    { label: 'E-commerce & DTC brands', href: '/ecommerce-support/',
+      desc: 'Returns, refunds, peak season',
+      icon: <g><path d="M16.5 9.4l-9-5.19"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05"/><path d="M12 22.08V12"/></g> },
+    { label: 'Hire a support agent',    href: '/hire-support-agents/',
+      desc: 'Senior, dedicated, managed',
+      icon: <g><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></g> },
+    { label: 'Support outsourcing',     href: '/customer-support-outsourcing/',
+      desc: 'The full queue, off your plate',
+      icon: <g><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></g> },
+];
+window.XF_SOLUTIONS = XF_SOLUTIONS;
+
 function Nav(props) {
   const raw = (props.active || props.current || '').toLowerCase().replace(/\s+/g, '-');
   const active = raw === 'home' ? '' : raw;
@@ -48,23 +67,7 @@ function Nav(props) {
     closeTimer.current = setTimeout(() => setSolOpen(false), 180);
   };
 
-  const solutions = [
-    { label: 'Shopify app developers',  href: '/shopify-app-support/',
-      desc: 'Merchant tickets, reviews, APIs',
-      icon: <g><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></g> },
-    { label: 'SaaS founders',           href: '/saas-support/',
-      desc: 'Product-deep Tier 1 and 2',
-      icon: <g><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></g> },
-    { label: 'E-commerce & DTC brands', href: '/ecommerce-support/',
-      desc: 'Returns, refunds, peak season',
-      icon: <g><path d="M16.5 9.4l-9-5.19"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05"/><path d="M12 22.08V12"/></g> },
-    { label: 'Hire a support agent',    href: '/hire-support-agents/',
-      desc: 'Senior, dedicated, managed',
-      icon: <g><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></g> },
-    { label: 'Support outsourcing',     href: '/customer-support-outsourcing/',
-      desc: 'The full queue, off your plate',
-      icon: <g><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></g> },
-  ];
+  const solutions = XF_SOLUTIONS;
   const links = [
     { id: 'case-studies', label: 'Case studies', href: '/case-studies/' },
     { id: 'pricing',      label: 'Pricing',      href: '/pricing/' },
