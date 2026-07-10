@@ -42,11 +42,18 @@
     .ndrop { position: relative; }
     .ndrop-btn { color: #1F1A17; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; font-weight: 400; padding-bottom: 4px; cursor: default; display: inline-flex; align-items: center; gap: 5px; }
     .ndrop:hover .ndrop-btn { color: #B8512C; }
-    .ndrop-menu { display: none; position: absolute; top: 100%; left: 0; background: #F7F2EB; border: 1px solid #D9CFBF; border-radius: 12px; padding: 12px 8px 8px; min-width: 235px; box-shadow: 0 8px 24px rgba(31,26,23,0.08); z-index: 60; }
+    .ndrop-menu { display: none; position: absolute; top: 100%; left: -14px; background: #F7F2EB; border: 1px solid #D9CFBF; border-radius: 12px; padding: 12px 8px 8px; min-width: 235px; box-shadow: 0 8px 24px rgba(31,26,23,0.08); z-index: 60; }
     .ndrop:hover .ndrop-menu { display: block; }
     .ndrop-menu .ndrop-head { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.14em; color: #6B5F56; padding: 0 14px 8px; }
-    .ndrop-menu a { display: block; padding: 9px 14px; border-radius: 8px; color: #1F1A17; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; text-decoration: none; white-space: nowrap; }
+    .ndrop-menu a { display: flex; align-items: center; gap: 12px; padding: 9px 14px; border-radius: 8px; color: #1F1A17; font-family: 'IBM Plex Sans', sans-serif; text-decoration: none; white-space: nowrap; border-bottom: none; }
     .ndrop-menu a:hover { background: #EFE8DD; color: #1F1A17; }
+    .ndi { width: 34px; height: 34px; border-radius: 8px; background: #EFE8DD; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ndrop-menu a:hover .ndi { background: #F7F2EB; }
+    .ndl { display: block; font-size: 14px; font-weight: 500; }
+    .ndd { display: block; font-size: 12px; color: #6B5F56; margin-top: 1px; }
+    .ndf { border-top: 1px solid #EFE8DD; margin: 8px 6px 0; padding: 10px 8px 4px; }
+    .ndf a { font-size: 13px; font-weight: 500; color: #B8512C; padding: 0; display: inline; }
+    .ndf a:hover { background: transparent; color: #A0451F; }
     @media (max-width: 700px) { .ndrop { display: none; } }
     .logo { display: flex; align-items: center; gap: 12px; font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; color: #1F1A17; text-decoration: none; }
     @media (max-width: 700px) { .nav .links a:not(.cta) { display: none; } }
@@ -150,11 +157,12 @@
         <span class="ndrop-btn">Solutions &#9662;</span>
         <div class="ndrop-menu">
           <div class="ndrop-head">Who we help</div>
-          <a href="/shopify-app-support/">Shopify app developers</a>
-          <a href="/saas-support/">SaaS founders</a>
-          <a href="/ecommerce-support/">E-commerce &amp; DTC brands</a>
-          <a href="/hire-support-agents/">Hire a support agent</a>
-          <a href="/customer-support-outsourcing/">Support outsourcing</a>
+          <a href="/shopify-app-support/"><span class="ndi"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B8512C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><g><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></g></svg></span><span><span class="ndl">Shopify app developers</span><span class="ndd">Merchant tickets, reviews, APIs</span></span></a>
+          <a href="/saas-support/"><span class="ndi"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B8512C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><g><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></g></svg></span><span><span class="ndl">SaaS founders</span><span class="ndd">Product-deep Tier 1 and 2</span></span></a>
+          <a href="/ecommerce-support/"><span class="ndi"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B8512C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><g><path d="M16.5 9.4l-9-5.19"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05"/><path d="M12 22.08V12"/></g></svg></span><span><span class="ndl">E-commerce &amp; DTC brands</span><span class="ndd">Returns, refunds, peak season</span></span></a>
+          <a href="/hire-support-agents/"><span class="ndi"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B8512C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><g><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></g></svg></span><span><span class="ndl">Hire a support agent</span><span class="ndd">Senior, dedicated, managed</span></span></a>
+          <a href="/customer-support-outsourcing/"><span class="ndi"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B8512C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><g><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></g></svg></span><span><span class="ndl">Support outsourcing</span><span class="ndd">The full queue, off your plate</span></span></a>
+          <div class="ndf"><a href="/book/">Not sure where you fit? Book a call &rarr;</a></div>
         </div>
       </div>
       <a href="../case-studies/">Case studies</a>

@@ -606,19 +606,63 @@ function Nav(props) {
   };
   const solutions = [{
     label: 'Shopify app developers',
-    href: '/shopify-app-support/'
+    href: '/shopify-app-support/',
+    desc: 'Merchant tickets, reviews, APIs',
+    icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+      d: "M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M3 6h18"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M16 10a4 4 0 0 1-8 0"
+    }))
   }, {
     label: 'SaaS founders',
-    href: '/saas-support/'
+    href: '/saas-support/',
+    desc: 'Product-deep Tier 1 and 2',
+    icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+      d: "M12 2l9 5-9 5-9-5 9-5z"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M3 12l9 5 9-5"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M3 17l9 5 9-5"
+    }))
   }, {
     label: 'E-commerce & DTC brands',
-    href: '/ecommerce-support/'
+    href: '/ecommerce-support/',
+    desc: 'Returns, refunds, peak season',
+    icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+      d: "M16.5 9.4l-9-5.19"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M3.27 6.96L12 12.01l8.73-5.05"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M12 22.08V12"
+    }))
   }, {
     label: 'Hire a support agent',
-    href: '/hire-support-agents/'
+    href: '/hire-support-agents/',
+    desc: 'Senior, dedicated, managed',
+    icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+      d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: "8.5",
+      cy: "7",
+      r: "4"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M20 8v6"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M23 11h-6"
+    }))
   }, {
     label: 'Support outsourcing',
-    href: '/customer-support-outsourcing/'
+    href: '/customer-support-outsourcing/',
+    desc: 'The full queue, off your plate',
+    icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+      d: "M3 18v-6a9 9 0 0 1 18 0v6"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+    }))
   }];
   const links = [{
     id: 'case-studies',
@@ -781,16 +825,66 @@ function Nav(props) {
     role: "menuitem",
     className: "nav-drop-item",
     style: {
-      display: 'block',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12,
       padding: '9px 14px',
       borderRadius: 8,
       color: '#1F1A17',
       textDecoration: 'none',
-      fontFamily: "'IBM Plex Sans', sans-serif",
-      fontSize: 14,
       whiteSpace: 'nowrap'
     }
-  }, s.label)))), links.map(l => /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 34,
+      height: 34,
+      borderRadius: 8,
+      background: '#EFE8DD',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "17",
+    height: "17",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#B8512C",
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, s.icon)), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'block',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
+      fontWeight: 500
+    }
+  }, s.label), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'block',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 12,
+      color: '#6B5F56',
+      marginTop: 1
+    }
+  }, s.desc)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      borderTop: '1px solid #EFE8DD',
+      margin: '8px 6px 0',
+      padding: '10px 8px 4px'
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/book/",
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13,
+      fontWeight: 500,
+      color: '#B8512C',
+      textDecoration: 'none'
+    }
+  }, "Not sure where you fit? Book a call →")))), links.map(l => /*#__PURE__*/React.createElement("a", {
     key: l.id,
     href: l.href,
     className: "nav-link",
