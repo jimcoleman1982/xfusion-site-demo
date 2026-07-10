@@ -46,6 +46,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <div id="root"></div>
+    <script type="text/babel" src="/components/Nav.jsx"></script>
   <script type="text/babel">
     const { useState, useEffect } = React;
 
@@ -80,7 +81,7 @@
     };
     function Icon({ name, size = 20, color = 'currentColor', stroke = 1.6 }) { return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, display: 'inline-block' }}>{Icons[name]}</svg>; }
 
-    function Nav({ current }) {
+    function _LegacyNavUnused({ current }) {
       const [scrolled, setScrolled] = useState(false);
       const [open, setOpen] = useState(false);
       useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 8); window.addEventListener('scroll', onScroll); return () => window.removeEventListener('scroll', onScroll); }, []);
@@ -120,7 +121,7 @@
 
     function Footer() {
       const cols = [
-        { title: 'Product',  links: [['Pricing', '/pricing/'], ['Case studies', '../case-studies/'], ['Shopify app support', '/shopify-app-support/'], ['SaaS support', '/saas-support/']
+        { title: 'Product',  links: [['Pricing', '/pricing/'], ['Case studies', '../case-studies/'], ['Shopify app support', '/shopify-app-support/'], ['SaaS support', '/saas-support/'],
         ['Hire support agents', '/hire-support-agents/'],
         ['Support outsourcing', '/customer-support-outsourcing/'],
         ['E-commerce support', '/ecommerce-support/'],]},

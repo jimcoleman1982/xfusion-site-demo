@@ -193,6 +193,23 @@
       .faq-a-inner { font-size: 15px; }
       .cta { padding: 28px 20px; margin-top: 36px; }
     }
+    .fnav { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .fnav-inner { height: 72px; display: flex; align-items: center; gap: 32px; border-bottom: 1px solid #D9CFBF; }
+    .fnav img { height: 36px; width: auto; display: block; }
+    .fnav .links { display: flex; gap: 26px; align-items: center; margin-left: 16px; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; }
+    .fnav .links > a { color: #1F1A17; text-decoration: none; white-space: nowrap; padding-bottom: 4px; border-bottom: 1.5px solid transparent; }
+    .fnav .links > a:hover { color: #B8512C; }
+    .fnav .cta { margin-left: auto; background: #B8512C; color: #F7F2EB; border-radius: 8px; font-family: 'IBM Plex Sans', sans-serif; font-weight: 500; font-size: 13px; padding: 9px 16px; text-decoration: none; line-height: 1; white-space: nowrap; }
+    .fnav .cta:hover { background: #A0451F; color: #F7F2EB; }
+    .ndrop { position: relative; }
+    .ndrop-btn { color: #1F1A17; cursor: default; display: inline-flex; align-items: center; gap: 5px; padding-bottom: 4px; }
+    .ndrop:hover .ndrop-btn { color: #B8512C; }
+    .ndrop-menu { display: none; position: absolute; top: 100%; left: -14px; background: #F7F2EB; border: 1px solid #D9CFBF; border-radius: 12px; padding: 12px 8px 8px; min-width: 235px; box-shadow: 0 8px 24px rgba(31,26,23,0.08); z-index: 60; }
+    .ndrop:hover .ndrop-menu { display: block; }
+    .ndrop-head { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.14em; color: #6B5F56; padding: 0 14px 8px; }
+    .ndrop-menu a { display: block; padding: 9px 14px; border-radius: 8px; color: #1F1A17; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; text-decoration: none; white-space: nowrap; }
+    .ndrop-menu a:hover { background: #EFE8DD; }
+    @media (max-width: 880px) { .fnav .links { display: none; } }
   </style>
 </head>
 <body>
@@ -201,9 +218,26 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <nav class="site-nav"><div class="nav-inner">
-    <a href="/"><img src="/assets/xfusion-logo.png" alt="xFusion"></a>
-    <a class="back" href="/">Explore the full site &rarr;</a>
+  <nav class="fnav"><div class="fnav-inner">
+    <a href="/" aria-label="xFusion home"><img src="/assets/xfusion-logo.png" alt="xFusion"></a>
+    <div class="links">
+      <div class="ndrop">
+        <span class="ndrop-btn">Solutions &#9662;</span>
+        <div class="ndrop-menu">
+          <div class="ndrop-head">Who we help</div>
+          <a href="/shopify-app-support/">Shopify app developers</a>
+          <a href="/saas-support/">SaaS founders</a>
+          <a href="/ecommerce-support/">E-commerce &amp; DTC brands</a>
+          <a href="/hire-support-agents/">Hire a support agent</a>
+          <a href="/customer-support-outsourcing/">Support outsourcing</a>
+        </div>
+      </div>
+      <a href="/case-studies/">Case studies</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/about/">About</a>
+      <a href="/blog/">Blog</a>
+    </div>
+    <a class="cta" href="/book/">Book a Discovery Call</a>
   </div></nav>
 
   <main class="wrap">

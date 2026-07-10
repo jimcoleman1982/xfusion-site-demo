@@ -555,45 +555,55 @@ Object.assign(window, {
   CTAMicrocopy
 });
 // --- ../components/Nav.jsx
-// Site nav -- shared structure across all pages.
-// Vary only `active` and the `prefix` (relative path to site root).
-// On homepage, prefix = '' so links are 'about/', 'case-studies/', 'blog/'.
-function Nav({
-  active = 'home',
-  prefix = ''
-}) {
+// THE site navigation - single source of truth, loaded by every React page
+// as /components/Nav.jsx (root-absolute, resolved by build/prerender.js).
+// Self-contained on purpose: no dependency on Container/Icon/Button so it can
+// be dropped into any page shell regardless of what else that page defines.
+//
+// Structure: Logo | Solutions v | Case studies | Pricing | About | Blog | CTA
+// ("Home" is the logo - top sites don't spend a nav slot on it.)
+// Props: active - one of 'solutions' | 'case-studies' | 'pricing' | 'about'
+//        | 'blog' | '' ; legacy `current` is accepted as an alias.
+function Nav(props) {
+  const raw = (props.active || props.current || '').toLowerCase().replace(/\s+/g, '-');
+  const active = raw === 'home' ? '' : raw;
   const [scrolled, setScrolled] = React.useState(false);
-  const [open, setOpen] = React.useState(false);
-  const [solutionsOpen, setSolutionsOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false); // mobile panel
+  const [solOpen, setSolOpen] = React.useState(false); // solutions dropdown
+  const closeTimer = React.useRef(null);
+  const dropRef = React.useRef(null);
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-  const homeHref = prefix === '' ? './' : prefix;
-  const links = [{
-    id: 'home',
-    label: 'Home',
-    href: homeHref
-  }, {
-    id: 'about',
-    label: 'About',
-    href: prefix + 'about/'
-  }, {
-    id: 'case-studies',
-    label: 'Case studies',
-    href: prefix + 'case-studies/'
-  }, {
-    id: 'pricing',
-    label: 'Pricing',
-    href: prefix + 'pricing/'
-  }, {
-    id: 'blog',
-    label: 'Blog',
-    href: prefix + 'blog/'
-  }];
 
-  // ICP-facing solution pages: labels say who the visitor is, not what we sell.
+  // Close the dropdown on outside click or Escape.
+  React.useEffect(() => {
+    if (!solOpen) return;
+    const onDown = e => {
+      if (dropRef.current && !dropRef.current.contains(e.target)) setSolOpen(false);
+    };
+    const onKey = e => {
+      if (e.key === 'Escape') setSolOpen(false);
+    };
+    document.addEventListener('mousedown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [solOpen]);
+
+  // Hover intent: open immediately, close with a small grace period so the
+  // pointer can travel from the trigger into the panel without flicker.
+  const hoverOpen = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setSolOpen(true);
+  };
+  const hoverClose = () => {
+    closeTimer.current = setTimeout(() => setSolOpen(false), 180);
+  };
   const solutions = [{
     label: 'Shopify app developers',
     href: '/shopify-app-support/'
@@ -610,41 +620,78 @@ function Nav({
     label: 'Support outsourcing',
     href: '/customer-support-outsourcing/'
   }];
-  const linkBase = {
-    color: '#1F1A17',
-    textDecoration: 'none',
-    fontFamily: "'IBM Plex Sans', sans-serif",
-    fontSize: 14,
-    whiteSpace: 'nowrap',
-    paddingBottom: 4
-  };
-  const ctaStyle = {
-    background: '#B8512C',
-    color: '#F7F2EB',
-    border: 'none',
-    borderRadius: 8,
-    fontFamily: "'IBM Plex Sans', sans-serif",
-    fontWeight: 500,
-    fontSize: 13,
-    padding: '8px 14px',
-    cursor: 'pointer',
-    textDecoration: 'none',
-    display: 'inline-block',
-    lineHeight: 1,
-    transition: 'background 160ms cubic-bezier(0.4,0,0.6,1)'
-  };
+  const links = [{
+    id: 'case-studies',
+    label: 'Case studies',
+    href: '/case-studies/'
+  }, {
+    id: 'pricing',
+    label: 'Pricing',
+    href: '/pricing/'
+  }, {
+    id: 'about',
+    label: 'About',
+    href: '/about/'
+  }, {
+    id: 'blog',
+    label: 'Blog',
+    href: '/blog/'
+  }];
+  const chevron = /*#__PURE__*/React.createElement("svg", {
+    width: "13",
+    height: "13",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    style: {
+      transform: solOpen ? 'rotate(180deg)' : 'none',
+      transition: 'transform 160ms',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M6 9l6 6 6-6"
+  }));
+  const burgerIcon = /*#__PURE__*/React.createElement("svg", {
+    width: "20",
+    height: "20",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.6",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, open ? /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M18 6L6 18"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M6 6l12 12"
+  })) : /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M3 12h18"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3 6h18"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3 18h18"
+  })));
   return /*#__PURE__*/React.createElement("nav", {
     style: {
       position: 'sticky',
       top: 0,
       zIndex: 50,
-      background: scrolled ? 'rgba(247, 242, 235, 0.88)' : 'transparent',
+      background: scrolled ? 'rgba(247, 242, 235, 0.9)' : 'transparent',
       backdropFilter: scrolled ? 'blur(12px)' : 'none',
       WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
       borderBottom: scrolled ? '1px solid #D9CFBF' : '1px solid transparent',
       transition: 'all 240ms cubic-bezier(0.4,0,0.6,1)'
     }
-  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1200,
+      margin: '0 auto',
+      padding: '0 24px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       height: 72,
       display: 'flex',
@@ -652,72 +699,62 @@ function Nav({
       gap: 32
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: homeHref,
+    href: "/",
     "aria-label": "xFusion home",
     style: {
       display: 'flex',
       alignItems: 'baseline',
-      gap: 0,
       textDecoration: 'none',
       flexShrink: 0
     }
   }, /*#__PURE__*/React.createElement("img", {
     src: "/assets/xfusion-logo.png",
     alt: "xFusion",
+    width: "129",
+    height: "36",
     style: {
       height: 36,
-      width: "auto",
-      display: "block"
+      width: 'auto',
+      display: 'block'
     }
   })), /*#__PURE__*/React.createElement("div", {
     className: "nav-links",
     style: {
       display: 'flex',
-      gap: 28,
+      gap: 26,
       marginLeft: 16,
       alignItems: 'center'
     }
-  }, links.slice(0, 1).map(l => /*#__PURE__*/React.createElement("a", {
-    key: l.id,
-    href: l.href,
-    "aria-current": l.id === active ? 'page' : undefined,
-    style: {
-      ...linkBase,
-      fontWeight: l.id === active ? 500 : 400,
-      borderBottom: l.id === active ? '1.5px solid #B8512C' : '1.5px solid transparent'
-    }
-  }, l.label)), /*#__PURE__*/React.createElement("div", {
-    onMouseEnter: () => setSolutionsOpen(true),
-    onMouseLeave: () => setSolutionsOpen(false),
+  }, /*#__PURE__*/React.createElement("div", {
+    ref: dropRef,
+    onMouseEnter: hoverOpen,
+    onMouseLeave: hoverClose,
     style: {
       position: 'relative'
     }
   }, /*#__PURE__*/React.createElement("button", {
-    onClick: () => setSolutionsOpen(o => !o),
-    "aria-expanded": solutionsOpen,
+    className: "nav-link",
+    onClick: () => setSolOpen(o => !o),
+    "aria-expanded": solOpen,
     "aria-haspopup": "true",
     style: {
-      ...linkBase,
       background: 'transparent',
       border: 'none',
+      padding: 0,
+      paddingBottom: 4,
+      color: solOpen ? '#B8512C' : '#1F1A17',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
       fontWeight: active === 'solutions' ? 500 : 400,
-      borderBottom: active === 'solutions' ? '1.5px solid #B8512C' : '1.5px solid transparent',
+      whiteSpace: 'nowrap',
       cursor: 'pointer',
       display: 'inline-flex',
       alignItems: 'center',
       gap: 5,
-      padding: 0,
-      paddingBottom: 4
+      borderBottom: active === 'solutions' ? '1.5px solid #B8512C' : '1.5px solid transparent'
     }
-  }, "Solutions", /*#__PURE__*/React.createElement(Icon, {
-    name: "chevron",
-    size: 13,
-    stroke: 2,
-    style: {
-      transform: solutionsOpen ? 'rotate(180deg)' : 'none',
-      transition: 'transform 160ms'
-    }
-  })), solutionsOpen && /*#__PURE__*/React.createElement("div", {
+  }, "Solutions", chevron), solOpen && /*#__PURE__*/React.createElement("div", {
+    role: "menu",
     style: {
       position: 'absolute',
       top: 'calc(100% + 10px)',
@@ -726,7 +763,7 @@ function Nav({
       border: '1px solid #D9CFBF',
       borderRadius: 12,
       padding: '14px 8px 10px',
-      minWidth: 240,
+      minWidth: 244,
       boxShadow: '0 8px 24px rgba(31,26,23,0.08)'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -741,6 +778,8 @@ function Nav({
   }, "Who we help"), solutions.map(s => /*#__PURE__*/React.createElement("a", {
     key: s.href,
     href: s.href,
+    role: "menuitem",
+    className: "nav-drop-item",
     style: {
       display: 'block',
       padding: '9px 14px',
@@ -750,26 +789,23 @@ function Nav({
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 14,
       whiteSpace: 'nowrap'
-    },
-    onMouseEnter: e => {
-      e.currentTarget.style.background = '#EFE8DD';
-    },
-    onMouseLeave: e => {
-      e.currentTarget.style.background = 'transparent';
     }
-  }, s.label)))), links.slice(1).map(l => {
-    const isActive = l.id === active;
-    return /*#__PURE__*/React.createElement("a", {
-      key: l.id,
-      href: l.href,
-      "aria-current": isActive ? 'page' : undefined,
-      style: {
-        ...linkBase,
-        fontWeight: isActive ? 500 : 400,
-        borderBottom: isActive ? '1.5px solid #B8512C' : '1.5px solid transparent'
-      }
-    }, l.label);
-  })), /*#__PURE__*/React.createElement("div", {
+  }, s.label)))), links.map(l => /*#__PURE__*/React.createElement("a", {
+    key: l.id,
+    href: l.href,
+    className: "nav-link",
+    "aria-current": l.id === active ? 'page' : undefined,
+    style: {
+      color: '#1F1A17',
+      textDecoration: 'none',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
+      whiteSpace: 'nowrap',
+      paddingBottom: 4,
+      fontWeight: l.id === active ? 500 : 400,
+      borderBottom: l.id === active ? '1.5px solid #B8512C' : '1.5px solid transparent'
+    }
+  }, l.label))), /*#__PURE__*/React.createElement("div", {
     className: "nav-cta",
     style: {
       marginLeft: 'auto',
@@ -779,7 +815,20 @@ function Nav({
     }
   }, /*#__PURE__*/React.createElement("a", {
     href: "/book/",
-    style: ctaStyle
+    className: "nav-cta-btn",
+    style: {
+      background: '#B8512C',
+      color: '#F7F2EB',
+      borderRadius: 8,
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontWeight: 500,
+      fontSize: 13,
+      padding: '9px 16px',
+      textDecoration: 'none',
+      display: 'inline-block',
+      lineHeight: 1,
+      transition: 'background 160ms cubic-bezier(0.4,0,0.6,1)'
+    }
   }, "Book a Discovery Call")), /*#__PURE__*/React.createElement("button", {
     className: "nav-burger",
     onClick: () => setOpen(o => !o),
@@ -795,10 +844,7 @@ function Nav({
       cursor: 'pointer',
       color: '#1F1A17'
     }
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: open ? 'x' : 'menu',
-    size: 20
-  }))), open && /*#__PURE__*/React.createElement("div", {
+  }, burgerIcon)), open && /*#__PURE__*/React.createElement("div", {
     className: "nav-mobile-panel",
     style: {
       display: 'none',
@@ -806,31 +852,14 @@ function Nav({
       paddingTop: 8,
       borderTop: '1px solid #D9CFBF'
     }
-  }, links.map(l => {
-    const isActive = l.id === active;
-    return /*#__PURE__*/React.createElement("a", {
-      key: l.id,
-      href: l.href,
-      onClick: () => setOpen(false),
-      style: {
-        display: 'block',
-        padding: '14px 4px',
-        color: '#1F1A17',
-        textDecoration: 'none',
-        fontFamily: "'IBM Plex Sans', sans-serif",
-        fontSize: 16,
-        fontWeight: isActive ? 600 : 400,
-        borderBottom: '1px solid #EFE8DD'
-      }
-    }, l.label);
-  }), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'JetBrains Mono', monospace",
       fontSize: 11,
       textTransform: 'uppercase',
       letterSpacing: '0.14em',
       color: '#6B5F56',
-      padding: '16px 4px 6px'
+      padding: '12px 4px 6px'
     }
   }, "Who we help"), solutions.map(s => /*#__PURE__*/React.createElement("a", {
     key: s.href,
@@ -847,19 +876,47 @@ function Nav({
     }
   }, s.label)), /*#__PURE__*/React.createElement("div", {
     style: {
+      height: 10
+    }
+  }), links.map(l => /*#__PURE__*/React.createElement("a", {
+    key: l.id,
+    href: l.href,
+    onClick: () => setOpen(false),
+    style: {
+      display: 'block',
+      padding: '14px 4px',
+      color: '#1F1A17',
+      textDecoration: 'none',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      fontWeight: l.id === active ? 600 : 400,
+      borderBottom: '1px solid #EFE8DD'
+    }
+  }, l.label)), /*#__PURE__*/React.createElement("div", {
+    style: {
       marginTop: 16
     }
   }, /*#__PURE__*/React.createElement("a", {
     href: "/book/",
+    onClick: () => setOpen(false),
     style: {
-      ...ctaStyle,
+      background: '#B8512C',
+      color: '#F7F2EB',
+      borderRadius: 8,
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontWeight: 500,
       fontSize: 15,
-      padding: '12px 20px',
+      padding: '14px 20px',
+      textDecoration: 'none',
       display: 'block',
-      textAlign: 'center'
+      textAlign: 'center',
+      lineHeight: 1
     }
   }, "Book a Discovery Call")))), /*#__PURE__*/React.createElement("style", null, `
-        @media (max-width: 820px) {
+        .nav-link:hover { color: #B8512C !important; }
+        .nav-drop-item:hover { background: #EFE8DD; }
+        .nav-cta-btn:hover { background: #A0451F !important; }
+        @media (max-width: 880px) {
           .nav-links { display: none !important; }
           .nav-cta   { display: none !important; }
           .nav-burger { display: inline-flex !important; align-items: center; justify-content: center; }

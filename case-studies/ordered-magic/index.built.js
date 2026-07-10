@@ -1419,6 +1419,377 @@ Object.assign(window, {
   CTASection,
   TobyPortrait
 });
+// --- /components/Nav.jsx
+// THE site navigation - single source of truth, loaded by every React page
+// as /components/Nav.jsx (root-absolute, resolved by build/prerender.js).
+// Self-contained on purpose: no dependency on Container/Icon/Button so it can
+// be dropped into any page shell regardless of what else that page defines.
+//
+// Structure: Logo | Solutions v | Case studies | Pricing | About | Blog | CTA
+// ("Home" is the logo - top sites don't spend a nav slot on it.)
+// Props: active - one of 'solutions' | 'case-studies' | 'pricing' | 'about'
+//        | 'blog' | '' ; legacy `current` is accepted as an alias.
+function Nav(props) {
+  const raw = (props.active || props.current || '').toLowerCase().replace(/\s+/g, '-');
+  const active = raw === 'home' ? '' : raw;
+  const [scrolled, setScrolled] = React.useState(false);
+  const [open, setOpen] = React.useState(false); // mobile panel
+  const [solOpen, setSolOpen] = React.useState(false); // solutions dropdown
+  const closeTimer = React.useRef(null);
+  const dropRef = React.useRef(null);
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Close the dropdown on outside click or Escape.
+  React.useEffect(() => {
+    if (!solOpen) return;
+    const onDown = e => {
+      if (dropRef.current && !dropRef.current.contains(e.target)) setSolOpen(false);
+    };
+    const onKey = e => {
+      if (e.key === 'Escape') setSolOpen(false);
+    };
+    document.addEventListener('mousedown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [solOpen]);
+
+  // Hover intent: open immediately, close with a small grace period so the
+  // pointer can travel from the trigger into the panel without flicker.
+  const hoverOpen = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setSolOpen(true);
+  };
+  const hoverClose = () => {
+    closeTimer.current = setTimeout(() => setSolOpen(false), 180);
+  };
+  const solutions = [{
+    label: 'Shopify app developers',
+    href: '/shopify-app-support/'
+  }, {
+    label: 'SaaS founders',
+    href: '/saas-support/'
+  }, {
+    label: 'E-commerce & DTC brands',
+    href: '/ecommerce-support/'
+  }, {
+    label: 'Hire a support agent',
+    href: '/hire-support-agents/'
+  }, {
+    label: 'Support outsourcing',
+    href: '/customer-support-outsourcing/'
+  }];
+  const links = [{
+    id: 'case-studies',
+    label: 'Case studies',
+    href: '/case-studies/'
+  }, {
+    id: 'pricing',
+    label: 'Pricing',
+    href: '/pricing/'
+  }, {
+    id: 'about',
+    label: 'About',
+    href: '/about/'
+  }, {
+    id: 'blog',
+    label: 'Blog',
+    href: '/blog/'
+  }];
+  const chevron = /*#__PURE__*/React.createElement("svg", {
+    width: "13",
+    height: "13",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    style: {
+      transform: solOpen ? 'rotate(180deg)' : 'none',
+      transition: 'transform 160ms',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M6 9l6 6 6-6"
+  }));
+  const burgerIcon = /*#__PURE__*/React.createElement("svg", {
+    width: "20",
+    height: "20",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.6",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, open ? /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M18 6L6 18"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M6 6l12 12"
+  })) : /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M3 12h18"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3 6h18"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3 18h18"
+  })));
+  return /*#__PURE__*/React.createElement("nav", {
+    style: {
+      position: 'sticky',
+      top: 0,
+      zIndex: 50,
+      background: scrolled ? 'rgba(247, 242, 235, 0.9)' : 'transparent',
+      backdropFilter: scrolled ? 'blur(12px)' : 'none',
+      WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
+      borderBottom: scrolled ? '1px solid #D9CFBF' : '1px solid transparent',
+      transition: 'all 240ms cubic-bezier(0.4,0,0.6,1)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1200,
+      margin: '0 auto',
+      padding: '0 24px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 72,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 32
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/",
+    "aria-label": "xFusion home",
+    style: {
+      display: 'flex',
+      alignItems: 'baseline',
+      textDecoration: 'none',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "/assets/xfusion-logo.png",
+    alt: "xFusion",
+    width: "129",
+    height: "36",
+    style: {
+      height: 36,
+      width: 'auto',
+      display: 'block'
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "nav-links",
+    style: {
+      display: 'flex',
+      gap: 26,
+      marginLeft: 16,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    ref: dropRef,
+    onMouseEnter: hoverOpen,
+    onMouseLeave: hoverClose,
+    style: {
+      position: 'relative'
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "nav-link",
+    onClick: () => setSolOpen(o => !o),
+    "aria-expanded": solOpen,
+    "aria-haspopup": "true",
+    style: {
+      background: 'transparent',
+      border: 'none',
+      padding: 0,
+      paddingBottom: 4,
+      color: solOpen ? '#B8512C' : '#1F1A17',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
+      fontWeight: active === 'solutions' ? 500 : 400,
+      whiteSpace: 'nowrap',
+      cursor: 'pointer',
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 5,
+      borderBottom: active === 'solutions' ? '1.5px solid #B8512C' : '1.5px solid transparent'
+    }
+  }, "Solutions", chevron), solOpen && /*#__PURE__*/React.createElement("div", {
+    role: "menu",
+    style: {
+      position: 'absolute',
+      top: 'calc(100% + 10px)',
+      left: -14,
+      background: '#F7F2EB',
+      border: '1px solid #D9CFBF',
+      borderRadius: 12,
+      padding: '14px 8px 10px',
+      minWidth: 244,
+      boxShadow: '0 8px 24px rgba(31,26,23,0.08)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 10.5,
+      textTransform: 'uppercase',
+      letterSpacing: '0.14em',
+      color: '#6B5F56',
+      padding: '0 14px 8px'
+    }
+  }, "Who we help"), solutions.map(s => /*#__PURE__*/React.createElement("a", {
+    key: s.href,
+    href: s.href,
+    role: "menuitem",
+    className: "nav-drop-item",
+    style: {
+      display: 'block',
+      padding: '9px 14px',
+      borderRadius: 8,
+      color: '#1F1A17',
+      textDecoration: 'none',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
+      whiteSpace: 'nowrap'
+    }
+  }, s.label)))), links.map(l => /*#__PURE__*/React.createElement("a", {
+    key: l.id,
+    href: l.href,
+    className: "nav-link",
+    "aria-current": l.id === active ? 'page' : undefined,
+    style: {
+      color: '#1F1A17',
+      textDecoration: 'none',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
+      whiteSpace: 'nowrap',
+      paddingBottom: 4,
+      fontWeight: l.id === active ? 500 : 400,
+      borderBottom: l.id === active ? '1.5px solid #B8512C' : '1.5px solid transparent'
+    }
+  }, l.label))), /*#__PURE__*/React.createElement("div", {
+    className: "nav-cta",
+    style: {
+      marginLeft: 'auto',
+      display: 'flex',
+      gap: 12,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/book/",
+    className: "nav-cta-btn",
+    style: {
+      background: '#B8512C',
+      color: '#F7F2EB',
+      borderRadius: 8,
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontWeight: 500,
+      fontSize: 13,
+      padding: '9px 16px',
+      textDecoration: 'none',
+      display: 'inline-block',
+      lineHeight: 1,
+      transition: 'background 160ms cubic-bezier(0.4,0,0.6,1)'
+    }
+  }, "Book a Discovery Call")), /*#__PURE__*/React.createElement("button", {
+    className: "nav-burger",
+    onClick: () => setOpen(o => !o),
+    "aria-label": open ? 'Close menu' : 'Open menu',
+    "aria-expanded": open,
+    style: {
+      display: 'none',
+      marginLeft: 'auto',
+      background: 'transparent',
+      border: '1px solid #B7A993',
+      borderRadius: 8,
+      padding: 8,
+      cursor: 'pointer',
+      color: '#1F1A17'
+    }
+  }, burgerIcon)), open && /*#__PURE__*/React.createElement("div", {
+    className: "nav-mobile-panel",
+    style: {
+      display: 'none',
+      paddingBottom: 16,
+      paddingTop: 8,
+      borderTop: '1px solid #D9CFBF'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 11,
+      textTransform: 'uppercase',
+      letterSpacing: '0.14em',
+      color: '#6B5F56',
+      padding: '12px 4px 6px'
+    }
+  }, "Who we help"), solutions.map(s => /*#__PURE__*/React.createElement("a", {
+    key: s.href,
+    href: s.href,
+    onClick: () => setOpen(false),
+    style: {
+      display: 'block',
+      padding: '12px 4px 12px 16px',
+      color: '#1F1A17',
+      textDecoration: 'none',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 15,
+      borderBottom: '1px solid #EFE8DD'
+    }
+  }, s.label)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 10
+    }
+  }), links.map(l => /*#__PURE__*/React.createElement("a", {
+    key: l.id,
+    href: l.href,
+    onClick: () => setOpen(false),
+    style: {
+      display: 'block',
+      padding: '14px 4px',
+      color: '#1F1A17',
+      textDecoration: 'none',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      fontWeight: l.id === active ? 600 : 400,
+      borderBottom: '1px solid #EFE8DD'
+    }
+  }, l.label)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/book/",
+    onClick: () => setOpen(false),
+    style: {
+      background: '#B8512C',
+      color: '#F7F2EB',
+      borderRadius: 8,
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontWeight: 500,
+      fontSize: 15,
+      padding: '14px 20px',
+      textDecoration: 'none',
+      display: 'block',
+      textAlign: 'center',
+      lineHeight: 1
+    }
+  }, "Book a Discovery Call")))), /*#__PURE__*/React.createElement("style", null, `
+        .nav-link:hover { color: #B8512C !important; }
+        .nav-drop-item:hover { background: #EFE8DD; }
+        .nav-cta-btn:hover { background: #A0451F !important; }
+        @media (max-width: 880px) {
+          .nav-links { display: none !important; }
+          .nav-cta   { display: none !important; }
+          .nav-burger { display: inline-flex !important; align-items: center; justify-content: center; }
+          .nav-mobile-panel { display: block !important; }
+        }
+      `));
+}
+window.Nav = Nav;
 // --- (inline)
 const aboutParagraphs = ["Ordered Magic is a Shopify app company based in France, founded and led by Toby Marsden. The company builds and maintains a portfolio of apps that help merchants do real work inside their stores. Uploadkit gives merchants a file uploading layer for personalized and made-to-order products. Instabuy creates instant purchasing flows that reduce friction at the moment a shopper is ready to commit. Hypervisual lets merchants build rich product pages without wrestling with code.", "Each app sits inside the Shopify ecosystem, which means the support inbox is technical by default. A typical question involves Liquid, theme code, app blocks, custom CSS, or a merchant trying to bend a feature to fit a workflow Shopify itself does not natively support. That is not a place where scripted answers survive. The merchant on the other end usually needs someone who can read the code, understand the platform, and write back with an actual solution.", "By 2020, Ordered Magic was expanding into the U.S. market. The apps were getting heavier traffic, the inbox was getting heavier with it, and Toby was the only person on the support side. He needed a way to scale the support function without becoming a manager of a small support team on top of being the founder, the developer, and the strategist. That is when he started working with xFusion."];
 const challengeParagraphs = ["Ordered Magic's portfolio was working. Uploadkit, Instabuy, and Hypervisual were getting traction, the U.S. expansion was live, and merchants were finding the apps. The catch was that every merchant question landed in Toby's inbox. He was the founder, the developer, and the support team, all at once.", "Three apps with three different feature sets meant three different kinds of tickets. File upload edge cases. Quick-buy flow questions. Visual editor and theme integration issues. Each one needed real technical attention. None of them could be deflected with a templated reply. Toby was reading code, writing answers, and shipping fixes between tickets, and the high-traffic apps demanded coverage seven days a week.", "He had thought about hiring. The math did not work. Bringing on a full-time employee meant taking on the recruiting, the onboarding, the payroll, the culture, and the ongoing management, all while personally training the new hire on apps only he fully understood. The cost was not just financial. It was the management overhead that would land on the person already running everything else.", "The other obvious option was outsourcing. Toby was openly skeptical of that path. He expected what most founders fear when they outsource support for the first time: dropped tickets, the wrong tone, frustrated customers, and a workload that grew rather than shrank because now there was a remote team to babysit. He was bracing for the worst version of it.", "But the status quo was unsustainable. The growth he wanted was on the other side of getting the inbox off his desk, and continuing to handle it himself was already costing him product time he could not get back."];

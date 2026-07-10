@@ -31,6 +31,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <div id="root"></div>
+    <script type="text/babel" src="/components/Nav.jsx"></script>
   <script type="text/babel">
     const { useState, useEffect } = React;
 
@@ -69,7 +70,7 @@
     };
     function Icon({ name, size = 20 }) { return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, display: 'inline-block' }}>{Icons[name]}</svg>; }
 
-    function Nav() {
+    function _LegacyNavUnused() {
       const [scrolled, setScrolled] = useState(false);
       const [open, setOpen] = useState(false);
       useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 8); window.addEventListener('scroll', onScroll); return () => window.removeEventListener('scroll', onScroll); }, []);

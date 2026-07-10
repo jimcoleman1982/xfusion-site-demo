@@ -1273,6 +1273,377 @@ Object.assign(window, {
   CTASection,
   Footer
 });
+// --- /components/Nav.jsx
+// THE site navigation - single source of truth, loaded by every React page
+// as /components/Nav.jsx (root-absolute, resolved by build/prerender.js).
+// Self-contained on purpose: no dependency on Container/Icon/Button so it can
+// be dropped into any page shell regardless of what else that page defines.
+//
+// Structure: Logo | Solutions v | Case studies | Pricing | About | Blog | CTA
+// ("Home" is the logo - top sites don't spend a nav slot on it.)
+// Props: active - one of 'solutions' | 'case-studies' | 'pricing' | 'about'
+//        | 'blog' | '' ; legacy `current` is accepted as an alias.
+function Nav(props) {
+  const raw = (props.active || props.current || '').toLowerCase().replace(/\s+/g, '-');
+  const active = raw === 'home' ? '' : raw;
+  const [scrolled, setScrolled] = React.useState(false);
+  const [open, setOpen] = React.useState(false); // mobile panel
+  const [solOpen, setSolOpen] = React.useState(false); // solutions dropdown
+  const closeTimer = React.useRef(null);
+  const dropRef = React.useRef(null);
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Close the dropdown on outside click or Escape.
+  React.useEffect(() => {
+    if (!solOpen) return;
+    const onDown = e => {
+      if (dropRef.current && !dropRef.current.contains(e.target)) setSolOpen(false);
+    };
+    const onKey = e => {
+      if (e.key === 'Escape') setSolOpen(false);
+    };
+    document.addEventListener('mousedown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [solOpen]);
+
+  // Hover intent: open immediately, close with a small grace period so the
+  // pointer can travel from the trigger into the panel without flicker.
+  const hoverOpen = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setSolOpen(true);
+  };
+  const hoverClose = () => {
+    closeTimer.current = setTimeout(() => setSolOpen(false), 180);
+  };
+  const solutions = [{
+    label: 'Shopify app developers',
+    href: '/shopify-app-support/'
+  }, {
+    label: 'SaaS founders',
+    href: '/saas-support/'
+  }, {
+    label: 'E-commerce & DTC brands',
+    href: '/ecommerce-support/'
+  }, {
+    label: 'Hire a support agent',
+    href: '/hire-support-agents/'
+  }, {
+    label: 'Support outsourcing',
+    href: '/customer-support-outsourcing/'
+  }];
+  const links = [{
+    id: 'case-studies',
+    label: 'Case studies',
+    href: '/case-studies/'
+  }, {
+    id: 'pricing',
+    label: 'Pricing',
+    href: '/pricing/'
+  }, {
+    id: 'about',
+    label: 'About',
+    href: '/about/'
+  }, {
+    id: 'blog',
+    label: 'Blog',
+    href: '/blog/'
+  }];
+  const chevron = /*#__PURE__*/React.createElement("svg", {
+    width: "13",
+    height: "13",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    style: {
+      transform: solOpen ? 'rotate(180deg)' : 'none',
+      transition: 'transform 160ms',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M6 9l6 6 6-6"
+  }));
+  const burgerIcon = /*#__PURE__*/React.createElement("svg", {
+    width: "20",
+    height: "20",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.6",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, open ? /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M18 6L6 18"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M6 6l12 12"
+  })) : /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "M3 12h18"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3 6h18"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3 18h18"
+  })));
+  return /*#__PURE__*/React.createElement("nav", {
+    style: {
+      position: 'sticky',
+      top: 0,
+      zIndex: 50,
+      background: scrolled ? 'rgba(247, 242, 235, 0.9)' : 'transparent',
+      backdropFilter: scrolled ? 'blur(12px)' : 'none',
+      WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
+      borderBottom: scrolled ? '1px solid #D9CFBF' : '1px solid transparent',
+      transition: 'all 240ms cubic-bezier(0.4,0,0.6,1)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1200,
+      margin: '0 auto',
+      padding: '0 24px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 72,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 32
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/",
+    "aria-label": "xFusion home",
+    style: {
+      display: 'flex',
+      alignItems: 'baseline',
+      textDecoration: 'none',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "/assets/xfusion-logo.png",
+    alt: "xFusion",
+    width: "129",
+    height: "36",
+    style: {
+      height: 36,
+      width: 'auto',
+      display: 'block'
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "nav-links",
+    style: {
+      display: 'flex',
+      gap: 26,
+      marginLeft: 16,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    ref: dropRef,
+    onMouseEnter: hoverOpen,
+    onMouseLeave: hoverClose,
+    style: {
+      position: 'relative'
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "nav-link",
+    onClick: () => setSolOpen(o => !o),
+    "aria-expanded": solOpen,
+    "aria-haspopup": "true",
+    style: {
+      background: 'transparent',
+      border: 'none',
+      padding: 0,
+      paddingBottom: 4,
+      color: solOpen ? '#B8512C' : '#1F1A17',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
+      fontWeight: active === 'solutions' ? 500 : 400,
+      whiteSpace: 'nowrap',
+      cursor: 'pointer',
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 5,
+      borderBottom: active === 'solutions' ? '1.5px solid #B8512C' : '1.5px solid transparent'
+    }
+  }, "Solutions", chevron), solOpen && /*#__PURE__*/React.createElement("div", {
+    role: "menu",
+    style: {
+      position: 'absolute',
+      top: 'calc(100% + 10px)',
+      left: -14,
+      background: '#F7F2EB',
+      border: '1px solid #D9CFBF',
+      borderRadius: 12,
+      padding: '14px 8px 10px',
+      minWidth: 244,
+      boxShadow: '0 8px 24px rgba(31,26,23,0.08)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 10.5,
+      textTransform: 'uppercase',
+      letterSpacing: '0.14em',
+      color: '#6B5F56',
+      padding: '0 14px 8px'
+    }
+  }, "Who we help"), solutions.map(s => /*#__PURE__*/React.createElement("a", {
+    key: s.href,
+    href: s.href,
+    role: "menuitem",
+    className: "nav-drop-item",
+    style: {
+      display: 'block',
+      padding: '9px 14px',
+      borderRadius: 8,
+      color: '#1F1A17',
+      textDecoration: 'none',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
+      whiteSpace: 'nowrap'
+    }
+  }, s.label)))), links.map(l => /*#__PURE__*/React.createElement("a", {
+    key: l.id,
+    href: l.href,
+    className: "nav-link",
+    "aria-current": l.id === active ? 'page' : undefined,
+    style: {
+      color: '#1F1A17',
+      textDecoration: 'none',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
+      whiteSpace: 'nowrap',
+      paddingBottom: 4,
+      fontWeight: l.id === active ? 500 : 400,
+      borderBottom: l.id === active ? '1.5px solid #B8512C' : '1.5px solid transparent'
+    }
+  }, l.label))), /*#__PURE__*/React.createElement("div", {
+    className: "nav-cta",
+    style: {
+      marginLeft: 'auto',
+      display: 'flex',
+      gap: 12,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/book/",
+    className: "nav-cta-btn",
+    style: {
+      background: '#B8512C',
+      color: '#F7F2EB',
+      borderRadius: 8,
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontWeight: 500,
+      fontSize: 13,
+      padding: '9px 16px',
+      textDecoration: 'none',
+      display: 'inline-block',
+      lineHeight: 1,
+      transition: 'background 160ms cubic-bezier(0.4,0,0.6,1)'
+    }
+  }, "Book a Discovery Call")), /*#__PURE__*/React.createElement("button", {
+    className: "nav-burger",
+    onClick: () => setOpen(o => !o),
+    "aria-label": open ? 'Close menu' : 'Open menu',
+    "aria-expanded": open,
+    style: {
+      display: 'none',
+      marginLeft: 'auto',
+      background: 'transparent',
+      border: '1px solid #B7A993',
+      borderRadius: 8,
+      padding: 8,
+      cursor: 'pointer',
+      color: '#1F1A17'
+    }
+  }, burgerIcon)), open && /*#__PURE__*/React.createElement("div", {
+    className: "nav-mobile-panel",
+    style: {
+      display: 'none',
+      paddingBottom: 16,
+      paddingTop: 8,
+      borderTop: '1px solid #D9CFBF'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 11,
+      textTransform: 'uppercase',
+      letterSpacing: '0.14em',
+      color: '#6B5F56',
+      padding: '12px 4px 6px'
+    }
+  }, "Who we help"), solutions.map(s => /*#__PURE__*/React.createElement("a", {
+    key: s.href,
+    href: s.href,
+    onClick: () => setOpen(false),
+    style: {
+      display: 'block',
+      padding: '12px 4px 12px 16px',
+      color: '#1F1A17',
+      textDecoration: 'none',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 15,
+      borderBottom: '1px solid #EFE8DD'
+    }
+  }, s.label)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 10
+    }
+  }), links.map(l => /*#__PURE__*/React.createElement("a", {
+    key: l.id,
+    href: l.href,
+    onClick: () => setOpen(false),
+    style: {
+      display: 'block',
+      padding: '14px 4px',
+      color: '#1F1A17',
+      textDecoration: 'none',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      fontWeight: l.id === active ? 600 : 400,
+      borderBottom: '1px solid #EFE8DD'
+    }
+  }, l.label)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/book/",
+    onClick: () => setOpen(false),
+    style: {
+      background: '#B8512C',
+      color: '#F7F2EB',
+      borderRadius: 8,
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontWeight: 500,
+      fontSize: 15,
+      padding: '14px 20px',
+      textDecoration: 'none',
+      display: 'block',
+      textAlign: 'center',
+      lineHeight: 1
+    }
+  }, "Book a Discovery Call")))), /*#__PURE__*/React.createElement("style", null, `
+        .nav-link:hover { color: #B8512C !important; }
+        .nav-drop-item:hover { background: #EFE8DD; }
+        .nav-cta-btn:hover { background: #A0451F !important; }
+        @media (max-width: 880px) {
+          .nav-links { display: none !important; }
+          .nav-cta   { display: none !important; }
+          .nav-burger { display: inline-flex !important; align-items: center; justify-content: center; }
+          .nav-mobile-panel { display: block !important; }
+        }
+      `));
+}
+window.Nav = Nav;
 // --- (inline)
 const aboutParagraphs = ["Bonify is a Shopify app development company based in the United States, founded and led by John Carbone. The team builds and maintains a suite of widely used Shopify apps including Custom Fields, Arigato Automation, Customer Account Fields, and Instasheets. The apps are known for their flexibility, automation depth, and the kind of intricate functionality that lets merchants run real business logic on top of their Shopify stores.", "Bonify started as a web development firm. Under John's leadership, the company shifted focus to apps, betting that the real opportunity was in giving online retailers the tools to automate complex e-commerce operations themselves. That bet paid off. The apps built a loyal merchant base across the United Kingdom, Europe, North America, Asia Pacific, and beyond, with customers ranging from independent founders to multi-store operators.", "Two things define Bonify culturally: a focus on building what customers actually need, and a willingness to keep solving the harder, weirder e-commerce problems other apps avoid. That shows up in the support inbox. A typical Bonify ticket involves API logic, Shopify quirks, custom workflows, and merchants who need someone to actually understand their setup before answering. It is not a place where scripted support survives long.", "By 2020, Bonify's product range and customer base had outgrown what John and his cofounder Dan Pepin could handle alongside building and shipping software. That is when John and xFusion started working together."];
 const challengeParagraphs = ["Bonify's shift from web development to Shopify apps put the company on a different growth curve. New apps brought new merchants. New merchants brought tickets. And because Bonify's apps do real, technical work inside merchants' stores, the tickets were not the easy kind. They required someone who actually understood Shopify, automation logic, custom field structures, and the way real merchants try to bend an app to fit their workflow.", "For a while, John and Dan handled it themselves. That was the only option. The work demanded technical depth, and they were the ones with the depth. But every hour they spent answering a ticket was an hour they were not shipping product, planning the next app, or thinking about where Bonify was headed.", "The volume kept climbing. Live chat added another layer, with merchants expecting fast responses in real time. The founders were getting pulled out of strategic work, mid-thought, to handle support that had nothing to do with the next chapter of the company. Burnout was on the horizon, and the cost was visible in slipped product timelines.", "Bonify had tried other support solutions before. None had worked. The agents could not get fluent in the technical layer, language barriers introduced friction merchants noticed, and the \"set it and forget it\" promise from outside vendors never matched reality. By 2020, John was looking for something different. Not a placement and a handoff. A real partner."];
