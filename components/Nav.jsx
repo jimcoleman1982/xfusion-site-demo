@@ -69,7 +69,7 @@ function Nav({ active = 'home', prefix = '' }) {
             textDecoration: 'none',
             flexShrink: 0,
           }}>
-            <img src="assets/xfusion-logo.png" alt="xFusion" style={{ height: 36, width: "auto", display: "block" }} />
+            <img src="/assets/xfusion-logo.png" alt="xFusion" style={{ height: 36, width: "auto", display: "block" }} />
           </a>
 
           <div className="nav-links" style={{ display: 'flex', gap: 28, marginLeft: 16 }}>

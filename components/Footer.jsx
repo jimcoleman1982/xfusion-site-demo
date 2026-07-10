@@ -7,8 +7,8 @@ function Footer() {
     {
       title: 'Product',
       links: [
-        ['Pricing',       '#pricing'],
-        ['Case studies',  'case-studies/'],
+        ['Pricing',       '/#pricing'],
+        ['Case studies',  '/case-studies/'],
         ['Shopify app support', '/shopify-app-support/'],
         ['SaaS support', '/saas-support/'],
       ],
@@ -16,24 +16,24 @@ function Footer() {
     {
       title: 'Company',
       links: [
-        ['About',    'about/'],
-        ['Careers',  'careers/'],
-        ['Contact', "contact/"],
+        ['About',    '/about/'],
+        ['Careers',  '/careers/'],
+        ['Contact', '/contact/'],
       ],
     },
     {
       title: 'Resources',
       links: [
-        ['FAQ',   '#faq'],
-        ['Blog',  'blog/'],
+        ['FAQ',   '/faq/'],
+        ['Blog',  '/blog/'],
       ],
     },
     {
       title: 'Legal',
       links: [
-        ['Privacy',   'privacy/'],
-        ['DPA',       'dpa/'],
-        ['Security',  'security/'],
+        ['Privacy',   '/privacy/'],
+        ['DPA',       '/dpa/'],
+        ['Security',  '/security/'],
       ],
     },
   ];
@@ -62,7 +62,7 @@ function Footer() {
               display: 'inline-flex', alignItems: 'center', gap: 10,
               marginBottom: 14, textDecoration: 'none',
             }}>
-              <img src="assets/xfusion-logo-on-dark.png" alt="xFusion" style={{ height: 36, width: "auto", display: "block" }} />
+              <img src="/assets/xfusion-logo-on-dark.png" alt="xFusion" style={{ height: 36, width: "auto", display: "block" }} />
               
             </a>
             <p style={{

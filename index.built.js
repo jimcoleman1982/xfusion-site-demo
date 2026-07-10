@@ -969,6 +969,115 @@ function LeadModal({
         `)));
 }
 window.LeadModal = LeadModal;
+// --- components/LeadCapture.jsx
+// Shared Stage-1 email capture: validated email input + "Get started" button
+// that opens the qualification modal (LeadModal). Extracted from Hero.jsx so
+// the homepage and every vertical landing page run the SAME funnel: one
+// email_capture event (fired once, with hashed email), immediate delivery of
+// the email via sendLead, then Stage 2 in the modal.
+//
+// Props:
+//   microcopy  - optional node rendered under the form (defaults to the
+//                standard line + "book a call directly" escape hatch)
+function LeadCapture({
+  microcopy
+}) {
+  const [email, setEmail] = React.useState('');
+  const [emailError, setEmailError] = React.useState('');
+  const [modalOpen, setModalOpen] = React.useState(false);
+  const capturedRef = React.useRef(false);
+  const handleEmailSubmit = e => {
+    e.preventDefault();
+    const value = email.trim();
+    // Strict enough to reject "xyz @ abc . com": no spaces anywhere,
+    // one @, and a dot-separated TLD of 2+ letters.
+    const valid = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(value);
+    if (!valid) {
+      setEmailError('Please enter a valid work email, like you@company.com.');
+      return;
+    }
+    setEmailError('');
+    const normalized = value.toLowerCase();
+    if (window.xfAttribution) {
+      window.xfAttribution.hashEmail(normalized).then(hash => {
+        window.xfAttribution.saveLead({
+          email: normalized,
+          email_hash: hash || ''
+        });
+        if (!capturedRef.current) {
+          capturedRef.current = true;
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'email_capture',
+            email_hash: hash || undefined
+          });
+          // Deliver the email immediately (GHL + Sheet) so a visitor who
+          // abandons at the modal is still a recoverable lead.
+          window.xfAttribution.sendLead('email_capture', {
+            email: normalized
+          });
+        }
+        setModalOpen(true);
+      });
+    } else {
+      setModalOpen(true);
+    }
+  };
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("form", {
+    onSubmit: handleEmailSubmit,
+    noValidate: true,
+    className: "hero-capture",
+    style: {
+      display: 'flex',
+      gap: 12,
+      alignItems: 'stretch',
+      flexWrap: 'wrap',
+      maxWidth: 520
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "email",
+    value: email,
+    onChange: e => setEmail(e.target.value),
+    placeholder: "you@company.com",
+    "aria-label": "Work email",
+    autoComplete: "email",
+    style: {
+      flex: '1 1 240px',
+      boxSizing: 'border-box',
+      padding: '14px 18px',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      color: '#1F1A17',
+      background: '#FFFFFF',
+      border: emailError ? '1px solid #A8341E' : '1px solid #B7A993',
+      borderRadius: 8,
+      outline: 'none'
+    }
+  }), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    size: "lg",
+    as: "button"
+  }, "Get started")), emailError ? /*#__PURE__*/React.createElement("div", {
+    role: "alert",
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13,
+      color: '#A8341E',
+      marginTop: 10
+    }
+  }, emailError) : null, /*#__PURE__*/React.createElement(CTAMicrocopy, null, microcopy || /*#__PURE__*/React.createElement(React.Fragment, null, "30 minutes. No pitch deck. We just figure out if we're a good fit for your team.", ' ', /*#__PURE__*/React.createElement("a", {
+    href: "/book/",
+    style: {
+      color: '#B8512C',
+      fontWeight: 500
+    }
+  }, "Or book a call directly →"))), /*#__PURE__*/React.createElement(LeadModal, {
+    open: modalOpen,
+    email: (window.xfAttribution ? window.xfAttribution.getLead().email : '') || email.trim().toLowerCase(),
+    onClose: () => setModalOpen(false)
+  }));
+}
+window.LeadCapture = LeadCapture;
 // --- components/Nav.jsx
 // Site nav -- shared structure across all pages.
 // Vary only `active` and the `prefix` (relative path to site root).
@@ -1054,7 +1163,7 @@ function Nav({
       flexShrink: 0
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "assets/xfusion-logo.png",
+    src: "/assets/xfusion-logo.png",
     alt: "xFusion",
     style: {
       height: 36,
@@ -1177,10 +1286,6 @@ function Hero() {
     });
     return () => window.removeEventListener('load', load);
   }, []);
-  const [email, setEmail] = React.useState('');
-  const [emailError, setEmailError] = React.useState('');
-  const [modalOpen, setModalOpen] = React.useState(false);
-  const capturedRef = React.useRef(false);
   const handleToggle = () => setFlipped(f => !f);
   const handleKey = e => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -1188,43 +1293,9 @@ function Hero() {
       handleToggle();
     }
   };
-  const handleEmailSubmit = e => {
-    e.preventDefault();
-    const value = email.trim();
-    // Strict enough to reject "xyz @ abc . com": no spaces anywhere,
-    // one @, and a dot-separated TLD of 2+ letters.
-    const valid = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(value);
-    if (!valid) {
-      setEmailError('Please enter a valid work email, like you@company.com.');
-      return;
-    }
-    setEmailError('');
-    const normalized = value.toLowerCase();
-    if (window.xfAttribution) {
-      window.xfAttribution.hashEmail(normalized).then(hash => {
-        window.xfAttribution.saveLead({
-          email: normalized,
-          email_hash: hash || ''
-        });
-        if (!capturedRef.current) {
-          capturedRef.current = true;
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            event: 'email_capture',
-            email_hash: hash || undefined
-          });
-          // Deliver the email immediately (GHL + Sheet) so a visitor who
-          // abandons at the modal is still a recoverable lead.
-          window.xfAttribution.sendLead('email_capture', {
-            email: normalized
-          });
-        }
-        setModalOpen(true);
-      });
-    } else {
-      setModalOpen(true);
-    }
-  };
+
+  // Stage-1 capture now lives in the shared LeadCapture component
+  // (components/LeadCapture.jsx), reused by every vertical landing page.
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: '#F7F2EB',
@@ -1259,59 +1330,7 @@ function Hero() {
       maxWidth: 580,
       textWrap: 'pretty'
     }
-  }, "We find, train, and place senior support agents inside your business. They use AI to handle the work of several junior reps. We take care of the rest: recruiting, payroll, culture, and performance. So you don't have to."), /*#__PURE__*/React.createElement("form", {
-    onSubmit: handleEmailSubmit,
-    noValidate: true,
-    className: "hero-capture",
-    style: {
-      display: 'flex',
-      gap: 12,
-      alignItems: 'stretch',
-      flexWrap: 'wrap',
-      maxWidth: 520
-    }
-  }, /*#__PURE__*/React.createElement("input", {
-    type: "email",
-    value: email,
-    onChange: e => setEmail(e.target.value),
-    placeholder: "you@company.com",
-    "aria-label": "Work email",
-    autoComplete: "email",
-    style: {
-      flex: '1 1 240px',
-      boxSizing: 'border-box',
-      padding: '14px 18px',
-      fontFamily: "'IBM Plex Sans', sans-serif",
-      fontSize: 16,
-      color: '#1F1A17',
-      background: '#FFFFFF',
-      border: emailError ? '1px solid #A8341E' : '1px solid #B7A993',
-      borderRadius: 8,
-      outline: 'none'
-    }
-  }), /*#__PURE__*/React.createElement(Button, {
-    variant: "primary",
-    size: "lg",
-    as: "button"
-  }, "Get started")), emailError ? /*#__PURE__*/React.createElement("div", {
-    role: "alert",
-    style: {
-      fontFamily: "'IBM Plex Sans', sans-serif",
-      fontSize: 13,
-      color: '#A8341E',
-      marginTop: 10
-    }
-  }, emailError) : null, /*#__PURE__*/React.createElement(CTAMicrocopy, null, "30 minutes. No pitch deck. We just figure out if we're a good fit for your team.", ' ', /*#__PURE__*/React.createElement("a", {
-    href: "/book/",
-    style: {
-      color: '#B8512C',
-      fontWeight: 500
-    }
-  }, "Or book a call directly →")), /*#__PURE__*/React.createElement(LeadModal, {
-    open: modalOpen,
-    email: (window.xfAttribution ? window.xfAttribution.getLead().email : '') || email.trim().toLowerCase(),
-    onClose: () => setModalOpen(false)
-  })), /*#__PURE__*/React.createElement("div", {
+  }, "We find, train, and place senior support agents inside your business. They use AI to handle the work of several junior reps. We take care of the rest: recruiting, payroll, culture, and performance. So you don't have to."), /*#__PURE__*/React.createElement(LeadCapture, null)), /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'relative'
     }
@@ -3003,16 +3022,16 @@ window.FinalCTA = FinalCTA;
 function Footer() {
   const cols = [{
     title: 'Product',
-    links: [['Pricing', '#pricing'], ['Case studies', 'case-studies/'], ['Shopify app support', '/shopify-app-support/'], ['SaaS support', '/saas-support/']]
+    links: [['Pricing', '/#pricing'], ['Case studies', '/case-studies/'], ['Shopify app support', '/shopify-app-support/'], ['SaaS support', '/saas-support/']]
   }, {
     title: 'Company',
-    links: [['About', 'about/'], ['Careers', 'careers/'], ['Contact', "contact/"]]
+    links: [['About', '/about/'], ['Careers', '/careers/'], ['Contact', '/contact/']]
   }, {
     title: 'Resources',
-    links: [['FAQ', '#faq'], ['Blog', 'blog/']]
+    links: [['FAQ', '/faq/'], ['Blog', '/blog/']]
   }, {
     title: 'Legal',
-    links: [['Privacy', 'privacy/'], ['DPA', 'dpa/'], ['Security', 'security/']]
+    links: [['Privacy', '/privacy/'], ['DPA', '/dpa/'], ['Security', '/security/']]
   }];
   const FOREST = '#2C4A3E';
   const PAPER = '#F7F2EB';
@@ -3045,7 +3064,7 @@ function Footer() {
       textDecoration: 'none'
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "assets/xfusion-logo-on-dark.png",
+    src: "/assets/xfusion-logo-on-dark.png",
     alt: "xFusion",
     style: {
       height: 36,
