@@ -564,6 +564,7 @@ function Nav({
 }) {
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const [solutionsOpen, setSolutionsOpen] = React.useState(false);
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener('scroll', onScroll);
@@ -590,6 +591,24 @@ function Nav({
     id: 'blog',
     label: 'Blog',
     href: prefix + 'blog/'
+  }];
+
+  // ICP-facing solution pages: labels say who the visitor is, not what we sell.
+  const solutions = [{
+    label: 'Shopify app developers',
+    href: '/shopify-app-support/'
+  }, {
+    label: 'SaaS founders',
+    href: '/saas-support/'
+  }, {
+    label: 'E-commerce & DTC brands',
+    href: '/ecommerce-support/'
+  }, {
+    label: 'Hire a support agent',
+    href: '/hire-support-agents/'
+  }, {
+    label: 'Support outsourcing',
+    href: '/customer-support-outsourcing/'
   }];
   const linkBase = {
     color: '#1F1A17',
@@ -655,9 +674,90 @@ function Nav({
     style: {
       display: 'flex',
       gap: 28,
-      marginLeft: 16
+      marginLeft: 16,
+      alignItems: 'center'
     }
-  }, links.map(l => {
+  }, links.slice(0, 1).map(l => /*#__PURE__*/React.createElement("a", {
+    key: l.id,
+    href: l.href,
+    "aria-current": l.id === active ? 'page' : undefined,
+    style: {
+      ...linkBase,
+      fontWeight: l.id === active ? 500 : 400,
+      borderBottom: l.id === active ? '1.5px solid #B8512C' : '1.5px solid transparent'
+    }
+  }, l.label)), /*#__PURE__*/React.createElement("div", {
+    onMouseEnter: () => setSolutionsOpen(true),
+    onMouseLeave: () => setSolutionsOpen(false),
+    style: {
+      position: 'relative'
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => setSolutionsOpen(o => !o),
+    "aria-expanded": solutionsOpen,
+    "aria-haspopup": "true",
+    style: {
+      ...linkBase,
+      background: 'transparent',
+      border: 'none',
+      fontWeight: active === 'solutions' ? 500 : 400,
+      borderBottom: active === 'solutions' ? '1.5px solid #B8512C' : '1.5px solid transparent',
+      cursor: 'pointer',
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 5,
+      padding: 0,
+      paddingBottom: 4
+    }
+  }, "Solutions", /*#__PURE__*/React.createElement(Icon, {
+    name: "chevron",
+    size: 13,
+    stroke: 2,
+    style: {
+      transform: solutionsOpen ? 'rotate(180deg)' : 'none',
+      transition: 'transform 160ms'
+    }
+  })), solutionsOpen && /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 'calc(100% + 10px)',
+      left: -14,
+      background: '#F7F2EB',
+      border: '1px solid #D9CFBF',
+      borderRadius: 12,
+      padding: '14px 8px 10px',
+      minWidth: 240,
+      boxShadow: '0 8px 24px rgba(31,26,23,0.08)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 10.5,
+      textTransform: 'uppercase',
+      letterSpacing: '0.14em',
+      color: '#6B5F56',
+      padding: '0 14px 8px'
+    }
+  }, "Who we help"), solutions.map(s => /*#__PURE__*/React.createElement("a", {
+    key: s.href,
+    href: s.href,
+    style: {
+      display: 'block',
+      padding: '9px 14px',
+      borderRadius: 8,
+      color: '#1F1A17',
+      textDecoration: 'none',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
+      whiteSpace: 'nowrap'
+    },
+    onMouseEnter: e => {
+      e.currentTarget.style.background = '#EFE8DD';
+    },
+    onMouseLeave: e => {
+      e.currentTarget.style.background = 'transparent';
+    }
+  }, s.label)))), links.slice(1).map(l => {
     const isActive = l.id === active;
     return /*#__PURE__*/React.createElement("a", {
       key: l.id,
@@ -724,6 +824,28 @@ function Nav({
       }
     }, l.label);
   }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 11,
+      textTransform: 'uppercase',
+      letterSpacing: '0.14em',
+      color: '#6B5F56',
+      padding: '16px 4px 6px'
+    }
+  }, "Who we help"), solutions.map(s => /*#__PURE__*/React.createElement("a", {
+    key: s.href,
+    href: s.href,
+    onClick: () => setOpen(false),
+    style: {
+      display: 'block',
+      padding: '12px 4px 12px 16px',
+      color: '#1F1A17',
+      textDecoration: 'none',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 15,
+      borderBottom: '1px solid #EFE8DD'
+    }
+  }, s.label)), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 16
     }
@@ -1454,7 +1576,7 @@ function VerticalLanding() {
   }));
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Nav, {
     prefix: "/",
-    active: ""
+    active: "solutions"
   }), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement("section", {
     style: {
       background: '#F7F2EB',

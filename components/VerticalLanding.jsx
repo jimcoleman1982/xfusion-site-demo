@@ -33,7 +33,7 @@ function VerticalLanding() {
 
   return (
     <div>
-      <Nav prefix="/" active="" />
+      <Nav prefix="/" active="solutions" />
       <main>
         {/* Hero + Stage-1 capture */}
         <section style={{ background: '#F7F2EB', padding: '72px 0 56px' }}>

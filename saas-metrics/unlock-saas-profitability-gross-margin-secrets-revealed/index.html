@@ -38,6 +38,15 @@
     .nav .cta { background: #B8512C; color: #F7F2EB; padding: 10px 18px; border-radius: 8px; font-weight: 600; }
     .nav .cta:hover { background: #A0451F; color: #F7F2EB; }
     .nav .links { display: flex; gap: 8px; align-items: center; }
+    .ndrop { position: relative; }
+    .ndrop-btn { color: #1F1A17; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 500; padding: 8px 12px; cursor: default; display: inline-flex; align-items: center; gap: 5px; }
+    .ndrop:hover .ndrop-btn { color: #B8512C; }
+    .ndrop-menu { display: none; position: absolute; top: 100%; left: 0; background: #F7F2EB; border: 1px solid #D9CFBF; border-radius: 12px; padding: 12px 8px 8px; min-width: 235px; box-shadow: 0 8px 24px rgba(31,26,23,0.08); z-index: 60; }
+    .ndrop:hover .ndrop-menu { display: block; }
+    .ndrop-menu .ndrop-head { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.14em; color: #6B5F56; padding: 0 14px 8px; }
+    .ndrop-menu a { display: block; padding: 9px 14px; border-radius: 8px; color: #1F1A17; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; text-decoration: none; white-space: nowrap; }
+    .ndrop-menu a:hover { background: #EFE8DD; color: #1F1A17; }
+    @media (max-width: 700px) { .ndrop { display: none; } }
     .logo { display: flex; align-items: center; gap: 12px; font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; color: #1F1A17; text-decoration: none; }
     @media (max-width: 700px) { .nav .links a:not(.cta) { display: none; } }
   </style>
@@ -139,6 +148,17 @@
       <a href="../../">Home</a>
       <a href="../../about/">About</a>
       <a href="../../case-studies/">Case studies</a>
+      <div class="ndrop">
+        <span class="ndrop-btn">Solutions &#9662;</span>
+        <div class="ndrop-menu">
+          <div class="ndrop-head">Who we help</div>
+          <a href="/shopify-app-support/">Shopify app developers</a>
+          <a href="/saas-support/">SaaS founders</a>
+          <a href="/ecommerce-support/">E-commerce &amp; DTC brands</a>
+          <a href="/hire-support-agents/">Hire a support agent</a>
+          <a href="/customer-support-outsourcing/">Support outsourcing</a>
+        </div>
+      </div>
       <a href="/pricing/">Pricing</a>
       <a href="../../blog/" class="active">Blog</a>
       <a href="../../book/" class="cta">Book a Discovery Call</a>
