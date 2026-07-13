@@ -15,7 +15,9 @@
 //   tickets?: [string],                     // "what your agent takes off your plate" chips (empty/absent = hidden)
 //   ticketsTitle?,                          // optional heading override for the tickets grid
 //   steps?: [{ title, text }],              // "how it works" override (default: XF_LP_STEPS)
-//   hideSteps?, hideComparison?, hideTeam?, // opt out of the shared sections per page
+//   stepsLead?,                             // per-vertical one-liner under the "How it works" H2
+//   learnTitle?, learnIntro?,               // per-vertical framing for the shared learn-phases section
+//   hideSteps?, hideComparison?, hideTeam?, hideLearn?, // opt out of shared sections per page
 //   quotes: [{ text, name, role, img }],    // 0-2 verified testimonials
 //   caseStudies: [{ label, href, stat?, statText? }], // related case studies (stat -> card layout)
 //   resources?: [{ title, href }],          // "keep reading" blog links (empty/absent = hidden)
@@ -49,6 +51,15 @@ const XF_LP_COMPARISON = [
     featured: true,
     rows: ['$3,900/mo all-in, one flat rate', 'A dedicated senior, AI-trained agent', 'We run recruiting, training, payroll, QA, and backup', 'Month-to-month, 30-day risk-free trial'],
   },
+];
+
+// Shared "how your agent learns" phases. Source: Partnership Onboarding Guide
+// (client-led initial training, review sessions, draft mode, approved go-live).
+const XF_LP_LEARN = [
+  { label: 'Phase 1', title: 'You teach the first agent', text: 'One round of training led by your team: product, brand and tone, your helpdesk, escalation paths. Every agent after that, we train.' },
+  { label: 'Phase 2', title: 'They study before they speak', text: 'Review sessions to absorb what they learned and prepare questions, while we turn it into documented processes your whole future team inherits.' },
+  { label: 'Phase 3', title: 'Draft mode', text: 'For the first days, every reply is a draft: reviewed by their xFusion team leader, then approved by you, before a customer ever sees it.' },
+  { label: 'Phase 4', title: 'Live, with guardrails', text: 'Replies go live only with your sign-off. SLAs set together, KPIs tracked, QA continuous, and escalations routed to the right team.' },
 ];
 
 // Shared "people behind your queue" block. Same account managers as /about/.
@@ -227,14 +238,58 @@ function VerticalLanding() {
           </section>
         ) : null}
 
+        {/* How your agent learns your product (verified onboarding process) */}
+        {cfg.hideLearn ? null : (
+          <section style={{ padding: '0 0 72px' }}>
+            <Container narrow>
+              <h2 style={{
+                fontFamily: "'Source Serif 4', serif", fontSize: 'clamp(26px, 3.4vw, 36px)',
+                fontWeight: 600, letterSpacing: '-0.02em', margin: '0 0 12px',
+              }}>{cfg.learnTitle || 'How your agent learns your product'}</h2>
+              {cfg.learnIntro ? (
+                <p style={{
+                  fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 16,
+                  lineHeight: 1.6, color: '#3A322D', margin: '0 0 26px', maxWidth: 620,
+                }}>{cfg.learnIntro}</p>
+              ) : <div style={{ height: 14 }} />}
+              <div className="lp-learn" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
+                {XF_LP_LEARN.map((ph) => (
+                  <div key={ph.title} style={{ border: '1px solid #D9CFBF', borderRadius: 12, padding: '22px 22px 20px' }}>
+                    <div style={{
+                      fontFamily: "'JetBrains Mono', monospace", fontSize: 11,
+                      textTransform: 'uppercase', letterSpacing: '0.14em',
+                      color: '#B8512C', marginBottom: 10,
+                    }}>{ph.label}</div>
+                    <div style={{
+                      fontFamily: "'Source Serif 4', serif", fontSize: 19, fontWeight: 600,
+                      color: '#1F1A17', marginBottom: 8,
+                    }}>{ph.title}</div>
+                    <p style={{
+                      fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 15,
+                      lineHeight: 1.6, color: '#3A322D', margin: 0,
+                    }}>{ph.text}</p>
+                  </div>
+                ))}
+              </div>
+            </Container>
+          </section>
+        )}
+
         {/* How it works */}
         {cfg.hideSteps ? null : (
           <section style={{ background: '#EFE8DD', padding: '72px 0' }}>
             <Container narrow>
               <h2 style={{
                 fontFamily: "'Source Serif 4', serif", fontSize: 'clamp(26px, 3.4vw, 36px)',
-                fontWeight: 600, letterSpacing: '-0.02em', margin: '0 0 30px',
+                fontWeight: 600, letterSpacing: '-0.02em',
+                margin: cfg.stepsLead ? '0 0 12px' : '0 0 30px',
               }}>How it works</h2>
+              {cfg.stepsLead ? (
+                <p style={{
+                  fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 16,
+                  lineHeight: 1.6, color: '#3A322D', margin: '0 0 26px', maxWidth: 620,
+                }}>{cfg.stepsLead}</p>
+              ) : null}
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 {(cfg.steps || XF_LP_STEPS).map((s, i) => (
                   <div key={s.title} style={{
@@ -529,6 +584,7 @@ function VerticalLanding() {
         }
         @media (max-width: 600px) {
           .lp-tickets { grid-template-columns: 1fr !important; }
+          .lp-learn { grid-template-columns: 1fr !important; }
           .lp-cs-cards { grid-template-columns: 1fr !important; }
           .lp-team { grid-template-columns: 1fr 1fr 1fr !important; }
         }

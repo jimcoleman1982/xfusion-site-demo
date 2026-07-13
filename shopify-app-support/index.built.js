@@ -1775,7 +1775,9 @@ window.StickyCapture = StickyCapture;
 //   tickets?: [string],                     // "what your agent takes off your plate" chips (empty/absent = hidden)
 //   ticketsTitle?,                          // optional heading override for the tickets grid
 //   steps?: [{ title, text }],              // "how it works" override (default: XF_LP_STEPS)
-//   hideSteps?, hideComparison?, hideTeam?, // opt out of the shared sections per page
+//   stepsLead?,                             // per-vertical one-liner under the "How it works" H2
+//   learnTitle?, learnIntro?,               // per-vertical framing for the shared learn-phases section
+//   hideSteps?, hideComparison?, hideTeam?, hideLearn?, // opt out of shared sections per page
 //   quotes: [{ text, name, role, img }],    // 0-2 verified testimonials
 //   caseStudies: [{ label, href, stat?, statText? }], // related case studies (stat -> card layout)
 //   resources?: [{ title, href }],          // "keep reading" blog links (empty/absent = hidden)
@@ -1812,6 +1814,26 @@ const XF_LP_COMPARISON = [{
   name: 'xFusion',
   featured: true,
   rows: ['$3,900/mo all-in, one flat rate', 'A dedicated senior, AI-trained agent', 'We run recruiting, training, payroll, QA, and backup', 'Month-to-month, 30-day risk-free trial']
+}];
+
+// Shared "how your agent learns" phases. Source: Partnership Onboarding Guide
+// (client-led initial training, review sessions, draft mode, approved go-live).
+const XF_LP_LEARN = [{
+  label: 'Phase 1',
+  title: 'You teach the first agent',
+  text: 'One round of training led by your team: product, brand and tone, your helpdesk, escalation paths. Every agent after that, we train.'
+}, {
+  label: 'Phase 2',
+  title: 'They study before they speak',
+  text: 'Review sessions to absorb what they learned and prepare questions, while we turn it into documented processes your whole future team inherits.'
+}, {
+  label: 'Phase 3',
+  title: 'Draft mode',
+  text: 'For the first days, every reply is a draft: reviewed by their xFusion team leader, then approved by you, before a customer ever sees it.'
+}, {
+  label: 'Phase 4',
+  title: 'Live, with guardrails',
+  text: 'Replies go live only with your sign-off. SLAs set together, KPIs tracked, QA continuous, and escalations routed to the right team.'
 }];
 
 // Shared "people behind your queue" block. Same account managers as /about/.
@@ -2097,7 +2119,73 @@ function VerticalLanding() {
     style: {
       marginTop: 2
     }
-  }, check), t))))) : null, cfg.hideSteps ? null : /*#__PURE__*/React.createElement("section", {
+  }, check), t))))) : null, cfg.hideLearn ? null : /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '0 0 72px'
+    }
+  }, /*#__PURE__*/React.createElement(Container, {
+    narrow: true
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(26px, 3.4vw, 36px)',
+      fontWeight: 600,
+      letterSpacing: '-0.02em',
+      margin: '0 0 12px'
+    }
+  }, cfg.learnTitle || 'How your agent learns your product'), cfg.learnIntro ? /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      lineHeight: 1.6,
+      color: '#3A322D',
+      margin: '0 0 26px',
+      maxWidth: 620
+    }
+  }, cfg.learnIntro) : /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 14
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "lp-learn",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 18
+    }
+  }, XF_LP_LEARN.map(ph => /*#__PURE__*/React.createElement("div", {
+    key: ph.title,
+    style: {
+      border: '1px solid #D9CFBF',
+      borderRadius: 12,
+      padding: '22px 22px 20px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 11,
+      textTransform: 'uppercase',
+      letterSpacing: '0.14em',
+      color: '#B8512C',
+      marginBottom: 10
+    }
+  }, ph.label), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 19,
+      fontWeight: 600,
+      color: '#1F1A17',
+      marginBottom: 8
+    }
+  }, ph.title), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 15,
+      lineHeight: 1.6,
+      color: '#3A322D',
+      margin: 0
+    }
+  }, ph.text)))))), cfg.hideSteps ? null : /*#__PURE__*/React.createElement("section", {
     style: {
       background: '#EFE8DD',
       padding: '72px 0'
@@ -2110,9 +2198,18 @@ function VerticalLanding() {
       fontSize: 'clamp(26px, 3.4vw, 36px)',
       fontWeight: 600,
       letterSpacing: '-0.02em',
-      margin: '0 0 30px'
+      margin: cfg.stepsLead ? '0 0 12px' : '0 0 30px'
     }
-  }, "How it works"), /*#__PURE__*/React.createElement("div", {
+  }, "How it works"), cfg.stepsLead ? /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      lineHeight: 1.6,
+      color: '#3A322D',
+      margin: '0 0 26px',
+      maxWidth: 620
+    }
+  }, cfg.stepsLead) : null, /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column'
@@ -2564,6 +2661,7 @@ function VerticalLanding() {
         }
         @media (max-width: 600px) {
           .lp-tickets { grid-template-columns: 1fr !important; }
+          .lp-learn { grid-template-columns: 1fr !important; }
           .lp-cs-cards { grid-template-columns: 1fr !important; }
           .lp-team { grid-template-columns: 1fr 1fr 1fr !important; }
         }
@@ -2595,6 +2693,9 @@ const XF_LP_FAQ = [{
 }, {
   "q": "What about security and data access?",
   "a": "Your agent works inside your helpdesk and your tools, not ours, so you control exactly what they can access and can revoke it any time. Every agent is vetted before placement, works under confidentiality agreements, and is offboarded with a defined access checklist. The full picture is in the security overview at xfusion.io/security."
+}, {
+  "q": "How do you protect our brand voice while the agent ramps up?",
+  "a": "Draft mode. For the first days, every reply your agent writes is a draft: their xFusion team leader reviews it, then you approve it, before it reaches a customer. Replies switch to live only once you sign off. By then the agent has been trained on your product, your tone, and your helpdesk, and what they learned is documented for every agent who comes after."
 }];
 window.XF_LP_FAQ = XF_LP_FAQ;
 window.XF_LP = {
@@ -2665,6 +2766,9 @@ window.XF_LP = {
     "title": "Unpacking the back-office: why outsourcing is the go-to for Shopify retailers",
     "href": "/customer-experience/unpacking-the-back-office-why-outsourcing-is-the-go-to-for-shopify-retailers/"
   }],
+  "learnTitle": "How your agent learns your app",
+  "learnIntro": "Your app's quirks, your APIs, your merchants' setups, and the tone that earns 5-star reviews.",
+  "stepsLead": "From drowning in merchant tickets to a managed agent inside your helpdesk, in about two weeks.",
   "closingH2": "Get back to building your app.",
   "closingText": "Come with your messiest support problem. If we're not the right fit, we'll tell you, and you'll leave with a clearer picture either way."
 };
