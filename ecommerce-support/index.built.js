@@ -2297,9 +2297,9 @@ function VerticalLanding() {
       fontSize: 18,
       fontWeight: 600,
       color: '#1F1A17',
-      marginBottom: c.stat ? 10 : 0
+      marginBottom: c.stat || c.statText ? 10 : 0
     }
-  }, c.label), c.stat ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+  }, c.label), c.stat ? /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'Source Serif 4', serif",
       fontSize: 30,
@@ -2308,7 +2308,7 @@ function VerticalLanding() {
       lineHeight: 1,
       marginBottom: 6
     }
-  }, c.stat), /*#__PURE__*/React.createElement("div", {
+  }, c.stat) : null, c.statText ? /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 13.5,
@@ -2316,7 +2316,7 @@ function VerticalLanding() {
       color: '#3A322D',
       marginBottom: 10
     }
-  }, c.statText)) : null, /*#__PURE__*/React.createElement("span", {
+  }, c.statText) : null, /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 13.5,

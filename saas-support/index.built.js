@@ -2297,9 +2297,9 @@ function VerticalLanding() {
       fontSize: 18,
       fontWeight: 600,
       color: '#1F1A17',
-      marginBottom: c.stat ? 10 : 0
+      marginBottom: c.stat || c.statText ? 10 : 0
     }
-  }, c.label), c.stat ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+  }, c.label), c.stat ? /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'Source Serif 4', serif",
       fontSize: 30,
@@ -2308,7 +2308,7 @@ function VerticalLanding() {
       lineHeight: 1,
       marginBottom: 6
     }
-  }, c.stat), /*#__PURE__*/React.createElement("div", {
+  }, c.stat) : null, c.statText ? /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 13.5,
@@ -2316,7 +2316,7 @@ function VerticalLanding() {
       color: '#3A322D',
       marginBottom: 10
     }
-  }, c.statText)) : null, /*#__PURE__*/React.createElement("span", {
+  }, c.statText) : null, /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 13.5,
@@ -2639,20 +2639,22 @@ window.XF_LP = {
     "label": "SavvyCal",
     "href": "/case-studies/savvycal/",
     "stat": "84.79%",
-    "statText": "reduction in average reply time"
+    "statText": "faster average replies. Derrick got his mornings back."
   }, {
     "label": "TheReceptionist",
     "href": "/case-studies/the-receptionist/",
     "stat": "98.9%",
-    "statText": "customer satisfaction held by our team"
+    "statText": "CSAT held while ticket volume grew 6x. Radical Support reputation intact."
   }, {
     "label": "Tolstoy",
     "href": "/case-studies/tolstoy/",
     "stat": "1 → 6",
-    "statText": "from one agent to a six-person team"
+    "statText": "from one agent to a six-person team handling Tier 1 and Tier 2."
   }, {
     "label": "SkyFi",
-    "href": "/case-studies/skyfi/"
+    "href": "/case-studies/skyfi/",
+    "stat": "91.9%",
+    "statText": "CSAT across 185 countries, with 36-minute average replies."
   }],
   "tickets": ["Billing, plans, and refund requests", "Bug triage with clean repro steps", "API and integration questions", "Onboarding walkthroughs for new users", "Tier 1 and Tier 2 resolution", "Escalations your engineers can act on"],
   "resources": [{

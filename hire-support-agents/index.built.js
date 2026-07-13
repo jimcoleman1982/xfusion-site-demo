@@ -2297,9 +2297,9 @@ function VerticalLanding() {
       fontSize: 18,
       fontWeight: 600,
       color: '#1F1A17',
-      marginBottom: c.stat ? 10 : 0
+      marginBottom: c.stat || c.statText ? 10 : 0
     }
-  }, c.label), c.stat ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+  }, c.label), c.stat ? /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'Source Serif 4', serif",
       fontSize: 30,
@@ -2308,7 +2308,7 @@ function VerticalLanding() {
       lineHeight: 1,
       marginBottom: 6
     }
-  }, c.stat), /*#__PURE__*/React.createElement("div", {
+  }, c.stat) : null, c.statText ? /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 13.5,
@@ -2316,7 +2316,7 @@ function VerticalLanding() {
       color: '#3A322D',
       marginBottom: 10
     }
-  }, c.statText)) : null, /*#__PURE__*/React.createElement("span", {
+  }, c.statText) : null, /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 13.5,
@@ -2636,15 +2636,19 @@ window.XF_LP = {
   }],
   "caseStudies": [{
     "label": "Ordered Magic",
-    "href": "/case-studies/ordered-magic/"
+    "href": "/case-studies/ordered-magic/",
+    "stat": "1 → team",
+    "statText": "grew from a single dedicated agent to a multi-person support team."
   }, {
     "label": "Bonify",
-    "href": "/case-studies/bonify/"
+    "href": "/case-studies/bonify/",
+    "stat": "95%",
+    "statText": "of tickets off the founders' plates, with reply times cut in half."
   }, {
     "label": "SavvyCal",
     "href": "/case-studies/savvycal/",
     "stat": "84.79%",
-    "statText": "reduction in average reply time"
+    "statText": "faster average replies. Derrick got his mornings back."
   }],
   "tickets": ["Full ownership of your queue, in your helpdesk", "Email, chat, and social tickets", "Tier 1 and Tier 2 resolution", "Macros and help-doc upkeep", "Replies QA'd in your brand voice", "Backup coverage when your agent is out"],
   "ticketsTitle": "What your new hire takes off your plate",

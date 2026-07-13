@@ -2297,9 +2297,9 @@ function VerticalLanding() {
       fontSize: 18,
       fontWeight: 600,
       color: '#1F1A17',
-      marginBottom: c.stat ? 10 : 0
+      marginBottom: c.stat || c.statText ? 10 : 0
     }
-  }, c.label), c.stat ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+  }, c.label), c.stat ? /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'Source Serif 4', serif",
       fontSize: 30,
@@ -2308,7 +2308,7 @@ function VerticalLanding() {
       lineHeight: 1,
       marginBottom: 6
     }
-  }, c.stat), /*#__PURE__*/React.createElement("div", {
+  }, c.stat) : null, c.statText ? /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 13.5,
@@ -2316,7 +2316,7 @@ function VerticalLanding() {
       color: '#3A322D',
       marginBottom: 10
     }
-  }, c.statText)) : null, /*#__PURE__*/React.createElement("span", {
+  }, c.statText) : null, /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 13.5,
@@ -2638,16 +2638,21 @@ window.XF_LP = {
     "label": "Tolstoy",
     "href": "/case-studies/tolstoy/",
     "stat": "+90",
-    "statText": "app-store ranking points after better support"
+    "statText": "app-store ranking points after a wave of 5-star reviews."
   }, {
     "label": "Bonify",
-    "href": "/case-studies/bonify/"
+    "href": "/case-studies/bonify/",
+    "stat": "95%",
+    "statText": "of tickets off the founders' plates, holding a 4.9 Shopify rating."
   }, {
     "label": "Ordered Magic",
-    "href": "/case-studies/ordered-magic/"
+    "href": "/case-studies/ordered-magic/",
+    "stat": "100s",
+    "statText": "of new five-star reviews. The founder went back to building."
   }, {
     "label": "Revy",
-    "href": "/case-studies/revy/"
+    "href": "/case-studies/revy/",
+    "statText": "Hundreds of 5-star App Store reviews and a ranking climb, while Marcelo built product."
   }],
   "tickets": ["Merchant onboarding and setup help", "App conflicts and theme edge cases", "API and webhook questions", "App-store review responses", "Billing and refund requests", "Tier 2 investigation before it reaches your devs"],
   "resources": [{
