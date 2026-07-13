@@ -1785,8 +1785,8 @@ window.StickyCapture = StickyCapture;
 //   closingH2, closingText,
 // }
 
-// Client roster shown on every LP trust strip (source: homepage marquee in Hero.jsx).
-const CLIENT_NAMES = ['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aligned', 'Kioskbuddy'];
+// Client roster shown on every LP trust strip (same list as the homepage marquee in Hero.jsx).
+const CLIENT_NAMES = ['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aheadworks', 'Joli Apps', 'Sign In Solutions', 'Kioskbuddy', 'Common Services', 'Finger Ink', 'Lovely Apps', 'Aligned', 'Autism Products'];
 
 // Shared "How it works" steps. Every claim here also lives on /pricing/ and /faq/.
 const XF_LP_STEPS = [{
@@ -1961,27 +1961,29 @@ function VerticalLanding() {
       letterSpacing: '0.14em',
       color: '#6B5F56',
       textAlign: 'center',
-      marginBottom: 16
+      marginBottom: 18
     }
-  }, "Trusted by support-driven teams at"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: '10px 26px',
-      justifyContent: 'center'
-    }
+  }, "Trusted by support-driven teams at")), /*#__PURE__*/React.createElement("div", {
+    className: "logo-marquee",
+    "aria-label": "Client names"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "logo-marquee-track"
+  }, [0, 1].map(copy => /*#__PURE__*/React.createElement("div", {
+    className: "logo-marquee-group",
+    key: copy,
+    "aria-hidden": copy === 1
   }, CLIENT_NAMES.map(name => /*#__PURE__*/React.createElement("span", {
     key: name,
     style: {
       fontFamily: "'Source Serif 4', serif",
-      fontSize: 17,
+      fontSize: 22,
       fontWeight: 500,
       letterSpacing: '-0.01em',
       color: '#3A322D',
       opacity: 0.7,
       whiteSpace: 'nowrap'
     }
-  }, name))))), cfg.metrics && cfg.metrics.length > 0 ? /*#__PURE__*/React.createElement("section", {
+  }, name))))))), cfg.metrics && cfg.metrics.length > 0 ? /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '64px 0 0'
     }
@@ -2653,6 +2655,36 @@ function VerticalLanding() {
       marginRight: 'auto'
     }
   }, "30 minutes. No commitment. No credit card. You'll talk directly with our founding team.")))), /*#__PURE__*/React.createElement(StickyCapture, null), /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement("style", null, `
+        /* Trust bar marquee: two identical groups slide left; when the first
+           has fully passed, the loop restarts invisibly. Edges fade out. */
+        .logo-marquee {
+          overflow: hidden;
+          -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+          mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+        }
+        .logo-marquee-track {
+          display: flex;
+          width: max-content;
+          animation: logo-marquee-scroll 64s linear infinite;
+        }
+        .logo-marquee:hover .logo-marquee-track { animation-play-state: paused; }
+        .logo-marquee-group {
+          display: flex;
+          align-items: center;
+          gap: 52px;
+          padding-right: 52px;
+        }
+        @keyframes logo-marquee-scroll {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-50%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .logo-marquee-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }
+          .logo-marquee-group { flex-wrap: wrap; justify-content: center; gap: 14px 24px; padding-right: 0; }
+          .logo-marquee-group[aria-hidden="true"] { display: none; }
+          .logo-marquee { -webkit-mask-image: none; mask-image: none; }
+        }
+
         @media (max-width: 800px) {
           .lp-metrics { grid-template-columns: 1fr !important; }
           .lp-compare { grid-template-columns: 1fr !important; }
