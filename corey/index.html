@@ -31,68 +31,80 @@
   <!-- End Google Tag Manager -->
   <style>
     body { background: #F7F2EB; color: #1F1A17; margin: 0; }
-    .page-wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-    .nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #D9CFBF; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    .narrow { max-width: 720px; }
+
+    .nav { border-bottom: 1px solid #D9CFBF; }
+    .nav-inner { padding-top: 20px; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
     .logo img { height: 30px; width: auto; display: block; }
     .nav .back { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; font-weight: 500; color: #3A322D; text-decoration: none; }
     .nav .back:hover { color: #B8512C; }
 
-    .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 64px; align-items: center; margin: 72px 0 56px; }
+    .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 64px; align-items: center; padding: 72px 24px 64px; }
     .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; color: #6B5F56; margin-bottom: 18px; }
     h1 { font-family: 'Source Serif 4', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; margin: 0 0 20px; text-wrap: balance; }
     .sub { font-family: 'IBM Plex Sans', sans-serif; font-size: 18px; color: #3A322D; line-height: 1.6; margin: 0 0 28px; max-width: 560px; }
-    .corey-photo { width: 100%; max-width: 340px; aspect-ratio: 1; object-fit: cover; border-radius: 16px; border: 1px solid #D9CFBF; display: block; margin: 0 auto; }
+    .corey-photo { width: 100%; max-width: 340px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 12px; border: 1px solid #D9CFBF; display: block; margin: 0 auto; }
     .corey-caption { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #6B5F56; text-align: center; margin-top: 14px; }
 
     .offer { background: #F8EBC9; border: 1px solid #E6C683; border-radius: 12px; padding: 22px 26px; margin: 0 0 28px; max-width: 560px; }
     .offer strong { font-family: 'Source Serif 4', serif; font-size: 19px; font-weight: 600; display: block; margin-bottom: 6px; }
-    .offer p { font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; line-height: 1.55; color: #3A322D; margin: 0; }
+    .offer p { font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; line-height: 1.55; color: #3A322D; margin: 0 0 8px; }
+    .offer p:last-child { margin-bottom: 0; }
 
     .cta-btn { display: inline-block; padding: 16px 28px; background: #B8512C; color: #F7F2EB; border-radius: 8px; font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; font-weight: 500; text-decoration: none; transition: background 160ms cubic-bezier(0.4,0,0.6,1); }
     .cta-btn:hover { background: #A0451F; }
     .micro { font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: #6B5F56; margin-top: 14px; max-width: 480px; line-height: 1.5; }
 
-    .proof { border-top: 1px solid #D9CFBF; border-bottom: 1px solid #D9CFBF; padding: 26px 0; margin: 24px 0 64px; display: flex; flex-wrap: wrap; gap: 12px 34px; justify-content: center; }
+    .proof-band { border-top: 1px solid #D9CFBF; border-bottom: 1px solid #D9CFBF; }
+    .proof { padding: 26px 24px; display: flex; flex-wrap: wrap; gap: 12px 34px; justify-content: center; }
     .proof span { font-family: 'IBM Plex Sans', sans-serif; font-size: 14.5px; font-weight: 500; color: #3A322D; display: inline-flex; align-items: center; gap: 9px; }
     .proof svg { flex-shrink: 0; }
 
-    .quote { max-width: 760px; margin: 0 auto 72px; text-align: center; }
+    .quote { max-width: 760px; margin: 0 auto; padding: 72px 24px; text-align: center; }
     .quote blockquote { font-family: 'Source Serif 4', serif; font-size: clamp(22px, 3vw, 30px); font-weight: 500; font-style: italic; line-height: 1.35; letter-spacing: -0.01em; color: #1F1A17; margin: 0 0 22px; }
-    .why { max-width: 640px; margin: 0 auto; padding: 56px 24px 8px; text-align: center; }
-    .why h3 { font-family: 'Source Serif 4', serif; font-size: clamp(22px, 2.8vw, 28px); font-weight: 600; letter-spacing: -0.02em; color: #1F1A17; margin: 0 0 12px; }
-    .why p { font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; line-height: 1.65; color: #3A322D; margin: 0; }
-    .pull-line { font-family: 'Source Serif 4', serif; font-size: clamp(20px, 2.6vw, 26px); font-weight: 500; letter-spacing: -0.01em; color: #B8512C; text-align: center; max-width: 560px; margin: 0 auto; padding: 8px 24px 40px; line-height: 1.4; }
-    .steps { max-width: 620px; margin: 0 auto; padding: 48px 24px 16px; }
-    .steps h3 { font-family: 'Source Serif 4', serif; font-size: clamp(22px, 2.8vw, 28px); font-weight: 600; letter-spacing: -0.02em; color: #1F1A17; margin: 0 0 16px; text-align: center; }
-    .steps ol { margin: 0; padding-left: 22px; }
-    .steps li { font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; line-height: 1.65; color: #3A322D; margin-bottom: 12px; }
-    .steps li strong { color: #1F1A17; }
-    .cs-line { font-family: 'IBM Plex Sans', sans-serif; font-size: 14.5px; color: #3A322D; margin: 18px 0 0; }
+    .quote .attr { display: flex; align-items: center; justify-content: center; gap: 14px; }
+    .quote .attr img { width: 52px; height: 52px; border-radius: 999px; object-fit: cover; }
+    .quote .attr .who { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; color: #3A322D; text-align: left; }
+    .quote .attr .who strong { display: block; font-weight: 600; }
+    .cs-line { font-family: 'IBM Plex Sans', sans-serif; font-size: 14.5px; color: #3A322D; margin: 22px 0 0; }
     .cs-line a { color: #B8512C; font-weight: 500; text-decoration: none; border-bottom: 1px solid #B7A993; }
-    .capture-lead { font-family: 'IBM Plex Sans', sans-serif; font-size: 14.5px; color: #6B5F56; margin: 26px 0 12px; }
+
+    .mid-band { background: #EFE8DD; }
+    .mid-inner { padding-top: 72px; padding-bottom: 72px; }
+    .mid-band h2 { font-family: 'Source Serif 4', serif; font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 12px; }
+    .why-p { font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; line-height: 1.65; color: #3A322D; margin: 0 0 48px; max-width: 620px; }
+    .steps-title { margin-top: 0; }
+    .step { display: flex; gap: 22px; align-items: flex-start; padding: 22px 0; border-top: 1px solid #D9CFBF; }
+    .step .num { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #B8512C; padding-top: 4px; flex-shrink: 0; }
+    .step .t { font-family: 'Source Serif 4', serif; font-size: 20px; font-weight: 600; color: #1F1A17; margin-bottom: 6px; }
+    .step p { font-family: 'IBM Plex Sans', sans-serif; font-size: 15.5px; line-height: 1.6; color: #3A322D; margin: 0; max-width: 600px; }
+
+    .pull-line { font-family: 'Source Serif 4', serif; font-size: clamp(20px, 2.6vw, 26px); font-weight: 500; letter-spacing: -0.01em; color: #B8512C; text-align: center; max-width: 560px; margin: 0 auto; padding: 0 24px 48px; line-height: 1.4; }
+
+    .closing { text-align: center; padding: 0 24px 88px; }
+    .closing h2 { font-family: 'Source Serif 4', serif; font-size: clamp(28px, 3.6vw, 40px); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 14px; }
+    .closing p { font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; color: #3A322D; margin: 0 auto 28px; max-width: 520px; line-height: 1.6; }
+    .capture-lead { font-family: 'IBM Plex Sans', sans-serif; font-size: 14.5px; color: #6B5F56; margin: 26px auto 12px; }
     #corey-capture { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; max-width: 460px; margin: 0 auto; }
     #corey-capture input { flex: 1 1 220px; box-sizing: border-box; padding: 13px 16px; font-family: 'IBM Plex Sans', sans-serif; font-size: 15.5px; color: #1F1A17; background: #FFFDFA; border: 1px solid #D9CFBF; border-radius: 8px; outline: none; }
     #corey-capture input:focus { border-color: #B8512C; }
     #corey-capture button { font-family: 'IBM Plex Sans', sans-serif; font-size: 15.5px; font-weight: 600; color: #F7F2EB; background: #B8512C; border: none; border-radius: 8px; padding: 13px 22px; cursor: pointer; }
     #corey-capture button:hover { background: #A0451F; }
     .capture-error { font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: #A8341E; margin: 10px 0 0; }
-    .bounty { max-width: 520px; margin: 24px auto 0; padding: 36px 24px 56px; text-align: center; border-top: 1px solid #D9CFBF; }
-    .bounty h3 { font-family: 'Source Serif 4', serif; font-size: 21px; font-weight: 600; letter-spacing: -0.01em; color: #1F1A17; margin: 0 0 10px; }
-    .bounty p { font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; line-height: 1.65; color: #3A322D; margin: 0; }
-    .bounty a { color: #B8512C; font-weight: 500; text-decoration: none; border-bottom: 1px solid #B7A993; }
-    .quote .attr { display: flex; align-items: center; justify-content: center; gap: 14px; }
-    .quote .attr img { width: 52px; height: 52px; border-radius: 999px; object-fit: cover; }
-    .quote .attr .who { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; color: #3A322D; text-align: left; }
-    .quote .attr .who strong { display: block; font-weight: 600; }
 
-    .closing { text-align: center; margin: 0 0 96px; }
-    .closing h2 { font-family: 'Source Serif 4', serif; font-size: clamp(28px, 3.6vw, 40px); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 14px; }
-    .closing p { font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; color: #3A322D; margin: 0 auto 28px; max-width: 520px; line-height: 1.6; }
+    .bounty-band { background: #2C4A3E; }
+    .bounty { max-width: 560px; margin: 0 auto; padding: 64px 24px 72px; text-align: center; }
+    .bounty h3 { font-family: 'Source Serif 4', serif; font-size: clamp(22px, 2.8vw, 28px); font-weight: 600; letter-spacing: -0.01em; color: #F0D9A8; margin: 0 0 12px; }
+    .bounty p { font-family: 'IBM Plex Sans', sans-serif; font-size: 15.5px; line-height: 1.65; color: #F7F2EB; margin: 0; }
+    .bounty a { color: #F0D9A8; font-weight: 500; text-decoration: none; border-bottom: 1px solid rgba(240, 217, 168, 0.5); }
 
     @media (max-width: 800px) {
-      .hero { grid-template-columns: 1fr; gap: 40px; }
+      .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 48px; }
       .hero > div:last-child { order: -1; }
       .corey-photo { max-width: 240px; }
+      .quote { padding: 56px 24px; }
+      .mid-inner { padding-top: 56px; padding-bottom: 56px; }
     }
   </style>
 </head>
@@ -102,13 +114,15 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div class="page-wrap">
-    <nav class="nav">
+  <nav class="nav">
+    <div class="container nav-inner">
       <a class="logo" href="/"><img src="../assets/xfusion-logo.png" alt="xFusion"></a>
       <a class="back" href="/">Explore the full site &rarr;</a>
-    </nav>
+    </div>
+  </nav>
 
-    <div class="hero">
+  <section>
+    <div class="container hero">
       <div>
         <div class="eyebrow">Swipe Files referral</div>
         <h1>A friend of Corey is a friend of ours.</h1>
@@ -127,15 +141,19 @@
         <div class="corey-caption" id="corey-caption">Corey Haines &middot; Swipe Files</div>
       </div>
     </div>
+  </section>
 
-    <div class="proof">
+  <section class="proof-band">
+    <div class="container proof">
       <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8512C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Senior, AI-trained agents</span>
       <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8512C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>$3,900/mo all-in</span>
       <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8512C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>30-day risk-free trial</span>
       <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8512C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Month-to-month</span>
       <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8512C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Since 2020</span>
     </div>
+  </section>
 
+  <section>
     <div class="quote">
       <blockquote>&ldquo;I couldn't be more excited to partner with xFusion so more startups can get help with customer support earlier and more affordably.&rdquo;</blockquote>
       <div class="attr">
@@ -143,21 +161,39 @@
         <div class="who"><strong>Corey Haines</strong>Founder, Swipe Files</div>
       </div>
     </div>
+  </section>
 
-    <div class="why">
-      <h3>Your own agent, not everyone's agent.</h3>
-      <p>A quiet practice in this industry: a &ldquo;dedicated&rdquo; agent at many outsourcers splits their time across several accounts. Ours work one account: yours. Your agent learns your product, your tone, and your customers, and we manage them for you: recruiting, training, payroll, QA, and backup coverage.</p>
+  <section class="mid-band">
+    <div class="container narrow mid-inner">
+      <h2>Your own agent, not everyone's agent.</h2>
+      <p class="why-p">A quiet practice in this industry: a &ldquo;dedicated&rdquo; agent at many outsourcers splits their time across several accounts. Ours work one account: yours. Your agent learns your product, your tone, and your customers, and we manage them for you: recruiting, training, payroll, QA, and backup coverage.</p>
+
+      <h2 class="steps-title">What happens after you book</h2>
+      <div class="step">
+        <div class="num">01</div>
+        <div>
+          <div class="t">A 30-minute call</div>
+          <p>Bring your messiest support problem. If we're not the right fit, we'll tell you on the call.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <div>
+          <div class="t">Candidates in about 14 days</div>
+          <p>A candidate list lands in your inbox, each with a Zoom recording so you can judge for yourself before you meet anyone.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <div>
+          <div class="t">A 30-day risk-free trial</div>
+          <p>Your agent works your real queue for 30 full days. Not satisfied, for any reason? You pay nothing.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="steps">
-      <h3>What happens after you book</h3>
-      <ol>
-        <li><strong>A 30-minute call.</strong> Bring your messiest support problem. If we're not the right fit, we'll tell you on the call.</li>
-        <li><strong>Candidates in about 14 days.</strong> A candidate list lands in your inbox, each with a Zoom recording so you can judge for yourself before you meet anyone.</li>
-        <li><strong>A 30-day risk-free trial.</strong> Your agent works your real queue for 30 full days. Not satisfied, for any reason? You pay nothing.</li>
-      </ol>
-    </div>
-
+  <section>
     <div class="quote">
       <blockquote>&ldquo;This is not your stereotypical outsourced support agency. They've cut our average response time by 84.79% and freed me up to focus on running the business.&rdquo;</blockquote>
       <div class="attr">
@@ -166,10 +202,12 @@
       </div>
       <p class="cs-line">Read the full stories: <a href="/case-studies/">SavvyCal, Tolstoy, Bonify &rarr;</a></p>
     </div>
+  </section>
 
-    <div class="pull-line">Bad customer service costs you money. Good customer service costs you time.</div>
+  <div class="pull-line">Bad customer service costs you money. Good customer service costs you time.</div>
 
-    <div class="closing">
+  <section>
+    <div class="container closing">
       <h2>Stop being your own support team.</h2>
       <p>Come with your messiest support problem. If we're not the right fit, we'll tell you, and you'll leave with a clearer picture either way.</p>
       <a class="cta-btn" href="/book/?utm_source=corey&amp;utm_medium=referral&amp;utm_campaign=swipe-files">Book a Discovery Call</a>
@@ -181,12 +219,14 @@
       </form>
       <p class="capture-error" id="corey-email-error" role="alert" hidden>Please enter a valid work email, like you@company.com.</p>
     </div>
+  </section>
 
+  <section class="bounty-band">
     <div class="bounty">
       <h3>Not your cup of tea?</h3>
       <p>No hard feelings. If we aren't the right fit, <a href="mailto:info@xfusion.io?subject=Introduction%20from%20a%20Swipe%20Files%20reader">introduce us</a> to a founder who is drowning in support tickets. If it works out, we'll give you 1,000 bucks. And no, not the deer kind.</p>
     </div>
-  </div>
+  </section>
 
   <script>
     // Stage-1 email capture, mirroring components/LeadCapture.jsx semantics:
