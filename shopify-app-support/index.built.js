@@ -2307,10 +2307,20 @@ function VerticalLanding() {
     style: {
       marginTop: 2
     }
-  }, butterCheck) : null, /*#__PURE__*/React.createElement("span", null, r))))))))), (cfg.quotes || []).map(q => /*#__PURE__*/React.createElement("section", {
+  }, butterCheck) : null, /*#__PURE__*/React.createElement("span", null, r))))))))), (cfg.quotes || []).length > 0 ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 11,
+      textTransform: 'uppercase',
+      letterSpacing: '0.16em',
+      color: '#6B5F56',
+      textAlign: 'center',
+      margin: '0 0 40px'
+    }
+  }, "What clients say") : null, (cfg.quotes || []).map(q => /*#__PURE__*/React.createElement("section", {
     key: q.name,
     style: {
-      padding: '0 0 64px'
+      padding: '0 0 72px'
     }
   }, /*#__PURE__*/React.createElement(Container, {
     narrow: true,
@@ -2622,7 +2632,8 @@ function VerticalLanding() {
     }
   }, "Read the post →")))))) : null, /*#__PURE__*/React.createElement("section", {
     style: {
-      padding: '0 0 96px',
+      borderTop: '1px solid #D9CFBF',
+      padding: '72px 0 96px',
       textAlign: 'center'
     }
   }, /*#__PURE__*/React.createElement(Container, {
@@ -2652,7 +2663,8 @@ function VerticalLanding() {
     color: "#6B5F56",
     style: {
       marginLeft: 'auto',
-      marginRight: 'auto'
+      marginRight: 'auto',
+      maxWidth: 580
     }
   }, "30 minutes. No commitment. No credit card. You'll talk directly with our founding team.")))), /*#__PURE__*/React.createElement(StickyCapture, null), /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement("style", null, `
         /* Trust bar marquee: two identical groups slide left; when the first

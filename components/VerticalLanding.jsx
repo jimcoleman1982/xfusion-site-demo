@@ -364,8 +364,15 @@ function VerticalLanding() {
         )}
 
         {/* Testimonials */}
+        {(cfg.quotes || []).length > 0 ? (
+          <div style={{
+            fontFamily: "'JetBrains Mono', monospace", fontSize: 11,
+            textTransform: 'uppercase', letterSpacing: '0.16em',
+            color: '#6B5F56', textAlign: 'center', margin: '0 0 40px',
+          }}>What clients say</div>
+        ) : null}
         {(cfg.quotes || []).map((q) => (
-          <section key={q.name} style={{ padding: '0 0 64px' }}>
+          <section key={q.name} style={{ padding: '0 0 72px' }}>
             <Container narrow style={{ textAlign: 'center' }}>
               <blockquote style={{
                 fontFamily: "'Source Serif 4', serif",
@@ -564,7 +571,7 @@ function VerticalLanding() {
         ) : null}
 
         {/* Closing CTA */}
-        <section style={{ padding: '0 0 96px', textAlign: 'center' }}>
+        <section style={{ borderTop: '1px solid #D9CFBF', padding: '72px 0 96px', textAlign: 'center' }}>
           <Container narrow>
             <h2 style={{
               fontFamily: "'Source Serif 4', serif", fontSize: 'clamp(28px, 3.6vw, 40px)',
@@ -575,7 +582,7 @@ function VerticalLanding() {
               color: '#3A322D', margin: '0 auto 28px', maxWidth: 520, lineHeight: 1.6,
             }}>{cfg.closingText}</p>
             <Button variant="primary" size="lg" href="/book/">Book a Discovery Call</Button>
-            <CTAMicrocopy color="#6B5F56" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+            <CTAMicrocopy color="#6B5F56" style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 580 }}>
               30 minutes. No commitment. No credit card. You'll talk directly with our founding team.
             </CTAMicrocopy>
           </Container>
