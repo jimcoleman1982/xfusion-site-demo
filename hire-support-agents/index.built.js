@@ -2192,7 +2192,7 @@ const XF_LP_FAQ = [{
   "a": "Mostly the Philippines, with a strong group from Kenya. Since 2020 we've built deep networks in both countries and learned which candidates actually thrive in long-term support roles."
 }, {
   "q": "Is there a long-term contract?",
-  "a": "No. The service is month-to-month with no minimum term. The 30-Day Risk-Free Trial means you pay nothing for the first month and walk away free if it's not a fit."
+  "a": "No. The service is month-to-month with no minimum term. And the 30-Day Risk-Free Trial means that if you're not satisfied in the first 30 days, you walk away without paying anything."
 }];
 window.XF_LP_FAQ = XF_LP_FAQ;
 window.XF_LP = {

@@ -2183,7 +2183,7 @@ const XF_LP_FAQ = [{
   "a": "$3,900 per month, all-inclusive. That covers a senior, AI-trained support agent plus recruiting, training, payroll, QA, culture, and an account manager. No setup fees, no deposits, and no long-term contract."
 }, {
   "q": "Do you actually know the Shopify app world?",
-  "a": "Yes. Four of our seven public case studies are Shopify app companies: Tolstoy, Bonify, Ordered Magic, and Revy. Our agents handle merchant tickets, app-store review pressure, and API edge cases every day."
+  "a": "Yes. Tolstoy, Bonify, Ordered Magic, and Revy are all Shopify app companies who run their merchant support with us, each with a public case study. Our agents handle merchant tickets, app-store review pressure, and API edge cases every day."
 }, {
   "q": "How fast can an agent start?",
   "a": "About 14 days from your discovery call to a candidate list in your inbox. We keep a pool of senior, AI-trained support candidates ready to go, which is why we can move that fast without cutting corners."
@@ -2195,7 +2195,7 @@ window.XF_LP_FAQ = XF_LP_FAQ;
 window.XF_LP = {
   "eyebrow": "For Shopify app developers",
   "h1": "Support for your Shopify app, off your plate.",
-  "sub": "You built an app merchants depend on. Now the tickets never stop, every hour in the inbox is an hour not shipping, and every slow reply risks a one-star review that sticks. We place a senior, AI-trained agent who learns your app, your APIs, and your merchants. 4 of our 7 public case studies are Shopify app companies. We know this world.",
+  "sub": "You built an app merchants depend on. Now the tickets never stop, every hour in the inbox is an hour not shipping, and every slow reply risks a one-star review that sticks. We place a senior, AI-trained agent who learns your app, your APIs, and your merchants. Tolstoy, Bonify, Ordered Magic, and Revy all run merchant support with us. We know this world.",
   "microcopy": "Bring your messiest merchant tickets. 30 minutes, no pitch deck.",
   "metrics": [{
     "num": "+90",
