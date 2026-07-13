@@ -1772,14 +1772,62 @@ window.StickyCapture = StickyCapture;
 //   microcopy?,                             // optional LeadCapture microcopy override (string)
 //   metrics: [{ num, text, href? }],        // 0-3 verified stats (empty = section hidden)
 //   values: [{ title, text }],              // 3 message-matched value blocks
+//   tickets?: [string],                     // "what your agent takes off your plate" chips (empty/absent = hidden)
+//   ticketsTitle?,                          // optional heading override for the tickets grid
+//   steps?: [{ title, text }],              // "how it works" override (default: XF_LP_STEPS)
+//   hideSteps?, hideComparison?, hideTeam?, // opt out of the shared sections per page
 //   quotes: [{ text, name, role, img }],    // 0-2 verified testimonials
-//   caseStudies: [{ label, href }],         // related case study links (empty = hidden)
+//   caseStudies: [{ label, href, stat?, statText? }], // related case studies (stat -> card layout)
+//   resources?: [{ title, href }],          // "keep reading" blog links (empty/absent = hidden)
 //   clientsNote?,                           // optional plain-text line (e.g. named clients)
 //   closingH2, closingText,
 // }
 
 // Client roster shown on every LP trust strip (source: homepage marquee in Hero.jsx).
 const CLIENT_NAMES = ['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aligned', 'Kioskbuddy'];
+
+// Shared "How it works" steps. Every claim here also lives on /pricing/ and /faq/.
+const XF_LP_STEPS = [{
+  title: 'Book a 30-minute discovery call',
+  text: "Bring your messiest support problem. If we're not the right fit, we'll tell you on the call."
+}, {
+  title: 'Meet your candidates in about 14 days',
+  text: 'A candidate list lands in your inbox, each with a Zoom recording so you can judge English and presence yourself before you meet anyone.'
+}, {
+  title: 'Start the 30-day risk-free trial',
+  text: "Your agent works your real queue for 30 full days. Not satisfied, for any reason? You walk away without paying anything."
+}, {
+  title: 'We manage from there',
+  text: 'QA on real tickets, coaching, culture and engagement, backup coverage, and an account manager. Month-to-month, no long-term contract.'
+}];
+
+// Shared three-way comparison. Cost figures come from /pricing/.
+const XF_LP_COMPARISON = [{
+  name: 'Hire in-house',
+  rows: ['$6,600 to $8,300+ per month for a senior U.S. rep', 'Months of sourcing and interviews', 'You run training, payroll, QA, and coverage', 'Good ones often quit within 18 months']
+}, {
+  name: 'Typical BPO',
+  rows: ['Looks cheap per seat, junior reps reading scripts', 'Shared or rotating agents who never learn your product', 'You chase quality instead of doing your job', 'Quarterly or annual contracts']
+}, {
+  name: 'xFusion',
+  featured: true,
+  rows: ['$3,900/mo all-in, one flat rate', 'A dedicated senior, AI-trained agent', 'We run recruiting, training, payroll, QA, and backup', 'Month-to-month, 30-day risk-free trial']
+}];
+
+// Shared "people behind your queue" block. Same account managers as /about/.
+const XF_LP_TEAM = [{
+  name: 'Martin Onami',
+  role: 'Account Manager',
+  img: '/images/martin-onami-lp.webp'
+}, {
+  name: 'Reggie Rendal',
+  role: 'Account Manager',
+  img: '/images/reggie-rendal-lp.webp'
+}, {
+  name: 'Marie Medina',
+  role: 'Account Manager',
+  img: '/images/marie-medina-lp.webp'
+}];
 function VerticalLanding() {
   const cfg = window.XF_LP;
   const faq = window.XF_LP_FAQ || [];
@@ -1791,6 +1839,21 @@ function VerticalLanding() {
     viewBox: "0 0 24 24",
     fill: "none",
     stroke: "#B8512C",
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    style: {
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M20 6L9 17l-5-5"
+  }));
+  const butterCheck = /*#__PURE__*/React.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#F0D9A8",
     strokeWidth: "1.5",
     strokeLinecap: "round",
     strokeLinejoin: "round",
@@ -1994,7 +2057,158 @@ function VerticalLanding() {
       margin: '28px 0 0',
       lineHeight: 1.5
     }
-  }, cfg.clientsNote) : null)), (cfg.quotes || []).map(q => /*#__PURE__*/React.createElement("section", {
+  }, cfg.clientsNote) : null)), cfg.tickets && cfg.tickets.length > 0 ? /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '0 0 72px'
+    }
+  }, /*#__PURE__*/React.createElement(Container, {
+    narrow: true
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(26px, 3.4vw, 36px)',
+      fontWeight: 600,
+      letterSpacing: '-0.02em',
+      margin: '0 0 22px'
+    }
+  }, cfg.ticketsTitle || 'What your agent takes off your plate'), /*#__PURE__*/React.createElement("div", {
+    className: "lp-tickets",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 14
+    }
+  }, cfg.tickets.map(t => /*#__PURE__*/React.createElement("div", {
+    key: t,
+    style: {
+      background: '#EFE8DD',
+      borderRadius: 12,
+      padding: '16px 18px',
+      display: 'flex',
+      alignItems: 'flex-start',
+      gap: 10,
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 15,
+      lineHeight: 1.5,
+      color: '#3A322D',
+      fontWeight: 500
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      marginTop: 2
+    }
+  }, check), t))))) : null, cfg.hideSteps ? null : /*#__PURE__*/React.createElement("section", {
+    style: {
+      background: '#EFE8DD',
+      padding: '72px 0'
+    }
+  }, /*#__PURE__*/React.createElement(Container, {
+    narrow: true
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(26px, 3.4vw, 36px)',
+      fontWeight: 600,
+      letterSpacing: '-0.02em',
+      margin: '0 0 30px'
+    }
+  }, "How it works"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, (cfg.steps || XF_LP_STEPS).map((s, i) => /*#__PURE__*/React.createElement("div", {
+    key: s.title,
+    style: {
+      display: 'flex',
+      gap: 22,
+      alignItems: 'flex-start',
+      padding: '22px 0',
+      borderTop: '1px solid #D9CFBF'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 13,
+      color: '#B8512C',
+      paddingTop: 4,
+      flexShrink: 0
+    }
+  }, `0${i + 1}`), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 20,
+      fontWeight: 600,
+      color: '#1F1A17',
+      marginBottom: 6
+    }
+  }, s.title), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 15.5,
+      lineHeight: 1.6,
+      color: '#3A322D',
+      margin: 0,
+      maxWidth: 600
+    }
+  }, s.text))))))), cfg.hideComparison ? null : /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '72px 0'
+    }
+  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(26px, 3.4vw, 36px)',
+      fontWeight: 600,
+      letterSpacing: '-0.02em',
+      margin: '0 0 26px',
+      textAlign: 'center'
+    }
+  }, "Your three options"), /*#__PURE__*/React.createElement("div", {
+    className: "lp-compare",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr 1fr',
+      gap: 22,
+      alignItems: 'stretch'
+    }
+  }, XF_LP_COMPARISON.map(col => /*#__PURE__*/React.createElement("div", {
+    key: col.name,
+    style: {
+      background: col.featured ? '#2C4A3E' : '#EFE8DD',
+      borderRadius: 12,
+      padding: '26px 24px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 21,
+      fontWeight: 600,
+      color: col.featured ? '#F0D9A8' : '#1F1A17',
+      marginBottom: 14
+    }
+  }, col.name), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 10
+    }
+  }, col.rows.map(r => /*#__PURE__*/React.createElement("div", {
+    key: r,
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14.5,
+      lineHeight: 1.55,
+      color: col.featured ? '#F7F2EB' : '#3A322D',
+      display: 'flex',
+      gap: 9,
+      alignItems: 'flex-start'
+    }
+  }, col.featured ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      marginTop: 2
+    }
+  }, butterCheck) : null, /*#__PURE__*/React.createElement("span", null, r))))))))), (cfg.quotes || []).map(q => /*#__PURE__*/React.createElement("section", {
     key: q.name,
     style: {
       padding: '0 0 64px'
@@ -2046,7 +2260,70 @@ function VerticalLanding() {
       display: 'block',
       fontWeight: 600
     }
-  }, q.name), q.role))))), cfg.caseStudies && cfg.caseStudies.length > 0 ? /*#__PURE__*/React.createElement("section", {
+  }, q.name), q.role))))), cfg.caseStudies && cfg.caseStudies.length > 0 ? cfg.caseStudies.some(c => c.stat) ? /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '0 0 72px'
+    }
+  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 11,
+      textTransform: 'uppercase',
+      letterSpacing: '0.16em',
+      color: '#6B5F56',
+      marginBottom: 18,
+      textAlign: 'center'
+    }
+  }, "Case studies"), /*#__PURE__*/React.createElement("div", {
+    className: "lp-cs-cards",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: `repeat(${Math.min(cfg.caseStudies.length, 4)}, 1fr)`,
+      gap: 18
+    }
+  }, cfg.caseStudies.map(c => /*#__PURE__*/React.createElement("a", {
+    key: c.href,
+    href: c.href,
+    style: {
+      display: 'block',
+      textDecoration: 'none',
+      border: '1px solid #D9CFBF',
+      borderRadius: 12,
+      padding: '22px 20px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 18,
+      fontWeight: 600,
+      color: '#1F1A17',
+      marginBottom: c.stat ? 10 : 0
+    }
+  }, c.label), c.stat ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 30,
+      fontWeight: 600,
+      color: '#B8512C',
+      lineHeight: 1,
+      marginBottom: 6
+    }
+  }, c.stat), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13.5,
+      lineHeight: 1.5,
+      color: '#3A322D',
+      marginBottom: 10
+    }
+  }, c.statText)) : null, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13.5,
+      fontWeight: 500,
+      color: '#B8512C'
+    }
+  }, "Read the case study →")))))) : /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '0 0 72px',
       textAlign: 'center'
@@ -2072,7 +2349,65 @@ function VerticalLanding() {
       borderBottom: '1px solid #B7A993',
       margin: '0 14px'
     }
-  }, c.label)))) : null, faq.length > 0 ? /*#__PURE__*/React.createElement("section", {
+  }, c.label)))) : null, cfg.hideTeam ? null : /*#__PURE__*/React.createElement("section", {
+    style: {
+      borderTop: '1px solid #D9CFBF',
+      padding: '64px 0 72px'
+    }
+  }, /*#__PURE__*/React.createElement(Container, {
+    narrow: true
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(26px, 3.4vw, 36px)',
+      fontWeight: 600,
+      letterSpacing: '-0.02em',
+      margin: '0 0 12px'
+    }
+  }, "The people behind your queue"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      lineHeight: 1.6,
+      color: '#3A322D',
+      margin: '0 0 28px',
+      maxWidth: 620
+    }
+  }, "An account manager is included in the flat rate. They run QA on real tickets, coach your agent, and arrange backup coverage, so support quality is somebody's actual job, not a thing you check on at midnight."), /*#__PURE__*/React.createElement("div", {
+    className: "lp-team",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr 1fr',
+      gap: 20
+    }
+  }, XF_LP_TEAM.map(t => /*#__PURE__*/React.createElement("div", {
+    key: t.name
+  }, /*#__PURE__*/React.createElement("img", {
+    src: t.img,
+    alt: t.name,
+    loading: "lazy",
+    style: {
+      width: '100%',
+      aspectRatio: '4 / 5',
+      objectFit: 'cover',
+      borderRadius: 12,
+      display: 'block',
+      marginBottom: 10
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 17,
+      fontWeight: 600,
+      color: '#1F1A17'
+    }
+  }, t.name), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13.5,
+      color: '#6B5F56'
+    }
+  }, t.role)))))), faq.length > 0 ? /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '0 0 72px'
     }
@@ -2136,7 +2471,57 @@ function VerticalLanding() {
       padding: '0 4px 24px',
       maxWidth: 680
     }
-  }, it.a))))))) : null, /*#__PURE__*/React.createElement("section", {
+  }, it.a))))))) : null, cfg.resources && cfg.resources.length > 0 ? /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '0 0 72px'
+    }
+  }, /*#__PURE__*/React.createElement(Container, {
+    narrow: true
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 11,
+      textTransform: 'uppercase',
+      letterSpacing: '0.16em',
+      color: '#6B5F56',
+      marginBottom: 16
+    }
+  }, "Keep reading"), /*#__PURE__*/React.createElement("div", {
+    className: "lp-resources",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr 1fr',
+      gap: 16
+    }
+  }, cfg.resources.map(r => /*#__PURE__*/React.createElement("a", {
+    key: r.href,
+    href: r.href,
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      gap: 14,
+      textDecoration: 'none',
+      border: '1px solid #D9CFBF',
+      borderRadius: 12,
+      padding: '20px 20px 18px'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 17,
+      fontWeight: 600,
+      lineHeight: 1.35,
+      color: '#1F1A17'
+    }
+  }, r.title), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13.5,
+      fontWeight: 500,
+      color: '#B8512C'
+    }
+  }, "Read the post →")))))) : null, /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '0 0 96px',
       textAlign: 'center'
@@ -2173,6 +2558,14 @@ function VerticalLanding() {
   }, "30 minutes. No commitment. No credit card. You'll talk directly with our founding team.")))), /*#__PURE__*/React.createElement(StickyCapture, null), /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement("style", null, `
         @media (max-width: 800px) {
           .lp-metrics { grid-template-columns: 1fr !important; }
+          .lp-compare { grid-template-columns: 1fr !important; }
+          .lp-cs-cards { grid-template-columns: 1fr 1fr !important; }
+          .lp-resources { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 600px) {
+          .lp-tickets { grid-template-columns: 1fr !important; }
+          .lp-cs-cards { grid-template-columns: 1fr !important; }
+          .lp-team { grid-template-columns: 1fr 1fr 1fr !important; }
         }
       `));
 }
@@ -2193,6 +2586,15 @@ const XF_LP_FAQ = [{
 }, {
   "q": "Is there a long-term contract?",
   "a": "No. The service is month-to-month with no minimum term. And the 30-Day Risk-Free Trial means that if you're not satisfied in the first 30 days, you walk away without paying anything."
+}, {
+  "q": "Will they speak good English?",
+  "a": "Every candidate sits through interviews with a real person where we check English skills, how they talk, and how they come across. Before you meet with anyone, you'll watch a Zoom recording of them, so you can judge for yourself instead of taking our word for it."
+}, {
+  "q": "How do you keep my agent engaged long-term?",
+  "a": "Culture and engagement are included in the $3,900/mo. We run team-building events, contests, branded swag, and birthday, anniversary, and holiday gifting. Pair that with a role that pays a real living wage in the agent's local economy, and you get someone who builds a career on your team rather than rotating through."
+}, {
+  "q": "What roles can you fill?",
+  "a": "Customer support, mostly. Every support agent we place is senior, trained to use AI, and able to handle Tier 1, Tier 2, and some cases that used to need an engineer's help. We also place inside sales people who work inbound leads and AI operators who run AI tools alongside your team. Ask on the discovery call; we'll be honest about whether we can staff it."
 }];
 window.XF_LP_FAQ = XF_LP_FAQ;
 window.XF_LP = {
@@ -2240,7 +2642,21 @@ window.XF_LP = {
     "href": "/case-studies/bonify/"
   }, {
     "label": "SavvyCal",
-    "href": "/case-studies/savvycal/"
+    "href": "/case-studies/savvycal/",
+    "stat": "84.79%",
+    "statText": "reduction in average reply time"
+  }],
+  "tickets": ["Full ownership of your queue, in your helpdesk", "Email, chat, and social tickets", "Tier 1 and Tier 2 resolution", "Macros and help-doc upkeep", "Replies QA'd in your brand voice", "Backup coverage when your agent is out"],
+  "ticketsTitle": "What your new hire takes off your plate",
+  "resources": [{
+    "title": "How to hire international talent the right way",
+    "href": "/xfusion/how-to-hire-international-talent-the-right-way/"
+  }, {
+    "title": "The true cost of a bad hire (and how to avoid it)",
+    "href": "/xfusion/the-true-cost-of-a-bad-hire-and-how-to-avoid-it/"
+  }, {
+    "title": "How to choose an outsourced customer support provider",
+    "href": "/customer-experience/how-to-choose-an-outsourced-customer-support-provider/"
   }],
   "closingH2": "Skip the hiring headache.",
   "closingText": "Tell us what your support queue looks like, and we'll tell you honestly whether we can staff it. If not, you'll leave with a clearer picture either way."
