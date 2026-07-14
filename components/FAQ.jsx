@@ -10,7 +10,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Why is $2,900/mo the right price?',
-    a: "Two reasons. First, every specialist we place is experienced, with more experience than a typical support hire, and trained to use AI tools to handle the easy stuff. So one xFusion agent does a lot more work than a junior rep at a cheaper agency. The cost per ticket is actually lower. Second, $2,900 is less than half what you'd pay for the same kind of person in the U.S., and it includes hiring, training, payroll, culture, and an account manager. No add-ons. No setup fees. No deposits.",
+    a: "Two reasons. First, every specialist we place has more experience than a typical support hire and is trained to use AI tools to handle the easy stuff. So one xFusion agent does a lot more work than a junior rep at a cheaper agency. The cost per ticket is actually lower. Second, $2,900 is less than half what you'd pay for the same kind of person in the U.S., and it includes hiring, training, payroll, culture, and an account manager. No add-ons. No setup fees. No deposits.",
   },
   {
     q: 'How long does the process take?',

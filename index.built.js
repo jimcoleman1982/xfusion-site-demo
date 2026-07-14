@@ -3312,7 +3312,7 @@ const FAQ_ITEMS = [{
   a: "That's exactly what the 30-Day Risk-Free Trial is for. We recruit, vet, and place an experienced, AI-trained customer support specialist in your business. You work with them for 30 full days. If you're not satisfied for any reason, you walk away without paying anything. Not a deposit. Not a setup fee. Nothing. We absorb every dollar of recruiting, vetting, training, and placement we invested."
 }, {
   q: 'Why is $2,900/mo the right price?',
-  a: "Two reasons. First, every specialist we place is experienced, with more experience than a typical support hire, and trained to use AI tools to handle the easy stuff. So one xFusion agent does a lot more work than a junior rep at a cheaper agency. The cost per ticket is actually lower. Second, $2,900 is less than half what you'd pay for the same kind of person in the U.S., and it includes hiring, training, payroll, culture, and an account manager. No add-ons. No setup fees. No deposits."
+  a: "Two reasons. First, every specialist we place has more experience than a typical support hire and is trained to use AI tools to handle the easy stuff. So one xFusion agent does a lot more work than a junior rep at a cheaper agency. The cost per ticket is actually lower. Second, $2,900 is less than half what you'd pay for the same kind of person in the U.S., and it includes hiring, training, payroll, culture, and an account manager. No add-ons. No setup fees. No deposits."
 }, {
   q: 'How long does the process take?',
   a: 'About 14 days from your discovery call to a candidate list in your inbox. We keep a pool of experienced, AI-trained support candidates ready to go, which is why we can move that fast without cutting corners.'

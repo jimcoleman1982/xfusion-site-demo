@@ -1766,7 +1766,7 @@ const XF_LP_FAQ = [{
   a: "No. The service is month-to-month with no minimum term, no deposit, no setup fee, and no fine print. The 30-Day Risk-Free Trial means you pay nothing for the first month and walk away free if it's not a fit."
 }, {
   q: "Why is $2,900/mo the right price?",
-  a: "Two reasons. First, every specialist we place is experienced, with more experience than a typical support hire, and trained to use AI tools to handle the easy stuff. So one xFusion agent does a lot more work than a junior rep at a cheaper agency. The cost per ticket is actually lower. Second, $2,900 is less than half what you'd pay for the same kind of person in the U.S., and it includes hiring, training, payroll, culture, and an account manager."
+  a: "Two reasons. First, every specialist we place has more experience than a typical support hire and is trained to use AI tools to handle the easy stuff. So one xFusion agent does a lot more work than a junior rep at a cheaper agency. The cost per ticket is actually lower. Second, $2,900 is less than half what you'd pay for the same kind of person in the U.S., and it includes hiring, training, payroll, culture, and an account manager."
 }, {
   q: "How does xFusion pricing compare to hiring in the U.S.?",
   a: "Senior-level support reps in the U.S. who know AI cost $80,000 to $100,000+ per year, which is $6,600 to $8,300+ per month once you add benefits, taxes, payroll, equipment, hiring fees, and management costs. xFusion is $2,900 per month all-in, and you skip the months-long search."
