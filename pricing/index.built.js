@@ -1763,7 +1763,7 @@ const XF_LP_FAQ = [{
   a: "$2,900 per month per experienced, AI-trained support specialist, all-inclusive. That covers the agent's salary, recruiting and vetting, onboarding, training, payroll, culture and engagement, QA, a dedicated account manager, and ongoing coaching. There are no setup fees, no deposits, and no add-ons."
 }, {
   q: "Are there setup fees, deposits, or long-term contracts?",
-  a: "No. The service is month-to-month with no minimum term, no deposit, no setup fee, and no fine print. The 30-Day Risk-Free Trial means you pay nothing for the first month and walk away free if it's not a fit."
+  a: "No. The service is month-to-month with no minimum term, no deposit, no setup fee, and no fine print. And the 30-Day Risk-Free Trial means that if you're not satisfied in the first 30 days, you walk away without paying anything."
 }, {
   q: "Why is $2,900/mo the right price?",
   a: "Two reasons. First, every specialist we place has more experience than a typical support hire and is trained to use AI tools to handle the easy stuff. So one xFusion agent does a lot more work than a junior rep at a cheaper agency. The cost per ticket is actually lower. Second, $2,900 is less than half what you'd pay for the same kind of person in the U.S., and it includes hiring, training, payroll, culture, and an account manager."
@@ -1774,8 +1774,8 @@ const XF_LP_FAQ = [{
   q: "How is xFusion different from cheaper outsourcing companies?",
   a: "Cheaper agencies staff junior agents reading scripts, and the low hourly rate usually excludes training, QA, and management layers. Every xFusion specialist is experienced and AI-trained, so one specialist does the work of several junior reps, and the flat price includes everything. The 30-Day Risk-Free Trial means we absorb the risk, not you."
 }, {
-  q: "How does xFusion compare to Influx?",
-  a: "Influx is a larger provider that prices most engagements through a sales conversation, and management layers are typically part of higher tiers. xFusion publishes one number: $2,900 per month all-in, including training, QA, management, and backup coverage, starting with a 30-day risk-free trial. If you need dozens of seats overnight, a volume provider may fit better. If you want an experienced specialist who learns your product and stays for years, that's what we do."
+  q: "How do you protect our brand voice while the specialist ramps up?",
+  a: "Draft mode. For the first days, every reply your specialist writes is a draft: their xFusion team leader reviews it, then you approve it, before it reaches a customer. Replies switch to live only once you sign off. By then they have been trained on your product, your tone, and your helpdesk."
 }];
 window.XF_LP_FAQ = XF_LP_FAQ;
 const INCLUDED = [['Experienced support specialist salary (full-time, dedicated to you)', '$3,500/mo'], ['Hiring and screening through the TraitX Framework', '$375/mo value'], ['Placement and onboarding into your business', '$1,500 one-time'], ['Training in your support process', '$750 one-time'], ['Training and certification in AI-powered support tools', '$1,500 one-time'], ['Payroll services (paying salaries, light HR, time off)', '$300/mo'], ['Culture and engagement (team-building, swag, gifts, anniversaries)', '$200/mo'], ['Dedicated account manager (leads and supports your agent)', '$1,200/mo'], ['Ongoing performance management and coaching', '$500/mo']];
@@ -1932,6 +1932,72 @@ function PricingPage() {
     }
   }, value)))))), /*#__PURE__*/React.createElement("section", {
     style: {
+      padding: '0 0 64px'
+    }
+  }, /*#__PURE__*/React.createElement(Container, {
+    narrow: true
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(24px, 3vw, 32px)',
+      fontWeight: 600,
+      letterSpacing: '-0.02em',
+      margin: '0 0 12px'
+    }
+  }, "The account manager line is a real person"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      lineHeight: 1.6,
+      color: '#3A322D',
+      margin: '0 0 26px',
+      maxWidth: 620
+    }
+  }, "Every client gets a dedicated account manager, included in the flat rate. They run QA on real tickets, coach your specialist, and arrange backup coverage, so quality is somebody's actual job."), /*#__PURE__*/React.createElement("div", {
+    className: "pricing-team",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr 1fr',
+      gap: 20
+    }
+  }, [{
+    name: 'Martin Onami',
+    img: '/images/martin-onami-lp.webp'
+  }, {
+    name: 'Reggie Rendal',
+    img: '/images/reggie-rendal-lp.webp'
+  }, {
+    name: 'Marie Medina',
+    img: '/images/marie-medina-lp.webp'
+  }].map(t => /*#__PURE__*/React.createElement("div", {
+    key: t.name
+  }, /*#__PURE__*/React.createElement("img", {
+    src: t.img,
+    alt: t.name,
+    loading: "lazy",
+    style: {
+      width: '100%',
+      aspectRatio: '4 / 5',
+      objectFit: 'cover',
+      borderRadius: 12,
+      display: 'block',
+      marginBottom: 10
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 17,
+      fontWeight: 600,
+      color: '#1F1A17'
+    }
+  }, t.name), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13.5,
+      color: '#6B5F56'
+    }
+  }, "Account Manager")))))), /*#__PURE__*/React.createElement("section", {
+    style: {
       background: '#EFE8DD',
       padding: '64px 0'
     }
@@ -2027,6 +2093,45 @@ function PricingPage() {
       margin: 0
     }
   }, "Experienced, AI-trained, and managed for you. Candidates in about 14 days. First month risk-free. Month-to-month after that."))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '64px 0 0'
+    }
+  }, /*#__PURE__*/React.createElement(Container, {
+    narrow: true
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: '#F8EBC9',
+      border: '1px solid #E6C683',
+      borderRadius: 12,
+      padding: '32px 34px 30px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 11,
+      textTransform: 'uppercase',
+      letterSpacing: '0.16em',
+      color: '#6B5F56',
+      marginBottom: 12
+    }
+  }, "From our client roster"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(22px, 2.8vw, 28px)',
+      fontWeight: 600,
+      letterSpacing: '-0.02em',
+      color: '#1F1A17',
+      marginBottom: 12
+    }
+  }, "Companies that raised over $108M in 2026 pay this same flat rate"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      lineHeight: 1.65,
+      color: '#3A322D',
+      margin: 0
+    }
+  }, "Aligned closed a $60M Series B. Arbio closed a $36M Series A. SkyFi closed an oversubscribed $12.7M Series A. All of them run their customer support with xFusion, at the price on this page.")))), /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '64px 0 0'
     }
@@ -2148,7 +2253,7 @@ function PricingPage() {
     href: "/book/"
   }, "Book a Discovery Call")))), /*#__PURE__*/React.createElement(StickyCapture, null), /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement("style", null, `
             @media (max-width: 760px) {
-              .pricing-compare { grid-template-columns: 1fr !important; }
+              .pricing-compare { grid-template-columns: 1fr !important; } .pricing-team { grid-template-columns: 1fr 1fr 1fr !important; }
             }
           `));
 }
