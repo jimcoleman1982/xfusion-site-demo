@@ -1218,7 +1218,7 @@ function WhereWeWork() {
       margin: 0
     }
   }, "Annual in-person team-building happens regionally. Last year, that meant a beach retreat outside Manila and a weekend in Nairobi. The kind of thing people actually post about.")), /*#__PURE__*/React.createElement("img", {
-    src: "../images/xfusion-team-montage.png",
+    src: "../images/xfusion-team-montage.webp",
     alt: "xFusion team across the Philippines and Kenya",
     loading: "lazy",
     style: {

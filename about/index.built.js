@@ -810,15 +810,15 @@ function Team() {
     location: "Philippines",
     count: "35 team members",
     label: "Photo: Philippines team-building",
-    imageSrc: "../images/xfusion-philippines-team.jpeg",
-    sillySrc: "../images/silly/philippines-team-silly.png",
+    imageSrc: "../images/xfusion-philippines-team.webp",
+    sillySrc: "../images/silly/philippines-team-silly.webp",
     tone: "clay"
   }), /*#__PURE__*/React.createElement(TeamPhoto, {
     location: "Kenya",
     count: "35 team members",
     label: "Photo: Kenya team-building",
     imageSrc: "../images/xfusion-kenya-team.jpeg",
-    sillySrc: "../images/silly/kenya-team-silly.png",
+    sillySrc: "../images/silly/kenya-team-silly.webp",
     tone: "forest"
   })), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -988,39 +988,39 @@ function Leadership() {
   const team = [{
     name: 'Daniel Juma',
     role: 'Head of Operations',
-    imageSrc: '../images/daniel-juma.png',
-    sillySrc: '../images/silly/daniel-juma-silly.png'
+    imageSrc: '../images/daniel-juma.webp',
+    sillySrc: '../images/silly/daniel-juma-silly.webp'
   }, {
     name: 'Martin Onami',
     role: 'Account Manager',
-    imageSrc: '../images/martin-onami.png',
-    sillySrc: '../images/silly/martin-onami-silly.png',
+    imageSrc: '../images/martin-onami.webp',
+    sillySrc: '../images/silly/martin-onami-silly.webp',
     sillyFit: 'contain'
   }, {
     name: 'Reggie Rendal',
     role: 'Account Manager',
-    imageSrc: '../images/reggie-rendal.png',
-    sillySrc: '../images/silly/reggie-rendal-silly.png'
+    imageSrc: '../images/reggie-rendal.webp',
+    sillySrc: '../images/silly/reggie-rendal-silly.webp'
   }, {
     name: 'Marie Medina',
     role: 'Account Manager',
-    imageSrc: '../images/marie-medina.png',
-    sillySrc: '../images/silly/marie-medina-silly.png'
+    imageSrc: '../images/marie-medina.webp',
+    sillySrc: '../images/silly/marie-medina-silly.webp'
   }, {
     name: 'Felix Maru',
     role: 'Operations Engineer',
-    imageSrc: '../images/felix-maru.png',
-    sillySrc: '../images/silly/felix-maru-silly.png'
+    imageSrc: '../images/felix-maru.webp',
+    sillySrc: '../images/silly/felix-maru-silly.webp'
   }, {
     name: 'Bianca Dadulla',
     role: 'Recruitment Manager',
-    imageSrc: '../images/bianca-dadulla.png',
-    sillySrc: '../images/silly/bianca-dadulla-silly.png'
+    imageSrc: '../images/bianca-dadulla.webp',
+    sillySrc: '../images/silly/bianca-dadulla-silly.webp'
   }, {
     name: 'Velvie Coleman',
     role: 'CEO',
-    imageSrc: '../images/velvie-coleman.jpg',
-    sillySrc: '../images/silly/velvie-coleman-silly.png'
+    imageSrc: '../images/velvie-coleman.webp',
+    sillySrc: '../images/silly/velvie-coleman-silly.webp'
   }];
   return /*#__PURE__*/React.createElement(Section, {
     bg: "paper-2",
@@ -1476,7 +1476,7 @@ function Founders() {
     name: "David Tran",
     role: "Co-founder",
     imageSrc: "../images/david-tran-profile.jpeg",
-    sillySrc: "../images/silly/david-tran-silly.png",
+    sillySrc: "../images/silly/david-tran-silly.webp",
     imageLabel: "Co-founder portrait",
     imageSide: "right",
     tone: "forest",
@@ -1485,8 +1485,8 @@ function Founders() {
   }), /*#__PURE__*/React.createElement(FounderCard, {
     name: "Jim Coleman",
     role: "Co-founder",
-    imageSrc: "../images/jim-coleman-hero.png",
-    sillySrc: "../images/silly/jim-coleman-silly.png",
+    imageSrc: "../images/jim-coleman-hero.webp",
+    sillySrc: "../images/silly/jim-coleman-silly.webp",
     imageLabel: "Co-founder portrait",
     imageSide: "left",
     tone: "clay",

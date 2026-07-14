@@ -1551,7 +1551,7 @@ function App() {
     number: "09",
     client: "Revy",
     subhead: "How a solo Shopify app founder offloaded customer support, added hundreds of 5-star reviews, and got back to building product.",
-    photoSrc: "../../images/marcelo-olivera-revy.png",
+    photoSrc: "../../images/marcelo-olivera-revy.webp",
     photoName: "Marcelo Olivera"
   }), /*#__PURE__*/React.createElement(OverviewBox, {
     rows: overviewRows
@@ -1569,7 +1569,7 @@ function App() {
     name: "Marcelo Olivera",
     role: "Founder",
     company: "Revy",
-    photoSrc: "../../images/marcelo-olivera-revy.png"
+    photoSrc: "../../images/marcelo-olivera-revy.webp"
   }), /*#__PURE__*/React.createElement(MetricCallout, {
     headline: "Hundreds of new 5-star reviews",
     supporting: "on the Shopify App Store, leading to a significant jump in Revy's organic ranking and a founder freed to focus on product instead of support.",

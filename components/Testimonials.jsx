@@ -29,7 +29,7 @@ const TESTIMONIALS = [
   },
   {
     name: 'Dov Kaufmann',
-    role: 'COO',
+    role: 'CEO',
     company: 'Tolstoy',
     file: 'images/dov-kaufmann-tolstoy.webp',
     tone: 'clay',

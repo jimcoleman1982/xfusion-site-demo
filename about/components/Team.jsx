@@ -57,8 +57,8 @@ function Team() {
             location="Philippines"
             count="35 team members"
             label="Photo: Philippines team-building"
-            imageSrc="../images/xfusion-philippines-team.jpeg"
-            sillySrc="../images/silly/philippines-team-silly.png"
+            imageSrc="../images/xfusion-philippines-team.webp"
+            sillySrc="../images/silly/philippines-team-silly.webp"
             tone="clay"
           />
           <TeamPhoto
@@ -66,7 +66,7 @@ function Team() {
             count="35 team members"
             label="Photo: Kenya team-building"
             imageSrc="../images/xfusion-kenya-team.jpeg"
-            sillySrc="../images/silly/kenya-team-silly.png"
+            sillySrc="../images/silly/kenya-team-silly.webp"
             tone="forest"
           />
         </div>

@@ -2047,7 +2047,7 @@ const overviewRows = [{
   value: 'One internal support person was about to leave. Support volume was rising. The team needed help with email, live chat, onboarding, docs, helpdesk fixes, and client calls. They had no time to hire and train a team.'
 }, {
   label: 'Solution',
-  value: 'A dedicated xFusion team grew from one front-line agent into a six-person team. They covered front-line support, onboarding, helpdesk fixes, and a "Solutions Engineer" group for big clients and custom-code work.'
+  value: 'A dedicated xFusion team grew from one front-line agent into an 11-person team. They cover front-line support, Tier 2 and implementation, AI content, data tagging, and a "Solutions Engineer" group for big clients and custom-code work.'
 }, {
   label: 'Results',
   value: "Tolstoy's Shopify app ranking jumped 90 points after a wave of 5-star reviews praising the support. Reopened tickets dropped from about one in three to a much smaller share. The team handled 584 tickets on their own in March 2023. The core Tolstoy team got time back to focus on the product."
@@ -2062,10 +2062,10 @@ function Page() {
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), /*#__PURE__*/React.createElement(PageHeader, {
     eyebrow: "Case study · 04",
     title: "Tolstoy",
-    subhead: "How Tolstoy grew customer support from one agent to a six-person team with xFusion.",
+    subhead: "How Tolstoy grew customer support from one agent to an 11-person team with xFusion.",
     photo: {
       name: 'Dov Kaufmann',
-      role: 'COO, Tolstoy',
+      role: 'CEO, Tolstoy',
       src: '../../images/dov-kaufmann-tolstoy.webp'
     }
   }), /*#__PURE__*/React.createElement(OverviewBox, {
@@ -2078,13 +2078,13 @@ function Page() {
   }), /*#__PURE__*/React.createElement(TestimonialFeature, {
     photo: {
       name: 'Dov Kaufmann',
-      role: 'COO, Tolstoy',
+      role: 'CEO, Tolstoy',
       src: '../../images/dov-kaufmann-tolstoy.webp'
     },
     pullQuote: "An absolute game-changer. We grow faster and more professionally than we ever could alone.",
     fullQuote: "Working with the xFusion team enabled us to scale customer support from a single agent to a six-person team handling Tier 1 and Tier 2 work. The partnership has been so valuable that our Shopify app ranking jumped 90 points after a wave of 5-star reviews tied to better support. I can't praise the team enough.",
     name: "Dov Kaufmann",
-    role: "COO",
+    role: "CEO",
     company: "Tolstoy"
   }), /*#__PURE__*/React.createElement(MetricCallout, {
     stat: "90-point jump",

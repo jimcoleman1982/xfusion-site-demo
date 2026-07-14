@@ -2799,7 +2799,7 @@ const TESTIMONIALS = [{
   full: 'I was sure outsourcing would mean dropped tickets, the wrong tone, and an exploding workload. None of that happened. The xFusion team grew from one dedicated agent to two full-time and a part-time weekend agent, and the entire way I think about the future of my business has changed.'
 }, {
   name: 'Dov Kaufmann',
-  role: 'COO',
+  role: 'CEO',
   company: 'Tolstoy',
   file: 'images/dov-kaufmann-tolstoy.webp',
   tone: 'clay',
@@ -2959,7 +2959,7 @@ function CaseStudies() {
     person: 'Dov Kaufmann',
     tone: 'clay',
     file: 'images/dov-kaufmann-tolstoy.webp',
-    role: 'COO of Tolstoy',
+    role: 'CEO of Tolstoy',
     headline: 'Rose 90 spots in Shopify rankings. Grew faster and more professionally than they could have alone.',
     body: 'Tolstoy was growing fast and needed support that could keep up. Our team learned their tools, took over tickets and reviews, and freed up their leaders to focus on building the product.'
   }, {

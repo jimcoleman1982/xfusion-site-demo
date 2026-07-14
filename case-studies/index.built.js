@@ -1554,7 +1554,7 @@ const TILES = [{
   attribution: 'Marcelo Olivera, Revy',
   href: 'revy/',
   photoName: 'Marcelo Olivera',
-  photoPath: '../images/marcelo-olivera-revy.png',
+  photoPath: '../images/marcelo-olivera-revy.webp',
   photoTone: 'rose',
   linkLabel: 'Read the Revy case study'
 }, {
