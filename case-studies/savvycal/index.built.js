@@ -783,7 +783,7 @@ function OverviewBox() {
     detail: "Founder's deep work was being eaten by the support inbox, with volume set to climb as new features shipped."
   }, {
     label: 'Solution',
-    detail: 'A senior xFusion customer support agent placed full-time as an extension of the SavvyCal team.'
+    detail: 'An experienced xFusion customer support specialist placed full-time as an extension of the SavvyCal team.'
   }, {
     label: 'Results',
     detail: '84.79% reduction in average reply time, higher customer satisfaction, no abandoned tickets, and the founder back to building the product.'
@@ -1166,7 +1166,7 @@ function MetricCallout() {
       margin: 0,
       textWrap: 'pretty'
     }
-  }, "in average customer support reply time after placing a senior xFusion agent as an extension of the SavvyCal team.")))));
+  }, "in average customer support reply time after placing an experienced xFusion specialist as an extension of the SavvyCal team.")))));
 }
 window.MetricCallout = MetricCallout;
 // --- components/ShoutoutGrid.jsx
@@ -1494,7 +1494,7 @@ function CTASection() {
       maxWidth: 560,
       textWrap: 'pretty'
     }
-  }, "If your customer support is starting to slip, or you are about to lose the one person holding it together, we can help. We will recruit, vet, place, train, and manage a senior, AI-trained support agent for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free.")), /*#__PURE__*/React.createElement("div", {
+  }, "If your customer support is starting to slip, or you are about to lose the one person holding it together, we can help. We will recruit, vet, place, train, and manage an experienced, AI-trained support specialist for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free.")), /*#__PURE__*/React.createElement("div", {
     className: "cta-side",
     style: {
       display: 'flex',
@@ -1594,7 +1594,7 @@ function Footer() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Senior, AI-trained customer support agents for small businesses. Since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',
@@ -1713,7 +1713,7 @@ const XF_SOLUTIONS = [{
 }, {
   label: 'Hire a support agent',
   href: '/hire-support-agents/',
-  desc: 'Senior, dedicated, managed',
+  desc: 'Experienced, dedicated, managed',
   icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
     d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
   }), /*#__PURE__*/React.createElement("circle", {
@@ -2151,9 +2151,9 @@ function App() {
   }, "The support inbox started killing it."), /*#__PURE__*/React.createElement("p", null, "He would sit down to write code or think through a hard product decision, and a pull on the back of his mind kept tugging him toward the support queue. What if a customer was stuck? What if a tier-1 question had been sitting for hours? What if something in the latest release had broken and he was the only one who could see it?"), /*#__PURE__*/React.createElement("p", null, "So he checked. And once he checked, he replied. And once he replied, the morning was gone."), /*#__PURE__*/React.createElement("p", null, "The math was about to get worse. SavvyCal had a roadmap of features in flight, and Derrick knew that every shipped feature meant more questions, more edge cases, more onboarding chats, more billing nuance. The current setup was already cracking under the load it had. Adding more product surface area without a real support function would have meant either slower releases or slower replies. Neither was acceptable."), /*#__PURE__*/React.createElement("p", null, "He had also seen what most outsourced support looks like. Scripted replies. Shallow product knowledge. People who treated his customers like tickets to close instead of people to help. SavvyCal customers care about how they get treated. The support had to match. So Derrick had a problem with two ugly answers. Hire and manage in-house, which meant pulling himself further away from the product to do recruiting, training, and people management he did not want to be doing. Or outsource it the way most founders outsource it, and watch the brand he had carefully built get diluted by a stranger who was treating it like a side gig. He wanted a third option.")), /*#__PURE__*/React.createElement(LongForm, {
     id: "solution",
     eyebrow: "The solution",
-    heading: "A senior agent, placed as one of the team.",
+    heading: "An experienced specialist, placed as one of the team.",
     bg: "paper-2"
-  }, /*#__PURE__*/React.createElement("p", null, "xFusion placed a full-time, senior customer support agent as a dedicated extension of the SavvyCal team. Not a freelancer. Not a script reader. A person who learned SavvyCal the way an in-house hire would learn it, and who stayed."), /*#__PURE__*/React.createElement("p", null, "The lifecycle was managed end to end. xFusion ran the recruiting through the TraitX Framework, surfaced candidates Derrick could review on Zoom before meeting anyone live, handled the training in SavvyCal's actual workflows, took over payroll and HR, and assigned a dedicated account manager to oversee performance and keep the work tight over time."), /*#__PURE__*/React.createElement("p", null, "What Derrick noticed first was the fit. The placed agent did not sound like an outsourced rep. The replies sounded like SavvyCal. The judgment calls felt like the calls Derrick would have made himself if he had been in the inbox. Customers wrote back grateful, not annoyed. Some of them did not realize they were not talking directly to the founder."), /*#__PURE__*/React.createElement("p", null, "That gave Derrick room to step back. He stopped checking the inbox in the morning. He let the support team run without him. The work was good enough that he trusted it. Over time, the scope grew. The placement took on voice and video support for high-touch customers, case by case. Knowledge base articles got written and improved. Side projects and back-office tasks moved off Derrick's plate too. What started as relief from the morning inbox turned into a real working part of the business.")), /*#__PURE__*/React.createElement(ShoutoutImageGrid, {
+  }, /*#__PURE__*/React.createElement("p", null, "xFusion placed a full-time, experienced customer support specialist as a dedicated extension of the SavvyCal team. Not a freelancer. Not a script reader. A person who learned SavvyCal the way an in-house hire would learn it, and who stayed."), /*#__PURE__*/React.createElement("p", null, "The lifecycle was managed end to end. xFusion ran the recruiting through the TraitX Framework, surfaced candidates Derrick could review on Zoom before meeting anyone live, handled the training in SavvyCal's actual workflows, took over payroll and HR, and assigned a dedicated account manager to oversee performance and keep the work tight over time."), /*#__PURE__*/React.createElement("p", null, "What Derrick noticed first was the fit. The placed agent did not sound like an outsourced rep. The replies sounded like SavvyCal. The judgment calls felt like the calls Derrick would have made himself if he had been in the inbox. Customers wrote back grateful, not annoyed. Some of them did not realize they were not talking directly to the founder."), /*#__PURE__*/React.createElement("p", null, "That gave Derrick room to step back. He stopped checking the inbox in the morning. He let the support team run without him. The work was good enough that he trusted it. Over time, the scope grew. The placement took on voice and video support for high-touch customers, case by case. Knowledge base articles got written and improved. Side projects and back-office tasks moved off Derrick's plate too. What started as relief from the morning inbox turned into a real working part of the business.")), /*#__PURE__*/React.createElement(ShoutoutImageGrid, {
     eyebrow: "In their own words",
     heading: "Shoutouts to xFusion's team members from SavvyCal leadership",
     intro: "Derrick has gone out of his way, more than once, to call out the xFusion team in public. He has shouted them out on The Art of Product podcast, in conversations with other founders, and in his own writing about how SavvyCal stays a small team that does big things.",

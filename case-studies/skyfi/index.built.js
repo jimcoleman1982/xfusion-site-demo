@@ -1304,7 +1304,7 @@ function Footer() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Senior, AI-trained customer support agents for small businesses. Since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',
@@ -1423,7 +1423,7 @@ const XF_SOLUTIONS = [{
 }, {
   label: 'Hire a support agent',
   href: '/hire-support-agents/',
-  desc: 'Senior, dedicated, managed',
+  desc: 'Experienced, dedicated, managed',
   icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
     d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
   }), /*#__PURE__*/React.createElement("circle", {
@@ -1914,7 +1914,7 @@ function App() {
     bg: "paper"
   }), /*#__PURE__*/React.createElement(CTASection, {
     title: "Want to see if we can help you too?",
-    body: "If your customer support is buckling under global volume, technical depth, or 24/7 coverage demands, we can help. We will recruit, vet, place, train, and manage a senior, AI-trained support agent for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free.",
+    body: "If your customer support is buckling under global volume, technical depth, or 24/7 coverage demands, we can help. We will recruit, vet, place, train, and manage an experienced, AI-trained support specialist for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free.",
     ctaLabel: "Book a Discovery Call",
     microcopy: "30 minutes. No commitment. No credit card. You'll talk directly with our founding team."
   }), /*#__PURE__*/React.createElement(Footer, null));

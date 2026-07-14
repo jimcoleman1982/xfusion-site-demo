@@ -9,7 +9,7 @@ function HowItWorks() {
     {
       icon: 'filter',
       title: 'Candidates in 14 days or less',
-      body: 'We use our TraitX Framework to find people for your specific role. About two weeks later, you get a short list of senior candidates with blind resumes and Zoom interview videos. You watch the videos and pick who you want to meet.',
+      body: 'We use our TraitX Framework to find people for your specific role. About two weeks later, you get a short list of experienced candidates with blind resumes and Zoom interview videos. You watch the videos and pick who you want to meet.',
     },
     {
       icon: 'spark',

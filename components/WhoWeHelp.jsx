@@ -28,8 +28,8 @@ function WhoWeHelp() {
             color: '#3A322D',
             margin: 0,
           }}>
-            The problems differ by business. The fix is the same: a senior,
-            AI-trained agent who learns yours. Pick your world.
+            The problems differ by business. The fix is the same: an experienced,
+            AI-trained specialist who learns yours. Pick your world.
           </p>
         </div>
 

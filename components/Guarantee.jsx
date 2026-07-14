@@ -44,7 +44,7 @@ function Guarantee() {
               maxWidth: 680,
             }}>
               <p style={{ margin: '0 0 20px' }}>
-                We find, screen, and place a senior support agent in your business. You work with them for 30 full days. If you're not happy for any reason, you walk away and pay nothing. No deposit. No setup fee. Nothing. We eat every dollar we spent on hiring, screening, and training. That's how sure we are.
+                We find, screen, and place an experienced support specialist in your business. You work with them for 30 full days. If you're not happy for any reason, you walk away and pay nothing. No deposit. No setup fee. Nothing. We eat every dollar we spent on hiring, screening, and training. That's how sure we are.
               </p>
               <p style={{
                 margin: 0,

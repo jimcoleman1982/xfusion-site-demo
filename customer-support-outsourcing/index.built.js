@@ -602,7 +602,7 @@ const XF_SOLUTIONS = [{
 }, {
   label: 'Hire a support agent',
   href: '/hire-support-agents/',
-  desc: 'Senior, dedicated, managed',
+  desc: 'Experienced, dedicated, managed',
   icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
     d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
   }), /*#__PURE__*/React.createElement("circle", {
@@ -1089,7 +1089,7 @@ function Footer() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Senior, AI-trained customer support agents for small businesses. Since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',
@@ -1172,7 +1172,7 @@ window.Footer = Footer;
 
 // Proof points are defined ONCE here and shared with the homepage proof
 // strip (Task 8) so the claims can never drift out of sync.
-window.XF_PROOF_POINTS = ['Senior, AI-trained agents', '$3,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
+window.XF_PROOF_POINTS = ['Experienced specialists, AI-trained', '$2,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
 const XF_BUSINESS_TYPES = ['SaaS', 'E-commerce', 'Marketplace', 'Agency', 'Other'];
 function LeadModal({
   open,
@@ -1745,7 +1745,7 @@ function StickyCapture() {
       color: '#3A322D',
       whiteSpace: 'nowrap'
     }
-  }, "$3,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
+  }, "$2,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
     style: {
       flexShrink: 1,
       minWidth: 0
@@ -1813,7 +1813,7 @@ const XF_LP_COMPARISON = [{
 }, {
   name: 'xFusion',
   featured: true,
-  rows: ['$3,900/mo all-in, one flat rate', 'A dedicated senior, AI-trained agent', 'We run recruiting, training, payroll, QA, and backup', 'Month-to-month, 30-day risk-free trial']
+  rows: ['$2,900/mo all-in, one flat rate', 'A dedicated experienced, AI-trained specialist', 'We run recruiting, training, payroll, QA, and backup', 'Month-to-month, 30-day risk-free trial']
 }];
 
 // Shared "how your agent learns" phases. Source: Partnership Onboarding Guide
@@ -2764,13 +2764,13 @@ window.VerticalLanding = VerticalLanding;
 // --- (inline)
 const XF_LP_FAQ = [{
   "q": "What does customer support outsourcing cost with xFusion?",
-  "a": "$3,900 per month, all-inclusive. That covers a senior, AI-trained support agent plus recruiting, training, payroll, QA, culture, and an account manager. No setup fees, no deposits, and no long-term contract."
+  "a": "$2,900 per month, all-inclusive. That covers an experienced, AI-trained support specialist plus recruiting, training, payroll, QA, culture, and an account manager. No setup fees, no deposits, and no long-term contract."
 }, {
   "q": "Why not just hire locally for support work?",
-  "a": "Senior support reps in the U.S. who know AI cost $80,000 to $100,000+ per year, take months to find, and often quit within 18 months. With xFusion you get a senior, AI-trained agent for about half that cost, with the culture work built in to keep them around long-term."
+  "a": "Senior-level support reps in the U.S. who know AI cost $80,000 to $100,000+ per year, take months to find, and often quit within 18 months. With xFusion you get an experienced, AI-trained specialist for about half that cost, with the culture work built in to keep them around long-term."
 }, {
   "q": "How is xFusion different from cheaper outsourcing companies?",
-  "a": "Every agent we place is senior and AI-trained, so one agent does the work of several junior reps and the cost per ticket is actually lower. The price is one flat all-in rate, and the 30-Day Risk-Free Trial means we absorb the risk, not you."
+  "a": "Every specialist we place is experienced and AI-trained, so one specialist does the work of several junior reps and the cost per ticket is actually lower. The price is one flat all-in rate, and the 30-Day Risk-Free Trial means we absorb the risk, not you."
 }, {
   "q": "Is there a long-term contract?",
   "a": "No. The service is month-to-month with no minimum term. There's no deposit, no setup fee, and no fine print."
@@ -2782,7 +2782,7 @@ const XF_LP_FAQ = [{
   "a": "Your agent works full-time hours, just like any team member. Because they're based in the Philippines or Kenya, you have room to structure coverage however you want. Some clients align the agent to U.S. business hours, others stagger shifts to cover evenings or weekends. You pick the schedule; we handle the management."
 }, {
   "q": "Why not just use a chatbot?",
-  "a": "AI on its own handles the easy 60% of support work well. The hard 40% (angry customers, weird cases, judgment calls, sensitive issues) is where chatbot-only setups break, often in public. Our senior agents use AI as a tool, not a replacement: AI handles the easy stuff, and they step in for the moments that matter."
+  "a": "AI on its own handles the easy 60% of support work well. The hard 40% (angry customers, weird cases, judgment calls, sensitive issues) is where chatbot-only setups break, often in public. Our experienced specialists use AI as a tool, not a replacement: AI handles the easy stuff, and they step in for the moments that matter."
 }, {
   "q": "What about security and data access?",
   "a": "Your agent works inside your helpdesk and your tools, not ours, so you control exactly what they can access and can revoke it any time. Every agent is vetted before placement, works under confidentiality agreements, and is offboarded with a defined access checklist. The full picture is in the security overview at xfusion.io/security."
@@ -2794,7 +2794,7 @@ window.XF_LP_FAQ = XF_LP_FAQ;
 window.XF_LP = {
   "eyebrow": "Customer support outsourcing",
   "h1": "Outsourced support that doesn't sound outsourced.",
-  "sub": "Most founders see two ugly answers: hire and manage support yourself, or watch your brand get diluted by a stranger treating it like a side gig. We built the third: a senior, AI-trained agent embedded in your business, managed by us, at one flat all-in rate.",
+  "sub": "Most founders see two ugly answers: hire and manage support yourself, or watch your brand get diluted by a stranger treating it like a side gig. We built the third: an experienced, AI-trained specialist embedded in your business, managed by us, at one flat all-in rate.",
   "microcopy": "Tell us where support hurts. 30 minutes, no pitch deck.",
   "metrics": [{
     "num": "98.9%",
@@ -2809,11 +2809,11 @@ window.XF_LP = {
     "text": "Support placements since 2020, across SaaS, e-commerce, and marketplaces."
   }],
   "values": [{
-    "title": "Senior agents, not beginners",
+    "title": "Experienced specialists, not beginners",
     "text": "Every agent has real support experience and uses AI tools to handle the volume of several junior reps. Across our client base, customers regularly don't realize they aren't talking to the in-house team."
   }, {
     "title": "One flat rate. No surprises.",
-    "text": "$3,900/mo covers the agent, recruiting, training, payroll, QA, culture, and an account manager. No add-ons, no setup fees, no deposits."
+    "text": "$2,900/mo covers the agent, recruiting, training, payroll, QA, culture, and an account manager. No add-ons, no setup fees, no deposits."
   }, {
     "title": "Month-to-month, risk-free start",
     "text": "No lock-in. And the 30-Day Risk-Free Trial means the first month costs nothing if we're not a fit."

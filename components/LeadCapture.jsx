@@ -132,7 +132,7 @@ function StickyCapture() {
         <span className="sticky-note" style={{
           fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14,
           fontWeight: 500, color: '#3A322D', whiteSpace: 'nowrap',
-        }}>$3,900/mo all-in. 30-day risk-free trial.</span>
+        }}>$2,900/mo all-in. 30-day risk-free trial.</span>
         <div style={{ flexShrink: 1, minWidth: 0 }}>
           <LeadCapture compact />
         </div>

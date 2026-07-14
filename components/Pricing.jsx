@@ -1,7 +1,7 @@
 // Section 5: Pricing & Offer Stack — the conversion centerpiece
 function Pricing() {
   const stack = [
-    { label: 'Senior support agent salary (full-time, dedicated to you)', value: '$3,500/mo' },
+    { label: 'Experienced support specialist salary (full-time, dedicated to you)', value: '$3,500/mo' },
     { label: 'Hiring and screening through the TraitX Framework', value: '$4,500 one-time, monthly value $375/mo' },
     { label: 'Placement and onboarding into your business', value: '$1,500 one-time' },
     { label: 'Training in your support process', value: '$750 one-time' },
@@ -27,7 +27,7 @@ function Pricing() {
             color: '#1F1A17',
             textWrap: 'balance',
           }}>
-            $3,900/mo, all-in. Here's what's actually inside that number.
+            $2,900/mo, all-in. Here's what's actually inside that number.
           </h2>
           <div style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
@@ -37,10 +37,10 @@ function Pricing() {
             maxWidth: 760,
           }}>
             <p style={{ margin: '0 0 20px' }}>
-              A senior support hire in the US costs $80,000 to $100,000+ per year once you add benefits, taxes, payroll, equipment, hiring fees, and management costs. That's $6,600 to $8,300+ per month, before you've trained them or built any team culture around them.
+              A senior-level support hire in the US costs $80,000 to $100,000+ per year once you add benefits, taxes, payroll, equipment, hiring fees, and management costs. That's $6,600 to $8,300+ per month, before you've trained them or built any team culture around them.
             </p>
             <p style={{ margin: 0 }}>
-              We give you the same level of talent (senior, AI-trained, dedicated to your business) for $3,900/mo, with everything below included. About half the cost of a local hire. And we handle managing them.
+              We give you the same level of talent (experienced, AI-trained, dedicated to your business) for $2,900/mo, with everything below included. Less than half the cost of a local hire. And we handle managing them.
             </p>
           </div>
         </div>
@@ -168,7 +168,7 @@ function Pricing() {
               textAlign: 'right',
               letterSpacing: '-0.025em',
               lineHeight: 1,
-            }}>$3,900/mo</div>
+            }}>$2,900/mo</div>
           </div>
         </div>
 
@@ -225,7 +225,7 @@ function Pricing() {
               color: '#B8512C',
               letterSpacing: '-0.025em',
               lineHeight: 1,
-            }}>$3,900/mo</div>
+            }}>$2,900/mo</div>
           </div>
         </div>
 
@@ -250,14 +250,14 @@ function Pricing() {
               lineHeight: 1.1,
               marginBottom: 24,
             }}>
-              $3,900/mo per full-time agent.
+              $2,900/mo per full-time agent.
             </div>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
               {[
                 'No deposit',
                 'No setup fee',
                 'No long-term contract, month-to-month',
-                'About half the cost of a senior, AI-trained support agent hired locally',
+                'Less than half the cost of an experienced, AI-trained support specialist hired locally',
                 'Pay nothing for the first 30 days (see guarantee)',
               ].map((b, i) => (
                 <li key={i} style={{

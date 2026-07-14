@@ -566,7 +566,7 @@ Object.assign(window, {
 
 // Proof points are defined ONCE here and shared with the homepage proof
 // strip (Task 8) so the claims can never drift out of sync.
-window.XF_PROOF_POINTS = ['Senior, AI-trained agents', '$3,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
+window.XF_PROOF_POINTS = ['Experienced specialists, AI-trained', '$2,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
 const XF_BUSINESS_TYPES = ['SaaS', 'E-commerce', 'Marketplace', 'Agency', 'Other'];
 function LeadModal({
   open,
@@ -1139,7 +1139,7 @@ function StickyCapture() {
       color: '#3A322D',
       whiteSpace: 'nowrap'
     }
-  }, "$3,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
+  }, "$2,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
     style: {
       flexShrink: 1,
       minWidth: 0
@@ -1199,7 +1199,7 @@ const XF_SOLUTIONS = [{
 }, {
   label: 'Hire a support agent',
   href: '/hire-support-agents/',
-  desc: 'Senior, dedicated, managed',
+  desc: 'Experienced, dedicated, managed',
   icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
     d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
   }), /*#__PURE__*/React.createElement("circle", {
@@ -1661,7 +1661,7 @@ function Hero() {
       alignItems: 'center'
     },
     className: "hero-grid"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Eyebrow, null, "Fully managed customer support. Senior agents, powered by AI."), /*#__PURE__*/React.createElement("h1", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Eyebrow, null, "Fully managed. Experienced customer support specialists, AI-trained."), /*#__PURE__*/React.createElement("h1", {
     style: {
       fontFamily: "'Source Serif 4', serif",
       fontSize: 'clamp(40px, 5.4vw, 72px)',
@@ -1682,7 +1682,7 @@ function Hero() {
       maxWidth: 580,
       textWrap: 'pretty'
     }
-  }, "We find, train, and place senior support agents inside your business. They use AI to handle the work of several junior reps. We take care of the rest: recruiting, payroll, culture, and performance. So you don't have to."), /*#__PURE__*/React.createElement(LeadCapture, null)), /*#__PURE__*/React.createElement("div", {
+  }, "We find, train, and place experienced support specialists inside your business. They use AI to handle the work of several junior reps. We take care of the rest: recruiting, payroll, culture, and performance. So you don't have to."), /*#__PURE__*/React.createElement(LeadCapture, null)), /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'relative'
     }
@@ -1896,7 +1896,7 @@ function Problem() {
     style: {
       margin: '0 0 24px'
     }
-  }, "You've already tried the obvious fixes. Upwork was full of ghosts and scams. The last \"agency\" you used hired someone, took their fee, and vanished. The chatbot you tried handled the easy stuff fine, then fell apart on the calls that really mattered. Hiring a senior support person in-house costs more than the job is worth. And you don't have time to manage one anyway."), /*#__PURE__*/React.createElement("p", {
+  }, "You've already tried the obvious fixes. Upwork was full of ghosts and scams. The last \"agency\" you used hired someone, took their fee, and vanished. The chatbot you tried handled the easy stuff fine, then fell apart on the calls that really mattered. Hiring an experienced support person in-house costs more than the job is worth. And you don't have time to manage one anyway."), /*#__PURE__*/React.createElement("p", {
     style: {
       margin: 0
     }
@@ -1938,8 +1938,8 @@ function Solution() {
     icon: 'users',
     tint: '#F2D9CB',
     iconColor: '#B8512C',
-    title: 'Senior, AI-Augmented Agents',
-    body: "Every agent we place is senior, not entry-level. They use AI tools to handle the easy stuff, which means they can do the work of several junior reps. That's the only reason $3,900/mo works. The people we place are that good."
+    title: 'Experienced Specialists, AI-Trained',
+    body: "Every specialist we place is experienced, not entry-level. They use AI tools to handle the easy stuff, which means they can do the work of several junior reps. That's the only reason $2,900/mo works. The people we place are that good."
   }, {
     icon: 'filter',
     tint: '#D7E0DC',
@@ -1973,7 +1973,7 @@ function Solution() {
       color: '#1F1A17',
       textWrap: 'balance'
     }
-  }, "Senior support agents who use AI to do more. Fully managed by us."), /*#__PURE__*/React.createElement("p", {
+  }, "Experienced support specialists who use AI to do more. Fully managed by us."), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 19,
@@ -1982,7 +1982,7 @@ function Solution() {
       margin: 0,
       maxWidth: 720
     }
-  }, "xFusion places senior support agents inside your business and manages them for you. Every agent has real support experience and is trained to use AI tools. So one xFusion agent can handle a lot more work than a junior rep at another agency. You get the work done. We handle the people side.")), /*#__PURE__*/React.createElement("div", {
+  }, "xFusion places experienced support specialists inside your business and manages them for you. Every agent has real support experience and is trained to use AI tools. So one xFusion agent can handle a lot more work than a junior rep at another agency. You get the work done. We handle the people side.")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: 'repeat(3, 1fr)',
@@ -2112,7 +2112,7 @@ function WhoWeHelp() {
       color: '#3A322D',
       margin: 0
     }
-  }, "The problems differ by business. The fix is the same: a senior, AI-trained agent who learns yours. Pick your world.")), /*#__PURE__*/React.createElement("div", {
+  }, "The problems differ by business. The fix is the same: an experienced, AI-trained specialist who learns yours. Pick your world.")), /*#__PURE__*/React.createElement("div", {
     className: "wwh-grid",
     style: {
       display: 'grid',
@@ -2265,7 +2265,7 @@ function HowItWorks() {
   }, {
     icon: 'filter',
     title: 'Candidates in 14 days or less',
-    body: 'We use our TraitX Framework to find people for your specific role. About two weeks later, you get a short list of senior candidates with blind resumes and Zoom interview videos. You watch the videos and pick who you want to meet.'
+    body: 'We use our TraitX Framework to find people for your specific role. About two weeks later, you get a short list of experienced candidates with blind resumes and Zoom interview videos. You watch the videos and pick who you want to meet.'
   }, {
     icon: 'spark',
     title: 'Placement and Training',
@@ -2389,7 +2389,7 @@ window.HowItWorks = HowItWorks;
 // Section 5: Pricing & Offer Stack — the conversion centerpiece
 function Pricing() {
   const stack = [{
-    label: 'Senior support agent salary (full-time, dedicated to you)',
+    label: 'Experienced support specialist salary (full-time, dedicated to you)',
     value: '$3,500/mo'
   }, {
     label: 'Hiring and screening through the TraitX Framework',
@@ -2436,7 +2436,7 @@ function Pricing() {
       color: '#1F1A17',
       textWrap: 'balance'
     }
-  }, "$3,900/mo, all-in. Here's what's actually inside that number."), /*#__PURE__*/React.createElement("div", {
+  }, "$2,900/mo, all-in. Here's what's actually inside that number."), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 18,
@@ -2448,11 +2448,11 @@ function Pricing() {
     style: {
       margin: '0 0 20px'
     }
-  }, "A senior support hire in the US costs $80,000 to $100,000+ per year once you add benefits, taxes, payroll, equipment, hiring fees, and management costs. That's $6,600 to $8,300+ per month, before you've trained them or built any team culture around them."), /*#__PURE__*/React.createElement("p", {
+  }, "A senior-level support hire in the US costs $80,000 to $100,000+ per year once you add benefits, taxes, payroll, equipment, hiring fees, and management costs. That's $6,600 to $8,300+ per month, before you've trained them or built any team culture around them."), /*#__PURE__*/React.createElement("p", {
     style: {
       margin: 0
     }
-  }, "We give you the same level of talent (senior, AI-trained, dedicated to your business) for $3,900/mo, with everything below included. About half the cost of a local hire. And we handle managing them."))), /*#__PURE__*/React.createElement("div", {
+  }, "We give you the same level of talent (experienced, AI-trained, dedicated to your business) for $2,900/mo, with everything below included. Less than half the cost of a local hire. And we handle managing them."))), /*#__PURE__*/React.createElement("div", {
     className: "offer-stack-table",
     style: {
       background: '#F7F2EB',
@@ -2592,7 +2592,7 @@ function Pricing() {
       letterSpacing: '-0.025em',
       lineHeight: 1
     }
-  }, "$3,900/mo"))), /*#__PURE__*/React.createElement("div", {
+  }, "$2,900/mo"))), /*#__PURE__*/React.createElement("div", {
     className: "offer-stack-cards",
     style: {
       display: 'none',
@@ -2702,7 +2702,7 @@ function Pricing() {
       letterSpacing: '-0.025em',
       lineHeight: 1
     }
-  }, "$3,900/mo"))), /*#__PURE__*/React.createElement("div", {
+  }, "$2,900/mo"))), /*#__PURE__*/React.createElement("div", {
     style: {
       background: '#F7F2EB',
       border: '1px solid #D9CFBF',
@@ -2724,7 +2724,7 @@ function Pricing() {
       lineHeight: 1.1,
       marginBottom: 24
     }
-  }, "$3,900/mo per full-time agent."), /*#__PURE__*/React.createElement("ul", {
+  }, "$2,900/mo per full-time agent."), /*#__PURE__*/React.createElement("ul", {
     style: {
       listStyle: 'none',
       margin: 0,
@@ -2733,7 +2733,7 @@ function Pricing() {
       flexDirection: 'column',
       gap: 12
     }
-  }, ['No deposit', 'No setup fee', 'No long-term contract, month-to-month', 'About half the cost of a senior, AI-trained support agent hired locally', 'Pay nothing for the first 30 days (see guarantee)'].map((b, i) => /*#__PURE__*/React.createElement("li", {
+  }, ['No deposit', 'No setup fee', 'No long-term contract, month-to-month', 'Less than half the cost of an experienced, AI-trained support specialist hired locally', 'Pay nothing for the first 30 days (see guarantee)'].map((b, i) => /*#__PURE__*/React.createElement("li", {
     key: i,
     style: {
       display: 'flex',
@@ -2970,7 +2970,7 @@ function CaseStudies() {
     file: 'images/derrick-reimer-savvycal.webp',
     role: 'Founder of SavvyCal',
     headline: 'A doubter changes his mind. "This is not your stereotypical outsourced support agency."',
-    body: "Derrick Reimer didn't believe in outsourcing. Our senior agents earned his trust by handling SavvyCal's tricky product support with the same brand voice and judgment as an in-house team."
+    body: "Derrick Reimer didn't believe in outsourcing. Our experienced specialists earned his trust by handling SavvyCal's tricky product support with the same brand voice and judgment as an in-house team."
   }, {
     client: 'Bonify',
     slug: 'case-studies/bonify/',
@@ -3208,7 +3208,7 @@ function Chatbot() {
       color: '#F7F2EB',
       fontSize: 21
     }
-  }, "That's where humans matter. And that's where xFusion fits. Our senior agents use AI as a tool, not a replacement. AI handles the repeat work. People handle the moments that decide if a customer becomes a fan or asks for a refund."))));
+  }, "That's where humans matter. And that's where xFusion fits. Our experienced specialists use AI as a tool, not a replacement. AI handles the repeat work. People handle the moments that decide if a customer becomes a fan or asks for a refund."))));
 }
 window.Chatbot = Chatbot;
 // --- components/Guarantee.jsx
@@ -3270,7 +3270,7 @@ function Guarantee() {
     style: {
       margin: '0 0 20px'
     }
-  }, "We find, screen, and place a senior support agent in your business. You work with them for 30 full days. If you're not happy for any reason, you walk away and pay nothing. No deposit. No setup fee. Nothing. We eat every dollar we spent on hiring, screening, and training. That's how sure we are."), /*#__PURE__*/React.createElement("p", {
+  }, "We find, screen, and place an experienced support specialist in your business. You work with them for 30 full days. If you're not happy for any reason, you walk away and pay nothing. No deposit. No setup fee. Nothing. We eat every dollar we spent on hiring, screening, and training. That's how sure we are."), /*#__PURE__*/React.createElement("p", {
     style: {
       margin: 0,
       fontFamily: "'Source Serif 4', serif",
@@ -3309,19 +3309,19 @@ const FAQ_ITEMS = [{
   a: "Every candidate sits through interviews with a real person where we check English skills, how they talk, and how they come across. Before you meet with anyone, you'll watch a Zoom recording of them, so you can judge for yourself instead of taking our word for it."
 }, {
   q: "What if the placement doesn't work out?",
-  a: "That's exactly what the 30-Day Risk-Free Trial is for. We recruit, vet, and place a senior, AI-trained customer support agent in your business. You work with them for 30 full days. If you're not satisfied for any reason, you walk away without paying anything. Not a deposit. Not a setup fee. Nothing. We absorb every dollar of recruiting, vetting, training, and placement we invested."
+  a: "That's exactly what the 30-Day Risk-Free Trial is for. We recruit, vet, and place an experienced, AI-trained customer support specialist in your business. You work with them for 30 full days. If you're not satisfied for any reason, you walk away without paying anything. Not a deposit. Not a setup fee. Nothing. We absorb every dollar of recruiting, vetting, training, and placement we invested."
 }, {
-  q: 'Why is $3,900/mo the right price?',
-  a: "Two reasons. First, every agent we place is senior, with more experience than a typical support hire, and trained to use AI tools to handle the easy stuff. So one xFusion agent does a lot more work than a junior rep at a cheaper agency. The cost per ticket is actually lower. Second, $3,900 is about half what you'd pay for the same kind of person in the U.S., and it includes hiring, training, payroll, culture, and an account manager. No add-ons. No setup fees. No deposits."
+  q: 'Why is $2,900/mo the right price?',
+  a: "Two reasons. First, every specialist we place is experienced, with more experience than a typical support hire, and trained to use AI tools to handle the easy stuff. So one xFusion agent does a lot more work than a junior rep at a cheaper agency. The cost per ticket is actually lower. Second, $2,900 is less than half what you'd pay for the same kind of person in the U.S., and it includes hiring, training, payroll, culture, and an account manager. No add-ons. No setup fees. No deposits."
 }, {
   q: 'How long does the process take?',
-  a: 'About 14 days from your discovery call to a candidate list in your inbox. We keep a pool of senior, AI-trained support candidates ready to go, which is why we can move that fast without cutting corners.'
+  a: 'About 14 days from your discovery call to a candidate list in your inbox. We keep a pool of experienced, AI-trained support candidates ready to go, which is why we can move that fast without cutting corners.'
 }, {
   q: 'Do you handle payroll and HR?',
-  a: "Yes, and it's part of the $3,900/mo. xFusion handles paying salaries, light HR, and time off. Your agent is hired as an independent contractor and managed by us, so you don't have to deal with international payroll. xFusion is not an Employer of Record, and the agent isn't your employee. We handle the paperwork so the setup stays simple."
+  a: "Yes, and it's part of the $2,900/mo. xFusion handles paying salaries, light HR, and time off. Your agent is hired as an independent contractor and managed by us, so you don't have to deal with international payroll. xFusion is not an Employer of Record, and the agent isn't your employee. We handle the paperwork so the setup stays simple."
 }, {
   q: 'What roles can you fill?',
-  a: "Customer support, mostly. Every support agent we place is senior, trained to use AI, and able to handle Tier 1, Tier 2, and some cases that used to need an engineer's help. We also place inside sales people who work inbound leads (not cold calling) and AI operators who run AI tools alongside your team. If you need a different kind of role, ask on the discovery call. We'll be honest about whether we can help."
+  a: "Customer support, mostly. Every support specialist we place is experienced, trained to use AI, and able to handle Tier 1, Tier 2, and some cases that used to need an engineer's help. We also place inside sales people who work inbound leads (not cold calling) and AI operators who run AI tools alongside your team. If you need a different kind of role, ask on the discovery call. We'll be honest about whether we can help."
 }, {
   q: 'Where does your talent come from?',
   a: "Mostly the Philippines, with a strong group from Kenya. Since 2020 we've built deep networks in both countries and learned which candidates actually thrive in long-term support roles. Both markets have strong English-speaking professionals who treat support as a real career, not a stepping-stone."
@@ -3333,16 +3333,16 @@ const FAQ_ITEMS = [{
   a: 'No. Our work helps American small businesses keep growing and keep hiring at home where it matters most. Most of our clients use us for support jobs that are hard to fill at U.S. wages. Filling those jobs overseas lets owners spend more on the core jobs where U.S. hiring makes sense.'
 }, {
   q: 'Why not just hire locally for support work?',
-  a: 'Senior support reps in the U.S. who know AI cost $80,000 to $100,000+ per year, take months to find, and often quit within 18 months. With xFusion, you get a senior, AI-trained agent for about half that cost, with the culture work built in to keep them around long-term. You also skip the search, the training, the payroll setup, and the culture work. We handle all of it.'
+  a: 'Senior-level support reps in the U.S. who know AI cost $80,000 to $100,000+ per year, take months to find, and often quit within 18 months. With xFusion, you get an experienced, AI-trained specialist for about half that cost, with the culture work built in to keep them around long-term. You also skip the search, the training, the payroll setup, and the culture work. We handle all of it.'
 }, {
   q: 'What about after-hours coverage?',
   a: "Your placed agent works full-time hours, just like any team member. Because they're based in the Philippines or Kenya, you have room to structure coverage however you want. Some clients align the agent to U.S. business hours. Others stagger shifts to cover evenings or weekends. Some build a team that covers around the clock. You pick the schedule; we handle the management."
 }, {
   q: 'How do I keep a remote team member engaged long-term?',
-  a: "This is one of the most common worries we hear, which is why Culture & Engagement is included in the $3,900/mo. We run virtual and in-person team-building events, contests, branded swag, birthday and anniversary gifts, and structured holiday gifting. Pair that with a role that pays a real living wage in the agent's local economy, and you get someone who builds a career on your team rather than rotating through."
+  a: "This is one of the most common worries we hear, which is why Culture & Engagement is included in the $2,900/mo. We run virtual and in-person team-building events, contests, branded swag, birthday and anniversary gifts, and structured holiday gifting. Pair that with a role that pays a real living wage in the agent's local economy, and you get someone who builds a career on your team rather than rotating through."
 }, {
   q: 'Why not just use a chatbot?',
-  a: "AI on its own handles the easy 60% of support work well. The hard 40% (angry customers, weird cases, judgment calls, sensitive issues) is where chatbot-only setups break, often in public. xFusion's senior agents use AI as a tool, not a replacement. They let AI handle the easy stuff and step in for the moments that matter. You get the speed of AI plus the judgment and warmth of a person, instead of picking one and living with the limits."
+  a: "AI on its own handles the easy 60% of support work well. The hard 40% (angry customers, weird cases, judgment calls, sensitive issues) is where chatbot-only setups break, often in public. xFusion's experienced specialists use AI as a tool, not a replacement. They let AI handle the easy stuff and step in for the moments that matter. You get the speed of AI plus the judgment and warmth of a person, instead of picking one and living with the limits."
 }, {
   q: 'What does "AI-trained" actually mean in practice?',
   a: "It means your agent is trained to use AI tools (like Claude Code, Claude Cowork, and others) every day. They write replies with AI's help, sort and route tickets with AI, and oversee AI tools that handle the routine, high-volume cases. Their experience tells them when to trust what AI gives them and when to step in. The result: one person handling far more work than they could alone, without giving up the quality and warmth your customers expect."
@@ -3519,7 +3519,7 @@ function FinalCTA() {
       margin: '0 0 20px',
       color: '#F7F2EB'
     }
-  }, "A 30-minute Discovery Call is the easiest next step you can take. No pitch deck. No pressure. We talk about what's actually broken, whether we're a fit, and what a senior, AI-trained agent could look like on your team. If we're not the right answer, we'll tell you and point you somewhere better."), /*#__PURE__*/React.createElement("p", {
+  }, "A 30-minute Discovery Call is the easiest next step you can take. No pitch deck. No pressure. We talk about what's actually broken, whether we're a fit, and what an experienced, AI-trained specialist could look like on your team. If we're not the right answer, we'll tell you and point you somewhere better."), /*#__PURE__*/React.createElement("p", {
     style: {
       margin: 0,
       color: '#F7F2EB'
@@ -3614,7 +3614,7 @@ function Footer() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Senior, AI-trained customer support agents for small businesses. Since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',

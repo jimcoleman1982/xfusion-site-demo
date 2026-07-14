@@ -63,7 +63,7 @@ const XF_SOLUTIONS = [{
 }, {
   label: 'Hire a support agent',
   href: '/hire-support-agents/',
-  desc: 'Senior, dedicated, managed',
+  desc: 'Experienced, dedicated, managed',
   icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
     d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
   }), /*#__PURE__*/React.createElement("circle", {
@@ -880,7 +880,7 @@ function Footer() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Senior, AI-trained customer support agents for small businesses. Since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',
@@ -1015,7 +1015,7 @@ function App() {
     style: {
       margin: '0 0 16px'
     }
-  }, "xFusion, Inc. is a U.S. company that provides fully managed customer support services. We recruit, vet, place, train, and manage senior customer support team members on behalf of our clients. Team members are engaged as independent contractors. xFusion is the controller of personal information collected through our website and recruiting funnel, and a processor of personal information that flows through our services on behalf of our clients."), /*#__PURE__*/React.createElement("h2", {
+  }, "xFusion, Inc. is a U.S. company that provides fully managed customer support services. We recruit, vet, place, train, and manage experienced customer support team members on behalf of our clients. Team members are engaged as independent contractors. xFusion is the controller of personal information collected through our website and recruiting funnel, and a processor of personal information that flows through our services on behalf of our clients."), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: "'Source Serif 4', serif",
       fontSize: 28,

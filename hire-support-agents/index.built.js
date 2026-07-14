@@ -602,7 +602,7 @@ const XF_SOLUTIONS = [{
 }, {
   label: 'Hire a support agent',
   href: '/hire-support-agents/',
-  desc: 'Senior, dedicated, managed',
+  desc: 'Experienced, dedicated, managed',
   icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
     d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
   }), /*#__PURE__*/React.createElement("circle", {
@@ -1089,7 +1089,7 @@ function Footer() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Senior, AI-trained customer support agents for small businesses. Since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',
@@ -1172,7 +1172,7 @@ window.Footer = Footer;
 
 // Proof points are defined ONCE here and shared with the homepage proof
 // strip (Task 8) so the claims can never drift out of sync.
-window.XF_PROOF_POINTS = ['Senior, AI-trained agents', '$3,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
+window.XF_PROOF_POINTS = ['Experienced specialists, AI-trained', '$2,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
 const XF_BUSINESS_TYPES = ['SaaS', 'E-commerce', 'Marketplace', 'Agency', 'Other'];
 function LeadModal({
   open,
@@ -1745,7 +1745,7 @@ function StickyCapture() {
       color: '#3A322D',
       whiteSpace: 'nowrap'
     }
-  }, "$3,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
+  }, "$2,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
     style: {
       flexShrink: 1,
       minWidth: 0
@@ -1813,7 +1813,7 @@ const XF_LP_COMPARISON = [{
 }, {
   name: 'xFusion',
   featured: true,
-  rows: ['$3,900/mo all-in, one flat rate', 'A dedicated senior, AI-trained agent', 'We run recruiting, training, payroll, QA, and backup', 'Month-to-month, 30-day risk-free trial']
+  rows: ['$2,900/mo all-in, one flat rate', 'A dedicated experienced, AI-trained specialist', 'We run recruiting, training, payroll, QA, and backup', 'Month-to-month, 30-day risk-free trial']
 }];
 
 // Shared "how your agent learns" phases. Source: Partnership Onboarding Guide
@@ -2764,13 +2764,13 @@ window.VerticalLanding = VerticalLanding;
 // --- (inline)
 const XF_LP_FAQ = [{
   "q": "What does it cost to hire a support agent through xFusion?",
-  "a": "$3,900 per month, all-inclusive. That covers your senior, AI-trained agent plus recruiting, vetting, training, payroll, QA, culture, and an account manager. No setup fees and no deposits."
+  "a": "$2,900 per month, all-inclusive. That covers your experienced, AI-trained specialist plus recruiting, vetting, training, payroll, QA, culture, and an account manager. No setup fees and no deposits."
 }, {
   "q": "Is the agent dedicated to my business?",
   "a": "Yes. Your agent works inside your business and your tools, learns your product and your voice, and is managed by xFusion as an extension of your team. Not a freelancer, not a shared pool, not a script reader."
 }, {
   "q": "Do you handle payroll and HR?",
-  "a": "Yes, and it's part of the $3,900/mo. xFusion handles paying salaries, light HR, and time off. Your agent is hired as an independent contractor and managed by us, so you don't have to deal with international payroll."
+  "a": "Yes, and it's part of the $2,900/mo. xFusion handles paying salaries, light HR, and time off. Your agent is hired as an independent contractor and managed by us, so you don't have to deal with international payroll."
 }, {
   "q": "Where does your talent come from?",
   "a": "Mostly the Philippines, with a strong group from Kenya. Since 2020 we've built deep networks in both countries and learned which candidates actually thrive in long-term support roles."
@@ -2782,23 +2782,23 @@ const XF_LP_FAQ = [{
   "a": "Every candidate sits through interviews with a real person where we check English skills, how they talk, and how they come across. Before you meet with anyone, you'll watch a Zoom recording of them, so you can judge for yourself instead of taking our word for it."
 }, {
   "q": "How do you keep my agent engaged long-term?",
-  "a": "Culture and engagement are included in the $3,900/mo. We run team-building events, contests, branded swag, and birthday, anniversary, and holiday gifting. Pair that with a role that pays a real living wage in the agent's local economy, and you get someone who builds a career on your team rather than rotating through."
+  "a": "Culture and engagement are included in the $2,900/mo. We run team-building events, contests, branded swag, and birthday, anniversary, and holiday gifting. Pair that with a role that pays a real living wage in the agent's local economy, and you get someone who builds a career on your team rather than rotating through."
 }, {
   "q": "What roles can you fill?",
-  "a": "Customer support, mostly. Every support agent we place is senior, trained to use AI, and able to handle Tier 1, Tier 2, and some cases that used to need an engineer's help. We also place inside sales people who work inbound leads and AI operators who run AI tools alongside your team. Ask on the discovery call; we'll be honest about whether we can staff it."
+  "a": "Customer support, mostly. Every support specialist we place is experienced, trained to use AI, and able to handle Tier 1, Tier 2, and some cases that used to need an engineer's help. We also place inside sales people who work inbound leads and AI operators who run AI tools alongside your team. Ask on the discovery call; we'll be honest about whether we can staff it."
 }, {
   "q": "How do you protect our brand voice while the agent ramps up?",
   "a": "Draft mode. For the first days, every reply your agent writes is a draft: their xFusion team leader reviews it, then you approve it, before it reaches a customer. Replies switch to live only once you sign off. By then the agent has been trained on your product, your tone, and your helpdesk, and what they learned is documented for every agent who comes after."
 }];
 window.XF_LP_FAQ = XF_LP_FAQ;
 window.XF_LP = {
-  "eyebrow": "Hire senior support agents",
-  "h1": "Hire a senior support agent, skip the hiring.",
-  "sub": "Finding a good support hire takes months of sourcing, screening, and onboarding, and the good ones often quit within 18 months anyway. We place a vetted, senior, AI-trained agent inside your business in about two weeks, with the culture work built in to keep them for years.",
+  "eyebrow": "Hire experienced support specialists",
+  "h1": "Hire an experienced support specialist, skip the hiring.",
+  "sub": "Finding a good support hire takes months of sourcing, screening, and onboarding, and the good ones often quit within 18 months anyway. We place a vetted, experienced, AI-trained specialist inside your business in about two weeks, with the culture work built in to keep them for years.",
   "microcopy": "Candidates in your inbox about 14 days after we talk.",
   "metrics": [{
     "num": "14 days",
-    "text": "From your discovery call to a candidate list in your inbox. We keep a pool of senior, AI-trained candidates ready."
+    "text": "From your discovery call to a candidate list in your inbox. We keep a pool of experienced, AI-trained candidates ready."
   }, {
     "num": "100+",
     "text": "Support placements since 2020, for clients who treat our agents like family."
@@ -2814,8 +2814,8 @@ window.XF_LP = {
     "title": "No recruiting, no training, no payroll",
     "text": "We source, vet, train, and manage. QA and backup coverage are included. You get the team member without the overhead."
   }, {
-    "title": "Senior and AI-trained from day one",
-    "text": "One senior agent using AI tools does the work of several junior reps, with the judgment to know when a ticket needs a human touch."
+    "title": "Experienced and AI-trained from day one",
+    "text": "One experienced specialist using AI tools does the work of several junior reps, with the judgment to know when a ticket needs a human touch."
   }],
   "quotes": [{
     "text": "As a founder busy building and marketing my product, I wanted a partner I could trust to train and manage dedicated reps as an extension of my team. This is not your stereotypical outsourced support agency.",

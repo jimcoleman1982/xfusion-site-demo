@@ -1268,7 +1268,7 @@ function CTABand() {
       maxWidth: 720,
       textWrap: 'pretty'
     }
-  }, "If your customer support is starting to slip, or you are a solo founder drowning in the inbox while your product waits, we can help. We will recruit, vet, place, train, and manage a senior, AI-trained support agent for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free."), /*#__PURE__*/React.createElement("div", {
+  }, "If your customer support is starting to slip, or you are a solo founder drowning in the inbox while your product waits, we can help. We will recruit, vet, place, train, and manage an experienced, AI-trained support specialist for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -1358,7 +1358,7 @@ function CaseStudyFooter() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Senior, AI-trained customer support agents for small businesses. Since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',

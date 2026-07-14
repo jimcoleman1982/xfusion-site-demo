@@ -52,7 +52,7 @@ const XF_LP_COMPARISON = [
   {
     name: 'xFusion',
     featured: true,
-    rows: ['$3,900/mo all-in, one flat rate', 'A dedicated senior, AI-trained agent', 'We run recruiting, training, payroll, QA, and backup', 'Month-to-month, 30-day risk-free trial'],
+    rows: ['$2,900/mo all-in, one flat rate', 'A dedicated experienced, AI-trained specialist', 'We run recruiting, training, payroll, QA, and backup', 'Month-to-month, 30-day risk-free trial'],
   },
 ];
 

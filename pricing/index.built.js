@@ -602,7 +602,7 @@ const XF_SOLUTIONS = [{
 }, {
   label: 'Hire a support agent',
   href: '/hire-support-agents/',
-  desc: 'Senior, dedicated, managed',
+  desc: 'Experienced, dedicated, managed',
   icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
     d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
   }), /*#__PURE__*/React.createElement("circle", {
@@ -1089,7 +1089,7 @@ function Footer() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Senior, AI-trained customer support agents for small businesses. Since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',
@@ -1172,7 +1172,7 @@ window.Footer = Footer;
 
 // Proof points are defined ONCE here and shared with the homepage proof
 // strip (Task 8) so the claims can never drift out of sync.
-window.XF_PROOF_POINTS = ['Senior, AI-trained agents', '$3,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
+window.XF_PROOF_POINTS = ['Experienced specialists, AI-trained', '$2,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
 const XF_BUSINESS_TYPES = ['SaaS', 'E-commerce', 'Marketplace', 'Agency', 'Other'];
 function LeadModal({
   open,
@@ -1745,7 +1745,7 @@ function StickyCapture() {
       color: '#3A322D',
       whiteSpace: 'nowrap'
     }
-  }, "$3,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
+  }, "$2,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
     style: {
       flexShrink: 1,
       minWidth: 0
@@ -1760,25 +1760,25 @@ window.StickyCapture = StickyCapture;
 // --- (inline)
 const XF_LP_FAQ = [{
   q: "How much does xFusion cost?",
-  a: "$3,900 per month per senior, AI-trained support agent, all-inclusive. That covers the agent's salary, recruiting and vetting, onboarding, training, payroll, culture and engagement, QA, a dedicated account manager, and ongoing coaching. There are no setup fees, no deposits, and no add-ons."
+  a: "$2,900 per month per experienced, AI-trained support specialist, all-inclusive. That covers the agent's salary, recruiting and vetting, onboarding, training, payroll, culture and engagement, QA, a dedicated account manager, and ongoing coaching. There are no setup fees, no deposits, and no add-ons."
 }, {
   q: "Are there setup fees, deposits, or long-term contracts?",
   a: "No. The service is month-to-month with no minimum term, no deposit, no setup fee, and no fine print. The 30-Day Risk-Free Trial means you pay nothing for the first month and walk away free if it's not a fit."
 }, {
-  q: "Why is $3,900/mo the right price?",
-  a: "Two reasons. First, every agent we place is senior, with more experience than a typical support hire, and trained to use AI tools to handle the easy stuff. So one xFusion agent does a lot more work than a junior rep at a cheaper agency. The cost per ticket is actually lower. Second, $3,900 is about half what you'd pay for the same kind of person in the U.S., and it includes hiring, training, payroll, culture, and an account manager."
+  q: "Why is $2,900/mo the right price?",
+  a: "Two reasons. First, every specialist we place is experienced, with more experience than a typical support hire, and trained to use AI tools to handle the easy stuff. So one xFusion agent does a lot more work than a junior rep at a cheaper agency. The cost per ticket is actually lower. Second, $2,900 is less than half what you'd pay for the same kind of person in the U.S., and it includes hiring, training, payroll, culture, and an account manager."
 }, {
   q: "How does xFusion pricing compare to hiring in the U.S.?",
-  a: "Senior support reps in the U.S. who know AI cost $80,000 to $100,000+ per year, which is $6,600 to $8,300+ per month once you add benefits, taxes, payroll, equipment, hiring fees, and management costs. xFusion is $3,900 per month all-in, and you skip the months-long search."
+  a: "Senior-level support reps in the U.S. who know AI cost $80,000 to $100,000+ per year, which is $6,600 to $8,300+ per month once you add benefits, taxes, payroll, equipment, hiring fees, and management costs. xFusion is $2,900 per month all-in, and you skip the months-long search."
 }, {
   q: "How is xFusion different from cheaper outsourcing companies?",
-  a: "Cheaper agencies staff junior agents reading scripts, and the low hourly rate usually excludes training, QA, and management layers. Every xFusion agent is senior and AI-trained, so one agent does the work of several junior reps, and the flat price includes everything. The 30-Day Risk-Free Trial means we absorb the risk, not you."
+  a: "Cheaper agencies staff junior agents reading scripts, and the low hourly rate usually excludes training, QA, and management layers. Every xFusion specialist is experienced and AI-trained, so one specialist does the work of several junior reps, and the flat price includes everything. The 30-Day Risk-Free Trial means we absorb the risk, not you."
 }, {
   q: "How does xFusion compare to Influx?",
-  a: "Influx is a larger provider that prices most engagements through a sales conversation, and management layers are typically part of higher tiers. xFusion publishes one number: $3,900 per month all-in, including training, QA, management, and backup coverage, starting with a 30-day risk-free trial. If you need dozens of seats overnight, a volume provider may fit better. If you want a senior agent who learns your product and stays for years, that's what we do."
+  a: "Influx is a larger provider that prices most engagements through a sales conversation, and management layers are typically part of higher tiers. xFusion publishes one number: $2,900 per month all-in, including training, QA, management, and backup coverage, starting with a 30-day risk-free trial. If you need dozens of seats overnight, a volume provider may fit better. If you want an experienced specialist who learns your product and stays for years, that's what we do."
 }];
 window.XF_LP_FAQ = XF_LP_FAQ;
-const INCLUDED = [['Senior support agent salary (full-time, dedicated to you)', '$3,500/mo'], ['Hiring and screening through the TraitX Framework', '$375/mo value'], ['Placement and onboarding into your business', '$1,500 one-time'], ['Training in your support process', '$750 one-time'], ['Training and certification in AI-powered support tools', '$1,500 one-time'], ['Payroll services (paying salaries, light HR, time off)', '$300/mo'], ['Culture and engagement (team-building, swag, gifts, anniversaries)', '$200/mo'], ['Dedicated account manager (leads and supports your agent)', '$1,200/mo'], ['Ongoing performance management and coaching', '$500/mo']];
+const INCLUDED = [['Experienced support specialist salary (full-time, dedicated to you)', '$3,500/mo'], ['Hiring and screening through the TraitX Framework', '$375/mo value'], ['Placement and onboarding into your business', '$1,500 one-time'], ['Training in your support process', '$750 one-time'], ['Training and certification in AI-powered support tools', '$1,500 one-time'], ['Payroll services (paying salaries, light HR, time off)', '$300/mo'], ['Culture and engagement (team-building, swag, gifts, anniversaries)', '$200/mo'], ['Dedicated account manager (leads and supports your agent)', '$1,200/mo'], ['Ongoing performance management and coaching', '$500/mo']];
 function PricingPage() {
   const [openFaq, setOpenFaq] = React.useState(-1);
   const proof = window.XF_PROOF_POINTS || [];
@@ -1828,7 +1828,7 @@ function PricingPage() {
       lineHeight: 1,
       letterSpacing: '-0.03em'
     }
-  }, "$3,900", /*#__PURE__*/React.createElement("span", {
+  }, "$2,900", /*#__PURE__*/React.createElement("span", {
     style: {
       fontSize: '0.35em',
       color: '#3A322D',
@@ -1843,7 +1843,7 @@ function PricingPage() {
       maxWidth: 520,
       lineHeight: 1.6
     }
-  }, "Per senior, AI-trained support agent, fully managed. Month-to-month. No setup fees, no deposits, no add-ons. Unlike most providers, the price is public because it doesn't change in a sales call."), /*#__PURE__*/React.createElement("div", {
+  }, "Per experienced, AI-trained support specialist, fully managed. Month-to-month. No setup fees, no deposits, no add-ons. Unlike most providers, the price is public because it doesn't change in a sales call."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       justifyContent: 'center'
@@ -1892,7 +1892,7 @@ function PricingPage() {
       margin: '0 0 8px',
       textAlign: 'center'
     }
-  }, "What $3,900 includes"), /*#__PURE__*/React.createElement("p", {
+  }, "What $2,900 includes"), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 15,
@@ -1969,7 +1969,7 @@ function PricingPage() {
       color: '#6B5F56',
       marginBottom: 10
     }
-  }, "U.S. senior support hire"), /*#__PURE__*/React.createElement("div", {
+  }, "U.S. senior-level support hire"), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'Source Serif 4', serif",
       fontSize: 34,
@@ -2005,7 +2005,7 @@ function PricingPage() {
       color: '#F0D9A8',
       marginBottom: 10
     }
-  }, "xFusion senior agent"), /*#__PURE__*/React.createElement("div", {
+  }, "xFusion experienced specialist"), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'Source Serif 4', serif",
       fontSize: 34,
@@ -2013,7 +2013,7 @@ function PricingPage() {
       color: '#F7F2EB',
       marginBottom: 10
     }
-  }, "$3,900", /*#__PURE__*/React.createElement("span", {
+  }, "$2,900", /*#__PURE__*/React.createElement("span", {
     style: {
       fontSize: 15,
       fontWeight: 400
@@ -2026,7 +2026,7 @@ function PricingPage() {
       color: '#F7F2EB',
       margin: 0
     }
-  }, "Senior, AI-trained, and managed for you. Candidates in about 14 days. First month risk-free. Month-to-month after that."))))), /*#__PURE__*/React.createElement("section", {
+  }, "Experienced, AI-trained, and managed for you. Candidates in about 14 days. First month risk-free. Month-to-month after that."))))), /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '64px 0 0'
     }

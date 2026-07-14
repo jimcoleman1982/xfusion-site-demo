@@ -67,7 +67,7 @@ function Footer() {
               color: BUTTER, margin: 0, maxWidth: 480,
               fontStyle: 'italic', fontWeight: 400,
             }}>
-              Senior, AI-trained customer support agents for small businesses. Since 2020.
+              Experienced customer support specialists, AI-trained. For small businesses since 2020.
             </p>
           </div>
         </div>

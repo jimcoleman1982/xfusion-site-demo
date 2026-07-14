@@ -32,7 +32,7 @@ function Hero() {
           alignItems: 'center',
         }} className="hero-grid">
           <div>
-            <Eyebrow>Fully managed customer support. Senior agents, powered by AI.</Eyebrow>
+            <Eyebrow>Fully managed. Experienced customer support specialists, AI-trained.</Eyebrow>
             <h1 style={{
               fontFamily: "'Source Serif 4', serif",
               fontSize: 'clamp(40px, 5.4vw, 72px)',
@@ -54,7 +54,7 @@ function Hero() {
               maxWidth: 580,
               textWrap: 'pretty',
             }}>
-              We find, train, and place senior support agents inside your business. They use AI to handle the work of several junior reps. We take care of the rest: recruiting, payroll, culture, and performance. So you don't have to.
+              We find, train, and place experienced support specialists inside your business. They use AI to handle the work of several junior reps. We take care of the rest: recruiting, payroll, culture, and performance. So you don't have to.
             </p>
             <LeadCapture />
           </div>

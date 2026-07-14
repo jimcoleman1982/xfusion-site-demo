@@ -580,7 +580,7 @@ function PageHeader() {
 
 /* ---------- Overview box (table) ---------- */
 function OverviewBox() {
-  const rows = [['Industry', 'SaaS / Shopify app development'], ['Country', 'United States'], ['Challenge', "Founders pulled into day-to-day support tickets and live chat as Bonify's app catalog and customer base grew, blocking strategic work and product development."], ['Solution', 'xFusion placed and managed senior, dedicated support agents (Kenny and Patrick) trained deeply in Bonify\u2019s apps, taking over ticket handling and live chat.'], ['Results', "4.9 customer satisfaction score on Shopify since May 2020, reply times cut to roughly half what the founders were achieving, and John\u2019s share of ticket replies dropped to under 5%."]];
+  const rows = [['Industry', 'SaaS / Shopify app development'], ['Country', 'United States'], ['Challenge', "Founders pulled into day-to-day support tickets and live chat as Bonify's app catalog and customer base grew, blocking strategic work and product development."], ['Solution', 'xFusion placed and managed experienced, dedicated support specialists (Kenny and Patrick) trained deeply in Bonify\u2019s apps, taking over ticket handling and live chat.'], ['Results', "4.9 customer satisfaction score on Shopify since May 2020, reply times cut to roughly half what the founders were achieving, and John\u2019s share of ticket replies dropped to under 5%."]];
   return /*#__PURE__*/React.createElement(Section, {
     bg: "paper",
     padding: "md",
@@ -1032,7 +1032,7 @@ function CTASection() {
       maxWidth: 640,
       textWrap: 'pretty'
     }
-  }, "If your customer support is starting to slip, or you are about to lose the one person holding it together, we can help. We will recruit, vet, place, train, and manage a senior, AI-trained support agent for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free."), /*#__PURE__*/React.createElement(Button, {
+  }, "If your customer support is starting to slip, or you are about to lose the one person holding it together, we can help. We will recruit, vet, place, train, and manage an experienced, AI-trained support specialist for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free."), /*#__PURE__*/React.createElement(Button, {
     variant: "on-dark",
     size: "lg",
     href: "#"
@@ -1112,7 +1112,7 @@ function Footer() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Senior, AI-trained customer support agents for small businesses. Since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',
@@ -1321,7 +1321,7 @@ const XF_SOLUTIONS = [{
 }, {
   label: 'Hire a support agent',
   href: '/hire-support-agents/',
-  desc: 'Senior, dedicated, managed',
+  desc: 'Experienced, dedicated, managed',
   icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
     d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
   }), /*#__PURE__*/React.createElement("circle", {

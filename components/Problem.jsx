@@ -34,7 +34,7 @@ function Problem() {
             You know what's coming if nothing changes. More tickets. More late nights. Someone quits without warning. A customer leaves and tells three other customers why. The thing that used to make your business great (how you took care of people) is now the thing slowly killing it.
           </p>
           <p style={{ margin: '0 0 24px' }}>
-            You've already tried the obvious fixes. Upwork was full of ghosts and scams. The last "agency" you used hired someone, took their fee, and vanished. The chatbot you tried handled the easy stuff fine, then fell apart on the calls that really mattered. Hiring a senior support person in-house costs more than the job is worth. And you don't have time to manage one anyway.
+            You've already tried the obvious fixes. Upwork was full of ghosts and scams. The last "agency" you used hired someone, took their fee, and vanished. The chatbot you tried handled the easy stuff fine, then fell apart on the calls that really mattered. Hiring an experienced support person in-house costs more than the job is worth. And you don't have time to manage one anyway.
           </p>
           <p style={{ margin: 0 }}>
             So the work keeps coming back to you. And you keep working in your business instead of on it.

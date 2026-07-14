@@ -63,7 +63,7 @@ const XF_SOLUTIONS = [{
 }, {
   label: 'Hire a support agent',
   href: '/hire-support-agents/',
-  desc: 'Senior, dedicated, managed',
+  desc: 'Experienced, dedicated, managed',
   icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
     d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
   }), /*#__PURE__*/React.createElement("circle", {
@@ -911,7 +911,7 @@ function Footer() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Senior, AI-trained customer support agents for small businesses. Since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',
@@ -1018,7 +1018,7 @@ function CareersHero() {
       maxWidth: 760,
       textWrap: 'pretty'
     }
-  }, "xFusion is hiring senior support agents, account managers, and operations people across the Philippines, Kenya, and the United States. We pay a living wage, invest in culture, and place people with clients who actually invest in them."), /*#__PURE__*/React.createElement("div", {
+  }, "xFusion is hiring experienced support specialists, account managers, and operations people across the Philippines, Kenya, and the United States. We pay a living wage, invest in culture, and place people with clients who actually invest in them."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       gap: 12,
@@ -1048,7 +1048,7 @@ function CareersHero() {
 }
 function Roles() {
   const roles = [{
-    title: 'Senior support agent',
+    title: 'Experienced support specialist',
     body: 'You have run a support inbox before, ideally for a software or service business. You write clean replies, you can hold a Zoom call without freezing, and you actually like solving customer problems. We place you with one client and give you a real seat on their team.'
   }, {
     title: 'Account manager',

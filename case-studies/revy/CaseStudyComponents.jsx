@@ -752,7 +752,7 @@ function CTABand() {
             maxWidth: 720,
             textWrap: 'pretty',
           }}>
-            If your customer support is starting to slip, or you are a solo founder drowning in the inbox while your product waits, we can help. We will recruit, vet, place, train, and manage a senior, AI-trained support agent for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free.
+            If your customer support is starting to slip, or you are a solo founder drowning in the inbox while your product waits, we can help. We will recruit, vet, place, train, and manage an experienced, AI-trained support specialist for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'flex-start' }}>
@@ -819,7 +819,7 @@ function CaseStudyFooter() {
               
             </a>
             <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 18, lineHeight: 1.5, color: BUTTER, margin: 0, maxWidth: 480, fontStyle: 'italic', fontWeight: 400 }}>
-              Senior, AI-trained customer support agents for small businesses. Since 2020.
+              Experienced customer support specialists, AI-trained. For small businesses since 2020.
             </p>
           </div>
           

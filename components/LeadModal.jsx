@@ -10,8 +10,8 @@
 // Proof points are defined ONCE here and shared with the homepage proof
 // strip (Task 8) so the claims can never drift out of sync.
 window.XF_PROOF_POINTS = [
-  'Senior, AI-trained agents',
-  '$3,900/mo all-in',
+  'Experienced specialists, AI-trained',
+  '$2,900/mo all-in',
   '30-day risk-free trial',
   'Month-to-month',
   'Since 2020',

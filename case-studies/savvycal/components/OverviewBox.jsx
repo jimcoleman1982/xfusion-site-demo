@@ -15,7 +15,7 @@ function OverviewBox() {
     },
     {
       label: 'Solution',
-      detail: 'A senior xFusion customer support agent placed full-time as an extension of the SavvyCal team.',
+      detail: 'An experienced xFusion customer support specialist placed full-time as an extension of the SavvyCal team.',
     },
     {
       label: 'Results',

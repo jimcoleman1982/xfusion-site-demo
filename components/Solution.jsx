@@ -5,8 +5,8 @@ function Solution() {
       icon: 'users',
       tint: '#F2D9CB',
       iconColor: '#B8512C',
-      title: 'Senior, AI-Augmented Agents',
-      body: "Every agent we place is senior, not entry-level. They use AI tools to handle the easy stuff, which means they can do the work of several junior reps. That's the only reason $3,900/mo works. The people we place are that good.",
+      title: 'Experienced Specialists, AI-Trained',
+      body: "Every specialist we place is experienced, not entry-level. They use AI tools to handle the easy stuff, which means they can do the work of several junior reps. That's the only reason $2,900/mo works. The people we place are that good.",
     },
     {
       icon: 'filter',
@@ -39,7 +39,7 @@ function Solution() {
             color: '#1F1A17',
             textWrap: 'balance',
           }}>
-            Senior support agents who use AI to do more. Fully managed by us.
+            Experienced support specialists who use AI to do more. Fully managed by us.
           </h2>
           <p style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
@@ -49,7 +49,7 @@ function Solution() {
             margin: 0,
             maxWidth: 720,
           }}>
-            xFusion places senior support agents inside your business and manages them for you. Every agent has real support experience and is trained to use AI tools. So one xFusion agent can handle a lot more work than a junior rep at another agency. You get the work done. We handle the people side.
+            xFusion places experienced support specialists inside your business and manages them for you. Every agent has real support experience and is trained to use AI tools. So one xFusion agent can handle a lot more work than a junior rep at another agency. You get the work done. We handle the people side.
           </p>
         </div>
 

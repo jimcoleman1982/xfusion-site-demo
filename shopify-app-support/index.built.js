@@ -602,7 +602,7 @@ const XF_SOLUTIONS = [{
 }, {
   label: 'Hire a support agent',
   href: '/hire-support-agents/',
-  desc: 'Senior, dedicated, managed',
+  desc: 'Experienced, dedicated, managed',
   icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
     d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
   }), /*#__PURE__*/React.createElement("circle", {
@@ -1089,7 +1089,7 @@ function Footer() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Senior, AI-trained customer support agents for small businesses. Since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',
@@ -1172,7 +1172,7 @@ window.Footer = Footer;
 
 // Proof points are defined ONCE here and shared with the homepage proof
 // strip (Task 8) so the claims can never drift out of sync.
-window.XF_PROOF_POINTS = ['Senior, AI-trained agents', '$3,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
+window.XF_PROOF_POINTS = ['Experienced specialists, AI-trained', '$2,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
 const XF_BUSINESS_TYPES = ['SaaS', 'E-commerce', 'Marketplace', 'Agency', 'Other'];
 function LeadModal({
   open,
@@ -1745,7 +1745,7 @@ function StickyCapture() {
       color: '#3A322D',
       whiteSpace: 'nowrap'
     }
-  }, "$3,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
+  }, "$2,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
     style: {
       flexShrink: 1,
       minWidth: 0
@@ -1813,7 +1813,7 @@ const XF_LP_COMPARISON = [{
 }, {
   name: 'xFusion',
   featured: true,
-  rows: ['$3,900/mo all-in, one flat rate', 'A dedicated senior, AI-trained agent', 'We run recruiting, training, payroll, QA, and backup', 'Month-to-month, 30-day risk-free trial']
+  rows: ['$2,900/mo all-in, one flat rate', 'A dedicated experienced, AI-trained specialist', 'We run recruiting, training, payroll, QA, and backup', 'Month-to-month, 30-day risk-free trial']
 }];
 
 // Shared "how your agent learns" phases. Source: Partnership Onboarding Guide
@@ -2764,13 +2764,13 @@ window.VerticalLanding = VerticalLanding;
 // --- (inline)
 const XF_LP_FAQ = [{
   "q": "What does customer support for a Shopify app cost with xFusion?",
-  "a": "$3,900 per month, all-inclusive. That covers a senior, AI-trained support agent plus recruiting, training, payroll, QA, culture, and an account manager. No setup fees, no deposits, and no long-term contract."
+  "a": "$2,900 per month, all-inclusive. That covers an experienced, AI-trained support specialist plus recruiting, training, payroll, QA, culture, and an account manager. No setup fees, no deposits, and no long-term contract."
 }, {
   "q": "Do you actually know the Shopify app world?",
   "a": "Yes. Tolstoy, Bonify, Ordered Magic, and Revy are all Shopify app companies who run their merchant support with us, each with a public case study. Our agents handle merchant tickets, app-store review pressure, and API edge cases every day."
 }, {
   "q": "How fast can an agent start?",
-  "a": "About 14 days from your discovery call to a candidate list in your inbox. We keep a pool of senior, AI-trained support candidates ready to go, which is why we can move that fast without cutting corners."
+  "a": "About 14 days from your discovery call to a candidate list in your inbox. We keep a pool of experienced, AI-trained support candidates ready to go, which is why we can move that fast without cutting corners."
 }, {
   "q": "What if it doesn't work out?",
   "a": "That's what the 30-Day Risk-Free Trial is for. You work with your agent for 30 full days, and if you're not satisfied for any reason, you walk away without paying anything."
@@ -2794,7 +2794,7 @@ window.XF_LP_FAQ = XF_LP_FAQ;
 window.XF_LP = {
   "eyebrow": "For Shopify app developers",
   "h1": "Support for your Shopify app, off your plate.",
-  "sub": "You built an app merchants depend on. Now the tickets never stop, every hour in the inbox is an hour not shipping, and every slow reply risks a one-star review that sticks. We place a senior, AI-trained agent who learns your app, your APIs, and your merchants. Tolstoy, Bonify, Ordered Magic, and Revy all run merchant support with us. We know this world.",
+  "sub": "You built an app merchants depend on. Now the tickets never stop, every hour in the inbox is an hour not shipping, and every slow reply risks a one-star review that sticks. We place an experienced, AI-trained specialist who learns your app, your APIs, and your merchants. Tolstoy, Bonify, Ordered Magic, and Revy all run merchant support with us. We know this world.",
   "microcopy": "Bring your messiest merchant tickets. 30 minutes, no pitch deck.",
   "metrics": [{
     "num": "+90",

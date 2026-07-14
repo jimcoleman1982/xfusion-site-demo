@@ -56,7 +56,7 @@ function Chatbot() {
             The hard 40% is where chatbot-only setups fall apart. The angry customer who needs to feel heard before they'll listen. The weird case the bot has never seen. The judgment call that takes reading between the lines of a long, frustrated email. The customer who almost left, but didn't, because someone took the time to make it right.
           </p>
           <p style={{ margin: 0, paddingTop: 24, borderTop: '1px solid rgba(247,242,235,0.18)', color: '#F7F2EB', fontSize: 21 }}>
-            That's where humans matter. And that's where xFusion fits. Our senior agents use AI as a tool, not a replacement. AI handles the repeat work. People handle the moments that decide if a customer becomes a fan or asks for a refund.
+            That's where humans matter. And that's where xFusion fits. Our experienced specialists use AI as a tool, not a replacement. AI handles the repeat work. People handle the moments that decide if a customer becomes a fan or asks for a refund.
           </p>
         </div>
       </Container>

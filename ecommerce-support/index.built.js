@@ -602,7 +602,7 @@ const XF_SOLUTIONS = [{
 }, {
   label: 'Hire a support agent',
   href: '/hire-support-agents/',
-  desc: 'Senior, dedicated, managed',
+  desc: 'Experienced, dedicated, managed',
   icon: /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
     d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
   }), /*#__PURE__*/React.createElement("circle", {
@@ -1089,7 +1089,7 @@ function Footer() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Senior, AI-trained customer support agents for small businesses. Since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',
@@ -1172,7 +1172,7 @@ window.Footer = Footer;
 
 // Proof points are defined ONCE here and shared with the homepage proof
 // strip (Task 8) so the claims can never drift out of sync.
-window.XF_PROOF_POINTS = ['Senior, AI-trained agents', '$3,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
+window.XF_PROOF_POINTS = ['Experienced specialists, AI-trained', '$2,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
 const XF_BUSINESS_TYPES = ['SaaS', 'E-commerce', 'Marketplace', 'Agency', 'Other'];
 function LeadModal({
   open,
@@ -1745,7 +1745,7 @@ function StickyCapture() {
       color: '#3A322D',
       whiteSpace: 'nowrap'
     }
-  }, "$3,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
+  }, "$2,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
     style: {
       flexShrink: 1,
       minWidth: 0
@@ -1813,7 +1813,7 @@ const XF_LP_COMPARISON = [{
 }, {
   name: 'xFusion',
   featured: true,
-  rows: ['$3,900/mo all-in, one flat rate', 'A dedicated senior, AI-trained agent', 'We run recruiting, training, payroll, QA, and backup', 'Month-to-month, 30-day risk-free trial']
+  rows: ['$2,900/mo all-in, one flat rate', 'A dedicated experienced, AI-trained specialist', 'We run recruiting, training, payroll, QA, and backup', 'Month-to-month, 30-day risk-free trial']
 }];
 
 // Shared "how your agent learns" phases. Source: Partnership Onboarding Guide
@@ -2764,7 +2764,7 @@ window.VerticalLanding = VerticalLanding;
 // --- (inline)
 const XF_LP_FAQ = [{
   "q": "What does e-commerce customer support cost with xFusion?",
-  "a": "$3,900 per month, all-inclusive. That covers a senior, AI-trained support agent plus recruiting, training, payroll, QA, culture, and an account manager. No setup fees, no deposits, and no long-term contract."
+  "a": "$2,900 per month, all-inclusive. That covers an experienced, AI-trained support specialist plus recruiting, training, payroll, QA, culture, and an account manager. No setup fees, no deposits, and no long-term contract."
 }, {
   "q": "Can you cover evenings, weekends, and peak season?",
   "a": "Your agent works full-time hours, and because they're based in the Philippines or Kenya you have room to structure coverage however you want. Some clients align to U.S. business hours, others stagger shifts to cover evenings or weekends. You pick the schedule; we handle the management."
@@ -2779,10 +2779,10 @@ const XF_LP_FAQ = [{
   "a": "Every candidate sits through interviews with a real person where we check English skills, how they talk, and how they come across. Before you meet with anyone, you'll watch a Zoom recording of them, so you can judge for yourself instead of taking our word for it."
 }, {
   "q": "How do you keep my agent engaged long-term?",
-  "a": "Culture and engagement are included in the $3,900/mo. We run team-building events, contests, branded swag, and birthday, anniversary, and holiday gifting. Pair that with a role that pays a real living wage in the agent's local economy, and you get someone who builds a career on your team rather than rotating through."
+  "a": "Culture and engagement are included in the $2,900/mo. We run team-building events, contests, branded swag, and birthday, anniversary, and holiday gifting. Pair that with a role that pays a real living wage in the agent's local economy, and you get someone who builds a career on your team rather than rotating through."
 }, {
   "q": "Why not just use a chatbot?",
-  "a": "AI on its own handles the easy 60% of support work well. The hard 40% (angry customers, weird cases, judgment calls, sensitive issues) is where chatbot-only setups break, often in public. Our senior agents use AI as a tool, not a replacement: AI handles the easy stuff, and they step in for the moments that matter."
+  "a": "AI on its own handles the easy 60% of support work well. The hard 40% (angry customers, weird cases, judgment calls, sensitive issues) is where chatbot-only setups break, often in public. Our experienced specialists use AI as a tool, not a replacement: AI handles the easy stuff, and they step in for the moments that matter."
 }, {
   "q": "What about security and data access?",
   "a": "Your agent works inside your helpdesk and your tools, not ours, so you control exactly what they can access and can revoke it any time. Every agent is vetted before placement, works under confidentiality agreements, and is offboarded with a defined access checklist. The full picture is in the security overview at xfusion.io/security."
@@ -2794,7 +2794,7 @@ window.XF_LP_FAQ = XF_LP_FAQ;
 window.XF_LP = {
   "eyebrow": "For e-commerce and DTC brands",
   "h1": "Peak season support, without the seasonal chaos.",
-  "sub": "Order status, returns, refunds, and review pressure don't wait, and hiring seasonal support means retraining strangers every year. We place a senior, AI-trained agent who learns your products and your brand voice, then we manage them for you, year-round.",
+  "sub": "Order status, returns, refunds, and review pressure don't wait, and hiring seasonal support means retraining strangers every year. We place an experienced, AI-trained specialist who learns your products and your brand voice, then we manage them for you, year-round.",
   "microcopy": "Tell us what peak season does to your queue. 30 minutes, no pitch deck.",
   "metrics": [{
     "num": "$36M",
@@ -2808,10 +2808,10 @@ window.XF_LP = {
     "text": "Your agent is with you year-round, so Black Friday is handled by someone who already knows your catalog, your policies, and your customers. Coverage can be structured for evenings and weekends."
   }, {
     "title": "Returns, refunds, and reviews with judgment",
-    "text": "AI handles the routine order-status volume; your senior agent steps in on the refund calls, the angry one-star review, and the edge cases that decide whether a customer comes back."
+    "text": "AI handles the routine order-status volume; your experienced specialist steps in on the refund calls, the angry one-star review, and the edge cases that decide whether a customer comes back."
   }, {
     "title": "Scale support, not payroll",
-    "text": "One flat rate: $3,900/mo all-in for the agent plus recruiting, training, payroll, QA, and management. Month-to-month, starting with a 30-day risk-free trial."
+    "text": "One flat rate: $2,900/mo all-in for the agent plus recruiting, training, payroll, QA, and management. Month-to-month, starting with a 30-day risk-free trial."
   }],
   "clientsNote": "E-commerce and DTC teams we support include Crowd Cow and Autism Products.",
   "quotes": [{

@@ -6,23 +6,23 @@ const FAQ_ITEMS = [
   },
   {
     q: "What if the placement doesn't work out?",
-    a: "That's exactly what the 30-Day Risk-Free Trial is for. We recruit, vet, and place a senior, AI-trained customer support agent in your business. You work with them for 30 full days. If you're not satisfied for any reason, you walk away without paying anything. Not a deposit. Not a setup fee. Nothing. We absorb every dollar of recruiting, vetting, training, and placement we invested.",
+    a: "That's exactly what the 30-Day Risk-Free Trial is for. We recruit, vet, and place an experienced, AI-trained customer support specialist in your business. You work with them for 30 full days. If you're not satisfied for any reason, you walk away without paying anything. Not a deposit. Not a setup fee. Nothing. We absorb every dollar of recruiting, vetting, training, and placement we invested.",
   },
   {
-    q: 'Why is $3,900/mo the right price?',
-    a: "Two reasons. First, every agent we place is senior, with more experience than a typical support hire, and trained to use AI tools to handle the easy stuff. So one xFusion agent does a lot more work than a junior rep at a cheaper agency. The cost per ticket is actually lower. Second, $3,900 is about half what you'd pay for the same kind of person in the U.S., and it includes hiring, training, payroll, culture, and an account manager. No add-ons. No setup fees. No deposits.",
+    q: 'Why is $2,900/mo the right price?',
+    a: "Two reasons. First, every specialist we place is experienced, with more experience than a typical support hire, and trained to use AI tools to handle the easy stuff. So one xFusion agent does a lot more work than a junior rep at a cheaper agency. The cost per ticket is actually lower. Second, $2,900 is less than half what you'd pay for the same kind of person in the U.S., and it includes hiring, training, payroll, culture, and an account manager. No add-ons. No setup fees. No deposits.",
   },
   {
     q: 'How long does the process take?',
-    a: 'About 14 days from your discovery call to a candidate list in your inbox. We keep a pool of senior, AI-trained support candidates ready to go, which is why we can move that fast without cutting corners.',
+    a: 'About 14 days from your discovery call to a candidate list in your inbox. We keep a pool of experienced, AI-trained support candidates ready to go, which is why we can move that fast without cutting corners.',
   },
   {
     q: 'Do you handle payroll and HR?',
-    a: "Yes, and it's part of the $3,900/mo. xFusion handles paying salaries, light HR, and time off. Your agent is hired as an independent contractor and managed by us, so you don't have to deal with international payroll. xFusion is not an Employer of Record, and the agent isn't your employee. We handle the paperwork so the setup stays simple.",
+    a: "Yes, and it's part of the $2,900/mo. xFusion handles paying salaries, light HR, and time off. Your agent is hired as an independent contractor and managed by us, so you don't have to deal with international payroll. xFusion is not an Employer of Record, and the agent isn't your employee. We handle the paperwork so the setup stays simple.",
   },
   {
     q: 'What roles can you fill?',
-    a: "Customer support, mostly. Every support agent we place is senior, trained to use AI, and able to handle Tier 1, Tier 2, and some cases that used to need an engineer's help. We also place inside sales people who work inbound leads (not cold calling) and AI operators who run AI tools alongside your team. If you need a different kind of role, ask on the discovery call. We'll be honest about whether we can help.",
+    a: "Customer support, mostly. Every support specialist we place is experienced, trained to use AI, and able to handle Tier 1, Tier 2, and some cases that used to need an engineer's help. We also place inside sales people who work inbound leads (not cold calling) and AI operators who run AI tools alongside your team. If you need a different kind of role, ask on the discovery call. We'll be honest about whether we can help.",
   },
   {
     q: 'Where does your talent come from?',
@@ -38,7 +38,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Why not just hire locally for support work?',
-    a: 'Senior support reps in the U.S. who know AI cost $80,000 to $100,000+ per year, take months to find, and often quit within 18 months. With xFusion, you get a senior, AI-trained agent for about half that cost, with the culture work built in to keep them around long-term. You also skip the search, the training, the payroll setup, and the culture work. We handle all of it.',
+    a: 'Senior-level support reps in the U.S. who know AI cost $80,000 to $100,000+ per year, take months to find, and often quit within 18 months. With xFusion, you get an experienced, AI-trained specialist for about half that cost, with the culture work built in to keep them around long-term. You also skip the search, the training, the payroll setup, and the culture work. We handle all of it.',
   },
   {
     q: 'What about after-hours coverage?',
@@ -46,11 +46,11 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How do I keep a remote team member engaged long-term?',
-    a: "This is one of the most common worries we hear, which is why Culture & Engagement is included in the $3,900/mo. We run virtual and in-person team-building events, contests, branded swag, birthday and anniversary gifts, and structured holiday gifting. Pair that with a role that pays a real living wage in the agent's local economy, and you get someone who builds a career on your team rather than rotating through.",
+    a: "This is one of the most common worries we hear, which is why Culture & Engagement is included in the $2,900/mo. We run virtual and in-person team-building events, contests, branded swag, birthday and anniversary gifts, and structured holiday gifting. Pair that with a role that pays a real living wage in the agent's local economy, and you get someone who builds a career on your team rather than rotating through.",
   },
   {
     q: 'Why not just use a chatbot?',
-    a: "AI on its own handles the easy 60% of support work well. The hard 40% (angry customers, weird cases, judgment calls, sensitive issues) is where chatbot-only setups break, often in public. xFusion's senior agents use AI as a tool, not a replacement. They let AI handle the easy stuff and step in for the moments that matter. You get the speed of AI plus the judgment and warmth of a person, instead of picking one and living with the limits.",
+    a: "AI on its own handles the easy 60% of support work well. The hard 40% (angry customers, weird cases, judgment calls, sensitive issues) is where chatbot-only setups break, often in public. xFusion's experienced specialists use AI as a tool, not a replacement. They let AI handle the easy stuff and step in for the moments that matter. You get the speed of AI plus the judgment and warmth of a person, instead of picking one and living with the limits.",
   },
   {
     q: 'What does "AI-trained" actually mean in practice?',

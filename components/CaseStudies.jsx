@@ -19,7 +19,7 @@ function CaseStudies() {
       file: 'images/derrick-reimer-savvycal.webp',
       role: 'Founder of SavvyCal',
       headline: 'A doubter changes his mind. "This is not your stereotypical outsourced support agency."',
-      body: "Derrick Reimer didn't believe in outsourcing. Our senior agents earned his trust by handling SavvyCal's tricky product support with the same brand voice and judgment as an in-house team.",
+      body: "Derrick Reimer didn't believe in outsourcing. Our experienced specialists earned his trust by handling SavvyCal's tricky product support with the same brand voice and judgment as an in-house team.",
     },
     {
       client: 'Bonify',
