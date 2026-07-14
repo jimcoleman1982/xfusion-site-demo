@@ -1243,8 +1243,12 @@ window.CTASection = CTASection;
 // Forest-green background (--color-forest #2C4A3E), Paper text (#F7F2EB)
 function Footer() {
   const cols = [{
-    title: 'Product',
-    links: [['Pricing', '/pricing/'], ['Case studies', '../'], ['Shopify app support', '/shopify-app-support/'], ['SaaS support', '/saas-support/'], ['Hire support agents', '/hire-support-agents/'], ['Support outsourcing', '/customer-support-outsourcing/'], ['E-commerce support', '/ecommerce-support/']]
+    title: 'Industries',
+    links: [['Shopify apps', '/shopify-app-support/'], ['SaaS', '/saas-support/'], ['E-commerce & DTC', '/ecommerce-support/']],
+    note: ['Also supporting hospitality, healthcare, and marketplace teams.', '/book/']
+  }, {
+    title: 'Solutions',
+    links: [['Hire a specialist', '/hire-support-agents/'], ['Support outsourcing', '/customer-support-outsourcing/'], ['Pricing', '/pricing/'], ['Case studies', '../']]
   }, {
     title: 'Company',
     links: [['About', '../../about/'], ['Careers', '../../careers/'], ['Contact', "../../contact/"]]
@@ -1308,7 +1312,7 @@ function Footer() {
     className: "footer-grid",
     style: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(4, 1fr)',
+      gridTemplateColumns: 'repeat(5, 1fr)',
       gap: 40,
       paddingTop: 48,
       paddingBottom: 40
@@ -1346,7 +1350,24 @@ function Footer() {
       fontSize: 15,
       lineHeight: 1.4
     }
-  }, label))))))), /*#__PURE__*/React.createElement("div", {
+  }, label)))), col.note ? /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13,
+      lineHeight: 1.55,
+      color: MUTED,
+      margin: '16px 0 0',
+      maxWidth: 220
+    }
+  }, col.note[0], ' ', /*#__PURE__*/React.createElement("a", {
+    href: col.note[1],
+    className: "footer-link",
+    style: {
+      color: BUTTER,
+      textDecoration: 'none',
+      fontWeight: 500
+    }
+  }, "Book a call →")) : null))), /*#__PURE__*/React.createElement("div", {
     className: "footer-legal",
     style: {
       paddingTop: 24,

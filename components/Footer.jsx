@@ -5,15 +5,21 @@
 function Footer() {
   const cols = [
     {
-      title: 'Product',
+      title: 'Industries',
       links: [
-        ['Pricing', '/pricing/'],
-        ['Case studies',  '/case-studies/'],
-        ['Shopify app support', '/shopify-app-support/'],
-        ['SaaS support', '/saas-support/'],
-        ['Hire support agents', '/hire-support-agents/'],
+        ['Shopify apps', '/shopify-app-support/'],
+        ['SaaS', '/saas-support/'],
+        ['E-commerce & DTC', '/ecommerce-support/'],
+      ],
+      note: ['Also supporting hospitality, healthcare, and marketplace teams.', '/book/'],
+    },
+    {
+      title: 'Solutions',
+      links: [
+        ['Hire a specialist', '/hire-support-agents/'],
         ['Support outsourcing', '/customer-support-outsourcing/'],
-        ['E-commerce support', '/ecommerce-support/'],
+        ['Pricing', '/pricing/'],
+        ['Case studies', '/case-studies/'],
       ],
     },
     {
@@ -83,7 +89,7 @@ function Footer() {
         {/* 4 columns */}
         <div className="footer-grid" style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
+          gridTemplateColumns: 'repeat(5, 1fr)',
           gap: 40,
           paddingTop: 48,
           paddingBottom: 40,
@@ -112,6 +118,15 @@ function Footer() {
                   </li>
                 ))}
               </ul>
+              {col.note ? (
+                <p style={{
+                  fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13,
+                  lineHeight: 1.55, color: MUTED, margin: '16px 0 0', maxWidth: 220,
+                }}>
+                  {col.note[0]}{' '}
+                  <a href={col.note[1]} className="footer-link" style={{ color: BUTTER, textDecoration: 'none', fontWeight: 500 }}>Book a call &rarr;</a>
+                </p>
+              ) : null}
             </div>
           ))}
         </div>
