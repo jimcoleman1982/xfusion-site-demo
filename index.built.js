@@ -1767,7 +1767,7 @@ function Hero() {
     className: "logo-marquee-group",
     key: copy,
     "aria-hidden": copy === 1
-  }, ['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aheadworks', 'Joli Apps', 'Sign In Solutions', 'Kioskbuddy', 'Common Services', 'Finger Ink', 'Lovely Apps', 'Aligned', 'Autism Products'].map(name => /*#__PURE__*/React.createElement("span", {
+  }, ['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aheadworks', 'Joli', 'Sign In Solutions', 'Kioskbuddy', 'Common Services', 'Finger Ink', 'Langify', 'Aligned', 'Autism Products'].map(name => /*#__PURE__*/React.createElement("span", {
     key: name,
     style: {
       fontFamily: "'Source Serif 4', serif",

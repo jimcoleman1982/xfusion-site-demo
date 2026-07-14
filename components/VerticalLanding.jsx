@@ -27,9 +27,9 @@
 
 // Client roster shown on every LP trust strip (same list as the homepage marquee in Hero.jsx).
 const CLIENT_NAMES = ['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi',
-  'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aheadworks', 'Joli Apps',
+  'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aheadworks', 'Joli',
   'Sign In Solutions', 'Kioskbuddy', 'Common Services', 'Finger Ink',
-  'Lovely Apps', 'Aligned', 'Autism Products'];
+  'Langify', 'Aligned', 'Autism Products'];
 
 // Shared "How it works" steps. Every claim here also lives on /pricing/ and /faq/.
 const XF_LP_STEPS = [
@@ -184,6 +184,39 @@ function VerticalLanding() {
                     </p>
                   </div>
                 ))}
+              </div>
+            </Container>
+          </section>
+        ) : null}
+
+        {/* Client story callout (verified public client wins) */}
+        {cfg.story ? (
+          <section style={{ padding: '64px 0 0' }}>
+            <Container narrow>
+              <div style={{
+                background: '#F8EBC9', border: '1px solid #E6C683',
+                borderRadius: 12, padding: '32px 34px 30px',
+              }}>
+                <div style={{
+                  fontFamily: "'JetBrains Mono', monospace", fontSize: 11,
+                  textTransform: 'uppercase', letterSpacing: '0.16em',
+                  color: '#6B5F56', marginBottom: 12,
+                }}>{cfg.story.eyebrow}</div>
+                <div style={{
+                  fontFamily: "'Source Serif 4', serif", fontSize: 'clamp(22px, 2.8vw, 28px)',
+                  fontWeight: 600, letterSpacing: '-0.02em', color: '#1F1A17', marginBottom: 12,
+                }}>{cfg.story.title}</div>
+                <p style={{
+                  fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 16,
+                  lineHeight: 1.65, color: '#3A322D', margin: '0 0 14px',
+                }}>{cfg.story.text}</p>
+                {cfg.story.kicker ? (
+                  <p style={{
+                    fontFamily: "'Source Serif 4', serif", fontSize: 17,
+                    fontStyle: 'italic', fontWeight: 500, color: '#B8512C',
+                    margin: 0, lineHeight: 1.5,
+                  }}>{cfg.story.kicker}</p>
+                ) : null}
               </div>
             </Container>
           </section>

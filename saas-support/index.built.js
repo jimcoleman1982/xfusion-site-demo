@@ -1786,7 +1786,7 @@ window.StickyCapture = StickyCapture;
 // }
 
 // Client roster shown on every LP trust strip (same list as the homepage marquee in Hero.jsx).
-const CLIENT_NAMES = ['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aheadworks', 'Joli Apps', 'Sign In Solutions', 'Kioskbuddy', 'Common Services', 'Finger Ink', 'Lovely Apps', 'Aligned', 'Autism Products'];
+const CLIENT_NAMES = ['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aheadworks', 'Joli', 'Sign In Solutions', 'Kioskbuddy', 'Common Services', 'Finger Ink', 'Langify', 'Aligned', 'Autism Products'];
 
 // Shared "How it works" steps. Every claim here also lives on /pricing/ and /faq/.
 const XF_LP_STEPS = [{
@@ -2023,7 +2023,56 @@ function VerticalLanding() {
     style: {
       color: '#B8512C'
     }
-  }, "Read the case study")) : null)))))) : null, /*#__PURE__*/React.createElement("section", {
+  }, "Read the case study")) : null)))))) : null, cfg.story ? /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '64px 0 0'
+    }
+  }, /*#__PURE__*/React.createElement(Container, {
+    narrow: true
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: '#F8EBC9',
+      border: '1px solid #E6C683',
+      borderRadius: 12,
+      padding: '32px 34px 30px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 11,
+      textTransform: 'uppercase',
+      letterSpacing: '0.16em',
+      color: '#6B5F56',
+      marginBottom: 12
+    }
+  }, cfg.story.eyebrow), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(22px, 2.8vw, 28px)',
+      fontWeight: 600,
+      letterSpacing: '-0.02em',
+      color: '#1F1A17',
+      marginBottom: 12
+    }
+  }, cfg.story.title), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      lineHeight: 1.65,
+      color: '#3A322D',
+      margin: '0 0 14px'
+    }
+  }, cfg.story.text), cfg.story.kicker ? /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 17,
+      fontStyle: 'italic',
+      fontWeight: 500,
+      color: '#B8512C',
+      margin: 0,
+      lineHeight: 1.5
+    }
+  }, cfg.story.kicker) : null))) : null, /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '72px 0'
     }
@@ -2758,6 +2807,9 @@ window.XF_LP = {
   }, {
     num: '6x',
     text: 'Ticket volume growth absorbed at TheReceptionist (63 to 375 conversations a month) without the quality numbers moving.'
+  }, {
+    num: '$60M',
+    text: 'Series B raised in 2026 by Aligned, whose customer support runs with xFusion.'
   }],
   values: [{
     title: 'A senior agent who learns your product deeply',
@@ -2789,17 +2841,17 @@ window.XF_LP = {
     "label": "TheReceptionist",
     "href": "/case-studies/the-receptionist/",
     "stat": "98.9%",
-    "statText": "CSAT held while ticket volume grew 6x. Radical Support reputation intact."
+    "statText": "CSAT held while ticket volume grew 6x. Acquired by Sign In Solutions in 2026; the xFusion team stayed on."
   }, {
     "label": "Tolstoy",
     "href": "/case-studies/tolstoy/",
-    "stat": "1 → 6",
-    "statText": "from one agent to a six-person team handling Tier 1 and Tier 2."
+    "stat": "1 → 11",
+    "statText": "from one agent to an 11-person team across support, AI content, and data work."
   }, {
     "label": "SkyFi",
     "href": "/case-studies/skyfi/",
     "stat": "91.9%",
-    "statText": "CSAT across 185 countries, with 36-minute average replies."
+    "statText": "CSAT across 185 countries. SkyFi raised an oversubscribed $12.7M Series A in 2026."
   }],
   "tickets": ["Billing, plans, and refund requests", "Bug triage with clean repro steps", "API and integration questions", "Onboarding walkthroughs for new users", "Tier 1 and Tier 2 resolution", "Escalations your engineers can act on"],
   "resources": [{

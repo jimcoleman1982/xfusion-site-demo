@@ -145,9 +145,9 @@ function Hero() {
               {[0, 1].map((copy) => (
                 <div className="logo-marquee-group" key={copy} aria-hidden={copy === 1}>
                   {['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi',
-                    'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aheadworks', 'Joli Apps',
+                    'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aheadworks', 'Joli',
                     'Sign In Solutions', 'Kioskbuddy', 'Common Services', 'Finger Ink',
-                    'Lovely Apps', 'Aligned', 'Autism Products'].map((name) => (
+                    'Langify', 'Aligned', 'Autism Products'].map((name) => (
                     <span key={name} style={{
                       fontFamily: "'Source Serif 4', serif",
                       fontSize: 26,

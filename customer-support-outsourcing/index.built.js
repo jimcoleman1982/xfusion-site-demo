@@ -1786,7 +1786,7 @@ window.StickyCapture = StickyCapture;
 // }
 
 // Client roster shown on every LP trust strip (same list as the homepage marquee in Hero.jsx).
-const CLIENT_NAMES = ['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aheadworks', 'Joli Apps', 'Sign In Solutions', 'Kioskbuddy', 'Common Services', 'Finger Ink', 'Lovely Apps', 'Aligned', 'Autism Products'];
+const CLIENT_NAMES = ['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheReceptionist', 'SkyFi', 'Revy Apps', 'Crowd Cow', 'Arbio', 'Nextmune', 'Aheadworks', 'Joli', 'Sign In Solutions', 'Kioskbuddy', 'Common Services', 'Finger Ink', 'Langify', 'Aligned', 'Autism Products'];
 
 // Shared "How it works" steps. Every claim here also lives on /pricing/ and /faq/.
 const XF_LP_STEPS = [{
@@ -2023,7 +2023,56 @@ function VerticalLanding() {
     style: {
       color: '#B8512C'
     }
-  }, "Read the case study")) : null)))))) : null, /*#__PURE__*/React.createElement("section", {
+  }, "Read the case study")) : null)))))) : null, cfg.story ? /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '64px 0 0'
+    }
+  }, /*#__PURE__*/React.createElement(Container, {
+    narrow: true
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: '#F8EBC9',
+      border: '1px solid #E6C683',
+      borderRadius: 12,
+      padding: '32px 34px 30px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 11,
+      textTransform: 'uppercase',
+      letterSpacing: '0.16em',
+      color: '#6B5F56',
+      marginBottom: 12
+    }
+  }, cfg.story.eyebrow), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(22px, 2.8vw, 28px)',
+      fontWeight: 600,
+      letterSpacing: '-0.02em',
+      color: '#1F1A17',
+      marginBottom: 12
+    }
+  }, cfg.story.title), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      lineHeight: 1.65,
+      color: '#3A322D',
+      margin: '0 0 14px'
+    }
+  }, cfg.story.text), cfg.story.kicker ? /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 17,
+      fontStyle: 'italic',
+      fontWeight: 500,
+      color: '#B8512C',
+      margin: 0,
+      lineHeight: 1.5
+    }
+  }, cfg.story.kicker) : null))) : null, /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '72px 0'
     }
@@ -2789,7 +2838,7 @@ window.XF_LP = {
     "label": "TheReceptionist",
     "href": "/case-studies/the-receptionist/",
     "stat": "98.9%",
-    "statText": "CSAT held while ticket volume grew 6x. Radical Support reputation intact."
+    "statText": "CSAT held while ticket volume grew 6x. Acquired by Sign In Solutions in 2026; the xFusion team stayed on."
   }, {
     "label": "Bonify",
     "href": "/case-studies/bonify/",
@@ -2799,7 +2848,7 @@ window.XF_LP = {
     "label": "SkyFi",
     "href": "/case-studies/skyfi/",
     "stat": "91.9%",
-    "statText": "CSAT across 185 countries, with 36-minute average replies."
+    "statText": "CSAT across 185 countries. SkyFi raised an oversubscribed $12.7M Series A in 2026."
   }],
   "tickets": ["The full queue, owned end to end", "Email, chat, and social channels", "Tier 1 and Tier 2 resolution", "Refunds and billing questions", "Angry-customer saves", "Clean handoffs for anything above Tier 2"],
   "resources": [{
@@ -2815,6 +2864,12 @@ window.XF_LP = {
   "learnTitle": "How your agent learns your product",
   "learnIntro": "The reason our agents don't sound outsourced: they ramp the way an in-house hire would.",
   "stepsLead": "From first call to a fully managed queue, with no quarter-long contract to sign.",
+  "story": {
+    "eyebrow": "From our client roster",
+    "title": "Our clients raised over $108M in 2026",
+    "text": "Aligned closed a $60M Series B led by PeakSpan. Arbio closed a $36M Series A led by Eurazeo. SkyFi closed an oversubscribed $12.7M Series A. And when TheReceptionist was acquired by Sign In Solutions, another client from our roster, the xFusion support team stayed on through the transition.",
+    "kicker": "Companies don't outgrow us. They don't even outgrow us when they get acquired."
+  },
   "closingH2": "Stop being your own support team.",
   "closingText": "Come with your messiest support problem. If we're not the right fit, we'll tell you, and you'll leave with a clearer picture either way."
 };
