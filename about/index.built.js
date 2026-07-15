@@ -994,8 +994,7 @@ function Leadership() {
     name: 'Martin Onami',
     role: 'Account Manager',
     imageSrc: '../images/martin-onami.webp',
-    sillySrc: '../images/silly/martin-onami-silly.webp',
-    sillyFit: 'contain'
+    sillySrc: '../images/silly/martin-onami-silly.webp'
   }, {
     name: 'Reggie Rendal',
     role: 'Account Manager',

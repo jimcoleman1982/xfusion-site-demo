@@ -17,7 +17,6 @@ function Leadership() {
       role: 'Account Manager',
       imageSrc: '../images/martin-onami.webp',
       sillySrc: '../images/silly/martin-onami-silly.webp',
-      sillyFit: 'contain',
     },
     {
       name: 'Reggie Rendal',
