@@ -67,9 +67,10 @@ const XF_LP_LEARN = [
 
 // Shared "people behind your queue" block. Same account managers as /about/.
 const XF_LP_TEAM = [
-  { name: 'Martin Onami', role: 'Account Manager', img: '/images/martin-onami-lp.webp' },
-  { name: 'Reggie Rendal', role: 'Account Manager', img: '/images/reggie-rendal-lp.webp' },
-  { name: 'Marie Medina', role: 'Account Manager', img: '/images/marie-medina-lp.webp' },
+  { name: 'Martin Onami', role: 'Account Manager', img: '/images/martin-onami.webp' },
+  { name: 'Reggie Rendal', role: 'Account Manager', img: '/images/reggie-rendal.webp' },
+  { name: 'Marie Medina', role: 'Account Manager', img: '/images/marie-medina.webp' },
+  { name: 'Bianca Dadulla', role: 'Recruitment Manager', img: '/images/bianca-dadulla.webp' },
 ];
 
 function VerticalLanding() {
@@ -504,11 +505,12 @@ function VerticalLanding() {
                 fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 16,
                 lineHeight: 1.6, color: '#3A322D', margin: '0 0 28px', maxWidth: 620,
               }}>
-                An account manager is included in the flat rate. They run QA on real tickets,
-                coach your agent, and arrange backup coverage, so support quality is somebody's
-                actual job, not a thing you check on at midnight.
+                Recruiting and account management are both included in the flat rate.
+                Bianca finds and vets your candidates; your account manager runs QA on real
+                tickets, coaches your specialist, and arranges backup coverage. Quality is
+                somebody's actual job, not a thing you check on at midnight.
               </p>
-              <div className="lp-team" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 20 }}>
+              <div className="lp-team" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
                 {XF_LP_TEAM.map((t) => (
                   <div key={t.name}>
                     <img src={t.img} alt={t.name} loading="lazy"
@@ -665,7 +667,7 @@ function VerticalLanding() {
           .lp-tickets { grid-template-columns: 1fr !important; }
           .lp-learn { grid-template-columns: 1fr !important; }
           .lp-cs-cards { grid-template-columns: 1fr !important; }
-          .lp-team { grid-template-columns: 1fr 1fr 1fr !important; }
+          .lp-team { grid-template-columns: 1fr 1fr !important; }
         }
       `}</style>
     </div>

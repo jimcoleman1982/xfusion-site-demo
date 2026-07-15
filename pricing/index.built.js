@@ -1965,7 +1965,7 @@ function PricingPage() {
       letterSpacing: '-0.02em',
       margin: '0 0 12px'
     }
-  }, "The account manager line is a real person"), /*#__PURE__*/React.createElement("p", {
+  }, "These line items are real people"), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 16,
@@ -1974,22 +1974,29 @@ function PricingPage() {
       margin: '0 0 26px',
       maxWidth: 620
     }
-  }, "Every client gets a dedicated account manager, included in the flat rate. They run QA on real tickets, coach your specialist, and arrange backup coverage, so quality is somebody's actual job."), /*#__PURE__*/React.createElement("div", {
+  }, "The recruiting and account-management lines above are people, not abstractions. Bianca runs the hiring and screening; your account manager runs QA on real tickets, coaches your specialist, and arranges backup coverage. Quality is somebody's actual job."), /*#__PURE__*/React.createElement("div", {
     className: "pricing-team",
     style: {
       display: 'grid',
-      gridTemplateColumns: '1fr 1fr 1fr',
+      gridTemplateColumns: 'repeat(4, 1fr)',
       gap: 20
     }
   }, [{
     name: 'Martin Onami',
-    img: '/images/martin-onami-lp.webp'
+    role: 'Account Manager',
+    img: '/images/martin-onami.webp'
   }, {
     name: 'Reggie Rendal',
-    img: '/images/reggie-rendal-lp.webp'
+    role: 'Account Manager',
+    img: '/images/reggie-rendal.webp'
   }, {
     name: 'Marie Medina',
-    img: '/images/marie-medina-lp.webp'
+    role: 'Account Manager',
+    img: '/images/marie-medina.webp'
+  }, {
+    name: 'Bianca Dadulla',
+    role: 'Recruitment Manager',
+    img: '/images/bianca-dadulla.webp'
   }].map(t => /*#__PURE__*/React.createElement("div", {
     key: t.name
   }, /*#__PURE__*/React.createElement("img", {
@@ -2017,7 +2024,7 @@ function PricingPage() {
       fontSize: 13.5,
       color: '#6B5F56'
     }
-  }, "Account Manager")))))), /*#__PURE__*/React.createElement("section", {
+  }, t.role)))))), /*#__PURE__*/React.createElement("section", {
     style: {
       background: '#EFE8DD',
       padding: '64px 0'
@@ -2274,7 +2281,7 @@ function PricingPage() {
     href: "/book/"
   }, "Book a Discovery Call")))), /*#__PURE__*/React.createElement(StickyCapture, null), /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement("style", null, `
             @media (max-width: 760px) {
-              .pricing-compare { grid-template-columns: 1fr !important; } .pricing-team { grid-template-columns: 1fr 1fr 1fr !important; }
+              .pricing-compare { grid-template-columns: 1fr !important; } .pricing-team { grid-template-columns: 1fr 1fr !important; }
             }
           `));
 }

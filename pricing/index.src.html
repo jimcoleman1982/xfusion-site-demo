@@ -195,26 +195,28 @@
                 <h2 style={{
                   fontFamily: "'Source Serif 4', serif", fontSize: 'clamp(24px, 3vw, 32px)',
                   fontWeight: 600, letterSpacing: '-0.02em', margin: '0 0 12px',
-                }}>The account manager line is a real person</h2>
+                }}>These line items are real people</h2>
                 <p style={{
                   fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 16,
                   lineHeight: 1.6, color: '#3A322D', margin: '0 0 26px', maxWidth: 620,
                 }}>
-                  Every client gets a dedicated account manager, included in the flat rate.
-                  They run QA on real tickets, coach your specialist, and arrange backup
-                  coverage, so quality is somebody's actual job.
+                  The recruiting and account-management lines above are people, not
+                  abstractions. Bianca runs the hiring and screening; your account manager
+                  runs QA on real tickets, coaches your specialist, and arranges backup
+                  coverage. Quality is somebody's actual job.
                 </p>
-                <div className="pricing-team" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 20 }}>
+                <div className="pricing-team" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
                   {[
-                    { name: 'Martin Onami', img: '/images/martin-onami-lp.webp' },
-                    { name: 'Reggie Rendal', img: '/images/reggie-rendal-lp.webp' },
-                    { name: 'Marie Medina', img: '/images/marie-medina-lp.webp' },
+                    { name: 'Martin Onami', role: 'Account Manager', img: '/images/martin-onami.webp' },
+                    { name: 'Reggie Rendal', role: 'Account Manager', img: '/images/reggie-rendal.webp' },
+                    { name: 'Marie Medina', role: 'Account Manager', img: '/images/marie-medina.webp' },
+                    { name: 'Bianca Dadulla', role: 'Recruitment Manager', img: '/images/bianca-dadulla.webp' },
                   ].map((t) => (
                     <div key={t.name}>
                       <img src={t.img} alt={t.name} loading="lazy"
                         style={{ width: '100%', aspectRatio: '4 / 5', objectFit: 'cover', borderRadius: 12, display: 'block', marginBottom: 10 }} />
                       <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 17, fontWeight: 600, color: '#1F1A17' }}>{t.name}</div>
-                      <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13.5, color: '#6B5F56' }}>Account Manager</div>
+                      <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13.5, color: '#6B5F56' }}>{t.role}</div>
                     </div>
                   ))}
                 </div>
@@ -346,7 +348,7 @@
           <Footer />
           <style>{`
             @media (max-width: 760px) {
-              .pricing-compare { grid-template-columns: 1fr !important; } .pricing-team { grid-template-columns: 1fr 1fr 1fr !important; }
+              .pricing-compare { grid-template-columns: 1fr !important; } .pricing-team { grid-template-columns: 1fr 1fr !important; }
             }
           `}</style>
         </div>
