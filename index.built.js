@@ -3692,7 +3692,16 @@ function Footer() {
       flexWrap: 'wrap',
       gap: 12
     }
-  }, /*#__PURE__*/React.createElement("div", null, "© 2026 xFusion. All rights reserved."), /*#__PURE__*/React.createElement("div", null, "Made with care across the Philippines, Kenya, and the United States."))), /*#__PURE__*/React.createElement("style", null, `
+  }, /*#__PURE__*/React.createElement("div", null, "© 2026 xFusion. All rights reserved. · ", /*#__PURE__*/React.createElement("a", {
+    href: "https://www.linkedin.com/company/xfusion-customer-support",
+    className: "footer-link",
+    target: "_blank",
+    rel: "noopener",
+    style: {
+      color: 'inherit',
+      textDecoration: 'none'
+    }
+  }, "LinkedIn")), /*#__PURE__*/React.createElement("div", null, "Made with care across the Philippines, Kenya, and the United States."))), /*#__PURE__*/React.createElement("style", null, `
         .footer-link:hover { color: ${BUTTER}; }
         @media (max-width: 900px) {
           .footer-top { grid-template-columns: 1fr !important; gap: 20px !important; }

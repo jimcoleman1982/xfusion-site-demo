@@ -129,7 +129,7 @@ function Footer() {
           fontFamily: "'IBM Plex Sans', sans-serif",
           fontSize: 13, color: MUTED, flexWrap: 'wrap', gap: 12,
         }}>
-          <div>© 2026 xFusion. All rights reserved.</div>
+          <div>© 2026 xFusion. All rights reserved. · <a href="https://www.linkedin.com/company/xfusion-customer-support" className="footer-link" target="_blank" rel="noopener" style={{ color: 'inherit', textDecoration: 'none' }}>LinkedIn</a></div>
           <div>Made with care across the Philippines, Kenya, and the United States.</div>
         </div>
       </Container>
