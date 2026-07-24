@@ -812,22 +812,6 @@ function _LegacyNavUnused() {
   }, l.label)))), /*#__PURE__*/React.createElement("style", null, `@media (max-width: 800px) { .nav-links { display: none !important; } .nav-mobile-toggle { display: inline-flex !important; } .nav-mobile-menu { display: flex !important; } }`));
 }
 function Footer() {
-  const social = [{
-    name: 'linkedin',
-    label: 'LinkedIn'
-  }, {
-    name: 'twitter',
-    label: 'Twitter'
-  }, {
-    name: 'instagram',
-    label: 'Instagram'
-  }, {
-    name: 'facebook',
-    label: 'Facebook'
-  }, {
-    name: 'youtube',
-    label: 'YouTube'
-  }];
   return /*#__PURE__*/React.createElement("footer", {
     style: {
       background: '#1F1A17',
@@ -911,7 +895,7 @@ function Footer() {
     href: 'blog/'
   }, {
     label: 'FAQ',
-    href: '#faq'
+    href: 'faq/'
   }].map(l => /*#__PURE__*/React.createElement("li", {
     key: l.label
   }, /*#__PURE__*/React.createElement("a", {
@@ -922,41 +906,7 @@ function Footer() {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 15
     }
-  }, l.label))))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: "'JetBrains Mono', monospace",
-      fontSize: 11,
-      textTransform: 'uppercase',
-      letterSpacing: '0.14em',
-      color: '#9E9388',
-      marginBottom: 18
-    }
-  }, "Follow along"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      gap: 12,
-      flexWrap: 'wrap'
-    }
-  }, social.map(s => /*#__PURE__*/React.createElement("a", {
-    key: s.name,
-    href: "#",
-    "aria-label": s.label,
-    style: {
-      width: 40,
-      height: 40,
-      borderRadius: 8,
-      background: '#3A322D',
-      border: '1px solid #6B5F56',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: '#F0D9A8',
-      textDecoration: 'none'
-    }
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: s.name,
-    size: 18
-  })))))), /*#__PURE__*/React.createElement("div", {
+  }, l.label)))))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       justifyContent: 'space-between',

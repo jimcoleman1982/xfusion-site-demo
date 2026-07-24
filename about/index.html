@@ -121,8 +121,14 @@
           border-radius: 12px;
           overflow: hidden;
           border: 1px solid #D9CFBF;
-          cursor: pointer;
           transition: transform 240ms cubic-bezier(0.4,0,0.6,1);
+        }
+        /* Tap-to-flip is a touch affordance only. On hover-capable (desktop)
+           devices the photo already flips on hover, so a pointer cursor would
+           promise a link the click doesn't deliver -> dead clicks in Clarity.
+           When per-person LinkedIn URLs exist, wrap the card in an <a> instead. */
+        @media (hover: none) {
+          .leader-photo-stack { cursor: pointer; }
         }
         @media (hover: hover) {
           .leader-photo-stack:hover {

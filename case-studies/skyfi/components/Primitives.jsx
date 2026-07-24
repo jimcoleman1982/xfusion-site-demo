@@ -46,7 +46,7 @@ function Eyebrow({ children, color = '#6B5F56', mono = false, style = {} }) {
   );
 }
 
-function Button({ children, variant = 'primary', size = 'md', onClick, style = {}, as = 'a', href = '#', target, rel }) {
+function Button({ children, variant = 'primary', size = 'md', onClick, style = {}, as = 'a', href = null, target, rel }) {
   const [hover, setHover] = useState(false);
   const [pressed, setPressed] = useState(false);
 

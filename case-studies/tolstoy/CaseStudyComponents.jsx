@@ -15,7 +15,7 @@ function PageHeader({ eyebrow, title, subhead, photo }) {
           marginBottom: 48,
           letterSpacing: '0.04em',
         }}>
-          <a href="#" style={{ color: '#6B5F56', textDecoration: 'none' }}>Case studies</a>
+          <a href="/case-studies/" style={{ color: '#6B5F56', textDecoration: 'none' }}>Case studies</a>
           <span style={{ margin: '0 10px', color: '#B7A993' }}>/</span>
           <span style={{ color: '#1F1A17' }}>Tolstoy</span>
         </div>

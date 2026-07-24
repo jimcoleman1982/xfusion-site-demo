@@ -47,7 +47,7 @@ function CTASection({ title, body, ctaLabel = 'Book a Discovery Call', microcopy
             gap: 24,
             flexWrap: 'wrap',
           }}>
-            <Button variant="on-dark" size="lg">
+            <Button variant="on-dark" size="lg" href="/book/">
               {ctaLabel}
               <Icon name="arrow" size={18} stroke={1.75} />
             </Button>

@@ -14,9 +14,9 @@ function Breadcrumb() {
       alignItems: 'center',
       flexWrap: 'wrap',
     }}>
-      <a href="#" style={{ color: '#6B5F56', textDecoration: 'none' }}>xFusion</a>
+      <a href="/" style={{ color: '#6B5F56', textDecoration: 'none' }}>xFusion</a>
       <span style={{ opacity: 0.5 }}>/</span>
-      <a href="#" style={{ color: '#6B5F56', textDecoration: 'none' }}>Case studies</a>
+      <a href="/case-studies/" style={{ color: '#6B5F56', textDecoration: 'none' }}>Case studies</a>
       <span style={{ opacity: 0.5 }}>/</span>
       <span style={{ color: '#1F1A17' }}>TheReceptionist</span>
     </div>

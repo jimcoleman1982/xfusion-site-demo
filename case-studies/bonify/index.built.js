@@ -497,7 +497,7 @@ function PageHeader() {
       letterSpacing: '0.04em'
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "#",
+    href: "/case-studies/",
     style: {
       color: '#6B5F56',
       textDecoration: 'none'
@@ -1035,7 +1035,7 @@ function CTASection() {
   }, "If your customer support is starting to slip, or you are about to lose the one person holding it together, we can help. We will recruit, vet, place, train, and manage an experienced, AI-trained support specialist for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free."), /*#__PURE__*/React.createElement(Button, {
     variant: "on-dark",
     size: "lg",
-    href: "#"
+    href: "/book/"
   }, "Book a Discovery Call"), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 20,

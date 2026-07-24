@@ -95,7 +95,6 @@
     }
 
     function Footer() {
-      const social = [{ name: 'linkedin', label: 'LinkedIn' }, { name: 'twitter', label: 'Twitter' }, { name: 'instagram', label: 'Instagram' }, { name: 'facebook', label: 'Facebook' }, { name: 'youtube', label: 'YouTube' }];
       return (
         <footer style={{ background: '#1F1A17', color: '#F7F2EB', padding: '72px 0 32px' }}>
           <Container>
@@ -107,11 +106,7 @@
               </div>
               <div>
                 <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9E9388', marginBottom: 18 }}>Quick links</div>
-                <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>{[{ label: 'Home', href: 'index.html' }, { label: 'About', href: 'about/' }, { label: 'Case studies', href: 'case-studies/' }, { label: 'Careers', href: 'careers/' }, { label: 'Blog', href: 'blog/' }, { label: 'FAQ', href: '#faq' }].map(l => <li key={l.label}><a href={l.href} style={{ color: '#F7F2EB', textDecoration: 'none', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 15 }}>{l.label}</a></li>)}</ul>
-              </div>
-              <div>
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9E9388', marginBottom: 18 }}>Follow along</div>
-                <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>{social.map(s => <a key={s.name} href="#" aria-label={s.label} style={{ width: 40, height: 40, borderRadius: 8, background: '#3A322D', border: '1px solid #6B5F56', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#F0D9A8', textDecoration: 'none' }}><Icon name={s.name} size={18} /></a>)}</div>
+                <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>{[{ label: 'Home', href: 'index.html' }, { label: 'About', href: 'about/' }, { label: 'Case studies', href: 'case-studies/' }, { label: 'Careers', href: 'careers/' }, { label: 'Blog', href: 'blog/' }, { label: 'FAQ', href: 'faq/' }].map(l => <li key={l.label}><a href={l.href} style={{ color: '#F7F2EB', textDecoration: 'none', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 15 }}>{l.label}</a></li>)}</ul>
               </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13, color: '#9E9388', flexWrap: 'wrap', gap: 16 }}>

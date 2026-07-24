@@ -10,7 +10,7 @@ function PageHeader({
     <Section bg="paper" padding="lg" style={{ paddingTop: 64, paddingBottom: 56 }}>
       <Container>
         <div style={{ marginBottom: 32 }}>
-          <a href="#" style={{
+          <a href="/case-studies/" style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
             fontSize: 13,
             color: '#6B5F56',

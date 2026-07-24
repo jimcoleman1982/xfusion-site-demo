@@ -152,7 +152,7 @@ function CaseHeader({ number, client, subhead, photoSrc, photoName }) {
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
           {/* Breadcrumb back link */}
           <div style={{ marginBottom: 32 }}>
-            <a href="#" style={{
+            <a href="/case-studies/" style={{
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: 12,
               letterSpacing: '0.04em',

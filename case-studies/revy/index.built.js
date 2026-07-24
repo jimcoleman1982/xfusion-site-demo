@@ -538,7 +538,7 @@ function CaseHeader({
       marginBottom: 32
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "#",
+    href: "/case-studies/",
     style: {
       fontFamily: "'JetBrains Mono', monospace",
       fontSize: 12,

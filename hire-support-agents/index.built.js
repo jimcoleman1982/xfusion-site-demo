@@ -1066,7 +1066,7 @@ function Footer() {
       borderBottom: `1px solid ${DIVIDER}`
     }
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
-    href: "#",
+    href: "/",
     style: {
       display: 'inline-flex',
       alignItems: 'center',

@@ -67,7 +67,7 @@ function Footer() {
           borderBottom: `1px solid ${DIVIDER}`,
         }}>
           <div>
-            <a href="#" style={{
+            <a href="/" style={{
               display: 'inline-flex', alignItems: 'center', gap: 10,
               marginBottom: 14, textDecoration: 'none',
             }}>

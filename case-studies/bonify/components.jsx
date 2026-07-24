@@ -310,7 +310,7 @@ function PageHeader() {
           fontSize: 12, color: '#6B5F56', marginBottom: 56,
           letterSpacing: '0.04em',
         }}>
-          <a href="#" style={{ color: '#6B5F56', textDecoration: 'none' }}>Case studies</a>
+          <a href="/case-studies/" style={{ color: '#6B5F56', textDecoration: 'none' }}>Case studies</a>
           <span style={{ margin: '0 10px', opacity: 0.5 }}>/</span>
           <span style={{ color: '#1F1A17' }}>Bonify</span>
         </div>
@@ -743,7 +743,7 @@ function CTASection() {
           }}>
             If your customer support is starting to slip, or you are about to lose the one person holding it together, we can help. We will recruit, vet, place, train, and manage an experienced, AI-trained support specialist for your business. You will work with them for 30 days before paying anything. If you are not happy, you walk away free.
           </p>
-          <Button variant="on-dark" size="lg" href="#">Book a Discovery Call</Button>
+          <Button variant="on-dark" size="lg" href="/book/">Book a Discovery Call</Button>
           <p style={{
             marginTop: 20, marginBottom: 0,
             fontFamily: "'IBM Plex Sans', sans-serif",

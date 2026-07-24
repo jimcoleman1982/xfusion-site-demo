@@ -698,7 +698,7 @@ function PageHeader({
       letterSpacing: '0.04em'
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "#",
+    href: "/case-studies/",
     style: {
       color: '#6B5F56',
       textDecoration: 'none'

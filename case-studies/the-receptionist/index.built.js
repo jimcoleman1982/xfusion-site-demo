@@ -722,7 +722,7 @@ function Breadcrumb() {
       flexWrap: 'wrap'
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "#",
+    href: "/",
     style: {
       color: '#6B5F56',
       textDecoration: 'none'
@@ -732,7 +732,7 @@ function Breadcrumb() {
       opacity: 0.5
     }
   }, "/"), /*#__PURE__*/React.createElement("a", {
-    href: "#",
+    href: "/case-studies/",
     style: {
       color: '#6B5F56',
       textDecoration: 'none'

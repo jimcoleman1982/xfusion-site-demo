@@ -91,7 +91,7 @@ function Button({
   onClick,
   style = {},
   as = 'a',
-  href = '#',
+  href = null,
   target,
   rel
 }) {
@@ -551,7 +551,7 @@ function PageHeader({
       marginBottom: 32
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "#",
+    href: "/case-studies/",
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 13,
@@ -1221,7 +1221,8 @@ function CTASection({
     }
   }, /*#__PURE__*/React.createElement(Button, {
     variant: "on-dark",
-    size: "lg"
+    size: "lg",
+    href: "/book/"
   }, ctaLabel, /*#__PURE__*/React.createElement(Icon, {
     name: "arrow",
     size: 18,
