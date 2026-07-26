@@ -18,6 +18,7 @@ window.XF_PROOF_POINTS = [
 ];
 
 const XF_BUSINESS_TYPES = ['SaaS', 'E-commerce', 'Marketplace', 'Agency', 'Other'];
+const XF_TICKET_VOLUMES = ['Under 10', '10-25', '25-50', '50+'];
 
 function LeadModal({ open, email, onClose }) {
   const [name, setName] = React.useState('');
@@ -25,6 +26,7 @@ function LeadModal({ open, email, onClose }) {
   const [website, setWebsite] = React.useState('');
   const [need, setNeed] = React.useState('');
   const [bizType, setBizType] = React.useState('');
+  const [ticketVolume, setTicketVolume] = React.useState('');
   const [botField, setBotField] = React.useState('');
   const [error, setError] = React.useState('');
   const [submitted, setSubmitted] = React.useState(false);
@@ -76,6 +78,7 @@ function LeadModal({ open, email, onClose }) {
       website: website.trim(),
       need: need.trim(),
       business_type: bizType,
+      ticket_volume: ticketVolume,
     };
 
     if (window.xfAttribution) {
@@ -92,6 +95,7 @@ function LeadModal({ open, email, onClose }) {
       window.dataLayer.push({
         event: 'lead_form_submit',
         business_type: bizType || undefined,
+        ticket_volume: ticketVolume || undefined,
         user_email: (consentOk && email) || undefined,
       });
     }
@@ -268,6 +272,29 @@ function LeadModal({ open, email, onClose }) {
                       return (
                         <button type="button" key={t}
                           onClick={() => setBizType(active ? '' : t)}
+                          aria-pressed={active}
+                          style={{
+                            padding: '8px 14px', borderRadius: 999, cursor: 'pointer',
+                            fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13, fontWeight: 500,
+                            background: active ? '#B8512C' : 'transparent',
+                            color: active ? '#F7F2EB' : '#3A322D',
+                            border: active ? '1px solid transparent' : '1px solid #B7A993',
+                            transition: 'all 160ms cubic-bezier(0.4,0,0.6,1)',
+                          }}>
+                          {t}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div>
+                  <div style={labelStyle}>Roughly how many support tickets per day?</div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                    {XF_TICKET_VOLUMES.map((t) => {
+                      const active = ticketVolume === t;
+                      return (
+                        <button type="button" key={t}
+                          onClick={() => setTicketVolume(active ? '' : t)}
                           aria-pressed={active}
                           style={{
                             padding: '8px 14px', borderRadius: 999, cursor: 'pointer',

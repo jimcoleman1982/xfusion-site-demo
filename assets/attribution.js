@@ -126,10 +126,39 @@
     /** Back-compat alias. */
     sendToGHL: function (stage, data) { return this.sendLead(stage, data); },
 
+    /** Canonical email for dedup + hashing. For Gmail/Googlemail, dots in the
+        local part are ignored by Gmail and everything after "+" is a tag, so
+        both are stripped (this is also Google's enhanced-conversions spec).
+        Other domains: just trim + lowercase. */
+    canonicalizeEmail: function (email) {
+      var e = String(email || '').trim().toLowerCase();
+      var at = e.indexOf('@');
+      if (at < 1) return e;
+      var local = e.slice(0, at), domain = e.slice(at + 1);
+      if (domain === 'gmail.com' || domain === 'googlemail.com') {
+        local = local.split('+')[0].replace(/\./g, '');
+        return local + '@gmail.com';
+      }
+      return local.split('+')[0] + '@' + domain;
+    },
+
+    /** Heuristic bot signal for the frictionless Stage-1 capture. A Gmail
+        local part with 3+ dots is the "scatter dots to fake unique addresses"
+        pattern; real people almost never do this. Conservative on purpose so
+        legitimate leads are never blocked (they can still complete Stage 2). */
+    looksLikeBot: function (email) {
+      var e = String(email || '').trim().toLowerCase();
+      var at = e.indexOf('@');
+      if (at < 1) return false;
+      var local = e.slice(0, at).split('+')[0], domain = e.slice(at + 1);
+      if (domain !== 'gmail.com' && domain !== 'googlemail.com') return false;
+      return (local.match(/\./g) || []).length >= 3;
+    },
+
     /** SHA-256 hex of a normalized email (for enhanced conversions).
         Returns a Promise<string|null>. */
     hashEmail: function (email) {
-      var normalized = String(email || '').trim().toLowerCase();
+      var normalized = this.canonicalizeEmail(email);
       if (!normalized || !(window.crypto && window.crypto.subtle)) {
         return Promise.resolve(null);
       }

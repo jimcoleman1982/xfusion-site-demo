@@ -1204,6 +1204,7 @@ window.Footer = Footer;
 // strip (Task 8) so the claims can never drift out of sync.
 window.XF_PROOF_POINTS = ['Experienced specialists, AI-trained', '$2,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
 const XF_BUSINESS_TYPES = ['SaaS', 'E-commerce', 'Marketplace', 'Agency', 'Other'];
+const XF_TICKET_VOLUMES = ['Under 10', '10-25', '25-50', '50+'];
 function LeadModal({
   open,
   email,
@@ -1214,6 +1215,7 @@ function LeadModal({
   const [website, setWebsite] = React.useState('');
   const [need, setNeed] = React.useState('');
   const [bizType, setBizType] = React.useState('');
+  const [ticketVolume, setTicketVolume] = React.useState('');
   const [botField, setBotField] = React.useState('');
   const [error, setError] = React.useState('');
   const [submitted, setSubmitted] = React.useState(false);
@@ -1262,7 +1264,8 @@ function LeadModal({
       company: company.trim(),
       website: website.trim(),
       need: need.trim(),
-      business_type: bizType
+      business_type: bizType,
+      ticket_volume: ticketVolume
     };
     if (window.xfAttribution) {
       window.xfAttribution.saveLead(lead);
@@ -1277,6 +1280,7 @@ function LeadModal({
       window.dataLayer.push({
         event: 'lead_form_submit',
         business_type: bizType || undefined,
+        ticket_volume: ticketVolume || undefined,
         user_email: consentOk && email || undefined
       });
     }
@@ -1552,6 +1556,34 @@ function LeadModal({
         transition: 'all 160ms cubic-bezier(0.4,0,0.6,1)'
       }
     }, t);
+  }))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: labelStyle
+  }, "Roughly how many support tickets per day?"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: 8
+    }
+  }, XF_TICKET_VOLUMES.map(t => {
+    const active = ticketVolume === t;
+    return /*#__PURE__*/React.createElement("button", {
+      type: "button",
+      key: t,
+      onClick: () => setTicketVolume(active ? '' : t),
+      "aria-pressed": active,
+      style: {
+        padding: '8px 14px',
+        borderRadius: 999,
+        cursor: 'pointer',
+        fontFamily: "'IBM Plex Sans', sans-serif",
+        fontSize: 13,
+        fontWeight: 500,
+        background: active ? '#B8512C' : 'transparent',
+        color: active ? '#F7F2EB' : '#3A322D',
+        border: active ? '1px solid transparent' : '1px solid #B7A993',
+        transition: 'all 160ms cubic-bezier(0.4,0,0.6,1)'
+      }
+    }, t);
   }))), error ? /*#__PURE__*/React.createElement("div", {
     role: "alert",
     style: {
@@ -1624,8 +1656,12 @@ function LeadCapture({
   const [email, setEmail] = React.useState('');
   const [emailError, setEmailError] = React.useState('');
   const [modalOpen, setModalOpen] = React.useState(false);
+  // Honeypot: a real person never sees or fills this. A filled value means a bot.
+  const botRef = React.useRef(null);
   const handleEmailSubmit = e => {
     e.preventDefault();
+    // Bot filled the hidden field: do nothing, silently (don't tip it off).
+    if (botRef.current && botRef.current.value) return;
     const value = email.trim();
     // Strict enough to reject "xyz @ abc . com": no spaces anywhere,
     // one @, and a dot-separated TLD of 2+ letters.
@@ -1636,6 +1672,10 @@ function LeadCapture({
     }
     setEmailError('');
     const normalized = value.toLowerCase();
+    // Bot-pattern email (Gmail with scattered dots): let the person continue to
+    // Stage 2 in case they are a rare real user, but skip the frictionless
+    // Stage-1 auto-send that bots abuse. Bots never complete Stage 2.
+    const botPattern = window.xfAttribution && window.xfAttribution.looksLikeBot(normalized);
     if (window.xfAttribution) {
       window.xfAttribution.hashEmail(normalized).then(hash => {
         window.xfAttribution.saveLead({
@@ -1644,7 +1684,7 @@ function LeadCapture({
         });
         // Page-global guard: the hero form and the sticky bar are two
         // instances of this component; email_capture must fire once.
-        if (!window.__xfEmailCaptureFired) {
+        if (!botPattern && !window.__xfEmailCaptureFired) {
           window.__xfEmailCaptureFired = true;
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
@@ -1675,6 +1715,20 @@ function LeadCapture({
       maxWidth: compact ? 440 : 520
     }
   }, /*#__PURE__*/React.createElement("input", {
+    ref: botRef,
+    type: "text",
+    name: "company_website",
+    tabIndex: "-1",
+    autoComplete: "off",
+    "aria-hidden": "true",
+    style: {
+      position: 'absolute',
+      left: '-9999px',
+      width: 1,
+      height: 1,
+      opacity: 0
+    }
+  }), /*#__PURE__*/React.createElement("input", {
     type: "email",
     value: email,
     onChange: e => setEmail(e.target.value),
