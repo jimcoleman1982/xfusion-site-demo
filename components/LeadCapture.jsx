@@ -31,7 +31,12 @@ function LeadCapture({ microcopy, compact }) {
     // Bot-pattern email (Gmail with scattered dots): let the person continue to
     // Stage 2 in case they are a rare real user, but skip the frictionless
     // Stage-1 auto-send that bots abuse. Bots never complete Stage 2.
-    const botPattern = window.xfAttribution && window.xfAttribution.looksLikeBot(normalized);
+    // typeof-guard: /assets/attribution.js is cached 7 days, so a returning
+    // visitor may run this newer bundle against an older cached attribution.js
+    // that lacks looksLikeBot. Degrade gracefully instead of throwing.
+    const botPattern = window.xfAttribution
+      && typeof window.xfAttribution.looksLikeBot === 'function'
+      && window.xfAttribution.looksLikeBot(normalized);
     if (window.xfAttribution) {
       window.xfAttribution.hashEmail(normalized).then((hash) => {
         window.xfAttribution.saveLead({ email: normalized, email_hash: hash || '' });
