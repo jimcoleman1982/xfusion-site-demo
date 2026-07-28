@@ -566,7 +566,7 @@ Object.assign(window, {
 
 // Proof points are defined ONCE here and shared with the homepage proof
 // strip (Task 8) so the claims can never drift out of sync.
-window.XF_PROOF_POINTS = ['Experienced specialists, AI-trained', '$2,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
+window.XF_PROOF_POINTS = ['Experienced specialists, AI-trained', '$2,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Client relationships up to 6 years'];
 const XF_BUSINESS_TYPES = ['SaaS', 'E-commerce', 'Marketplace', 'Agency', 'Other'];
 const XF_TICKET_VOLUMES = ['Under 10', '10-25', '25-50', '50+'];
 function LeadModal({

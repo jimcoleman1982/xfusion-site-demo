@@ -397,6 +397,29 @@ function VerticalLanding() {
           </section>
         )}
 
+        {/* Guarantee callout (risk reversal, visual moment) */}
+        <section style={{ padding: '0 0 72px' }}>
+          <Container narrow>
+            <div style={{
+              background: '#F8EBC9', border: '1px solid #E6C683', borderRadius: 12,
+              padding: '30px 34px', textAlign: 'center',
+            }}>
+              <div style={{
+                fontFamily: "'Source Serif 4', serif", fontSize: 'clamp(22px, 2.8vw, 28px)',
+                fontWeight: 600, letterSpacing: '-0.02em', color: '#1F1A17', marginBottom: 10,
+              }}>You risk nothing for 30 days</div>
+              <p style={{
+                fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 16,
+                lineHeight: 1.6, color: '#3A322D', margin: '0 auto', maxWidth: 560,
+              }}>
+                Work with your specialist on your real queue for a full month. If you're not
+                satisfied for any reason, you pay nothing. Not a deposit, not a setup fee, nothing.
+                We absorb every dollar of recruiting, vetting, and training we invested.
+              </p>
+            </div>
+          </Container>
+        </section>
+
         {/* Testimonials */}
         {(cfg.quotes || []).length > 0 ? (
           <div style={{
@@ -415,8 +438,16 @@ function VerticalLanding() {
                 color: '#1F1A17', margin: '0 0 22px',
               }}>&ldquo;{q.text}&rdquo;</blockquote>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14 }}>
-                <img src={q.img} alt={q.name} loading="lazy" width="52" height="52"
-                  style={{ width: 52, height: 52, borderRadius: 999, objectFit: 'cover' }} />
+                {q.img ? (
+                  <img src={q.img} alt={q.name} loading="lazy" width="52" height="52"
+                    style={{ width: 52, height: 52, borderRadius: 999, objectFit: 'cover' }} />
+                ) : (
+                  <div aria-hidden="true" style={{
+                    width: 52, height: 52, borderRadius: 999, background: '#EFE8DD',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontFamily: "'Source Serif 4', serif", fontSize: 20, fontWeight: 600, color: '#B8512C',
+                  }}>{(q.name || '').charAt(0)}</div>
+                )}
                 <div style={{
                   fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14,
                   color: '#3A322D', textAlign: 'left',
@@ -508,7 +539,9 @@ function VerticalLanding() {
                 Recruiting and account management are both included in the flat rate.
                 Bianca finds and vets your candidates; your account manager runs QA on real
                 tickets, coaches your specialist, and arranges backup coverage. Quality is
-                somebody's actual job, not a thing you check on at midnight.
+                somebody's actual job, not a thing you check on at midnight. And these are
+                builders, not script readers: the same people have built custom ticket-triage
+                workflows, live coverage dashboards, and bespoke tools for client stores.
               </p>
               <div className="lp-team" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
                 {XF_LP_TEAM.map((t) => (
@@ -605,8 +638,23 @@ function VerticalLanding() {
           </section>
         ) : null}
 
+        {/* Security / trust reassurance (last objection before the ask) */}
+        <section style={{ borderTop: '1px solid #D9CFBF', padding: '28px 0' }}>
+          <Container>
+            <p style={{
+              fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14.5,
+              lineHeight: 1.6, color: '#3A322D', textAlign: 'center',
+              margin: '0 auto', maxWidth: 720,
+            }}>
+              Your data, handled right: vetted specialists working in your helpdesk under
+              least-privilege access, GDPR and CCPA aligned, DPA on request.{' '}
+              <a href="/security/" style={{ color: '#B8512C', fontWeight: 500, whiteSpace: 'nowrap' }}>Read our security overview →</a>
+            </p>
+          </Container>
+        </section>
+
         {/* Closing CTA */}
-        <section style={{ borderTop: '1px solid #D9CFBF', padding: '72px 0 96px', textAlign: 'center' }}>
+        <section style={{ padding: '72px 0 96px', textAlign: 'center' }}>
           <Container narrow>
             <h2 style={{
               fontFamily: "'Source Serif 4', serif", fontSize: 'clamp(28px, 3.6vw, 40px)',

@@ -1202,7 +1202,7 @@ window.Footer = Footer;
 
 // Proof points are defined ONCE here and shared with the homepage proof
 // strip (Task 8) so the claims can never drift out of sync.
-window.XF_PROOF_POINTS = ['Experienced specialists, AI-trained', '$2,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Since 2020'];
+window.XF_PROOF_POINTS = ['Experienced specialists, AI-trained', '$2,900/mo all-in', '30-day risk-free trial', 'Month-to-month', 'Client relationships up to 6 years'];
 const XF_BUSINESS_TYPES = ['SaaS', 'E-commerce', 'Marketplace', 'Agency', 'Other'];
 const XF_TICKET_VOLUMES = ['Under 10', '10-25', '25-50', '50+'];
 function LeadModal({
@@ -2447,7 +2447,39 @@ function VerticalLanding() {
     style: {
       marginTop: 2
     }
-  }, butterCheck) : null, /*#__PURE__*/React.createElement("span", null, r))))))))), (cfg.quotes || []).length > 0 ? /*#__PURE__*/React.createElement("div", {
+  }, butterCheck) : null, /*#__PURE__*/React.createElement("span", null, r))))))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '0 0 72px'
+    }
+  }, /*#__PURE__*/React.createElement(Container, {
+    narrow: true
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: '#F8EBC9',
+      border: '1px solid #E6C683',
+      borderRadius: 12,
+      padding: '30px 34px',
+      textAlign: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(22px, 2.8vw, 28px)',
+      fontWeight: 600,
+      letterSpacing: '-0.02em',
+      color: '#1F1A17',
+      marginBottom: 10
+    }
+  }, "You risk nothing for 30 days"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      lineHeight: 1.6,
+      color: '#3A322D',
+      margin: '0 auto',
+      maxWidth: 560
+    }
+  }, "Work with your specialist on your real queue for a full month. If you're not satisfied for any reason, you pay nothing. Not a deposit, not a setup fee, nothing. We absorb every dollar of recruiting, vetting, and training we invested.")))), (cfg.quotes || []).length > 0 ? /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'JetBrains Mono', monospace",
       fontSize: 11,
@@ -2485,7 +2517,7 @@ function VerticalLanding() {
       justifyContent: 'center',
       gap: 14
     }
-  }, /*#__PURE__*/React.createElement("img", {
+  }, q.img ? /*#__PURE__*/React.createElement("img", {
     src: q.img,
     alt: q.name,
     loading: "lazy",
@@ -2497,7 +2529,22 @@ function VerticalLanding() {
       borderRadius: 999,
       objectFit: 'cover'
     }
-  }), /*#__PURE__*/React.createElement("div", {
+  }) : /*#__PURE__*/React.createElement("div", {
+    "aria-hidden": "true",
+    style: {
+      width: 52,
+      height: 52,
+      borderRadius: 999,
+      background: '#EFE8DD',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 20,
+      fontWeight: 600,
+      color: '#B8512C'
+    }
+  }, (q.name || '').charAt(0)), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 14,
@@ -2622,7 +2669,7 @@ function VerticalLanding() {
       margin: '0 0 28px',
       maxWidth: 620
     }
-  }, "Recruiting and account management are both included in the flat rate. Bianca finds and vets your candidates; your account manager runs QA on real tickets, coaches your specialist, and arranges backup coverage. Quality is somebody's actual job, not a thing you check on at midnight."), /*#__PURE__*/React.createElement("div", {
+  }, "Recruiting and account management are both included in the flat rate. Bianca finds and vets your candidates; your account manager runs QA on real tickets, coaches your specialist, and arranges backup coverage. Quality is somebody's actual job, not a thing you check on at midnight. And these are builders, not script readers: the same people have built custom ticket-triage workflows, live coverage dashboards, and bespoke tools for client stores."), /*#__PURE__*/React.createElement("div", {
     className: "lp-team",
     style: {
       display: 'grid',
@@ -2773,6 +2820,27 @@ function VerticalLanding() {
   }, "Read the post →")))))) : null, /*#__PURE__*/React.createElement("section", {
     style: {
       borderTop: '1px solid #D9CFBF',
+      padding: '28px 0'
+    }
+  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14.5,
+      lineHeight: 1.6,
+      color: '#3A322D',
+      textAlign: 'center',
+      margin: '0 auto',
+      maxWidth: 720
+    }
+  }, "Your data, handled right: vetted specialists working in your helpdesk under least-privilege access, GDPR and CCPA aligned, DPA on request.", ' ', /*#__PURE__*/React.createElement("a", {
+    href: "/security/",
+    style: {
+      color: '#B8512C',
+      fontWeight: 500,
+      whiteSpace: 'nowrap'
+    }
+  }, "Read our security overview →")))), /*#__PURE__*/React.createElement("section", {
+    style: {
       padding: '72px 0 96px',
       textAlign: 'center'
     }

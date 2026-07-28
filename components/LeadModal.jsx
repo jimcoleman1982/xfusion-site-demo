@@ -14,7 +14,7 @@ window.XF_PROOF_POINTS = [
   '$2,900/mo all-in',
   '30-day risk-free trial',
   'Month-to-month',
-  'Since 2020',
+  'Client relationships up to 6 years',
 ];
 
 const XF_BUSINESS_TYPES = ['SaaS', 'E-commerce', 'Marketplace', 'Agency', 'Other'];
