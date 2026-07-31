@@ -452,7 +452,13 @@ function VerticalLanding() {
                   fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14,
                   color: '#3A322D', textAlign: 'left',
                 }}>
-                  <strong style={{ display: 'block', fontWeight: 600 }}>{q.name}</strong>{q.role}
+                  <strong style={{ display: 'block', fontWeight: 600 }}>{q.name}</strong>
+                  {q.role}
+                  {q.link ? (
+                    <>{' '}&middot;{' '}
+                      <a href={q.link} target="_blank" rel="noopener" style={{ color: '#B8512C', fontWeight: 500, whiteSpace: 'nowrap' }}>{q.linkLabel || 'via LinkedIn →'}</a>
+                    </>
+                  ) : null}
                 </div>
               </div>
             </Container>

@@ -2556,7 +2556,16 @@ function VerticalLanding() {
       display: 'block',
       fontWeight: 600
     }
-  }, q.name), q.role))))), cfg.caseStudies && cfg.caseStudies.length > 0 ? cfg.caseStudies.some(c => c.stat) ? /*#__PURE__*/React.createElement("section", {
+  }, q.name), q.role, q.link ? /*#__PURE__*/React.createElement(React.Fragment, null, ' ', "·", ' ', /*#__PURE__*/React.createElement("a", {
+    href: q.link,
+    target: "_blank",
+    rel: "noopener",
+    style: {
+      color: '#B8512C',
+      fontWeight: 500,
+      whiteSpace: 'nowrap'
+    }
+  }, q.linkLabel || 'via LinkedIn →')) : null))))), cfg.caseStudies && cfg.caseStudies.length > 0 ? cfg.caseStudies.some(c => c.stat) ? /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '0 0 72px'
     }
@@ -2993,6 +3002,12 @@ window.XF_LP = {
     name: 'Tom Foster',
     role: 'TheReceptionist',
     img: '/images/tom-foster-thereceptionist.webp'
+  }, {
+    text: 'A timely, friendly response from a human (Stephen) that had all the info I needed to get unstuck. Repeated that process two more times.',
+    name: 'Roy Tomeij',
+    role: 'Founder, AppSignal, on the support behind SavvyCal',
+    link: 'https://www.linkedin.com/posts/tomeij_customersuccess-support-saas-activity-7326926799366418432-sxXy',
+    linkLabel: 'via LinkedIn →'
   }],
   "caseStudies": [{
     "label": "SavvyCal",

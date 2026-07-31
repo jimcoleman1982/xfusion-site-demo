@@ -2171,7 +2171,62 @@ function App() {
     eyebrow: "Background",
     heading: "About SavvyCal",
     bg: "paper"
-  }, /*#__PURE__*/React.createElement("p", null, "SavvyCal is a scheduling tool that takes the awkward work out of finding a meeting time. The product layers calendar overlays so guests can pick from times that actually work for everyone, ranks availability by preference, handles time zones cleanly, and supports per-link calendar settings for people who run different kinds of meetings out of different inboxes. It is the scheduler people reach for when the generic options stop pulling their weight."), /*#__PURE__*/React.createElement("p", null, "SavvyCal was founded by Derrick Reimer, a multi-time founder. Derrick previously co-founded Drip, the email marketing platform acquired by Leadpages in 2016. He started SavvyCal because the existing schedulers solved the host's problem and ignored the guest's. The product grew quickly on word of mouth, podcasts, and a loyal base of professionals who care about a polished booking experience."), /*#__PURE__*/React.createElement("p", null, "By 2021, SavvyCal had real customers, real volume, and a real support inbox. And Derrick was running it largely alone.")), /*#__PURE__*/React.createElement(TestimonialFeature, null), /*#__PURE__*/React.createElement(MetricCallout, null), /*#__PURE__*/React.createElement(LongForm, {
+  }, /*#__PURE__*/React.createElement("p", null, "SavvyCal is a scheduling tool that takes the awkward work out of finding a meeting time. The product layers calendar overlays so guests can pick from times that actually work for everyone, ranks availability by preference, handles time zones cleanly, and supports per-link calendar settings for people who run different kinds of meetings out of different inboxes. It is the scheduler people reach for when the generic options stop pulling their weight."), /*#__PURE__*/React.createElement("p", null, "SavvyCal was founded by Derrick Reimer, a multi-time founder. Derrick previously co-founded Drip, the email marketing platform acquired by Leadpages in 2016. He started SavvyCal because the existing schedulers solved the host's problem and ignored the guest's. The product grew quickly on word of mouth, podcasts, and a loyal base of professionals who care about a polished booking experience."), /*#__PURE__*/React.createElement("p", null, "By 2021, SavvyCal had real customers, real volume, and a real support inbox. And Derrick was running it largely alone.")), /*#__PURE__*/React.createElement(TestimonialFeature, null), /*#__PURE__*/React.createElement(MetricCallout, null), /*#__PURE__*/React.createElement(Section, {
+    bg: "paper",
+    padding: "lg",
+    style: {
+      paddingTop: 24,
+      paddingBottom: 24
+    }
+  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 820,
+      margin: '0 auto',
+      background: '#F8EBC9',
+      border: '1px solid #E6C683',
+      borderRadius: 16,
+      padding: '36px 40px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 11,
+      fontWeight: 500,
+      textTransform: 'uppercase',
+      letterSpacing: '0.16em',
+      color: '#6B5F56',
+      marginBottom: 14
+    }
+  }, "Seen on LinkedIn"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(24px, 2.8vw, 32px)',
+      fontWeight: 600,
+      letterSpacing: '-0.02em',
+      lineHeight: 1.15,
+      color: '#1F1A17',
+      margin: '0 0 16px'
+    }
+  }, "The support wasn’t just good enough to keep. It was good enough to post about."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16.5,
+      lineHeight: 1.65,
+      color: '#3A322D',
+      margin: '0 0 18px'
+    }
+  }, "Roy Tomeij is a founder who, in his own words, “takes to social media to name and shame” bad customer service. For SavvyCal, he did the opposite, publicly. He credited the specialist who helped him by name: “a timely, friendly response from a human (Stephen) that had all the info I needed to get unstuck. Repeated that process two more times.”"), /*#__PURE__*/React.createElement("a", {
+    href: "https://www.linkedin.com/posts/tomeij_customersuccess-support-saas-activity-7326926799366418432-sxXy",
+    target: "_blank",
+    rel: "noopener",
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 15,
+      fontWeight: 500,
+      color: '#B8512C',
+      textDecoration: 'none'
+    }
+  }, "Read Roy’s post on LinkedIn →")))), /*#__PURE__*/React.createElement(LongForm, {
     id: "challenge",
     eyebrow: "The challenge",
     heading: "The mornings were the first thing to go.",
