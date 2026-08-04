@@ -1865,7 +1865,7 @@ const XF_LP_FAQ = [{
   a: "Draft mode. For the first days, every reply your specialist writes is a draft: their xFusion team leader reviews it, then you approve it, before it reaches a customer. Replies switch to live only once you sign off. By then they have been trained on your product, your tone, and your helpdesk."
 }];
 window.XF_LP_FAQ = XF_LP_FAQ;
-const INCLUDED = [['Experienced support specialist salary (full-time, dedicated to you)', '$3,500/mo'], ['Hiring and screening through the TraitX Framework', '$375/mo value'], ['Placement and onboarding into your business', '$1,500 one-time'], ['Training in your support process', '$750 one-time'], ['Training and certification in AI-powered support tools', '$1,500 one-time'], ['Payroll services (paying salaries, light HR, time off)', '$300/mo'], ['Culture and engagement (team-building, swag, gifts, anniversaries)', '$200/mo'], ['Dedicated account manager (leads and supports your agent)', '$1,200/mo'], ['Ongoing performance management and coaching', '$500/mo']];
+const INCLUDED = [['Experienced support specialist salary (full-time, dedicated to you)', '$3,500/mo'], ['Hiring and screening through the TraitX Framework', '$4,500 one-time, monthly value $375/mo'], ['Placement and onboarding into your business', '$1,500 one-time'], ['Training in your support process', '$750 one-time'], ['Training and certification in AI-powered support tools', '$1,500 one-time'], ['Payroll services (paying salaries, light HR, time off)', '$300/mo'], ['Culture and engagement (team-building, swag, gifts, anniversaries)', '$200/mo'], ['Dedicated account manager (leads and supports your agent)', '$1,200/mo'], ['Ongoing performance management and coaching', '$500/mo']];
 function PricingPage() {
   const [openFaq, setOpenFaq] = React.useState(-1);
   const proof = window.XF_PROOF_POINTS || [];
@@ -2017,7 +2017,38 @@ function PricingPage() {
       color: '#6B5F56',
       whiteSpace: 'nowrap'
     }
-  }, value)))))), /*#__PURE__*/React.createElement("section", {
+  }, value))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'baseline',
+      gap: 20,
+      padding: '18px 4px 0'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 15.5,
+      fontWeight: 600,
+      color: '#1F1A17'
+    }
+  }, "Total monthly value"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 13,
+      color: '#1F1A17',
+      whiteSpace: 'nowrap'
+    }
+  }, "$6,075/mo + $8,250 in one-time costs absorbed"))), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 15,
+      lineHeight: 1.6,
+      color: '#3A322D',
+      textAlign: 'center',
+      margin: '22px 0 0'
+    }
+  }, "You pay $2,900/mo, flat. All of it, one price."))), /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '0 0 64px'
     }

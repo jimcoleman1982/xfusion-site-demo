@@ -1134,7 +1134,7 @@ function Culture() {
     h: 'We are not a typical call center.',
     p: 'Our agents work with one client at a time. They join that client\'s daily team meetings, learn the product, and act like part of the team. A typical call center rotates agents across customers and treats them as replaceable parts. We do the opposite.'
   }];
-  return /*#__PURE__*/React.createElement(Section, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Section, {
     bg: "paper",
     padding: "lg"
   }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
@@ -1177,7 +1177,62 @@ function Culture() {
       color: '#3A322D',
       margin: 0
     }
-  }, item.p))))));
+  }, item.p)))))), /*#__PURE__*/React.createElement(Section, {
+    bg: "paper-2",
+    padding: "lg"
+  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 720,
+      marginBottom: 48
+    }
+  }, /*#__PURE__*/React.createElement(Eyebrow, null, "Life at xFusion, in receipts"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(32px, 3.6vw, 48px)',
+      fontWeight: 400,
+      lineHeight: 1.1,
+      letterSpacing: '-0.02em',
+      margin: 0,
+      color: '#1F1A17'
+    }
+  }, "Not a poster on a wall we do not have. What the team actually does.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+      gap: 32
+    }
+  }, [{
+    h: 'We promote from within',
+    p: "Careers here are built, not capped. It is normal to move from your first support role to a senior one in months, not years, when the work earns it."
+  }, {
+    h: 'Always learning, on the company',
+    p: "Every team member gets a quarterly self-improvement budget. People have used it to earn certifications in Salesforce, data science, Python, cybersecurity, Power BI, and more. 'AI-trained' is a completion record, not a slogan."
+  }, {
+    h: 'People stay for years',
+    p: "Some of our client relationships are six years old, and so are the specialists behind them. We pay a real living wage and invest in the culture, so this is a career, not a stopover."
+  }, {
+    h: 'Specialists, not script readers',
+    p: "Our people have built custom ticket-triage workflows, live coverage dashboards, and bespoke tools for client stores, on top of running the queue."
+  }].map((item, i) => /*#__PURE__*/React.createElement("div", {
+    key: i
+  }, /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 22,
+      fontWeight: 500,
+      lineHeight: 1.25,
+      margin: '0 0 12px',
+      color: '#1F1A17'
+    }
+  }, item.h), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      lineHeight: 1.65,
+      color: '#3A322D',
+      margin: 0
+    }
+  }, item.p)))))));
 }
 function WhereWeWork() {
   return /*#__PURE__*/React.createElement(Section, {
