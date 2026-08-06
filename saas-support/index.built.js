@@ -1056,7 +1056,7 @@ function Footer() {
     links: [['About', '/about/'], ['Careers', '/careers/'], ['Contact', '/contact/']]
   }, {
     title: 'Resources',
-    links: [['FAQ', '/faq/'], ['Blog', '/blog/']]
+    links: [['Reviews', '/reviews/'], ['FAQ', '/faq/'], ['Blog', '/blog/']]
   }, {
     title: 'Legal',
     links: [['Privacy', '/privacy/'], ['DPA', '/dpa/'], ['Security', '/security/']]
@@ -1110,7 +1110,15 @@ function Footer() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13,
+      color: 'rgba(247,242,235,0.6)',
+      margin: '12px 0 0',
+      maxWidth: 480
+    }
+  }, "xFusion Ops LLC · 11001 W 120th Ave, Broomfield, CO 80021"))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',
@@ -2799,7 +2807,24 @@ function VerticalLanding() {
       margin: '0 0 28px',
       maxWidth: 620
     }
-  }, "Recruiting and account management are both included in the flat rate. Bianca finds and vets your candidates; your account manager runs QA on real tickets, coaches your specialist, and arranges backup coverage. Quality is somebody's actual job, not a thing you check on at midnight. And these are builders, not script readers: the same people have built custom ticket-triage workflows, live coverage dashboards, and bespoke tools for client stores."), /*#__PURE__*/React.createElement("div", {
+  }, "Recruiting and account management are both included in the flat rate. Bianca finds and vets your candidates; your account manager runs QA on real tickets, coaches your specialist, and arranges backup coverage. Quality is somebody's actual job, not a thing you check on at midnight. And these are builders, not script readers: the same people have built custom ticket-triage workflows, live coverage dashboards, and bespoke tools for client stores."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      lineHeight: 1.6,
+      color: '#3A322D',
+      margin: '0 0 28px',
+      maxWidth: 620
+    }
+  }, "Our team rates working at xFusion", ' ', /*#__PURE__*/React.createElement("a", {
+    href: "https://www.glassdoor.com/Overview/Working-at-xFusion-EI_IE4100993.11,18.htm",
+    target: "_blank",
+    rel: "noopener",
+    style: {
+      color: '#B8512C',
+      fontWeight: 500
+    }
+  }, "4.6 out of 5 on Glassdoor"), ", and 100% would recommend it. That matters to you for one selfish reason: specialists who love their job stay for years, and a specialist who stays is one who knows your product cold. As one wrote in our anonymous employee survey: “As I’m about to complete my second year here, I’m working hard to do well in my current job to show my appreciation.”"), /*#__PURE__*/React.createElement("div", {
     className: "lp-team",
     style: {
       display: 'grid',

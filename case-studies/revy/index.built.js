@@ -1304,7 +1304,7 @@ function CaseStudyFooter() {
     links: [['About', '../../about/'], ['Careers', '../../careers/'], ['Contact', '../../contact/']]
   }, {
     title: 'Resources',
-    links: [['FAQ', '../../#faq'], ['Blog', '../../blog/']]
+    links: [['Reviews', '../../reviews/'], ['FAQ', '../../#faq'], ['Blog', '../../blog/']]
   }, {
     title: 'Legal',
     links: [['Privacy', '../../privacy/'], ['DPA', '../../dpa/'], ['Security', '../../security/']]
@@ -1358,7 +1358,15 @@ function CaseStudyFooter() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13,
+      color: MUTED,
+      margin: '12px 0 0',
+      maxWidth: 480
+    }
+  }, "xFusion Ops LLC · 11001 W 120th Ave, Broomfield, CO 80021"))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',

@@ -902,7 +902,7 @@ function Footer() {
     links: [['About', '../about/'], ['Careers', '../careers/'], ['Contact', "../contact/"]]
   }, {
     title: 'Resources',
-    links: [['FAQ', '../#faq'], ['Blog', '../blog/']]
+    links: [['Reviews', '../reviews/'], ['FAQ', '../#faq'], ['Blog', '../blog/']]
   }, {
     title: 'Legal',
     links: [['Privacy', '../privacy/'], ['DPA', '../dpa/'], ['Security', '../security/']]
@@ -952,7 +952,15 @@ function Footer() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13,
+      color: MUTED,
+      margin: '12px 0 0',
+      maxWidth: 480
+    }
+  }, "xFusion Ops LLC · 11001 W 120th Ave, Broomfield, CO 80021"))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',
@@ -1520,7 +1528,7 @@ const TILES = [{
   country: 'Israel',
   headline: 'Shopify app ranking jumped about 90 spots after a wave of 5-star reviews thanks to better customer support.',
   elaboration: "Tolstoy was growing fast and needed support that could keep up. They didn't want to keep rebuilding their support team from scratch. xFusion placed an experienced team member who became part of the company. They handled customer questions so well that customers left 5-star reviews, and Tolstoy climbed the Shopify rankings as a result.",
-  quote: 'xFusion has been an absolute game-changer for Tolstoy. Working with them has enabled us to grow faster and more professionally than we ever could have alone.',
+  quote: "The xFusion team has been an absolute game-changer for Tolstoy. Working with them has enabled us to grow faster and more professionally than we ever could have alone. I can't praise and thank the team enough. This partnership is so valuable to our company.",
   attribution: 'Dov Kaufmann, Tolstoy',
   href: 'tolstoy/',
   photoName: 'Dov Kaufmann',

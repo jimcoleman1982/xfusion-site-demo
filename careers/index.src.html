@@ -41,6 +41,7 @@
   <meta name="twitter:title" content="Careers | xFusion">
   <meta name="twitter:description" content="xFusion is hiring experienced support specialists, account managers, and operations people across the Philippines, Kenya, and the United States. Living wages, real culture, careers worth keeping.">
   <meta name="twitter:image" content="https://xfusion.io/images/og-default.jpg">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"xFusion","legalName":"xFusion Ops LLC","url":"https://xfusion.io/","logo":"https://xfusion.io/assets/xfusion-logo.png","description":"xFusion places experienced, AI-trained customer support specialists inside small businesses and manages them end to end: recruiting, payroll, culture, and performance. $2,900/mo all-in, month-to-month, 30-day risk-free trial.","foundingDate":"2020","email":"info@xfusion.io","address":{"@type":"PostalAddress","streetAddress":"11001 W 120th Ave","addressLocality":"Broomfield","addressRegion":"CO","postalCode":"80021","addressCountry":"US"},"sameAs":["https://www.linkedin.com/company/xfusion-customer-support","https://www.glassdoor.com/Overview/Working-at-xFusion-EI_IE4100993.11,18.htm"]}</script>
   <!-- social-meta:end -->
 </head>
 <body>
@@ -520,6 +521,62 @@
                 </div>
               ))}
             </div>
+          </Container>
+        </Section>
+
+        <Section bg="forest" padding="lg">
+          <Container narrow>
+            <div style={{
+              fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 12, fontWeight: 600,
+              textTransform: 'uppercase', letterSpacing: '0.14em', color: '#F0D9A8', marginBottom: 18,
+            }}>Life at xFusion</div>
+            <h2 style={{
+              fontFamily: "'Source Serif 4', serif", fontSize: 'clamp(28px, 3.6vw, 44px)',
+              fontWeight: 600, lineHeight: 1.1, letterSpacing: '-0.02em',
+              margin: '0 0 22px', color: '#F7F2EB',
+            }}>Our mission is a better life for the people who do the work.</h2>
+            <p style={{
+              fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 17, lineHeight: 1.7,
+              color: 'rgba(247,242,235,0.86)', margin: '0 0 20px', maxWidth: 660,
+            }}>
+              We started xFusion to improve quality of life for individuals and families in
+              developing countries by building high-paying, high-autonomy, remote-first careers.
+              That is not a poster in an office we do not have. It is what the team reports back:
+              student loans paid off within months, a cybersecurity course funded and finished,
+              savings set aside for a wedding, and, for one team member, a small piece of land
+              bought to build a future home for their parents.
+            </p>
+            <p style={{
+              fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 17, lineHeight: 1.7,
+              color: 'rgba(247,242,235,0.86)', margin: '0 0 34px', maxWidth: 660,
+            }}>
+              What people tell us sets the place apart is the trust: no micromanagement, just room
+              to explore your strengths. More than one person has said the job showed them
+              capabilities they never knew they had. That is the point.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 18, marginBottom: 26 }}>
+              {[
+                { num: '4.6 / 5', label: 'employee rating on Glassdoor (16 reviews)' },
+                { num: '100%', label: 'would recommend us to a friend' },
+                { num: '100%', label: 'CEO approval' },
+                { num: '93%', label: 'positive business outlook' },
+              ].map((g, i) => (
+                <a key={i} href="https://www.glassdoor.com/Overview/Working-at-xFusion-EI_IE4100993.11,18.htm"
+                  target="_blank" rel="noopener"
+                  style={{ display: 'block', textDecoration: 'none', background: 'rgba(247,242,235,0.06)', border: '1px solid rgba(247,242,235,0.16)', borderRadius: 12, padding: '18px 16px' }}>
+                  <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 24, fontWeight: 600, color: '#F0D9A8', lineHeight: 1, marginBottom: 8 }}>{g.num}</div>
+                  <div style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13, lineHeight: 1.45, color: 'rgba(247,242,235,0.8)' }}>{g.label}</div>
+                </a>
+              ))}
+            </div>
+            <p style={{
+              fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 15, lineHeight: 1.6,
+              color: 'rgba(247,242,235,0.7)', margin: 0, maxWidth: 660,
+            }}>
+              Getting in is hard: candidates rate our interview difficulty 4 out of 5 on Glassdoor,
+              and 100% rate the experience positive. We are picky so our clients do not have to be.
+            </p>
+            {/* PENDING CONSENT: two-year "every promise fulfilled" story via Martin */}
           </Container>
         </Section>
         </>

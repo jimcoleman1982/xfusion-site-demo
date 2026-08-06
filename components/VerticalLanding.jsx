@@ -602,6 +602,19 @@ function VerticalLanding() {
                 builders, not script readers: the same people have built custom ticket-triage
                 workflows, live coverage dashboards, and bespoke tools for client stores.
               </p>
+              <p style={{
+                fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 16,
+                lineHeight: 1.6, color: '#3A322D', margin: '0 0 28px', maxWidth: 620,
+              }}>
+                Our team rates working at xFusion{' '}
+                <a href="https://www.glassdoor.com/Overview/Working-at-xFusion-EI_IE4100993.11,18.htm"
+                  target="_blank" rel="noopener" style={{ color: '#B8512C', fontWeight: 500 }}>4.6 out of 5 on Glassdoor</a>,
+                and 100% would recommend it. That matters to you for one selfish reason:
+                specialists who love their job stay for years, and a specialist who stays is one
+                who knows your product cold. As one wrote in our anonymous employee survey:
+                &ldquo;As I&rsquo;m about to complete my second year here, I&rsquo;m working hard
+                to do well in my current job to show my appreciation.&rdquo;
+              </p>
               <div className="lp-team" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
                 {XF_LP_TEAM.map((t) => (
                   <div key={t.name}>

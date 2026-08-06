@@ -1232,7 +1232,107 @@ function Culture() {
       color: '#3A322D',
       margin: 0
     }
-  }, item.p)))))));
+  }, item.p)))))), /*#__PURE__*/React.createElement(Section, {
+    bg: "forest",
+    padding: "lg"
+  }, /*#__PURE__*/React.createElement(Container, {
+    narrow: true
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 12,
+      fontWeight: 600,
+      textTransform: 'uppercase',
+      letterSpacing: '0.14em',
+      color: '#F0D9A8',
+      marginBottom: 18
+    }
+  }, "Life at xFusion"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(28px, 3.6vw, 44px)',
+      fontWeight: 600,
+      lineHeight: 1.1,
+      letterSpacing: '-0.02em',
+      margin: '0 0 22px',
+      color: '#F7F2EB'
+    }
+  }, "Our mission is a better life for the people who do the work."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 17,
+      lineHeight: 1.7,
+      color: 'rgba(247,242,235,0.86)',
+      margin: '0 0 20px',
+      maxWidth: 660
+    }
+  }, "We started xFusion to improve quality of life for individuals and families in developing countries by building high-paying, high-autonomy, remote-first careers. That is not a poster in an office we do not have. It is what the team reports back: student loans paid off within months, a cybersecurity course funded and finished, savings set aside for a wedding, and, for one team member, a small piece of land bought to build a future home for their parents."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 17,
+      lineHeight: 1.7,
+      color: 'rgba(247,242,235,0.86)',
+      margin: '0 0 34px',
+      maxWidth: 660
+    }
+  }, "What people tell us sets the place apart is the trust: no micromanagement, just room to explore your strengths. More than one person has said the job showed them capabilities they never knew they had. That is the point."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+      gap: 18,
+      marginBottom: 26
+    }
+  }, [{
+    num: '4.6 / 5',
+    label: 'employee rating on Glassdoor (16 reviews)'
+  }, {
+    num: '100%',
+    label: 'would recommend us to a friend'
+  }, {
+    num: '100%',
+    label: 'CEO approval'
+  }, {
+    num: '93%',
+    label: 'positive business outlook'
+  }].map((g, i) => /*#__PURE__*/React.createElement("a", {
+    key: i,
+    href: "https://www.glassdoor.com/Overview/Working-at-xFusion-EI_IE4100993.11,18.htm",
+    target: "_blank",
+    rel: "noopener",
+    style: {
+      display: 'block',
+      textDecoration: 'none',
+      background: 'rgba(247,242,235,0.06)',
+      border: '1px solid rgba(247,242,235,0.16)',
+      borderRadius: 12,
+      padding: '18px 16px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 24,
+      fontWeight: 600,
+      color: '#F0D9A8',
+      lineHeight: 1,
+      marginBottom: 8
+    }
+  }, g.num), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13,
+      lineHeight: 1.45,
+      color: 'rgba(247,242,235,0.8)'
+    }
+  }, g.label)))), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 15,
+      lineHeight: 1.6,
+      color: 'rgba(247,242,235,0.7)',
+      margin: 0,
+      maxWidth: 660
+    }
+  }, "Getting in is hard: candidates rate our interview difficulty 4 out of 5 on Glassdoor, and 100% rate the experience positive. We are picky so our clients do not have to be."))));
 }
 function WhereWeWork() {
   return /*#__PURE__*/React.createElement(Section, {

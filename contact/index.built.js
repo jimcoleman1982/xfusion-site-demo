@@ -802,7 +802,7 @@ function Footer() {
     links: [['About', '../about/'], ['Careers', '../careers/'], ['Contact', '../contact/']]
   }, {
     title: 'Resources',
-    links: [['FAQ', '../#faq'], ['Blog', '../blog/']]
+    links: [['Reviews', '../reviews/'], ['FAQ', '../#faq'], ['Blog', '../blog/']]
   }, {
     title: 'Legal',
     links: [['Privacy', '../privacy/'], ['DPA', '../dpa/'], ['Security', '../security/']]
@@ -856,7 +856,15 @@ function Footer() {
       fontStyle: 'italic',
       fontWeight: 400
     }
-  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."))), /*#__PURE__*/React.createElement("div", {
+  }, "Experienced customer support specialists, AI-trained. For small businesses since 2020."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13,
+      color: MUTED,
+      margin: '12px 0 0',
+      maxWidth: 480
+    }
+  }, "xFusion Ops LLC · 11001 W 120th Ave, Broomfield, CO 80021"))), /*#__PURE__*/React.createElement("div", {
     className: "footer-grid",
     style: {
       display: 'grid',
@@ -983,7 +991,30 @@ function ContactBody() {
     variant: "primary",
     size: "lg",
     href: "/book/"
-  }, "Book a Discovery Call")))));
+  }, "Book a Discovery Call")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      paddingTop: 32,
+      marginTop: 32,
+      borderTop: '1px solid #D9CFBF'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 11,
+      textTransform: 'uppercase',
+      letterSpacing: '0.14em',
+      color: '#6B5F56',
+      marginBottom: 10
+    }
+  }, "Our company"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 16,
+      lineHeight: 1.6,
+      color: '#3A322D',
+      margin: 0
+    }
+  }, "xFusion Ops LLC", /*#__PURE__*/React.createElement("br", null), "11001 W 120th Ave, Broomfield, CO 80021")))));
 }
 function App() {
   return /*#__PURE__*/React.createElement("div", {

@@ -795,6 +795,7 @@ function CaseStudyFooter() {
       ['Contact', '../../contact/'],
     ]},
     { title: 'Resources', links: [
+      ['Reviews',       '../../reviews/'],
       ['FAQ',           '../../#faq'],
       ['Blog',          '../../blog/'],
     ]},
@@ -820,6 +821,9 @@ function CaseStudyFooter() {
             </a>
             <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 18, lineHeight: 1.5, color: BUTTER, margin: 0, maxWidth: 480, fontStyle: 'italic', fontWeight: 400 }}>
               Experienced customer support specialists, AI-trained. For small businesses since 2020.
+            </p>
+            <p style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13, color: MUTED, margin: '12px 0 0', maxWidth: 480 }}>
+              xFusion Ops LLC · 11001 W 120th Ave, Broomfield, CO 80021
             </p>
           </div>
           
