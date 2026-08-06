@@ -137,25 +137,12 @@ function VerticalLanding() {
               lineHeight: 1.6, color: '#3A322D', margin: '0 0 30px', maxWidth: 620,
             }}>{cfg.sub}</p>
             <div id="lp-hero-capture">
-              {/* Primary path: book directly, one step, no email gate. Outline
-                  treatment so it reads distinct from the solid nav CTA above it. */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 14 }}>
-                <Button variant="secondary" size="lg" href="/book/" onClick={() => xfBookClick('hero')}>
-                  Book a Discovery Call
-                </Button>
-                <span style={{
-                  fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14,
-                  color: '#6B5F56', lineHeight: 1.4,
-                }}>{cfg.microcopy || '30 minutes. No commitment. No credit card.'}</span>
-              </div>
-              {/* Secondary path: not ready to book? leave an email for the case studies. */}
-              <div style={{ marginTop: 24, paddingTop: 22, borderTop: '1px solid #E4DAC9', maxWidth: 520 }}>
-                <div style={{
-                  fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14, fontWeight: 500,
-                  color: '#3A322D', marginBottom: 10,
-                }}>Not ready to book? Get the case studies by email.</div>
-                <LeadCapture microcopy={<>We&rsquo;ll send the case studies and a short intro. No spam, unsubscribe anytime.</>} />
-              </div>
+            <LeadCapture microcopy={cfg.microcopy ? (
+              <>
+                {cfg.microcopy}{' '}
+                <a href="/book/" onClick={() => xfBookClick('hero')} style={{ color: '#B8512C', fontWeight: 500 }}>Or book a call directly →</a>
+              </>
+            ) : undefined} />
             </div>
           </Container>
         </section>

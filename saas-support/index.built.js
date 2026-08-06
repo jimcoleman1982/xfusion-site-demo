@@ -2097,43 +2097,16 @@ function VerticalLanding() {
     }
   }, cfg.sub), /*#__PURE__*/React.createElement("div", {
     id: "lp-hero-capture"
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      alignItems: 'center',
-      gap: 14
-    }
-  }, /*#__PURE__*/React.createElement(Button, {
-    variant: "secondary",
-    size: "lg",
-    href: "/book/",
-    onClick: () => xfBookClick('hero')
-  }, "Book a Discovery Call"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: "'IBM Plex Sans', sans-serif",
-      fontSize: 14,
-      color: '#6B5F56',
-      lineHeight: 1.4
-    }
-  }, cfg.microcopy || '30 minutes. No commitment. No credit card.')), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginTop: 24,
-      paddingTop: 22,
-      borderTop: '1px solid #E4DAC9',
-      maxWidth: 520
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: "'IBM Plex Sans', sans-serif",
-      fontSize: 14,
-      fontWeight: 500,
-      color: '#3A322D',
-      marginBottom: 10
-    }
-  }, "Not ready to book? Get the case studies by email."), /*#__PURE__*/React.createElement(LeadCapture, {
-    microcopy: /*#__PURE__*/React.createElement(React.Fragment, null, "We’ll send the case studies and a short intro. No spam, unsubscribe anytime.")
-  }))))), /*#__PURE__*/React.createElement("section", {
+  }, /*#__PURE__*/React.createElement(LeadCapture, {
+    microcopy: cfg.microcopy ? /*#__PURE__*/React.createElement(React.Fragment, null, cfg.microcopy, ' ', /*#__PURE__*/React.createElement("a", {
+      href: "/book/",
+      onClick: () => xfBookClick('hero'),
+      style: {
+        color: '#B8512C',
+        fontWeight: 500
+      }
+    }, "Or book a call directly →")) : undefined
+  })))), /*#__PURE__*/React.createElement("section", {
     style: {
       borderTop: '1px solid #D9CFBF',
       borderBottom: '1px solid #D9CFBF',
