@@ -137,9 +137,10 @@ function VerticalLanding() {
               lineHeight: 1.6, color: '#3A322D', margin: '0 0 30px', maxWidth: 620,
             }}>{cfg.sub}</p>
             <div id="lp-hero-capture">
-              {/* Primary path: book directly, one step, no email gate. */}
+              {/* Primary path: book directly, one step, no email gate. Outline
+                  treatment so it reads distinct from the solid nav CTA above it. */}
               <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 14 }}>
-                <Button variant="primary" size="lg" href="/book/" onClick={() => xfBookClick('hero')}>
+                <Button variant="secondary" size="lg" href="/book/" onClick={() => xfBookClick('hero')}>
                   Book a Discovery Call
                 </Button>
                 <span style={{

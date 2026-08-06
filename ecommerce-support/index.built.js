@@ -2105,7 +2105,7 @@ function VerticalLanding() {
       gap: 14
     }
   }, /*#__PURE__*/React.createElement(Button, {
-    variant: "primary",
+    variant: "secondary",
     size: "lg",
     href: "/book/",
     onClick: () => xfBookClick('hero')

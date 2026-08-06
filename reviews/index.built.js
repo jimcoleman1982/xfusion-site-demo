@@ -1312,7 +1312,7 @@ function ReviewsPage() {
       margin: 0,
       maxWidth: 640
     }
-  }, "We’re a small company with a short list of clients and a long list of receipts. Results below link to the case study, and employee ratings link to Glassdoor. If you’re doing diligence on xFusion (xfusion.io, not the server-hardware company with a similar name), this page is the shortcut."))), /*#__PURE__*/React.createElement(Section, {
+  }, "We’re a small company with a short list of clients and a long list of receipts. Results below link to the case study, and employee ratings link to Glassdoor. If you’re doing diligence on xFusion, this page is the shortcut."))), /*#__PURE__*/React.createElement(Section, {
     bg: "paper-2",
     padding: "md"
   }, /*#__PURE__*/React.createElement(Container, {
