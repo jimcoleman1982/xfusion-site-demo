@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://xfusion.io/pricing/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="../colors_and_type.css">
   <style>
     body { background: #F7F2EB; margin: 0; }
@@ -81,5 +82,32 @@
   
 
   
+
+  <!-- Secondary conversion signal: 60+ cumulative seconds engaged on /pricing/.
+       Plain script (not text/babel) so the build leaves it intact. GTM listens
+       for pricing_engaged_60s and maps it to a secondary Google Ads conversion. -->
+  <script>
+    (function () {
+      var cumulative = 0, last = null, fired = false;
+      function now() { return (window.performance && performance.now) ? performance.now() : (+new Date()); }
+      function start() { if (last === null) last = now(); }
+      function stop() { if (last !== null) { cumulative += now() - last; last = null; } }
+      function elapsed() { return cumulative + (last !== null ? now() - last : 0); }
+      function cleanup() { clearInterval(iv); document.removeEventListener('visibilitychange', onVis); }
+      function check() {
+        if (fired) return;
+        if (elapsed() >= 60000) {
+          fired = true;
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'pricing_engaged_60s', page_path: location.pathname });
+          cleanup();
+        }
+      }
+      function onVis() { if (document.hidden) stop(); else start(); check(); }
+      var iv = setInterval(check, 2000);
+      document.addEventListener('visibilitychange', onVis);
+      if (!document.hidden) start();
+    })();
+  </script>
 </body>
 </html>

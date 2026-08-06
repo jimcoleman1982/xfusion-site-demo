@@ -73,6 +73,32 @@ const XF_LP_TEAM = [
   { name: 'Bianca Dadulla', role: 'Recruitment Manager', img: '/images/bianca-dadulla.webp' },
 ];
 
+// Mid-scroll CTA: one line of context + a direct 1-step Book button (goes
+// straight to /book/, no email gate). Dropped in after each proof section so a
+// convinced reader never has to scroll back to act. `position` feeds the
+// book_button_click event so we can see which section actually converts.
+function MidCTA({ text, cta, position }) {
+  return (
+    <section style={{ padding: '0 0 72px' }}>
+      <Container narrow>
+        <div className="lp-midcta" style={{
+          background: '#EFE8DD', border: '1px solid #E4DAC9', borderRadius: 12,
+          padding: '26px 30px', display: 'flex', flexWrap: 'wrap', gap: 18,
+          alignItems: 'center', justifyContent: 'space-between',
+        }}>
+          <span style={{
+            fontFamily: "'Source Serif 4', serif", fontSize: 'clamp(18px, 2.2vw, 22px)',
+            fontWeight: 600, color: '#1F1A17', lineHeight: 1.3, flex: '1 1 260px',
+          }}>{text}</span>
+          <Button variant="primary" size="lg" href="/book/" onClick={() => xfBookClick(position)}>
+            {cta || 'Book a 30-min call'}
+          </Button>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
 function VerticalLanding() {
   const cfg = window.XF_LP;
   const faq = window.XF_LP_FAQ || [];
@@ -111,12 +137,24 @@ function VerticalLanding() {
               lineHeight: 1.6, color: '#3A322D', margin: '0 0 30px', maxWidth: 620,
             }}>{cfg.sub}</p>
             <div id="lp-hero-capture">
-            <LeadCapture microcopy={cfg.microcopy ? (
-              <>
-                {cfg.microcopy}{' '}
-                <a href="/book/" style={{ color: '#B8512C', fontWeight: 500 }}>Or book a call directly →</a>
-              </>
-            ) : undefined} />
+              {/* Primary path: book directly, one step, no email gate. */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 14 }}>
+                <Button variant="primary" size="lg" href="/book/" onClick={() => xfBookClick('hero')}>
+                  Book a Discovery Call
+                </Button>
+                <span style={{
+                  fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14,
+                  color: '#6B5F56', lineHeight: 1.4,
+                }}>{cfg.microcopy || '30 minutes. No commitment. No credit card.'}</span>
+              </div>
+              {/* Secondary path: not ready to book? leave an email for the case studies. */}
+              <div style={{ marginTop: 24, paddingTop: 22, borderTop: '1px solid #E4DAC9', maxWidth: 520 }}>
+                <div style={{
+                  fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14, fontWeight: 500,
+                  color: '#3A322D', marginBottom: 10,
+                }}>Not ready to book? Get the case studies by email.</div>
+                <LeadCapture microcopy={<>We&rsquo;ll send the case studies and a short intro. No spam, unsubscribe anytime.</>} />
+              </div>
             </div>
           </Container>
         </section>
@@ -188,6 +226,11 @@ function VerticalLanding() {
               </div>
             </Container>
           </section>
+        ) : null}
+
+        {/* Mid-scroll CTA after the proof stats */}
+        {cfg.metrics && cfg.metrics.length > 0 ? (
+          <MidCTA text="Want numbers like these on your own queue?" cta="Book a 30-min call" position="mid_stats" />
         ) : null}
 
         {/* Client story callout (verified public client wins) */}
@@ -397,6 +440,11 @@ function VerticalLanding() {
           </section>
         )}
 
+        {/* Mid-scroll CTA after the comparison table */}
+        {cfg.hideComparison ? null : (
+          <MidCTA text="See the difference on your own support, risk-free for 30 days." cta="Book a Discovery Call" position="mid_comparison" />
+        )}
+
         {/* Guarantee callout (risk reversal, visual moment) */}
         <section style={{ padding: '0 0 72px' }}>
           <Container narrow>
@@ -464,6 +512,11 @@ function VerticalLanding() {
             </Container>
           </section>
         ))}
+
+        {/* Mid-scroll CTA after testimonials */}
+        {(cfg.quotes || []).length > 0 ? (
+          <MidCTA text="Want this kind of support behind your product?" cta="Book a 30-min call" position="mid_testimonials" />
+        ) : null}
 
         {/* Related case studies (cards when stats provided, link chips otherwise) */}
         {cfg.caseStudies && cfg.caseStudies.length > 0 ? (
@@ -613,6 +666,11 @@ function VerticalLanding() {
           </section>
         ) : null}
 
+        {/* Mid-scroll CTA after the FAQ */}
+        {faq.length > 0 ? (
+          <MidCTA text="Still have questions? Jim answers them live on the call." cta="Book a call" position="faq" />
+        ) : null}
+
         {/* Keep reading (existing blog posts, hand-picked per vertical) */}
         {cfg.resources && cfg.resources.length > 0 ? (
           <section style={{ padding: '0 0 72px' }}>
@@ -670,7 +728,7 @@ function VerticalLanding() {
               fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 16,
               color: '#3A322D', margin: '0 auto 28px', maxWidth: 520, lineHeight: 1.6,
             }}>{cfg.closingText}</p>
-            <Button variant="primary" size="lg" href="/book/">Book a Discovery Call</Button>
+            <Button variant="primary" size="lg" href="/book/" onClick={() => xfBookClick('footer')}>Book a Discovery Call</Button>
             <CTAMicrocopy color="#6B5F56" style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 580 }}>
               30 minutes. No commitment. No credit card. You'll talk directly with our founding team.
             </CTAMicrocopy>

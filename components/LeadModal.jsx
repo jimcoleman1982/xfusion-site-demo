@@ -341,7 +341,7 @@ function LeadModal({ open, email, onClose }) {
               }}>
                 Grab any slot on the calendar. You'll talk directly with our founding team.
               </p>
-              <Button variant="primary" size="lg" href="/book/">
+              <Button variant="primary" size="lg" href="/book/" onClick={() => (window.xfBookClick ? window.xfBookClick('modal') : null)}>
                 Pick a time <Icon name="arrow" size={18} />
               </Button>
             </div>

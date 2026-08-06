@@ -544,6 +544,22 @@ function CTAMicrocopy({
     }
   }, children || "30 minutes. No commitment. No credit card. You'll talk directly with our founding team.");
 }
+
+// Fire a secondary-conversion signal on every Book-a-Call CTA click. GTM
+// (GTM-KX8T76BC) listens for `book_button_click` and maps it to a secondary
+// Google Ads conversion. The primary SavvyCal booking conversion is untouched.
+// Synchronous push so it records before the same-tab navigation to /book/.
+function xfBookClick(position) {
+  try {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'book_button_click',
+      cta_position: position || 'unknown',
+      page_path: window.location && window.location.pathname || '',
+      device: window.matchMedia && window.matchMedia('(max-width: 700px)').matches ? 'mobile' : 'desktop'
+    });
+  } catch (e) {/* never let tracking break a click */}
+}
 Object.assign(window, {
   Container,
   Section,
@@ -552,7 +568,8 @@ Object.assign(window, {
   PhotoPlaceholder,
   PhotoCircle,
   Icon,
-  CTAMicrocopy
+  CTAMicrocopy,
+  xfBookClick
 });
 // --- ../components/Nav.jsx
 // THE site navigation - single source of truth, loaded by every React page
@@ -1627,7 +1644,8 @@ function LeadModal({
   }, "Grab any slot on the calendar. You'll talk directly with our founding team."), /*#__PURE__*/React.createElement(Button, {
     variant: "primary",
     size: "lg",
-    href: "/book/"
+    href: "/book/",
+    onClick: () => window.xfBookClick ? window.xfBookClick('modal') : null
   }, "Pick a time ", /*#__PURE__*/React.createElement(Icon, {
     name: "arrow",
     size: 18
@@ -1821,7 +1839,8 @@ function StickyCapture() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      gap: 20
+      gap: 16,
+      flexWrap: 'wrap'
     }
   }, /*#__PURE__*/React.createElement("span", {
     className: "sticky-note",
@@ -1832,7 +1851,24 @@ function StickyCapture() {
       color: '#3A322D',
       whiteSpace: 'nowrap'
     }
-  }, "$2,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
+  }, "$2,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    size: "md",
+    href: "/book/",
+    onClick: () => xfBookClick('sticky'),
+    style: {
+      minHeight: 44,
+      boxSizing: 'border-box'
+    }
+  }, "Book a call"), /*#__PURE__*/React.createElement("span", {
+    className: "sticky-or",
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13,
+      color: '#6B5F56',
+      whiteSpace: 'nowrap'
+    }
+  }, "or"), /*#__PURE__*/React.createElement("div", {
     style: {
       flexShrink: 1,
       minWidth: 0
@@ -1840,7 +1876,7 @@ function StickyCapture() {
   }, /*#__PURE__*/React.createElement(LeadCapture, {
     compact: true
   }))), /*#__PURE__*/React.createElement("style", null, `
-        @media (max-width: 700px) { .sticky-note { display: none; } }
+        @media (max-width: 700px) { .sticky-note, .sticky-or { display: none; } }
       `));
 }
 window.StickyCapture = StickyCapture;
@@ -1941,6 +1977,51 @@ const XF_LP_TEAM = [{
   role: 'Recruitment Manager',
   img: '/images/bianca-dadulla.webp'
 }];
+
+// Mid-scroll CTA: one line of context + a direct 1-step Book button (goes
+// straight to /book/, no email gate). Dropped in after each proof section so a
+// convinced reader never has to scroll back to act. `position` feeds the
+// book_button_click event so we can see which section actually converts.
+function MidCTA({
+  text,
+  cta,
+  position
+}) {
+  return /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '0 0 72px'
+    }
+  }, /*#__PURE__*/React.createElement(Container, {
+    narrow: true
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lp-midcta",
+    style: {
+      background: '#EFE8DD',
+      border: '1px solid #E4DAC9',
+      borderRadius: 12,
+      padding: '26px 30px',
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: 18,
+      alignItems: 'center',
+      justifyContent: 'space-between'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "'Source Serif 4', serif",
+      fontSize: 'clamp(18px, 2.2vw, 22px)',
+      fontWeight: 600,
+      color: '#1F1A17',
+      lineHeight: 1.3,
+      flex: '1 1 260px'
+    }
+  }, text), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    size: "lg",
+    href: "/book/",
+    onClick: () => xfBookClick(position)
+  }, cta || 'Book a 30-min call'))));
+}
 function VerticalLanding() {
   const cfg = window.XF_LP;
   const faq = window.XF_LP_FAQ || [];
@@ -2008,15 +2089,43 @@ function VerticalLanding() {
     }
   }, cfg.sub), /*#__PURE__*/React.createElement("div", {
     id: "lp-hero-capture"
-  }, /*#__PURE__*/React.createElement(LeadCapture, {
-    microcopy: cfg.microcopy ? /*#__PURE__*/React.createElement(React.Fragment, null, cfg.microcopy, ' ', /*#__PURE__*/React.createElement("a", {
-      href: "/book/",
-      style: {
-        color: '#B8512C',
-        fontWeight: 500
-      }
-    }, "Or book a call directly →")) : undefined
-  })))), /*#__PURE__*/React.createElement("section", {
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      gap: 14
+    }
+  }, /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    size: "lg",
+    href: "/book/",
+    onClick: () => xfBookClick('hero')
+  }, "Book a Discovery Call"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
+      color: '#6B5F56',
+      lineHeight: 1.4
+    }
+  }, cfg.microcopy || '30 minutes. No commitment. No credit card.')), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 24,
+      paddingTop: 22,
+      borderTop: '1px solid #E4DAC9',
+      maxWidth: 520
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 14,
+      fontWeight: 500,
+      color: '#3A322D',
+      marginBottom: 10
+    }
+  }, "Not ready to book? Get the case studies by email."), /*#__PURE__*/React.createElement(LeadCapture, {
+    microcopy: /*#__PURE__*/React.createElement(React.Fragment, null, "We’ll send the case studies and a short intro. No spam, unsubscribe anytime.")
+  }))))), /*#__PURE__*/React.createElement("section", {
     style: {
       borderTop: '1px solid #D9CFBF',
       borderBottom: '1px solid #D9CFBF',
@@ -2114,7 +2223,11 @@ function VerticalLanding() {
     style: {
       color: '#B8512C'
     }
-  }, "Read the case study")) : null)))))) : null, cfg.story ? /*#__PURE__*/React.createElement("section", {
+  }, "Read the case study")) : null)))))) : null, cfg.metrics && cfg.metrics.length > 0 ? /*#__PURE__*/React.createElement(MidCTA, {
+    text: "Want numbers like these on your own queue?",
+    cta: "Book a 30-min call",
+    position: "mid_stats"
+  }) : null, cfg.story ? /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '64px 0 0'
     }
@@ -2447,7 +2560,11 @@ function VerticalLanding() {
     style: {
       marginTop: 2
     }
-  }, butterCheck) : null, /*#__PURE__*/React.createElement("span", null, r))))))))), /*#__PURE__*/React.createElement("section", {
+  }, butterCheck) : null, /*#__PURE__*/React.createElement("span", null, r))))))))), cfg.hideComparison ? null : /*#__PURE__*/React.createElement(MidCTA, {
+    text: "See the difference on your own support, risk-free for 30 days.",
+    cta: "Book a Discovery Call",
+    position: "mid_comparison"
+  }), /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '0 0 72px'
     }
@@ -2565,7 +2682,11 @@ function VerticalLanding() {
       fontWeight: 500,
       whiteSpace: 'nowrap'
     }
-  }, q.linkLabel || 'via LinkedIn →')) : null))))), cfg.caseStudies && cfg.caseStudies.length > 0 ? cfg.caseStudies.some(c => c.stat) ? /*#__PURE__*/React.createElement("section", {
+  }, q.linkLabel || 'via LinkedIn →')) : null))))), (cfg.quotes || []).length > 0 ? /*#__PURE__*/React.createElement(MidCTA, {
+    text: "Want this kind of support behind your product?",
+    cta: "Book a 30-min call",
+    position: "mid_testimonials"
+  }) : null, cfg.caseStudies && cfg.caseStudies.length > 0 ? cfg.caseStudies.some(c => c.stat) ? /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '0 0 72px'
     }
@@ -2776,7 +2897,11 @@ function VerticalLanding() {
       padding: '0 4px 24px',
       maxWidth: 680
     }
-  }, it.a))))))) : null, cfg.resources && cfg.resources.length > 0 ? /*#__PURE__*/React.createElement("section", {
+  }, it.a))))))) : null, faq.length > 0 ? /*#__PURE__*/React.createElement(MidCTA, {
+    text: "Still have questions? Jim answers them live on the call.",
+    cta: "Book a call",
+    position: "faq"
+  }) : null, cfg.resources && cfg.resources.length > 0 ? /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '0 0 72px'
     }
@@ -2875,7 +3000,8 @@ function VerticalLanding() {
   }, cfg.closingText), /*#__PURE__*/React.createElement(Button, {
     variant: "primary",
     size: "lg",
-    href: "/book/"
+    href: "/book/",
+    onClick: () => xfBookClick('footer')
   }, "Book a Discovery Call"), /*#__PURE__*/React.createElement(CTAMicrocopy, {
     color: "#6B5F56",
     style: {
@@ -2961,7 +3087,7 @@ const XF_LP_FAQ = [{
 window.XF_LP_FAQ = XF_LP_FAQ;
 window.XF_LP = {
   "eyebrow": "For e-commerce and DTC brands",
-  "h1": "Peak season support, without the seasonal chaos.",
+  "h1": "E-commerce customer support, without the seasonal chaos.",
   "sub": "Order status, returns, refunds, and review pressure don't wait, and hiring seasonal support means retraining strangers every year. We place an experienced, AI-trained specialist who learns your products and your brand voice, then we manage them for you, year-round.",
   "microcopy": "Tell us what peak season does to your queue. 30 minutes, no pitch deck.",
   "metrics": [{

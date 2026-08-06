@@ -144,17 +144,23 @@ function StickyCapture() {
       boxShadow: '0 -6px 24px rgba(31,26,23,0.06)',
       padding: '10px 24px',
     }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 20 }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
         <span className="sticky-note" style={{
           fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14,
           fontWeight: 500, color: '#3A322D', whiteSpace: 'nowrap',
         }}>$2,900/mo all-in. 30-day risk-free trial.</span>
+        {/* Primary: direct 1-step booking, always reachable. */}
+        <Button variant="primary" size="md" href="/book/" onClick={() => xfBookClick('sticky')}
+          style={{ minHeight: 44, boxSizing: 'border-box' }}>Book a call</Button>
+        <span className="sticky-or" style={{
+          fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 13, color: '#6B5F56', whiteSpace: 'nowrap',
+        }}>or</span>
         <div style={{ flexShrink: 1, minWidth: 0 }}>
           <LeadCapture compact />
         </div>
       </div>
       <style>{`
-        @media (max-width: 700px) { .sticky-note { display: none; } }
+        @media (max-width: 700px) { .sticky-note, .sticky-or { display: none; } }
       `}</style>
     </div>
   );

@@ -292,4 +292,20 @@ function CTAMicrocopy({ children, color = '#6B5F56', style = {} }) {
   );
 }
 
-Object.assign(window, { Container, Section, Eyebrow, Button, PhotoPlaceholder, PhotoCircle, Icon, CTAMicrocopy });
+// Fire a secondary-conversion signal on every Book-a-Call CTA click. GTM
+// (GTM-KX8T76BC) listens for `book_button_click` and maps it to a secondary
+// Google Ads conversion. The primary SavvyCal booking conversion is untouched.
+// Synchronous push so it records before the same-tab navigation to /book/.
+function xfBookClick(position) {
+  try {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'book_button_click',
+      cta_position: position || 'unknown',
+      page_path: (window.location && window.location.pathname) || '',
+      device: (window.matchMedia && window.matchMedia('(max-width: 700px)').matches) ? 'mobile' : 'desktop',
+    });
+  } catch (e) { /* never let tracking break a click */ }
+}
+
+Object.assign(window, { Container, Section, Eyebrow, Button, PhotoPlaceholder, PhotoCircle, Icon, CTAMicrocopy, xfBookClick });

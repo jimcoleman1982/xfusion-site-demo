@@ -544,6 +544,22 @@ function CTAMicrocopy({
     }
   }, children || "30 minutes. No commitment. No credit card. You'll talk directly with our founding team.");
 }
+
+// Fire a secondary-conversion signal on every Book-a-Call CTA click. GTM
+// (GTM-KX8T76BC) listens for `book_button_click` and maps it to a secondary
+// Google Ads conversion. The primary SavvyCal booking conversion is untouched.
+// Synchronous push so it records before the same-tab navigation to /book/.
+function xfBookClick(position) {
+  try {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'book_button_click',
+      cta_position: position || 'unknown',
+      page_path: window.location && window.location.pathname || '',
+      device: window.matchMedia && window.matchMedia('(max-width: 700px)').matches ? 'mobile' : 'desktop'
+    });
+  } catch (e) {/* never let tracking break a click */}
+}
 Object.assign(window, {
   Container,
   Section,
@@ -552,7 +568,8 @@ Object.assign(window, {
   PhotoPlaceholder,
   PhotoCircle,
   Icon,
-  CTAMicrocopy
+  CTAMicrocopy,
+  xfBookClick
 });
 // --- components/LeadModal.jsx
 // Stage 2 of the booking funnel: qualification modal.
@@ -991,7 +1008,8 @@ function LeadModal({
   }, "Grab any slot on the calendar. You'll talk directly with our founding team."), /*#__PURE__*/React.createElement(Button, {
     variant: "primary",
     size: "lg",
-    href: "/book/"
+    href: "/book/",
+    onClick: () => window.xfBookClick ? window.xfBookClick('modal') : null
   }, "Pick a time ", /*#__PURE__*/React.createElement(Icon, {
     name: "arrow",
     size: 18
@@ -1185,7 +1203,8 @@ function StickyCapture() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      gap: 20
+      gap: 16,
+      flexWrap: 'wrap'
     }
   }, /*#__PURE__*/React.createElement("span", {
     className: "sticky-note",
@@ -1196,7 +1215,24 @@ function StickyCapture() {
       color: '#3A322D',
       whiteSpace: 'nowrap'
     }
-  }, "$2,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
+  }, "$2,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    size: "md",
+    href: "/book/",
+    onClick: () => xfBookClick('sticky'),
+    style: {
+      minHeight: 44,
+      boxSizing: 'border-box'
+    }
+  }, "Book a call"), /*#__PURE__*/React.createElement("span", {
+    className: "sticky-or",
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 13,
+      color: '#6B5F56',
+      whiteSpace: 'nowrap'
+    }
+  }, "or"), /*#__PURE__*/React.createElement("div", {
     style: {
       flexShrink: 1,
       minWidth: 0
@@ -1204,7 +1240,7 @@ function StickyCapture() {
   }, /*#__PURE__*/React.createElement(LeadCapture, {
     compact: true
   }))), /*#__PURE__*/React.createElement("style", null, `
-        @media (max-width: 700px) { .sticky-note { display: none; } }
+        @media (max-width: 700px) { .sticky-note, .sticky-or { display: none; } }
       `));
 }
 window.StickyCapture = StickyCapture;
