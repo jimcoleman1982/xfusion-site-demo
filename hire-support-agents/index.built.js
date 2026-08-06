@@ -2523,7 +2523,23 @@ function VerticalLanding() {
     style: {
       marginTop: 2
     }
-  }, butterCheck) : null, /*#__PURE__*/React.createElement("span", null, r))))))))), cfg.hideComparison ? null : /*#__PURE__*/React.createElement(MidCTA, {
+  }, butterCheck) : null, /*#__PURE__*/React.createElement("span", null, r))))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: 'center',
+      marginTop: 28
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/pricing/",
+    style: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 15.5,
+      fontWeight: 500,
+      color: '#B8512C',
+      textDecoration: 'none',
+      borderBottom: '1px solid #E4C9B8',
+      paddingBottom: 2
+    }
+  }, "See the full pricing breakdown →")))), cfg.hideComparison ? null : /*#__PURE__*/React.createElement(MidCTA, {
     text: "See the difference on your own support, risk-free for 30 days.",
     cta: "Book a Discovery Call",
     position: "mid_comparison"

@@ -424,6 +424,14 @@ function VerticalLanding() {
                   </div>
                 ))}
               </div>
+              {/* Self-serve rung: full breakdown without a form or a call. */}
+              <div style={{ textAlign: 'center', marginTop: 28 }}>
+                <a href="/pricing/" style={{
+                  fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 15.5,
+                  fontWeight: 500, color: '#B8512C', textDecoration: 'none',
+                  borderBottom: '1px solid #E4C9B8', paddingBottom: 2,
+                }}>See the full pricing breakdown &rarr;</a>
+              </div>
             </Container>
           </section>
         )}
