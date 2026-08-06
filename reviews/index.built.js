@@ -1486,7 +1486,7 @@ function ReviewsPage() {
       letterSpacing: '-0.02em',
       margin: '0 0 16px'
     }
-  }, "Where we’re honest about being early"), /*#__PURE__*/React.createElement("p", {
+  }, "Don’t take our word for it."), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 16,
@@ -1495,7 +1495,7 @@ function ReviewsPage() {
       margin: '0 0 22px',
       maxWidth: 640
     }
-  }, "We’re early on the big review platforms, because most of our client relationships predate our asking anyone to write anything. Here’s where to verify us today, and where reviews will keep accumulating:"), /*#__PURE__*/React.createElement("ul", {
+  }, "We don’t chase reviews as a growth tactic. Our proof is named clients with real numbers, and a 30-day risk-free trial where we absorb every dollar of recruiting and training if we don’t earn our place. It’s all public, and easy to check:"), /*#__PURE__*/React.createElement("ul", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 16,
