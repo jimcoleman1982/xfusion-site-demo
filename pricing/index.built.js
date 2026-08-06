@@ -1847,8 +1847,7 @@ function StickyCapture() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      gap: 16,
-      flexWrap: 'wrap'
+      gap: 20
     }
   }, /*#__PURE__*/React.createElement("span", {
     className: "sticky-note",
@@ -1859,24 +1858,7 @@ function StickyCapture() {
       color: '#3A322D',
       whiteSpace: 'nowrap'
     }
-  }, "$2,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement(Button, {
-    variant: "primary",
-    size: "md",
-    href: "/book/",
-    onClick: () => xfBookClick('sticky'),
-    style: {
-      minHeight: 44,
-      boxSizing: 'border-box'
-    }
-  }, "Book a call"), /*#__PURE__*/React.createElement("span", {
-    className: "sticky-or",
-    style: {
-      fontFamily: "'IBM Plex Sans', sans-serif",
-      fontSize: 13,
-      color: '#6B5F56',
-      whiteSpace: 'nowrap'
-    }
-  }, "or"), /*#__PURE__*/React.createElement("div", {
+  }, "$2,900/mo all-in. 30-day risk-free trial."), /*#__PURE__*/React.createElement("div", {
     style: {
       flexShrink: 1,
       minWidth: 0
@@ -1884,7 +1866,7 @@ function StickyCapture() {
   }, /*#__PURE__*/React.createElement(LeadCapture, {
     compact: true
   }))), /*#__PURE__*/React.createElement("style", null, `
-        @media (max-width: 700px) { .sticky-note, .sticky-or { display: none; } }
+        @media (max-width: 700px) { .sticky-note { display: none; } }
       `));
 }
 window.StickyCapture = StickyCapture;
