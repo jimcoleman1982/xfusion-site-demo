@@ -2148,7 +2148,7 @@ function VerticalLanding() {
     }
   }, name))))))), cfg.metrics && cfg.metrics.length > 0 ? /*#__PURE__*/React.createElement("section", {
     style: {
-      padding: '64px 0 0'
+      padding: '64px 0 56px'
     }
   }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
     className: "lp-metrics",

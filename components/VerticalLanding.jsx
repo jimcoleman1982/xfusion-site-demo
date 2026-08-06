@@ -190,7 +190,7 @@ function VerticalLanding() {
 
         {/* Verified metrics */}
         {cfg.metrics && cfg.metrics.length > 0 ? (
-          <section style={{ padding: '64px 0 0' }}>
+          <section style={{ padding: '64px 0 56px' }}>
             <Container>
               <div className="lp-metrics" style={{
                 display: 'grid',
