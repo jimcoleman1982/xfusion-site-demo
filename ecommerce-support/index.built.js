@@ -1928,7 +1928,7 @@ const XF_LP_STEPS = [{
   text: 'A candidate list lands in your inbox, each with a Zoom recording so you can judge English and presence yourself before you meet anyone.'
 }, {
   title: 'Start the 30-day risk-free trial',
-  text: "Your agent works your real queue for 30 full days. Not satisfied, for any reason? You walk away without paying anything."
+  text: "Your specialist works your real queue for 30 full days. Not satisfied, for any reason? You walk away without paying anything."
 }, {
   title: 'We manage from there',
   text: 'QA on real tickets, coaching, culture and engagement, backup coverage, and an account manager. Month-to-month, no long-term contract.'
@@ -1951,8 +1951,8 @@ const XF_LP_COMPARISON = [{
 // (client-led initial training, review sessions, draft mode, approved go-live).
 const XF_LP_LEARN = [{
   label: 'Phase 1',
-  title: 'You teach the first agent',
-  text: 'One round of training led by your team: product, brand and tone, your helpdesk, escalation paths. Every agent after that, we train.'
+  title: 'You teach the first specialist',
+  text: 'One round of training led by your team: product, brand and tone, your helpdesk, escalation paths. Every specialist after that, we train.'
 }, {
   label: 'Phase 2',
   title: 'They study before they speak',
@@ -2329,7 +2329,7 @@ function VerticalLanding() {
       letterSpacing: '-0.02em',
       margin: '0 0 22px'
     }
-  }, cfg.ticketsTitle || 'What your agent takes off your plate'), /*#__PURE__*/React.createElement("div", {
+  }, cfg.ticketsTitle || 'What your specialist takes off your plate'), /*#__PURE__*/React.createElement("div", {
     className: "lp-tickets",
     style: {
       display: 'grid',
@@ -2369,7 +2369,7 @@ function VerticalLanding() {
       letterSpacing: '-0.02em',
       margin: '0 0 12px'
     }
-  }, cfg.learnTitle || 'How your agent learns your product'), cfg.learnIntro ? /*#__PURE__*/React.createElement("p", {
+  }, cfg.learnTitle || 'How your specialist learns your product'), cfg.learnIntro ? /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 16,
@@ -3059,28 +3059,28 @@ const XF_LP_FAQ = [{
   "a": "$2,900 per month, all-inclusive. That covers an experienced, AI-trained support specialist plus recruiting, training, payroll, QA, culture, and an account manager. No setup fees, no deposits, and no long-term contract."
 }, {
   "q": "Can you cover evenings, weekends, and peak season?",
-  "a": "Your agent works full-time hours, and because they're based in the Philippines or Kenya you have room to structure coverage however you want. Some clients align to U.S. business hours, others stagger shifts to cover evenings or weekends. You pick the schedule; we handle the management."
+  "a": "Your specialist works full-time hours, and because they're based in the Philippines or Kenya you have room to structure coverage however you want. Some clients align to U.S. business hours, others stagger shifts to cover evenings or weekends. You pick the schedule; we handle the management."
 }, {
-  "q": "Will the agent sound like our brand?",
-  "a": "Yes. Your agent learns your products, policies, and tone the way an in-house hire would. Across our client base, customers regularly don't realize they aren't talking to the in-house team."
+  "q": "Will the specialist sound like our brand?",
+  "a": "Yes. Your specialist learns your products, policies, and tone the way an in-house hire would. Across our client base, customers regularly don't realize they aren't talking to the in-house team."
 }, {
   "q": "What if it doesn't work out?",
-  "a": "That's what the 30-Day Risk-Free Trial is for. You work with your agent for 30 full days, and if you're not satisfied for any reason, you walk away without paying anything."
+  "a": "That's what the 30-Day Risk-Free Trial is for. You work with your specialist for 30 full days, and if you're not satisfied for any reason, you walk away without paying anything."
 }, {
   "q": "Will they speak good English?",
   "a": "Every candidate sits through interviews with a real person where we check English skills, how they talk, and how they come across. Before you meet with anyone, you'll watch a Zoom recording of them, so you can judge for yourself instead of taking our word for it."
 }, {
-  "q": "How do you keep my agent engaged long-term?",
-  "a": "Culture and engagement are included in the $2,900/mo. We run team-building events, contests, branded swag, and birthday, anniversary, and holiday gifting. Pair that with a role that pays a real living wage in the agent's local economy, and you get someone who builds a career on your team rather than rotating through."
+  "q": "How do you keep my specialist engaged long-term?",
+  "a": "Culture and engagement are included in the $2,900/mo. We run team-building events, contests, branded swag, and birthday, anniversary, and holiday gifting. Pair that with a role that pays a real living wage in the specialist's local economy, and you get someone who builds a career on your team rather than rotating through."
 }, {
   "q": "Why not just use a chatbot?",
   "a": "AI on its own handles the easy 60% of support work well. The hard 40% (angry customers, weird cases, judgment calls, sensitive issues) is where chatbot-only setups break, often in public. Our experienced specialists use AI as a tool, not a replacement: AI handles the easy stuff, and they step in for the moments that matter."
 }, {
   "q": "What about security and data access?",
-  "a": "Your agent works inside your helpdesk and your tools, not ours, so you control exactly what they can access and can revoke it any time. Every agent is vetted before placement, works under confidentiality agreements, and is offboarded with a defined access checklist. The full picture is in the security overview at xfusion.io/security."
+  "a": "Your specialist works inside your helpdesk and your tools, not ours, so you control exactly what they can access and can revoke it any time. Every specialist is vetted before placement, works under confidentiality agreements, and is offboarded with a defined access checklist. The full picture is in the security overview at xfusion.io/security."
 }, {
-  "q": "How do you protect our brand voice while the agent ramps up?",
-  "a": "Draft mode. For the first days, every reply your agent writes is a draft: their xFusion team leader reviews it, then you approve it, before it reaches a customer. Replies switch to live only once you sign off. By then the agent has been trained on your product, your tone, and your helpdesk, and what they learned is documented for every agent who comes after."
+  "q": "How do you protect our brand voice while the specialist ramps up?",
+  "a": "Draft mode. For the first days, every reply your specialist writes is a draft: their xFusion team leader reviews it, then you approve it, before it reaches a customer. Replies switch to live only once you sign off. By then the specialist has been trained on your product, your tone, and your helpdesk, and what they learned is documented for every specialist who comes after."
 }];
 window.XF_LP_FAQ = XF_LP_FAQ;
 window.XF_LP = {
@@ -3097,13 +3097,13 @@ window.XF_LP = {
   }],
   "values": [{
     "title": "Peak season? Same team.",
-    "text": "Your agent is with you year-round, so Black Friday is handled by someone who already knows your catalog, your policies, and your customers. Coverage can be structured for evenings and weekends."
+    "text": "Your specialist is with you year-round, so Black Friday is handled by someone who already knows your catalog, your policies, and your customers. Coverage can be structured for evenings and weekends."
   }, {
     "title": "Returns, refunds, and reviews with judgment",
     "text": "AI handles the routine order-status volume; your experienced specialist steps in on the refund calls, the angry one-star review, and the edge cases that decide whether a customer comes back."
   }, {
     "title": "Scale support, not payroll",
-    "text": "One flat rate: $2,900/mo all-in for the agent plus recruiting, training, payroll, QA, and management. Month-to-month, starting with a 30-day risk-free trial."
+    "text": "One flat rate: $2,900/mo all-in for the specialist plus recruiting, training, payroll, QA, and management. Month-to-month, starting with a 30-day risk-free trial."
   }],
   "clientsNote": "E-commerce and DTC teams we support include Crowd Cow and Autism Products.",
   "story": {
@@ -3130,7 +3130,7 @@ window.XF_LP = {
     "title": "Benefits of outsourcing customer support for your business",
     "href": "/xfusion/benefits-of-outsourcing-customer-support-for-your-business/"
   }],
-  "learnTitle": "How your agent learns your store",
+  "learnTitle": "How your specialist learns your store",
   "learnIntro": "Your catalog, your policies, your shipping promises, and the tone your customers expect.",
   "stepsLead": "Set it up once, and peak season stops being a staffing scramble.",
   "closingH2": "Scale support, not payroll.",

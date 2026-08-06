@@ -1928,7 +1928,7 @@ const XF_LP_STEPS = [{
   text: 'A candidate list lands in your inbox, each with a Zoom recording so you can judge English and presence yourself before you meet anyone.'
 }, {
   title: 'Start the 30-day risk-free trial',
-  text: "Your agent works your real queue for 30 full days. Not satisfied, for any reason? You walk away without paying anything."
+  text: "Your specialist works your real queue for 30 full days. Not satisfied, for any reason? You walk away without paying anything."
 }, {
   title: 'We manage from there',
   text: 'QA on real tickets, coaching, culture and engagement, backup coverage, and an account manager. Month-to-month, no long-term contract.'
@@ -1951,8 +1951,8 @@ const XF_LP_COMPARISON = [{
 // (client-led initial training, review sessions, draft mode, approved go-live).
 const XF_LP_LEARN = [{
   label: 'Phase 1',
-  title: 'You teach the first agent',
-  text: 'One round of training led by your team: product, brand and tone, your helpdesk, escalation paths. Every agent after that, we train.'
+  title: 'You teach the first specialist',
+  text: 'One round of training led by your team: product, brand and tone, your helpdesk, escalation paths. Every specialist after that, we train.'
 }, {
   label: 'Phase 2',
   title: 'They study before they speak',
@@ -2329,7 +2329,7 @@ function VerticalLanding() {
       letterSpacing: '-0.02em',
       margin: '0 0 22px'
     }
-  }, cfg.ticketsTitle || 'What your agent takes off your plate'), /*#__PURE__*/React.createElement("div", {
+  }, cfg.ticketsTitle || 'What your specialist takes off your plate'), /*#__PURE__*/React.createElement("div", {
     className: "lp-tickets",
     style: {
       display: 'grid',
@@ -2369,7 +2369,7 @@ function VerticalLanding() {
       letterSpacing: '-0.02em',
       margin: '0 0 12px'
     }
-  }, cfg.learnTitle || 'How your agent learns your product'), cfg.learnIntro ? /*#__PURE__*/React.createElement("p", {
+  }, cfg.learnTitle || 'How your specialist learns your product'), cfg.learnIntro ? /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 16,

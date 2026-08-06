@@ -35,7 +35,7 @@ const CLIENT_NAMES = ['Tolstoy', 'SavvyCal', 'Bonify', 'Ordered Magic', 'TheRece
 const XF_LP_STEPS = [
   { title: 'Book a 30-minute discovery call', text: "Bring your messiest support problem. If we're not the right fit, we'll tell you on the call." },
   { title: 'Meet your candidates in about 14 days', text: 'A candidate list lands in your inbox, each with a Zoom recording so you can judge English and presence yourself before you meet anyone.' },
-  { title: 'Start the 30-day risk-free trial', text: "Your agent works your real queue for 30 full days. Not satisfied, for any reason? You walk away without paying anything." },
+  { title: 'Start the 30-day risk-free trial', text: "Your specialist works your real queue for 30 full days. Not satisfied, for any reason? You walk away without paying anything." },
   { title: 'We manage from there', text: 'QA on real tickets, coaching, culture and engagement, backup coverage, and an account manager. Month-to-month, no long-term contract.' },
 ];
 
@@ -59,7 +59,7 @@ const XF_LP_COMPARISON = [
 // Shared "how your agent learns" phases. Source: Partnership Onboarding Guide
 // (client-led initial training, review sessions, draft mode, approved go-live).
 const XF_LP_LEARN = [
-  { label: 'Phase 1', title: 'You teach the first agent', text: 'One round of training led by your team: product, brand and tone, your helpdesk, escalation paths. Every agent after that, we train.' },
+  { label: 'Phase 1', title: 'You teach the first specialist', text: 'One round of training led by your team: product, brand and tone, your helpdesk, escalation paths. Every specialist after that, we train.' },
   { label: 'Phase 2', title: 'They study before they speak', text: 'Review sessions to absorb what they learned and prepare questions, while we turn it into documented processes your whole future team inherits.' },
   { label: 'Phase 3', title: 'Draft mode', text: 'For the first days, every reply is a draft: reviewed by their xFusion team leader, then approved by you, before a customer ever sees it.' },
   { label: 'Phase 4', title: 'Live, with guardrails', text: 'Replies go live only with your sign-off. SLAs set together, KPIs tracked, QA continuous, and escalations routed to the right team.' },
@@ -295,7 +295,7 @@ function VerticalLanding() {
               <h2 style={{
                 fontFamily: "'Source Serif 4', serif", fontSize: 'clamp(26px, 3.4vw, 36px)',
                 fontWeight: 600, letterSpacing: '-0.02em', margin: '0 0 22px',
-              }}>{cfg.ticketsTitle || 'What your agent takes off your plate'}</h2>
+              }}>{cfg.ticketsTitle || 'What your specialist takes off your plate'}</h2>
               <div className="lp-tickets" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
                 {cfg.tickets.map((t) => (
                   <div key={t} style={{
@@ -319,7 +319,7 @@ function VerticalLanding() {
               <h2 style={{
                 fontFamily: "'Source Serif 4', serif", fontSize: 'clamp(26px, 3.4vw, 36px)',
                 fontWeight: 600, letterSpacing: '-0.02em', margin: '0 0 12px',
-              }}>{cfg.learnTitle || 'How your agent learns your product'}</h2>
+              }}>{cfg.learnTitle || 'How your specialist learns your product'}</h2>
               {cfg.learnIntro ? (
                 <p style={{
                   fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 16,

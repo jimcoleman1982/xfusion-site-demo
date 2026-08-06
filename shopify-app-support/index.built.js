@@ -1928,7 +1928,7 @@ const XF_LP_STEPS = [{
   text: 'A candidate list lands in your inbox, each with a Zoom recording so you can judge English and presence yourself before you meet anyone.'
 }, {
   title: 'Start the 30-day risk-free trial',
-  text: "Your agent works your real queue for 30 full days. Not satisfied, for any reason? You walk away without paying anything."
+  text: "Your specialist works your real queue for 30 full days. Not satisfied, for any reason? You walk away without paying anything."
 }, {
   title: 'We manage from there',
   text: 'QA on real tickets, coaching, culture and engagement, backup coverage, and an account manager. Month-to-month, no long-term contract.'
@@ -1951,8 +1951,8 @@ const XF_LP_COMPARISON = [{
 // (client-led initial training, review sessions, draft mode, approved go-live).
 const XF_LP_LEARN = [{
   label: 'Phase 1',
-  title: 'You teach the first agent',
-  text: 'One round of training led by your team: product, brand and tone, your helpdesk, escalation paths. Every agent after that, we train.'
+  title: 'You teach the first specialist',
+  text: 'One round of training led by your team: product, brand and tone, your helpdesk, escalation paths. Every specialist after that, we train.'
 }, {
   label: 'Phase 2',
   title: 'They study before they speak',
@@ -2329,7 +2329,7 @@ function VerticalLanding() {
       letterSpacing: '-0.02em',
       margin: '0 0 22px'
     }
-  }, cfg.ticketsTitle || 'What your agent takes off your plate'), /*#__PURE__*/React.createElement("div", {
+  }, cfg.ticketsTitle || 'What your specialist takes off your plate'), /*#__PURE__*/React.createElement("div", {
     className: "lp-tickets",
     style: {
       display: 'grid',
@@ -2369,7 +2369,7 @@ function VerticalLanding() {
       letterSpacing: '-0.02em',
       margin: '0 0 12px'
     }
-  }, cfg.learnTitle || 'How your agent learns your product'), cfg.learnIntro ? /*#__PURE__*/React.createElement("p", {
+  }, cfg.learnTitle || 'How your specialist learns your product'), cfg.learnIntro ? /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 16,
@@ -3059,34 +3059,34 @@ const XF_LP_FAQ = [{
   "a": "$2,900 per month, all-inclusive. That covers an experienced, AI-trained support specialist plus recruiting, training, payroll, QA, culture, and an account manager. No setup fees, no deposits, and no long-term contract."
 }, {
   "q": "Do you actually know the Shopify app world?",
-  "a": "Yes. Tolstoy, Bonify, Ordered Magic, and Revy are all Shopify app companies who run their merchant support with us, each with a public case study. Our agents handle merchant tickets, app-store review pressure, and API edge cases every day."
+  "a": "Yes. Tolstoy, Bonify, Ordered Magic, and Revy are all Shopify app companies who run their merchant support with us, each with a public case study. Our specialists handle merchant tickets, app-store review pressure, and API edge cases every day."
 }, {
-  "q": "How fast can an agent start?",
+  "q": "How fast can a specialist start?",
   "a": "About 14 days from your discovery call to a candidate list in your inbox. We keep a pool of experienced, AI-trained support candidates ready to go, which is why we can move that fast without cutting corners."
 }, {
   "q": "What if it doesn't work out?",
-  "a": "That's what the 30-Day Risk-Free Trial is for. You work with your agent for 30 full days, and if you're not satisfied for any reason, you walk away without paying anything."
+  "a": "That's what the 30-Day Risk-Free Trial is for. You work with your specialist for 30 full days, and if you're not satisfied for any reason, you walk away without paying anything."
 }, {
   "q": "Will they speak good English?",
   "a": "Every candidate sits through interviews with a real person where we check English skills, how they talk, and how they come across. Before you meet with anyone, you'll watch a Zoom recording of them, so you can judge for yourself instead of taking our word for it."
 }, {
   "q": "What about after-hours coverage?",
-  "a": "Your agent works full-time hours, just like any team member. Because they're based in the Philippines or Kenya, you have room to structure coverage however you want. Some clients align the agent to U.S. business hours, others stagger shifts to cover evenings or weekends. You pick the schedule; we handle the management."
+  "a": "Your specialist works full-time hours, just like any team member. Because they're based in the Philippines or Kenya, you have room to structure coverage however you want. Some clients align the specialist to U.S. business hours, others stagger shifts to cover evenings or weekends. You pick the schedule; we handle the management."
 }, {
   "q": "What does \"AI-trained\" actually mean in practice?",
-  "a": "Your agent uses AI tools every day: drafting replies, sorting and routing tickets, and overseeing the tools that handle routine, high-volume cases. Their experience tells them when to trust what AI gives them and when to step in. One person handles far more work than they could alone, without giving up quality or warmth."
+  "a": "Your specialist uses AI tools every day: drafting replies, sorting and routing tickets, and overseeing the tools that handle routine, high-volume cases. Their experience tells them when to trust what AI gives them and when to step in. One person handles far more work than they could alone, without giving up quality or warmth."
 }, {
   "q": "What about security and data access?",
-  "a": "Your agent works inside your helpdesk and your tools, not ours, so you control exactly what they can access and can revoke it any time. Every agent is vetted before placement, works under confidentiality agreements, and is offboarded with a defined access checklist. The full picture is in the security overview at xfusion.io/security."
+  "a": "Your specialist works inside your helpdesk and your tools, not ours, so you control exactly what they can access and can revoke it any time. Every specialist is vetted before placement, works under confidentiality agreements, and is offboarded with a defined access checklist. The full picture is in the security overview at xfusion.io/security."
 }, {
-  "q": "How do you protect our brand voice while the agent ramps up?",
-  "a": "Draft mode. For the first days, every reply your agent writes is a draft: their xFusion team leader reviews it, then you approve it, before it reaches a customer. Replies switch to live only once you sign off. By then the agent has been trained on your product, your tone, and your helpdesk, and what they learned is documented for every agent who comes after."
+  "q": "How do you protect our brand voice while the specialist ramps up?",
+  "a": "Draft mode. For the first days, every reply your specialist writes is a draft: their xFusion team leader reviews it, then you approve it, before it reaches a customer. Replies switch to live only once you sign off. By then the specialist has been trained on your product, your tone, and your helpdesk, and what they learned is documented for every specialist who comes after."
 }];
 window.XF_LP_FAQ = XF_LP_FAQ;
 window.XF_LP = {
   "eyebrow": "For Shopify app developers",
   "h1": "Support for your Shopify app, off your plate.",
-  "sub": "You built an app merchants depend on. Now the tickets never stop, every hour in the inbox is an hour not shipping, and every slow reply risks a one-star review that sticks. We place an experienced, AI-trained specialist who learns your app, your APIs, and your merchants. Tolstoy, Bonify, Ordered Magic, and Revy all run merchant support with us. We know this world.",
+  "sub": "The tickets never stop, every hour in the inbox is an hour not shipping, and one slow reply can mean a one-star review that sticks. We place an experienced, AI-trained specialist who learns your app, your APIs, and your merchants. Tolstoy, Bonify, Ordered Magic, and Revy all run merchant support with us.",
   "microcopy": "Bring your messiest merchant tickets. 30 minutes, no pitch deck.",
   "metrics": [{
     "num": "+90",
@@ -3100,10 +3100,10 @@ window.XF_LP = {
     "text": "Of new 5-star Shopify reviews across our app clients, where customers praise the support by name."
   }, {
     "num": "1 → 11",
-    "text": "Tolstoy grew from a single xFusion agent to an 11-person team across Tier 1 and Tier 2 support, implementation, AI content, and data tagging."
+    "text": "Tolstoy grew from a single xFusion specialist to an 11-person team across Tier 1 and Tier 2 support, implementation, AI content, and data tagging."
   }],
   "values": [{
-    "title": "An agent who learns your app like an in-house hire",
+    "title": "A specialist who learns your app like an in-house hire",
     "text": "Your codebase quirks, your APIs, your merchants' edge cases. Not a script reader."
   }, {
     "title": "More 5-star reviews, better ranking",
@@ -3117,7 +3117,7 @@ window.XF_LP = {
     "name": "Jean-Noël Mathonnet",
     "role": "Shopify app founder"
   }, {
-    "text": "Working with the xFusion team enabled us to scale customer support from a single agent to a six-person team handling Tier 1 and Tier 2 work. The partnership has been so valuable that our Shopify app ranking jumped 90 points after a wave of 5-star reviews tied to better support. I can't praise the team enough.",
+    "text": "Working with the xFusion team enabled us to scale customer support from a single specialist to a six-person team handling Tier 1 and Tier 2 work. The partnership has been so valuable that our Shopify app ranking jumped 90 points after a wave of 5-star reviews tied to better support. I can't praise the team enough.",
     "name": "Dov Kaufmann",
     "role": "Tolstoy",
     "img": "/images/dov-kaufmann-tolstoy.webp"
@@ -3162,9 +3162,9 @@ window.XF_LP = {
     "title": "Unpacking the back-office: why outsourcing is the go-to for Shopify retailers",
     "href": "/customer-experience/unpacking-the-back-office-why-outsourcing-is-the-go-to-for-shopify-retailers/"
   }],
-  "learnTitle": "How your agent learns your app",
+  "learnTitle": "How your specialist learns your app",
   "learnIntro": "Your app's quirks, your APIs, your merchants' setups, and the tone that earns 5-star reviews.",
-  "stepsLead": "From drowning in merchant tickets to a managed agent inside your helpdesk, in about two weeks.",
+  "stepsLead": "From drowning in merchant tickets to a managed specialist inside your helpdesk, in about two weeks.",
   "closingH2": "Get back to building your app.",
   "closingText": "Come with your messiest support problem. If we're not the right fit, we'll tell you, and you'll leave with a clearer picture either way."
 };

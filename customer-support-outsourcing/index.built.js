@@ -1928,7 +1928,7 @@ const XF_LP_STEPS = [{
   text: 'A candidate list lands in your inbox, each with a Zoom recording so you can judge English and presence yourself before you meet anyone.'
 }, {
   title: 'Start the 30-day risk-free trial',
-  text: "Your agent works your real queue for 30 full days. Not satisfied, for any reason? You walk away without paying anything."
+  text: "Your specialist works your real queue for 30 full days. Not satisfied, for any reason? You walk away without paying anything."
 }, {
   title: 'We manage from there',
   text: 'QA on real tickets, coaching, culture and engagement, backup coverage, and an account manager. Month-to-month, no long-term contract.'
@@ -1951,8 +1951,8 @@ const XF_LP_COMPARISON = [{
 // (client-led initial training, review sessions, draft mode, approved go-live).
 const XF_LP_LEARN = [{
   label: 'Phase 1',
-  title: 'You teach the first agent',
-  text: 'One round of training led by your team: product, brand and tone, your helpdesk, escalation paths. Every agent after that, we train.'
+  title: 'You teach the first specialist',
+  text: 'One round of training led by your team: product, brand and tone, your helpdesk, escalation paths. Every specialist after that, we train.'
 }, {
   label: 'Phase 2',
   title: 'They study before they speak',
@@ -2329,7 +2329,7 @@ function VerticalLanding() {
       letterSpacing: '-0.02em',
       margin: '0 0 22px'
     }
-  }, cfg.ticketsTitle || 'What your agent takes off your plate'), /*#__PURE__*/React.createElement("div", {
+  }, cfg.ticketsTitle || 'What your specialist takes off your plate'), /*#__PURE__*/React.createElement("div", {
     className: "lp-tickets",
     style: {
       display: 'grid',
@@ -2369,7 +2369,7 @@ function VerticalLanding() {
       letterSpacing: '-0.02em',
       margin: '0 0 12px'
     }
-  }, cfg.learnTitle || 'How your agent learns your product'), cfg.learnIntro ? /*#__PURE__*/React.createElement("p", {
+  }, cfg.learnTitle || 'How your specialist learns your product'), cfg.learnIntro ? /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: 16,
@@ -3071,16 +3071,16 @@ const XF_LP_FAQ = [{
   "a": "Every candidate sits through interviews with a real person where we check English skills, how they talk, and how they come across. Before you meet with anyone, you'll watch a Zoom recording of them, so you can judge for yourself instead of taking our word for it."
 }, {
   "q": "What about after-hours coverage?",
-  "a": "Your agent works full-time hours, just like any team member. Because they're based in the Philippines or Kenya, you have room to structure coverage however you want. Some clients align the agent to U.S. business hours, others stagger shifts to cover evenings or weekends. You pick the schedule; we handle the management."
+  "a": "Your specialist works full-time hours, just like any team member. Because they're based in the Philippines or Kenya, you have room to structure coverage however you want. Some clients align the specialist to U.S. business hours, others stagger shifts to cover evenings or weekends. You pick the schedule; we handle the management."
 }, {
   "q": "Why not just use a chatbot?",
   "a": "AI on its own handles the easy 60% of support work well. The hard 40% (angry customers, weird cases, judgment calls, sensitive issues) is where chatbot-only setups break, often in public. Our experienced specialists use AI as a tool, not a replacement: AI handles the easy stuff, and they step in for the moments that matter."
 }, {
   "q": "What about security and data access?",
-  "a": "Your agent works inside your helpdesk and your tools, not ours, so you control exactly what they can access and can revoke it any time. Every agent is vetted before placement, works under confidentiality agreements, and is offboarded with a defined access checklist. The full picture is in the security overview at xfusion.io/security."
+  "a": "Your specialist works inside your helpdesk and your tools, not ours, so you control exactly what they can access and can revoke it any time. Every specialist is vetted before placement, works under confidentiality agreements, and is offboarded with a defined access checklist. The full picture is in the security overview at xfusion.io/security."
 }, {
-  "q": "How do you protect our brand voice while the agent ramps up?",
-  "a": "Draft mode. For the first days, every reply your agent writes is a draft: their xFusion team leader reviews it, then you approve it, before it reaches a customer. Replies switch to live only once you sign off. By then the agent has been trained on your product, your tone, and your helpdesk, and what they learned is documented for every agent who comes after."
+  "q": "How do you protect our brand voice while the specialist ramps up?",
+  "a": "Draft mode. For the first days, every reply your specialist writes is a draft: their xFusion team leader reviews it, then you approve it, before it reaches a customer. Replies switch to live only once you sign off. By then the specialist has been trained on your product, your tone, and your helpdesk, and what they learned is documented for every specialist who comes after."
 }];
 window.XF_LP_FAQ = XF_LP_FAQ;
 window.XF_LP = {
@@ -3102,10 +3102,10 @@ window.XF_LP = {
   }],
   "values": [{
     "title": "Experienced specialists, not beginners",
-    "text": "Every agent has real support experience and uses AI tools to handle the volume of several junior reps. Across our client base, customers regularly don't realize they aren't talking to the in-house team."
+    "text": "Every specialist has real support experience and uses AI tools to handle the volume of several junior reps. Across our client base, customers regularly don't realize they aren't talking to the in-house team."
   }, {
     "title": "One flat rate. No surprises.",
-    "text": "$2,900/mo covers the agent, recruiting, training, payroll, QA, culture, and an account manager. No add-ons, no setup fees, no deposits."
+    "text": "$2,900/mo covers the specialist, recruiting, training, payroll, QA, culture, and an account manager. No add-ons, no setup fees, no deposits."
   }, {
     "title": "Month-to-month, risk-free start",
     "text": "No lock-in. And the 30-Day Risk-Free Trial means the first month costs nothing if we're not a fit."
@@ -3153,8 +3153,8 @@ window.XF_LP = {
     "title": "How to measure the success of outsourced customer support",
     "href": "/customer-experience/how-to-measure-the-success-of-outsourced-customer-support/"
   }],
-  "learnTitle": "How your agent learns your product",
-  "learnIntro": "The reason our agents don't sound outsourced: they ramp the way an in-house hire would.",
+  "learnTitle": "How your specialist learns your product",
+  "learnIntro": "The reason our specialists don't sound outsourced: they ramp the way an in-house hire would.",
   "stepsLead": "From first call to a fully managed queue, with no quarter-long contract to sign.",
   "story": {
     "eyebrow": "From our client roster",
