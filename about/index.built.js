@@ -1563,7 +1563,7 @@ function Values() {
       margin: 0,
       maxWidth: 560
     }
-  }, "A short list. We try to live by it."))), /*#__PURE__*/React.createElement("div", {
+  }, "A short list. It’s how we run."))), /*#__PURE__*/React.createElement("div", {
     className: "values-grid",
     style: {
       display: 'grid',

@@ -43,7 +43,7 @@ function Values() {
               margin: 0,
               maxWidth: 560,
             }}>
-              A short list. We try to live by it.
+              A short list. It&rsquo;s how we run.
             </p>
           </div>
         </div>

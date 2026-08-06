@@ -3134,7 +3134,7 @@ window.XF_LP = {
   "learnIntro": "You judge the candidates like any hire. The difference is everything that happens after the yes.",
   "stepsLead": "You bring the standards; we bring the pipeline and the management.",
   "closingH2": "Skip the hiring headache.",
-  "closingText": "Tell us what your support queue looks like, and we'll tell you honestly whether we can staff it. If not, you'll leave with a clearer picture either way."
+  "closingText": "Tell us what your support queue looks like, and we'll show you exactly how we'd staff it. Worst case, you leave with a sharper plan than you came in with."
 };
 function App() {
   return /*#__PURE__*/React.createElement(VerticalLanding, null);
